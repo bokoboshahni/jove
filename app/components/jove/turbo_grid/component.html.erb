@@ -1,0 +1,22 @@
+<%= turbo_frame_tag @id do %>
+  <%= tag.div class: container_classes, data: container_data_attrs do %>
+    <%= tag.table(class: table_classes, data: table_data_attrs) do %>
+      <%= tag.thead(class: table_header_classes, data: table_header_data_attrs) do %>
+        <tr>
+          <% columns.each do |column| %><%= column %><% end %>
+        </tr>
+      <% end %>
+      <%= tag.tbody(class: table_body_classes, data: table_body_data_attrs) do %>
+        <% rows.each do |row| %><%= row %><% end %>
+      <% end %>
+      <% if footers? %>
+        <%= tag.tfoot(class: table_footer_classes, data: table_footer_data_attrs) do %>
+          <% footers.each do |row| %><%= row %><% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+    <%= tag.div class: paginator_classes do %>
+      <%= render(Jove::Paginator::Component.new(scope: @scope, params: @params, turbo_action: 'replace', turbo_frame: @id)) %>
+    <% end %>
+  <% end %>
+<% end %>

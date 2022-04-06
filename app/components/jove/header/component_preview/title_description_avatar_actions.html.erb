@@ -1,0 +1,15 @@
+<div class="max-w-7xl">
+  <%= render(Jove::Header::Component.new) do |header| %>
+    <% header.avatar src: 'https://images.evetech.net/characters/2113024536/portrait' %>
+    <% header.title do %>Title<% end %>
+    <% header.description do %>Description<% end %>
+
+    <% header.action do %>
+      <%= render(Jove::Button::Component.new(label: 'Action')) %>
+    <% end %>
+
+    <% header.action do %>
+      <%= render(Jove::Button::Component.new(label: 'Action', variant: :outlined)) %>
+    <% end %>
+  <% end %>
+</div>

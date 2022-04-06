@@ -1,0 +1,30 @@
+---
+en:
+  admin:
+    login_permits:
+      confirm_destroy:
+        body:
+          alliance_html: Characters in <span class="font-medium">%{name}</span> will no longer be able to log in unless allowed directly or via their corporations. Existing identities will not be removed but will not be able to log in.
+          character_html: <span class="font-medium">%{name}</span> will no longer be able to log in unless allowed via their alliance or corporation. Existing identities will not be removed but will not be able to log in.
+          corporation_html: Characters in <span class="font-medium">%{name}</span> will no longer be able to log in unless allowed directly or via their alliance. Existing identities will not be removed but will not be able to log in.
+        delete: Delete
+        title: Delete %{type} authorization?
+      index:
+        body: Alliances, corporations, and characters that are allowed to log in.
+        delete: Delete
+        delete_tooltip: Delete %{name}
+        locked: Locked
+        new: Authorize
+        title: Authentication
+      new:
+        permittable_type:
+          alliance:
+            description: Authorize all members of an alliance to log in.
+            label: Alliance
+          character:
+            description: Authorize a specific character to log in.
+            label: Character
+          corporation:
+            description: Authorize all members of a corporation to log in.
+            label: Corporation
+        title: New authorization

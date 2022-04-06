@@ -1,0 +1,15 @@
+---
+en:
+  settings:
+    identities:
+      change_default:
+        error: Error changing your default character to %{name}.
+        failure:
+          already_default: "%{name} is already your default character."
+          invalid_for_login: "%{name} cannot be set as your default character because they are not allowed to log in."
+        success: Successfully changed your default character to %{name}.
+      destroy:
+        failure: Failed to disconnect %{name} from your account.
+        success: Successfully disconnect %{name} from your account.
+      switch:
+        failure: Failed to switch to %{name}. The character is no longer allowed to log in.

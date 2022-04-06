@@ -1,0 +1,6 @@
+<%= render(Jove::TurboDialog::Component.new(title: 'Title')) do |d| %>
+  A dialog is a modal window that appears in front of app content to provide critical information or ask for a decision.
+
+  <% d.action do %><%= render(Jove::Button::Component.new(variant: :text, label: 'Action')) %><% end %>
+  <% d.action do %><%= render(Jove::Button::Component.new(variant: :text, label: 'Action')) %><% end %>
+<% end %>

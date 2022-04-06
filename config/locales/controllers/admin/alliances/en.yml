@@ -1,0 +1,12 @@
+---
+en:
+  admin:
+    alliances:
+      alliances_grid:
+        columns:
+          created: Created
+          name: Name
+          ticker: Ticker
+          updated: Updated
+      index:
+        title: Alliances

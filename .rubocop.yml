@@ -1,7 +1,49 @@
 AllCops:
   NewCops: enable
   Exclude:
+    - .bundle/**/*
     - bin/*
+    - lib/generators/**/templates/*.rb
+    - tmp/**/*
+    - vendor/bundle/**/*
+
+Layout/LineLength:
+  Exclude:
+    - lib/jove/esi/*/client.rb
+
+Lint/EmptyBlock:
+  Exclude:
+    - spec/**/*.rb
+
+Lint/EmptyClass:
+  Enabled: false
+
+Metrics/AbcSize:
+  Exclude:
+    - db/migrate/*.rb
+
+Metrics/BlockLength:
+  Exclude:
+    - db/migrate/*.rb
+    - spec/**/*_spec.rb
+
+Metrics/ClassLength:
+  Exclude:
+    - app/components/**/component.rb
+    - app/components/**/component_preview.rb
+    - db/migrate/*.rb
+
+Metrics/MethodLength:
+  Exclude:
+    - app/components/**/component_preview.rb
+    - db/migrate/*.rb
+
+Metrics/ParameterLists:
+  CountKeywordArgs: false
+
+Naming/VariableNumber:
+  Exclude:
+    - app/components/**/component_preview.rb
 
 Style/Documentation:
   Enabled: false

@@ -1,0 +1,56 @@
+<%= turbo_frame_tag 'modal' do %>
+  <div class="fixed inset-0 z-10 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true" data-controller="jove--turbo-dialog--component">
+    <div
+      class="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0"
+      data-action="click->jove--turbo-dialog--component#closeBackground keyup@window->jove--turbo-dialog--component#closeKeyboard">
+      <!--
+        Background overlay, show/hide based on modal state.
+
+        Entering: "ease-out duration-300"
+          From: "opacity-0"
+          To: "opacity-100"
+        Leaving: "ease-in duration-200"
+          From: "opacity-100"
+          To: "opacity-0"
+      -->
+      <div class="fixed inset-0 transition-opacity bg-black bg-opacity-60" aria-hidden="true"></div>
+
+      <%# This element is to trick the browser into centering the modal contents. %>
+      <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+      <!--
+        Modal panel, show/hide based on modal state.
+
+        Entering: "ease-out duration-300"
+          From: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+          To: "opacity-100 translate-y-0 sm:scale-100"
+        Leaving: "ease-in duration-200"
+          From: "opacity-100 translate-y-0 sm:scale-100"
+          To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+      -->
+      <div
+        class="relative inline-block w-64 max-w-xl overflow-hidden text-left align-bottom transition-all transform bg-surface rounded-xl shadow-elevation-3 sm:align-middle sm:my-8 text-on-surface"
+        data-jove--turbo-dialog--component-target="modal">
+        <div class="flex flex-col p-6 space-y-6 bg-primary bg-opacity-elevation-3">
+          <div class="space-y-4">
+            <% if @icon %>
+              <div class="flex items-center justify-center w-6 h-6 mx-auto rounded-full">
+                <%= render Jove::Icon::Component.new(icon: @icon, class: 'text-secondary', size: 6) %>
+              </div>
+            <% end %>
+            <h3 class="text-headline-md <%= 'text-center' if @icon %>"><%= @title %></h3>
+            <div class="text-body-md">
+              <%= content %>
+            </div>
+          </div>
+          <div class="flex flex-row-reverse justify-end space-x-2">
+            <% if @dismissable %>
+              <%= render(Jove::Button::Component.new(variant: :text, label: t('.dismiss'), data: { action: 'jove--turbo-dialog--component#close' })) %>
+            <% end %>
+            <% actions.each do |a| %><%= a %><% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,47 @@
+<% if first? %>
+  <% unless current_page.first? %>
+    <%= link_to(url, class: container_classes, title: t('.first'), data: data_attrs) do %>
+      <%= tag.div class: state_classes do %>
+        <%= render(Jove::Icon::Component.new(icon: 'heroicons/outline/chevron-left', size: 4)) %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% elsif prev? %>
+  <% unless current_page.first? %>
+    <%= link_to(url, class: container_classes, rel: 'prev', data: data_attrs) do %>
+      <%= tag.div class: state_classes do %>
+        <%= t('.prev') %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% elsif page? %>
+  <% unless page.current? %>
+    <%= link_to(url, class: container_classes, data: data_attrs) do %>
+      <%= tag.div class: state_classes do %>
+        <%= page %>
+      <% end %>
+    <% end %>
+  <% else %>
+    <%= tag.span class: container_classes do %>
+      <%= tag.span class: state_classes do %><%= page %><% end %>
+    <% end %>
+  <% end %>
+<% elsif gap? %>
+  <%= tag.span class: container_classes do %>&mldr;<% end %>
+<% elsif next? %>
+  <% unless current_page.last? %>
+    <%= link_to(url, class: container_classes, rel: 'next', data: data_attrs) do %>
+      <%= tag.div class: state_classes do %>
+        <%= t('.next') %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% elsif last? %>
+  <% unless current_page.last? %>
+    <%= link_to(url, class: container_classes, title: t('.last'), data: data_attrs) do %>
+      <%= tag.div class: state_classes do %>
+        <%= render(Jove::Icon::Component.new(icon: 'heroicons/outline/chevron-right', size: 4)) %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

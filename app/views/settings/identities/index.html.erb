@@ -1,0 +1,42 @@
+<%- title -%>
+
+<div class="w-full max-w-2xl mx-auto mt-8">
+  <%= render(Jove::Panel::Component.new) do %>
+    <div class="p-6 space-y-4">
+      <p class="text-md"><%= t('.body') %></p>
+
+      <%= render(Jove::StackedList::Component.new) do |list| %>
+        <% @identities.each do |identity| %>
+          <% list.item id: "identity_#{identity.id}" do |item| %>
+            <% item.leading_avatar identity.avatar_url %>
+            <% item.headline do %>
+              <%= identity.name %>
+              <% if identity.default? %>&nbsp;<%= render(Jove::Badge::Component.new(color: :primary, label: t('.default'), class: 'ml-2')) %><% end %>
+              <% unless identity.valid_for_login? %><%= render(Jove::Badge::Component.new(color: :notice, label: t('.invalid_for_login'), class: 'ml-2')) %><% end %>
+            <% end %>
+            <% item.body do %><%= identity.corporation_name %> <% if identity.alliance %>(<%= identity.alliance_name %>)<% end %><% end %>
+            <% item.trailer do %>
+              <%= render(Jove::Dropdown::Component.new(wrapper_class: 'mt-1')) do |dropdown| %>
+                <% dropdown.button label: t('.actions.button', name: identity.name), variant: :overflow, color: :surface %>
+                <% dropdown.menu do %>
+                  <%= render(Jove::Menu::Component.new) do |menu| %>
+                    <% menu.group do |group| %>
+                      <% group.item label: t('.actions.make_default'), href: settings_identity_change_default_path(identity), leading_icon: 'heroicons/outline/user', form: true, method: :put, data: { turbo_frame: '_top' } unless identity.default? || !identity.valid_for_login? %>
+                      <% group.item label: t('.actions.delete'), href: settings_identity_confirm_destroy_path(identity), leading_icon: 'heroicons/outline/trash', form: true, data: { turbo_frame: 'modal' } %>
+                    <% end %>
+                  <% end %>
+                <% end %>
+              <% end %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+
+      <div class="flex justify-center">
+        <%= form_tag settings_identities_path do %>
+          <%= render(Jove::Button::Component.new(label: t('.connect'), leading_icon: 'heroicons/outline/user-add', data: { turbo: false })) %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

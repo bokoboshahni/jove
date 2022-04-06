@@ -1,0 +1,11 @@
+<% content_for :main do %>
+  <div class="w-full max-w-2xl mx-auto mt-8">
+    <%= render(Jove::Tabs::Component.new) do |tabs| %>
+      <% tabs.item label: 'Account', href: settings_account_path, icon: 'heroicons/outline/cog', active: controller_name == 'account' %>
+      <% tabs.item label: 'Characters', href: settings_identities_path, icon: 'heroicons/outline/users', active: controller_name == 'identities' %>
+    <% end %>
+  </div>
+
+  <%= yield %>
+<% end %>
+<%= render template: 'layouts/application' %>

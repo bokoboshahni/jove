@@ -60,23 +60,22 @@ jobs:
     if: github.event_name != 'release'
     services:
       postgres:
-        image: postgres:14
+        image: postgres:14-alpine
         env:
-          POSTGRES_USER: jove
-          POSTGRES_DB: jove
-          POSTGRES_PASSWORD: ""
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
         ports: ["5432:5432"]
         options: >-
           --health-cmd pg_isready
-          --health-interval 10s
+          --health-interval 10ms
           --health-timeout 500ms
           --health-retries 15
       redis:
-        image: redis
+        image: redis:7-alpine
         ports: ["6379:6379"]
         options: >-
           --health-cmd "redis-cli ping"
-          --health-interval 10s
+          --health-interval 10ms
           --health-timeout 500ms
           --health-retries 15
 
@@ -97,9 +96,7 @@ jobs:
           JOVE_ESI_CLIENT_ID: 'dummy'
           JOVE_ESI_CLIENT_SECRET: 'dummy'
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-          PGHOST: localhost
-          PGUSER: jove
+          DATABASE_URL: postgres://postgres:postgres@localhost:5432/jove
           RAILS_ENV: test
-          SECRET_KEY_BASE: ${{ secrets.SECRET_KEY_BASE }}
         with:
-          coverageCommand: bin/rails db:setup && bin/rspec
+          coverageCommand: bin/ci-test

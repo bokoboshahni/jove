@@ -1,0 +1,15 @@
+<%- title -%>
+
+<div class="w-full max-w-2xl mx-auto mt-8">
+  <%= render(Jove::Panel::Component.new) do %>
+    <div class="p-6 space-y-4">
+      <h3 class="text-xl font-medium"><%= t('.delete_account.headline') %></h3>
+
+      <p class="text-md"><%= t('.delete_account.body') %></p>
+
+      <%= form_tag confirm_destroy_settings_account_path, method: :get do %>
+        <%= render(Jove::Button::Component.new(label: t('.delete_account.button'), color: :danger, data: { turbo_frame: 'modal' })) %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

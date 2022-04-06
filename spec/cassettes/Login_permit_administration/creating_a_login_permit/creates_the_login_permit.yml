@@ -1,0 +1,84 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://0.0.0.0:49319/__identify__
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '5'
+    body:
+      encoding: UTF-8
+      string: '29840'
+  recorded_at: Tue, 17 May 2022 20:27:11 GMT
+- request:
+    method: get
+    uri: https://esi.evetech.net/latest/alliances/99010079/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Jove/1.0; (+https://github.com/bokoboshahni/jove)
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Tue, 17 May 2022 20:27:16 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '169'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,If-None-Match,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Allow:
+      - GET,HEAD,OPTIONS
+      Cache-Control:
+      - public
+      Etag:
+      - '"3a82b807afcdedb8ec17551a757bd93f36e1b1f3b617095eb88f1ab1"'
+      Expires:
+      - Tue, 17 May 2022 21:27:16 GMT
+      Last-Modified:
+      - Tue, 17 May 2022 20:27:16 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '44'
+      X-Esi-Request-Id:
+      - 90c04ee1-f4fc-415f-a1e9-e36043c50381
+    body:
+      encoding: ASCII-8BIT
+      string: '{"creator_corporation_id":98645283,"creator_id":94809264,"date_founded":"2020-06-20T01:40:36Z","executor_corporation_id":98645283,"name":"Brave
+        United","ticker":"BRUVE"}'
+  recorded_at: Tue, 17 May 2022 20:27:16 GMT
+recorded_with: VCR 6.1.0

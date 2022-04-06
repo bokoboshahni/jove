@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/latest/characters/2113024536/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - ''
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Tue, 29 Mar 2022 02:01:20 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '207'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,If-None-Match,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Allow:
+      - GET,HEAD,OPTIONS
+      Cache-Control:
+      - public
+      Etag:
+      - '"283e45c72db67df2d72484a50a2da6f6c5f8d662cbab650dd0bd0b78"'
+      Expires:
+      - Tue, 29 Mar 2022 18:32:26 GMT
+      Last-Modified:
+      - Mon, 28 Mar 2022 18:32:26 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '40'
+      X-Esi-Request-Id:
+      - dcd4ebdd-20ec-4204-a657-e85c5324402e
+    body:
+      encoding: ASCII-8BIT
+      string: '{"alliance_id":99010079,"birthday":"2017-07-20T16:28:17Z","bloodline_id":13,"corporation_id":98613799,"description":"","gender":"male","name":"Bokobo
+        Shahni","race_id":4,"security_status":0.7826388230000001}'
+  recorded_at: Tue, 29 Mar 2022 02:01:20 GMT
+recorded_with: VCR 6.1.0

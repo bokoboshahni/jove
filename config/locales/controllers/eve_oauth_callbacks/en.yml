@@ -1,0 +1,11 @@
+---
+en:
+  eve_oauth_callbacks:
+    eve:
+      add_identity:
+        failure: Failed to add %{name} to your account. The character may already be in use or is not permitted to log in.
+        success: "%{name} has been successfully added to your account."
+      authenticate_user:
+        failure: We're sorry, but you are not permitted to log in.
+        success: Welcome back, %{name}!
+        success_alt: Welcome back, %{name} (logged in via %{alt}!

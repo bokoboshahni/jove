@@ -1,0 +1,190 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/latest/characters/2117692215/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Jove/1.0; (+https://github.com/bokoboshahni/jove)
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Tue, 17 May 2022 17:30:27 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '208'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,If-None-Match,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Allow:
+      - GET,HEAD,OPTIONS
+      Cache-Control:
+      - public
+      Etag:
+      - '"82cd1dc9ed13e508fd3da508a5d1a836e9137ee32158f66f8c87af6f"'
+      Expires:
+      - Wed, 18 May 2022 17:30:26 GMT
+      Last-Modified:
+      - Tue, 17 May 2022 17:30:26 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '33'
+      X-Esi-Request-Id:
+      - 7775f700-8423-4eef-a763-0962be92b0ea
+    body:
+      encoding: ASCII-8BIT
+      string: '{"alliance_id":99010079,"birthday":"2020-10-12T16:16:42Z","bloodline_id":5,"corporation_id":98613799,"description":"","gender":"male","name":"Campian
+        Shimaya","race_id":4,"security_status":0.7395651900000001}'
+  recorded_at: Tue, 17 May 2022 17:30:28 GMT
+- request:
+    method: get
+    uri: https://esi.evetech.net/latest/corporations/98613799/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Jove/1.0; (+https://github.com/bokoboshahni/jove)
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Tue, 17 May 2022 17:30:28 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '1520'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,If-None-Match,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Allow:
+      - GET,HEAD,OPTIONS
+      Cache-Control:
+      - public
+      Etag:
+      - '"3ef9243d1cb22dd2e6e8bd21e3c0a2e7404d348004463dba395292e1"'
+      Expires:
+      - Tue, 17 May 2022 18:21:41 GMT
+      Last-Modified:
+      - Tue, 17 May 2022 17:21:41 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Encoding
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '32'
+      X-Esi-Request-Id:
+      - 65b15d7c-1124-4b32-87af-6f7a341f9c6d
+    body:
+      encoding: ASCII-8BIT
+      string: '{"alliance_id":99010079,"ceo_id":2116142894,"creator_id":2112550682,"date_founded":"2019-09-07T17:09:22Z","description":"<font
+        size=\"13\" color=\"#ff999999\"><\/font><font size=\"12\" color=\"#bfffffff\">The
+        Brave Collective''s Highsecurity corporation.<br><br>Brave Empire is a non
+        war-deccable corporation operating in High Sec, Low Sec &amp; Null space.
+        Brave Empire is a full member of the nullsec based Brave Collective alliance
+        with access to all of their space, services and resources - but with the comfort
+        of a war-free highsec home so you can make the most of all space.  <br><br>We
+        run fleets for all kinds of activities, from mining to gatecamps, lowsec roams
+        and everything in between and have a diverse community of capsuleers with
+        experience in all of it.<br><br>If you''re interested in joining please stop
+        by the <\/font><font size=\"12\" color=\"#ff6868e1\"><a href=\"joinChannel:player_4620c1a1d35a11e9ac739abe94f5a43f\/\/None\/\/None\">Brave
+        Empire Public<\/a><\/font><font size=\"12\" color=\"#bfffffff\"> channel in-game
+        and see <\/font><font size=\"12\" color=\"#ffffe400\"><a href=\"https:\/\/wiki.bravecollective.com\/public\/corps\/brave-empire\/how-to-apply\">How
+        to Apply to Brave Empire<\/a><\/font><font size=\"12\" color=\"#bfffffff\">
+        for instructions on how to apply. <\/font>","home_station_id":60014104,"member_count":1943,"name":"Brave
+        Empire","shares":1000,"tax_rate":0.10000000149011612,"ticker":"I-EVE","url":"https:\/\/wiki.bravecollective.com\/public\/corps\/brave-empire\/start"}'
+  recorded_at: Tue, 17 May 2022 17:30:28 GMT
+- request:
+    method: get
+    uri: https://esi.evetech.net/latest/alliances/99010079/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Jove/1.0; (+https://github.com/bokoboshahni/jove)
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Tue, 17 May 2022 17:30:28 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '169'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,If-None-Match,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Allow:
+      - GET,HEAD,OPTIONS
+      Cache-Control:
+      - public
+      Etag:
+      - '"3a82b807afcdedb8ec17551a757bd93f36e1b1f3b617095eb88f1ab1"'
+      Expires:
+      - Tue, 17 May 2022 18:16:23 GMT
+      Last-Modified:
+      - Tue, 17 May 2022 17:16:23 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '32'
+      X-Esi-Request-Id:
+      - e2bc56cc-e7c3-41c6-9921-ae3157a10119
+    body:
+      encoding: ASCII-8BIT
+      string: '{"creator_corporation_id":98645283,"creator_id":94809264,"date_founded":"2020-06-20T01:40:36Z","executor_corporation_id":98645283,"name":"Brave
+        United","ticker":"BRUVE"}'
+  recorded_at: Tue, 17 May 2022 17:30:28 GMT
+recorded_with: VCR 6.1.0

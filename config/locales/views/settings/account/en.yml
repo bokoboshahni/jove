@@ -1,0 +1,14 @@
+---
+en:
+  settings:
+    account:
+      confirm_destroy:
+        body: This action will permanently delete your account and associated identities. It will not delete public, corporation, or alliance-level data associated with your characters.
+        delete: Delete
+        title: Delete account?
+      show:
+        delete_account:
+          body: Deleting your account will remove your login information and associated characters from the system. It will not delete public, corporation, or alliaance-level data associated your characters.
+          button: Delete your account
+          headline: Delete account
+        title: Account

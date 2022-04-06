@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/latest/alliances/99003214/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - ''
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Tue, 29 Mar 2022 01:52:11 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '173'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,If-None-Match,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Allow:
+      - GET,HEAD,OPTIONS
+      Cache-Control:
+      - public
+      Etag:
+      - '"20586886495c1f21c4522323fc69ab262101e36c35b92bdb8164763c"'
+      Expires:
+      - Tue, 29 Mar 2022 02:51:21 GMT
+      Last-Modified:
+      - Tue, 29 Mar 2022 01:51:21 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '49'
+      X-Esi-Request-Id:
+      - a8f768ac-74db-4d1e-88e0-4dedd3deb865
+    body:
+      encoding: ASCII-8BIT
+      string: '{"creator_corporation_id":98199293,"creator_id":91432281,"date_founded":"2013-05-06T22:20:14Z","executor_corporation_id":98199293,"name":"Brave
+        Collective","ticker":"BRAVE"}'
+  recorded_at: Tue, 29 Mar 2022 01:52:11 GMT
+recorded_with: VCR 6.1.0

@@ -1,0 +1,4 @@
+<%= tag.span(class: container_classes, **@system_args) do %>
+  <%= render(Jove::Icon::Component.new(icon: @icon, size: 3, class: icon_classes)) if @icon %>
+  <%= @label %>
+<% end %>

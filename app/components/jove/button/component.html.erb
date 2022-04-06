@@ -1,0 +1,19 @@
+<%= tag.send(@tag, class: container_classes, disabled: @disabled, title: @title, **@system_args) do %>
+  <%= tag.div class: elevation_classes do %>
+    <%= tag.div class: state_classes do %>
+      <% if @variant == :overflow %>
+        <%= render(Jove::Icon::Component.new(icon: 'heroicons/outline/dots-vertical', size: 6)) %>
+      <% elsif @variant == :avatar %>
+        <%= image_tag @avatar, class: 'h-8 w-8 rounded-full' %>
+      <% else %>
+        <% if @leading_icon %>
+          <%= render(Jove::Icon::Component.new(icon: @leading_icon, size: 5, class: leading_icon_classes)) %>
+        <% end %>
+        <%= @label %>
+        <% if @trailing_icon %>
+          <%= render(Jove::Icon::Component.new(icon: @trailing_icon, size: 5, class: trailing_icon_classes)) %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

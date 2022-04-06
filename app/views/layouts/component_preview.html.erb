@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html class="h-full <%= params.dig(:lookbook, :display, :theme) %>" lang="en">
+<head>
+  <%= javascript_include_tag 'theme-toggle' if params.dig(:lookbook, :display, :theme_toggle) %>
+
+  <title>Component Preview</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Source+Code+Pro:ital,wght@0,400;1,300;1,400&display=swap" rel="stylesheet">
+
+  <%= stylesheet_link_tag 'tailwind', "data-turbo-track": 'reload' %>
+
+  <%= stylesheet_link_tag 'application', "data-turbo-track": 'reload' %>
+  <%= javascript_importmap_tags %>
+</head>
+<body class="h-full <%= params.dig(:lookbook, :display, :body_class) || 'bg-background' %>">
+  <div class="<%= params.dig(:lookbook, :display, :wrapper_class) || 'p-4' %>">
+    <%= yield %>
+  </div>
+</body>
+</html>

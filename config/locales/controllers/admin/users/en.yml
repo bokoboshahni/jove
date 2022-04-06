@@ -1,0 +1,7 @@
+---
+en:
+  admin:
+    users:
+      destroy:
+        failure: Failed to delete account for %{name}
+        success: Successfully deleted account for %{name}

@@ -1,0 +1,14 @@
+<%= tag.send(@tag, class: container_classes, **@system_args) do %>
+  <div class="flex items-center justify-between -mx-4 rounded-lg">
+    <div class="shrink-0">
+      <%= leading %>
+    </div>
+    <div class="flex-1 ml-4">
+      <% if headline? %><p class="flex items-center text-label-lg"><%= headline %></p><% end %>
+      <% if body? %><p class="mt-2 text-label-md"><%= body %></p><% end %>
+    </div>
+    <div class="ml-4">
+      <%= trailer %>
+    </div>
+  </div>
+<% end %>

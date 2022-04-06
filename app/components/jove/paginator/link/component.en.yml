@@ -1,0 +1,10 @@
+---
+en:
+  jove:
+    paginator:
+      link:
+        component:
+          first: First
+          last: Last
+          next: Next
+          prev: Previous

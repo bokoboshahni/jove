@@ -1,13 +1,131 @@
+/*
+ * require ./theme
+ * require ./vendor/easings.min
+ */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/*
-
 @layer components {
-  .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
+  .text-body-sm { @apply text-xs }
+  .text-body-md { @apply text-sm }
+  .text-body-lg { @apply text-md }
+
+  .text-display-sm { @apply text-4xl }
+  .text-display-md { @apply text-5xl }
+  .text-display-lg { @apply text-6xl }
+
+  .text-headline-sm { @apply text-xl }
+  .text-headline-md { @apply text-2xl }
+  .text-headline-lg { @apply text-3xl }
+
+  .text-label-sm { @apply text-2xs }
+  .text-label-md { @apply text-xs }
+  .text-label-lg { @apply text-sm }
+
+  .text-title-sm { @apply text-sm }
+  .text-title-md { @apply text-md }
+  .text-title-lg { @apply text-lg }
+
+  .sun-and-moon > :is(.moon, .sun, .sun-beams) {
+    transform-origin: center center;
+  }
+
+  .sun-and-moon > :is(.moon, .sun) {
+    fill: rgba(var(--jove-theme-on-surface));
+
+    @nest
+  }
+
+  .theme-toggle:is(:hover, :focus-visible) > .sun-and-moon {
+    fill: rgba(var(--jove-theme-on-surface));
+  }
+
+  .sun-and-moon > .sun-beams {
+    stroke: rgba(var(--jove-theme-on-surface));
+    stroke-width: 2px;
+
+    @nest .theme-toggle:is(:hover, :focus-visible) & {
+      stroke: var(--icon-fill-hover);
+    }
+  }
+
+  [data-theme="dark"] .sun-and-moon > .sun {
+    transform: scale(1.75);
+  }
+
+  [data-theme="dark"] .sun-and-moon > .sun-beams {
+    opacity: 0;
+  }
+
+  [data-theme="dark"] .sun-and-moon > .moon > circle {
+    transform: translateX(-7px);
+
+    @supports (cx: 1) {
+      transform: translateX(0);
+      cx: 17;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .sun-and-moon > .sun {
+      transition: transform .5s var(--ease-elastic-3);
+    }
+
+    .sun-and-moon > .sun-beams {
+      transition:
+        transform .5s var(--ease-elastic-4),
+        opacity .5s var(--ease-3)
+      ;
+    }
+
+    .sun-and-moon .moon > circle {
+      transition: transform .25s var(--ease-out-5);
+
+      @supports (cx: 1) {
+        transition: cx .25s var(--ease-out-5);
+      }
+    }
+
+    [data-theme="dark"] .sun-and-moon > .sun {
+      transform: scale(1.75);
+      transition-timing-function: var(--ease-3);
+      transition-duration: .25s;
+    }
+
+    [data-theme="dark"] .sun-and-moon > .sun-beams {
+      transform: rotateZ(-25deg);
+      transition-duration: .15s;
+    }
+
+    [data-theme="dark"] .sun-and-moon > .moon > circle {
+      transition-delay: .25s;
+      transition-duration: .5s;
+    }
+  }
+
+  .theme-toggle {
+    --icon-fill: var(rgba(--jove-theme-on-surface));
+    --icon-fill-hover: var(rgba(--jove-theme-on-surface));
+
+    aspect-ratio: 1;
+    border-radius: 50%;
+
+    cursor: pointer;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+
+    outline-offset: 5px;
+
+    & > svg {
+      inline-size: 100%;
+      block-size: 100%;
+      stroke-linecap: round;
+    }
+
+    @media (hover: none) {
+      --size: 48px;
+    }
   }
 }
-
-*/

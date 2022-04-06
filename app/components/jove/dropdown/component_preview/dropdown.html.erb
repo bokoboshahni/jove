@@ -1,0 +1,15 @@
+<div class="flex <%= wrapper %>">
+  <%= render(Jove::Dropdown::Component.new(position:)) do |c| %>
+    <% c.button(label: 'Dropdown', trailing_icon: 'heroicons/outline/chevron-down') %>
+
+    <% c.menu do %>
+      <%= render(Jove::Menu::Component.new) do |menu| %>
+        <% menu.group do |group| %>
+          <% group.item(label: 'Account settings') %>
+          <% group.item(label: 'Support') %>
+          <% group.item(label: 'License') %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

@@ -1,10 +1,47 @@
 # frozen_string_literal: true
 
-Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+Rails.application.routes.draw do # rubocop:disable Metrics/BlockLength
+  mount Lookbook::Engine, at: '/lookbook' if Rails.env.development?
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  devise_for :user, path: '', controllers: { omniauth_callbacks: 'eve_oauth_callbacks' }
+  devise_scope :user do
+    delete 'logout', to: 'devise/sessions#destroy', as: :destroy_user_session
+  end
+
+  namespace :settings do
+    resource :account, controller: 'account', only: %i[show update destroy] do
+      get :confirm_destroy
+    end
+
+    resources :identities, path: 'characters', only: %i[index new create destroy] do
+      put :change_default
+      get :confirm_destroy
+      post :switch
+    end
+
+    root to: redirect('/settings/account')
+  end
+
+  namespace :admin do
+    resources :alliances, only: %i[index]
+
+    resources :corporations, only: %i[index]
+
+    resources :characters, only: %i[index]
+
+    resources :login_permits, path: 'authentication', only: %i[index new create destroy] do
+      get :confirm_destroy
+    end
+    resources :users, only: %i[index destroy] do
+      get :confirm_destroy
+    end
+
+    root to: 'dashboard#show'
+  end
+
+  namespace :dashboard do
+    root to: 'overview#show'
+  end
 
   root 'home#index'
 end

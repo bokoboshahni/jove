@@ -1,0 +1,105 @@
+
+<%= render(Jove::Masthead::Component.new(avatar: current_identity.avatar_url)) do |m| %>
+  <% m.branding do %>
+    <span class="text-xl">&#9795;</span>
+  <% end %>
+
+  <% m.item label: t('.nav.dashboard'), href: dashboard_root_path, active: dashboard_controller? %>
+
+  <% if current_user.admin? %>
+    <% m.item label: t('.nav.admin.button'), active: admin_controller? do |i| %>
+      <% i.menu do %>
+        <div class="relative flex flex-col p-4 space-y-2">
+          <%= link_to admin_login_permits_path, class: 'block rounded-md' do %>
+            <div class="flex flex-col px-4 py-2 space-y-2 rounded-lg hover:bg-primary hover:bg-opacity-hover focus:bg-primary focus:bg-opacity-focus active:bg-primary active:bg-opacity-press">
+              <p class="text-sm font-medium">Authentication</p>
+              <p class="text-xs">Configure who is allowed to log in.</p>
+            </div>
+          <% end %>
+
+          <%= link_to admin_users_path, class: 'block rounded-md' do %>
+            <div class="flex flex-col px-4 py-2 space-y-2 rounded-lg hover:bg-primary hover:bg-opacity-hover focus:bg-primary focus:bg-opacity-focus active:bg-primary active:bg-opacity-press">
+              <p class="text-sm font-medium">Users</p>
+              <p class="text-xs">Manage registered users.</p>
+            </div>
+          <% end %>
+
+          <%= link_to admin_alliances_path, class: 'block rounded-md' do %>
+            <div class="flex flex-col px-4 py-2 space-y-2 rounded-lg hover:bg-primary hover:bg-opacity-hover focus:bg-primary focus:bg-opacity-focus active:bg-primary active:bg-opacity-press">
+              <p class="text-sm font-medium">Alliances</p>
+              <p class="text-xs">Manage alliances.</p>
+            </div>
+          <% end %>
+
+          <%= link_to admin_corporations_path, class: 'block rounded-md' do %>
+            <div class="flex flex-col px-4 py-2 space-y-2 rounded-lg hover:bg-primary hover:bg-opacity-hover focus:bg-primary focus:bg-opacity-focus active:bg-primary active:bg-opacity-press">
+              <p class="text-sm font-medium">Corporations</p>
+              <p class="text-xs">Manage corporations.</p>
+            </div>
+          <% end %>
+
+          <%= link_to admin_characters_path, class: 'block rounded-md' do %>
+            <div class="flex flex-col px-4 py-2 space-y-2 rounded-lg hover:bg-primary hover:bg-opacity-hover focus:bg-primary focus:bg-opacity-focus active:bg-primary active:bg-opacity-press">
+              <p class="text-sm font-medium">Characters</p>
+              <p class="text-xs">Manage characters.</p>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <% m.menu do %>
+    <div class="w-64 overflow-hidden rounded-xl shadow-elevation-2 bg-surface text-on-surface">
+      <div class="rounded-xl bg-primary bg-opacity-elevation-2">
+        <div class="divide-y divide-outline" role="menu" aria-orientation="vertical" aria-labelledby="user_menu_button" tabindex="-1">
+          <div class="flex flex-col items-center py-4 space-y-4">
+            <%= render(Jove::Avatar::Component.new(src: current_identity.avatar_url, size: 24, class: 'shadow-elevation-1')) %>
+            <div class="space-y-1">
+              <p id="current_identity_name" class="text-lg font-medium text-center"><%= current_identity.name %></p>
+              <p class="text-center text-body-xs">
+                <%= current_identity.corporation_name %>
+                <% if current_identity.alliance %>(<%= current_identity.alliance_name %>)<% end %>
+              </p>
+            </div>
+            <%= render(Jove::Button::Component.new(tag: :a, label: t('.user_menu.settings'), href: settings_account_path)) %>
+          </div>
+          <div class="px-4 py-4 space-y-2 text-center">
+            <% other_identities.select(&:valid_for_login?).each do |identity| %>
+              <%= form_tag settings_identity_switch_path(identity) do %>
+                <%= button_tag class: 'w-full text-left', data: { turbo: false } do %>
+                  <div class="flex items-center p-2 rounded-lg hover:bg-on-surface hover:bg-opacity-hover">
+                    <div class="shrink-0">
+                      <%= render(Jove::Avatar::Component.new(src: identity.avatar_url, size: 8)) %>
+                    </div>
+                    <div class="ml-2">
+                      <p class="text-label-lg"><%= identity.name %></p>
+                      <p class="text-label-md"><%= identity.corporation_name %></p>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
+            <% end %>
+            <%= form_tag settings_identities_path do %>
+              <%= button_tag class: 'w-full text-left', data: { turbo: false } do %>
+                <div class="flex items-center p-2 rounded-lg hover:bg-on-surface hover:bg-opacity-hover">
+                  <div class="shrink-0">
+                    <%= render(Jove::Icon::Component.new(icon: 'heroicons/outline/user-add', size: 8)) %>
+                  </div>
+                  <div class="ml-2">
+                    <p class="text-label-lg"><%= t('.user_menu.add_identity') %></p>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="py-4 text-center">
+            <%= form_tag destroy_user_session_path, method: :delete do %>
+              <%= render(Jove::Button::Component.new(variant: :text, label: t('.user_menu.log_out'), data: { turbo: false })) %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

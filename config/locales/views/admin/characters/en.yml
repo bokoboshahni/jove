@@ -1,0 +1,15 @@
+---
+en:
+  admin:
+    characters:
+      characters_grid:
+        columns:
+          alliance: Alliance
+          corporation: Corporation
+          created: Created
+          last_login: Last login
+          name: Name
+          updated: Updated
+        never: Never
+      index:
+        title: Characters

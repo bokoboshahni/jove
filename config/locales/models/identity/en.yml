@@ -1,0 +1,11 @@
+---
+en:
+  activerecord:
+    errors:
+      models:
+        identity:
+          attributes:
+            base:
+              not_permitted: Character is not permitted to log in.
+            character_id:
+              taken: Character is already registered.

@@ -1,0 +1,5 @@
+<%= render(Jove::Banner::Component.new(color:)) do |b| %>
+  One line text string with two actions.
+
+  <% b.action do %><%= render(Jove::Button::Component.new(label: 'Action', variant: :text, color:)) %><% end %>
+<% end %>

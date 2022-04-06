@@ -1,0 +1,9 @@
+<%- title -%>
+
+<div class="mx-auto mt-8 max-w-7xl">
+  <%= render(Jove::Panel::Component.new) do %>
+    <div class="p-4 space-y-4">
+      <%= render partial: 'corporations_grid', locals: { corporations: @corporations } %>
+    </div>
+  <% end %>
+</div>

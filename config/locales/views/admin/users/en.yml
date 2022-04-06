@@ -1,0 +1,19 @@
+---
+en:
+  admin:
+    users:
+      confirm_destroy:
+        body: This action will permanently delete the user's account and associated identities. It will not delete public, corporation, or alliance-level data associated with the user's identities.
+        delete: Confirm
+        title: Delete user?
+      index:
+        title: Users
+      users_grid:
+        actions:
+          button: Actions for %{name}
+          delete: Delete
+        columns:
+          alliance: Alliance
+          corporation: Corporation
+          last_login: Last login
+          name: Name

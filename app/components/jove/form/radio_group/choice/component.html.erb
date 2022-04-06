@@ -1,0 +1,13 @@
+<div class="relative flex items-start">
+  <div class="flex items-center">
+    <%= radio_button_tag(@name, @tag_value, input_checked?(radio_button_options), radio_button_options) %>
+  </div>
+  <div class="ml-4">
+    <%= render(Jove::Form::Label::Component.new(**label_options)) %>
+    <% if @description %>
+      <%= tag.p(class: description_classes) do %>
+        <%= @description %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
