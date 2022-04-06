@@ -1,0 +1,7 @@
+---
+en:
+  settings:
+    account:
+      destroy:
+        failure: Failed to delete your account. Are you the only administrator?
+        success: Your account has been deleted.

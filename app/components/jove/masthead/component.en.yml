@@ -1,0 +1,7 @@
+---
+en:
+  jove:
+    masthead:
+      component:
+        user_menu:
+          button: Open user menu

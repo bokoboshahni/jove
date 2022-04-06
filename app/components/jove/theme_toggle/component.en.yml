@@ -1,0 +1,6 @@
+---
+en:
+  jove:
+    theme_toggle:
+      component:
+        title: Toggle light and dark mode

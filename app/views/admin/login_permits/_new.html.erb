@@ -1,0 +1,9 @@
+<%= form_with model: @login_permit, url: admin_login_permits_path, builder: Jove::Form::Builder, html: { id: :new_login_permit, autocomplete: 'off', data: { turbo_frame: '_top' } } do |f| %>
+  <%= f.radio_group(:permittable_type) do |g| %>
+    <% g.choice('Alliance', label: t('.permittable_type.alliance.label'), description: t('.permittable_type.alliance.description')) %>
+    <% g.choice('Corporation', label: t('.permittable_type.corporation.label'), description: t('.permittable_type.corporation.description')) %>
+    <% g.choice('Character', label: t('.permittable_type.character.label'), description: t('.permittable_type.character.description')) %>
+  <% end %>
+
+  <%= f.text_field(:permittable_id) %>
+<% end %>

@@ -1,0 +1,23 @@
+---
+en:
+  activerecord:
+    attributes:
+      login_permit:
+        permittable_id: Entity
+    errors:
+      models:
+        login_permit:
+          attributes:
+            permittable_id:
+              blank: Field is required.
+              invalid: "%{attribute} does not exist."
+              taken: Authorization already exists.
+  helpers:
+    label:
+      login_permit:
+        permittable: Entity
+        permittable_id: ID
+        permittable_type: Authorization type
+    submit:
+      login_permit:
+        create: Authorize

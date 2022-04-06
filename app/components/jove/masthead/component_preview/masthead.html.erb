@@ -1,0 +1,22 @@
+<%= render(Jove::Masthead::Component.new(avatar: 'https://images.evetech.net/characters/2113024536/portrait')) do |m| %>
+  <% m.branding do %>
+    <span class="text-xl">&#9795;</span>
+  <% end %>
+
+  <% m.item label: 'Item', href: '', active: true %>
+
+  <% m.item label: 'Item' do |i| %>
+    <% i.menu do %>
+      Menu
+    <% end %>
+  <% end %>
+
+  <% m.menu do %>
+    User Menu
+  <% end %>
+<% end %>
+<% if banner %>
+  <%= render(Jove::Banner::Component.new(color: :danger)) do %>
+    This is a banner.
+  <% end %>
+<% end %>

@@ -1,0 +1,12 @@
+---
+en:
+  application:
+    masthead:
+      nav:
+        admin:
+          button: Administration
+        dashboard: Dashboard
+      user_menu:
+        add_identity: Connect character
+        log_out: Log out
+        settings: Manage your account

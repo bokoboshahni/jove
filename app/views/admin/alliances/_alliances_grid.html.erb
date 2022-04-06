@@ -1,0 +1,15 @@
+<%= render(Jove::TurboGrid::Component.new(id: :alliances, scope: alliances, params:)) do |grid| %>
+  <% grid.column(label: t('.columns.name'), sorted: sorted?(:name), sort_dir:) %>
+  <% grid.column(label: t('.columns.ticker'), sorted: sorted?(:ticker), sort_dir:) %>
+  <% grid.column(label: t('.columns.created'), sorted: sorted?(:created), sort_dir:) %>
+  <% grid.column(label: t('.columns.updated'), sorted: sorted?(:updated), sort_dir:) %>
+
+  <% alliances.each do |alliance| %>
+    <% grid.row do |row| %>
+      <% row.cell do %><%= alliance.name %><% end %>
+      <% row.cell do %><%= alliance.ticker %><% end %>
+      <% row.cell do %><%= local_time(alliance.created_at) %><% end %>
+      <% row.cell do %><%= local_time(alliance.esi_last_modified_at) %><% end %>
+    <% end %>
+  <% end %>
+<% end %>

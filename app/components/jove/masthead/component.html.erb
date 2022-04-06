@@ -1,0 +1,19 @@
+<header class="bg-surface shadow-elevation-1 text-on-surface">
+  <div class="bg-primary bg-opacity-elevation-1">
+    <nav class="flex items-center justify-between h-12 px-4">
+      <div class="flex items-center shrink-0">
+        <%= branding %>
+      </div>
+      <div class="hidden md:-my-px md:flex md:ml-4 md:space-x-2" role="navigation">
+        <% items.each do |i| %><%= i %><% end %>
+      </div>
+      <div class="flex items-center ml-4 space-x-2">
+        <%= render(Jove::ThemeToggle::Component.new) %>
+        <%= render(Jove::Dropdown::Component.new(position: :right, wrapper_class: 'max-w-xs z-10')) do |d| %>
+          <% d.button variant: :avatar, avatar: @avatar, label: t('.user_menu.button') %>
+          <% d.menu do %><%= menu %><% end %>
+        <% end %>
+      </div>
+    </nav>
+  </div>
+</header>

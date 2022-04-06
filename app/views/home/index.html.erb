@@ -1,0 +1,14 @@
+<%= render 'application/flash' %>
+<div class="flex items-center justify-center min-h-full px-4 py-4">
+  <div class="w-full max-w-md space-y-4">
+    <div class="flex justify-center text-on-background">
+      <h1 class="text-headline-xl text-neutral-400">&#9795;</h1>
+    </div>
+    <div class="flex justify-center">
+      <%= button_to user_eve_omniauth_authorize_path, data: { turbo: false } do %>
+        <span class="sr-only"><%= t('.log_in_button') %></span>
+        <%= image_tag('eve-sso-login-black-small.png') %>
+      <% end %>
+    </div>
+  </div>
+</div>

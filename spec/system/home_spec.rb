@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require 'system_helper'
 
 RSpec.describe 'Homepage', type: :system do
-  before do
-    driven_by(:rack_test)
-  end
+  it 'shows the log in button' do
+    visit root_path
 
-  pending "add some scenarios (or delete) #{__FILE__}"
+    expect(page).to have_content('Log in with EVE Online')
+  end
 end

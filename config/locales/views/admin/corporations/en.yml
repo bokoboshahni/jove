@@ -1,0 +1,13 @@
+---
+en:
+  admin:
+    corporations:
+      corporations_grid:
+        columns:
+          alliance: Alliance
+          created: Created
+          name: Name
+          ticker: Ticker
+          updated: Updated
+      index:
+        title: Corporations

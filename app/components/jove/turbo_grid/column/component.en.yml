@@ -1,0 +1,7 @@
+---
+en:
+  jove:
+    turbo_grid:
+      column:
+        component:
+          actions: Actions

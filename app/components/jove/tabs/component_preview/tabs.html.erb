@@ -1,0 +1,9 @@
+<div class="w-full max-w-2xl">
+  <%= render(Jove::Tabs::Component.new) do |tabs| %>
+    <% tabs.item label: 'Item', href: '#', icon: 'heroicons/outline/cog', active: true %>
+    <% tabs.item label: 'Item', href: '#', icon: 'heroicons/outline/cog' %>
+    <% tabs.item label: 'Item', href: '#', icon: 'heroicons/outline/cog' %>
+    <% tabs.item label: 'Item', href: '#', icon: 'heroicons/outline/cog' %>
+    <% tabs.item label: 'Item', href: '#', icon: 'heroicons/outline/cog' %>
+  <% end %>
+</div>

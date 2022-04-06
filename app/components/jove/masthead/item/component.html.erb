@@ -1,0 +1,32 @@
+<% if menu? %>
+  <div
+    class="relative inline-block"
+    data-controller="jove--dropdown--component">
+    <%= tag.button(class: container_classes, **dropdown_attrs) do %>
+      <div class="<%= state_classes %>">
+        <%= @label %>
+        <%= render(Jove::Icon::Component.new(icon: 'heroicons/outline/chevron-down', size: 4, class: 'ml-3 -mr-1')) %>
+      </div>
+    <% end %>
+
+    <div
+      class="<%= menu_wrapper_classes %>"
+      data-jove--dropdown--component-target="menu"
+      data-transition-enter-from="opacity-0 scale-95"
+      data-transition-enter-to="opacity-100 scale-100"
+      data-transition-leave-from="opacity-100 scale-100"
+      data-transition-leave-to="opacity-0 scale-95">
+      <div class="<%= menu_container_classes %>">
+        <div class="<%= menu_elevation_classes %>">
+          <%= menu %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% else %>
+  <%= link_to @href, class: container_classes do %>
+    <div class="<%= state_classes %>">
+      <%= @label %>
+    </div>
+  <% end %>
+<% end %>

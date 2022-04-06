@@ -1,0 +1,7 @@
+<%= tag.send(@tag, class: container_classes) do %>
+  <%= tag.div(class: elevation_classes) do %>
+    <%= tag.div(class: state_classes) do %>
+      <%= content %>
+    <% end %>
+  <% end %>
+<% end %>

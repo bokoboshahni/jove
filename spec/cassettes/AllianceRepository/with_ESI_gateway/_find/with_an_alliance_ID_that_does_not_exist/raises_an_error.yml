@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/latest/alliances/12345678/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - ''
+      Expect:
+      - ''
+  response:
+    status:
+      code: 404
+      message: ''
+    headers:
+      Date:
+      - Tue, 29 Mar 2022 01:52:11 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '30'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,If-None-Match,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Allow:
+      - GET,HEAD,OPTIONS
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '99'
+      X-Esi-Error-Limit-Reset:
+      - '49'
+      X-Esi-Request-Id:
+      - 451952b4-4a67-471b-9917-6160ce42cb0a
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":"Alliance not found"}'
+  recorded_at: Tue, 29 Mar 2022 01:52:11 GMT
+recorded_with: VCR 6.1.0

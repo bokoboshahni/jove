@@ -1,0 +1,19 @@
+---
+en:
+  settings:
+    identities:
+      confirm_destroy:
+        body:
+          html: This action will permanently disconnect <span class="font-medium">%{name}</span> from your account.
+        delete: Disconnect
+        title: Disconnect character?
+      index:
+        actions:
+          button: Actions for %{name}
+          delete: Disconnect
+          make_default: Make default
+        body: Characters that you have associated with your account.
+        connect: Connect character
+        default: Default
+        invalid_for_login: Locked
+        title: Characters

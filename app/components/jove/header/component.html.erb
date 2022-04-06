@@ -1,0 +1,21 @@
+<div class="flex items-center justify-between space-x-4">
+  <div class="flex items-start space-x-4">
+    <% if avatar? %>
+      <div class="flex-shrink-0">
+        <%= avatar %>
+      </div>
+    <% end %>
+
+    <div>
+      <% if title? %><h1 class="text-title-lg text-on-background"><%= title %></h1><% end %>
+      <% if description? %><p class="text-body-md text-on-background"><%= description %></p><% end %>
+    </div>
+  </div>
+  <% if actions? %>
+    <div class="flex justify-end space-x-2">
+      <% actions.each do |action| %>
+        <%= action %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

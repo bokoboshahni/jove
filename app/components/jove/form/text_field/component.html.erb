@@ -1,0 +1,39 @@
+<div class="mt-4">
+  <div class="flex items-baseline justify-between">
+    <%= render(Jove::Form::Label::Component.new(**label_options)) %>
+    <% if @hint %>
+      <span class="italic text-label-md text-on-surface-variant"><%= @hint %></span>
+    <% end %>
+  </div>
+  <%= tag.div(class: container_classes) do %>
+    <% if @leading_icon %>
+      <%= tag.div(class: leading_icon_wrapper_classes) do %>
+        <%= render(Jove::Icon::Component.new(icon: @leading_icon, size: 5, class: icon_color_classes)) %>
+      <% end %>
+    <% end %>
+    <%= tag.input(**input_options) %>
+    <% if @trailing_icon %>
+      <%= tag.div(class: trailing_icon_wrapper_classes) do %>
+        <%= render(Jove::Icon::Component.new(icon: @trailing_icon, size: 5, class: icon_color_classes)) %>
+      <% end %>
+    <% end %>
+  <% end %>
+  <% if @help %>
+    <p class="mt-2 text-label-md text-on-surface-variant"><%= @help %></p>
+  <% end %>
+  <% if @error %>
+    <p class="mt-2 text-label-md text-danger">
+      <% if @error.is_a?(Array) && @error.count == 1 %>
+        <%= @error.first %>
+      <% elsif @error.is_a?(Array) %>
+        <ul>
+          <% @error.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% else %>
+        <%= @error %>
+      <% end %>
+    </p>
+  <% end %>
+</div>

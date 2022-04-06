@@ -1,0 +1,19 @@
+<div class="w-full max-w-2xl">
+  <%= render(Jove::StackedList::Component.new) do |list| %>
+    <% list.item do |item| %>
+      <% item.body do %>Single line item<% end %>
+    <% end %>
+    <% list.item do |item| %>
+      <% item.body do %>Single line item<% end %>
+    <% end %>
+    <% list.item do |item| %>
+      <% item.body do %>Single line item<% end %>
+    <% end %>
+    <% list.item do |item| %>
+      <% item.body do %>Single line item<% end %>
+    <% end %>
+    <% list.item do |item| %>
+      <% item.body do %>Single line item<% end %>
+    <% end %>
+  <% end %>
+</div>

@@ -1,0 +1,7 @@
+<div class="max-w-xl">
+  <%= render(Jove::Panel::Component.new(variant:, color:)) do %>
+    <div class="flex items-end h-64 p-4 text-body-md">
+      <%= variant.to_s.titleize %>
+    </div>
+  <% end %>
+</div>

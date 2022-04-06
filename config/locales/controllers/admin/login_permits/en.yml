@@ -1,0 +1,8 @@
+---
+en:
+  admin:
+    login_permits:
+      create:
+        success: Successfully authorized %{name}.
+      destroy:
+        success: Successfully deleted authorization for %{name}.

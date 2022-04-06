@@ -1,2 +1,4 @@
 ---
 en:
+  flash:
+    not_authorized: You are not authorized to perform that action.

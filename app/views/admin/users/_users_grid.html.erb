@@ -1,0 +1,28 @@
+<%= render(Jove::TurboGrid::Component.new(id: :users, scope: users, params:)) do |grid| %>
+  <% grid.column(label: t('.columns.name'), sorted: sorted?(:name), sort_dir:) %>
+  <% grid.column(label: t('.columns.corporation'), sorted: sorted?(:corporation), sort_dir:) %>
+  <% grid.column(label: t('.columns.alliance'), sorted: sorted?(:alliance), sort_dir:) %>
+  <% grid.column(label: t('.columns.last_login'), sorted: sorted?(:last_login), sort_dir:) %>
+  <% grid.column(actions: true, class: 'w-10') %>
+
+  <% users.each do |user| %>
+    <% grid.row do |row| %>
+      <% row.cell do %><%= user.name %><% end %>
+      <% row.cell do %><%= user.default_corporation_name %><% end %>
+      <% row.cell do %><%= user.default_alliance_name %><% end %>
+      <% row.cell do %><%= local_time(user.last_successful_login_time) if user.last_successful_login_time %><% end %>
+      <% row.cell do %>
+        <%= render(Jove::Dropdown::Component.new(wrapper_class: 'max-w-menu mt-1')) do |d| %>
+          <% d.button label: t('.actions.button', name: user.name), variant: :overflow, color: :surface %>
+          <% d.menu do %>
+            <%= render(Jove::Menu::Component.new) do |m| %>
+              <% m.group do |g| %>
+                <% g.item label: t('.actions.delete'), href: admin_user_confirm_destroy_path(user), leading_icon: 'heroicons/outline/trash', form: true, data: { turbo_frame: 'modal' } %>
+              <% end %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

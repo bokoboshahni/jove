@@ -1,0 +1,29 @@
+<%= tag.div class: container_classes, data: { controller: 'jove--paginator--component' } do %>
+  <%= tag.div class: info_classes do %>
+    <%= info %>
+  <% end %>
+
+  <%= tag.div class: sizer_classes do %>
+    <span><%= t('.sizer.prefix') %></span>
+    <%= form_tag url_for(params), method: :get, data: { 'jove--paginator--component-target' => 'sizer', turbo_frame: @turbo_frame, turbo_action: 'replace' } do %>
+      <%= render(Jove::Select::Component.new(name: :per_page, options: page_sizes_for_select, data: { action: 'change->jove--paginator--component#resize' })) %>
+    <% end %>
+    <span><%= t('.sizer.suffix', row_name:) %></span>
+  <% end %>
+
+  <%= tag.nav class: paginator_classes, role: 'navigation', aria: { label: 'pager' } do %>
+    <%= render_link(:first) unless current_page.first? %>
+    <%= render_link(:prev) unless current_page.first? %>
+    <% each_page do |page| %>
+      <% if page.display_tag? %>
+        <%= render_link(:page, page) %>
+      <% elsif !page.was_truncated? %>
+        <%= render_link(:gap) %>
+      <% end %>
+    <% end %>
+    <% unless current_page.out_of_range? %>
+      <%= render_link(:next) unless current_page.last? %>
+      <%= render_link(:last) unless current_page.last? %>
+    <% end %>
+  <% end %>
+<% end %>

@@ -1,0 +1,12 @@
+<%= tag.th(class: column_classes, data: column_data_attrs) do %>
+  <% if @actions %>
+    <span class="sr-only"><%= t('.actions') %></span>
+  <% elsif @sortable %>
+    <%= link_to(sort_url, class: sort_link_classes, data: { turbo_action: 'replace' }) do %>
+      <span class="flex-1"><%= @label %></span>
+      <span class="shrink-0"><%= render(Jove::Icon::Component.new(icon: sort_icon, size: 6)) %></span>
+    <% end %>
+  <% else %>
+    <%= @label %>
+  <% end %>
+<% end %>

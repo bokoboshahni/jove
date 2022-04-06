@@ -1,0 +1,12 @@
+<%= render(Jove::TurboDialog::Component.new(title: t('.title', type: @login_permit.permittable_type.downcase), icon: 'heroicons/outline/exclamation-circle', dismissable: true)) do |d| %>
+  <%# i18n-tasks-use t('admin.login_permits.confirm_destroy.body.alliance_html') %>
+  <%# i18n-tasks-use t('admin.login_permits.confirm_destroy.body.corporation_html') %>
+  <%# i18n-tasks-use t('admin.login_permits.confirm_destroy.body.character_html') %>
+  <%= t(".body.#{@login_permit.permittable_type.downcase}_html", name: @login_permit.permittable.name) %>
+
+  <% d.action do %>
+    <%= form_tag admin_login_permit_path(@login_permit), method: :delete do %>
+      <%= render(Jove::Button::Component.new(variant: :text, color: :danger, label: t('.delete'), type: :submit, data: { turbo: false })) %>
+    <% end %>
+  <% end %>
+<% end %>

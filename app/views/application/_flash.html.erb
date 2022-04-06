@@ -1,0 +1,11 @@
+<%= turbo_frame_tag 'flash' do %>
+  <% if flash[:failure] %>
+    <%= render(Jove::Banner::Component.new(color: :danger)) do |b| %>
+      <%= flash[:failure] %>
+    <% end %>
+  <% elsif flash[:success] %>
+    <%= render(Jove::Banner::Component.new(color: :success, auto_dismiss: flash[:auto_dismiss])) do |b| %>
+      <%= flash[:success] %>
+    <% end %>
+  <% end %>
+<% end %>

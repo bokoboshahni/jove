@@ -1,0 +1,9 @@
+<div class="flex space-x-4">
+  <%= render(Jove::Button::Component.new(variant:, color:, label: 'Button')) %>
+
+  <%= render(Jove::Button::Component.new(variant:, color:, label: 'Button', disabled: true)) %>
+
+  <%= render(Jove::Button::Component.new(variant:, color:, label: 'Button', leading_icon: 'heroicons/solid/mail')) %>
+
+  <%= render(Jove::Button::Component.new(variant:, color:, label: 'Button', trailing_icon: 'heroicons/solid/mail')) %>
+</div>

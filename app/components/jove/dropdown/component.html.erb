@@ -1,0 +1,15 @@
+<div
+  class="relative inline-block"
+  data-controller="jove--dropdown--component">
+  <%= button %>
+
+  <div
+    class="<%= wrapper_classes %>"
+    data-jove--dropdown--component-target="menu"
+    data-transition-enter-from="opacity-0 scale-95"
+    data-transition-enter-to="opacity-100 scale-100"
+    data-transition-leave-from="opacity-100 scale-100"
+    data-transition-leave-to="opacity-0 scale-95">
+    <%= menu %>
+  </div>
+</div>

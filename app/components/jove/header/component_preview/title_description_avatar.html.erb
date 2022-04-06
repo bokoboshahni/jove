@@ -1,0 +1,7 @@
+<div class="max-w-7xl">
+  <%= render(Jove::Header::Component.new) do |header| %>
+    <% header.avatar src: 'https://images.evetech.net/characters/2113024536/portrait' %>
+    <% header.title do %>Title<% end %>
+    <% header.description do %>Description<% end %>
+  <% end %>
+</div>

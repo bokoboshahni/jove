@@ -1,0 +1,6 @@
+<%= link_to @href, class: container_classes, **@system_args do %>
+  <%= tag.span class: state_classes do %>
+    <%= render(Jove::Icon::Component.new(icon: @icon, size: 6, class: icon_classes)) if @icon %>
+    <%= @label %>
+  <% end %>
+<% end %>

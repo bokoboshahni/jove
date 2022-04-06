@@ -1,0 +1,19 @@
+<%= render(Jove::TurboGrid::Component.new(id: :characters, scope: characters, params:)) do |grid| %>
+  <% grid.column(label: t('.columns.name'), sorted: sorted?(:name), sort_dir:) %>
+  <% grid.column(label: t('.columns.corporation'), sorted: sorted?(:corporation), sort_dir:) %>
+  <% grid.column(label: t('.columns.alliance'), sorted: sorted?(:alliance), sort_dir:) %>
+  <% grid.column(label: t('.columns.created'), sorted: sorted?(:created), sort_dir:) %>
+  <% grid.column(label: t('.columns.updated'), sorted: sorted?(:updated), sort_dir:) %>
+  <% grid.column(label: t('.columns.last_login'), sorted: sorted?(:last_login), sort_dir:) %>
+
+  <% characters.each do |character| %>
+    <% grid.row do |row| %>
+      <% row.cell do %><%= character.name %><% end %>
+      <% row.cell do %><%= character.corporation_name %><% end %>
+      <% row.cell do %><%= character.alliance_name %><% end %>
+      <% row.cell do %><%= local_time(character.created_at) %><% end %>
+      <% row.cell do %><%= local_time(character.esi_last_modified_at) %><% end %>
+      <% row.cell do %><%= character.last_successful_login ? local_time(character.last_successful_login.created_at) : t('.never') %><% end %>
+    <% end %>
+  <% end %>
+<% end %>

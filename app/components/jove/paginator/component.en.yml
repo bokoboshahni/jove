@@ -1,0 +1,20 @@
+---
+en:
+  jove:
+    paginator:
+      component:
+        info:
+          more_pages:
+            rows: "%{first}-%{last} %{row_name} of %{total}"
+          one_page:
+            rows:
+              one: 1 %{row_name}
+              other: "%{count} %{row_name}"
+              zero: No %{row_name} found
+          row:
+            one: row
+            other: rows
+            zero: rows
+        sizer:
+          prefix: Displaying
+          suffix: "%{row_name} per page"
