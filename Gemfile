@@ -64,7 +64,7 @@ group :development do
   # gem "spring"
 end
 
-gem 'view_component', '~> 2.51'
+gem 'view_component', '~> 2.55'
 
 gem 'local_time', '~> 2.1'
 
