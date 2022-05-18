@@ -36,7 +36,7 @@ Rails.application.routes.draw do # rubocop:disable Metrics/BlockLength
       get :confirm_destroy
     end
 
-    root to: 'dashboard#show'
+    root to: redirect('/dashboard')
   end
 
   namespace :dashboard do
