@@ -168,87 +168,39 @@ module Jove
       self.state_color_class_names = {
         elevated: {
           disabled: '',
-          primary: 'hover:bg-primary hover:bg-opacity-hover ' \
-                   'focus:bg-primary focus:bg-opacity-focus ' \
-                   'active:bg-primary active:bg-opacity-press',
-          secondary: 'hover:bg-secondary hover:bg-opacity-hover ' \
-                     'focus:bg-secondary focus:bg-opacity-focus ' \
-                     'active:bg-secondary active:bg-opacity-press',
-          tertiary: 'hover:bg-tertiary hover:bg-opacity-hover ' \
-                    'focus:bg-tertiary focus:bg-opacity-focus ' \
-                    'active:bg-tertiary active:bg-opacity-press',
-          danger: 'hover:bg-danger hover:bg-opacity-hover ' \
-                  'focus:bg-danger focus:bg-opacity-focus ' \
-                  'active:bg-danger active:bg-opacity-press',
-          success: 'hover:bg-success hover:bg-opacity-hover ' \
-                   'focus:bg-success focus:bg-opacity-focus ' \
-                   'active:bg-success active:bg-opacity-press',
-          notice: 'hover:bg-notice hover:bg-opacity-hover ' \
-                  'focus:bg-notice focus:bg-opacity-focus ' \
-                  'active:bg-notice active:bg-opacity-press'
+          primary: Jove::Component::PRIMARY_STATES,
+          secondary: Jove::Component::SECONDARY_STATES,
+          tertiary: Jove::Component::TERTIARY_STATES,
+          danger: Jove::Component::DANGER_STATES,
+          success: Jove::Component::SUCCESS_STATES,
+          notice: Jove::Component::NOTICE_STATES
         },
         filled: {
           disabled: '',
-          primary: 'hover:bg-on-primary hover:bg-opacity-hover ' \
-                   'focus:bg-on-primary focus:bg-opacity-focus ' \
-                   'active:bg-on-primary active:bg-opacity-press',
-          secondary: 'hover:bg-on-secondary hover:bg-opacity-hover ' \
-                     'focus:bg-on-secondary focus:bg-opacity-focus ' \
-                     'active:bg-on-secondary active:bg-opacity-press',
-          tertiary: 'hover:bg-on-tertiary hover:bg-opacity-hover ' \
-                    'focus:bg-on-tertiary focus:bg-opacity-focus ' \
-                    'active:bg-on-tertiary active:bg-opacity-press',
-          danger: 'hover:bg-on-danger hover:bg-opacity-hover ' \
-                  'focus:bg-on-danger focus:bg-opacity-focus ' \
-                  'active:bg-on-danger active:bg-opacity-press',
-          success: 'hover:bg-on-success hover:bg-opacity-hover ' \
-                   'focus:bg-on-success focus:bg-opacity-focus ' \
-                   'active:bg-on-success active:bg-opacity-press',
-          notice: 'hover:bg-on-notice hover:bg-opacity-hover ' \
-                  'focus:bg-on-notice focus:bg-opacity-focus ' \
-                  'active:bg-on-notice active:bg-opacity-press'
+          primary: Jove::Component::ON_PRIMARY_STATES,
+          secondary: Jove::Component::ON_SECONDARY_STATES,
+          tertiary: Jove::Component::ON_TERTIARY_STATES,
+          danger: Jove::Component::ON_DANGER_STATES,
+          success: Jove::Component::ON_SUCCESS_STATES,
+          notice: Jove::Component::ON_NOTICE_STATES
         },
         outlined: {
           disabled: '',
-          primary: 'hover:bg-primary hover:bg-opacity-hover ' \
-                   'focus:bg-primary focus:bg-opacity-focus ' \
-                   'active:bg-primary active:bg-opacity-press',
-          secondary: 'hover:bg-secondary hover:bg-opacity-hover ' \
-                     'focus:bg-secondary focus:bg-opacity-focus ' \
-                     'active:bg-secondary active:bg-opacity-press',
-          tertiary: 'hover:bg-tertiary hover:bg-opacity-hover ' \
-                    'focus:bg-tertiary focus:bg-opacity-focus ' \
-                    'active:bg-tertiary active:bg-opacity-press',
-          danger: 'hover:bg-danger hover:bg-opacity-hover ' \
-                  'focus:bg-danger focus:bg-opacity-focus ' \
-                  'active:bg-danger active:bg-opacity-press',
-          success: 'hover:bg-success hover:bg-opacity-hover ' \
-                   'focus:bg-success focus:bg-opacity-focus ' \
-                   'active:bg-success active:bg-opacity-press',
-          notice: 'hover:bg-notice hover:bg-opacity-hover ' \
-                  'focus:bg-notice focus:bg-opacity-focus ' \
-                  'active:bg-notice active:bg-opacity-press'
+          primary: Jove::Component::PRIMARY_STATES,
+          secondary: Jove::Component::SECONDARY_STATES,
+          tertiary: Jove::Component::TERTIARY_STATES,
+          danger: Jove::Component::DANGER_STATES,
+          success: Jove::Component::SUCCESS_STATES,
+          notice: Jove::Component::NOTICE_STATES
         },
         text: {
           disabled: '',
-          primary: 'hover:bg-primary hover:bg-opacity-hover ' \
-                   'focus:bg-primary focus:bg-opacity-focus ' \
-                   'active:bg-primary active:bg-opacity-press',
-          secondary: 'hover:bg-secondary hover:bg-opacity-hover ' \
-                     'focus:bg-secondary focus:bg-opacity-focus ' \
-                     'active:bg-secondary active:bg-opacity-press',
-          tertiary: 'hover:bg-tertiary hover:bg-opacity-hover ' \
-                    'focus:bg-tertiary focus:bg-opacity-focus ' \
-                    'active:bg-tertiary active:bg-opacity-press',
-          danger: 'hover:bg-danger hover:bg-opacity-hover ' \
-                  'focus:bg-danger focus:bg-opacity-focus ' \
-                  'active:bg-danger active:bg-opacity-press',
-          success: 'hover:bg-success hover:bg-opacity-hover ' \
-                   'focus:bg-success focus:bg-opacity-focus ' \
-                   'active:bg-success active:bg-opacity-press',
-          notice: 'hover:bg-notice hover:bg-opacity-hover ' \
-                  'focus:bg-notice focus:bg-opacity-focus ' \
-                  'active:bg-notice active:bg-opacity-press'
+          primary: Jove::Component::PRIMARY_STATES,
+          secondary: Jove::Component::SECONDARY_STATES,
+          tertiary: Jove::Component::TERTIARY_STATES,
+          danger: Jove::Component::DANGER_STATES,
+          success: Jove::Component::SUCCESS_STATES,
+          notice: Jove::Component::NOTICE_STATES
         },
         overflow: {
           disabled: '',
@@ -258,9 +210,7 @@ module Jove
         },
         avatar: {
           disabled: '',
-          primary: 'hover:bg-primary hover:bg-opacity-hover ' \
-                   'focus:bg-primary focus:bg-opacity-focus ' \
-                   'active:bg-primary active:bg-opacity-press'
+          primary: Jove::Component::PRIMARY_STATES
         }
       }.freeze
 
