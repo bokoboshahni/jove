@@ -8,7 +8,7 @@ module Admin
     before_action :ensure_frame_response, only: %i[new]
 
     def index
-      @login_permits = policy_scope(LoginPermit.order(:name))
+      @login_permits = authorize(policy_scope(LoginPermit.order(:name)))
     end
 
     def new

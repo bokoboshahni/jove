@@ -7,9 +7,8 @@ RSpec.describe 'Authorization behavior', type: :system do
     user = create(:registered_user)
     sign_in(user)
 
-    visit admin_root_path
+    visit admin_login_permits_path
 
-    expect(page).not_to have_text('Administration')
     expect(page).to have_text('not authorized')
   end
 end
