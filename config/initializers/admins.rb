@@ -4,7 +4,13 @@ Rails.configuration.after_initialize do
   next if Rails.env.test?
 
   Jove.configuration.admin_character_ids.each do |id|
-    character = Character.from_esi(id)
+    begin
+      character = Character.from_esi(id)
+    rescue ActiveRecord::RecordNotFound
+      Rails.logger.error("Admin character not found: #{id}")
+      next
+    end
+
     identity = Identity.find_by(character:)
 
     LoginPermit.find_or_create_by!(permittable: character)
