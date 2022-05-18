@@ -1,24 +1,27 @@
-# README
+# Jove
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[![CI](https://github.com/bokoboshahni/jove/actions/workflows/ci.yml/badge.svg)](https://github.com/bokoboshahni/jove/actions/workflows/ci.yml)
+[![Maintainability](https://api.codeclimate.com/v1/badges/53460182934bcc2c09de/maintainability)](https://codeclimate.com/github/bokoboshahni/jove/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/53460182934bcc2c09de/test_coverage)](https://codeclimate.com/github/bokoboshahni/jove/test_coverage)
 
-Things you may want to cover:
+**:construction: IN THE WORKS :construction:**
 
-* Ruby version
+Self-hosted alliance, corporation, and character management tools for [EVE Online](https://www.eveonline.com/).
 
-* System dependencies
+## License
 
-* Configuration
+Copyright © 2022 Bokobo Shahni <shahni@bokobo.space>
 
-* Database creation
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-* Database initialization
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-* How to run the test suite
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-* Services (job queues, cache servers, search engines, etc.)
+### CCP hf. Developer License Agreement
 
-* Deployment instructions
+This software is developed in accordance with the [CCP hf. Developer License Agreement](https://developers.eveonline.com/resource/license-agreement).
 
-* ...
+CCP Tools and Game Data as defined by the CCP hf. Developer License Agreement &copy; is 2014 CCP hf. All rights reserved.
+
+"EVE", "EVE Online", "CCP", and all related logos and images are trademarks or registered trademarks of CCP hf.
