@@ -15,6 +15,7 @@ RSpec.describe 'Characters administration', type: :system do
 
       visit(dashboard_root_path)
       click_on('Administration')
+      expect(page).to have_text('Characters')
       click_on('Characters')
 
       characters.each do |character|
