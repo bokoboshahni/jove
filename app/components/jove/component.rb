@@ -4,6 +4,54 @@ module Jove
   class Component < ViewComponent::Base
     include ViewComponent::PolymorphicSlots
 
+    PRIMARY_STATES = 'hover:bg-primary hover:bg-opacity-hover ' \
+                     'focus:bg-primary focus:bg-opacity-focus ' \
+                     'active:bg-primary active:bg-opacity-press'
+
+    SECONDARY_STATES = 'hover:bg-secondary hover:bg-opacity-hover ' \
+                       'focus:bg-secondary focus:bg-opacity-focus ' \
+                       'active:bg-secondary active:bg-opacity-press'
+
+    TERTIARY_STATES = 'hover:bg-tertiary hover:bg-opacity-hover ' \
+                      'focus:bg-tertiary focus:bg-opacity-focus ' \
+                      'active:bg-tertiary active:bg-opacity-press'
+
+    DANGER_STATES = 'hover:bg-danger hover:bg-opacity-hover ' \
+                    'focus:bg-danger focus:bg-opacity-focus ' \
+                    'active:bg-danger active:bg-opacity-press'
+
+    SUCCESS_STATES = 'hover:bg-success hover:bg-opacity-hover ' \
+                     'focus:bg-success focus:bg-opacity-focus ' \
+                     'active:bg-success active:bg-opacity-press'
+
+    NOTICE_STATES = 'hover:bg-notice hover:bg-opacity-hover ' \
+                    'focus:bg-notice focus:bg-opacity-focus ' \
+                    'active:bg-notice active:bg-opacity-press'
+
+    ON_PRIMARY_STATES = 'hover:bg-on-primary hover:bg-opacity-hover ' \
+                        'focus:bg-on-primary focus:bg-opacity-focus ' \
+                        'active:bg-on-primary active:bg-opacity-press'
+
+    ON_SECONDARY_STATES = 'hover:bg-on-secondary hover:bg-opacity-hover ' \
+                          'focus:bg-on-secondary focus:bg-opacity-focus ' \
+                          'active:bg-on-secondary active:bg-opacity-press'
+
+    ON_TERTIARY_STATES = 'hover:bg-on-tertiary hover:bg-opacity-hover ' \
+                         'focus:bg-on-tertiary focus:bg-opacity-focus ' \
+                         'active:bg-on-tertiary active:bg-opacity-press'
+
+    ON_DANGER_STATES = 'hover:bg-on-danger hover:bg-opacity-hover ' \
+                       'focus:bg-on-danger focus:bg-opacity-focus ' \
+                       'active:bg-on-danger active:bg-opacity-press'
+
+    ON_SUCCESS_STATES = 'hover:bg-on-success hover:bg-opacity-hover ' \
+                        'focus:bg-on-success focus:bg-opacity-focus ' \
+                        'active:bg-on-success active:bg-opacity-press'
+
+    ON_NOTICE_STATES = 'hover:bg-on-notice hover:bg-opacity-hover ' \
+                       'focus:bg-on-notice focus:bg-opacity-focus ' \
+                       'active:bg-on-notice active:bg-opacity-press'
+
     def initialize(**system_args)
       super
 
