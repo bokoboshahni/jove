@@ -15,6 +15,8 @@ SimpleCov.start 'rails' do
   add_filter(/_preview\.rb\z/)
   add_filter '/app/components/guidelines/'
   add_filter '/lib/generators/'
+
+  enable_coverage :branch
 end
 
 RSpec.configure do |config|
