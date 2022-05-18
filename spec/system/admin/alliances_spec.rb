@@ -15,6 +15,7 @@ RSpec.describe 'Alliances administration', type: :system do
 
       visit(dashboard_root_path)
       click_on('Administration')
+      expect(page).to have_text('Alliances')
       click_on('Alliances')
 
       alliances.each do |alliance|

@@ -15,6 +15,7 @@ RSpec.describe 'Corporations administration', type: :system do
 
       visit(dashboard_root_path)
       click_on('Administration')
+      expect(page).to have_text('Corporations')
       click_on('Corporations')
 
       corporations.each do |corporation|
