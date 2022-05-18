@@ -4,6 +4,22 @@ module Jove
   class Component < ViewComponent::Base
     include ViewComponent::PolymorphicSlots
 
+    SURFACE_COLORS = 'bg-surface text-on-surface'
+
+    PRIMARY_COLORS = 'bg-primary text-on-primary'
+    SECONDARY_COLORS = 'bg-secondary text-on-secondary'
+    TERTIARY_COLORS = 'bg-tertiary text-on-tertiary'
+    DANGER_COLORS = 'bg-danger text-on-danger'
+    SUCCESS_COLORS = 'bg-success text-on-success'
+    NOTICE_COLORS = 'bg-notice text-on-notice'
+
+    PRIMARY_CONTAINER_COLORS = 'bg-primary-container text-on-primary-container'
+    SECONDARY_CONTAINER_COLORS = 'bg-secondary-container text-on-secondary-container'
+    TERTIARY_CONTAINER_COLORS = 'bg-tertiary-container text-on-tertiary-container'
+    DANGER_CONTAINER_COLORS = 'bg-danger-container text-on-danger-container'
+    SUCCESS_CONTAINER_COLORS = 'bg-success-container text-on-success-container'
+    NOTICE_CONTAINER_COLORS = 'bg-notice-container text-on-notice-container'
+
     PRIMARY_STATES = 'hover:bg-primary hover:bg-opacity-hover ' \
                      'focus:bg-primary focus:bg-opacity-focus ' \
                      'active:bg-primary active:bg-opacity-press'
