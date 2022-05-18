@@ -21,22 +21,22 @@ module Jove
 
       self.container_color_class_names = {
         elevated: {
-          surface: 'bg-surface text-on-surface',
-          primary: 'bg-primary-container text-on-primary-container',
-          secondary: 'bg-secondary-container text-on-secondary-container',
-          tertiary: 'bg-tertiary-container text-on-tertiary-container',
-          danger: 'bg-danger-container text-on-danger-container',
-          success: 'bg-success-container text-on-success-container',
-          notice: 'bg-notice-container text-on-notice-container'
+          surface: Jove::Component::SURFACE_COLORS,
+          primary: Jove::Component::PRIMARY_CONTAINER_COLORS,
+          secondary: Jove::Component::SECONDARY_CONTAINER_COLORS,
+          tertiary: Jove::Component::TERTIARY_CONTAINER_COLORS,
+          danger: Jove::Component::DANGER_CONTAINER_COLORS,
+          success: Jove::Component::SUCCESS_CONTAINER_COLORS,
+          notice: Jove::Component::NOTICE_CONTAINER_COLORS
         },
         filled: {
-          surface: 'bg-surface text-on-surface',
-          primary: 'bg-primary text-on-primary',
-          secondary: 'bg-secondary text-on-secondary',
-          tertiary: 'bg-tertiary text-on-tertiary',
-          danger: 'bg-danger text-on-danger',
-          success: 'bg-success text-on-success',
-          notice: 'bg-notice text-on-notice'
+          surface: Jove::Component::SURFACE_COLORS,
+          primary: Jove::Component::PRIMARY_COLORS,
+          secondary: Jove::Component::SECONDARY_COLORS,
+          tertiary: Jove::Component::TERTIARY_COLORS,
+          danger: Jove::Component::DANGER_COLORS,
+          success: Jove::Component::SUCCESS_COLORS,
+          notice: Jove::Component::NOTICE_COLORS
         },
         outlined: {
           surface: 'text-surface',
