@@ -40,3 +40,5 @@
 .env.test
 
 /coverage
+
+.yardoc/
