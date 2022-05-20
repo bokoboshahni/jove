@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/latest/alliances/99010079/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Jove/1.0; (+https://github.com/bokoboshahni/jove)
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Sat, 21 May 2022 15:20:12 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '169'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,If-None-Match,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Allow:
+      - GET,HEAD,OPTIONS
+      Cache-Control:
+      - public
+      Etag:
+      - '"3a82b807afcdedb8ec17551a757bd93f36e1b1f3b617095eb88f1ab1"'
+      Expires:
+      - Sat, 21 May 2022 16:03:39 GMT
+      Last-Modified:
+      - Sat, 21 May 2022 15:03:39 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '48'
+      X-Esi-Request-Id:
+      - a8cac9ee-b18a-453f-99d0-ba236e0dd71b
+    body:
+      encoding: ASCII-8BIT
+      string: '{"creator_corporation_id":98645283,"creator_id":94809264,"date_founded":"2020-06-20T01:40:36Z","executor_corporation_id":98645283,"name":"Brave
+        United","ticker":"BRUVE"}'
+  recorded_at: Sat, 21 May 2022 15:20:12 GMT
+recorded_with: VCR 6.1.0

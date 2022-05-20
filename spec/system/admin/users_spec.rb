@@ -3,42 +3,32 @@
 require 'system_helper'
 
 RSpec.describe 'User administration', type: :system do
-  let(:admin) { create(:admin_user) }
+  include_context 'Administration scenarios'
 
-  before do
-    sign_in(admin)
-  end
+  scenario 'listing users' do
+    users = create_list(:registered_user, 5)
 
-  describe 'listing users' do
-    it 'lists registered users' do
-      users = create_list(:registered_user, 5)
+    visit(admin_users_path)
 
-      visit(dashboard_root_path)
-      click_on('Administration')
-      click_on('Users')
-
-      users.each do |user|
-        expect(page).to have_text(user.name)
-      end
+    users.each do |user|
+      expect(page).to have_text(user.name)
     end
   end
 
-  describe 'deleting a user', js: true do
-    it 'deletes the user' do
-      user = create(:registered_user)
-      name = user.name.dup
+  scenario 'deleting a user' do
+    user = create(:registered_user)
+    name = user.name.dup
 
-      visit admin_users_path
+    visit(admin_users_path)
 
-      click_on "Actions for #{name}"
+    click_on("Actions for #{name}")
 
-      click_on 'Delete'
+    click_on('Delete')
 
-      expect(page).to have_text('Delete user?')
+    expect(page).to have_text('Delete user?')
 
-      click_on 'Confirm'
+    click_on 'Confirm'
 
-      expect(page).to have_text("deleted account for #{name}")
-    end
+    expect(page).to have_text("deleted account for #{name}")
   end
 end

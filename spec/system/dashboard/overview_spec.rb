@@ -2,13 +2,12 @@
 
 require 'system_helper'
 
-RSpec.describe 'Dashboard overview', type: :system do
-  let(:user) { create(:registered_user) }
+RSpec.describe 'Dashboard', type: :system do
+  include_context 'User scenarios'
 
-  before { sign_in(user) }
+  scenario 'showing the overview' do
+    visit(dashboard_root_path)
 
-  it 'shows the dashboard overview' do
-    visit('/dashboard')
     click_on('Open user menu')
 
     expect(page).to have_text(user.name)

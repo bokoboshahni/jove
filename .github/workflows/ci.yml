@@ -93,11 +93,7 @@ jobs:
       - name: Run tests
         uses: paambaati/codeclimate-action@v3.0.0
         env:
-          JOVE_ESI_CLIENT_ID: 'dummy'
-          JOVE_ESI_CLIENT_SECRET: 'dummy'
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-          DATABASE_URL: postgres://postgres:postgres@localhost:5432/jove
-          RAILS_ENV: test
         with:
           coverageCommand: bin/ci-test
 

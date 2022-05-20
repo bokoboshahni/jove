@@ -3,11 +3,10 @@
 require 'system_helper'
 
 RSpec.describe 'Authorization behavior', type: :system do
-  it 'disallows the action and shows the user an error when not authorized' do
-    user = create(:registered_user)
-    sign_in(user)
+  include_context 'User scenarios'
 
-    visit admin_login_permits_path
+  scenario 'disallowed action' do
+    visit(admin_login_permits_path)
 
     expect(page).to have_text('not authorized')
   end
