@@ -1,4 +1,4 @@
-<%= tag.div class: container_classes do %>
+<%= tag.div class: container_classes, **@system_args do %>
   <%= tag.div class: elevation_classes do %>
     <% groups.each do |g| %><%= g %><% end %>
   <% end %>

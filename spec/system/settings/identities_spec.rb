@@ -34,11 +34,21 @@ RSpec.describe 'User identity settings', type: :system do
       visit(dashboard_root_path)
 
       click_on('Open user menu')
+      expect(page).to have_text('Manage your account')
+
       click_on('Manage your account')
+
+      page.driver.wait_for_reload
       click_on('Characters')
+
+      expect(page).to have_text(character.name)
+
       click_on("Actions for #{character.name}")
+      within("#identity_#{identity.id}_actions") { expect(page).to have_text('Make default') }
+
       click_on('Make default')
 
+      page.driver.wait_for_reload
       within("#identity_#{identity.id}") { expect(page).to have_text('Default') }
     end
   end
@@ -48,7 +58,7 @@ RSpec.describe 'User identity settings', type: :system do
       characters = create_list(:character, 5, :with_login_permit)
       characters.each { |character| create(:identity, user:, character:) }
 
-      visit settings_identities_path
+      visit(settings_identities_path)
 
       user.characters.each do |character|
         expect(page).to have_text(character.name)
