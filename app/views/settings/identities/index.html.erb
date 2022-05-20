@@ -19,7 +19,7 @@
               <%= render(Jove::Dropdown::Component.new(wrapper_class: 'mt-1')) do |dropdown| %>
                 <% dropdown.button label: t('.actions.button', name: identity.name), variant: :overflow, color: :surface %>
                 <% dropdown.menu do %>
-                  <%= render(Jove::Menu::Component.new) do |menu| %>
+                  <%= render(Jove::Menu::Component.new(id: "identity_#{identity.id}_actions")) do |menu| %>
                     <% menu.group do |group| %>
                       <% group.item label: t('.actions.make_default'), href: settings_identity_change_default_path(identity), leading_icon: 'heroicons/outline/user', form: true, method: :put, data: { turbo_frame: '_top' } unless identity.default? || !identity.valid_for_login? %>
                       <% group.item label: t('.actions.delete'), href: settings_identity_confirm_destroy_path(identity), leading_icon: 'heroicons/outline/trash', form: true, data: { turbo_frame: 'modal' } %>
