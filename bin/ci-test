@@ -3,6 +3,11 @@
 APP_ROOT=$(dirname $(dirname $(readlink -fm $0)))
 
 pushd $APP_ROOT > /dev/null
+export DATABASE_URL=postgres://postgres:postgres@localhost:5432/jove
+export FERRUM_INTERMITTENT_SLEEP=0.2
+export FERRUM_INTERMITTENT_ATTEMPTS=24
+export JOVE_ESI_CLIENT_ID=dummy
+export JOVE_ESI_CLIENT_SECRET=dummy
 export RAILS_ENV=test
 export ACTIVE_RECORD_ENCRYPTION_PRIMARY_KEY=$(ruby -rsecurerandom -e 'puts SecureRandom.alphanumeric(32)')
 export ACTIVE_RECORD_ENCRYPTION_DETERMINISTIC_KEY=$(ruby -rsecurerandom -e 'puts SecureRandom.alphanumeric(32)')

@@ -3,24 +3,15 @@
 require 'system_helper'
 
 RSpec.describe 'Characters administration', type: :system do
-  let(:admin) { create(:admin_user) }
+  include_context 'Administration scenarios'
 
-  before do
-    sign_in(admin)
-  end
+  scenario 'listing characters' do
+    characters = create_list(:character, 5)
 
-  describe 'listing characters' do
-    it 'lists characters' do
-      characters = create_list(:character, 5)
+    visit(admin_characters_path)
 
-      visit(dashboard_root_path)
-      click_on('Administration')
-      expect(page).to have_text('Characters')
-      click_on('Characters')
-
-      characters.each do |character|
-        expect(page).to have_text(character.name)
-      end
+    characters.each do |character|
+      expect(page).to have_text(character.name)
     end
   end
 end

@@ -3,24 +3,19 @@
 require 'system_helper'
 
 RSpec.describe 'Account settings', type: :system do
-  let(:user) { create(:registered_user) }
+  include_context 'User scenarios'
 
-  before do
-    sign_in(user)
-  end
+  scenario 'deleting own account' do
+    visit(settings_account_path)
 
-  describe 'deleting account', js: true do
-    it 'deletes the account' do
-      visit settings_account_path
+    click_on('Delete your account')
 
-      click_on 'Delete your account'
+    expect(page).to have_text('Delete account?')
 
-      expect(page).to have_text('Delete account?')
+    click_on('Delete')
+    wait_for_page_reload
 
-      click_on 'Delete'
-
-      expect(page).to have_text('Your account has been deleted.')
-      expect(page).to have_current_path('/')
-    end
+    expect(page).to have_text('Your account has been deleted.')
+    expect(page).to have_current_path('/')
   end
 end

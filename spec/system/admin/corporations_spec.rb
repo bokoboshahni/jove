@@ -3,24 +3,15 @@
 require 'system_helper'
 
 RSpec.describe 'Corporations administration', type: :system do
-  let(:admin) { create(:admin_user) }
+  include_context 'Administration scenarios'
 
-  before do
-    sign_in(admin)
-  end
+  scenario 'listing corporations' do
+    corporations = create_list(:corporation, 5)
 
-  describe 'listing corporations' do
-    it 'lists corporations' do
-      corporations = create_list(:corporation, 5)
+    visit(admin_corporations_path)
 
-      visit(dashboard_root_path)
-      click_on('Administration')
-      expect(page).to have_text('Corporations')
-      click_on('Corporations')
-
-      corporations.each do |corporation|
-        expect(page).to have_text(corporation.name)
-      end
+    corporations.each do |corporation|
+      expect(page).to have_text(corporation.name)
     end
   end
 end

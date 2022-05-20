@@ -3,85 +3,73 @@
 require 'system_helper'
 
 RSpec.describe 'User identity settings', type: :system do
-  let(:user) { create(:registered_user) }
+  include_context 'User scenarios'
 
-  before do
-    sign_in(user)
+  scenario 'switching the current identity' do
+    character = create(:character, :with_login_permit)
+    create(:identity, user:, character:)
+
+    visit(dashboard_root_path)
+
+    click_on('Open user menu')
+
+    click_on(character.name)
+    wait_for_page_reload
+
+    click_on('Open user menu')
+
+    expect(page).to have_css('#current_identity_name', text: character.name)
   end
 
-  describe 'switching the current identity' do
-    it 'changes the current identity' do
-      character = create(:character, :with_login_permit)
-      create(:identity, user:, character:)
+  scenario 'changing the default identity' do
+    character = create(:character, :with_login_permit)
+    identity = create(:identity, user:, character:)
 
-      visit dashboard_root_path
+    visit(dashboard_root_path)
 
-      click_on('Open user menu')
+    click_on('Open user menu')
+    within('#user_menu') { expect(page).to have_text('Manage your account') }
 
-      click_on(character.name)
+    click_on('Manage your account')
 
-      click_on('Open user menu')
+    click_on('Characters')
+    wait_for_page_reload
 
-      expect(page).to have_css('#current_identity_name', text: character.name)
-    end
+    expect(page).to have_text(character.name)
+
+    click_on("Actions for #{character.name}")
+    within("#identity_#{identity.id}_actions") { expect(page).to have_text('Make default') }
+
+    click_on('Make default')
+
+    within("#identity_#{identity.id}") { expect(page).to have_text('Default') }
   end
 
-  describe 'changing the default identity' do
-    it 'changes the default identity' do
-      character = create(:character, :with_login_permit)
-      identity = create(:identity, user:, character:)
+  scenario 'listing connected characters' do
+    characters = create_list(:character, 5, :with_login_permit)
+    characters.each { |character| create(:identity, user:, character:) }
 
-      visit(dashboard_root_path)
+    visit(settings_identities_path)
 
-      click_on('Open user menu')
-      expect(page).to have_text('Manage your account')
-
-      click_on('Manage your account')
-
-      page.driver.wait_for_reload
-      click_on('Characters')
-
+    user.characters.each do |character|
       expect(page).to have_text(character.name)
-
-      click_on("Actions for #{character.name}")
-      within("#identity_#{identity.id}_actions") { expect(page).to have_text('Make default') }
-
-      click_on('Make default')
-
-      page.driver.wait_for_reload
-      within("#identity_#{identity.id}") { expect(page).to have_text('Default') }
     end
   end
 
-  describe 'listing characters' do
-    it "lists the current user's characters" do
-      characters = create_list(:character, 5, :with_login_permit)
-      characters.each { |character| create(:identity, user:, character:) }
+  scenario 'disconnecting a character' do
+    character = create(:character, :with_login_permit)
+    create(:identity, user:, character:)
 
-      visit(settings_identities_path)
+    visit(settings_identities_path)
 
-      user.characters.each do |character|
-        expect(page).to have_text(character.name)
-      end
-    end
-  end
+    click_on("Actions for #{character.name}")
 
-  describe 'disconnecting a character' do
-    it 'disconnects the character' do
-      character = create(:character, :with_login_permit)
-      create(:identity, user:, character:)
+    click_on('Disconnect')
 
-      visit settings_identities_path
+    within('#modal') { click_on 'Disconnect' }
 
-      click_on "Actions for #{character.name}"
+    visit(settings_identities_path)
 
-      click_on 'Disconnect'
-
-      within('#modal') { click_on 'Disconnect' }
-
-      visit settings_identities_path
-
-      expect(page).not_to have_text(character.name)
-    end
+    expect(page).not_to have_text(character.name)
   end
 end

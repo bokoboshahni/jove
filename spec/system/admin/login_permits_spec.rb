@@ -3,63 +3,52 @@
 require 'system_helper'
 
 RSpec.describe 'Login permit administration', type: :system, vcr: true do
-  let(:admin) { create(:admin_user) }
+  include_context 'Administration scenarios'
 
-  before do
-    sign_in(admin)
-  end
+  scenario 'listing login permits' do
+    login_permits = create_list(:login_permit, 5)
 
-  describe 'listing login permits' do
-    it 'lists all login permits' do
-      login_permits = create_list(:login_permit, 5)
+    visit(dashboard_root_path)
+    click_on('Administration')
+    click_on('Authentication')
 
-      visit(dashboard_root_path)
-      click_on('Administration')
-      click_on('Authentication')
-
-      login_permits.each do |login_permit|
-        expect(page).to have_text(login_permit.name)
-      end
+    login_permits.each do |login_permit|
+      expect(page).to have_text(login_permit.name)
     end
   end
 
-  describe 'creating a login permit', js: true do
-    it 'creates the login permit' do
-      visit(dashboard_root_path)
+  scenario 'creating a login permit' do
+    visit(admin_login_permits_path)
 
-      click_on('Administration')
-      click_on('Authentication')
+    click_on('Authorize')
 
+    within('#modal') do
+      choose('Alliance')
+      fill_in('ID', with: '99010079')
       click_on('Authorize')
-
-      within('#modal') do
-        choose('Alliance')
-        fill_in('ID', with: '99010079')
-        click_on('Authorize')
-      end
-
-      expect(page).to have_text('Brave United')
     end
+
+    wait_for_page_reload
+
+    expect(page).to have_text('authorized Brave United')
+    click_on('Dismiss')
+
+    expect(page).to have_text('Brave United')
   end
 
-  describe 'deleting a login permit', js: true do
-    it 'deletes the login permit' do
-      login_permit = create(:login_permit)
-      name = login_permit.permittable.name
+  scenario 'deleting a login permit' do
+    login_permit = create(:login_permit)
+    name = login_permit.permittable.name
 
-      visit(dashboard_root_path)
+    visit(admin_login_permits_path)
 
-      click_on('Administration')
-      click_on('Authentication')
+    click_on("Delete #{name}")
 
-      click_on("Delete #{name}")
+    within('#modal') { click_on('Delete') }
 
-      within('#modal') { click_on('Delete') }
+    expect(page).to have_text("deleted authorization for #{name}")
+    click_on('Dismiss')
 
-      expect(page).to have_text("deleted authorization for #{name}")
-      click_on('Dismiss')
-
-      expect(page).not_to have_text(name)
-    end
+    expect(page).not_to have_text(name)
   end
 end

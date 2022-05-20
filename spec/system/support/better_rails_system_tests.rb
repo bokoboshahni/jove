@@ -12,6 +12,15 @@ module BetterRailsSystemTests
   def image_path
     Pathname.new(absolute_image_path).relative_path_from(Rails.root).to_s
   end
+
+  def visit(url)
+    super(url)
+    wait_for_page_reload
+  end
+
+  def wait_for_page_reload
+    page.driver.wait_for_reload
+  end
 end
 
 RSpec.configure do |config|
@@ -28,7 +37,6 @@ RSpec.configure do |config|
 
   # Make sure this hook runs before others
   config.prepend_before(:each, type: :system) do
-    # Use JS driver always
-    driven_by Capybara.javascript_driver
+    driven_by(Capybara.javascript_driver)
   end
 end
