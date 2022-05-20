@@ -54,6 +54,8 @@ GEM
     activerecord (7.0.3)
       activemodel (= 7.0.3)
       activesupport (= 7.0.3)
+    activerecord-nulldb-adapter (0.8.0)
+      activerecord (>= 5.2.0, < 7.1)
     activestorage (7.0.3)
       actionpack (= 7.0.3)
       activejob (= 7.0.3)
@@ -254,6 +256,8 @@ GEM
       net-protocol
       timeout
     nio4r (2.5.8)
+    nokogiri (1.13.6-aarch64-linux)
+      racc (~> 1.4)
     nokogiri (1.13.6-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.13.6-x86_64-linux)
@@ -412,6 +416,8 @@ GEM
     stimulus-rails (1.0.4)
       railties (>= 6.0.0)
     strscan (3.0.3)
+    tailwindcss-rails (2.0.8-aarch64-linux)
+      railties (>= 6.0.0)
     tailwindcss-rails (2.0.8-x86_64-darwin)
       railties (>= 6.0.0)
     tailwindcss-rails (2.0.8-x86_64-linux)
@@ -454,10 +460,12 @@ GEM
     zeitwerk (2.5.4)
 
 PLATFORMS
+  aarch64-linux-musl
   x86_64-darwin-21
   x86_64-linux
 
 DEPENDENCIES
+  activerecord-nulldb-adapter (~> 0.8)
   addressable (~> 2.8)
   annotate (~> 3.2)
   authtrail (~> 0.4.2)

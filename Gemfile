@@ -7,6 +7,7 @@ ruby '~> 3.1'
 
 gem 'dotenv-rails', '~> 2.7'
 
+gem 'activerecord-nulldb-adapter', '~> 0.8'
 gem 'addressable', '~> 2.8'
 gem 'authtrail', '~> 0.4.2'
 gem 'awesome_print', '~> 1.9'

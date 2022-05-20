@@ -3,6 +3,8 @@
 Rails.configuration.after_initialize do
   next if Rails.env.test?
 
+  next if ENV['ASSET_PRECOMPILE'].present?
+
   Jove.configuration.admin_character_ids.each do |id|
     begin
       character = Character.from_esi(id)
