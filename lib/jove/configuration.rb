@@ -63,6 +63,8 @@ module Jove
         'http://localhost:3000'
       when 'test'
         'http://test.host'
+      when 'production' && ENV.fetch('ASSETS_PRECOMPILE', nil)
+        'http://assets.host'
       end
     end
     # :nocov:
