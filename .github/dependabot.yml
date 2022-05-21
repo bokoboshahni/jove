@@ -5,13 +5,11 @@ updates:
     schedule:
       interval: "daily"
     commit-message:
-      prefix: "chore"
-      include: "scope"
+      prefix: "deps"
 
   - package-ecosystem: "bundler"
     directory: "/"
     schedule:
       interval: "daily"
     commit-message:
-      prefix: "chore"
-      include: "scope"
+      prefix: "deps"
