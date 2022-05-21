@@ -125,7 +125,7 @@ jobs:
 
       - name: Extract metadata for Docker image
         id: meta
-        uses: docker/metadata-action@v3
+        uses: docker/metadata-action@v4
         with:
           images: bokoboshahni/jove
           tags: |
