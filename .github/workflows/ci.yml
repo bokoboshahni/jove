@@ -3,9 +3,19 @@ on:
   pull_request:
     branches:
       - main
+      - alpha
+      - beta
+      - rc
+      - '*.x'
+      - '*.*.x'
   push:
     branches:
       - main
+      - alpha
+      - beta
+      - rc
+      - '*.x'
+      - '*.*.x'
   release:
     types: [published]
 
