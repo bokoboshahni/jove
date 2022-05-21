@@ -6,6 +6,7 @@ pushd $APP_ROOT > /dev/null
 npx -p @semantic-release/changelog \
     -p @semantic-release/exec \
     -p @semantic-release/git \
+    -p @semantic-release/github \
     -p semantic-release \
     semantic-release
 popd
