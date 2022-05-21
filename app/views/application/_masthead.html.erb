@@ -93,10 +93,11 @@
               <% end %>
             <% end %>
           </div>
-          <div class="py-4 text-center">
+          <div class="py-4 space-y-2 text-center">
             <%= form_tag destroy_user_session_path, method: :delete do %>
               <%= render(Jove::Button::Component.new(variant: :text, label: t('.user_menu.log_out'), data: { turbo: false })) %>
             <% end %>
+            <p class="text-label-sm"><%= link_to 'Jove', Jove.project_url %> <%= link_to "v#{Jove::VERSION}", Jove.version_url %></p>
           </div>
         </div>
       </div>

@@ -19,7 +19,7 @@ module.exports = {
       changelogTitle: '# Jove Changelog'
     }],
     ['@semantic-release/exec', {
-      'publishCmd': 'echo ${nextRelease.version} > VERSION'
+      'publishCmd': 'bin/ci-release-version ${nextRelease.version}'
     }],
     ['@semantic-release/git', {
       assets: ['CHANGELOG.md', 'VERSION']
