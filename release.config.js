@@ -18,6 +18,8 @@ module.exports = {
         { type: 'test', release: 'patch' },
         { type: 'ci', release: 'patch' },
         { type: 'docs', release: false },
+        { type: 'chore', scope: 'deps', release: 'patch' },
+        { type: 'chore', scope: 'deps-dev', release: 'patch' },
       ]
     }],
     '@semantic-release/release-notes-generator',
