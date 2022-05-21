@@ -17,9 +17,9 @@ module.exports = {
         { type: 'refactor', release: 'patch' },
         { type: 'test', release: 'patch' },
         { type: 'ci', release: 'patch' },
-        { type: 'docs', release: false },
-        { type: 'chore', scope: 'deps', release: 'patch' },
-        { type: 'chore', scope: 'deps-dev', release: 'patch' },
+        { type: 'docs', release: 'patch' },
+        { type: 'deps', release: 'patch' },
+        { scope: 'no-release', release: false }
       ]
     }],
     ['@semantic-release/exec', {
