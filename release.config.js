@@ -22,12 +22,12 @@ module.exports = {
         { type: 'chore', scope: 'deps-dev', release: 'patch' },
       ]
     }],
+    ['@semantic-release/exec', {
+      'prepareCmd': 'bin/ci-release-version ${nextRelease.version}'
+    }],
     '@semantic-release/release-notes-generator',
     ['@semantic-release/changelog', {
       changelogTitle: '# Jove Changelog'
-    }],
-    ['@semantic-release/exec', {
-      'publishCmd': 'bin/ci-release-version ${nextRelease.version}'
     }],
     ['@semantic-release/git', {
       assets: ['CHANGELOG.md', 'VERSION']
