@@ -41,6 +41,7 @@ RSpec.describe 'User identity settings', type: :system do
     within("#identity_#{identity.id}_actions") { expect(page).to have_text('Make default') }
 
     click_on('Make default')
+    wait_for_page_reload
 
     within("#identity_#{identity.id}") { expect(page).to have_text('Default') }
   end
