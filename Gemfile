@@ -56,7 +56,7 @@ end
 group :development do
   gem 'annotate', '~> 3.2'
   gem 'brakeman', '~> 5.2'
-  gem 'bundler-audit', '~> 0.9.0'
+  gem 'bundler-audit', '~> 0.9.1'
   gem 'bundler-leak', '~> 0.3.0'
   gem 'erb_lint', '~> 0.1.1'
   gem 'kramdown-parser-gfm', '~> 1.1'
