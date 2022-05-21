@@ -1,5 +1,12 @@
 # Jove Changelog
 
+# [1.1.0](https://github.com/bokoboshahni/jove/compare/v1.0.0...v1.1.0) (2022-05-21)
+
+
+### Features
+
+* add jove version link to user menu ([fd901ce](https://github.com/bokoboshahni/jove/commit/fd901ce21e8953975c7b46f382f9a79f2bbdc2d4))
+
 # 1.0.0 (2022-05-21)
 
 
