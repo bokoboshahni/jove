@@ -31,7 +31,7 @@ module.exports = {
       types: [
         { type: 'build', section: 'Build System', hidden: true },
         { type: 'chore', section: 'Miscellaneous Chores', hidden: true },
-        { type: 'ci', section: 'Continuous Integration', hidden: true },
+        { type: 'ci', section: 'Continuous Integration' },
         { type: 'deps', section: 'Dependencies' },
         { type: 'docs', section: 'Documentation' },
         { type: 'feat', section: 'Features' },
