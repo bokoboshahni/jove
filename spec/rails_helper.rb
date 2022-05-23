@@ -70,6 +70,11 @@ RSpec.configure do |config| # rubocop:disable Metrics/BlockLength
     @request = controller.request
   end
 
+  config.before(:each) do
+    FileUtils.rm_rf(Rails.root.join('tmp/storage'))
+    FileUtils.touch(Rails.root.join('tmp/storage/.keep'))
+  end
+
   config.after(:each, type: :component, snapshot: true) do
     class_name = example.metadata[:described_class].name.underscore
     test_name = example.metadata[:full_description].gsub(example.metadata[:described_class].name, '').gsub(' ', '_')
