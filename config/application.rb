@@ -34,6 +34,9 @@ module Jove
     config.active_record.encryption.key_derivation_salt = ENV.fetch('ACTIVE_RECORD_ENCRYPTION_KEY_DERIVATION_SALT')
     config.active_record.schema_format = :sql
 
+    # ActiveStorage settiings
+    config.active_storage.service = ENV.fetch('ACTIVE_STORAGE_SERVICE', 'local').to_sym
+
     # I18n settings
     config.i18n.load_path += Dir[Rails.root.join('config/locales/**/*.{rb,yml}')]
     config.i18n.load_path += Dir[Rails.root.join('app/components/**/*.yml')]
