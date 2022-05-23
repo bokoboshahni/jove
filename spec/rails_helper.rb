@@ -7,6 +7,7 @@ require_relative '../config/environment'
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 
 require 'rspec/rails'
+require 'paper_trail/frameworks/rspec'
 require 'pundit/rspec'
 require 'pundit/matchers'
 require 'webmock/rspec'
