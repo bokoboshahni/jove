@@ -1,4 +1,7 @@
 # Jove Changelog
+
+## [1.1.4-beta.4](https://github.com/bokoboshahni/jove/compare/v1.1.4-beta.3...v1.1.4-beta.4) (2022-05-23)
+
 ## [1.1.4-beta.3](https://github.com/bokoboshahni/jove/compare/v1.1.4-beta.2...v1.1.4-beta.3) (2022-05-23)
 
 
@@ -44,6 +47,3 @@
 * initial commit with rails skeleton ([4cd22b5](https://github.com/bokoboshahni/jove/commit/4cd22b5d86b7db8d7b63720edf032036dd6336ec))
 * log error for invalid admin character id ([414d40a](https://github.com/bokoboshahni/jove/commit/414d40a072d3c07b7501b3da503658d99d95f73d))
 * user identity management ([3aecce8](https://github.com/bokoboshahni/jove/commit/3aecce854ea802a5223c17d79277ef1db0ed3be6))
-
-
-
