@@ -6,10 +6,12 @@ updates:
       interval: "daily"
     commit-message:
       prefix: "deps"
+      include: "scope"
 
   - package-ecosystem: "bundler"
     directory: "/"
     schedule:
       interval: "daily"
     commit-message:
-      prefix: "deps"
+      prefix: "chore"
+      include: "scope"
