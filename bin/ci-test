@@ -6,6 +6,7 @@ pushd $APP_ROOT > /dev/null
 export DATABASE_URL=postgres://postgres:postgres@localhost:5432/jove
 export FERRUM_INTERMITTENT_SLEEP=0.2
 export FERRUM_INTERMITTENT_ATTEMPTS=24
+export FERRUM_PROCESS_TIMEOUT=30
 export JOVE_ESI_CLIENT_ID=dummy
 export JOVE_ESI_CLIENT_SECRET=dummy
 export RAILS_ENV=test
