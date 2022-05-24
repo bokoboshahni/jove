@@ -16,4 +16,10 @@ namespace :sde do
     require 'jove/sde/fixtures'
     Jove::SDE::Fixtures.new.generate
   end
+
+  namespace :import do
+    task regions: :environment do
+      Region.import_all_from_sde
+    end
+  end
 end

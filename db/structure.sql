@@ -23,6 +23,18 @@ CREATE EXTENSION IF NOT EXISTS pgcrypto WITH SCHEMA public;
 COMMENT ON EXTENSION pgcrypto IS 'cryptographic functions';
 
 
+--
+-- Name: universe; Type: TYPE; Schema: public; Owner: -
+--
+
+CREATE TYPE public.universe AS ENUM (
+    'abyssal',
+    'eve',
+    'void',
+    'wormhole'
+);
+
+
 SET default_tablespace = '';
 
 SET default_table_access_method = heap;
@@ -318,6 +330,51 @@ ALTER SEQUENCE public.login_permits_id_seq OWNED BY public.login_permits.id;
 
 
 --
+-- Name: regions; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.regions (
+    id bigint NOT NULL,
+    faction_id bigint,
+    nebula_id bigint,
+    wormhole_class_id bigint,
+    center_x numeric NOT NULL,
+    center_y numeric NOT NULL,
+    center_z numeric NOT NULL,
+    description text,
+    max_x numeric NOT NULL,
+    max_y numeric NOT NULL,
+    max_z numeric NOT NULL,
+    min_x numeric NOT NULL,
+    min_y numeric NOT NULL,
+    min_z numeric NOT NULL,
+    name text NOT NULL,
+    universe public.universe NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: regions_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.regions_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: regions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.regions_id_seq OWNED BY public.regions.id;
+
+
+--
 -- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -499,6 +556,13 @@ ALTER TABLE ONLY public.login_permits ALTER COLUMN id SET DEFAULT nextval('publi
 
 
 --
+-- Name: regions id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.regions ALTER COLUMN id SET DEFAULT nextval('public.regions_id_seq'::regclass);
+
+
+--
 -- Name: static_data_imports id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -604,6 +668,14 @@ ALTER TABLE ONLY public.login_activities
 
 ALTER TABLE ONLY public.login_permits
     ADD CONSTRAINT login_permits_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: regions regions_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.regions
+    ADD CONSTRAINT regions_pkey PRIMARY KEY (id);
 
 
 --
@@ -787,6 +859,27 @@ CREATE INDEX index_login_permits_on_permittable ON public.login_permits USING bt
 
 
 --
+-- Name: index_regions_on_faction_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_regions_on_faction_id ON public.regions USING btree (faction_id);
+
+
+--
+-- Name: index_regions_on_nebula_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_regions_on_nebula_id ON public.regions USING btree (nebula_id);
+
+
+--
+-- Name: index_regions_on_wormhole_class_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_regions_on_wormhole_class_id ON public.regions USING btree (wormhole_class_id);
+
+
+--
 -- Name: index_static_data_imports_on_version_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -890,6 +983,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220321174746'),
 ('20220523164403'),
 ('20220523164503'),
-('20220523210147');
+('20220523210147'),
+('20220523211416');
 
 
