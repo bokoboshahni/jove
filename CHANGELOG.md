@@ -1,5 +1,13 @@
 # Jove Changelog
 
+# [1.2.0-beta.1](https://github.com/bokoboshahni/jove/compare/v1.1.4-beta.4...v1.2.0-beta.1) (2022-05-24)
+
+
+### Features
+
+* add paper_trail for model versioning ([be25c59](https://github.com/bokoboshahni/jove/commit/be25c593b20717860a9b27c8cf9af00d30efb5f8))
+* create schema for active_storage ([fd694a5](https://github.com/bokoboshahni/jove/commit/fd694a55dd8747927b8760874b2cb117fca0d2c3))
+
 <<<<<<< HEAD
 ## [1.1.4-beta.4](https://github.com/bokoboshahni/jove/compare/v1.1.4-beta.3...v1.1.4-beta.4) (2022-05-23)
 
