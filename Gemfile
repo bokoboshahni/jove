@@ -40,7 +40,7 @@ gem 'sprockets-rails', '~> 3.4'
 gem 'stackprof', '~> 0.2.19'
 gem 'stimulus-rails', '~> 1.0'
 gem 'tailwindcss-rails', '~> 2.0'
-gem 'turbo-rails', '~> 1.0'
+gem 'turbo-rails', '~> 1.1'
 gem 'typhoeus', '~> 1.4'
 gem 'view_component', '~> 2.51'
 
