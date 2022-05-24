@@ -8,14 +8,6 @@
 * generate truncated sde fixtures ([fbf7bf7](https://github.com/bokoboshahni/jove/commit/fbf7bf73aa621a55b431210b550650a15f314fff))
 * import regions from sde ([1c0591c](https://github.com/bokoboshahni/jove/commit/1c0591cc983cab2f7526b6b64a2aa0595d37f9d8))
 
-# [](https://github.com/bokoboshahni/jove/compare/v1.2.0-beta.1...v) (2022-05-24)
-
-
-### Features
-
-* generate truncated sde fixtures ([fbf7bf7](https://github.com/bokoboshahni/jove/commit/fbf7bf73aa621a55b431210b550650a15f314fff))
-* import regions from sde ([1c0591c](https://github.com/bokoboshahni/jove/commit/1c0591cc983cab2f7526b6b64a2aa0595d37f9d8))
-
 
 
 # [1.2.0-beta.1](https://github.com/bokoboshahni/jove/compare/v1.1.4-beta.4...v1.2.0-beta.1) (2022-05-24)
