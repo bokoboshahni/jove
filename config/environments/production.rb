@@ -15,9 +15,6 @@ Rails.application.configure do
   # Asset pipeline configuration
   config.assets.compile = false
 
-  # ActiveStorage settings
-  config.active_storage.service = :local
-
   # ActionMailer settings
   config.action_mailer.perform_caching = false
   config.action_mailer.raise_delivery_errors = true
