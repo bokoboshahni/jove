@@ -178,6 +178,48 @@ ALTER SEQUENCE public.characters_id_seq OWNED BY public.characters.id;
 
 
 --
+-- Name: constellations; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.constellations (
+    id bigint NOT NULL,
+    region_id bigint NOT NULL,
+    center_x numeric NOT NULL,
+    center_y numeric NOT NULL,
+    center_z numeric NOT NULL,
+    max_x numeric NOT NULL,
+    max_y numeric NOT NULL,
+    max_z numeric NOT NULL,
+    min_x numeric NOT NULL,
+    min_y numeric NOT NULL,
+    min_z numeric NOT NULL,
+    radius numeric NOT NULL,
+    name text NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: constellations_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.constellations_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: constellations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.constellations_id_seq OWNED BY public.constellations.id;
+
+
+--
 -- Name: corporations; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -528,6 +570,13 @@ ALTER TABLE ONLY public.characters ALTER COLUMN id SET DEFAULT nextval('public.c
 
 
 --
+-- Name: constellations id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.constellations ALTER COLUMN id SET DEFAULT nextval('public.constellations_id_seq'::regclass);
+
+
+--
 -- Name: corporations id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -636,6 +685,14 @@ ALTER TABLE ONLY public.ar_internal_metadata
 
 ALTER TABLE ONLY public.characters
     ADD CONSTRAINT characters_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: constellations constellations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.constellations
+    ADD CONSTRAINT constellations_pkey PRIMARY KEY (id);
 
 
 --
@@ -779,6 +836,13 @@ CREATE INDEX index_characters_on_faction_id ON public.characters USING btree (fa
 --
 
 CREATE INDEX index_characters_on_race_id ON public.characters USING btree (race_id);
+
+
+--
+-- Name: index_constellations_on_region_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_constellations_on_region_id ON public.constellations USING btree (region_id);
 
 
 --
@@ -984,6 +1048,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220523164403'),
 ('20220523164503'),
 ('20220523210147'),
-('20220523211416');
+('20220523211416'),
+('20220524172419');
 
 

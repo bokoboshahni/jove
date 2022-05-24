@@ -18,6 +18,10 @@ namespace :sde do
   end
 
   namespace :import do
+    task constellations: :environment do
+      Constellation.import_all_from_sde
+    end
+
     task regions: :environment do
       Region.import_all_from_sde
     end
