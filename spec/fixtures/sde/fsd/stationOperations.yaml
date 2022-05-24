@@ -1,0 +1,451 @@
+---
+1:
+  activityID: 1
+  border: 0.0
+  corridor: 0.2
+  descriptionID:
+    de: Erzeugt Vieh und Getreide, das an Nahrungsverarbeitungseinheiten verschickt
+      wird.
+    en: Makes livestock and grain that is shipped to food processing units.
+    fr: Produit le bétail et le grain destinés aux unités de transformation des aliments.
+    ja: 生命体と穀物を生産して食品加工ユニットに送る。
+    ko: 음식 가공 유닛으로 운송되는 가축과 곡물을 만듭니다.
+    ru: Выращивает домашний скот и зерно, которые отправляются в центры производства
+      продуктов питания.
+    zh: 生产运送到食品加工厂的家畜和粮食。
+  fringe: 0.7
+  hub: 0.1
+  manufacturingFactor: 0.98
+  operationNameID:
+    de: Plantage
+    en: Plantation
+    fr: Plantation
+    ja: プランテーション
+    ko: 플랜테이션
+    ru: Агрокомплекс
+    zh: 种植园
+  ratio: 0.65
+  researchFactor: 0.98
+  services:
+  - 3
+  - 5
+  - 7
+  - 17
+  - 19
+  - 22
+  - 23
+  - 25
+  - 26
+  stationTypes:
+    1: 1531
+    2: 2499
+    4: 1930
+    8: 3866
+    16: 3865
+2:
+  activityID: 1
+  border: 0.3
+  corridor: 0.2
+  descriptionID:
+    de: Produziert Lebensmittel, die an Warenhäuser verschickt werden.
+    en: Makes food that is shipped to warehouses.
+    fr: Produit la nourriture destinée aux entrepôts.
+    ja: 食品を生産して保管倉庫に送る。
+    ko: 창고로 운송되는 음식을 만듭니다.
+    ru: Изготавливает пищу, которая отправляется на склады.
+    zh: 生产要运到仓库的食品。
+  fringe: 0.0
+  hub: 0.5
+  manufacturingFactor: 0.98
+  operationNameID:
+    de: Lebensmittel-Verpackungsanlage
+    en: Food Packaging
+    fr: Emballage de la nourriture
+    ja: 食品梱包
+    ko: 식품 포장
+    ru: Упаковочная фабрика
+    zh: 食品包装厂
+  ratio: 0.2
+  researchFactor: 0.98
+  services:
+  - 3
+  - 5
+  - 7
+  - 17
+  - 19
+  - 20
+  - 22
+  - 23
+  - 25
+  - 26
+  stationTypes:
+    1: 4024
+    2: 2497
+    4: 1928
+    8: 3866
+    16: 3865
+3:
+  activityID: 1
+  border: 0.5
+  corridor: 0.5
+  descriptionID:
+    de: Lagert Produkte und liefert Güter an externe Händler oder Produktions-Corporations.
+    en: Stores products and shifts goods to external retailers or production corporations.
+    fr: Stocke les marchandises destinées aux revendeurs externes ou aux corporations
+      de production.
+    ja: 物資を保管して小売業者や加工会社に引き渡す。
+    ko: 제품을 보관하고 외부 유통업체나 생산업체로 상품을 옮깁니다.
+    ru: Хранит продукцию и доставляет товары производственным корпорациям и во внешние
+      центры розничной торговли.
+    zh: 储存产品以及把货物运送给外部零售商或者生产工厂。
+  fringe: 0.0
+  hub: 0.0
+  manufacturingFactor: 0.98
+  operationNameID:
+    de: Warenlager
+    en: Warehouse
+    fr: Entrepôt
+    ja: 倉庫
+    ko: 창고
+    ru: Складской центр
+    zh: 库房
+  ratio: 0.15
+  researchFactor: 0.98
+  services:
+  - 3
+  - 5
+  - 7
+  - 17
+  - 19
+  - 20
+  - 22
+  - 23
+  - 25
+  - 26
+  stationTypes:
+    1: 1531
+    2: 2501
+    4: 1929
+    8: 3870
+    16: 3865
+4:
+  activityID: 2
+  border: 0.0
+  corridor: 0.1
+  descriptionID:
+    de: Baut Mineralien von Asteroidengürteln und Nebeln ab.
+    en: Mines minerals from asteroid belts/clouds.
+    fr: Extrait le minerai brut des nuages et des ceintures d'astéroïdes.
+    ja: 無機物をアステロイドベルトやガス雲から採掘する。
+    ko: 소행성 벨트/성운에서 미네랄을 채굴합니다.
+    ru: Добывает полезные ископаемые в астероидных поясах и газовых облаках.
+    zh: 从行星带或者星云里面开采矿物。
+  fringe: 0.9
+  hub: 0.0
+  manufacturingFactor: 0.95
+  operationNameID:
+    de: Gießerei
+    en: Foundry
+    fr: Fonderie
+    ja: 鋳造工場
+    ko: 주조 공장
+    ru: Металлургический завод
+    zh: 铸造厂
+  ratio: 0.3
+  researchFactor: 0.98
+  services:
+  - 1
+  - 3
+  - 5
+  - 7
+  - 13
+  - 14
+  - 17
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 25
+  - 26
+  stationTypes:
+    1: 1529
+    2: 2499
+    4: 1930
+    8: 3867
+    16: 3865
+5:
+  activityID: 2
+  border: 0.1
+  corridor: 0.15
+  descriptionID:
+    de: Formt fertige Konstruktionsteile.
+    en: Molds finished construction pieces.
+    fr: Façonne des pièces de construction finalisées.
+    ja: 最終的な建設資材を成形する。
+    ko: 완성된 건설 부품을 주조합니다.
+    ru: Производит готовые строительные детали.
+    zh: 铸造完成的建筑零件。
+  fringe: 0.25
+  hub: 0.5
+  manufacturingFactor: 0.95
+  operationNameID:
+    de: Produktionsbetrieb
+    en: Production Plant
+    fr: Usine de production
+    ja: 製造工場
+    ko: 생산 공장
+    ru: Производственный комплекс
+    zh: 生产工厂
+  ratio: 0.5
+  researchFactor: 0.98
+  services:
+  - 1
+  - 3
+  - 5
+  - 7
+  - 13
+  - 14
+  - 17
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 25
+  - 26
+  stationTypes:
+    1: 1529
+    2: 2497
+    4: 1928
+    8: 3867
+    16: 3865
+6:
+  activityID: 2
+  border: 0.5
+  corridor: 0.5
+  descriptionID:
+    de: Lagert Produkte und Frachtgüter für Produktions-Corporations.
+    en: Stores product and freights goods to production corps.
+    fr: Stocke et expédie les marchandises destinées aux corporations de production.
+    ja: 物資を保管して加工会社に出荷する。
+    ko: 제품을 보관하고 상품을 생산업체로 운송합니다.
+    ru: Хранит продукцию и доставляет товары производственным корпорациям.
+    zh: 存储产品及货物，以供应生产部门。
+  fringe: 0.0
+  hub: 0.0
+  manufacturingFactor: 0.97
+  operationNameID:
+    de: Warenlager
+    en: Warehouse
+    fr: Entrepôt
+    ja: 倉庫
+    ko: 창고
+    ru: Складской центр
+    zh: 库房
+  ratio: 0.2
+  researchFactor: 0.98
+  services:
+  - 1
+  - 3
+  - 5
+  - 7
+  - 13
+  - 14
+  - 17
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 25
+  - 26
+  stationTypes:
+    1: 1531
+    2: 2501
+    4: 1929
+    8: 3870
+    16: 3865
+7:
+  activityID: 3
+  border: 0.0
+  corridor: 0.1
+  descriptionID:
+    de: Baut Mineralien von Asteroidengürteln und Nebeln ab.
+    en: Mines minerals from asteroid belts/clouds.
+    fr: Extrait le minerai brut des nuages et des ceintures d'astéroïdes.
+    ja: 無機物をアステロイドベルトやガス雲から採取する。
+    ko: 소행성 벨트/성운에서 미네랄을 채굴합니다.
+    ru: Добывает полезные ископаемые в астероидных поясах и газовых облаках.
+    zh: 从行星带或者星云里面开采矿物。
+  fringe: 0.9
+  hub: 0.0
+  manufacturingFactor: 0.98
+  operationNameID:
+    de: Bergbauaußenposten
+    en: Mining Outpost
+    fr: Avant-poste d'extraction minière
+    ja: 採掘アウトポスト
+    ko: 채굴기지
+    ru: Добывающий комплекс
+    zh: 矿冶站
+  ratio: 0.65
+  researchFactor: 0.98
+  services:
+  - 1
+  - 3
+  - 5
+  - 6
+  - 7
+  - 13
+  - 17
+  - 19
+  - 21
+  - 22
+  - 23
+  - 25
+  - 26
+  stationTypes:
+    1: 4023
+    2: 2499
+    4: 1930
+    8: 3865
+    16: 3865
+8:
+  activityID: 3
+  border: 0.45
+  corridor: 0.1
+  descriptionID:
+    de: Veredelt Mineralien und erzeugt so reine Barren und Gestein.
+    en: Refines the minerals, making purified ingots and rock materials.
+    fr: Raffine les minerais pour produire des lingots et des roches de matériau purifié.
+    ja: 無機物を精錬し、高純度のインゴットや塊に加工する。
+    ko: 미네랄을 정제하여 정제된 주괴와 암석 자재를 만듭니다.
+    ru: Перерабатывает полезные ископаемые, производя очищенные слитки и каменную
+      продукцию.
+    zh: 精炼矿石，生产纯净的钢锭和礁石材料。
+  fringe: 0.0
+  hub: 0.45
+  manufacturingFactor: 0.98
+  operationNameID:
+    de: Raffinerie
+    en: Refinery
+    fr: Raffinerie
+    ja: 精錬所
+    ko: 정제소
+    ru: Обогатительная фабрика
+    zh: 精炼厂
+  ratio: 0.15
+  researchFactor: 0.98
+  services:
+  - 1
+  - 3
+  - 5
+  - 6
+  - 7
+  - 13
+  - 17
+  - 19
+  - 21
+  - 22
+  - 23
+  - 25
+  - 26
+  stationTypes:
+    1: 4024
+    2: 2497
+    4: 1928
+    8: 3867
+    16: 3865
+9:
+  activityID: 3
+  border: 0.5
+  corridor: 0.5
+  descriptionID:
+    de: Lagert Produkte und Frachtgüter für Produktions-Corporations.
+    en: Stores product and freights goods to production corps.
+    fr: Stocke et expédie les marchandises destinées aux corporations de production.
+    ja: 物資を保管して加工会社に出荷する。
+    ko: 제품을 보관하고 상품을 생산업체로 운송합니다.
+    ru: Хранит продукцию и доставляет товары производственным корпорациям.
+    zh: 存储产品及货物，以供应生产部门。
+  fringe: 0.0
+  hub: 0.0
+  manufacturingFactor: 0.98
+  operationNameID:
+    de: Mineralienvorrat
+    en: Mineral Reserve
+    fr: Réserve de minéraux
+    ja: 無機物保管庫
+    ko: 미네랄 비축고
+    ru: Хранилище минерального сырья
+    zh: 矿物储备
+  ratio: 0.2
+  researchFactor: 0.98
+  services:
+  - 1
+  - 3
+  - 5
+  - 7
+  - 13
+  - 17
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 25
+  - 26
+  stationTypes:
+    1: 4023
+    2: 2501
+    4: 1929
+    8: 3865
+    16: 3865
+10:
+  activityID: 4
+  border: 0.0
+  corridor: 0.1
+  descriptionID:
+    de: Gewinnt Chemikalien aus Asteroidengürteln und Nebeln.
+    en: Extracts chemicals from asteroid belts/clouds.
+    fr: Extrait les produits chimiques des nuages et des ceintures d'astéroïdes.
+    ja: 化合物をアステロイドベルトやガス雲から採取する。
+    ko: 소행성 벨트/성운에서 화학물질을 추출합니다.
+    ru: Извлекает химикаты из астероидных поясов и газовых облаков.
+    zh: 从行星带或者星云里吸取化学药品。
+  fringe: 0.9
+  hub: 0.0
+  manufacturingFactor: 0.98
+  operationNameID:
+    de: Aufbereitungsanlage
+    en: Reprocessing Facility
+    fr: Installation de retraitement
+    ja: 精錬工場
+    ko: 재처리 시설
+    ru: Перерабатывающий центр
+    zh: 回收设施
+  ratio: 0.1
+  researchFactor: 0.97
+  services:
+  - 1
+  - 3
+  - 5
+  - 6
+  - 7
+  - 13
+  - 14
+  - 15
+  - 17
+  - 19
+  - 21
+  - 22
+  - 23
+  - 25
+  - 26
+  stationTypes:
+    1: 4023
+    2: 2499
+    4: 1930
+    8: 3867
+    16: 3865

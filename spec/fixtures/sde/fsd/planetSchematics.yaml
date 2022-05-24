@@ -1,0 +1,291 @@
+---
+65:
+  cycleTime: 3600
+  nameID:
+    de: Superconductors
+    en: Superconductors
+    fr: Superconducteurs
+    ja: 超電導体
+    ko: 초전도체
+    ru: Superconductors
+    zh: 超导体
+  pins:
+  - 2470
+  - 2472
+  - 2474
+  - 2480
+  - 2484
+  - 2485
+  - 2491
+  - 2494
+  types:
+    2389:
+      isInput: true
+      quantity: 40
+    3645:
+      isInput: true
+      quantity: 40
+    9838:
+      isInput: false
+      quantity: 5
+66:
+  cycleTime: 3600
+  nameID:
+    de: Coolant
+    en: Coolant
+    fr: Réfrigérant
+    ja: 冷却材
+    ko: 냉각수
+    ru: Coolant
+    zh: 冷却剂
+  pins:
+  - 2470
+  - 2472
+  - 2474
+  - 2480
+  - 2484
+  - 2485
+  - 2491
+  - 2494
+  types:
+    2390:
+      isInput: true
+      quantity: 40
+    3645:
+      isInput: true
+      quantity: 40
+    9832:
+      isInput: false
+      quantity: 5
+67:
+  cycleTime: 3600
+  nameID:
+    de: Rocket Fuel
+    en: Rocket Fuel
+    fr: Carburant de roquette
+    ja: ロケット燃料
+    ko: 로켓 연료
+    ru: Rocket Fuel
+    zh: 火箭燃料
+  pins:
+  - 2470
+  - 2472
+  - 2474
+  - 2480
+  - 2484
+  - 2485
+  - 2491
+  - 2494
+  types:
+    2389:
+      isInput: true
+      quantity: 40
+    2390:
+      isInput: true
+      quantity: 40
+    9830:
+      isInput: false
+      quantity: 5
+68:
+  cycleTime: 3600
+  nameID:
+    de: Synthetic Oil
+    en: Synthetic Oil
+    fr: Huile de synthèse
+    ja: 合成石油
+    ko: 합성유
+    ru: Synthetic Oil
+    zh: 合成油
+  pins:
+  - 2470
+  - 2472
+  - 2474
+  - 2480
+  - 2484
+  - 2485
+  - 2491
+  - 2494
+  types:
+    2390:
+      isInput: true
+      quantity: 40
+    3683:
+      isInput: true
+      quantity: 40
+    3691:
+      isInput: false
+      quantity: 5
+69:
+  cycleTime: 3600
+  nameID:
+    de: Oxides
+    en: Oxides
+    fr: Oxydes
+    ja: 酸化物
+    ko: 산화물
+    ru: Oxides
+    zh: 氧化物
+  pins:
+  - 2470
+  - 2472
+  - 2474
+  - 2480
+  - 2484
+  - 2485
+  - 2491
+  - 2494
+  types:
+    2317:
+      isInput: false
+      quantity: 5
+    2392:
+      isInput: true
+      quantity: 40
+    3683:
+      isInput: true
+      quantity: 40
+70:
+  cycleTime: 3600
+  nameID:
+    de: Silicate Glass
+    en: Silicate Glass
+    fr: Verre de silice
+    ja: シリコンガラス
+    ko: 규산염 유리
+    ru: Silicate Glass
+    zh: 硅酸盐玻璃
+  pins:
+  - 2470
+  - 2472
+  - 2474
+  - 2480
+  - 2484
+  - 2485
+  - 2491
+  - 2494
+  types:
+    2392:
+      isInput: true
+      quantity: 40
+    3697:
+      isInput: false
+      quantity: 5
+    9828:
+      isInput: true
+      quantity: 40
+71:
+  cycleTime: 3600
+  nameID:
+    de: Transmitter
+    en: Transmitter
+    fr: Transmetteur
+    ja: トランスミッター
+    ko: 송신기
+    ru: Transmitter
+    zh: 传信器
+  pins:
+  - 2470
+  - 2472
+  - 2474
+  - 2480
+  - 2484
+  - 2485
+  - 2491
+  - 2494
+  types:
+    2389:
+      isInput: true
+      quantity: 40
+    2401:
+      isInput: true
+      quantity: 40
+    9840:
+      isInput: false
+      quantity: 5
+72:
+  cycleTime: 3600
+  nameID:
+    de: Water-Cooled CPU
+    en: Water-Cooled CPU
+    fr: CPU refroidi par l'eau
+    ja: 水冷式CPU
+    ko: 수냉 CPU
+    ru: Water-Cooled CPU
+    zh: 水冷CPU
+  pins:
+  - 2470
+  - 2472
+  - 2474
+  - 2480
+  - 2484
+  - 2485
+  - 2491
+  - 2494
+  types:
+    2328:
+      isInput: false
+      quantity: 5
+    2398:
+      isInput: true
+      quantity: 40
+    3645:
+      isInput: true
+      quantity: 40
+73:
+  cycleTime: 3600
+  nameID:
+    de: Mechanical Parts
+    en: Mechanical Parts
+    fr: Composants mécaniques
+    ja: 機械部品
+    ko: 기계 부품
+    ru: Mechanical Parts
+    zh: 机械元件
+  pins:
+  - 2470
+  - 2472
+  - 2474
+  - 2480
+  - 2484
+  - 2485
+  - 2491
+  - 2494
+  types:
+    2398:
+      isInput: true
+      quantity: 40
+    2399:
+      isInput: true
+      quantity: 40
+    3689:
+      isInput: false
+      quantity: 5
+74:
+  cycleTime: 3600
+  nameID:
+    de: Construction Blocks
+    en: Construction Blocks
+    fr: Blocs de construction
+    ja: 建設ブロック
+    ko: 건축 자재
+    ru: Construction Blocks
+    zh: 建筑模块
+  pins:
+  - 2470
+  - 2472
+  - 2474
+  - 2480
+  - 2484
+  - 2485
+  - 2491
+  - 2494
+  types:
+    2398:
+      isInput: true
+      quantity: 40
+    2400:
+      isInput: true
+      quantity: 40
+    3828:
+      isInput: false
+      quantity: 5

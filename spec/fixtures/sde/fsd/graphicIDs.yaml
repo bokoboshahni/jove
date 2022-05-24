@@ -1,0 +1,117 @@
+---
+10:
+  description: Moon model
+  graphicFile: res:/dx9/model/worldobject/planet/moon.red
+38:
+  description: Caldari Frigate Bantam
+  iconInfo:
+    folder: res:/dx9/model/ship/caldari/frigate/cf1/icons
+  sofFactionName: caldaribase
+  sofHullName: cf1_t1
+  sofRaceName: caldari
+39:
+  description: Caldari Frigate Condor
+  iconInfo:
+    folder: res:/dx9/model/ship/caldari/frigate/cf2/icons
+  sofFactionName: caldaribase
+  sofHullName: cf2_t1
+  sofRaceName: caldari
+40:
+  description: Caldari Frigate Griffin
+  iconInfo:
+    folder: res:/dx9/model/ship/caldari/frigate/cf4/icons
+  sofFactionName: caldaribase
+  sofHullName: cf4_t1
+  sofRaceName: caldari
+41:
+  description: Caldari Cruiser Osprey
+  iconInfo:
+    folder: res:/dx9/model/ship/caldari/cruiser/cc1/icons
+  sofFactionName: caldaribase
+  sofHullName: cc1_t1
+  sofRaceName: caldari
+42:
+  description: Caldari Cruiser Caracal
+  iconInfo:
+    folder: res:/dx9/model/ship/caldari/cruiser/cc3/icons
+  sofFactionName: caldaribase
+  sofHullName: cc3_t1
+  sofRaceName: caldari
+43:
+  description: Caldari Battleship Raven
+  iconInfo:
+    folder: res:/dx9/model/ship/caldari/battleship/cb1/icons
+  sofFactionName: caldaribase
+  sofHullName: cb1_t1
+  sofRaceName: caldari
+44:
+  description: Minmatar Frigate Slasher
+  iconInfo:
+    folder: res:/dx9/model/ship/minmatar/frigate/mf1/icons
+  sofFactionName: minmatarbase
+  sofHullName: mf1_t1
+  sofRaceName: minmatar
+45:
+  description: Minmatar Frigate Probe
+  iconInfo:
+    folder: res:/dx9/model/ship/minmatar/frigate/mf2/icons
+  sofFactionName: minmatarbase
+  sofHullName: mf2_t1
+  sofRaceName: minmatar
+46:
+  description: Minmatar Frigate Rifter
+  iconInfo:
+    folder: res:/dx9/model/ship/minmatar/frigate/mf4/icons
+  sofFactionName: minmatarbase
+  sofHullName: mf4_t1
+  sofRaceName: minmatar
+170:
+  description: MissileLauncherDeluxe (caldaribase)
+  graphicFile: res:/dx9/model/turret/Launcher/Torpedo/Torpedo_T1.red
+  sofFactionName: caldaribase
+  sofRaceName: caldari
+202:
+  description: Shattered Planet Asset
+  graphicFile: res:/dx9/model/WorldObject/planet/ShatteredPlanet.red
+1011:
+  description: Effect Lensflare Blue
+  graphicFile: res:/fisfx/lensflare/blue.red
+  iconInfo:
+    folder: res:/fisfx/lensflare/icons
+1012:
+  description: Effect Lensflare Orange
+  graphicFile: res:/fisfx/lensflare/orange.red
+  iconInfo:
+    folder: res:/fisfx/lensflare/icons
+1013:
+  description: Effect Lensflare Red
+  graphicFile: res:/fisfx/lensflare/red.red
+  iconInfo:
+    folder: res:/fisfx/lensflare/icons
+1014:
+  description: Effect Lensflare White
+  graphicFile: res:/fisfx/lensflare/white.red
+  iconInfo:
+    folder: res:/fisfx/lensflare/icons
+1015:
+  description: Effect Lensflare Yellow
+  graphicFile: res:/fisfx/lensflare/yellow.red
+  iconInfo:
+    folder: res:/fisfx/lensflare/icons
+1147:
+  description: Red Cloud
+  graphicFile: res:/dx9/model/worldobject/cloud/redcloud.red
+  iconInfo:
+    folder: res:/dx9/model/worldobject/cloud/icons
+1241:
+  description: Effect Lensflare Blue Sun
+  graphicFile: res:/fisfx/lensflare/blue_sun.red
+  iconInfo:
+    folder: res:/fisfx/lensflare/icons
+47:
+  description: Minmatar Cruiser Stabber
+  iconInfo:
+    folder: res:/dx9/model/ship/minmatar/cruiser/mc1/icons
+  sofFactionName: minmatarbase
+  sofHullName: mc1_t1
+  sofRaceName: minmatar

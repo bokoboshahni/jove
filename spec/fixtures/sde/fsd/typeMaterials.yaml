@@ -1,0 +1,75 @@
+---
+18:
+  materials:
+  - materialTypeID: 34
+    quantity: 175
+  - materialTypeID: 36
+    quantity: 70
+19:
+  materials:
+  - materialTypeID: 34
+    quantity: 48000
+  - materialTypeID: 37
+    quantity: 1000
+  - materialTypeID: 38
+    quantity: 160
+  - materialTypeID: 39
+    quantity: 80
+  - materialTypeID: 40
+    quantity: 40
+20:
+  materials:
+  - materialTypeID: 36
+    quantity: 60
+  - materialTypeID: 37
+    quantity: 120
+21:
+  materials:
+  - materialTypeID: 35
+    quantity: 450
+  - materialTypeID: 38
+    quantity: 120
+22:
+  materials:
+  - materialTypeID: 35
+    quantity: 3200
+  - materialTypeID: 36
+    quantity: 1200
+  - materialTypeID: 40
+    quantity: 120
+29:
+  materials:
+  - materialTypeID: 34
+    quantity: 4096
+  - materialTypeID: 35
+    quantity: 1024
+  - materialTypeID: 36
+    quantity: 256
+  - materialTypeID: 37
+    quantity: 64
+  - materialTypeID: 38
+    quantity: 16
+  - materialTypeID: 39
+    quantity: 4
+  - materialTypeID: 40
+    quantity: 1
+165:
+  materials:
+  - materialTypeID: 38
+    quantity: 86
+166:
+  materials:
+  - materialTypeID: 38
+    quantity: 133
+178:
+  materials:
+  - materialTypeID: 34
+    quantity: 27
+  - materialTypeID: 35
+    quantity: 21
+179:
+  materials:
+  - materialTypeID: 34
+    quantity: 38
+  - materialTypeID: 35
+    quantity: 32

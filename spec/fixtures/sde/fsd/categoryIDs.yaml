@@ -1,0 +1,155 @@
+---
+0:
+  name:
+    de: "#System"
+    en: "#System"
+    fr: "#Système"
+    ja: "#システム"
+    ru: "#Система"
+    zh: "#星系"
+  published: false
+1:
+  name:
+    de: Besitzer
+    en: Owner
+    fr: Propriétaire
+    ja: 所有者
+    ru: Владелец
+    zh: 拥有者
+  published: false
+2:
+  name:
+    de: Interstellar
+    en: Celestial
+    fr: Céleste
+    ja: セレスチャル
+    ru: Небесное тело
+    zh: 天体
+  published: true
+3:
+  name:
+    de: Station
+    en: Station
+    fr: Station
+    ja: ステーション
+    ru: Станция
+    zh: 空间站
+  published: false
+4:
+  iconID: 22
+  name:
+    de: Material
+    en: Material
+    fr: Matériau
+    ja: 資源
+    ru: Материал
+    zh: 材料
+  published: true
+5:
+  iconID: 33
+  name:
+    de: Zubehör
+    en: Accessories
+    fr: Accessoires
+    ja: アクセサリー
+    ru: Вспомогательные предметы
+    zh: 附件
+  published: true
+6:
+  name:
+    de: Schiff
+    en: Ship
+    fr: Vaisseau
+    ja: 艦船
+    ru: Корабль
+    zh: 舰船
+  published: true
+7:
+  iconID: 67
+  name:
+    de: Modul
+    en: Module
+    fr: Module
+    ja: モジュール
+    ru: Модуль
+    zh: 装备
+  published: true
+8:
+  name:
+    de: Ladung
+    en: Charge
+    fr: Charge
+    ja: チャージ
+    ru: Заряд
+    zh: 弹药
+  published: true
+9:
+  iconID: 21
+  name:
+    de: Blueprint
+    en: Blueprint
+    fr: Plan de construction
+    ja: ブループリント
+    ru: Чертеж
+    zh: 蓝图
+  published: true
+14:
+  iconID: 0
+  name:
+    de: Bonus
+    en: Bonus
+    fr: Bonus
+    ja: ボーナス
+    ru: Бонус
+    zh: 加成
+  published: false
+16:
+  iconID: 33
+  name:
+    de: Skill
+    en: Skill
+    fr: Compétence
+    ja: スキル
+    ru: Навык
+    zh: 技能
+  published: true
+17:
+  iconID: 0
+  name:
+    de: Bedarfsartikel
+    en: Commodity
+    fr: Marchandise
+    ja: 商品
+    ru: Товар
+    zh: 常用物品
+  published: true
+18:
+  iconID: 0
+  name:
+    de: Drohne
+    en: Drone
+    fr: Drone
+    ja: ドローン
+    ru: Дрон
+    zh: 无人机
+  published: true
+20:
+  iconID: 0
+  name:
+    de: Implantat
+    en: Implant
+    fr: Implant
+    ja: インプラント
+    ru: Имплантат
+    zh: 植入体
+  published: true
+22:
+  iconID: 0
+  name:
+    de: Einsetzbar
+    en: Deployable
+    fr: Déployable
+    ja: 配置型ユニット
+    ru: Сбрасываемые предметы
+    zh: 可部署物品
+  published: true

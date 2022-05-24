@@ -36,6 +36,8 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 
+Jove.config.sde_path = Rails.root.join('spec/fixtures/sde')
+
 RSpec.configure do |config| # rubocop:disable Metrics/BlockLength
   config.include Capybara::RSpecMatchers, type: :component
   config.include Devise::Test::ControllerHelpers, type: :component

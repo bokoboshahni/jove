@@ -1,0 +1,91 @@
+---
+1:
+  nameID:
+    de: Landwirtschaft
+    en: Agriculture
+    fr: Agriculture
+    ja: 農業
+    ko: 농업
+    ru: Сельское хозяйство
+    zh: 农业
+2:
+  nameID:
+    de: Konstruktion
+    en: Construction
+    fr: Construction
+    ja: 建設
+    ko: 건설
+    ru: Строительство
+    zh: 建设
+3:
+  nameID:
+    de: Bergbau
+    en: Mining
+    fr: Extraction minière
+    ja: 採掘
+    ko: 채굴
+    ru: Добыча полезных ископаемых
+    zh: 采矿
+4:
+  nameID:
+    de: Chemie
+    en: Chemical
+    fr: Chimie
+    ja: 化学
+    ko: 화학
+    ru: Химическое производство
+    zh: 化工
+5:
+  nameID:
+    de: Militär
+    en: Military
+    fr: Militaire
+    ja: 軍事
+    ko: 군사
+    ru: Силовые операции
+    zh: 军事
+6:
+  nameID:
+    de: Biotechnologie
+    en: Biotech
+    fr: Biotechnologie
+    ja: バイオ技術
+    ko: 바이오텍
+    ru: Биотехнологии
+    zh: 生物科技
+7:
+  nameID:
+    de: Hi-Tech
+    en: Hi-Tech
+    fr: Haute technologie
+    ja: ハイテク
+    ko: 첨단 기술
+    ru: Высокотехнологичные разработки
+    zh: 高科技
+8:
+  nameID:
+    de: Unterhaltung
+    en: Entertainment
+    fr: Divertissement
+    ja: エンターテイメント
+    ko: 엔터테인먼트
+    ru: Сфера развлечений
+    zh: 娱乐
+9:
+  nameID:
+    de: Schiffswerft
+    en: Shipyard
+    fr: Chantier naval
+    ja: 造船所
+    ko: 쉽야드
+    ru: Верфь
+    zh: 船坞
+10:
+  nameID:
+    de: Warenlager
+    en: Warehouse
+    fr: Entrepôt
+    ja: 倉庫
+    ko: 창고
+    ru: Складские услуги
+    zh: 仓库

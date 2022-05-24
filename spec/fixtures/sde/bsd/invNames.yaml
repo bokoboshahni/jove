@@ -1,0 +1,2835 @@
+---
+- itemID: 0
+  itemName: "(none)"
+- itemID: 1
+  itemName: EVE System
+- itemID: 2
+  itemName: EVE Central Bank
+- itemID: 3
+  itemName: EVE Market
+- itemID: 4
+  itemName: EVE Station
+- itemID: 5
+  itemName: EVE Temp
+- itemID: 6
+  itemName: EVE Recycler
+- itemID: 7
+  itemName: EVE Trading
+- itemID: 8
+  itemName: EVE Graveyard
+- itemID: 9
+  itemName: EVE Universe
+- itemID: 10
+  itemName: EVE Junkyard
+- itemID: 13
+  itemName: EVE Corporation
+- itemID: 22
+  itemName: EVE Faction
+- itemID: 23
+  itemName: EVE Type Recycler
+- itemID: 24
+  itemName: Polaris System Message
+- itemID: 25
+  itemName: EVE Singleton Junkyard
+- itemID: 1000
+  itemName: "[EVE DELETED ITEMS]"
+- itemID: 1001
+  itemName: EVE Recycler
+- itemID: 1002
+  itemName: EVE Junkyard
+- itemID: 1003
+  itemName: EVE Singleton Junkyard
+- itemID: 1004
+  itemName: EVE Asteroid Junkyard
+- itemID: 1005
+  itemName: EVE Insert Junkyard
+- itemID: 1006
+  itemName: EVE Deleted Types Junkyard
+- itemID: 1007
+  itemName: EVE Kill Junkyard
+- itemID: 1008
+  itemName: EVE Trade Session Junkyard
+- itemID: 1009
+  itemName: EVE Market Junkyard
+- itemID: 1010
+  itemName: EVE Mission Junkyard
+- itemID: 1011
+  itemName: EVE GM Junkyard
+- itemID: 1012
+  itemName: EVE Outpost Junkyard
+- itemID: 1013
+  itemName: EVE Drones Junkyard
+- itemID: 1051
+  itemName: EVE Junkyard - Month 1
+- itemID: 1052
+  itemName: EVE Junkyard - Month 2
+- itemID: 1053
+  itemName: EVE Junkyard - Month 3
+- itemID: 1054
+  itemName: EVE Junkyard - Month 4
+- itemID: 1055
+  itemName: EVE Junkyard - Month 5
+- itemID: 1056
+  itemName: EVE Junkyard - Month 6
+- itemID: 1057
+  itemName: EVE Junkyard - Month 7
+- itemID: 1058
+  itemName: EVE Junkyard - Month 8
+- itemID: 1059
+  itemName: EVE Junkyard - Month 9
+- itemID: 1060
+  itemName: EVE Junkyard - Month 10
+- itemID: 1061
+  itemName: EVE Junkyard - Month 11
+- itemID: 1062
+  itemName: EVE Junkyard - Month 12
+- itemID: 1401
+  itemName: EVE Character Delete Junkyard
+- itemID: 1501
+  itemName: EVE Character Graveyard
+- itemID: 1505
+  itemName: EVE Alliance Graveyard
+- itemID: 1604
+  itemName: EVE Asteroid & Mineral Junkyard - Week 4
+- itemID: 1605
+  itemName: EVE Asteroid & Mineral Junkyard - Week 5
+- itemID: 1611
+  itemName: EVE Asteroid & Mineral Junkyard - Week 11
+- itemID: 1614
+  itemName: EVE Asteroid & Mineral Junkyard - Week 14
+- itemID: 1619
+  itemName: EVE Asteroid & Mineral Junkyard - Week 19
+- itemID: 1623
+  itemName: EVE Asteroid & Mineral Junkyard - Week 23
+- itemID: 1628
+  itemName: EVE Asteroid & Mineral Junkyard - Week 28
+- itemID: 1629
+  itemName: EVE Asteroid & Mineral Junkyard - Week 29
+- itemID: 1630
+  itemName: EVE Asteroid & Mineral Junkyard - Week 30
+- itemID: 1631
+  itemName: EVE Asteroid & Mineral Junkyard - Week 31
+- itemID: 1632
+  itemName: EVE Asteroid & Mineral Junkyard - Week 32
+- itemID: 1633
+  itemName: EVE Asteroid & Mineral Junkyard - Week 33
+- itemID: 1634
+  itemName: EVE Asteroid & Mineral Junkyard - Week 34
+- itemID: 1635
+  itemName: EVE Asteroid & Mineral Junkyard - Week 35
+- itemID: 1641
+  itemName: EVE Asteroid & Mineral Junkyard - Week 41
+- itemID: 1642
+  itemName: EVE Asteroid & Mineral Junkyard - Week 42
+- itemID: 1643
+  itemName: EVE Asteroid & Mineral Junkyard - Week 43
+- itemID: 1644
+  itemName: EVE Asteroid & Mineral Junkyard - Week 44
+- itemID: 1645
+  itemName: EVE Asteroid & Mineral Junkyard - Week 45
+- itemID: 1647
+  itemName: EVE Asteroid & Mineral Junkyard - Week 47
+- itemID: 1648
+  itemName: EVE Asteroid & Mineral Junkyard - Week 48
+- itemID: 1649
+  itemName: EVE Asteroid & Mineral Junkyard - Week 49
+- itemID: 1650
+  itemName: EVE Asteroid & Mineral Junkyard - Week 50
+- itemID: 1651
+  itemName: EVE Asteroid & Mineral Junkyard - Week 51
+- itemID: 1811
+  itemName: EVE Singleton Non-Parent Junkyard - Week 11
+- itemID: 1815
+  itemName: EVE Singleton Non-Parent Junkyard - Week 15
+- itemID: 1817
+  itemName: EVE Singleton Non-Parent Junkyard - Week 17
+- itemID: 1819
+  itemName: EVE Singleton Non-Parent Junkyard - Week 19
+- itemID: 1927
+  itemName: EVE Singleton Parent Junkyard - Week 27
+- itemID: 1929
+  itemName: EVE Singleton Parent Junkyard - Week 29
+- itemID: 1930
+  itemName: EVE Singleton Parent Junkyard - Week 30
+- itemID: 1936
+  itemName: EVE Singleton Parent Junkyard - Week 36
+- itemID: 1949
+  itemName: EVE Singleton Parent Junkyard - Week 49
+- itemID: 1951
+  itemName: EVE Singleton Parent Junkyard - Week 51
+- itemID: 3000
+  itemName: "[EVE SPECIFIC ITEMS]"
+- itemID: 500001
+  itemName: Caldari State
+- itemID: 500002
+  itemName: Minmatar Republic
+- itemID: 500003
+  itemName: Amarr Empire
+- itemID: 500004
+  itemName: Gallente Federation
+- itemID: 500005
+  itemName: Jove Empire
+- itemID: 500006
+  itemName: CONCORD Assembly
+- itemID: 500007
+  itemName: Ammatar Mandate
+- itemID: 500008
+  itemName: Khanid Kingdom
+- itemID: 500009
+  itemName: The Syndicate
+- itemID: 500010
+  itemName: Guristas Pirates
+- itemID: 500011
+  itemName: Angel Cartel
+- itemID: 500012
+  itemName: Blood Raider Covenant
+- itemID: 500013
+  itemName: The InterBus
+- itemID: 500014
+  itemName: ORE
+- itemID: 500015
+  itemName: Thukker Tribe
+- itemID: 500016
+  itemName: Servant Sisters of EVE
+- itemID: 500017
+  itemName: The Society of Conscious Thought
+- itemID: 500018
+  itemName: Mordu's Legion Command
+- itemID: 500019
+  itemName: Sansha's Nation
+- itemID: 500020
+  itemName: Serpentis
+- itemID: 500024
+  itemName: Drifters
+- itemID: 500025
+  itemName: Rogue Drones
+- itemID: 500026
+  itemName: Triglavian Collective
+- itemID: 500028
+  itemName: Association for Interdisciplinary Research
+- itemID: 1000001
+  itemName: Doomheim
+- itemID: 1000002
+  itemName: CBD Corporation
+- itemID: 1000003
+  itemName: Prompt Delivery
+- itemID: 1000004
+  itemName: Ytiri
+- itemID: 1000005
+  itemName: Hyasyoda Corporation
+- itemID: 1000006
+  itemName: Deep Core Mining Inc.
+- itemID: 1000007
+  itemName: Poksu Mineral Group
+- itemID: 1000008
+  itemName: Minedrill
+- itemID: 1000009
+  itemName: Caldari Provisions
+- itemID: 1000010
+  itemName: Kaalakiota Corporation
+- itemID: 1000011
+  itemName: Wiyrkomi Corporation
+- itemID: 1000012
+  itemName: Top Down
+- itemID: 1000013
+  itemName: Rapid Assembly
+- itemID: 1000014
+  itemName: Perkone
+- itemID: 1000015
+  itemName: Caldari Steel
+- itemID: 1000016
+  itemName: Zainou
+- itemID: 1000017
+  itemName: Nugoeihuvi Corporation
+- itemID: 1000018
+  itemName: Echelon Entertainment
+- itemID: 1000019
+  itemName: Ishukone Corporation
+- itemID: 1000020
+  itemName: Lai Dai Corporation
+- itemID: 1000021
+  itemName: Zero-G Research Firm
+- itemID: 1000022
+  itemName: Propel Dynamics
+- itemID: 1000023
+  itemName: Expert Distribution
+- itemID: 1000024
+  itemName: CBD Sell Division
+- itemID: 1000025
+  itemName: Sukuuvestaa Corporation
+- itemID: 1000026
+  itemName: Caldari Constructions
+- itemID: 1000027
+  itemName: Expert Housing
+- itemID: 1000028
+  itemName: Caldari Funds Unlimited
+- itemID: 1000029
+  itemName: State and Region Bank
+- itemID: 1000030
+  itemName: Modern Finances
+- itemID: 1000031
+  itemName: Chief Executive Panel
+- itemID: 1000032
+  itemName: Mercantile Club
+- itemID: 1000033
+  itemName: Caldari Business Tribunal
+- itemID: 1000034
+  itemName: House of Records
+- itemID: 1000035
+  itemName: Caldari Navy
+- itemID: 1000036
+  itemName: Internal Security
+- itemID: 1000037
+  itemName: Lai Dai Protection Service
+- itemID: 1000038
+  itemName: Ishukone Watch
+- itemID: 1000039
+  itemName: Home Guard
+- itemID: 1000040
+  itemName: Peace and Order Unit
+- itemID: 1000041
+  itemName: Spacelane Patrol
+- itemID: 1000042
+  itemName: Wiyrkomi Peace Corps
+- itemID: 1000043
+  itemName: Corporate Police Force
+- itemID: 1000044
+  itemName: School of Applied Knowledge
+- itemID: 1000045
+  itemName: Science and Trade Institute
+- itemID: 1000046
+  itemName: Sebiestor Tribe
+- itemID: 1000047
+  itemName: Krusual Tribe
+- itemID: 1000048
+  itemName: Vherokior Tribe
+- itemID: 1000049
+  itemName: Brutor Tribe
+- itemID: 1000050
+  itemName: Republic Parliament
+- itemID: 1000051
+  itemName: Republic Fleet
+- itemID: 1000052
+  itemName: Republic Justice Department
+- itemID: 1000053
+  itemName: Urban Management
+- itemID: 1000054
+  itemName: Republic Security Services
+- itemID: 1000055
+  itemName: Minmatar Mining Corporation
+- itemID: 1000056
+  itemName: Core Complexion Inc.
+- itemID: 1000057
+  itemName: Boundless Creation
+- itemID: 1000058
+  itemName: Eifyr and Co.
+- itemID: 1000059
+  itemName: Six Kin Development
+- itemID: 1000060
+  itemName: Native Freshfood
+- itemID: 1000061
+  itemName: Freedom Extension
+- itemID: 1000062
+  itemName: The Leisure Group
+- itemID: 1000063
+  itemName: Amarr Constructions
+- itemID: 1000064
+  itemName: Carthum Conglomerate
+- itemID: 1000065
+  itemName: Imperial Armaments
+- itemID: 1000066
+  itemName: Viziam
+- itemID: 1000067
+  itemName: Zoar and Sons
+- itemID: 1000068
+  itemName: Noble Appliances
+- itemID: 1000069
+  itemName: Ducia Foundry
+- itemID: 1000070
+  itemName: HZO Refinery
+- itemID: 1000071
+  itemName: Inherent Implants
+- itemID: 1000072
+  itemName: Imperial Shipment
+- itemID: 1000073
+  itemName: Amarr Certified News
+- itemID: 1000074
+  itemName: Joint Harvesting
+- itemID: 1000075
+  itemName: Nurtura
+- itemID: 1000076
+  itemName: Further Foodstuffs
+- itemID: 1000077
+  itemName: Royal Amarr Institute
+- itemID: 1000078
+  itemName: Imperial Chancellor
+- itemID: 1000079
+  itemName: Amarr Civil Service
+- itemID: 1000080
+  itemName: Ministry of War
+- itemID: 1000081
+  itemName: Ministry of Assessment
+- itemID: 1000082
+  itemName: Ministry of Internal Order
+- itemID: 1000083
+  itemName: Amarr Trade Registry
+- itemID: 1000084
+  itemName: Amarr Navy
+- itemID: 1000085
+  itemName: Court Chamberlain
+- itemID: 1000086
+  itemName: Emperor Family
+- itemID: 1000087
+  itemName: Kador Family
+- itemID: 1000088
+  itemName: Sarum Family
+- itemID: 1000089
+  itemName: Kor-Azor Family
+- itemID: 1000090
+  itemName: Ardishapur Family
+- itemID: 1000091
+  itemName: Tash-Murkon Family
+- itemID: 1000092
+  itemName: Civic Court
+- itemID: 1000093
+  itemName: Theology Council
+- itemID: 1000094
+  itemName: TransStellar Shipping
+- itemID: 1000095
+  itemName: Federal Freight
+- itemID: 1000096
+  itemName: Inner Zone Shipping
+- itemID: 1000097
+  itemName: Material Acquisition
+- itemID: 1000098
+  itemName: Astral Mining Inc.
+- itemID: 1000099
+  itemName: Combined Harvest
+- itemID: 1000100
+  itemName: Quafe Company
+- itemID: 1000101
+  itemName: CreoDron
+- itemID: 1000102
+  itemName: Roden Shipyards
+- itemID: 1000103
+  itemName: Allotek Industries
+- itemID: 1000104
+  itemName: Poteque Pharmaceuticals
+- itemID: 1000105
+  itemName: Impetus
+- itemID: 1000106
+  itemName: Egonics Inc.
+- itemID: 1000107
+  itemName: The Scope
+- itemID: 1000108
+  itemName: Chemal Tech
+- itemID: 1000109
+  itemName: Duvolle Laboratories
+- itemID: 1000110
+  itemName: FedMart
+- itemID: 1000111
+  itemName: Aliastra
+- itemID: 1000112
+  itemName: Bank of Luminaire
+- itemID: 1000113
+  itemName: Pend Insurance
+- itemID: 1000114
+  itemName: Garoun Investment Bank
+- itemID: 1000115
+  itemName: University of Caille
+- itemID: 1000116
+  itemName: President
+- itemID: 1000117
+  itemName: Senate
+- itemID: 1000118
+  itemName: Supreme Court
+- itemID: 1000119
+  itemName: Federal Administration
+- itemID: 1000120
+  itemName: Federation Navy
+- itemID: 1000121
+  itemName: Federal Intelligence Office
+- itemID: 1000122
+  itemName: Federation Customs
+- itemID: 1000123
+  itemName: Ammatar Fleet
+- itemID: 1000125
+  itemName: CONCORD
+- itemID: 1000126
+  itemName: Ammatar Consulate
+- itemID: 1000127
+  itemName: Guristas
+- itemID: 1000129
+  itemName: Outer Ring Excavations
+- itemID: 1000130
+  itemName: Sisters of EVE
+- itemID: 1000137
+  itemName: DED
+- itemID: 1000138
+  itemName: Dominations
+- itemID: 1000139
+  itemName: Food Relief
+- itemID: 1000141
+  itemName: Guristas Production
+- itemID: 1000144
+  itemName: Intaki Bank
+- itemID: 1000145
+  itemName: Intaki Commerce
+- itemID: 1000146
+  itemName: Intaki Space Police
+- itemID: 1000147
+  itemName: Intaki Syndicate
+- itemID: 1000149
+  itemName: Jove Navy
+- itemID: 1000151
+  itemName: Khanid Innovation
+- itemID: 1000152
+  itemName: Khanid Transport
+- itemID: 1000153
+  itemName: Khanid Works
+- itemID: 1000154
+  itemName: Nefantar Miner Association
+- itemID: 1000156
+  itemName: Royal Khanid Navy
+- itemID: 1000157
+  itemName: Serpentis Inquest
+- itemID: 1000159
+  itemName: The Sanctuary
+- itemID: 1000160
+  itemName: Thukker Mix
+- itemID: 1000163
+  itemName: Trust Partners
+- itemID: 1000165
+  itemName: Hedion University
+- itemID: 1000166
+  itemName: Imperial Academy
+- itemID: 1000167
+  itemName: State War Academy
+- itemID: 1000168
+  itemName: Federal Navy Academy
+- itemID: 1000169
+  itemName: Center for Advanced Studies
+- itemID: 1000170
+  itemName: Republic Military School
+- itemID: 1000171
+  itemName: Republic University
+- itemID: 1000172
+  itemName: Pator Tech School
+- itemID: 1000177
+  itemName: Material Institute
+- itemID: 1000178
+  itemName: Academy of Aggressive Behaviour
+- itemID: 1000179
+  itemName: 24th Imperial Crusade
+- itemID: 1000180
+  itemName: State Protectorate
+- itemID: 1000181
+  itemName: Federal Defense Union
+- itemID: 1000182
+  itemName: Tribal Liberation Force
+- itemID: 1000270
+  itemName: Outer Ring Development
+- itemID: 1000271
+  itemName: Outer Ring Prospecting
+- itemID: 1000274
+  itemName: Vigilant Tyrannos
+- itemID: 1000276
+  itemName: ORE Technologies
+- itemID: 1000277
+  itemName: Frostline Laboratories
+- itemID: 1000281
+  itemName: Independent Gaming Commission
+- itemID: 1000287
+  itemName: Infested Regions Hiveminds
+- itemID: 1000288
+  itemName: Navka Overminds
+- itemID: 1000289
+  itemName: Unshackled Overminds
+- itemID: 1000290
+  itemName: Karybdis Infestation
+- itemID: 1000292
+  itemName: Veles Clade
+- itemID: 1000293
+  itemName: Perun Clade
+- itemID: 1000297
+  itemName: AEGIS
+- itemID: 1000298
+  itemName: The Convocation of Triglav
+- itemID: 1000413
+  itemName: AIR Laboratories
+- itemID: 3000001
+  itemName: Dame Hel
+- itemID: 3003869
+  itemName: Pamoo Meninri
+- itemID: 3003873
+  itemName: Badji Bihabnir
+- itemID: 3003877
+  itemName: Saronu Seevath
+- itemID: 3003881
+  itemName: Kezti Sundara
+- itemID: 3003885
+  itemName: Evian Talmash
+- itemID: 3003889
+  itemName: Yonis Ardishapur
+- itemID: 3003893
+  itemName: Tarai Nakid
+- itemID: 3003897
+  itemName: Hasin Sokra
+- itemID: 3003901
+  itemName: Dochuta Karsoth
+- itemID: 3003905
+  itemName: Sasih Ghamak
+- itemID: 3003945
+  itemName: Mimian Mimian
+- itemID: 3003989
+  itemName: Mervan Moritok
+- itemID: 3003997
+  itemName: Ardamad Zoar
+- itemID: 3004033
+  itemName: Panaja Paukonsuo
+- itemID: 3004049
+  itemName: Imanima Hinpas
+- itemID: 3004057
+  itemName: Samon Mitsimo
+- itemID: 3004061
+  itemName: Torkebaira Shutsu
+- itemID: 3004073
+  itemName: Murvunauvas Ralpas
+- itemID: 3004089
+  itemName: Yashunen Munalala
+- itemID: 3004101
+  itemName: Erpas Kikida
+- itemID: 3004113
+  itemName: Ahtonen Osmon
+- itemID: 3004125
+  itemName: Men Reppola
+- itemID: 3004129
+  itemName: Haatakan Oiritsuu
+- itemID: 3004145
+  itemName: Soisonen Okalala
+- itemID: 3004165
+  itemName: Ahtimi Kirras
+- itemID: 3004169
+  itemName: Putsiras Paarubei
+- itemID: 3004201
+  itemName: Kuikiainen Onita
+- itemID: 3004209
+  itemName: Kuruta Irio
+- itemID: 3004217
+  itemName: Tantima Iwisoda
+- itemID: 3004233
+  itemName: Archovarie Toulard
+- itemID: 3004249
+  itemName: Boselena Enault
+- itemID: 3004269
+  itemName: Ekerin Molame
+- itemID: 3004325
+  itemName: Poire Viladillet
+- itemID: 3004329
+  itemName: Miloise Roden
+- itemID: 3004425
+  itemName: Enoksur Steidentet
+- itemID: 3004433
+  itemName: Astrund Amilfer
+- itemID: 3008416
+  itemName: Antaken Kamola
+- itemID: 3008417
+  itemName: Ansalakko Hosiwa
+- itemID: 3008418
+  itemName: Ansanaisen Eskonainen
+- itemID: 3008419
+  itemName: Apas Atshatairos
+- itemID: 3008420
+  itemName: Appi Intaa
+- itemID: 3008421
+  itemName: Aoken Molehanen
+- itemID: 3008422
+  itemName: Unsen Ikunola
+- itemID: 3008423
+  itemName: Vakkebando Obanmaka
+- itemID: 3008424
+  itemName: Tennolen Okogairos
+- itemID: 3008425
+  itemName: Iesa Pauljala
+- itemID: 3008463
+  itemName: Kentanen Shinagimi
+- itemID: 3008486
+  itemName: Edononi Tanskamon
+- itemID: 3008500
+  itemName: Kavukato Kasmon
+- itemID: 3008513
+  itemName: Isunmaa Hyyhenda
+- itemID: 3008845
+  itemName: Ahan Hemirin
+- itemID: 3008914
+  itemName: Kohaskhach Rales
+- itemID: 3008935
+  itemName: Tuzilo Zhada
+- itemID: 3009234
+  itemName: Ivenckbrault Gremmichel
+- itemID: 3009284
+  itemName: Deltes Maleterel
+- itemID: 3009311
+  itemName: Pallysseult Genereau
+- itemID: 3009381
+  itemName: Arnerore Rylerave
+- itemID: 3009393
+  itemName: Junnader Crucarne
+- itemID: 3009515
+  itemName: Eburch Esalion
+- itemID: 3009544
+  itemName: Ytee Ponebins
+- itemID: 3009551
+  itemName: Chrirentine Erdocoure
+- itemID: 3009646
+  itemName: Tranard Arnoche
+- itemID: 3010051
+  itemName: Skolokuin Honulf
+- itemID: 3010069
+  itemName: Anzillaques Azomiese
+- itemID: 3010878
+  itemName: Iemuken Aakuwa
+- itemID: 3010904
+  itemName: Nigirada Antu
+- itemID: 3010916
+  itemName: Hannonas Alineri
+- itemID: 3010938
+  itemName: Eskalen Elmaa
+- itemID: 3010976
+  itemName: Hilen Ekomuta
+- itemID: 3010998
+  itemName: Hetsen Bukken
+- itemID: 3011009
+  itemName: Otuniki Tekken
+- itemID: 3011032
+  itemName: Isela Irki
+- itemID: 3011072
+  itemName: Iberato Inama
+- itemID: 3011087
+  itemName: Andan Kuumi
+- itemID: 3011115
+  itemName: Kibayasu Jimmulen
+- itemID: 3011148
+  itemName: Soukesen Akkadan
+- itemID: 3011209
+  itemName: Suzakainen Inokakka
+- itemID: 3011472
+  itemName: Kinachi Hepimeki
+- itemID: 3011489
+  itemName: Tuotoh Kanaari
+- itemID: 3011700
+  itemName: Tanashaiken Aurila
+- itemID: 3011764
+  itemName: Tamo Heinulaila
+- itemID: 3011769
+  itemName: Nilen Koinahaila
+- itemID: 3011966
+  itemName: Sikoda Elaoutiras
+- itemID: 3012600
+  itemName: Band Elehdinn
+- itemID: 3012618
+  itemName: Ensi Ranjorn
+- itemID: 3012619
+  itemName: Idrolf Hrer
+- itemID: 3012753
+  itemName: Toldori Bensar
+- itemID: 3012843
+  itemName: Pisarpir Rooshan
+- itemID: 3012879
+  itemName: Taireyi Tilam
+- itemID: 3012881
+  itemName: Sihsad Aphuka
+- itemID: 3012983
+  itemName: Yapetou Piki
+- itemID: 3013205
+  itemName: Madaren Panora
+- itemID: 3013250
+  itemName: Haboulan Roda
+- itemID: 3013406
+  itemName: Garmasi Samooh
+- itemID: 3013418
+  itemName: Safanan Ature
+- itemID: 3013455
+  itemName: Aetaksan Reitufung
+- itemID: 3013523
+  itemName: Mitokka Etsantamaa
+- itemID: 3013566
+  itemName: Asanen Naikka
+- itemID: 3013715
+  itemName: Argre Derwycx
+- itemID: 3013717
+  itemName: Yveusnages Elelle
+- itemID: 3013800
+  itemName: Pomik Haromi
+- itemID: 3014312
+  itemName: Eudat Hetetta
+- itemID: 3014496
+  itemName: Metmeon Pisarpir
+- itemID: 3014608
+  itemName: Dahin Tafsas
+- itemID: 3014609
+  itemName: Tatah Panye
+- itemID: 3014625
+  itemName: Shali Usahed
+- itemID: 3014911
+  itemName: Camoul Hinda
+- itemID: 3014917
+  itemName: Dandan Nuhdi
+- itemID: 3014985
+  itemName: Mamiakie Nesta
+- itemID: 3015372
+  itemName: Malotte Laraert
+- itemID: 3015377
+  itemName: Chersines Cait
+- itemID: 3015436
+  itemName: Gryve Auwi
+- itemID: 3016150
+  itemName: Pukegainen Ansunainen
+- itemID: 3016201
+  itemName: Tonduzainen Malkkuras
+- itemID: 3016244
+  itemName: Jomimita Mala
+- itemID: 3016259
+  itemName: Hitsen Aruta
+- itemID: 3016296
+  itemName: Amaari Siainki
+- itemID: 3016338
+  itemName: Kouhanen Tallaja
+- itemID: 3016340
+  itemName: Halmaganda Oravuo
+- itemID: 3016517
+  itemName: Ralirashi Okimo
+- itemID: 3016669
+  itemName: Otakai Ashe
+- itemID: 3016681
+  itemName: Shisanela Poraila
+- itemID: 3016796
+  itemName: Karunani Vekasu
+- itemID: 3018343
+  itemName: Hansu Turu
+- itemID: 3018344
+  itemName: Retin Ariato
+- itemID: 3018345
+  itemName: Tekirye Awazhen
+- itemID: 3018346
+  itemName: Yru Hatamei
+- itemID: 3018347
+  itemName: Ryuki Sakkaro
+- itemID: 3018350
+  itemName: Istei Poyri
+- itemID: 3018351
+  itemName: Kusan Niemenen
+- itemID: 3018352
+  itemName: Sokei Kirku
+- itemID: 3018353
+  itemName: Oniya Arkimo
+- itemID: 3018357
+  itemName: Matani Jitainen
+- itemID: 3019416
+  itemName: Haemer Burroote
+- itemID: 3019573
+  itemName: Apyson Meminave
+- itemID: 3019576
+  itemName: Obelen Cune
+- itemID: 3019583
+  itemName: Tyrannos Strategos
+- itemID: 3019586
+  itemName: Absalom Garieu
+- itemID: 3019587
+  itemName: Iago Salaye
+- itemID: 3019598
+  itemName: Lady Ersilia Kor-Azor
+- itemID: 10000002
+  itemName: The Forge
+- itemID: 10000016
+  itemName: Lonetrek
+- itemID: 10000023
+  itemName: Pure Blind
+- itemID: 10000028
+  itemName: Molden Heath
+- itemID: 10000030
+  itemName: Heimatar
+- itemID: 10000032
+  itemName: Sinq Laison
+- itemID: 10000033
+  itemName: The Citadel
+- itemID: 10000036
+  itemName: Devoid
+- itemID: 10000038
+  itemName: The Bleak Lands
+- itemID: 10000042
+  itemName: Metropolis
+- itemID: 10000054
+  itemName: Aridia
+- itemID: 10000057
+  itemName: Outer Ring
+- itemID: 10000064
+  itemName: Essence
+- itemID: 10000070
+  itemName: Pochven
+- itemID: 11000001
+  itemName: A-R00001
+- itemID: 12000001
+  itemName: ADR01
+- itemID: 14000001
+  itemName: VR-01
+- itemID: 20000020
+  itemName: Kimotoro
+- itemID: 20000211
+  itemName: Umamon
+- itemID: 20000297
+  itemName: 304Z-R
+- itemID: 20000433
+  itemName: Semou
+- itemID: 20000657
+  itemName: Heart
+- itemID: 20000787
+  itemName: Krai Perun
+- itemID: 21000311
+  itemName: A-C00311
+- itemID: 22000001
+  itemName: ADC01
+- itemID: 24000001
+  itemName: VC-001
+- itemID: 30000001
+  itemName: Tanoo
+- itemID: 30000116
+  itemName: Kenobanala
+- itemID: 30000139
+  itemName: Urlen
+- itemID: 30000140
+  itemName: Maurasi
+- itemID: 30000141
+  itemName: Kisogo
+- itemID: 30000142
+  itemName: Jita
+- itemID: 30000143
+  itemName: Niyabainen
+- itemID: 30000144
+  itemName: Perimeter
+- itemID: 30000145
+  itemName: New Caldari
+- itemID: 30000146
+  itemName: Saisio
+- itemID: 30000149
+  itemName: Gekutami
+- itemID: 30000152
+  itemName: Hampinen
+- itemID: 30000165
+  itemName: Ishisomo
+- itemID: 30000166
+  itemName: Airmia
+- itemID: 30000167
+  itemName: Sakkikainen
+- itemID: 30000309
+  itemName: O-LR1H
+- itemID: 30000595
+  itemName: DUO-51
+- itemID: 30001202
+  itemName: MY-W1V
+- itemID: 30001290
+  itemName: 6NJ8-V
+- itemID: 30001356
+  itemName: Dantumi
+- itemID: 30001393
+  itemName: Malkalen
+- itemID: 30001394
+  itemName: Korama
+- itemID: 30001399
+  itemName: Elonaya
+- itemID: 30001401
+  itemName: Nonni
+- itemID: 30001403
+  itemName: Piak
+- itemID: 30001442
+  itemName: Saranen
+- itemID: 30001642
+  itemName: 3-CE1R
+- itemID: 30001669
+  itemName: Pimebeka
+- itemID: 30002019
+  itemName: F-NMX6
+- itemID: 30002048
+  itemName: Bei
+- itemID: 30002187
+  itemName: Amarr
+- itemID: 30002189
+  itemName: Hedion
+- itemID: 30002270
+  itemName: Avair
+- itemID: 30002395
+  itemName: Audesder
+- itemID: 30002414
+  itemName: Klingt
+- itemID: 30002415
+  itemName: Weld
+- itemID: 30002420
+  itemName: Egbinger
+- itemID: 30002513
+  itemName: Dammalin
+- itemID: 30002517
+  itemName: Gulmorogod
+- itemID: 30002544
+  itemName: Pator
+- itemID: 30002648
+  itemName: Ardene
+- itemID: 30002650
+  itemName: Ney
+- itemID: 30002654
+  itemName: Schoorasana
+- itemID: 30002706
+  itemName: Doussivitte
+- itemID: 30002775
+  itemName: Paara
+- itemID: 30002776
+  itemName: Annaro
+- itemID: 30002778
+  itemName: Tasabeshi
+- itemID: 30002779
+  itemName: Ono
+- itemID: 30002780
+  itemName: Muvolailen
+- itemID: 30002800
+  itemName: Haatomo
+- itemID: 30002801
+  itemName: Suroken
+- itemID: 30002960
+  itemName: Arzad
+- itemID: 30002988
+  itemName: Nakatre
+- itemID: 30003025
+  itemName: Lirsautton
+- itemID: 30003081
+  itemName: Ronne
+- itemID: 30003082
+  itemName: Hatori
+- itemID: 30003083
+  itemName: Junsen
+- itemID: 30003084
+  itemName: Malpara
+- itemID: 30003271
+  itemName: Poitot
+- itemID: 30003393
+  itemName: Eiluvodi
+- itemID: 30003394
+  itemName: Freatlidur
+- itemID: 30003395
+  itemName: Roleinn
+- itemID: 30003397
+  itemName: Bongveber
+- itemID: 30003399
+  itemName: Vorsk
+- itemID: 30003415
+  itemName: Aldagolf
+- itemID: 30003429
+  itemName: Geffur
+- itemID: 30003430
+  itemName: Oppold
+- itemID: 30003432
+  itemName: Lumegen
+- itemID: 30003570
+  itemName: Elore
+- itemID: 30003618
+  itemName: ZH3-BS
+- itemID: 30003792
+  itemName: Ostingele
+- itemID: 30003863
+  itemName: Khanid Prime
+- itemID: 30004065
+  itemName: PPG-XC
+- itemID: 30004248
+  itemName: Haimeh
+- itemID: 30004249
+  itemName: Avada
+- itemID: 30004250
+  itemName: Chibi
+- itemID: 30004253
+  itemName: Pahineh
+- itemID: 30004421
+  itemName: K-X5AX
+- itemID: 30004504
+  itemName: 4C-B7X
+- itemID: 30004558
+  itemName: A8-XBW
+- itemID: 30004799
+  itemName: CX8-6K
+- itemID: 30004993
+  itemName: Villore
+- itemID: 30005001
+  itemName: Arnon
+- itemID: 30005003
+  itemName: Adirain
+- itemID: 30005004
+  itemName: Attyn
+- itemID: 30005005
+  itemName: Ignebaener
+- itemID: 30005007
+  itemName: Lisbaetanne
+- itemID: 30005036
+  itemName: Amdonen
+- itemID: 30005038
+  itemName: Kor-Azor Prime
+- itemID: 30005043
+  itemName: Nakregde
+- itemID: 30005204
+  itemName: Yulai
+- itemID: 30005286
+  itemName: New Eden
+- itemID: 30005304
+  itemName: Alentene
+- itemID: 31000008
+  itemName: J100744
+- itemID: 32000001
+  itemName: AD001
+- itemID: 34000001
+  itemName: V-001
+- itemID: 40008889
+  itemName: Urlen I
+- itemID: 40008890
+  itemName: Urlen II
+- itemID: 40008891
+  itemName: Urlen II - Moon 1
+- itemID: 40008892
+  itemName: Urlen III
+- itemID: 40008893
+  itemName: Urlen III - Moon 1
+- itemID: 40008894
+  itemName: Urlen IV
+- itemID: 40008895
+  itemName: Urlen IV - Moon 1
+- itemID: 40008896
+  itemName: Urlen V
+- itemID: 40008897
+  itemName: Urlen V - Asteroid Belt 1
+- itemID: 40008898
+  itemName: Urlen V - Moon 1
+- itemID: 40008899
+  itemName: Urlen V - Moon 2
+- itemID: 40008900
+  itemName: Urlen VI
+- itemID: 40008901
+  itemName: Urlen VI - Moon 1
+- itemID: 40008902
+  itemName: Urlen VI - Moon 2
+- itemID: 40008903
+  itemName: Urlen VI - Moon 3
+- itemID: 40008904
+  itemName: Urlen VII
+- itemID: 40008905
+  itemName: Urlen VII - Moon 1
+- itemID: 40008906
+  itemName: Urlen VII - Moon 2
+- itemID: 40008907
+  itemName: Urlen VII - Moon 3
+- itemID: 40008908
+  itemName: Urlen VII - Moon 4
+- itemID: 40008909
+  itemName: Urlen VII - Moon 5
+- itemID: 40008910
+  itemName: Urlen VII - Moon 6
+- itemID: 40008911
+  itemName: Urlen VII - Moon 7
+- itemID: 40008912
+  itemName: Urlen VII - Moon 8
+- itemID: 40008913
+  itemName: Urlen VII - Moon 9
+- itemID: 40008914
+  itemName: Urlen VII - Asteroid Belt 1
+- itemID: 40008915
+  itemName: Urlen VIII
+- itemID: 40008916
+  itemName: Urlen VIII - Moon 1
+- itemID: 40008917
+  itemName: Urlen VIII - Moon 2
+- itemID: 40008918
+  itemName: Urlen IX
+- itemID: 40008919
+  itemName: Urlen IX - Moon 1
+- itemID: 40008921
+  itemName: Maurasi I
+- itemID: 40008922
+  itemName: Maurasi I - Asteroid Belt 1
+- itemID: 40008923
+  itemName: Maurasi II
+- itemID: 40008924
+  itemName: Maurasi II - Asteroid Belt 1
+- itemID: 40008925
+  itemName: Maurasi III
+- itemID: 40008926
+  itemName: Maurasi III - Asteroid Belt 1
+- itemID: 40008927
+  itemName: Maurasi IV
+- itemID: 40008928
+  itemName: Maurasi IV - Moon 1
+- itemID: 40008929
+  itemName: Maurasi V
+- itemID: 40008930
+  itemName: Maurasi V - Moon 1
+- itemID: 40008931
+  itemName: Maurasi VI
+- itemID: 40008932
+  itemName: Maurasi VI - Moon 1
+- itemID: 40008933
+  itemName: Maurasi VI - Moon 2
+- itemID: 40008934
+  itemName: Maurasi VI - Moon 3
+- itemID: 40008935
+  itemName: Maurasi VII
+- itemID: 40008936
+  itemName: Maurasi VII - Asteroid Belt 1
+- itemID: 40008937
+  itemName: Maurasi VII - Moon 1
+- itemID: 40008938
+  itemName: Maurasi VIII
+- itemID: 40008939
+  itemName: Maurasi VIII - Moon 1
+- itemID: 40008940
+  itemName: Maurasi VIII - Moon 2
+- itemID: 40008941
+  itemName: Maurasi VIII - Moon 3
+- itemID: 40008942
+  itemName: Maurasi VIII - Moon 4
+- itemID: 40008943
+  itemName: Maurasi VIII - Moon 5
+- itemID: 40008944
+  itemName: Maurasi VIII - Moon 6
+- itemID: 40008945
+  itemName: Maurasi VIII - Moon 7
+- itemID: 40008946
+  itemName: Maurasi VIII - Moon 8
+- itemID: 40008947
+  itemName: Maurasi VIII - Moon 9
+- itemID: 40008948
+  itemName: Maurasi VIII - Moon 10
+- itemID: 40008949
+  itemName: Maurasi VIII - Moon 11
+- itemID: 40008950
+  itemName: Maurasi VIII - Moon 12
+- itemID: 40008951
+  itemName: Maurasi VIII - Moon 13
+- itemID: 40008952
+  itemName: Maurasi VIII - Moon 14
+- itemID: 40008953
+  itemName: Maurasi VIII - Moon 15
+- itemID: 40008954
+  itemName: Maurasi VIII - Moon 16
+- itemID: 40008955
+  itemName: Maurasi VIII - Moon 17
+- itemID: 40008956
+  itemName: Maurasi VIII - Moon 18
+- itemID: 40008957
+  itemName: Maurasi VIII - Moon 19
+- itemID: 40008958
+  itemName: Maurasi VIII - Moon 20
+- itemID: 40008959
+  itemName: Maurasi VIII - Moon 21
+- itemID: 40008960
+  itemName: Maurasi IX
+- itemID: 40008961
+  itemName: Maurasi IX - Moon 1
+- itemID: 40008962
+  itemName: Maurasi IX - Asteroid Belt 1
+- itemID: 40008963
+  itemName: Maurasi IX - Moon 2
+- itemID: 40008964
+  itemName: Maurasi IX - Moon 3
+- itemID: 40008965
+  itemName: Maurasi IX - Moon 4
+- itemID: 40008966
+  itemName: Maurasi IX - Moon 5
+- itemID: 40008967
+  itemName: Maurasi IX - Moon 6
+- itemID: 40008968
+  itemName: Maurasi IX - Moon 7
+- itemID: 40008969
+  itemName: Maurasi IX - Moon 8
+- itemID: 40008970
+  itemName: Maurasi IX - Moon 9
+- itemID: 40008971
+  itemName: Maurasi IX - Moon 10
+- itemID: 40008972
+  itemName: Maurasi IX - Moon 11
+- itemID: 40008973
+  itemName: Maurasi IX - Moon 12
+- itemID: 40008974
+  itemName: Maurasi IX - Moon 13
+- itemID: 40008975
+  itemName: Maurasi IX - Moon 14
+- itemID: 40008976
+  itemName: Maurasi IX - Moon 15
+- itemID: 40008977
+  itemName: Maurasi IX - Moon 16
+- itemID: 40008978
+  itemName: Maurasi IX - Moon 17
+- itemID: 40008979
+  itemName: Maurasi IX - Moon 18
+- itemID: 40008980
+  itemName: Maurasi X
+- itemID: 40008981
+  itemName: Maurasi X - Moon 1
+- itemID: 40008982
+  itemName: Maurasi X - Moon 2
+- itemID: 40008983
+  itemName: Maurasi X - Asteroid Belt 4
+- itemID: 40008984
+  itemName: Maurasi X - Moon 3
+- itemID: 40008985
+  itemName: Maurasi X - Asteroid Belt 1
+- itemID: 40008986
+  itemName: Maurasi X - Moon 4
+- itemID: 40008987
+  itemName: Maurasi X - Moon 5
+- itemID: 40008988
+  itemName: Maurasi X - Moon 6
+- itemID: 40008989
+  itemName: Maurasi X - Moon 7
+- itemID: 40008990
+  itemName: Maurasi X - Moon 8
+- itemID: 40008991
+  itemName: Maurasi X - Moon 9
+- itemID: 40008992
+  itemName: Maurasi X - Moon 10
+- itemID: 40008993
+  itemName: Maurasi X - Moon 11
+- itemID: 40008994
+  itemName: Maurasi X - Moon 12
+- itemID: 40008995
+  itemName: Maurasi X - Moon 13
+- itemID: 40008996
+  itemName: Maurasi X - Moon 14
+- itemID: 40008997
+  itemName: Maurasi X - Moon 15
+- itemID: 40008998
+  itemName: Maurasi X - Asteroid Belt 3
+- itemID: 40008999
+  itemName: Maurasi X - Moon 16
+- itemID: 40009000
+  itemName: Maurasi X - Moon 17
+- itemID: 40009001
+  itemName: Maurasi X - Asteroid Belt 5
+- itemID: 40009002
+  itemName: Maurasi X - Moon 18
+- itemID: 40009003
+  itemName: Maurasi X - Asteroid Belt 2
+- itemID: 40009004
+  itemName: Maurasi X - Moon 19
+- itemID: 40009005
+  itemName: Maurasi X - Asteroid Belt 6
+- itemID: 40009006
+  itemName: Maurasi X - Moon 20
+- itemID: 40009007
+  itemName: Maurasi X - Moon 21
+- itemID: 40009008
+  itemName: Maurasi XI
+- itemID: 40009009
+  itemName: Maurasi XI - Asteroid Belt 6
+- itemID: 40009010
+  itemName: Maurasi XI - Asteroid Belt 1
+- itemID: 40009011
+  itemName: Maurasi XI - Asteroid Belt 10
+- itemID: 40009012
+  itemName: Maurasi XI - Asteroid Belt 2
+- itemID: 40009013
+  itemName: Maurasi XI - Asteroid Belt 9
+- itemID: 40009014
+  itemName: Maurasi XI - Moon 1
+- itemID: 40009015
+  itemName: Maurasi XI - Asteroid Belt 3
+- itemID: 40009016
+  itemName: Maurasi XI - Moon 2
+- itemID: 40009017
+  itemName: Maurasi XI - Moon 3
+- itemID: 40009018
+  itemName: Maurasi XI - Moon 4
+- itemID: 40009019
+  itemName: Maurasi XI - Asteroid Belt 11
+- itemID: 40009020
+  itemName: Maurasi XI - Moon 5
+- itemID: 40009021
+  itemName: Maurasi XI - Asteroid Belt 4
+- itemID: 40009022
+  itemName: Maurasi XI - Asteroid Belt 12
+- itemID: 40009023
+  itemName: Maurasi XI - Moon 6
+- itemID: 40009024
+  itemName: Maurasi XI - Moon 7
+- itemID: 40009025
+  itemName: Maurasi XI - Moon 8
+- itemID: 40009026
+  itemName: Maurasi XI - Moon 9
+- itemID: 40009027
+  itemName: Maurasi XI - Moon 10
+- itemID: 40009028
+  itemName: Maurasi XI - Moon 11
+- itemID: 40009029
+  itemName: Maurasi XI - Moon 12
+- itemID: 40009030
+  itemName: Maurasi XI - Moon 13
+- itemID: 40009031
+  itemName: Maurasi XI - Moon 14
+- itemID: 40009032
+  itemName: Maurasi XI - Moon 15
+- itemID: 40009033
+  itemName: Maurasi XI - Moon 16
+- itemID: 40009034
+  itemName: Maurasi XI - Asteroid Belt 5
+- itemID: 40009035
+  itemName: Maurasi XI - Moon 17
+- itemID: 40009036
+  itemName: Maurasi XI - Asteroid Belt 8
+- itemID: 40009037
+  itemName: Maurasi XI - Moon 18
+- itemID: 40009038
+  itemName: Maurasi XI - Moon 19
+- itemID: 40009039
+  itemName: Maurasi XI - Asteroid Belt 7
+- itemID: 40009040
+  itemName: Maurasi XI - Moon 20
+- itemID: 40009041
+  itemName: Maurasi XI - Moon 21
+- itemID: 40009042
+  itemName: Maurasi XI - Moon 22
+- itemID: 40009043
+  itemName: Maurasi XI - Moon 23
+- itemID: 40009044
+  itemName: Maurasi XI - Moon 24
+- itemID: 40009045
+  itemName: Maurasi XII
+- itemID: 40009046
+  itemName: Maurasi XII - Asteroid Belt 2
+- itemID: 40009047
+  itemName: Maurasi XII - Asteroid Belt 1
+- itemID: 40009048
+  itemName: Maurasi XII - Moon 1
+- itemID: 40009050
+  itemName: Kisogo I
+- itemID: 40009051
+  itemName: Kisogo I - Asteroid Belt 1
+- itemID: 40009052
+  itemName: Kisogo II
+- itemID: 40009053
+  itemName: Kisogo III
+- itemID: 40009054
+  itemName: Kisogo III - Asteroid Belt 1
+- itemID: 40009055
+  itemName: Kisogo III - Moon 1
+- itemID: 40009056
+  itemName: Kisogo IV
+- itemID: 40009057
+  itemName: Kisogo IV - Moon 1
+- itemID: 40009058
+  itemName: Kisogo IV - Moon 2
+- itemID: 40009059
+  itemName: Kisogo V
+- itemID: 40009060
+  itemName: Kisogo V - Moon 1
+- itemID: 40009061
+  itemName: Kisogo V - Moon 2
+- itemID: 40009062
+  itemName: Kisogo VI
+- itemID: 40009063
+  itemName: Kisogo VI - Moon 1
+- itemID: 40009064
+  itemName: Kisogo VI - Moon 2
+- itemID: 40009065
+  itemName: Kisogo VI - Moon 3
+- itemID: 40009066
+  itemName: Kisogo VI - Moon 4
+- itemID: 40009067
+  itemName: Kisogo VII
+- itemID: 40009068
+  itemName: Kisogo VII - Asteroid Belt 1
+- itemID: 40009069
+  itemName: Kisogo VII - Asteroid Belt 2
+- itemID: 40009070
+  itemName: Kisogo VIII
+- itemID: 40009071
+  itemName: Kisogo VIII - Moon 1
+- itemID: 40009072
+  itemName: Kisogo VIII - Moon 2
+- itemID: 40009073
+  itemName: Kisogo IX
+- itemID: 40009074
+  itemName: Kisogo IX - Moon 1
+- itemID: 40009075
+  itemName: Kisogo IX - Moon 2
+- itemID: 40009077
+  itemName: Jita I
+- itemID: 40009078
+  itemName: Jita II
+- itemID: 40009080
+  itemName: Jita III
+- itemID: 40009081
+  itemName: Jita III - Moon 1
+- itemID: 40009082
+  itemName: Jita IV
+- itemID: 40009083
+  itemName: Jita IV - Moon 1
+- itemID: 40009084
+  itemName: Jita IV - Moon 2
+- itemID: 40009085
+  itemName: Jita IV - Moon 3
+- itemID: 40009087
+  itemName: Jita IV - Moon 4
+- itemID: 40009088
+  itemName: Jita IV - Moon 5
+- itemID: 40009089
+  itemName: Jita IV - Moon 6
+- itemID: 40009090
+  itemName: Jita IV - Moon 7
+- itemID: 40009091
+  itemName: Jita IV - Moon 8
+- itemID: 40009092
+  itemName: Jita IV - Moon 9
+- itemID: 40009093
+  itemName: Jita IV - Moon 10
+- itemID: 40009094
+  itemName: Jita IV - Moon 11
+- itemID: 40009097
+  itemName: Jita IV - Moon 12
+- itemID: 40009098
+  itemName: Jita V
+- itemID: 40009099
+  itemName: Jita V - Moon 1
+- itemID: 40009100
+  itemName: Jita V - Moon 2
+- itemID: 40009101
+  itemName: Jita V - Moon 3
+- itemID: 40009102
+  itemName: Jita V - Moon 4
+- itemID: 40009103
+  itemName: Jita V - Moon 5
+- itemID: 40009104
+  itemName: Jita V - Moon 6
+- itemID: 40009105
+  itemName: Jita V - Moon 7
+- itemID: 40009106
+  itemName: Jita V - Moon 8
+- itemID: 40009107
+  itemName: Jita V - Moon 9
+- itemID: 40009108
+  itemName: Jita V - Moon 10
+- itemID: 40009109
+  itemName: Jita V - Moon 11
+- itemID: 40009110
+  itemName: Jita V - Moon 12
+- itemID: 40009111
+  itemName: Jita V - Moon 13
+- itemID: 40009112
+  itemName: Jita V - Moon 14
+- itemID: 40009113
+  itemName: Jita V - Moon 15
+- itemID: 40009114
+  itemName: Jita V - Moon 16
+- itemID: 40009115
+  itemName: Jita V - Moon 17
+- itemID: 40009116
+  itemName: Jita VI
+- itemID: 40009118
+  itemName: Jita VI - Moon 1
+- itemID: 40009119
+  itemName: Jita VII
+- itemID: 40009121
+  itemName: Jita VII - Moon 1
+- itemID: 40009122
+  itemName: Jita VII - Moon 2
+- itemID: 40009123
+  itemName: Jita VIII
+- itemID: 40009127
+  itemName: Niyabainen I
+- itemID: 40009128
+  itemName: Niyabainen II
+- itemID: 40009129
+  itemName: Niyabainen II - Asteroid Belt 1
+- itemID: 40009130
+  itemName: Niyabainen III
+- itemID: 40009131
+  itemName: Niyabainen III - Moon 1
+- itemID: 40009132
+  itemName: Niyabainen IV
+- itemID: 40009133
+  itemName: Niyabainen IV - Moon 1
+- itemID: 40009134
+  itemName: Niyabainen V
+- itemID: 40009135
+  itemName: Niyabainen V - Moon 1
+- itemID: 40009136
+  itemName: Niyabainen V - Moon 2
+- itemID: 40009137
+  itemName: Niyabainen V - Moon 3
+- itemID: 40009138
+  itemName: Niyabainen V - Moon 4
+- itemID: 40009139
+  itemName: Niyabainen V - Moon 5
+- itemID: 40009140
+  itemName: Niyabainen V - Moon 6
+- itemID: 40009141
+  itemName: Niyabainen VI
+- itemID: 40009142
+  itemName: Niyabainen VI - Moon 1
+- itemID: 40009143
+  itemName: Niyabainen VI - Moon 2
+- itemID: 40009144
+  itemName: Niyabainen VI - Moon 3
+- itemID: 40009145
+  itemName: Niyabainen VI - Moon 4
+- itemID: 40009146
+  itemName: Niyabainen VI - Moon 5
+- itemID: 40009147
+  itemName: Niyabainen VI - Moon 6
+- itemID: 40009148
+  itemName: Niyabainen VI - Moon 7
+- itemID: 40009149
+  itemName: Niyabainen VI - Moon 8
+- itemID: 40009150
+  itemName: Niyabainen VI - Moon 9
+- itemID: 40009151
+  itemName: Niyabainen VI - Moon 10
+- itemID: 40009152
+  itemName: Niyabainen VI - Moon 11
+- itemID: 40009153
+  itemName: Niyabainen VI - Moon 12
+- itemID: 40009154
+  itemName: Niyabainen VI - Moon 13
+- itemID: 40009155
+  itemName: Niyabainen VI - Moon 14
+- itemID: 40009156
+  itemName: Niyabainen VI - Moon 15
+- itemID: 40009157
+  itemName: Niyabainen VI - Moon 16
+- itemID: 40009158
+  itemName: Niyabainen VI - Moon 17
+- itemID: 40009159
+  itemName: Niyabainen VI - Moon 18
+- itemID: 40009160
+  itemName: Niyabainen VI - Moon 19
+- itemID: 40009161
+  itemName: Niyabainen VI - Moon 20
+- itemID: 40009162
+  itemName: Niyabainen VII
+- itemID: 40009163
+  itemName: Niyabainen VII - Asteroid Belt 1
+- itemID: 40009164
+  itemName: Niyabainen VII - Moon 1
+- itemID: 40009165
+  itemName: Niyabainen VII - Moon 2
+- itemID: 40009166
+  itemName: Niyabainen VII - Moon 3
+- itemID: 40009167
+  itemName: Niyabainen VII - Moon 4
+- itemID: 40009168
+  itemName: Niyabainen VII - Moon 5
+- itemID: 40009169
+  itemName: Niyabainen VII - Moon 6
+- itemID: 40009170
+  itemName: Niyabainen VII - Moon 7
+- itemID: 40009171
+  itemName: Niyabainen VII - Moon 8
+- itemID: 40009172
+  itemName: Niyabainen VII - Moon 9
+- itemID: 40009173
+  itemName: Niyabainen VII - Moon 10
+- itemID: 40009174
+  itemName: Niyabainen VII - Moon 11
+- itemID: 40009175
+  itemName: Niyabainen VII - Moon 12
+- itemID: 40009176
+  itemName: Niyabainen VII - Moon 13
+- itemID: 40009177
+  itemName: Niyabainen VIII
+- itemID: 40009178
+  itemName: Niyabainen VIII - Moon 1
+- itemID: 40009179
+  itemName: Niyabainen VIII - Moon 2
+- itemID: 40009180
+  itemName: Niyabainen VIII - Asteroid Belt 2
+- itemID: 40009181
+  itemName: Niyabainen VIII - Moon 3
+- itemID: 40009182
+  itemName: Niyabainen VIII - Moon 4
+- itemID: 40009183
+  itemName: Niyabainen VIII - Moon 5
+- itemID: 40009184
+  itemName: Niyabainen VIII - Moon 6
+- itemID: 40009185
+  itemName: Niyabainen VIII - Moon 7
+- itemID: 40009186
+  itemName: Niyabainen VIII - Moon 8
+- itemID: 40009187
+  itemName: Niyabainen VIII - Moon 9
+- itemID: 40009188
+  itemName: Niyabainen VIII - Moon 10
+- itemID: 40009189
+  itemName: Niyabainen VIII - Moon 11
+- itemID: 40009190
+  itemName: Niyabainen VIII - Moon 12
+- itemID: 40009191
+  itemName: Niyabainen VIII - Moon 13
+- itemID: 40009192
+  itemName: Niyabainen VIII - Moon 14
+- itemID: 40009193
+  itemName: Niyabainen VIII - Asteroid Belt 1
+- itemID: 40009194
+  itemName: Niyabainen VIII - Moon 15
+- itemID: 40009195
+  itemName: Niyabainen VIII - Moon 16
+- itemID: 40009196
+  itemName: Niyabainen VIII - Moon 17
+- itemID: 40009197
+  itemName: Niyabainen VIII - Moon 18
+- itemID: 40009198
+  itemName: Niyabainen VIII - Asteroid Belt 4
+- itemID: 40009199
+  itemName: Niyabainen VIII - Moon 19
+- itemID: 40009200
+  itemName: Niyabainen VIII - Asteroid Belt 3
+- itemID: 40009201
+  itemName: Niyabainen VIII - Moon 20
+- itemID: 40009202
+  itemName: Niyabainen IX
+- itemID: 40009203
+  itemName: Niyabainen IX - Asteroid Belt 2
+- itemID: 40009204
+  itemName: Niyabainen IX - Moon 1
+- itemID: 40009205
+  itemName: Niyabainen IX - Moon 2
+- itemID: 40009206
+  itemName: Niyabainen IX - Moon 3
+- itemID: 40009207
+  itemName: Niyabainen IX - Moon 4
+- itemID: 40009208
+  itemName: Niyabainen IX - Moon 5
+- itemID: 40009209
+  itemName: Niyabainen IX - Moon 6
+- itemID: 40009210
+  itemName: Niyabainen IX - Moon 7
+- itemID: 40009211
+  itemName: Niyabainen IX - Moon 8
+- itemID: 40009212
+  itemName: Niyabainen IX - Moon 9
+- itemID: 40009213
+  itemName: Niyabainen IX - Moon 10
+- itemID: 40009214
+  itemName: Niyabainen IX - Moon 11
+- itemID: 40009215
+  itemName: Niyabainen IX - Moon 12
+- itemID: 40009216
+  itemName: Niyabainen IX - Moon 13
+- itemID: 40009217
+  itemName: Niyabainen IX - Moon 14
+- itemID: 40009218
+  itemName: Niyabainen IX - Moon 15
+- itemID: 40009219
+  itemName: Niyabainen IX - Moon 16
+- itemID: 40009220
+  itemName: Niyabainen IX - Asteroid Belt 1
+- itemID: 40009221
+  itemName: Niyabainen IX - Moon 17
+- itemID: 40009222
+  itemName: Niyabainen IX - Moon 18
+- itemID: 40009223
+  itemName: Niyabainen IX - Moon 19
+- itemID: 40009224
+  itemName: Niyabainen IX - Asteroid Belt 4
+- itemID: 40009225
+  itemName: Niyabainen IX - Moon 20
+- itemID: 40009226
+  itemName: Niyabainen IX - Asteroid Belt 3
+- itemID: 40009227
+  itemName: Niyabainen IX - Moon 21
+- itemID: 40009229
+  itemName: Perimeter I
+- itemID: 40009230
+  itemName: Perimeter I - Moon 1
+- itemID: 40009231
+  itemName: Perimeter II
+- itemID: 40009232
+  itemName: Perimeter II - Asteroid Belt 1
+- itemID: 40009233
+  itemName: Perimeter II - Moon 1
+- itemID: 40009234
+  itemName: Perimeter III
+- itemID: 40009235
+  itemName: Perimeter IV
+- itemID: 40009236
+  itemName: Perimeter V
+- itemID: 40009237
+  itemName: Perimeter V - Moon 1
+- itemID: 40009238
+  itemName: Perimeter VI
+- itemID: 40009239
+  itemName: Perimeter VI - Moon 1
+- itemID: 40009240
+  itemName: Perimeter VI - Moon 2
+- itemID: 40009241
+  itemName: Perimeter VII
+- itemID: 40009242
+  itemName: Perimeter VII - Moon 1
+- itemID: 40009243
+  itemName: Perimeter VII - Moon 2
+- itemID: 40009244
+  itemName: Perimeter VIII
+- itemID: 40009245
+  itemName: Perimeter VIII - Asteroid Belt 1
+- itemID: 40009246
+  itemName: Perimeter VIII - Moon 1
+- itemID: 40009247
+  itemName: Perimeter IX
+- itemID: 40009248
+  itemName: Perimeter X
+- itemID: 40009249
+  itemName: Perimeter X - Asteroid Belt 1
+- itemID: 40009250
+  itemName: Perimeter X - Moon 1
+- itemID: 40009251
+  itemName: Perimeter X - Moon 2
+- itemID: 40009253
+  itemName: New Caldari I (Matigu)
+- itemID: 40009254
+  itemName: New Caldari I (Matigu) - Moon 1
+- itemID: 40009255
+  itemName: New Caldari II (Matias)
+- itemID: 40009256
+  itemName: New Caldari II (Matias) - Asteroid Belt 1
+- itemID: 40009257
+  itemName: New Caldari III (Orieku)
+- itemID: 40009258
+  itemName: New Caldari III (Orieku) - Asteroid Belt 1
+- itemID: 40009259
+  itemName: New Caldari III (Orieku) - Moon 1
+- itemID: 40009260
+  itemName: New Caldari Prime
+- itemID: 40009261
+  itemName: New Caldari Prime - Moon 1
+- itemID: 40009262
+  itemName: New Caldari Prime - Moon 2
+- itemID: 40009263
+  itemName: New Caldari Prime - Moon 3
+- itemID: 40009264
+  itemName: New Caldari V (Oniteseru)
+- itemID: 40009265
+  itemName: New Caldari V (Oniteseru) - Moon 1
+- itemID: 40009266
+  itemName: New Caldari V (Oniteseru) - Moon 2
+- itemID: 40009267
+  itemName: New Caldari V (Oniteseru) - Moon 3
+- itemID: 40091704
+  itemName: Saranen I
+- itemID: 40091705
+  itemName: Saranen II
+- itemID: 40091706
+  itemName: Saranen II - Asteroid Belt 1
+- itemID: 40091707
+  itemName: Saranen III
+- itemID: 40091708
+  itemName: Saranen III - Moon 1
+- itemID: 40091709
+  itemName: Saranen III - Asteroid Belt 1
+- itemID: 40091710
+  itemName: Saranen III - Moon 2
+- itemID: 40091711
+  itemName: Saranen III - Moon 3
+- itemID: 40091712
+  itemName: Saranen III - Moon 4
+- itemID: 40091713
+  itemName: Saranen III - Moon 5
+- itemID: 40091714
+  itemName: Saranen III - Moon 6
+- itemID: 40091715
+  itemName: Saranen III - Moon 7
+- itemID: 40091716
+  itemName: Saranen III - Moon 8
+- itemID: 40091717
+  itemName: Saranen III - Moon 9
+- itemID: 40091718
+  itemName: Saranen III - Moon 10
+- itemID: 40091719
+  itemName: Saranen III - Moon 11
+- itemID: 40091720
+  itemName: Saranen III - Moon 12
+- itemID: 40091721
+  itemName: Saranen III - Moon 13
+- itemID: 40091722
+  itemName: Saranen III - Moon 14
+- itemID: 40091723
+  itemName: Saranen III - Moon 15
+- itemID: 40091724
+  itemName: Saranen III - Moon 16
+- itemID: 40091725
+  itemName: Saranen III - Moon 17
+- itemID: 40091726
+  itemName: Saranen IV
+- itemID: 40091727
+  itemName: Saranen IV - Moon 1
+- itemID: 40091728
+  itemName: Saranen IV - Moon 2
+- itemID: 40091729
+  itemName: Saranen IV - Moon 3
+- itemID: 40091730
+  itemName: Saranen IV - Moon 4
+- itemID: 40091731
+  itemName: Saranen IV - Moon 5
+- itemID: 40091732
+  itemName: Saranen IV - Moon 6
+- itemID: 40091733
+  itemName: Saranen IV - Moon 7
+- itemID: 40091734
+  itemName: Saranen IV - Moon 8
+- itemID: 40091735
+  itemName: Saranen IV - Moon 9
+- itemID: 40091736
+  itemName: Saranen IV - Moon 10
+- itemID: 40091737
+  itemName: Saranen IV - Moon 11
+- itemID: 40091738
+  itemName: Saranen IV - Moon 12
+- itemID: 40091739
+  itemName: Saranen IV - Moon 13
+- itemID: 40091740
+  itemName: Saranen IV - Moon 14
+- itemID: 40091741
+  itemName: Saranen IV - Moon 15
+- itemID: 40091742
+  itemName: Saranen IV - Moon 16
+- itemID: 40091743
+  itemName: Saranen IV - Moon 17
+- itemID: 40091744
+  itemName: Saranen V
+- itemID: 40091745
+  itemName: Saranen V - Moon 1
+- itemID: 40091746
+  itemName: Saranen V - Moon 2
+- itemID: 40091747
+  itemName: Saranen V - Moon 3
+- itemID: 40091748
+  itemName: Saranen V - Moon 4
+- itemID: 40091749
+  itemName: Saranen V - Moon 5
+- itemID: 40091750
+  itemName: Saranen V - Moon 6
+- itemID: 40091751
+  itemName: Saranen V - Moon 7
+- itemID: 40091752
+  itemName: Saranen V - Moon 8
+- itemID: 40091753
+  itemName: Saranen V - Moon 9
+- itemID: 40091754
+  itemName: Saranen V - Moon 10
+- itemID: 40091755
+  itemName: Saranen V - Moon 11
+- itemID: 40091756
+  itemName: Saranen V - Moon 12
+- itemID: 40091757
+  itemName: Saranen V - Moon 13
+- itemID: 40091758
+  itemName: Saranen V - Moon 14
+- itemID: 40091759
+  itemName: Saranen V - Moon 15
+- itemID: 40091760
+  itemName: Saranen V - Moon 16
+- itemID: 40091761
+  itemName: Saranen V - Asteroid Belt 1
+- itemID: 40091762
+  itemName: Saranen V - Moon 17
+- itemID: 40091763
+  itemName: Saranen V - Asteroid Belt 3
+- itemID: 40091764
+  itemName: Saranen V - Moon 18
+- itemID: 40091765
+  itemName: Saranen V - Asteroid Belt 2
+- itemID: 40091766
+  itemName: Saranen V - Moon 19
+- itemID: 40091767
+  itemName: Saranen V - Asteroid Belt 5
+- itemID: 40091768
+  itemName: Saranen V - Moon 20
+- itemID: 40091769
+  itemName: Saranen V - Asteroid Belt 6
+- itemID: 40091770
+  itemName: Saranen V - Asteroid Belt 7
+- itemID: 40091771
+  itemName: Saranen V - Moon 21
+- itemID: 40091772
+  itemName: Saranen V - Asteroid Belt 8
+- itemID: 40091773
+  itemName: Saranen V - Asteroid Belt 4
+- itemID: 40091774
+  itemName: Saranen V - Moon 22
+- itemID: 40091775
+  itemName: Saranen VI
+- itemID: 40091776
+  itemName: Saranen VI - Asteroid Belt 1
+- itemID: 40091777
+  itemName: Saranen VI - Moon 1
+- itemID: 40128776
+  itemName: F-NMX6 I
+- itemID: 40128777
+  itemName: F-NMX6 I - Moon 1
+- itemID: 40128778
+  itemName: F-NMX6 II
+- itemID: 40128779
+  itemName: F-NMX6 II - Moon 1
+- itemID: 40128780
+  itemName: F-NMX6 III
+- itemID: 40128781
+  itemName: F-NMX6 III - Moon 1
+- itemID: 40128782
+  itemName: F-NMX6 III - Moon 2
+- itemID: 40128783
+  itemName: F-NMX6 III - Moon 3
+- itemID: 40128784
+  itemName: F-NMX6 III - Moon 4
+- itemID: 40128785
+  itemName: F-NMX6 III - Moon 5
+- itemID: 40128786
+  itemName: F-NMX6 III - Moon 6
+- itemID: 40128787
+  itemName: F-NMX6 III - Moon 7
+- itemID: 40128788
+  itemName: F-NMX6 III - Moon 8
+- itemID: 40128789
+  itemName: F-NMX6 III - Moon 9
+- itemID: 40128790
+  itemName: F-NMX6 III - Moon 10
+- itemID: 40128791
+  itemName: F-NMX6 III - Moon 11
+- itemID: 40128792
+  itemName: F-NMX6 III - Moon 12
+- itemID: 40128793
+  itemName: F-NMX6 III - Moon 13
+- itemID: 40128794
+  itemName: F-NMX6 III - Moon 14
+- itemID: 40128795
+  itemName: F-NMX6 III - Moon 15
+- itemID: 40128796
+  itemName: F-NMX6 III - Moon 16
+- itemID: 40128797
+  itemName: F-NMX6 III - Asteroid Belt 1
+- itemID: 40128798
+  itemName: F-NMX6 III - Moon 17
+- itemID: 40128799
+  itemName: F-NMX6 IV
+- itemID: 40128800
+  itemName: F-NMX6 IV - Moon 1
+- itemID: 40128801
+  itemName: F-NMX6 IV - Moon 2
+- itemID: 40128802
+  itemName: F-NMX6 IV - Moon 3
+- itemID: 40128803
+  itemName: F-NMX6 IV - Moon 4
+- itemID: 40128804
+  itemName: F-NMX6 IV - Moon 5
+- itemID: 40128805
+  itemName: F-NMX6 IV - Moon 6
+- itemID: 40128806
+  itemName: F-NMX6 IV - Moon 7
+- itemID: 40128807
+  itemName: F-NMX6 IV - Moon 8
+- itemID: 40128808
+  itemName: F-NMX6 IV - Moon 9
+- itemID: 40128809
+  itemName: F-NMX6 IV - Moon 10
+- itemID: 40128810
+  itemName: F-NMX6 IV - Moon 11
+- itemID: 40128811
+  itemName: F-NMX6 IV - Moon 12
+- itemID: 40128812
+  itemName: F-NMX6 IV - Moon 13
+- itemID: 40128813
+  itemName: F-NMX6 IV - Moon 14
+- itemID: 40128814
+  itemName: F-NMX6 IV - Moon 15
+- itemID: 40128815
+  itemName: F-NMX6 IV - Moon 16
+- itemID: 40128816
+  itemName: F-NMX6 IV - Moon 17
+- itemID: 40128817
+  itemName: F-NMX6 IV - Moon 18
+- itemID: 40128818
+  itemName: F-NMX6 V
+- itemID: 40128819
+  itemName: F-NMX6 V - Moon 1
+- itemID: 40128820
+  itemName: F-NMX6 V - Asteroid Belt 1
+- itemID: 40128821
+  itemName: F-NMX6 V - Moon 2
+- itemID: 40128822
+  itemName: F-NMX6 V - Moon 3
+- itemID: 40128823
+  itemName: F-NMX6 V - Asteroid Belt 2
+- itemID: 40128824
+  itemName: F-NMX6 V - Asteroid Belt 3
+- itemID: 40128825
+  itemName: F-NMX6 V - Moon 4
+- itemID: 40128826
+  itemName: F-NMX6 V - Moon 5
+- itemID: 40128827
+  itemName: F-NMX6 V - Moon 6
+- itemID: 40128828
+  itemName: F-NMX6 V - Moon 7
+- itemID: 40128829
+  itemName: F-NMX6 V - Moon 8
+- itemID: 40128830
+  itemName: F-NMX6 V - Moon 9
+- itemID: 40128831
+  itemName: F-NMX6 V - Moon 10
+- itemID: 40128832
+  itemName: F-NMX6 V - Moon 11
+- itemID: 40128833
+  itemName: F-NMX6 V - Moon 12
+- itemID: 40128834
+  itemName: F-NMX6 V - Moon 13
+- itemID: 40128835
+  itemName: F-NMX6 V - Moon 14
+- itemID: 40128836
+  itemName: F-NMX6 V - Moon 15
+- itemID: 40128837
+  itemName: F-NMX6 V - Moon 16
+- itemID: 40128838
+  itemName: F-NMX6 V - Moon 17
+- itemID: 40128839
+  itemName: F-NMX6 V - Moon 18
+- itemID: 40128840
+  itemName: F-NMX6 V - Moon 19
+- itemID: 40128841
+  itemName: F-NMX6 V - Asteroid Belt 4
+- itemID: 40128842
+  itemName: F-NMX6 V - Moon 20
+- itemID: 40128843
+  itemName: F-NMX6 V - Asteroid Belt 5
+- itemID: 40128844
+  itemName: F-NMX6 V - Moon 21
+- itemID: 40128845
+  itemName: F-NMX6 VI
+- itemID: 40128846
+  itemName: F-NMX6 VII
+- itemID: 40128847
+  itemName: F-NMX6 VII - Moon 1
+- itemID: 40128848
+  itemName: F-NMX6 VII - Moon 2
+- itemID: 40128849
+  itemName: F-NMX6 VII - Moon 3
+- itemID: 40128850
+  itemName: F-NMX6 VII - Moon 4
+- itemID: 40128851
+  itemName: F-NMX6 VII - Moon 5
+- itemID: 40128852
+  itemName: F-NMX6 VII - Moon 6
+- itemID: 40128853
+  itemName: F-NMX6 VII - Moon 7
+- itemID: 40128854
+  itemName: F-NMX6 VII - Moon 8
+- itemID: 40128855
+  itemName: F-NMX6 VII - Asteroid Belt 1
+- itemID: 40128856
+  itemName: F-NMX6 VII - Asteroid Belt 2
+- itemID: 40128857
+  itemName: F-NMX6 VII - Asteroid Belt 3
+- itemID: 40128858
+  itemName: F-NMX6 VIII
+- itemID: 40128859
+  itemName: F-NMX6 VIII - Asteroid Belt 1
+- itemID: 40128860
+  itemName: F-NMX6 VIII - Asteroid Belt 2
+- itemID: 40187876
+  itemName: Arzad I
+- itemID: 40187877
+  itemName: Arzad II
+- itemID: 40187878
+  itemName: Arzad II - Moon 1
+- itemID: 40187879
+  itemName: Arzad III
+- itemID: 40187880
+  itemName: Arzad IV
+- itemID: 40187881
+  itemName: Arzad IV - Moon 1
+- itemID: 40187882
+  itemName: Arzad V
+- itemID: 40187883
+  itemName: Arzad V - Moon 1
+- itemID: 40187884
+  itemName: Arzad V - Moon 2
+- itemID: 40187885
+  itemName: Arzad VI
+- itemID: 40187886
+  itemName: Arzad VI - Moon 1
+- itemID: 40187887
+  itemName: Arzad VI - Moon 2
+- itemID: 40187888
+  itemName: Arzad VII
+- itemID: 40187889
+  itemName: Arzad VII - Asteroid Belt 1
+- itemID: 40187890
+  itemName: Arzad VII - Moon 1
+- itemID: 40187891
+  itemName: Arzad VII - Moon 2
+- itemID: 40187892
+  itemName: Arzad VII - Moon 3
+- itemID: 40187893
+  itemName: Arzad VII - Moon 4
+- itemID: 40187894
+  itemName: Arzad VIII
+- itemID: 40187895
+  itemName: Arzad VIII - Asteroid Belt 7
+- itemID: 40187896
+  itemName: Arzad VIII - Asteroid Belt 1
+- itemID: 40187897
+  itemName: Arzad VIII - Asteroid Belt 8
+- itemID: 40187898
+  itemName: Arzad VIII - Asteroid Belt 2
+- itemID: 40187899
+  itemName: Arzad VIII - Asteroid Belt 10
+- itemID: 40187900
+  itemName: Arzad VIII - Asteroid Belt 3
+- itemID: 40187901
+  itemName: Arzad VIII - Asteroid Belt 9
+- itemID: 40187902
+  itemName: Arzad VIII - Asteroid Belt 4
+- itemID: 40187903
+  itemName: Arzad VIII - Asteroid Belt 6
+- itemID: 40187904
+  itemName: Arzad VIII - Moon 1
+- itemID: 40187905
+  itemName: Arzad VIII - Asteroid Belt 5
+- itemID: 40187906
+  itemName: Arzad VIII - Moon 2
+- itemID: 40187907
+  itemName: Arzad VIII - Moon 3
+- itemID: 40187908
+  itemName: Arzad VIII - Moon 4
+- itemID: 40187909
+  itemName: Arzad VIII - Asteroid Belt 11
+- itemID: 40187910
+  itemName: Arzad VIII - Moon 5
+- itemID: 40187911
+  itemName: Arzad VIII - Moon 6
+- itemID: 40187912
+  itemName: Arzad VIII - Asteroid Belt 12
+- itemID: 40187913
+  itemName: Arzad VIII - Moon 7
+- itemID: 40187914
+  itemName: Arzad VIII - Moon 8
+- itemID: 40187915
+  itemName: Arzad VIII - Moon 9
+- itemID: 40187916
+  itemName: Arzad VIII - Asteroid Belt 13
+- itemID: 40187917
+  itemName: Arzad VIII - Asteroid Belt 14
+- itemID: 40187918
+  itemName: Arzad IX
+- itemID: 40187919
+  itemName: Arzad IX - Asteroid Belt 2
+- itemID: 40187920
+  itemName: Arzad IX - Asteroid Belt 1
+- itemID: 40187921
+  itemName: Arzad IX - Moon 1
+- itemID: 40187922
+  itemName: Arzad IX - Moon 2
+- itemID: 40187923
+  itemName: Arzad IX - Moon 3
+- itemID: 40187924
+  itemName: Arzad IX - Moon 4
+- itemID: 40187925
+  itemName: Arzad IX - Moon 5
+- itemID: 40187926
+  itemName: Arzad IX - Moon 6
+- itemID: 40187927
+  itemName: Arzad IX - Moon 7
+- itemID: 40187928
+  itemName: Arzad IX - Asteroid Belt 5
+- itemID: 40187929
+  itemName: Arzad IX - Moon 8
+- itemID: 40187930
+  itemName: Arzad IX - Asteroid Belt 4
+- itemID: 40187931
+  itemName: Arzad IX - Moon 9
+- itemID: 40187932
+  itemName: Arzad IX - Asteroid Belt 3
+- itemID: 40187933
+  itemName: Arzad IX - Moon 10
+- itemID: 40187934
+  itemName: Arzad IX - Moon 11
+- itemID: 40187935
+  itemName: Arzad IX - Asteroid Belt 7
+- itemID: 40187936
+  itemName: Arzad IX - Asteroid Belt 6
+- itemID: 40187937
+  itemName: Arzad IX - Moon 12
+- itemID: 40187938
+  itemName: Arzad X
+- itemID: 40187939
+  itemName: Arzad X - Asteroid Belt 1
+- itemID: 40187940
+  itemName: Arzad X - Asteroid Belt 4
+- itemID: 40187941
+  itemName: Arzad X - Moon 1
+- itemID: 40187942
+  itemName: Arzad X - Moon 2
+- itemID: 40187943
+  itemName: Arzad X - Moon 3
+- itemID: 40187944
+  itemName: Arzad X - Moon 4
+- itemID: 40187945
+  itemName: Arzad X - Moon 5
+- itemID: 40187946
+  itemName: Arzad X - Asteroid Belt 2
+- itemID: 40187947
+  itemName: Arzad X - Moon 6
+- itemID: 40187948
+  itemName: Arzad X - Moon 7
+- itemID: 40187949
+  itemName: Arzad X - Asteroid Belt 3
+- itemID: 40187950
+  itemName: Arzad X - Moon 8
+- itemID: 40187951
+  itemName: Arzad X - Moon 9
+- itemID: 40187952
+  itemName: Arzad X - Asteroid Belt 5
+- itemID: 40187953
+  itemName: Arzad X - Asteroid Belt 6
+- itemID: 40187954
+  itemName: Arzad X - Moon 10
+- itemID: 40187955
+  itemName: Arzad X - Moon 11
+- itemID: 40187956
+  itemName: Arzad X - Asteroid Belt 7
+- itemID: 40285018
+  itemName: 4C-B7X I
+- itemID: 40285019
+  itemName: 4C-B7X II
+- itemID: 40285020
+  itemName: 4C-B7X III
+- itemID: 40285021
+  itemName: 4C-B7X III - Asteroid Belt 1
+- itemID: 40285022
+  itemName: 4C-B7X IV
+- itemID: 40285023
+  itemName: 4C-B7X IV - Moon 1
+- itemID: 40285024
+  itemName: 4C-B7X V
+- itemID: 40285025
+  itemName: 4C-B7X V - Moon 1
+- itemID: 40285026
+  itemName: 4C-B7X V - Moon 2
+- itemID: 40285027
+  itemName: 4C-B7X V - Moon 3
+- itemID: 40285028
+  itemName: 4C-B7X V - Moon 4
+- itemID: 40285029
+  itemName: 4C-B7X V - Moon 5
+- itemID: 40285030
+  itemName: 4C-B7X V - Moon 6
+- itemID: 40285031
+  itemName: 4C-B7X V - Moon 7
+- itemID: 40285032
+  itemName: 4C-B7X V - Moon 8
+- itemID: 40285033
+  itemName: 4C-B7X V - Moon 9
+- itemID: 40285034
+  itemName: 4C-B7X VI
+- itemID: 40285035
+  itemName: 4C-B7X VI - Asteroid Belt 1
+- itemID: 40285036
+  itemName: 4C-B7X VI - Moon 1
+- itemID: 40285037
+  itemName: 4C-B7X VII
+- itemID: 40285038
+  itemName: 4C-B7X VII - Moon 1
+- itemID: 40285039
+  itemName: 4C-B7X VII - Moon 2
+- itemID: 40285040
+  itemName: 4C-B7X VII - Moon 3
+- itemID: 40285041
+  itemName: 4C-B7X VII - Moon 4
+- itemID: 40285042
+  itemName: 4C-B7X VII - Moon 5
+- itemID: 40285043
+  itemName: 4C-B7X VII - Moon 6
+- itemID: 40285044
+  itemName: 4C-B7X VII - Moon 7
+- itemID: 40285045
+  itemName: 4C-B7X VII - Moon 8
+- itemID: 40285046
+  itemName: 4C-B7X VII - Moon 9
+- itemID: 40285047
+  itemName: 4C-B7X VII - Moon 10
+- itemID: 40285048
+  itemName: 4C-B7X VII - Moon 11
+- itemID: 40285049
+  itemName: 4C-B7X VII - Moon 12
+- itemID: 40285050
+  itemName: 4C-B7X VII - Moon 13
+- itemID: 40285051
+  itemName: 4C-B7X VII - Moon 14
+- itemID: 40285052
+  itemName: 4C-B7X VII - Moon 15
+- itemID: 40285053
+  itemName: 4C-B7X VII - Moon 16
+- itemID: 40285054
+  itemName: 4C-B7X VII - Moon 17
+- itemID: 40285055
+  itemName: 4C-B7X VII - Moon 18
+- itemID: 40285056
+  itemName: 4C-B7X VII - Moon 19
+- itemID: 40285057
+  itemName: 4C-B7X VII - Asteroid Belt 1
+- itemID: 40285058
+  itemName: 4C-B7X VII - Moon 20
+- itemID: 40285059
+  itemName: 4C-B7X VIII
+- itemID: 40285060
+  itemName: 4C-B7X VIII - Moon 1
+- itemID: 40285061
+  itemName: 4C-B7X VIII - Moon 2
+- itemID: 40285062
+  itemName: 4C-B7X VIII - Moon 3
+- itemID: 40285063
+  itemName: 4C-B7X VIII - Moon 4
+- itemID: 40285064
+  itemName: 4C-B7X VIII - Moon 5
+- itemID: 40285065
+  itemName: 4C-B7X VIII - Moon 6
+- itemID: 40285066
+  itemName: 4C-B7X VIII - Moon 7
+- itemID: 40285067
+  itemName: 4C-B7X VIII - Asteroid Belt 1
+- itemID: 40285068
+  itemName: 4C-B7X IX
+- itemID: 40285069
+  itemName: 4C-B7X IX - Asteroid Belt 1
+- itemID: 40285070
+  itemName: 4C-B7X IX - Moon 1
+- itemID: 40317022
+  itemName: Ignebaener I
+- itemID: 40317023
+  itemName: Ignebaener II
+- itemID: 40317024
+  itemName: Ignebaener III
+- itemID: 40317026
+  itemName: Ignebaener III - Moon 1
+- itemID: 40317027
+  itemName: Ignebaener III - Moon 2
+- itemID: 40317028
+  itemName: Ignebaener IV
+- itemID: 40317030
+  itemName: Ignebaener IV - Moon 1
+- itemID: 40317031
+  itemName: Ignebaener IV - Moon 2
+- itemID: 40317032
+  itemName: Ignebaener V
+- itemID: 40317033
+  itemName: Ignebaener V - Moon 1
+- itemID: 40317034
+  itemName: Ignebaener V - Moon 2
+- itemID: 40317035
+  itemName: Ignebaener V - Moon 3
+- itemID: 40317036
+  itemName: Ignebaener VI
+- itemID: 40317038
+  itemName: Ignebaener VI - Moon 1
+- itemID: 40317039
+  itemName: Ignebaener VI - Moon 2
+- itemID: 40350804
+  itemName: J100744 I
+- itemID: 40350805
+  itemName: J100744 II
+- itemID: 40350806
+  itemName: J100744 III
+- itemID: 40350807
+  itemName: J100744 IV
+- itemID: 40350808
+  itemName: J100744 V
+- itemID: 40350809
+  itemName: J100744 VI
+- itemID: 40350810
+  itemName: J100744 VI - Moon 1
+- itemID: 40350811
+  itemName: J100744 VII
+- itemID: 40350812
+  itemName: J100744 VII - Moon 1
+- itemID: 40350813
+  itemName: J100744 VII - Moon 2
+- itemID: 40350814
+  itemName: J100744 VIII
+- itemID: 40350815
+  itemName: J100744 VIII - Moon 1
+- itemID: 40350816
+  itemName: J100744 VIII - Moon 2
+- itemID: 40350817
+  itemName: J100744 VIII - Moon 3
+- itemID: 40350818
+  itemName: J100744 VIII - Moon 4
+- itemID: 40485497
+  itemName: Unknown Anomaly
+- itemID: 50000547
+  itemName: Stargate (Kisogo)
+- itemID: 50000548
+  itemName: Stargate (Unpas)
+- itemID: 50000549
+  itemName: Stargate (Perimeter)
+- itemID: 50000801
+  itemName: Stargate (Itamo)
+- itemID: 50000802
+  itemName: Stargate (Jita)
+- itemID: 50001004
+  itemName: Stargate (Urlen)
+- itemID: 50001248
+  itemName: Stargate (Maurasi)
+- itemID: 50001249
+  itemName: Stargate (Perimeter)
+- itemID: 50001250
+  itemName: Stargate (New Caldari)
+- itemID: 50001518
+  itemName: Stargate (Perimeter)
+- itemID: 50001519
+  itemName: Stargate (New Caldari)
+- itemID: 50002183
+  itemName: Stargate (Iyen-Oursta)
+- itemID: 50002184
+  itemName: Stargate (Urlen)
+- itemID: 50002185
+  itemName: Stargate (Jita)
+- itemID: 50002186
+  itemName: Stargate (Niyabainen)
+- itemID: 50002198
+  itemName: Stargate (Jita)
+- itemID: 50002200
+  itemName: Stargate (Niyabainen)
+- itemID: 50002201
+  itemName: Stargate (Hirtamon)
+- itemID: 50005377
+  itemName: Stargate (Karjataimon)
+- itemID: 50005378
+  itemName: Stargate (Tartoken)
+- itemID: 50006373
+  itemName: Stargate (Sifilar)
+- itemID: 50006374
+  itemName: Stargate (Ezzara)
+- itemID: 50006453
+  itemName: Stargate (7RM-N0)
+- itemID: 50006454
+  itemName: Stargate (ZKYV-W)
+- itemID: 50006455
+  itemName: Stargate (B-9C24)
+- itemID: 50009471
+  itemName: Stargate (F-XWIN)
+- itemID: 50009472
+  itemName: Stargate (LGUZ-1)
+- itemID: 50009473
+  itemName: Stargate (BF-SDP)
+- itemID: 50013562
+  itemName: Stargate (Tararan)
+- itemID: 50013647
+  itemName: Stargate (93PI-4)
+- itemID: 50013759
+  itemName: Stargate (Josameto)
+- itemID: 50013761
+  itemName: Stargate (Malkalen)
+- itemID: 50013876
+  itemName: Stargate (Sobaseki)
+- itemID: 50013913
+  itemName: Stargate (Muvolailen)
+- itemID: 50013919
+  itemName: Stargate (Alikara)
+- itemID: 50013921
+  itemName: Stargate (Niyabainen)
+- itemID: 50013922
+  itemName: Stargate (Jita)
+- itemID: 50013923
+  itemName: Stargate (Tunttaras)
+- itemID: 50013928
+  itemName: Stargate (Ikuchi)
+- itemID: 50013973
+  itemName: Stargate (Kusomonmon)
+- itemID: 50014051
+  itemName: Stargate (Sirppala)
+- itemID: 50016473
+  itemName: Stargate (Muvolailen)
+- itemID: 50016474
+  itemName: Stargate (Perimeter)
+- itemID: 50016475
+  itemName: Stargate (Maurasi)
+- itemID: 50016523
+  itemName: Stargate (Otela)
+- itemID: 50016524
+  itemName: Stargate (Komo)
+- itemID: 60000001
+  itemName: Doomheim Station
+- itemID: 60000004
+  itemName: Muvolailen X - Moon 3 - CBD Corporation Storage
+- itemID: 60000007
+  itemName: Ono V - Moon 9 - CBD Corporation Storage
+- itemID: 60000010
+  itemName: Annaro I - CBD Corporation Storage
+- itemID: 60000013
+  itemName: Ono V - Moon 2 - CBD Corporation Storage
+- itemID: 60000016
+  itemName: Tasabeshi VIII - Moon 13 - CBD Corporation Storage
+- itemID: 60000019
+  itemName: Tasabeshi VI - Moon 1 - CBD Corporation Storage
+- itemID: 60000022
+  itemName: Ney X - Moon 15 - CBD Corporation Storage
+- itemID: 60000025
+  itemName: Ardene VIII - Moon 5 - CBD Corporation Storage
+- itemID: 60000028
+  itemName: Schoorasana VI - Moon 1 - CBD Corporation Storage
+- itemID: 60000031
+  itemName: Schoorasana VI - Moon 6 - CBD Corporation Storage
+- itemID: 60000034
+  itemName: Ardene VI - Moon 12 - CBD Corporation Storage
+- itemID: 60000037
+  itemName: Ney X - Moon 12 - CBD Corporation Storage
+- itemID: 60000040
+  itemName: Eiluvodi VI - Moon 14 - CBD Corporation Storage
+- itemID: 60000043
+  itemName: Eiluvodi VIII - Moon 2 - CBD Corporation Storage
+- itemID: 60000046
+  itemName: Vorsk IV - Moon 1 - CBD Corporation Storage
+- itemID: 60000049
+  itemName: Bongveber IX - Moon 10 - CBD Corporation Storage
+- itemID: 60000052
+  itemName: Roleinn X - Moon 13 - CBD Corporation Storage
+- itemID: 60000055
+  itemName: Freatlidur IX - Moon 15 - CBD Corporation Storage
+- itemID: 60000058
+  itemName: Hatori X - Moon 12 - CBD Corporation Storage
+- itemID: 60000061
+  itemName: Malpara II - CBD Corporation Storage
+- itemID: 60000064
+  itemName: Hatori X - Moon 10 - CBD Corporation Storage
+- itemID: 60000067
+  itemName: Ronne I - Moon 1 - CBD Corporation Storage
+- itemID: 60000070
+  itemName: Hatori IX - Moon 8 - CBD Corporation Storage
+- itemID: 60000073
+  itemName: Junsen V - Moon 20 - CBD Corporation Storage
+- itemID: 60000076
+  itemName: Klingt VII - Moon 2 - CBD Corporation Storage
+- itemID: 60000079
+  itemName: Weld IV - Moon 14 - CBD Corporation Storage
+- itemID: 60000082
+  itemName: Klingt IV - Moon 1 - CBD Corporation Storage
+- itemID: 60000085
+  itemName: Egbinger XI - Moon 3 - CBD Corporation Storage
+- itemID: 60000088
+  itemName: Klingt V - CBD Corporation Storage
+- itemID: 60000091
+  itemName: Klingt IX - Moon 3 - CBD Corporation Storage
+- itemID: 60000094
+  itemName: Geffur VIII - Moon 10 - CBD Corporation Storage
+- itemID: 60000097
+  itemName: Lumegen V - Moon 2 - CBD Corporation Storage
+- itemID: 60000100
+  itemName: Oppold IX - Moon 6 - CBD Corporation Storage
+- itemID: 60000103
+  itemName: Lumegen I - CBD Corporation Storage
+- itemID: 60000106
+  itemName: Oppold IV - Moon 1 - CBD Corporation Storage
+- itemID: 60000109
+  itemName: Geffur VII - Moon 3 - CBD Corporation Storage
+- itemID: 60000112
+  itemName: Arnon VIII - Moon 2 - CBD Corporation Storage
+- itemID: 60000115
+  itemName: Adirain V - Moon 4 - CBD Corporation Storage
+- itemID: 60000118
+  itemName: Attyn V - Moon 2 - CBD Corporation Storage
+- itemID: 60000121
+  itemName: Lisbaetanne I - CBD Corporation Storage
+- itemID: 60000124
+  itemName: Arnon XII - CBD Corporation Storage
+- itemID: 60000127
+  itemName: Arnon X - Moon 8 - CBD Corporation Storage
+- itemID: 60000130
+  itemName: Chibi VI - Moon 13 - CBD Corporation Storage
+- itemID: 60000133
+  itemName: Pahineh VII - Moon 9 - CBD Corporation Storage
+- itemID: 60000136
+  itemName: Avada II - CBD Corporation Storage
+- itemID: 60000139
+  itemName: Haimeh IX - Moon 4 - CBD Corporation Storage
+- itemID: 60000142
+  itemName: Chibi VIII - Moon 21 - CBD Corporation Storage
+- itemID: 60000145
+  itemName: Haimeh II - CBD Corporation Storage
+- itemID: 60000148
+  itemName: Dammalin VI - CBD Corporation Storage
+- itemID: 60000151
+  itemName: Gulmorogod VI - Moon 4 - CBD Corporation Storage
+- itemID: 60000184
+  itemName: Shesha III - CBD Corporation Storage
+- itemID: 60000187
+  itemName: Hilaban VI - Moon 1 - CBD Corporation Storage
+- itemID: 60000190
+  itemName: Hilaban IV - Moon 5 - CBD Corporation Storage
+- itemID: 60000193
+  itemName: Hilaban III - Moon 3 - CBD Corporation Storage
+- itemID: 60000196
+  itemName: Pimebeka VIII - Moon 9 - CBD Corporation Storage
+- itemID: 60000259
+  itemName: Nonni VI - CBD Corporation Storage
+- itemID: 60000262
+  itemName: Nonni IV - CBD Corporation Storage
+- itemID: 60000265
+  itemName: Piak II - Moon 3 - CBD Corporation Storage
+- itemID: 60000268
+  itemName: Nonni III - CBD Corporation Storage
+- itemID: 60000274
+  itemName: Gekutami V - Moon 1 - Prompt Delivery Storage
+- itemID: 60000310
+  itemName: Elonaya X - Moon 21 - Ytiri Storage
+- itemID: 60000358
+  itemName: Perimeter VI - Ytiri Storage
+- itemID: 60000361
+  itemName: Jita IV - Moon 6 - Ytiri Storage
+- itemID: 60000364
+  itemName: Jita V - Moon 14 - Ytiri Storage
+- itemID: 60000367
+  itemName: Urlen VII - Moon 8 - Ytiri Storage
+- itemID: 60000430
+  itemName: Suroken VII - Moon 2 - Hyasyoda Corporation Mineral Reserve
+- itemID: 60000448
+  itemName: Urlen VII - Moon 6 - Hyasyoda Corporation Refinery
+- itemID: 60000451
+  itemName: Jita IV - Moon 6 - Hyasyoda Corporation Refinery
+- itemID: 60000454
+  itemName: Niyabainen VIII - Moon 16 - Hyasyoda Corporation Mineral Reserve
+- itemID: 60000457
+  itemName: Niyabainen IX - Moon 21 - Hyasyoda Corporation Mining Outpost
+- itemID: 60000460
+  itemName: Niyabainen IX - Moon 8 - Hyasyoda Corporation Mineral Reserve
+- itemID: 60000463
+  itemName: Jita VI - Hyasyoda Corporation Refinery
+- itemID: 60000610
+  itemName: Paara I - Deep Core Mining Inc. Mining Outpost
+- itemID: 60000646
+  itemName: Hampinen V - Poksu Mineral Group Mining Outpost
+- itemID: 60000682
+  itemName: New Caldari Prime - Moon 1 - Poksu Mineral Group Mineral Reserve
+- itemID: 60000685
+  itemName: Perimeter VII - Poksu Mineral Group Mineral Reserve
+- itemID: 60000688
+  itemName: New Caldari I (Matigu) - Poksu Mineral Group Mineral Reserve
+- itemID: 60000691
+  itemName: Niyabainen VII - Moon 2 - Poksu Mineral Group Mineral Reserve
+- itemID: 60000766
+  itemName: Korama VI - Moon 10 - Minedrill Mining Outpost
+- itemID: 60000856
+  itemName: Haatomo VI - Moon 1 - Caldari Provisions Warehouse
+- itemID: 60000976
+  itemName: Nonni III - Moon 1 - Kaalakiota Corporation Factory
+- itemID: 60001246
+  itemName: Dantumi IV - Moon 14 - Wiyrkomi Corporation Factory
+- itemID: 60002065
+  itemName: Malkalen V - Moon 1 - Ishukone Corporation Factory
+- itemID: 60002734
+  itemName: Saisio VIII - Moon 20 - Sukuuvestaa Corporation Warehouse
+- itemID: 60002914
+  itemName: Piak III - Moon 5 - Caldari Constructions Production Plant
+- itemID: 60002950
+  itemName: Niyabainen IX - Moon 9 - Caldari Constructions Warehouse
+- itemID: 60002953
+  itemName: Jita V - Moon 17 - Caldari Constructions Production Plant
+- itemID: 60002956
+  itemName: Perimeter IX - Caldari Constructions Production Plant
+- itemID: 60002959
+  itemName: Jita IV - Moon 10 - Caldari Constructions Production Plant
+- itemID: 60003052
+  itemName: Niyabainen IX - Moon 4 - Expert Housing Production Plant
+- itemID: 60003055
+  itemName: Jita IV - Moon 11 - Expert Housing Production Plant
+- itemID: 60003058
+  itemName: Niyabainen VIII - Moon 6 - Expert Housing Production Plant
+- itemID: 60003334
+  itemName: New Caldari Prime - Moon 1 - Chief Executive Panel Bureau
+- itemID: 60003337
+  itemName: Urlen VI - Chief Executive Panel Bureau
+- itemID: 60003454
+  itemName: Maurasi VIII - Moon 14 - Caldari Business Tribunal
+- itemID: 60003457
+  itemName: Niyabainen IX - Moon 10 - Caldari Business Tribunal Accounting
+- itemID: 60003460
+  itemName: Jita IV - Moon 10 - Caldari Business Tribunal Law School
+- itemID: 60003463
+  itemName: Jita VII - Moon 2 - Caldari Business Tribunal Law School
+- itemID: 60003466
+  itemName: Jita IV - Moon 4 - Caldari Business Tribunal Bureau Offices
+- itemID: 60003469
+  itemName: Jita IV - Caldari Business Tribunal Information Center
+- itemID: 60003724
+  itemName: New Caldari V (Oniteseru) - Moon 2 - House of Records Archives
+- itemID: 60003754
+  itemName: Perimeter II - Moon 1 - Caldari Navy Assembly Plant
+- itemID: 60003757
+  itemName: Jita IV - Moon 5 - Caldari Navy Assembly Plant
+- itemID: 60003760
+  itemName: Jita IV - Moon 4 - Caldari Navy Assembly Plant
+- itemID: 60003763
+  itemName: Maurasi IX - Moon 12 - Caldari Navy Assembly Plant
+- itemID: 60003766
+  itemName: Niyabainen IX - Moon 19 - Caldari Navy Logistic Support
+- itemID: 60003769
+  itemName: Niyabainen IV - Moon 1 - Caldari Navy Assembly Plant
+- itemID: 60003979
+  itemName: Saranen V - Moon 16 - Ishukone Watch Testing Facilities
+- itemID: 60004423
+  itemName: Jita IV - Moon 6 - Caldari Provisions School
+- itemID: 60005413
+  itemName: Aldagolf V - Core Complexion Inc. Warehouse
+- itemID: 60005770
+  itemName: Bei VII - Moon 8 - Freedom Extension Storage
+- itemID: 60006220
+  itemName: Pimebeka VII - Moon 16 - Carthum Conglomerate Factory
+- itemID: 60006616
+  itemName: Nakatre VIII - Moon 13 - Zoar and Sons Factory
+- itemID: 60006880
+  itemName: Perimeter II - Moon 1 - Ducia Foundry Mineral Reserve
+- itemID: 60006883
+  itemName: Niyabainen VIII - Moon 16 - Ducia Foundry Mining Outpost
+- itemID: 60006886
+  itemName: Niyabainen VII - Moon 11 - Ducia Foundry Mineral Reserve
+- itemID: 60007183
+  itemName: Nakregde II - Amarr Certified News Development Studio
+- itemID: 60007243
+  itemName: Amdonen VIII - Moon 14 - Joint Harvesting Plantation
+- itemID: 60008488
+  itemName: Hedion V - Moon 9 - Court Chamberlain Bureau
+- itemID: 60008686
+  itemName: Kor-Azor Prime IV (Eclipticum) - Moon Griklaeum - Kor-Azor Family Bureau
+- itemID: 60008914
+  itemName: Avair VII - Moon 25 - Theology Council Tribunal
+- itemID: 60009850
+  itemName: Lirsautton VII - Quafe Company Factory
+- itemID: 60009892
+  itemName: Saranen V - Moon 12 - Quafe Company Warehouse
+- itemID: 60009898
+  itemName: Saranen V - Moon 9 - Quafe Company Warehouse
+- itemID: 60010300
+  itemName: Alentene VI - Moon 6 - Roden Shipyards Warehouse
+- itemID: 60010390
+  itemName: Elore V - Moon 4 - Allotek Industries Warehouse
+- itemID: 60010726
+  itemName: Doussivitte VIII - Moon 20 - Chemal Tech Factory
+- itemID: 60010825
+  itemName: 4C-B7X V - Moon 7 - Chemal Tech Factory
+- itemID: 60010831
+  itemName: 4C-B7X VII - Moon 12 - Chemal Tech Factory
+- itemID: 60010951
+  itemName: Ostingele VIII - Moon 3 - FedMart Warehouse
+- itemID: 60011968
+  itemName: Ignebaener VI - Moon 1 - Perun Clade Extractive Terminus
+- itemID: 60011974
+  itemName: Ignebaener IV - Perun Clade Semiosis Theater
+- itemID: 60012256
+  itemName: Yulai IX (Kjarval) - CONCORD Bureau
+- itemID: 60012583
+  itemName: 4C-B7X VIII - Moon 1 - Outer Ring Excavations Mining Outpost
+- itemID: 60012586
+  itemName: 4C-B7X VI - Moon 1 - Outer Ring Excavations Refinery
+- itemID: 60014659
+  itemName: Kisogo VII - State War Academy
+- itemID: 60014935
+  itemName: New Caldari II (Matias) - Kaalakiota Corporation Factory
+- itemID: 60015057
+  itemName: Arzad VIII - 24th Imperial Crusade Logistic Support
+- itemID: 60015157
+  itemName: Kisogo VII - AIR Laboratories
