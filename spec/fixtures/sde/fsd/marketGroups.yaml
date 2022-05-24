@@ -1,0 +1,312 @@
+---
+2:
+  descriptionID:
+    de: Blaupausen sind Datengegenstände, die in der Industrie bei Fertigungs-, Forschungs-
+      und Erfindungsaufträgen verwendet werden.
+    en: Blueprints are data items used in industry for manufacturing, research and
+      invention jobs
+    fr: Les plans de construction sont des objets utilisés dans l'industrie pour réaliser
+      des travaux de production, de recherche et d'invention
+    ja: ブループリントは製造業、研究・発明アクティビティで使用するデータアイテムです
+    ko: 데이터베이스의 일종으로 제조, 연구, 그리고 인벤션에 사용됩니다.
+    ru: 'Чертежи используются в промышленности для производства предметов, во время
+      исследовательских работ и в различных научно-исследовательских проектах. '
+    zh: 蓝图是一种工业物品，可用于制造、研究和发明项目
+  hasTypes: false
+  iconID: 2703
+  nameID:
+    de: Blaupausen & Reaktionen
+    en: Blueprints & Reactions
+    fr: Plans de construction & Réactions
+    ja: ブループリント
+    ko: 블루프린트 및 반응식
+    ru: Чертежи и реакции
+    zh: 蓝图和反应
+4:
+  descriptionID:
+    de: Raumschiffe aller Größen und Funktionen für Kapselpiloten. Dazu gehören fortschrittliche
+      und Fraktionsvarianten von vielen Rumpftypen.
+    en: Capsuleer spaceships of all sizes and roles, including advanced and faction
+      variants of many hull types
+    fr: Vaisseaux spatiaux de capsulier de tout rôle et de toute taille, y compris
+      les variantes avancées et spécifiques à certaines factions avec plusieurs types
+      de coques
+    ja: カプセラの宇宙船の全サイズおよび機能（性能別、各勢力仕様別船体タイプなど）
+    ko: 캡슐리어가 탑승할 수 있는 모든 종류의 함선입니다. (상급 및 팩션 함선 포함)
+    ru: Капсулёрские корабли всех назначений, классов, типов и размеров, включая корабли
+      усовершенствованных проектов и корабли из арсеналов сверхдержав и независимых
+      организаций
+    zh: 各种型号和用途的太空飞船，涵盖了高级和势力衍生型号
+  hasTypes: false
+  iconID: 1443
+  nameID:
+    de: Schiffe
+    en: Ships
+    fr: Vaisseaux
+    ja: 艦船
+    ko: 함선
+    ru: Корабли
+    zh: 舰船
+5:
+  descriptionID:
+    de: Kleine, schnelle Schiffe mit vielseitigen Verwendungszwecken.
+    en: Small, fast vessels suited to a variety of purposes.
+    fr: Petits vaisseaux rapides pouvant accomplir diverses tâches.
+    ja: 幅広い任務に適した小型高速艦船。
+    ko: 작지만 빠른 기체들로 다양한 임무를 수행할 수 있습니다.
+    ru: Это малые быстрые корабли, хорошо подходящие для самых разных задач.
+    zh: 护卫舰能满足多种需求和目的。
+  hasTypes: false
+  iconID: 1443
+  nameID:
+    de: Standardfregatten
+    en: Standard Frigates
+    fr: Frégates standards
+    ja: 標準型フリゲート
+    ko: 일반 프리깃
+    ru: Типовые
+    zh: 标准护卫舰
+  parentGroupID: 1361
+6:
+  descriptionID:
+    de: Die Zweitgeborenen der Raumschiff-Industrie. Sie sollten jedoch nicht unterschätzt
+      werden.
+    en: The middle children of the starship industry, but not to be underestimated.
+    fr: Cadets de l'industrie astronavale, à ne pas sous-estimer pour autant.
+    ja: 宇宙船としては目立たない位置付けだが、あなどれない。
+    ko: 함선 제조산업의 중견급 함선으로 무시할 수 없는 화력을 지니고 있습니다.
+    ru: Это настоящие рабочие лошадки космоса, которые ни в коем случае нельзя недооценивать.
+    zh: 星舰工业的中级产物，但不能因此而被忽视。
+  hasTypes: false
+  iconID: 1443
+  nameID:
+    de: Standardkreuzer
+    en: Standard Cruisers
+    fr: Croiseurs standards
+    ja: 標準型巡洋艦
+    ko: 일반 크루저
+    ru: Типовые
+    zh: 标准巡洋舰
+  parentGroupID: 1367
+7:
+  descriptionID:
+    de: 'Der Grundstein einer jeden respektablen Streitmacht. '
+    en: The foundations of any respectable fighting force.
+    fr: Le fondement de toute force de combat qui se respecte.
+    ja: 艦隊編成の基本となる戦闘艦。
+    ko: 강력한 화력을 추구하는 함대 구성에 필수적인 함선입니다.
+    ru: Это ― основа любого уважающего себя флота.
+    zh: 任何一支令人生畏的舰队中最根本的中流砥柱。
+  hasTypes: false
+  iconID: 1443
+  nameID:
+    de: Standardschlachtschiffe
+    en: Standard Battleships
+    fr: Cuirassés standards
+    ja: 標準型戦艦
+    ko: 일반 배틀쉽
+    ru: Типовые
+    zh: 标准战列舰
+  parentGroupID: 1376
+8:
+  descriptionID:
+    de: Für den Transport von enormen Frachtmengen gebaut.
+    en: Built for the transportation of vast amounts of cargo.
+    fr: Conçus pour transporter de grandes quantités de marchandises.
+    ja: 大量の貨物を輸送できるように設計されている。
+    ko: 대량의 화물을 운송하기 위해 제작된 함선입니다.
+    ru: Эти корабли предназначены для транспортировки большого количества грузов.
+    zh: 建造用于运输巨量的货物。
+  hasTypes: false
+  iconID: 1443
+  nameID:
+    de: Standardtransporter
+    en: Standard Haulers
+    fr: Cargos standards
+    ja: 標準型ハウラー
+    ko: 일반 운반선
+    ru: Стандартные перевозчики
+    zh: 标准工业舰
+  parentGroupID: 1382
+9:
+  descriptionID:
+    de: Ausrüstungsmodule für Raumschiffe. Dazu gehören viele Arten von Waffen, Elektronik-,
+      Technik-, Panzerungs-, Schild- und Antriebssystemen.
+    en: Equipment modules for spaceships, including many types of weapon, electronic,
+      engineering, armor, shield and propulsion systems
+    fr: Modules d'équipement pour vaisseaux spatiaux, y compris de nombreux types
+      d'armes, de systèmes électroniques, de systèmes d'ingénierie, de blindage, de
+      bouclier et de propulsion
+    ja: 宇宙船モジュール（武器系、電子系、電子工学系、アーマー系、シールド系、推進力系など）
+    ko: 함선 장비 탭에는 각종 무기, 전자 장비, 엔지니어링 장비, 장갑, 실드, 그리고 추진 시스템이 포함되어 있습니다.
+    ru: 'Оборудование для кораблей: орудия, электроника, броня, щиты, различная аппаратура
+      и двигательные подсистемы. '
+    zh: 舰船使用的各种装备，包括武器、电子类、工程类、装甲、护盾和推进系统
+  hasTypes: false
+  iconID: 1432
+  nameID:
+    de: Schiffsausrüstung
+    en: Ship Equipment
+    fr: Équipement de vaisseau
+    ja: 艦船装備
+    ko: 함선 장비
+    ru: Оборудование кораблей
+    zh: 舰船装备
+10:
+  descriptionID:
+    de: Waffensysteme um feindlichen Zielen Schaden zuzfügen.
+    en: Weapon systems to inflict damage on enemy targets
+    fr: Systèmes d'armement pour infliger des dégâts aux cibles ennemies.
+    ja: 敵にダメージを与える兵器システム
+    ko: 적 함선에 피해를 입히기 위해 제작된 무기 시스템입니다.
+    ru: Орудийные установки, предназначенные для уничтожения врагов
+    zh: 可对敌对目标造成伤害的武器系统
+  hasTypes: false
+  iconID: 365
+  nameID:
+    de: Waffentürme & Launcher
+    en: Turrets & Launchers
+    fr: Tourelles et lance-missiles
+    ja: タレットとランチャー
+    ko: 터렛 및 런처 효과
+    ru: Турели и пусковые установки
+    zh: 炮台和发射器
+  parentGroupID: 9
+11:
+  descriptionID:
+    de: In dieser Kategorie befinden sich Munition für Geschütztürme, Lenkwaffen und
+      Bombensysteme, sowie Cap Booster-Ladungen, Bergbaukristalle, Sonden, Nanobot-Reparaturpaste
+      und Skripte.
+    en: Ammunition for turret, missile and bomb systems can be found in this category,
+      together with cap booster charges, mining crystals, probes, nanite repair paste
+      and module scripts
+    fr: Vous trouverez dans cette catégorie des munitions pour les systèmes de tourelles,
+      de missiles et de bombes ainsi que des charges de capaciteur, des cristaux d'extraction,
+      des sondes, des nanites de réparation et des scripts de module
+    ja: タレットの弾薬、ミサイル、ボムシステムは、キャップブースターチャージ、採掘クリスタル、プローブ、ナノマシンリペアペイスト、モジュールスクリプトとともにこのカテゴリの中から探すことができます
+    ko: 터렛, 미사일, 폭탄, 채광용 크리스탈, 프로브, 나나이트 용액, 모듈 스크립트 등이 포함되어 있습니다.
+    ru: Здесь находятся боеприпасы для различных орудий, ракеты, бомбы, заряды системы
+      подзарядки накопителя, буровые кристаллы, зонды, ремонтная нанопаста и прошивки
+      для оборудования.
+    zh: 这里包括了炮台使用的弹药、导弹和立体炸弹，另外还有电容注电装料、采矿晶体、探针、纳米体修复粘合剂和脚本
+  hasTypes: false
+  iconID: 1299
+  nameID:
+    de: Munition & Ladungen
+    en: Ammunition & Charges
+    fr: Munitions et charges
+    ja: 弾薬
+    ko: 탄약 및 차지
+    ru: Боеприпасы и расходники
+    zh: 军火和弹药
+14:
+  descriptionID:
+    de: Module die den materiellen Rahmen eines Raumschiffs gegen externe Gefahren
+      stärken
+    en: Modules that strengthen the physical frame of a spaceship against external
+      dangers
+    fr: Modules qui renforcent la structure physique d'un vaisseau contre les dangers
+      extérieurs
+    ja: 外部からの攻撃に備え、艦船を物理的に強化するモジュール
+    ko: 함선의 선체 및 장갑을 강화하는 모듈입니다.
+    ru: 'Модули. усиливающие сопротивляемость защитных систем корабля различным поражающим
+      факторам '
+    zh: 可以强化舰船物理结构的装备，助其抵抗外来的危险因素
+  hasTypes: false
+  iconID: 68
+  nameID:
+    de: 'Rumpf & Panzerung '
+    en: 'Hull & Armor '
+    fr: 'Coque et blindage '
+    ja: 船体とアーマー
+    ko: '선체 및 장갑 '
+    ru: Модули корпуса и брони
+    zh: 船体和装甲
+  parentGroupID: 9
+20:
+  descriptionID:
+    de: Verschiedene Produkte, die in verschiedenen Branchen Verwendung finden.
+    en: Various products used in a variety of industries
+    fr: Divers produits utilisés dans différents types d'industrie
+    ja: 各種の産業で使用される製品
+    ko: 다양한 산업 분야에 사용되는 물품입니다.
+    ru: Товары, используемые в различных производственных отраслях
+    zh: 用于多种工业领域的各种产品
+  hasTypes: true
+  iconID: 1192
+  nameID:
+    de: Industriegüter
+    en: Industrial Goods
+    fr: Biens industriels
+    ja: 工業用品
+    ko: 공산품
+    ru: Промышленные товары
+    zh: 工业货物
+  parentGroupID: 19
+22:
+  descriptionID:
+    de: Chemikalien und Abfall, die vor Strahlung pulsieren. Können gekauft und mit
+      Profit verkauft werden
+    en: Chemicals and waste, pulsing with radiation. Can be bought and sold for profit
+    fr: Produits chimiques et autres déchets très irradiants. Peuvent être achetés
+      ou vendus à profit
+    ja: 放射能を発する化学物質や廃棄物売買を通して利益を得られる
+    ko: 방사능을 발산하는 화학 폐기물로 다양한 용도로 거래됩니다.
+    ru: Химические вещества и отходы, светящиеся от радиоактивного излучения. Их можно
+      покупать и продавать ради выгоды
+    zh: 具有放射性的化学物及废料，可以用来卖钱。
+  hasTypes: true
+  iconID: 29
+  nameID:
+    de: Radioaktive Güter
+    en: Radioactive Goods
+    fr: Biens radioactifs
+    ja: 放射性物質
+    ko: 방사성 물질
+    ru: Радиоактивные вещества
+    zh: 放射性货物
+  parentGroupID: 19
+23:
+  descriptionID:
+    de: Passiege können einen netten Profit abwerfen
+    en: Ferrying passengers can give a nice profit
+    fr: Le transport de passagers peut s'avérer très lucratif
+    ja: 乗客を運べば、ちょっとした利益を得られる
+    ko: 운송 사업은 높은 수익을 보장합니다.
+    ru: 'На пассажирских перевозках можно сколотить целое состояние '
+    zh: 从来来往往的行人身上总能赚到大钱
+  hasTypes: true
+  iconID: 2543
+  nameID:
+    de: Passagiere
+    en: Passengers
+    fr: Passagers
+    ja: 乗客
+    ko: 사람 및 동물
+    ru: Пассажиры
+    zh: 乘客
+  parentGroupID: 19
+27:
+  descriptionID:
+    de: Implantate verbessern die Leistung eines Piloten in verschiedenen Bereichen.
+      Einmal eingesetzt können Sie nicht wieder entfernt werden
+    en: Implants improve a pilot's performance in various areas. They cannot be removed
+      once inserted
+    fr: Les implants améliorent les performances d'un pilote dans différents domaines.
+      Une fois installés ils ne peuvent plus être enlevés
+    ja: インプラントは、パイロットのパフォーマンスを様々な点で向上させる。一度埋め込むと除去できない
+    ko: 임플란트는 다양한 분야에서 파일럿의 실력을 향상시켜줄 수 있지만 한번 이식이 완료되면 제거가 불가능합니다.
+    ru: Имплантаты позволяют увеличить возможности капсулёров. Их нельзя удалить из
+      разъёма
+    zh: 植入体可以提高飞行员多方面的表现。一旦插入就无法移除
+  hasTypes: false
+  iconID: 2062
+  nameID:
+    de: Implantate
+    en: Implants
+    fr: Implants
+    ja: インプラント
+    ko: 임플란트
+    ru: Импланты
+    zh: 植入体
+  parentGroupID: 24

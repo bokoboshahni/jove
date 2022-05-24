@@ -1,0 +1,31 @@
+---
+1:
+  description: Fitting capabilities of a ship
+  name: Fitting
+2:
+  description: Shield attributes of ships
+  name: Shield
+3:
+  description: Armor attributes of ships
+  name: Armor
+4:
+  description: Structure attributes of ships
+  name: Structure
+5:
+  description: Capacitor attributes for ships
+  name: Capacitor
+6:
+  description: Targeting Attributes for ships
+  name: Targeting
+7:
+  description: Misc. attributes
+  name: Miscellaneous
+8:
+  description: Skill requirements
+  name: Required Skills
+9:
+  description: Attributes already checked and not going into a category
+  name: 'NULL'
+10:
+  description: All you need to know about drones
+  name: Drones

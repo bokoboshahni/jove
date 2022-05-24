@@ -1,0 +1,4547 @@
+---
+0:
+  groupID: 0
+  mass: 1.0
+  name:
+    de: "#System"
+    en: "#System"
+    fr: "#Système"
+    ja: "#システム"
+    ru: "#Система"
+    zh: "#星系"
+  portionSize: 1
+  published: false
+2:
+  groupID: 2
+  name:
+    de: Corporation
+    en: Corporation
+    fr: Corporation
+    ja: コーポレーション
+    ru: Corporation
+    zh: 军团
+  portionSize: 1
+  published: false
+3:
+  groupID: 3
+  name:
+    de: Region
+    en: Region
+    fr: Région
+    ja: リージョン
+    ru: Region
+    zh: 星域
+  portionSize: 1
+  published: false
+  volume: 1.0
+4:
+  groupID: 4
+  name:
+    de: Constellation
+    en: Constellation
+    fr: Constellation
+    ja: コンステレーション
+    ru: Constellation
+    zh: 星座
+  portionSize: 1
+  published: false
+  volume: 1.0
+5:
+  groupID: 5
+  name:
+    de: Solar System
+    en: Solar System
+    fr: Système solaire
+    ja: ソーラーシステム
+    ru: Solar System
+    zh: 星系
+  portionSize: 1
+  published: false
+  radius: 5000000000000.0
+  volume: 1.0
+6:
+  description:
+    de: Dieser Hauptreihenstern gehört einer Klasse an, die sich oft durch eine gelbe
+      oder gelblich-orange Farbe auszeichnet und über den gewaltigen Wasserstofffusionsprozess
+      im Herzen des Sterns eine enorme Menge Energie erzeugt und ausstrahlt. Im Orbit
+      dieser Planeten können sowohl terrestrische Planeten als auch Gasriesen in unterschiedlicher
+      Anzahl gefunden werden, von denen sich einer oder mehrere in der bewohnbaren
+      Zone befindet.
+    en: "A main-sequence stellar body of a class that is often yellow or yellow-orange
+      in hue, generating and emitting energy from the vast hydrogen fusion process
+      within the heart of the star.\r\n\r\nVarious numbers of planets of the terrestrial
+      and gas giant types are found around these stars and the habitable zones often
+      contain one or more planets."
+    fr: Communément jaunes ou jaune orangé, ces étoiles de la séquence principale
+      génèrent et émettent de l'énergie par fusion des noyaux d'hydrogène emprisonnés
+      dans leur cœur. Leur écosphère stellaire engendre la formation de planètes géantes
+      de type terrestre ou gazeux, dont quelques spécimens gravitent souvent en zone
+      habitable.
+    ja: "黄色や黄橙色をしていることが多いクラスの主系列恒星体で、星の中心部の広大な水素核融合過程でエネルギーを発生、放出している。\r\n\nこれらの星の周りには、地球型やガス巨人型の惑星が多数存在し、居住可能区域には1つ以上の惑星が含まれていることが多い。"
+    ru: Небесное тело главной последовательности, принадлежащее к классу звёзд, которые
+      имеют жёлтый или жёлто-оранжевый оттенок, а также производят и излучают огромное
+      количество энергии, образующейся в результате синтеза ядер гелия из водорода
+      в их ядре. Рядом с такими звёздами встречается большое количество планет земного
+      типа и газовых гигантов, а некоторые из этих планет находятся в потенциально
+      обитаемой зоне.
+    zh: |-
+      一种主星序星体，通常是黄色或黄橙色的色调，通过巨大的氢融合过程从恒星内产生和发射能量。
+
+
+
+      这些恒星周围发现了大量陆地和气体巨星，而居住区通常包含一个或多个行星。
+  graphicID: 21457
+  groupID: 6
+  mass: 1.0e+18
+  name:
+    de: Sun G5 (Yellow)
+    en: Sun G5 (Yellow)
+    fr: Soleil G5 (jaune)
+    ja: 恒星G5（イエロー）
+    ru: Sun G5 (Yellow)
+    zh: 恒星G5(黄色)
+  portionSize: 1
+  published: false
+  radius: 10000.0
+  volume: 1.0
+7:
+  description:
+    de: |-
+      Gelb-orange und orangefarbene Sterne dieser Art sind relativ stabil und es wird angenommen, dass der Prozess der thermonuklearen Fusion, bei der sie die Wasserstoffreserven in ihrem Kern verbrauchen, dutzende Milliarden Jahre in Anspruch nehmen wird.
+
+
+
+      Diese Stabilität und ihr langes Leben, in Verbindung mit dem häufigen Auftreten planetarer Systeme, machen diese Sterne zu exzellenten Kandidaten für Kolonisierungs- und Forschungsbemühungen.
+    en: "Yellow-orange and orange stars of this type are rather stable and believed
+      to take tens of billions of years to burn through their core hydrogen reserves
+      in a process of thermonuclear fusion. \r\n\r\nThis stability and long life,
+      combined with the common presence of planetary systems marks these as viable
+      candidates for colonization and exploration efforts."
+    fr: Les étoiles jaune orangé de ce type sont assez stables pour exploiter leurs
+      réserves d'hydrogène et maintenir le processus de fusion thermonucléaire pendant
+      des dizaines de milliards d'années. Leur longévité exceptionnelle, combinée
+      à la présence récurrente de systèmes planétaires, prédestine ces étoiles à la
+      colonisation et aux expéditions exploratrices.
+    ja: "この種類の黄橙色や橙色の天体は比較的安定しており、熱核融合のプロセスによって核の水素を消費しつくすまで数百億年単位を要すると見られる。\r\n\nその安定性と長寿命、さらに周囲に星系が存在している可能性が高いことから、植民や探索の候補地となる。"
+    ru: "Красно-оранжевые и оранжевые звёзды этого типа очень стабильны; считается,
+      что им потребуются десятки миллиардов лет, чтобы выжечь запасы своего водорода
+      в термоядерном синтезе. \n\n\n\nСтабильность и долгая жизнь в сочетании с обычным
+      присутствием планетных систем означает, что звёзды этого типа — хорошие кандидаты
+      для колонизации и исследования."
+    zh: "这种类型的橙黄色和橙色恒星相当稳定，人们相信要经过数百亿年的热核聚变过程，它们内核中的氢气储备才会燃烧殆尽。 \n\n\n\n稳定性和长生命周期，加上行星系的共同存在，标志着它们是进行殖民化和探索活动的可行性目标。"
+  graphicID: 21459
+  groupID: 6
+  mass: 1.0e+18
+  name:
+    de: Sun K7 (Orange)
+    en: Sun K7 (Orange)
+    fr: Soleil K7 (orange)
+    ja: 恒星K7（オレンジ）
+    ru: Sun K7 (Orange)
+    zh: 恒星K7(橙色)
+  portionSize: 1
+  published: false
+  radius: 10000.0
+  soundID: 20095
+  volume: 1.0
+8:
+  description:
+    de: |-
+      Dieser große rote Stern hat den in seinem Kern gespeicherten Wasserstoff verbraucht und expandiert allmählich zu einem roten Riesen, wobei er jeglichen in der stellaren Schale verbleibenden Wasserstoff verbrennt.
+
+
+
+      Auch wenn der Prozess der Verwandlung in einen roten Riesen hunderte Millionen Jahre andauert, wird der Stern sich am Ende dieser Reise jegliche Planetensysteme in seiner direkten Nähe einverleibt haben.
+    en: "This large red star has exhausted its core hydrogen fuel and is slowly expanding
+      into a red giant, consuming all remaining hydrogen in the stellar shell. \r\n\r\nWhile
+      the process of expansion into a full red giant will take hundreds of millions
+      of years, eventually the star will engulf any planetary system orbiting close
+      to it."
+    fr: Cette étoile rouge massive a épuisé l'hydrogène de son noyau et entame la
+      fusion en couche de ses ultimes réserves d'hydrogène, évoluant lentement en
+      géante rouge. Si le processus de dilatation de l'étoile s'étend sur des centaines
+      de millions d'années, l'astre se transformera inexorablement en géante rouge
+      et engloutira son système planétaire tout entier.
+    ja: "この巨大な赤色星は核の水素が枯渇し、天体の殻に残った水素を消費しながら、ゆっくりと赤色巨星へと膨張している。\r\n\n赤色巨星に変異するには数億年を要するが、いずれは近くを周回するあらゆる天体を飲み込んでいくことになる。"
+    ru: "Эта большая красная звезда исчерпала водородное топливо и медленно расширяется,
+      превращаясь в красный гигант и поглощая остатки водорода в звёздной оболочке.
+      \n\n\n\nХотя процесс расширения в полноценный красный гигант займет сотни миллионов
+      лет, в конце концов звезда поглотит все близкие к ней планеты своей планетной
+      системы."
+    zh: "这颗红色恒星已经耗尽了内核中的氢燃料，正在消耗地壳中仅存的氢，慢慢扩张成一颗红巨星。 \n\n\n\n扩张成一颗完全红巨星的过程要持续数亿年，最终这颗恒星会吞没任何附近环绕的行星系。"
+  graphicID: 21462
+  groupID: 6
+  mass: 1.0e+18
+  name:
+    de: Sun K5 (Red Giant)
+    en: Sun K5 (Red Giant)
+    fr: Soleil K5 (géante rouge)
+    ja: 恒星K5（巨大レッド）
+    ru: Sun K5 (Red Giant)
+    zh: 恒星K5(红色巨型)
+  portionSize: 1
+  published: false
+  radius: 10000.0
+  soundID: 20097
+  volume: 1.0
+9:
+  description:
+    de: Dieser leuchtend blaue Stern gehört zu einer Klasse, die für starke stellare
+      Winde und eine hohe Rotationsgeschwindigkeit bekannt ist. Diese Sterne erzeugen
+      den Hauptteil ihrer Energie in ihrem Massenschwerpunkt über einen thermonuklearen
+      Fusionsprozess mit einem katalytischen Zyklus auf Kohlenstoff-Stickstoff-Sauerstoffbasis.
+      Sterne dieser Art weisen sich in der Regel durch starke nicht-ionisierte Heliumlinien
+      aus, weshalb sie die Bezeichnung „helium-stark“ erhalten.
+    en: This luminous blue star belongs to a class known for powerful stellar winds
+      and rapid rotation. These stars generate most of their energy at the center
+      of their mass in a thermonuclear fusion process involving a carbon-nitrogen-oxygen
+      (CNO) catalytic cycle. Stars of this type generally show strong non-ionized
+      helium lines and some have a chemistry that results in very strong lines, leading
+      to the designation 'helium-strong'.
+    fr: Cette étoile bleue lumineuse appartient à une classe d'astres soumis à une
+      vitesse de rotation rapide et violemment balayés par les vents stellaires. Le
+      cycle catalytique carbone-azote-oxygène des réactions de fusions thermonucléaires
+      dans le noyau génère la majeure partie de l'énergie libérée par ces étoiles
+      tempétueuses. Leur spectre se caractérise par des raies d'hélium non ionisé
+      fortes, voire intenses, identifiées sous l'appellation « hélium intense ».
+    ja: この光輝く青色の恒星は、強力な恒星風と公転速度の大きさが特徴的な等級に属する。これら恒星のエネルギーの大部分は、質量の中心部で発生する炭素・水素・酸素（CNO）サイクルによる熱核融合過程で生み出される。この種類の恒星では特に非イオン性のヘリウム線が見えやすく、線が別段強調される化学反応を起こす場合があるため、「強ヘリウム星」として識別される。
+    ru: Эта голубая звезда принадлежит к классу звёзд, которые отличатся достаточно
+      мощными звёздными ветрами и высокой скоростью вращения. Основную часть энергии
+      они производят в своём ядре в ходе термоядерной реакции, также известной как
+      CNO-цикл. Звёзды данного типа часто содержат большое — а иногда очень большое —
+      количество неионизированного гелия, из-за чего их называют гелиевыми звёздами.
+    zh: 这颗明亮的蓝色恒星属于恒星风及其猛烈而且旋转迅速的那一种类型。他们的大部分能量产生于其质量中心，通过包括了碳-氮-氧（CNO）催化循环的热核聚变过程而来。这种类型的恒星会发出强烈的非电离氦线条，有些还会因化学反应而放出及其强烈的线条，由此得名为“强氦星”。
+  graphicID: 21464
+  groupID: 6
+  mass: 1.0e+18
+  name:
+    de: Sun B0 (Blue)
+    en: Sun B0 (Blue)
+    fr: Soleil B0 (bleu)
+    ja: 恒星B0（ブルー）
+    ru: Sun B0 (Blue)
+    zh: 恒星B0(蓝色)
+  portionSize: 1
+  published: false
+  radius: 10000.0
+  volume: 1.0
+10:
+  description:
+    de: |-
+      Ein Hauptreihenstern einer Klasse von Himmelskörpern, die sich typischerweise durch eine weiße oder weiß-gelbe Färbung auszeichnen. Die Energieerzeugung dieser Sterne wird durch Wasserstofffusion angetrieben und sie sind oft sehr heiß und hell.
+
+
+
+      Sterne dieser Art besitzen gelegentlich Begleitsterne und sind oft von voll entwickelten Planetensystemen umgeben. Sie tendieren zu einem ultravioletten Strahlungsfluss, der die Entstehung bewohnbarer Zonen unterstützt, die sich für die Besiedlung durch Menschen eignen.
+    en: "A main-sequence star in a class of stellar bodies that are typically white
+      or yellow-white in hue. Hydrogen fusion drives the energy generation of these
+      stars and they are often hot and bright.\r\n\r\nStars of this type can be found
+      with companion stars, are often accompanied by mature planetary systems and
+      tend to emit an ultraviolet radiation flux providing for habitable zones conducive
+      to human occupation."
+    fr: Ces étoiles de la séquence principale arborent des nuances de blanc ou de
+      blanc rehaussé de jaune. Agitées de fusions d'hydrogène intenses, elles sont
+      généralement chaudes et lumineuses. Ces étoiles tendent à former des amas stellaires,
+      souvent tissés de systèmes planétaires matures, et émettent un flux de radiations
+      ultraviolettes symptomatique des zones habitables.
+    ja: "通常は白色や黄白色をしている主系列星。こういった星々では水素融合によるエネルギーが発生しており、往々にして熱く、そして強烈な光を放っている。\r\n\nこのタイプの星々には伴星が存在していることがあり、しばしば安定した惑星系を構築している。また紫外線の放射束を放っているため、人類の入植に適したハビタブルゾーンが形成されている傾向がある。"
+    ru: |-
+      Звезда главной последовательности в классе, звёзды которого обычно имеют белый или желтовато-белый оттенок. Термоядерный синтез обеспечивает энергию этих звезд; обычно они горячи и ярки.
+
+
+
+      Звёзды этого типа могут быть в составе двойных звёзд, часто имеют развитые планетные системы и излучают в ультрафиолетовом диапазоне, обеспечивая пригодные для заселения людьми обитаемые зоны.
+    zh: |-
+      主序星通常为白色或黄白色。氢聚变产生了大量能量，使得这些恒星往往高温而明亮。
+
+
+
+      这类恒星常有伴星，具有成熟的行星系，放射出有益于形成人类可居住的环境的紫外线辐射。
+  graphicID: 21466
+  groupID: 6
+  mass: 1.0e+18
+  name:
+    de: Sun F0 (White)
+    en: Sun F0 (White)
+    fr: Soleil F0 (blanche)
+    ja: 恒星F0（ホワイト）
+    ru: Sun F0 (White)
+    zh: 恒星F0 (白色)
+  portionSize: 1
+  published: false
+  radius: 10000.0
+  soundID: 20098
+  volume: 1.0
+11:
+  description:
+    de: Lebenspendende Welten sind häufig unter dem Namen "Gemäßigte Planeten" bekannt,
+      da die vorherrschende milde Temperatur eines ihrer Hauptmerkmale ist. Planeten
+      mit existierenden, stabilen Ökosystemen sind Hauptziele für Besiedlungsprojekte,
+      da es in der Regel einfacher ist, diese vollständig bewohnbar zu machen. Als
+      Folge dessen gehört die Mehrheit aller hochbevölkerten Welten zu diesem Typ.
+      Tatsächlich ist es nicht ungewöhnlich, dass im Rahmen detaillierter Gutachten,
+      Zeichen früherer Siedlungen aus verschiedenen Epochen der Geschichte New Edens
+      entdeckt werden.
+    en: Life-bearing worlds are often referred to as "temperate", as their mild temperatures
+      are one of their defining features. Planets with existing, stable ecosystems
+      are prime targets for colonization efforts as they are generally easier to make
+      fully habitable; as a result, the majority of highly populated worlds are of
+      this type. Indeed, it is not altogether uncommon for detailed surveys to reveal
+      signs of previous settlements from various stages of New Eden's history.
+    fr: Les planètes portant la vie sont souvent appelées « tempérées », puisqu'elles
+      se caractérisent principalement par leurs températures clémentes. Les planètes
+      présentant un écosystème stable sont les cibles privilégiées des colonisateurs,
+      puisqu'elles sont souvent entièrement habitables. Par conséquent, la plupart
+      des mondes habités sont des planètes tempérées. En effet, de nombreux rapports
+      ont déjà révélé des traces d'anciennes colonies à plusieurs moments de l'histoire
+      de New Eden.
+    ja: 生命の息づく世界は、その温暖な気候が顕著な特徴の一つであるため、しばしば「温暖」と称される。安定した生態系が既に存在する惑星は、可住環境を築きやすいため入植活動の主要なターゲットとなる。結果として、人口の密集している世界の多くは、このタイプの惑星である。実際に、詳細な調査によってニューエデン歴史上の早い段階での入植の痕跡が見つかることも珍しくはない。
+    ru: Планеты, на которых имеется жизнь, обычно называются «умеренными», поскольку
+      их наиболее характерная черта – мягкий климат. Планеты с уже существующими стабильными
+      экосистемами являются первейшей целью при колонизации, поскольку их обычно проще
+      превратить в полностью обитаемые. Поэтому большинство обитаемых миров принадлежит
+      именно к этому типу. И действительно, в результате пристального изучения на
+      них обычно обнаруживают следы прежних поселений, которые можно проследить вспять
+      к различным эпохам в истории Нового Эдема.
+    zh: 能够孕育生命的星球通常都被认作是“温和”的星球，其所拥有的适宜气候就是它们的首要特征。存在有稳定生态系统的星球通常会被作为殖民规划的首要选择，因为要在这些星球上生存下来，相对要容易得多。因此，绝大多数人口稠密的行星实际上都是属于这种类型的星体。总的来说，想要通过细致的勘察在新伊甸中发现各个历史时期的居住痕迹，并不是一件十分困难的事情。
+  graphicID: 3832
+  groupID: 7
+  iconID: 10136
+  mass: 1.0e+35
+  name:
+    de: Planet (Temperate)
+    en: Planet (Temperate)
+    fr: Planète (tempérée)
+    ja: 惑星（温暖）
+    ru: Planet (Temperate)
+    zh: 行星（温和）
+  portionSize: 1
+  published: false
+  radius: 10000.0
+  soundID: 20092
+  volume: 1.0
+12:
+  description:
+    de: 'Die Großzahl der eisigen Planeten durchlief eine Periode als Dürrezone, bevor
+      sie im Verlauf vieler Jahrtausende mit Eis überzogen wurden. Der exakte Prozess
+      variiert von Fall zu Fall, das Ergebnis jedoch ist für die meisten dasselbe
+      und visuell einheitlich: ein heller, spiegelnder Planet, zerklüftet von unzähligen
+      Rissen und Gletscherspalten. Von einigen eisigen Planeten wird angenommen, dass
+      auf ihnen in der Vergangenheit ein wärmeres und feuchteres Klima herrschte und
+      sie dann später, als Folge fehlgeschlagener Terraforming-Projekte oder stellarer
+      Abkühlung, gefroren.'
+    en: The majority of icy planets went through a period of being barren terrestrials,
+      before being surfaced with ice over the course of many millennia. The exact
+      process for this varies from case to case, but the end result is both common
+      and visually uniform - a bright, reflective planet scored by countless fractures
+      and crevasses. A few icy planets are hypothesized to have been warmer, liquid-bearing
+      planets in the past that have subsequently frozen, as a result of either stellar
+      cooling or failed terraforming projects.
+    fr: La majorité des planètes de glace étaient des planètes telluriques arides,
+      avant de finir par être recouvertes par la glace après des millénaires. Le processus
+      exact de cette glaciation varie selon les cas, mais il résulte toujours en une
+      planète visuellement uniforme, extrêmement lumineuse et réfléchissante, marquée
+      par d'innombrables fractures et crevasses. On raconte que certaines planètes
+      de glace étaient autrefois plus chaudes, avant que le liquide qu'elles contenaient
+      ne gèle suite à un refroidissement stellaire ou l'échec d'un projet de terraformation.
+    ja: 氷惑星の大部分は、何千年にもわたって地表を氷で覆われるまで荒地惑星期を経ている。その正確な過程はケースバイケースで異なるが、最終的な結果は共通する、視覚的に一様なものである。すなわち、無数の裂け目やクレバスに覆われた明るく、反射性の高い惑星である。いくつかの氷惑星は、過去には温暖で地表に水を湛えた惑星であったが、惑星の冷却またはテラフォーミングプロジェクトの失敗のいずれかの結果として氷結したとする仮説もある。
+    ru: Большинство ледовых планет прошли через стадию бесплодных землеподобных планет,
+      пока их поверхность в течение многих тысячелетий затягивалась льдом. Формирующие
+      процессы могут быть в каждом случае различными, но приводят они к одному и тому
+      же, визуально однородному состоянию – светлая отражающая поверхность планеты,
+      испещренная бесчисленными трещинами и разломами. По поводу некоторых из ледовых
+      планет выдвигаются гипотезы, что в прошлом они были теплыми мирами с большими
+      запасами жидкости, впоследствии замерзшей в результате либо остывания звезды
+      в системе, либо сбоя в процессе терраформирования.
+    zh: 大部分的冰体行星在历史上都有一段贫瘠时期，在过后的漫长时期中它们的表面又被冰层所覆盖。表层冰盖生长的过程会因具体条件差异而不尽相同，但是最终的结果从形式上和外观上都是类似的：明亮、高反射率的行星表面上布满了数不清的断层和裂谷。有人推测部分冰体行星在过去可能经历过一段温暖的时期，曾经的液态地表水被冻结成为厚厚的冰层。造成这种结果的原因大多是因为星体本身温度的降低或者是失败的地貌改造工程。
+  graphicID: 3834
+  groupID: 7
+  iconID: 10137
+  mass: 1.0e+35
+  name:
+    de: Planet (Ice)
+    en: Planet (Ice)
+    fr: Planète (glace)
+    ja: 惑星（アイス）
+    ru: Planet (Ice)
+    zh: 行星（冰体）
+  portionSize: 1
+  published: false
+  radius: 10000.0
+  soundID: 20087
+  volume: 1.0
+13:
+  description:
+    de: 'Das typische Merkmal von Gasplaneten ist eine tiefe, dunkle obere Atmospähre,
+      die sich häufig vorrangig aus leichten Elementen wie beispielsweise Wasserstoff
+      und Helium zusammensetzt. Einfache Chemikalien können ein Spektrum an verschiedenen
+      Farbtönen und -schattierungen herbeiführen, und die Interaktion mit auftreibenden
+      und schnell zirkulierenden Druckbändern führt zu einer großen Vielfalt an visuellen
+      Oberflächenstrukturen. Ein ähnliches Niveau an Vielfalt kann unterhalb der Wolkenspitzen
+      gefunden werden: Die innere Zusammensetzung eines bestimmten Gasplaneten kann
+      zu einer beliebigen der dutzend Gruppen gehören, allerdings ähneln sich in dieser
+      Hinsicht keine zwei Planeten vollkommen.'
+    en: 'Gas planets are characterized by a deep, opaque upper atmosphere, usually
+      composed primarily of light elements such as hydrogen or helium. Simple chemicals
+      can add a range of hues and shades in the visual spectrum, and the interaction
+      between upwellings and rapidly circulating pressure bands result in a huge variety
+      of visible surface structures. A similar level of diversity can be found beneath
+      the cloud-tops: the inner composition of a given gas planet might belong to
+      any one of a dozen broad groups, with no two planets entirely alike in this
+      regard.'
+    fr: 'Les planètes gazeuses se caractérisent par une haute atmosphère opaque, principalement
+      composée d''éléments légers tels que l''hydrogène et l''hélium. Des produits
+      chimiques simples peuvent également ajouter de nouvelles nuances dans le spectre
+      visuel, et l''interaction entre les remontées d''eau et la circulation rapide
+      de la pression peut être à l''origine d''un spectacle varié visible à la surface.
+      On trouve d''ailleurs un niveau de diversité similaire au-dessus des nuages :
+      la composition interne d''une planète gazeuse est extrêmement variable, et aucune
+      planète ne présente exactement la même composition.'
+    ja: ガス惑星の特徴は、通常は主に水素またはヘリウムなどの軽量の元素で構成される、濃く不透明な上層大気である。単純な化学物質は可視光スペクトルの色相や陰影の幅を広げ、上昇流と高速循環している圧力帯域の間の相互作用は多様な目に付きやすい表面構造を結果として生じている。同じレベルの多様性は、雲頂の下でも見られる。ガス惑星の内部構造は数十の広範なグループのどれにでも分類される可能性があるため、この点から全く同じ2つの惑星は存在しない。
+    ru: 'Газовые планеты характеризуются толстым непрозрачным верхним слоем атмосферы,
+      обычно состоящей преимущественно из легких элементов, таких как водород или
+      гелий. Простые химические вещества могут добавить целый спектр оттенков и теней
+      в видимый спектр, а взаимодействие между поднимающимися потоками и быстро циркулирующими
+      поясами давления приводит к появлению разнообразных поверхностных структур.
+      Подобное разнообразие можно найти и под слоем облаков: внутренний состав каждой
+      газовой планеты может принадлежать к любой из десятка обширных групп, и практически
+      невозможно найти две вполне одинаковые планеты. '
+    zh: 气体行星的特点是它们拥有厚实、浑浊的上层大气，通常都是由氢或氦这样的轻元素构成。简单的化合物就能引起明显的色彩和光影变化。上升气流与快速运动的气压带使得行星表面可能呈现出各种样貌。而在云层之下，气体行星的内核形态拥有同样复杂的多样性，没有两颗是相同的。
+  graphicID: 3833
+  groupID: 7
+  iconID: 10139
+  mass: 1.0e+35
+  name:
+    de: Planet (Gas)
+    en: Planet (Gas)
+    fr: Planète (gazeuse)
+    ja: 惑星（ガス）
+    ru: Planet (Gas)
+    zh: 行星（气体）
+  portionSize: 1
+  published: false
+  radius: 10000.0
+  soundID: 20086
+  volume: 1.0
+14:
+  graphicID: 10
+  groupID: 8
+  iconID: 10141
+  mass: 1.0e+35
+  name:
+    de: Moon
+    en: Moon
+    fr: Lune
+    ja: 衛星
+    ru: Moon
+    zh: 卫星
+  portionSize: 1
+  published: false
+  radius: 10000.0
+  volume: 1.0
+18:
+  basePrice: 12800.0
+  description:
+    de: Plagioclase gehört nicht zu den wertvollsten Erzarten, sein hoher <a href=showinfo:34>Tritanium</a>-Gehalt
+      sorgt aber für eine kontinuierliche Nachfrage. Es enthält auch Spuren von <a
+      href=showinfo:36>Mexallon</a>. Vorwiegend verfügbar in Sonnensystemen des Hochsicherheitsraums.
+    en: "Plagioclase is not amongst the most valuable ore types around, but it contains
+      a large amount of <a href=showinfo:34>Tritanium</a> and is thus always in constant
+      demand. It also yields some <a href=showinfo:36>Mexallon</a>.\r\n\r\nAvailable
+      primarily in high security status star systems."
+    fr: Le plagioclase n'est certainement pas le minerai brut le plus précieux, mais
+      il contient une grande quantité de <a href=showinfo:34>tritanium</a>, et c'est
+      pourquoi sa demande ne faiblit jamais. Il produit également du <a href=showinfo:36>mexallon</a>.
+      Ce minerai est essentiellement disponible dans les systèmes stellaires de haute
+      sécurité.
+    ja: "プラジオクレイスは、それほど高値で取り引きされる類の鉱石ではないが、<a href=showinfo:34>トリタニウム</a>の含有率が高いため、常に需要が絶えない。少量ながら<a
+      href=showinfo:36>メクサロン</a>も採れる。\r\n\n主にハイセキュリティ星系で発見可能。"
+    ru: Плагиоклаз не отличается особой ценностью, однако он содержит большое количество
+      <a href=showinfo:34>тритания</a> и потому пользуется постоянным спросом. Из
+      этой руды также извлекают <a href=showinfo:36>мексаллон</a>. Встречается в основном
+      в звёздных системах с высоким уровнем безопасности.
+    zh: |-
+      斜长岩并不是最值钱的矿石，但它含有大量的<a href=showinfo:34>三钛合金</a>，因此总是有稳定的需求。它也含有一定量的<a href=showinfo:36>类银超金属</a>。
+
+
+
+      主要分布于高安全等级星系。
+  groupID: 458
+  iconID: 230
+  marketGroupID: 516
+  mass: 1.0e+35
+  name:
+    de: Plagioclase
+    en: Plagioclase
+    fr: Plagioclase
+    ja: プラジオクレイス
+    ru: Plagioclase
+    zh: 斜长岩
+  portionSize: 100
+  published: true
+  volume: 0.35
+19:
+  basePrice: 1149400.0
+  description:
+    de: Spodumain gehört zu den begehrtesten Erzen, da es große Mengen der am meisten
+      benötigten Ressource sowie Spuren einiger der wertvolleren Mineralien enthält.
+      Große Mengen an <a href=showinfo:34>Tritanium</a> sowie bescheidene Mengen an
+      <a href=showinfo:37>Isogen</a>, <a href=showinfo:38>Nocxium</a>, <a href=showinfo:39>Zydrine</a>
+      und <a href=showinfo:40>Megacyte</a> können durch die Aufbereitung dieser Felsen
+      gewonnen werden.
+    en: Spodumain is amongst the most desirable ore types around, as it contains high
+      volumes of the most heavily demanded resource and some amounts of the more precious
+      minerals. Huge volumes of <a href=showinfo:34>Tritanium</a> and moderate amounts
+      of <a href=showinfo:37>Isogen</a>, <a href=showinfo:38>Nocxium</a>, <a href=showinfo:39>Zydrine</a>
+      and <a href=showinfo:40>Megacyte</a> can be obtained by refining these rocks.
+    fr: Le spodumain compte parmi les types de minerai les plus convoités, car il
+      contient d'importantes quantités des minéraux les plus demandés du marché et
+      recèle des filons de minerais précieux. Le raffinage de cette roche fournit
+      un rendement considérable de <a href=showinfo:34>tritanium</a>, ainsi qu'un
+      volume modéré d'<a href=showinfo:37>isogène</a>, de <a href=showinfo:38>nocxium</a>,
+      de <a href=showinfo:39>zydrine</a> et de <a href=showinfo:40>mégacyte</a>.
+    ja: スポデュメインは最も需要の大きい資源を大量に含み、また比較的希少な無機物もある程度抽出できる非常に人気の高い鉱石である。これを精錬することで、膨大な量の<a
+      href=showinfo:34>トリタニウム</a>と、幾分かの<a href=showinfo:37>アイソゲン</a>、<a href=showinfo:38>ノキシウム</a>、<a
+      href=showinfo:39>ザイドリン</a>、<a href=showinfo:40>メガサイト</a>を採取できる。
+    ru: 'Сподумейн ценится чрезвычайно высоко: он в больших объёмах содержит самый
+      востребованный ресурс и в меньших — более редкие минералы. При переработке сподумейна
+      можно получить очень много <a href=showinfo:34>тритания</a> и умеренное количество
+      <a href=showinfo:37>изогена</a>, <a href=showinfo:38>ноксия</a>, <a href=showinfo:39>зидрина</a>
+      и <a href=showinfo:40>мегацита</a>.'
+    zh: 因为富含需求量最大的矿物以及一些珍贵矿物，灰岩几乎是人们最想获得的矿石品种。精炼这种矿石可以获得大量<a href=showinfo:34>三钛合金</a>，以及一定数量的<a
+      href=showinfo:37>同位聚合体</a>、<a href=showinfo:38>超新星诺克石</a>、<a href=showinfo:39>晶状石英核岩</a>和<a
+      href=showinfo:40>超噬矿</a>。
+  groupID: 461
+  iconID: 1274
+  marketGroupID: 517
+  mass: 1.0e+35
+  name:
+    de: Spodumain
+    en: Spodumain
+    fr: Spodumain
+    ja: スポデュメイン
+    ru: Spodumain
+    zh: 灰岩
+  portionSize: 100
+  published: true
+  raceID: 4
+  volume: 16.0
+16:
+  graphicID: 235
+  groupID: 10
+  mass: 100000000000.0
+  name:
+    de: Stargate (Caldari System)
+    en: Stargate (Caldari System)
+    fr: Portail stellaire (système caldari)
+    ja: スターゲート（カルダリシステム）
+    ru: Stargate (Caldari System)
+    zh: 星门（加达里星系）
+  portionSize: 1
+  published: false
+  raceID: 1
+  radius: 3532.0
+  sofFactionName: caldaribase
+  soundID: 32
+  volume: 10000000.0
+15:
+  groupID: 9
+  iconID: 15
+  mass: 1.0e+35
+  name:
+    de: Asteroid Belt
+    en: Asteroid Belt
+    fr: Ceinture d'astéroïdes
+    ja: アステロイドベルト
+    ru: Asteroid Belt
+    zh: 小行星带
+  portionSize: 1
+  published: false
+  soundID: 9
+  volume: 1.0
+17:
+  graphicID: 236
+  groupID: 10
+  mass: 100000000000.0
+  name:
+    de: Stargate (Amarr Constellation)
+    en: Stargate (Amarr Constellation)
+    fr: Portail stellaire (constellation amarr)
+    ja: スターゲート（アマーコンステレーション）
+    ru: Stargate (Amarr Constellation)
+    zh: 星门（艾玛星座）
+  portionSize: 1
+  published: false
+  raceID: 4
+  radius: 2323.0
+  sofFactionName: amarrbase
+  soundID: 32
+  volume: 100000000.0
+54:
+  basePrice: 600000.0
+  graphicID: 237
+  groupID: 15
+  name:
+    de: Caldari Logistics Station
+    en: Caldari Logistics Station
+    fr: Station logistique caldari
+    ja: カルダリ物流ステーション
+    ru: Caldari Logistics Station
+    zh: 空间站（加达里4）
+  portionSize: 1
+  published: false
+  raceID: 1
+  radius: 15351.0
+  sofFactionName: caldaribase
+  soundID: 20162
+  volume: 1.0
+20:
+  basePrice: 74916.0
+  description:
+    de: Kernite ist ein weit verbreiteter Erztyp mit sehr hohen Anteilen an <a href=showinfo:36>Mexallon</a>
+      und <a href=showinfo:37>Isogen</a>. Vorwiegend verfügbar in Systemen des Niedersicherheits-,-
+      Nullsicherheits- und Wurmlochraums.
+    en: "Kernite is a fairly common ore type that yields fair amounts of <a href=showinfo:36>Mexallon</a>
+      and <a href=showinfo:37>Isogen</a>.\r\n\r\nAvailable primarly in low and null
+      security status and wormhole systems."
+    fr: La kernite est un minerai plutôt commun qui produit de grandes quantités de
+      <a href=showinfo:36>mexallon</a> et d'<a href=showinfo:37>isogène</a>. Ce minerai
+      est essentiellement disponible dans les systèmes de trou de ver et de basse
+      sécurité.
+    ja: "ケルナイトは広く普及している鉱石で、ある程度の<a href=showinfo:36>メクサロン</a>と<a href=showinfo:37>アイソゲン</a>を含む。\r\n\n主にローセキュリティやゼロセキュリティステータス、およびワームホールシステムで発見可能。"
+    ru: Кернит — довольно распространённая руда с большим содержанием <a href=showinfo:36>мексаллона</a>
+      и <a href=showinfo:37>изогена</a>. Встречается в основном в звёздных системах
+      с низким и нулевым уровнем безопасности, а также в системах червоточин.
+    zh: |-
+      水硼砂是一种很常见的矿石，可以提炼出相当数量的<a href=showinfo:36>类银超金属</a>和<a href=showinfo:37>同位聚合体</a>。
+
+
+
+      大多数情况下，你可以在低安全等级星系，零安全等级星系和虫洞中找到它。
+  groupID: 457
+  iconID: 1270
+  marketGroupID: 523
+  mass: 1.0e+35
+  name:
+    de: Kernite
+    en: Kernite
+    fr: Kernite
+    ja: ケルナイト
+    ru: Kernite
+    zh: 水硼砂
+  portionSize: 100
+  published: true
+  volume: 1.2
+21:
+  basePrice: 337408.0
+  description:
+    de: Hedbergite ist begehrt wegen seines hohen Gehalts an <a href=showinfo:35>Pyerite</a>
+      und <a href=showinfo:38>Nocxium</a>. Vorwiegend verfügbar in Sonnensystemen
+      des Niedersicherheitsraums.
+    en: "Hedbergite is sought after for its high concentration of <a href=showinfo:35>Pyerite</a>
+      and <a href=showinfo:38>Nocxium</a>.\r\n\r\nAvailable primarily in low security
+      status star systems."
+    fr: L'hedbergite est recherchée pour sa forte teneur en <a href=showinfo:35>pyérite</a>
+      et en <a href=showinfo:38>nocxium</a>. Ce minerai est essentiellement disponible
+      dans les systèmes stellaires de basse sécurité.
+    ja: "ヘッドバーガイトは、<a href=showinfo:35>パイライト</a>と<a href=showinfo:38>ノキシウム</a>の含有密度が高いために人気がある。\r\n\n主にローセキュリティステータス星系で発見可能。"
+    ru: Хедбергит ценится за высокое содержание <a href=showinfo:35>пирита</a> и <a
+      href=showinfo:38>ноксия</a>. Встречается в основном в звёздных системах с низким
+      уровнем безопасности.
+    zh: |-
+      由于含有大量超新星诺克石和<a href=showinfo:35>类晶体胶矿</a>和<a href=showinfo:38>超新星诺克石</a>，同位原矿很抢手。
+
+
+
+      大多数情况下，你可以在低安全等级星系找到它。
+  groupID: 454
+  iconID: 1269
+  marketGroupID: 527
+  mass: 1.0e+35
+  name:
+    de: Hedbergite
+    en: Hedbergite
+    fr: Hedbergite
+    ja: ヘッドバーガイト
+    ru: Hedbergite
+    zh: 同位原矿
+  portionSize: 100
+  published: true
+  raceID: 4
+  volume: 3.0
+22:
+  basePrice: 3068504.0
+  description:
+    de: Arkonor ist eines der seltensten und wertvollsten Erze im derzeit bekannten
+      Universum. Ein großer Klumpen davon kann jemanden im Handumdrehen vom Tellerwäscher
+      zum Millionär machen. Es verfügt über eine große Menge an <a href=showinfo:40>Megacyte</a>
+      und enthält auch ein wenig <a href=showinfo:36>Mexallon</a> und <a href=showinfo:35>Pyerite</a>.
+      Vorwiegend verfügbar in Systemen des Nullsicherheits- und Wurmlochraums.
+    en: "Arkonor is one of the rarest and most sought-after ores in the known universe.
+      A sizable nugget of this can sweep anyone from rags to riches in no time. It
+      has high amount of <a href=showinfo:40>Megacyte</a>, and also contains some
+      <a href=showinfo:36>Mexallon</a> and <a href=showinfo:35>Pyerite</a>.\r\n\r\nAvailable
+      primarily in null security status and wormhole systems."
+    fr: L'arkonor est l'un des minerais bruts les plus rares et les plus recherchés
+      de l'univers. Une simple pépite est synonyme de fortune. L'arkonor a la plus
+      forte concentration en <a href=showinfo:40>mégacyte</a> de tous les minerais
+      bruts. Il contient également du <a href=showinfo:36>mexallon</a> et de la <a
+      href=showinfo:35>pyérite</a>. Ce minerai est essentiellement disponible dans
+      les systèmes de trou de ver et de sécurité nulle.
+    ja: "アーコナーは非常に希少で、既知宇宙の中で最も需要の高い鉱石の一つである。ひとかたまりのアーコナーがあれば、すぐに大富豪の仲間入りができると言われており、それだけに探している者も多い。<a
+      href=showinfo:40>メガサイト</a>の含有率が高く、<a href=showinfo:36>メクサロン</a>、<a href=showinfo:35>パイライト</a>も成分に含まれている。\r\n\n主にゼロセキュリティステータス星系およびワームホールシステムで発見可能。"
+    ru: Арконор — одна из наиболее редких и востребованных руд в известной вселенной.
+      Чтобы мгновенно разбогатеть, хватит одного крупного самородка. В нём содержится
+      немалое количество <a href=showinfo:40>мегацита</a>, а также <a href=showinfo:36>мексаллон</a>
+      и <a href=showinfo:35>пирит</a>. Встречается в основном в звёздных системах
+      с нулевым уровнем безопасности и в системах червоточин.
+    zh: |-
+      艾克诺岩是已知世界中最稀有、最令人向往的矿石之一。一大块这种矿石足以让任何人瞬间从乞丐变成富翁。它含有大量<a href=showinfo:40>超噬矿</a>，以及一些<a href=showinfo:36>类银超金属</a>和<a href=showinfo:35>类晶体胶矿</a>。
+
+
+
+      大多数情况下，你可以在零安全等级星系和虫洞中找到它。
+  groupID: 450
+  iconID: 1277
+  marketGroupID: 512
+  mass: 1.0e+35
+  name:
+    de: Arkonor
+    en: Arkonor
+    fr: Arkonor
+    ja: アーコナー
+    ru: Arkonor
+    zh: 艾克诺岩
+  portionSize: 100
+  published: true
+  raceID: 4
+  volume: 16.0
+56:
+  basePrice: 600000.0
+  graphicID: 2307
+  groupID: 15
+  name:
+    de: Gallente Military Station
+    en: Gallente Military Station
+    fr: Station militaire gallente
+    ja: ガレンテ軍事ステーション
+    ru: Gallente Military Station
+    zh: 空间站（盖伦特1）
+  portionSize: 1
+  published: false
+  raceID: 8
+  radius: 23836.0
+  sofFactionName: gallentebase
+  soundID: 20164
+  volume: 1.0
+57:
+  basePrice: 600000.0
+  graphicID: 2306
+  groupID: 15
+  name:
+    de: Gallente Station Hub
+    en: Gallente Station Hub
+    fr: Centre de station gallente
+    ja: ガレンテステーションハブ
+    ru: Gallente Station Hub
+    zh: 盖伦特空间站枢纽
+  portionSize: 1
+  published: false
+  raceID: 8
+  radius: 27072.0
+  sofFactionName: gallentebase
+  soundID: 20164
+  volume: 1.0
+58:
+  basePrice: 600000.0
+  description:
+    de: Caldari Außenposten 1
+    en: Caldari Outpost 1
+    fr: Avant-poste caldari 1
+    ja: カルダリアウトポスト1
+    ru: Caldari Outpost 1
+    zh: 加达里哨站 1
+  groupID: 15
+  name:
+    de: C-O-1
+    en: C-O-1
+    fr: A-P-C-1
+    ja: C-O-1
+    ru: C-O-1
+    zh: CO1
+  portionSize: 1
+  published: false
+  raceID: 1
+  radius: 1000.0
+  volume: 1.0
+59:
+  basePrice: 600000.0
+  description:
+    de: Caldari Außenposten 2
+    en: Caldari Outpost 2
+    fr: Avant-poste caldari 2
+    ja: カルダリアウトポスト2
+    ru: Caldari Outpost 2
+    zh: 加达里哨站 2
+  groupID: 15
+  name:
+    de: C-O-2
+    en: C-O-2
+    fr: C-O-2
+    ja: C-O-2
+    ru: C-O-2
+    zh: CO2
+  portionSize: 1
+  published: false
+  raceID: 1
+  radius: 1000.0
+  volume: 1.0
+23:
+  capacity: 55000.0
+  description:
+    de: Dieser Frachtcontainer ist schwach konstruiert und kann die Härten des Alls
+      für nicht länger als eine Stunde überleben.
+    en: This cargo container is flimsily constructed and may not survive the rigors
+      of space for more than an hour or so.
+    fr: Ce conteneur de fret est peu solide et ne peut résister à l'espace intersidéral
+      plus d'une heure environ.
+    ja: 貧弱な構造のコンテナ。宇宙空間の厳しい環境には耐えられないだろう。
+    ru: Этот грузовой контейнер довольно хрупкий и вряд ли продержится в космосе больше
+      часа.
+    zh: 这种货柜集装箱构造十分脆弱，在严酷的太空环境下大概只能坚持一小时左右。
+  graphicID: 1176
+  groupID: 12
+  iconID: 16
+  mass: 10000.0
+  name:
+    de: Cargo Container
+    en: Cargo Container
+    fr: Conteneur de fret
+    ja: カーゴコンテナ
+    ru: Cargo Container
+    zh: 集装箱货柜
+  portionSize: 1
+  published: false
+  radius: 14.0
+  sofFactionName: genericmetal
+  volume: 55000.0
+25:
+  graphicID: 20373
+  groupID: 14
+  iconID: 398
+  mass: 80.0
+  name:
+    de: Corpse Male
+    en: Corpse Male
+    fr: Corpse Male
+    ja: 死体(男性)
+    ru: Corpse Male
+    zh: 男性尸体
+  portionSize: 1
+  published: true
+  sofFactionName: medium
+  volume: 2.0
+60:
+  capacity: 1.0
+  graphicID: 1174
+  groupID: 1319
+  iconID: 16
+  mass: 1.0
+  name:
+    de: Asset Safety Wrap
+    en: Asset Safety Wrap
+    fr: Emballage de sécurité des biens
+    ja: アセットセーフ・ワープ
+    ru: Asset Safety Wrap
+    zh: 资产安全包裹
+  portionSize: 1
+  published: false
+  sofFactionName: genericmetal
+  volume: 1.0
+450:
+  capacity: 1.0
+  description:
+    de: "Eine mehrläufige Schnellfeuer-Energiewaffe, die einen beständigen Schadensstrahl
+      verursacht.\n\nMuss mit einem der folgenden Frequenzkristalle geladen werden:
+      Gamma, Infrared, Microwave, Multifrequency, Radio, Standard, Ultraviolet, Xray. "
+    en: "Rapid fire multi-barreled energy weapon that delivers a steady stream of
+      damage. \r\n\r\nRequires frequency crystal ammo types: Gamma, Infrared, Microwave,
+      Multifrequency, Radio, Standard, Ultraviolet, Xray."
+    fr: "Arme à énergie multi-canons à tir rapide assurant un feu nourri et régulier.
+      \n\nRequiert les cristaux de fréquence suivants en guise de munitions : gamma,
+      infrarouge, micro-onde, multifréquence, radio, standard, ultraviolet, rayon X."
+    ja: "間断なくダメージを浴びせかける、速射連装型エネルギー兵器。\r\n\n装填可能なフリーケンシークリスタルのタイプ : ガンマ、赤外線、マイクロ波、多周波、放射線、標準、紫外線、エックス線。"
+    ru: "Многоствольная скорострельная энергетическая установка, способная вести непрерывный
+      огонь. \n\nСледует заряжать частотными кристаллами: Gamma, Infrared, Microwave,
+      Multifrequency, Radio, Standard, Ultraviolet, Xray."
+    zh: "速射多管能源型武器，破坏力持续稳定。\r\n\r\n使用的频率晶体弹药类型：伽玛、红外线、微波、多频、射频、标准、紫外线和X射线。"
+  graphicID: 11118
+  groupID: 53
+  iconID: 350
+  marketGroupID: 570
+  mass: 500.0
+  metaGroupID: 1
+  name:
+    de: Gatling Pulse Laser I
+    en: Gatling Pulse Laser I
+    fr: Laser à impulsions Gatling I
+    ja: ガトリングパルスレーザーI
+    ru: Gatling Pulse Laser I
+    zh: 加特林脉冲激光器 I
+  portionSize: 1
+  published: true
+  sofFactionName: amarrbase
+  volume: 5.0
+451:
+  capacity: 1.0
+  description:
+    de: "Dieser leichte Impulslaser verwendet zwei separate Laser-Fokussierungssysteme,
+      um die Abkühlungsphase zwischen den Schüssen zu verkürzen; eine gute Nahkampfwaffe.
+      \n\nMuss mit einem der folgenden Frequenzkristalle geladen werden: Gamma, Infrared,
+      Microwave, Multifrequency, Radio, Standard, Ultraviolet, Xray. "
+    en: "This light pulse laser uses two separate laser focusing systems to reduce
+      the cool down period between shots. Good skirmish weapon. \r\n\r\nRequires frequency
+      crystal ammo types: Gamma, Infrared, Microwave, Multifrequency, Radio, Standard,
+      Ultraviolet, Xray."
+    fr: "Ce laser à impulsions léger utilise deux systèmes laser séparés pour réduire
+      le temps de refroidissement entre les tirs. Bonne arme de guérilla. \n\nRequiert
+      les cristaux de fréquence suivants en guise de munitions : gamma, infrarouge,
+      micro-onde, multifréquence, radio, standard, ultraviolet, rayon X."
+    ja: |-
+      ライトパルスレーザー。独立した 2 基のレーザー集束システムを交互に使用して、連射の間の冷却時間を短縮している。高機動向けの兵器。
+
+
+
+      装填可能なフリーケンシークリスタルのタイプ : ガンマ、赤外線、マイクロ波、多周波、放射線、標準、紫外線、エックス線。
+    ru: "Этот легкий импульсный лазер оснащен двумя раздельными системами фокусировки
+      лазерного излучения, позволяющими сократить перерывы на охлаждение и повышающими
+      скорострельность. Рекомендуется для использования в стычках. \n\nСледует заряжать
+      частотными кристаллами: Gamma, Infrared, Microwave, Multifrequency, Radio, Standard,
+      Ultraviolet, Xray."
+    zh: "这种轻型脉冲激光器配有两个独立的激光聚焦装置，以缩短两次开火之间的冷却周期。适用于小规模战斗的好装备。\r\n\r\n使用的频率晶体弹药类型：伽玛、红外线、微波、多频、射频、标准、紫外线和X射线。"
+  graphicID: 11117
+  groupID: 53
+  iconID: 350
+  marketGroupID: 570
+  mass: 500.0
+  metaGroupID: 1
+  name:
+    de: Dual Light Pulse Laser I
+    en: Dual Light Pulse Laser I
+    fr: Double laser à impulsions léger I
+    ja: 小型デュアルパルスレーザーI
+    ru: Dual Light Pulse Laser I
+    zh: 双联轻型脉冲激光器 I
+  portionSize: 1
+  published: true
+  sofFactionName: amarrbase
+  volume: 5.0
+34:
+  basePrice: 2.0
+  description:
+    de: 'Die grundlegende Basiskomponente aller Strukturen im All. Ein sehr hartes,
+      aber dennoch biegsames Metall. Kann nicht zum Bau von Unterkünften verwendet
+      werden, da es bei atmosphärischen Temperaturen instabil wird. Ist in den zentralen
+      Regionen des bekannten Universums sehr verbreitet. Kann durch die Aufbereitung
+      von folgenden Erzen und ihren Varianten in Sonnensystemen des Hochsicherheitsraums
+      erhalten werden: <a href=showinfo:1230>Veldspar</a>, <a href=showinfo:1228>Scordite</a>,
+      <a href=showinfo:18>Plagioclase</a>. Es kommt außerdem in sehr großen Mengen
+      in seltenen Erzen wie <a href=showinfo:19>Spodumain</a>, <a href=showinfo:52316>Bezdnazin</a>,
+      <a href=showinfo:52315>Rakovene</a> und <a href=showinfo:52306>Talassonit</a>
+      vor.'
+    en: "The main building block in space structures. A very hard, yet bendable metal.
+      Cannot be used in human habitats due to its instability at atmospheric temperatures.
+      Very common throughout the central regions of known universe.\r\n\r\nMay be
+      obtained by reprocessing the following ores and their variations available in
+      high security status star systems:\r\n<a href=showinfo:1230>Veldspar</a>, <a
+      href=showinfo:1228>Scordite</a>, <a href=showinfo:18>Plagioclase</a>\r\n\r\nIt
+      is also present in huge amounts in rare ores like <a href=showinfo:19>Spodumain</a>,
+      <a href=showinfo:52316>Bezdnacine</a>, <a href=showinfo:52315>Rakovene</a> and
+      <a href=showinfo:52306>Talassonite</a>."
+    fr: 'Il s''agit du principal bloc de construction pour les structures spatiales.
+      Ce métal est à la fois très résistant et malléable. Il ne peut être utilisé
+      pour les structures d''habitation humaine en raison de son instabilité aux températures
+      atmosphériques. Il est très répandu dans les régions centrales de l''univers
+      connu. Peut être obtenu en retraitant les minerais suivants et leurs variantes,
+      disponibles dans les systèmes stellaires de haute sécurité : <a href=showinfo:1230>veldspar</a>,
+      <a href=showinfo:1228>scordite</a>, <a href=showinfo:18>plagioclase</a> Il est
+      également présent en quantité considérable dans les minerais rares comme le
+      <a href=showinfo:19>spodumain</a>, la <a href=showinfo:52316>bezdnacine</a>,
+      le <a href=showinfo:52315>rakovene</a> et la <a href=showinfo:52306>talassonite</a>.'
+    ja: |-
+      宇宙建造物の主要な建築素材。高い硬度を持ちながら、曲げることも可能な金属。大気温度の中では不安定であるため、人間の住居には使用できない。既知宙域の中央リージョン全域に存在する。
+
+
+
+      ハイセキュリティステータス星系で入手可能な、以下の鉱石やその亜種を再処理することによって得ることができる。
+
+      <a href=showinfo:1230>ベルドスパー</a>、<a href=showinfo:1228>スコダイト</a>、<a href=showinfo:18>プラジオクレイス</a>
+
+
+
+      <a href=showinfo:19>スポデュメイン</a>や<a href=showinfo:52316>ベズドナシン</a>、<a href=showinfo:52315>ラコベネ</a>、<a href=showinfo:52306>タラソナイト</a>といった希少鉱石の中にも相当量含まれている。
+    ru: 'Основной материал для строительства космических сооружений. Очень твёрдый,
+      но при этом гибкий металл. Непригоден для использования в местах обитания человека
+      из-за своей нестабильности при атмосферных температурах. Очень распространён
+      в центральных секторах известной вселенной. Добывается путём переработки нижеперечисленных
+      руд и их разновидностей в системах с высоким уровнем безопасности: <a href=showinfo:1230>вельдспар</a>,
+      <a href=showinfo:1228>скордит</a>, <a href=showinfo:18>плагиоклаз</a> Кроме
+      того, в огромных количествах присутствует в редких рудах, таких как <a href=showinfo:19>сподумейн</a>,
+      <a href=showinfo:52316>безднацин</a>, <a href=showinfo:52315>раковин</a> и <a
+      href=showinfo:52306>талассонит</a>.'
+    zh: |-
+      太空建筑的主要建造材料。一种非常坚硬但有韧性的金属。由于它在大气温度下不稳定，因此不能用于人类生活环境。在已知星系的核心星域中十分常见。
+
+
+
+      可以从分布在高安全等级星系中的下列矿石及其变种中提炼获得：
+
+      <a href=showinfo:1230>凡晶石</a>，<a href=showinfo:1228>灼烧岩</a>，<a href=showinfo:18>斜长岩</a>
+
+
+
+      它在稀有矿石中的含量也很丰富，例如<a href=showinfo:19>灰岩</a>、<a href=showinfo:52316>贝兹岩</a>、<a href=showinfo:52315>拉克岩</a>和<a href=showinfo:52306>塔拉岩</a>。
+  groupID: 18
+  iconID: 22
+  marketGroupID: 1857
+  name:
+    de: Tritanium
+    en: Tritanium
+    fr: Tritanium
+    ja: トリタニウム
+    ru: Tritanium
+    zh: 三钛合金
+  portionSize: 1
+  published: true
+  volume: 0.01
+35:
+  basePrice: 8.0
+  description:
+    de: 'Ein weiches, kristallähnliches Mineral, das in einem charakteristischen Orange
+      glüht, als würde es brennen. Es wird als Halbleiter und in der biochemischen
+      Industrie verwendet. Kommt in recht vielen Asteroidenerzsorten vor. Kann durch
+      die Aufbereitung von folgenden Erzen und ihren Varianten erhalten werden: Sonnensysteme
+      im Hochsicherheitsraum: <a href=showinfo:1228>Scordite</a>, <a href=showinfo:1224>Pyroxeres</a>
+      Sonnensysteme im Niedersicherheitsraum: <a href=showinfo:1224>Pyroxeres</a>,
+      <a href=showinfo:1227>Omber</a>, <a href=showinfo:21>Hedbergite</a>, <a href=showinfo:1229>Gneiss</a>,
+      <a href=showinfo:1225>Crokite</a> Sonnensysteme im Nullsicherheitsraum: <a href=showinfo:1224>Pyroxeres</a>,
+      <a href=showinfo:1223>Bistot</a>, <a href=showinfo:22>Arkonor</a> Wurmloch-Systeme:
+      <a href=showinfo:1224>Pyroxeres</a>, <a href=showinfo:1227>Omber</a>, <a href=showinfo:1229>Gneiss</a>,
+      <a href=showinfo:1223>Bistot</a>, <a href=showinfo:22>Arkonor</a>'
+    en: "A soft crystal-like mineral with a very distinguishing orange glow as if
+      on fire. Used as conduit and in the bio-chemical industry. Commonly found in
+      many asteroid-ore types.\r\n\r\nMay be obtained by reprocessing the following
+      ores and their variations:\r\n\r\nHigh security status star systems:\r\n<a href=showinfo:1228>Scordite</a>,
+      <a href=showinfo:1224>Pyroxeres</a>\r\n\r\nLow security status star systems:\r\n<a
+      href=showinfo:1224>Pyroxeres</a>, <a href=showinfo:1227>Omber</a>, <a href=showinfo:21>Hedbergite</a>,
+      <a href=showinfo:1229>Gneiss</a>, <a href=showinfo:1225>Crokite</a>\r\n\r\nNull
+      security status star systems:\r\n<a href=showinfo:1224>Pyroxeres</a>, <a href=showinfo:1223>Bistot</a>,
+      <a href=showinfo:22>Arkonor</a>\r\n\r\nWormhole systems:\r\n<a href=showinfo:1224>Pyroxeres</a>,
+      <a href=showinfo:1227>Omber</a>, <a href=showinfo:1229>Gneiss</a>, <a href=showinfo:1223>Bistot</a>,
+      <a href=showinfo:22>Arkonor</a>"
+    fr: 'Ce minerai lisse comme le cristal dégage une lueur orangée semblable aux
+      flammes. Il est employé dans l''industrie biochimique, ainsi que dans les conduits.
+      On le trouve dans de nombreux minerais récoltés dans les astéroïdes. Peut être
+      obtenu en retraitant les minerais suivants et leurs variantes : Systèmes stellaires
+      de haute sécurité : <a href=showinfo:1228>scordite</a>, <a href=showinfo:1224>pyroxeres</a>
+      Systèmes stellaires de basse sécurité : <a href=showinfo:1224>pyroxeres</a>,
+      <a href=showinfo:1227>omber</a>, <a href=showinfo:21>hedbergite</a>, <a href=showinfo:1229>gneiss</a>,
+      <a href=showinfo:1225>crokite</a> Systèmes stellaires de sécurité nulle : <a
+      href=showinfo:1224>pyroxeres</a>, <a href=showinfo:1223>bistot</a>, <a href=showinfo:22>arkonor</a>
+      Systèmes de trou de ver : <a href=showinfo:1224>pyroxeres</a>, <a href=showinfo:1227>omber</a>,
+      <a href=showinfo:1229>gneiss</a>, <a href=showinfo:1223>bistot</a>, <a href=showinfo:22>arkonor</a>'
+    ja: |-
+      炎のように明るいオレンジ色に光る、柔らかい水晶のような鉱石。導管として、またバイオ化学産業で使用される。多くのタイプのアステロイド鉱石に含まれている。
+
+
+
+      以下の鉱石とその種類を再処理することによって得ることができる。
+
+
+
+      ハイセキュリティステータス星系：
+
+      <a href=showinfo:1228>スコダイト</a>、<a href=showinfo:1224>パイロゼリーズ</a>
+
+
+
+      ローセキュリティステータス星系：
+
+      <a href=showinfo:1224>パイロゼリーズ</a>、<a href=showinfo:1227>オンバー</a>、<a href=showinfo:21>ヘッドバーガイト</a>、<a href=showinfo:1229>ナエス</a>、<a href=showinfo:1225>クロカイト</a>
+
+
+
+      ゼロセキュリティステータス星系：
+
+      <a href=showinfo:1224>パイロゼリーズ</a>、<a href=showinfo:1223>ビストット</a>、<a href=showinfo:22>アーコナー</a>
+
+
+
+      ワームホールシステム：
+
+      <a href=showinfo:1224>パイロゼリーズ</a>、<a href=showinfo:1227>オンバー</a>、<a href=showinfo:1229>ナエス</a>、<a href=showinfo:1223>ビストット</a>、<a href=showinfo:22>アーコナー</a>
+    ru: 'Мягкий кристаллообразный минерал с характерным оранжевым свечением — внутри
+      словно горит огонь. Используется в качестве проводника, а также в биохимической
+      промышленности. Встречается во многих видах астероидных руд. Добывается путём
+      переработки нижеперечисленных руд и их разновидностей. Системы с высоким уровнем
+      безопасности: <a href=showinfo:1228>скордит</a>, <a href=showinfo:1224>пироксер</a>
+      Системы с низким уровнем безопасности: <a href=showinfo:1224>пироксер</a>, <a
+      href=showinfo:1227>омбер</a>, <a href=showinfo:21>хедбергит</a>, <a href=showinfo:1229>гнейсс</a>,
+      <a href=showinfo:1225>крокит</a> Системы с нулевым уровнем безопасности: <a
+      href=showinfo:1224>пироксер</a>, <a href=showinfo:1223>бистот</a>, <a href=showinfo:22>арконор</a>
+      Системы червоточин: <a href=showinfo:1224>пироксер</a>, <a href=showinfo:1227>омбер</a>,
+      <a href=showinfo:1229>гнейсс</a>, <a href=showinfo:1223>бистот</a>, <a href=showinfo:22>арконор</a>'
+    zh: |-
+      一种类水晶的柔软矿物，有着非常易辨认的桔黄光辉，仿佛是在燃烧一样。用于导线管和生化工业。可以在许多种小行星矿石中找到。
+
+
+
+      可以从下列矿石及其变种中提炼获得：
+
+
+
+      高安全等级星系：
+
+      <a href=showinfo:1228>灼烧岩</a>，<a href=showinfo:1224>干焦岩</a>
+
+
+
+      低安全等级星系：
+
+      <a href=showinfo:1224>干焦岩</a>，<a href=showinfo:1227>奥贝尔石</a>，<a href=showinfo:21>同位原矿</a>，<a href=showinfo:1229>片麻岩</a>，<a href=showinfo:1225>克洛基石</a>
+
+
+
+      零安全等级星系：
+
+      <a href=showinfo:1224>干焦岩</a>，<a href=showinfo:1223>双多特石</a>，<a href=showinfo:22>艾克诺岩</a>
+
+
+
+      虫洞星系：
+
+      <a href=showinfo:1224>干焦岩</a>，<a href=showinfo:1227>奥贝尔石</a>，<a href=showinfo:1229>片麻岩</a>，<a href=showinfo:1223>双多特石</a>，<a href=showinfo:22>艾克诺岩</a>
+  groupID: 18
+  iconID: 400
+  marketGroupID: 1857
+  name:
+    de: Pyerite
+    en: Pyerite
+    fr: Pyérite
+    ja: パイライト
+    ru: Pyerite
+    zh: 类晶体胶矿
+  portionSize: 1
+  published: true
+  volume: 0.01
+36:
+  basePrice: 32.0
+  description:
+    de: 'Ein sehr vielseitiges, metallisches Mineral, matt bis hell silbrig-grün.
+      Kann mit <a href=showinfo:34>Tritanium</a> gemischt werden, um extrem harte
+      Legierungen herzustellen. Wird aber auch pur zu verschiedenen Zwecken verwendet.
+      Kommt in den meisten Regionen vor. Kann durch die Aufbereitung von folgenden
+      Erzen und ihren Varianten erhalten werden: Sonnensysteme im Hochsicherheitsraum:
+      <a href=showinfo:1224>Pyroxeres</a>, <a href=showinfo:18>Plagioclase</a> Sonnensysteme
+      im Niedersicherheitsraum: <a href=showinfo:1224>Pyroxeres</a>, <a href=showinfo:20>Kernite</a>,
+      <a href=showinfo:1226>Jaspet</a>, <a href=showinfo:1229>Gneiss</a>, <a href=showinfo:1232>Dunkles
+      Ochre</a>, <a href=showinfo:1225>Crokite</a> Sonnensysteme im Nullsicherheitsraum:
+      <a href=showinfo:1224>Pyroxeres</a>, <a href=showinfo:20>Kernite</a>, <a href=showinfo:1223>Bistot</a>,
+      <a href=showinfo:22>Arkonor</a> Wurmloch-Systeme: <a href=showinfo:1224>Pyroxeres</a>,
+      <a href=showinfo:20>Kernite</a>, <a href=showinfo:1229>Gneiss</a>, <a href=showinfo:1223>Bistot</a>,
+      <a href=showinfo:22>Arkonor</a>'
+    en: "Very flexible metallic mineral, dull to bright silvery green in color. Can
+      be mixed with <a href=showinfo:34>Tritanium</a> to make extremely hard alloys
+      or it can be used by itself for various purposes. Fairly common in most regions.\r\n\r\nMay
+      be obtained by reprocessing the following ores and their variations:\r\n\r\nHigh
+      security status star systems:\r\n<a href=showinfo:1224>Pyroxeres</a>, <a href=showinfo:18>Plagioclase</a>\r\n\r\nLow
+      security status star systems:\r\n<a href=showinfo:1224>Pyroxeres</a>, <a href=showinfo:20>Kernite</a>,
+      <a href=showinfo:1226>Jaspet</a>, <a href=showinfo:1229>Gneiss</a>, <a href=showinfo:1232>Dark
+      Ochre</a>, <a href=showinfo:1225>Crokite</a>\r\n\r\nNull security status star
+      systems:\r\n<a href=showinfo:1224>Pyroxeres</a>, <a href=showinfo:20>Kernite</a>,
+      <a href=showinfo:1223>Bistot</a>, <a href=showinfo:22>Arkonor</a>\r\n\r\nWormhole
+      systems:\r\n<a href=showinfo:1224>Pyroxeres</a>, <a href=showinfo:20>Kernite</a>,
+      <a href=showinfo:1229>Gneiss</a>, <a href=showinfo:1223>Bistot</a>, <a href=showinfo:22>Arkonor</a>"
+    fr: 'Il s''agit d''un minerai métallique très souple dont la couleur va du vert
+      argenté mat au vert argenté brillant. Il peut être mélangé avec du <a href=showinfo:34>tritanium</a>
+      pour composer des alliages extrêmement résistants, ou utilisé seul pour différentes
+      applications. Ce minerai est relativement courant dans la plupart des régions.
+      Peut être obtenu en retraitant les minerais suivants et leurs variantes : Systèmes
+      stellaires de haute sécurité : <a href=showinfo:1224>pyroxeres</a>, <a href=showinfo:18>plagioclase</a>
+      Systèmes stellaires de basse sécurité : <a href=showinfo:1224>pyroxeres</a>,
+      <a href=showinfo:20>kernite</a>, <a href=showinfo:1226>jaspet</a>, <a href=showinfo:1229>gneiss</a>,
+      <a href=showinfo:1232>ochre foncé</a>, <a href=showinfo:1225>crokite</a> Systèmes
+      stellaires de sécurité nulle : <a href=showinfo:1224>pyroxeres</a>, <a href=showinfo:20>kernite</a>,
+      <a href=showinfo:1223>bistot</a>, <a href=showinfo:22>arkonor</a> Systèmes de
+      trou de ver : <a href=showinfo:1224>pyroxeres</a>, <a href=showinfo:20>kernite</a>,
+      <a href=showinfo:1229>gneiss</a>, <a href=showinfo:1223>bistot</a>, <a href=showinfo:22>arkonor</a>'
+    ja: |-
+      非常に柔軟性の高い金属鉱石。色は、鈍い緑から明るいメタリックな緑。<a href=showinfo:34>トリタニウム</a>と混ぜ合わせて非常に硬度の高い合金を作ることも、この鉱石だけで様々な用途に使用することもできる。多くのリージョンで広く産出される。
+
+
+
+      以下の鉱石とその種類を再処理することによって得ることができる。
+
+
+
+      ハイセキュリティステータス星系：
+
+      <a href=showinfo:1224>パイロゼリーズ</a>、<a href=showinfo:18>プラジオクレイス</a>
+
+
+
+      ローセキュリティステータス星系：
+
+      <a href=showinfo:1224>パイロゼリーズ</a>、<a href=showinfo:20>ケルナイト</a>、<a href=showinfo:1226>ジャスペット</a>、<a href=showinfo:1229>ナエス</a>、<a href=showinfo:1232>ダークオークル</a>、<a href=showinfo:1225>クロカイト</a>
+
+
+
+      ゼロセキュリティステータス星系：
+
+      <a href=showinfo:1224>パイロゼリーズ</a>、<a href=showinfo:20>ケルナイト</a>、<a href=showinfo:1223>ビストット</a>、<a href=showinfo:22>アーコナー</a>
+
+
+
+      ワームホールシステム：
+
+      <a href=showinfo:1224>パイロゼリーズ</a>、<a href=showinfo:20>ケルナイト</a>、<a href=showinfo:1229>ナエス</a>、<a href=showinfo:1223>ビストット</a>、<a href=showinfo:22>アーコナー</a>
+    ru: 'Очень гибкий металлический минерал зелёного цвета с серебристым отливом.
+      Может смешиваться с <a href=showinfo:34>тританием</a> для производства крайне
+      твёрдых сплавов, хотя часто используется и самостоятельно в самых разных целях.
+      Достаточно распространён в большинстве секторов. Добывается путём переработки
+      нижеперечисленных руд и их разновидностей. Системы с высоким уровнем безопасности:
+      <a href=showinfo:1224>пироксер</a>, <a href=showinfo:18>плагиоклаз</a> Системы
+      с низким уровнем безопасности: <a href=showinfo:1224>пироксер</a>, <a href=showinfo:20>кернит</a>,
+      <a href=showinfo:1226>джаспет</a>, <a href=showinfo:1229>гнейсс</a>, <a href=showinfo:1232>тёмная
+      охра</a>, <a href=showinfo:1225>крокит</a> Системы с нулевым уровнем безопасности:
+      <a href=showinfo:1224>пироксер</a>, <a href=showinfo:20>кернит</a>, <a href=showinfo:1223>бистот</a>,
+      <a href=showinfo:22>арконор</a> Системы червоточин: <a href=showinfo:1224>пироксер</a>,
+      <a href=showinfo:20>кернит</a>, <a href=showinfo:1229>гнейсс</a>, <a href=showinfo:1223>бистот</a>,
+      <a href=showinfo:22>арконор</a>'
+    zh: |-
+      非常有韧性的金属矿物，颜色为暗沉至明亮的银绿色。它可以和<a href=showinfo:34>三钛合金</a>混合制作极其坚硬的合金，它本身也具有多种用途。在大多数星域非常常见。
+
+
+
+      可以从下列矿石及其变种中提炼获得：
+
+
+
+      高安全等级星系：
+
+      <a href=showinfo:1224>干焦岩</a>， <a href=showinfo:18>斜长岩</a>
+
+
+
+      低安全等级星系：
+
+      <a href=showinfo:1224>干焦岩</a>，<a href=showinfo:20>水硼砂</a>，<a href=showinfo:1226>杰斯贝矿</a>，<a href=showinfo:1229>片麻岩</a>，<a href=showinfo:1232>黑赭石</a>，<a href=showinfo:1225>克洛基石</a>
+
+
+
+      零安全等级星系：
+
+      <a href=showinfo:1224>干焦岩</a>，<a href=showinfo:20>水硼砂</a>，<a href=showinfo:1223>双多特石</a>，<a href=showinfo:22>艾克诺岩</a>
+
+
+
+      虫洞星系：
+
+      <a href=showinfo:1224>干焦岩</a>，<a href=showinfo:20>水硼砂</a>，<a href=showinfo:1229>片麻岩</a>，<a href=showinfo:1223>双多特石</a>，<a href=showinfo:22>艾克诺岩</a>
+  groupID: 18
+  iconID: 401
+  marketGroupID: 1857
+  name:
+    de: Mexallon
+    en: Mexallon
+    fr: Mexallon
+    ja: メクサロン
+    ru: Mexallon
+    zh: 类银超金属
+  portionSize: 1
+  published: true
+  volume: 0.01
+37:
+  basePrice: 128.0
+  description:
+    de: 'Hellbläulicher Kristall, geformt durch den intensiven Druck tief im Inneren
+      von großen Asteroiden und Monden. Wird bei der Fertigung von Elektronik und
+      Waffen verwendet. Große Mengen lassen sich nur in wenigen Gebieten finden. Kann
+      durch die Aufbereitung von folgenden Erzen und ihren Varianten erhalten werden:
+      Sonnensysteme im Niedersicherheitsraum: <a href=showinfo:1227>Omber</a>, <a
+      href=showinfo:20>Kernite</a>, <a href=showinfo:1231>Hemorphite</a>, <a href=showinfo:1229>Gneiss</a>,
+      <a href=showinfo:1232>Dunkles Ochre</a> Sonnensysteme im Nullsicherheitsraum:
+      <a href=showinfo:20>Kernite</a> Wurmloch-Systeme: <a href=showinfo:1227>Omber</a>,
+      <a href=showinfo:20>Kernite</a>, <a href=showinfo:1229>Gneiss</a> Es kommt außerdem
+      in sehr großen Mengen in seltenen Erzen wie <a href=showinfo:19>Spodumain</a>,
+      <a href=showinfo:52316>Bezdnazin</a> und <a href=showinfo:52315>Rakovene</a>
+      vor.'
+    en: "Light-bluish crystal, formed by intense pressure deep within large asteroids
+      and moons. Used in electronic and weapon manufacturing. Only found in abundance
+      in a few areas.\r\n\r\nMay be obtained by reprocessing the following ores and
+      their variations:\r\n\r\nLow security status star systems:\r\n<a href=showinfo:1227>Omber</a>,
+      <a href=showinfo:20>Kernite</a>, <a href=showinfo:1231>Hemorphite</a>, <a href=showinfo:1229>Gneiss</a>,
+      <a href=showinfo:1232>Dark Ochre</a>\r\n\r\nNull security status star systems:\r\n<a
+      href=showinfo:20>Kernite</a>\r\n\r\nWormhole systems:\r\n<a href=showinfo:1227>Omber</a>,
+      <a href=showinfo:20>Kernite</a>, <a href=showinfo:1229>Gneiss</a>\r\n\r\nIt
+      is also present in huge amounts in rare ores like <a href=showinfo:19>Spodumain</a>,
+      <a href=showinfo:52316>Bezdnacine</a> and <a href=showinfo:52315>Rakovene</a>."
+    fr: 'Cristal bleu clair formé par l''extraordinaire pression exercée par les lunes
+      et les grands astéroïdes. Les secteurs de l''électronique et de la fabrication
+      d''armes en font bon usage. Gisements abondants exclusivement localisés dans
+      quelques zones de l''espace. Peut être obtenu en retraitant les minerais suivants
+      et leurs variantes : Systèmes stellaires de basse sécurité : <a href=showinfo:1227>omber</a>,
+      <a href=showinfo:20>kernite</a>, <a href=showinfo:1231>hemorphite</a>, <a href=showinfo:1229>gneiss</a>,
+      <a href=showinfo:1232>ochre foncé</a> Systèmes stellaires de sécurité nulle :
+      <a href=showinfo:20>kernite</a> Systèmes de trou de ver : <a href=showinfo:1227>omber</a>,
+      <a href=showinfo:20>kernite</a>, <a href=showinfo:1229>gneiss</a> Il est également
+      présent en quantité considérable dans les minerais rares comme le <a href=showinfo:19>spodumain</a>,
+      la <a href=showinfo:52316>bezdnacine</a> et le <a href=showinfo:52315>rakovene</a>.'
+    ja: |-
+      淡く青みがかった水晶。大型のアステロイドや衛星の地中で強い圧力が加わることによって生成される。電子機器や武器の製造に使用される。大量に産出できるエリアはごくわずかな場所に限られる。
+
+
+
+      以下の鉱石とその種類を再処理することによって得ることができる。
+
+
+
+      ローセキュリティステータス星系：
+
+      <a href=showinfo:1227>オンバー</a>、<a href=showinfo:20>ケルナイト</a>、 <a href=showinfo:1231>ヘモファイト</a>、<a href=showinfo:1229>ナエス</a>、<a href=showinfo:1232>ダークオークル</a>
+
+
+
+      ゼロセキュリティステータス星系：
+
+      <a href=showinfo:20>ケルナイト</a>
+
+
+
+      ワームホールシステム：
+
+      <a href=showinfo:1227>オンバー</a>、<a href=showinfo:20>ケルナイト</a>、<a href=showinfo:1229>ナエス</a>
+
+
+
+      <a href=showinfo:19>スポデュメイン</a>や<a href=showinfo:52316>ベズドナシン</a>、<a href=showinfo:52315>ラコベネ</a>といった希少鉱石の中にも相当量含まれている。
+    ru: 'Светло-голубой кристалл, образующийся при сильном давлении глубоко под поверхностью
+      крупных астероидов и спутников. Используется в производстве электроники и орудий.
+      В изобилии встречается лишь в некоторых районах. Добывается путём переработки
+      нижеперечисленных руд и их разновидностей. Системы с низким уровнем безопасности:
+      <a href=showinfo:1227>омбер</a>, <a href=showinfo:20>кернит</a>, <a href=showinfo:1231>хеморфит</a>,
+      <a href=showinfo:1229>гнейсс</a>, <a href=showinfo:1232>тёмная охра</a> Системы
+      с нулевым уровнем безопасности: <a href=showinfo:20>кернит</a> Системы червоточин:
+      <a href=showinfo:1227>омбер</a>, <a href=showinfo:20>кернит</a>, <a href=showinfo:1229>гнейсс</a>
+      Кроме того, в огромных количествах присутствует в редких рудах, таких как <a
+      href=showinfo:19>сподумейн</a>, <a href=showinfo:52316>безднацин</a> и <a href=showinfo:52315>раковин</a>.'
+    zh: |-
+      在大型小行星和卫星内部高压环境中形成的淡蓝色晶体，用于电子和军火制造。只在几个区域有丰富储量。
+
+
+
+      可以从下列矿石及其变种中提炼获得：
+
+
+
+      低安全等级星系：
+
+      <a href=showinfo:1227>奥贝尔石</a>，<a href=showinfo:20>水硼砂</a>，<a href=showinfo:1231>希莫非特</a>，<a href=showinfo:1229>片麻岩</a>，<a href=showinfo:1232>黑赭石</a>
+
+
+
+      零安全等级星系：
+
+      <a href=showinfo:20>水硼砂</a>
+
+
+
+      虫洞星系：
+
+      <a href=showinfo:1227>奥贝尔石</a>，<a href=showinfo:20>水硼砂</a>，<a href=showinfo:1229>片麻岩</a>
+
+
+
+      它在稀有矿石中的含量也很丰富，例如<a href=showinfo:19>灰岩</a>、<a href=showinfo:52316>贝兹岩</a>和<a href=showinfo:52315>拉克岩</a>。
+  groupID: 18
+  iconID: 402
+  marketGroupID: 1857
+  name:
+    de: Isogen
+    en: Isogen
+    fr: Isogène
+    ja: アイソゲン
+    ru: Isogen
+    zh: 同位聚合体
+  portionSize: 1
+  published: true
+  volume: 0.01
+38:
+  basePrice: 512.0
+  description:
+    de: 'Ein hoch flüchtiges Mineral, das nur während einer Supernova gebildet wird,
+      wodurch das Ausmaß seiner Verbreitung stark einschränkt wird. Ein unverzichtbarer
+      Bestandteil in der Kapselherstellung, was es sehr begehrt macht. Kann durch
+      die Aufbereitung von folgenden Erzen und ihren Varianten in Sonnensystemen des
+      Niedersicherheitsraums erhalten werden: <a href=showinfo:1226>Jaspet</a>, <a
+      href=showinfo:1231>Hemorphite</a>, <a href=showinfo:21>Hedbergite</a>, <a href=showinfo:1232>Dunkles
+      Ochre</a>, <a href=showinfo:1225>Crokite</a>. Es kommt außerdem in sehr großen
+      Mengen in seltenen Erzen wie <a href=showinfo:19>Spodumain</a> und <a href=showinfo:52306>Talassonit</a>
+      vor.'
+    en: "A highly volatile mineral only formed during supernovas, thus severely limiting
+      the extent of its distribution. Vital ingredient in capsule production, making
+      it very coveted.\r\n\r\nMay be obtained by reprocessing the following ores and
+      their variations available in low security status star systems:\r\n<a href=showinfo:1226>Jaspet</a>,
+      <a href=showinfo:1231>Hemorphite</a>, <a href=showinfo:21>Hedbergite</a>, <a
+      href=showinfo:1232>Dark Ochre</a>, <a href=showinfo:1225>Crokite</a>\r\n\r\nIt
+      is also present in significant amounts in rare ores like <a href=showinfo:19>Spodumain</a>
+      and <a href=showinfo:52306>Talassonite</a>."
+    fr: 'Ce minerai très volatile ne se forme que lors de la transformation d''une
+      étoile en supernova. Il est donc très rare d''en trouver. Ce produit indispensable
+      à la fabrication des capsules est extrêmement convoité. Peut être obtenu en
+      retraitant les minerais suivants et leurs variantes, disponibles dans les systèmes
+      stellaires de basse sécurité : <a href=showinfo:1226>jaspet</a>, <a href=showinfo:1231>hemorphite</a>,
+      <a href=showinfo:21>hedbergite</a>, <a href=showinfo:1232>ochre foncé</a>, <a
+      href=showinfo:1225>crokite</a> Il est également présent en quantité considérable
+      dans les minerais rares comme le <a href=showinfo:19>spodumain</a> et la <a
+      href=showinfo:52306>talassonite</a>.'
+    ja: |-
+      揮発性の高い鉱石で、超新星爆発によってのみ生成される。そのため、流通は極めて限られている。カプセル生産に欠かせない原料で、非常に需要が高い。
+
+
+
+      ローセキュリティステータス星系で入手可能な、以下の鉱石やその亜種を再処理することによって得ることができる。
+
+      <a href=showinfo:1226>ジャスペット</a>、<a href=showinfo:1231>ヘモファイト</a>、<a href=showinfo:21>ヘッドバーガイト</a>、<a href=showinfo:1232>ダークオークル</a>、<a href=showinfo:1225>クロカイト</a>
+
+
+
+      <a href=showinfo:19>スポデュメイン</a>や<a href=showinfo:52306>タラソナイト</a>といった希少鉱石の中にも相当量含まれている。
+    ru: 'Этот легколетучий минерал образуется только при взрыве сверхновых звёзд и
+      считается очень редким. Он является важнейшим элементом производства капсул
+      и поэтому ценится очень высоко. Добывается путём переработки нижеперечисленных
+      руд и их разновидностей в системах с низким уровнем безопасности: <a href=showinfo:1226>джаспет</a>,
+      <a href=showinfo:1231>хеморфит</a>, <a href=showinfo:21>хедбергит</a>, <a href=showinfo:1232>тёмная
+      охра</a>, <a href=showinfo:1225>крокит</a> Кроме того, в огромных количествах
+      присутствует в редких рудах, таких как <a href=showinfo:19>сподумейн</a> и <a
+      href=showinfo:52306>талассонит</a>.'
+    zh: |-
+      一种只有在超新星中才能形成的极不稳定矿物，这在很大程度上限制了它的分布。它是太空舱生产中重要的材料，因此被许多人觊觎。
+
+
+
+      可以从分布在低安全等级星系中的下列矿石及其变种中提炼获得：
+
+      <a href=showinfo:1226>杰斯贝矿</a>，<a href=showinfo:1231>希莫非特</a>，<a href=showinfo:21>同位原矿</a>，<a href=showinfo:1232>黑赭石</a>，<a href=showinfo:1225>克洛基石</a>
+
+
+
+      它在稀有矿石中的含量也很丰富，例如<a href=showinfo:19>灰岩</a>和<a href=showinfo:52306>塔拉岩</a>。
+  groupID: 18
+  iconID: 1201
+  marketGroupID: 1857
+  name:
+    de: Nocxium
+    en: Nocxium
+    fr: Nocxium
+    ja: ノキシウム
+    ru: Nocxium
+    zh: 超新星诺克石
+  portionSize: 1
+  published: true
+  volume: 0.01
+393:
+  capacity: 1.0
+  description:
+    de: Steigert die Wiederaufladerate des Schildes.
+    en: Improves the recharge rate of the shield.
+    fr: Améliore la vitesse de recharge du bouclier.
+    ja: シールド自動回復効率を向上させる。
+    ru: Повышает скорость подзарядки щита.
+    zh: 提高护盾的回充速率。
+  groupID: 39
+  iconID: 83
+  marketGroupID: 126
+  metaGroupID: 1
+  name:
+    de: Shield Recharger I
+    en: Shield Recharger I
+    fr: Rechargeur de bouclier I
+    ja: シールドリチャージャーI
+    ru: Shield Recharger I
+    zh: 护盾回充器 I
+  portionSize: 1
+  published: true
+  radius: 1000.0
+  volume: 5.0
+394:
+  capacity: 1.0
+  description:
+    de: Steigert die Wiederaufladerate des Schildes.
+    en: Improves the recharge rate of the shield.
+    fr: Améliore la vitesse de recharge du bouclier.
+    ja: シールド自動回復効率を向上させる。
+    ru: Повышает скорость подзарядки щита.
+    zh: 提高护盾的回充速率。
+  groupID: 39
+  iconID: 83
+  marketGroupID: 126
+  metaGroupID: 2
+  name:
+    de: Shield Recharger II
+    en: Shield Recharger II
+    fr: Rechargeur de bouclier II
+    ja: シールドリチャージャーII
+    ru: Shield Recharger II
+    zh: 护盾回充器 II
+  portionSize: 1
+  published: true
+  radius: 1000.0
+  variationParentTypeID: 393
+  volume: 5.0
+452:
+  capacity: 1.0
+  description:
+    de: "Dieser leichte Strahllaser verwendet zwei separate Laser-Fokussierungssysteme,
+      um die Abkühlungsphase zwischen den Schüssen zu verkürzen; eine gute Kurz- und
+      Mittelstreckenwaffe. \n\nMuss mit einem der folgenden Frequenzkristalle geladen
+      werden: Gamma, Infrared, Microwave, Multifrequency, Radio, Standard, Ultraviolet,
+      Xray. "
+    en: "This light beam laser uses two separate laser focusing systems to reduce
+      the cool down period between shots. Good short to medium range weapon. \r\n\r\nRequires
+      frequency crystal ammo types: Gamma, Infrared, Microwave, Multifrequency, Radio,
+      Standard, Ultraviolet, Xray."
+    fr: "Ce laser à rayons léger utilise deux systèmes laser indépendants visant à
+      réduire le délai de refroidissement nécessaire entre deux tirs. Arme idéale
+      pour les combats de courte à moyenne portée. \n\nRequiert les cristaux de fréquence
+      suivants en guise de munitions : gamma, infrarouge, micro-onde, multifréquence,
+      radio, standard, ultraviolet, rayon X."
+    ja: "ライトビームレーザー。独立した 2 基のレーザー集束システムを交互に使用して、連射の間の冷却時間を短縮している。近距離から中距離が得意な兵器。\r\n\n装填可能なフリーケンシークリスタルのタイプ
+      : ガンマ、赤外線、マイクロ波、多周波、放射線、標準、紫外線、エックス線。"
+    ru: |-
+      Этот легкий непрерывный лазер оснащен двумя раздельными системами фокусировки лазерного излучения, позволяющими сократить перерывы на охлаждение и повышающими скорострельность. Рекомендуется для ведения огня на средних и ближних дистанциях.
+
+      Следует заряжать частотными кристаллами: Gamma, Infrared, Microwave, Multifrequency, Radio, Standard, Ultraviolet, Xray.
+    zh: "这种轻型集束激光器配有两个独立的激光聚焦装置，以缩短两次开火之间的冷却周期。适用于中短程交战的好装备。\r\n\r\n使用的频率晶体弹药类型：伽玛、红外线、微波、多频、射频、标准、紫外线和X射线。"
+  graphicID: 11110
+  groupID: 53
+  iconID: 352
+  marketGroupID: 567
+  mass: 500.0
+  metaGroupID: 1
+  name:
+    de: Dual Light Beam Laser I
+    en: Dual Light Beam Laser I
+    fr: Double laser à rayons léger I
+    ja: デュアルライトビームレーザーI
+    ru: Dual Light Beam Laser I
+    zh: 双联轻型集束激光器 I
+  portionSize: 1
+  published: true
+  sofFactionName: amarrbase
+  volume: 5.0
+453:
+  capacity: 1.0
+  description:
+    de: "Ein energiestarker Impulslaser, der für Kämpfe auf kurze und mittlere Entfernung
+      ausgelegt ist. \n\nMuss mit einem der folgenden Frequenzkristalle geladen werden:
+      Gamma, Infrared, Microwave, Multifrequency, Radio, Standard, Ultraviolet, Xray. "
+    en: "A high-powered pulse laser. Good for short to medium range encounters. \r\n\r\nRequires
+      frequency crystal ammo types: Gamma, Infrared, Microwave, Multifrequency, Radio,
+      Standard, Ultraviolet, Xray."
+    fr: "Laser à impulsions de grande puissance. Arme idéale pour les combats de courte
+      à moyenne portée. \n\nRequiert les cristaux de fréquence suivants en guise de
+      munitions : gamma, infrarouge, micro-onde, multifréquence, radio, standard,
+      ultraviolet, rayon X."
+    ja: |-
+      ハイパワーパルスレーザー。近距離から中距離が得意な兵器。
+
+
+
+      装填可能なフリーケンシークリスタルのタイプ : ガンマ、赤外線、マイクロ波、多周波、放射線、標準、紫外線、エックス線。
+    ru: |-
+      Мощный импульсный лазер. Рекомендуется для ведения огня на ближних и средних дистанциях.
+
+      Следует заряжать частотными кристаллами: Gamma, Infrared, Microwave, Multifrequency, Radio, Standard, Ultraviolet, Xray.
+    zh: "一种高功率脉冲激光器。适合中短程交战。\r\n\r\n使用的频率晶体弹药类型：伽玛、红外线、微波、多频、射频、标准、紫外线和X射线。"
+  graphicID: 11119
+  groupID: 53
+  iconID: 350
+  marketGroupID: 570
+  mass: 500.0
+  metaGroupID: 1
+  name:
+    de: Small Focused Pulse Laser I
+    en: Small Focused Pulse Laser I
+    fr: Petit laser à impulsions focalisé I
+    ja: 小型フォーカスパルスレーザーI
+    ru: Small Focused Pulse Laser I
+    zh: 小型聚焦脉冲激光器 I
+  portionSize: 1
+  published: true
+  sofFactionName: amarrbase
+  volume: 5.0
+454:
+  capacity: 1.0
+  description:
+    de: "Ein energiestarker Strahllaser, der für Kämpfe auf mittlere Entfernung ausgelegt
+      ist. \n\nMuss mit einem der folgenden Frequenzkristalle geladen werden: Gamma,
+      Infrared, Microwave, Multifrequency, Radio, Standard, Ultraviolet, Xray. "
+    en: "A high-powered beam laser. Good for medium range encounters. \r\n\r\nRequires
+      frequency crystal ammo types: Gamma, Infrared, Microwave, Multifrequency, Radio,
+      Standard, Ultraviolet, Xray."
+    fr: "Laser à rayons de grande puissance. Arme idéale pour les combats à moyenne
+      portée. \n\nRequiert les cristaux de fréquence suivants en guise de munitions :
+      gamma, infrarouge, micro-onde, multifréquence, radio, standard, ultraviolet,
+      rayon X."
+    ja: "ハイパワービームレーザー。中距離での交戦に適している。\r\n\n装填可能なフリーケンシークリスタルのタイプ : ガンマ、赤外線、マイクロ波、多周波、放射線、標準、紫外線、エックス線。"
+    ru: |-
+      Мощный непрерывный лазер. Рекомендуется для ведения огня на средних дистанциях.
+
+      Следует заряжать частотными кристаллами: Gamma, Infrared, Microwave, Multifrequency, Radio, Standard, Ultraviolet, Xray.
+    zh: "一种高功率集束激光器。适合中程交战。\r\n\r\n使用的频率晶体弹药类型：伽玛、红外线、微波、多频、射频、标准、紫外线和X射线。"
+  graphicID: 11111
+  groupID: 53
+  iconID: 352
+  marketGroupID: 567
+  mass: 500.0
+  metaGroupID: 1
+  name:
+    de: Small Focused Beam Laser I
+    en: Small Focused Beam Laser I
+    fr: Petit laser à rayons focalisé I
+    ja: 小型フォーカスビームレーザーI
+    ru: Small Focused Beam Laser I
+    zh: 小型聚焦集束激光器 I
+  portionSize: 1
+  published: true
+  sofFactionName: amarrbase
+  volume: 5.0
+455:
+  capacity: 1.0
+  description:
+    de: "Verwendet vier Leicht-Laser-Fokussierungssyteme. Wenig Laserenergie - aber
+      schnelle Schussfolge.\n\nMuss mit einem der folgenden Frequenzkristalle geladen
+      werden: Gamma, Infrared, Microwave, Multifrequency, Radio, Standard, Ultraviolet,
+      Xray. "
+    en: "Uses four light laser focusing systems. Low powered, but makes up for it
+      with a fast firing rate. \r\n\r\nRequires frequency crystal ammo types: Gamma,
+      Infrared, Microwave, Multifrequency, Radio, Standard, Ultraviolet, Xray."
+    fr: "Utilise quatre systèmes de visée laser léger. Peu puissant, il compense par
+      une cadence de tir rapide. \n\nRequiert les cristaux de fréquence suivants en
+      guise de munitions : gamma, infrarouge, micro-onde, multifréquence, radio, standard,
+      ultraviolet, rayon X."
+    ja: "4基のライトレーザー集束システムを使用。威力の低さを連射速度で補っている。\r\n\n装填可能なフリーケンシークリスタルのタイプ:ガンマ、赤外線、マイクロ波、多周波、放射線、標準、紫外線、エックス線。"
+    ru: |-
+      Этот лазер оснащён четырьмя легкими системами фокусировки лазерного излучения. Маломощный, но обладает высокой скорострельностью.
+
+      Следует заряжать частотными кристаллами: Gamma, Infrared, Microwave, Multifrequency, Radio, Standard, Ultraviolet, Xray.
+    zh: "使用4个轻型激光聚焦装置。虽然功率低，但射击速度快弥补了这一点。\r\n\r\n使用的频率晶体弹药类型：伽玛、红外线、微波、多频、射频、标准、紫外线和X射线。"
+  graphicID: 11109
+  groupID: 53
+  iconID: 355
+  marketGroupID: 568
+  mass: 1000.0
+  metaGroupID: 1
+  name:
+    de: Quad Light Beam Laser I
+    en: Quad Light Beam Laser I
+    fr: Quadruple laser à rayons léger I
+    ja: クワッドライトビームレーザーI
+    ru: Quad Light Beam Laser I
+    zh: 四联轻型集束激光器 I
+  portionSize: 1
+  published: true
+  sofFactionName: amarrbase
+  volume: 10.0
+178:
+  basePrice: 200.0
+  description:
+    de: "S-Projektilmunition. Diese Munition verwendet einen simplen Bleikern in einer
+      harten Umhüllung aus kristallinem Carbon. Sie ist relativ kostengünstig und
+      wirkt sehr gut gegen die meisten Arten von Panzerungen. Schilde stellen allerdings
+      ein Problem dar. \n\n\n\n60% höhere optimale Reichweite.\n\n5% höhere Nachführungsgeschwindigkeit."
+    en: "Small Projectile Ammo. This ammo uses a simple lead slug encased in a hard
+      shell of crystalline carbon. It is fairly cheap and works very well against
+      most armors. Shields, however, are a problem. \r\n\r\n60% increased optimal
+      range.\r\n5% increased tracking speed."
+    fr: "Petite munition de projectile. Cette munition se compose d'un noyau en plomb
+      contenu dans une coquille de carbone cristallin. Elle est bon marché et donne
+      de bons résultats sur la plupart des blindages. Elle est cependant beaucoup
+      moins efficace contre les boucliers. \n\nAugmente de 60 % la portée optimale.\nAugmente
+      de 5 % la vitesse de poursuite."
+    ja: |-
+      小型プロジェクタイル弾。この弾薬は、鉛弾を固い炭素結晶で覆っている。極めて安価で、ほとんどのアーマーに対して高い効力を発揮する。ただし、シールドには弱い。
+
+      最適射程距離が60％延長。追跡速度が5%増加。
+    ru: "Снаряды малого калибра. Эти снаряды представляют собой обычную свинцовую
+      болванку, заключенную в прочную оболочку из кристаллического углерода. Их стоимость
+      сравнительно невелика, но при этом они пробивают практически любую броню. К
+      сожалению, против щитов они по большей части бессильны. \n\n\n\nПовышает оптимальную
+      дальность действия на 60%.\n\nПовышает скорость слежения на 5%."
+    zh: 小型射弹弹药。这种弹药采用了一种简单的铅块，外面包着一层坚硬的晶化碳弹壳。它的价格相当便宜，而且对多数装甲非常有效。不过对能量护盾却没多大作用。最佳射程提升60%。跟踪速度提高5%。
+  graphicID: 1308
+  groupID: 83
+  iconID: 1004
+  marketGroupID: 113
+  mass: 0.01
+  metaGroupID: 1
+  name:
+    de: Carbonized Lead S
+    en: Carbonized Lead S
+    fr: Plomb trempé S
+    ja: 炭化鉛弾S
+    ru: Carbonized Lead S
+    zh: 碳铅弹 S
+  portionSize: 100
+  published: true
+  volume: 0.0025
+179:
+  basePrice: 300.0
+  description:
+    de: |-
+      Kleine Projektilmunition. Die meisten Völker halten Nuklearwaffen für simpel und primitiv. Aufgrund der enormen Ressourcen für die Plutoniumproduktion im Hoheitsgebiet der Minmatar bevorzugt dieses Volk jedoch Nuklearwaffen gegenüber höher entwickelten Waffensystemen.
+
+
+
+      60% höhere optimale Reichweite.
+
+      5% höhere Nachführungsgeschwindigkeit.
+    en: "Small Projectile Ammo. Nuclear weapons are considered by most races to be
+      crude and primitive. However, the Minmatar still favor them over more sophisticated
+      weapons due to the abundance of materials for plutonium production in Minmatar
+      space.\r\n\r\n60% increased optimal range.\r\n5% increased tracking speed."
+    fr: |-
+      Petite munition de projectile. Les armes nucléaires sont considérées par la plupart des races comme des armes rudimentaires et primitives. Toutefois, les Minmatar ont encore tendance à les préférer aux armes plus sophistiquées en raison de l'abondance de matières premières disponibles pour la production de plutonium dans l'espace minmatar.
+
+      Augmente de 60 % la portée optimale.
+      Augmente de 5 % la vitesse de poursuite.
+    ja: 小型プロジェクタイル弾。核兵器はほとんどの種族が粗雑で原始的だとみなす。しかしミンマター人はむしろ他の高度な兵器より核兵器を好む。プルトニウム製造に必要な資源はミンマター宙域に豊富だからだ。最適射程距離が60％延長。追跡速度が5%増加。
+    ru: |-
+      Снаряды малого калибра. Большинство рас считает атомное оружие грубым и примитивным. Однако пилоты Минматар по-прежнему предпочитают его более технологичным видам вооружений; причиной тому — изобилие месторождений плутония в принадлежащем Республике секторе галактики.
+
+
+
+      Повышает оптимальную дальность действия на 60%.
+
+      Повышает скорость слежения на 5%.
+    zh: 小型射弹弹药。在多数种族眼里，核芯武器是粗野而原始的。但在米玛塔尔共和国空域里，锰资源丰富，因此相比其他更现代的武器，米玛塔尔人仍偏爱核芯武器。最佳射程提升60%。跟踪速度提高5%。
+  graphicID: 1288
+  groupID: 83
+  iconID: 1288
+  marketGroupID: 113
+  mass: 0.01
+  metaGroupID: 1
+  name:
+    de: Nuclear S
+    en: Nuclear S
+    fr: Nucléaire S
+    ja: ニュークリア弾S
+    ru: Nuclear S
+    zh: 核芯弹 S
+  portionSize: 100
+  published: true
+  volume: 0.0025
+180:
+  basePrice: 400.0
+  description:
+    de: |-
+      S-Projektilmunition. Gibt beim Aufschlag einen konzentrierten, hochintensiven Protonenstrahl ab. Sehr wirksam sowohl gegen Schilde als auch gegen Panzerungen.
+
+
+
+      60% höhere optimale Reichweite.
+
+      5% höhere Nachführungsgeschwindigkeit.
+    en: "Small Projectile Ammo. Emits a focused, high intensity proton burst upon
+      impact. Fairly effective vs. both shields and armor.\r\n\r\n60% increased optimal
+      range.\r\n5% increased tracking speed."
+    fr: |-
+      Petite munition de projectile. Émet une explosion focalisée de protons de grande intensité à l'impact. Elle est relativement efficace contre les boucliers et les blindages.
+
+      Augmente de 60 % la portée optimale.
+      Augmente de 5 % la vitesse de poursuite.
+    ja: 小型プロジェクタイル弾。命中すると、集束された高密度のプロトンバーストを放出する。シールドとアーマーの両方に対して高い効力を発揮する。最適射程距離が60％延長。追跡速度が5%増加。
+    ru: |-
+      Снаряды малого калибра. При попадании в цель излучают сфокусированный протонный пучок высокой плотности. Эффективны как против брони, так и против щитов.
+
+
+
+      Повышает оптимальную дальность действия на 60%.
+
+      Повышает скорость слежения на 5%.
+    zh: 小型射弹弹药。在弹着点能产生集中的、高强度质子流。对护盾和装甲都相当有效。最佳射程提升60%。跟踪速度提高5%。
+  graphicID: 1290
+  groupID: 83
+  iconID: 1290
+  marketGroupID: 113
+  mass: 0.01
+  metaGroupID: 1
+  name:
+    de: Proton S
+    en: Proton S
+    fr: Proton S
+    ja: プロトン弾S
+    ru: Proton S
+    zh: 质子弹 S
+  portionSize: 100
+  published: true
+  volume: 0.0025
+181:
+  basePrice: 500.0
+  description:
+    de: "S-Projektilmunition. Diese von Minmatar-Piloten häufig verwendete Munition
+      hat einen Brandsatz und eine sehr gute Durchschlagsleistung. Sie sollten sehr
+      sorgfältig damit umgehen, es sei denn, Sie möchten mit einer zusätzlichen Zehe
+      auf der Stirn aufwachen! \n\n20% Nachführungsgeschwindigkeit-Bonus."
+    en: "Small projectile Ammo. Very commonly used by Minmatar pilots, this ammo is
+      incendiary and also has great penetration. Just be careful handling it unless
+      you want to wake up with an extra toe on your forehead. \r\n\r\n20% tracking
+      speed bonus."
+    fr: "Petite munition de projectile. Cette munition très appréciée des pilotes
+      minmatar est incendiaire et dispose d'un grand pouvoir de pénétration. Faites
+      bien attention en la manipulant si vous ne voulez pas vous réveiller avec une
+      oreille supplémentaire au beau milieu du front. \n\nAugmente de 20 % la vitesse
+      de poursuite."
+    ja: |-
+      小型プロジェクタイル弾。ミンマターのパイロットにきわめて人気の弾で、焼夷弾だが貫通力にも優れる。ただし、取り扱いには注意しないと、気がつけば額から余分なつま先が生えているなんていう事態になりかねない。
+      追跡速度が20%増加。
+    ru: "Снаряды малого калибра. Эти зажигательные снаряды, часто используемые пилотами
+      Минматар, обладают высокой поражающей способностью. С ними следует обращаться
+      очень осторожно — если, конечно, вы не хотите, чтобы в один прекрасный день
+      у вас выросла третья нога. \n\n\n\nБонус к скорости слежения — 20%."
+    zh: 小型射弹弹药。米玛塔尔共和国飞行员的常用弹药，具有燃烧性和很强的穿透力。不过一定要谨慎操作，你肯定不希望一觉醒来发现脚被烧着了。20%跟踪速度加成。
+  graphicID: 1285
+  groupID: 83
+  iconID: 1285
+  marketGroupID: 113
+  mass: 0.01
+  metaGroupID: 1
+  name:
+    de: Depleted Uranium S
+    en: Depleted Uranium S
+    fr: Uranium appauvri S
+    ja: 劣化ウラン弾S
+    ru: Depleted Uranium S
+    zh: 硬钼弹 S
+  portionSize: 100
+  published: true
+  volume: 0.0025
+182:
+  basePrice: 600.0
+  description:
+    de: |-
+      S-Projektilmunition. Diese Munition gehört zu den gefürchtetsten überhaupt. Sie hat eine exzellente Durchschlagskraft. Wenn das Geschoss die Außenhülle durchbrochen hat, explodiert der Kern und gibt eine Splitterwolke frei, die der empfindlichen Struktur des Innenraums erheblichen Schaden zufügt.
+
+
+
+      20% höhere Nachführungsgeschwindigkeit.
+    en: "Small Projectile Ammo. This is among the most feared ammunition around. It
+      has excellent penetration. Once the ship's outer layer is penetrated, the core
+      explodes, spraying the interior with a cloud of fragmentation fletchets that
+      cause considerable damage to the vulnerable interior structure.\r\n\r\n20% increased
+      tracking speed."
+    fr: |-
+      Petite munition de projectile. Elle fait partie des munitions les plus redoutées. Elle a un grand pouvoir de pénétration. Une fois l'enveloppe du vaisseau pénétrée, le noyau explose en répandant une nuée de pointes qui ravagent la structure intérieure, beaucoup plus vulnérable.
+
+      Augmente de 20 % la vitesse de poursuite.
+    ja: |-
+      小型プロジェクタイル弾。最も恐れられている弾薬の一つ。優れた貫通性を持つ。艦船の外層を貫通するとコアが爆発し、微細な破片状のフレシェット弾を雲のように艦内にまき散らす。これが内部構造のもろい部分をおおいに傷めるのだ。
+      追跡速度が20%増加。
+    ru: |-
+      Снаряды малого калибра. Один из самых страшных видов боеприпасов. Характеризуется отличной пробивной способностью. После проникновения сквозь внешний корпус корабля сердечник взрывается, нанося значительный ущерб слабозащищенным внутренним конструкциям разлетающимися поражающими элементами.
+
+
+
+      Повышает скорость слежения на 20%.
+    zh: 小型射弹弹药。这是最令人畏惧的弹药之一。它的穿透力极强。在穿透目标舰船的外层结构后，弹核会在内部爆炸，从中散射出雾状的金属碎片会严重破坏舰船脆弱的内部构成。跟踪速度提高20%。
+  graphicID: 1291
+  groupID: 83
+  iconID: 1291
+  marketGroupID: 113
+  mass: 0.01
+  metaGroupID: 1
+  name:
+    de: Titanium Sabot S
+    en: Titanium Sabot S
+    fr: Sabot de titane S
+    ja: チタン製サボット弾S
+    ru: Titanium Sabot S
+    zh: 钛合金萨博弹 S
+  portionSize: 100
+  published: true
+  volume: 0.0025
+183:
+  basePrice: 700.0
+  description:
+    de: |-
+      Kleine Projektilmunition. Die zerstörerische Kraft eines Fusionssprengkopfes ist besser als die der meisten anderen verfügbaren Projektilsprengköpfe, obwohl er Probleme hat, schwere Schildsysteme zu durchdringen.
+
+
+
+      50% geringere optimale Reichweite.
+    en: "Small Projectile Ammo. The destructive power of a fusion warhead is superior
+      to most other projectile warheads available, although it has problems penetrating
+      heavy shield systems.\r\n\r\n50% reduced optimal range."
+    fr: |-
+      Petite munition de projectile. La puissance destructrice d'une ogive à fusion est supérieure à toutes les autres ogives disponibles, bien qu'elle ne parvienne cependant que difficilement à pénétrer les gros systèmes de bouclier.
+
+      Réduit de 50 % la portée optimale.
+    ja: 小型プロジェクタイル弾。フュージョン弾は、市販のプロジェクタイル弾の中では抜群の破壊力を誇るが、シールド防御が厚い場合の貫通力には課題が残る。最適射程距離が50％短縮。
+    ru: |-
+      Снаряды малого калибра. Разрушительная сила термоядерной боеголовки выше, чем у большинства других снарядов, однако ей сложно пробивать прочные щиты.
+
+
+
+      Снижает оптимальную дальность действия на 50%.
+    zh: 小型射弹弹药。聚变弹头的破坏力大于多数现有的其他射弹弹头，但在穿透重型护盾系统时会比较吃力。最佳射程减少50%。
+  graphicID: 1287
+  groupID: 83
+  iconID: 1287
+  marketGroupID: 113
+  mass: 0.01
+  metaGroupID: 1
+  name:
+    de: Fusion S
+    en: Fusion S
+    fr: Fusion S
+    ja: フュージョン弾S
+    ru: Fusion S
+    zh: 聚变弹 S
+  portionSize: 100
+  published: true
+  volume: 0.0025
+184:
+  basePrice: 800.0
+  description:
+    de: |-
+      Kleine Projektilmunition. Diese Munition verwendet einen ähnlichen Plasmakern wie Hybridmunition. Allerdings ist sie in diesem Fall mit einer normalen Geschosshülle ummantelt.
+
+
+
+      50% geringere optimale Reichweite.
+    en: "Small Projectile Ammo. This ammo uses a similar plasma containment core as
+      hybrid charges except that it is mounted in a standard cannon shell.\r\n\r\n50%
+      reduced optimal range."
+    fr: |-
+      Petite munition de projectile. L'enveloppe de confinement entourant le noyau de cette munition est en plasma, comme pour les charges hybrides, mais elle est placée dans un obus standard.
+
+      Réduit de 50 % la portée optimale.
+    ja: 小型プロジェクタイル弾。この弾はハイブリッドチャージと同じくプラズマ封入コアを使用するが、それを入れる弾殻は一般的なキャノン砲のものを使う。最適射程距離が50％短縮。
+    ru: |-
+      Снаряды малого калибра. Внутри этих снарядов, на вид ничем не отличающихся от снарядов других типов, установлены системы сдерживания плазмы — такие же, как и в гибридных зарядах.
+
+
+
+      Снижает оптимальную дальность действия на 50%.
+    zh: 小型射弹弹药。像混合弹药一样，这种弹药也采用一种类似的等离子包裹核芯，唯一的不同就是它得用在标准加农炮上。最佳射程减少50%。
+  graphicID: 1289
+  groupID: 83
+  iconID: 1289
+  marketGroupID: 113
+  mass: 0.01
+  metaGroupID: 1
+  name:
+    de: Phased Plasma S
+    en: Phased Plasma S
+    fr: Plasma à phase S
+    ja: フェーズプラズマ弾S
+    ru: Phased Plasma S
+    zh: 定相等离子弹 S
+  portionSize: 100
+  published: true
+  volume: 0.0025
+185:
+  basePrice: 1000.0
+  description:
+    de: |-
+      Kleine Projektilmunition. Diese fortschrittliche Munition setzt eine neue Technologie ein, bei der ein konzentrierter EM-Impuls aussendet wird.
+
+
+
+      50% geringere optimale Reichweite.
+    en: "Small projectile Ammo. A new technology, this highly advanced ammunition
+      emits a focused EM pulse. Very potent against shields.\r\n\r\n50% reduced optimal
+      range."
+    fr: |-
+      Petite munition de projectile. Cette munition très perfectionnée et très récente émet une impulsion électromagnétique focalisée. Elle est très efficace contre les boucliers.
+
+      Réduit de 50 % la portée optimale.
+    ja: 小型プロジェクタイル弾。新技術を用いた、この非常に高度な砲弾は、集束されたEMパルスを放出する。シールドには高い威力を持つ。最適射程距離が50％短縮。
+    ru: |-
+      Снаряды малого калибра. Эти снаряды были созданы лишь недавно и представляют собой венец современной артиллерийской мысли — при попадании в цель они излучают направленный электромагнитный импульс. Отлично пробивают щиты.
+
+
+
+      Снижает оптимальную дальность действия на 50%.
+    zh: 小型射弹弹药。作为新技术的结晶，这种高度先进的弹药可发射集束电磁脉冲。对护盾十分有效。最佳射程减少50%。
+  graphicID: 1286
+  groupID: 83
+  iconID: 1286
+  marketGroupID: 113
+  mass: 0.01
+  metaGroupID: 1
+  name:
+    de: EMP S
+    en: EMP S
+    fr: IEM S
+    ja: EMP弾S
+    ru: EMP S
+    zh: 电磁脉冲弹 S
+  portionSize: 100
+  published: true
+  volume: 0.0025
+186:
+  basePrice: 800.0
+  description:
+    de: |-
+      M-Projektilmunition. Diese Munition verwendet einen simplen Bleikern in einer harten Umhüllung aus kristallinem Carbon. Sie ist relativ kostengünstig und wirkt sehr gut gegen die meisten Arten von Panzerungen. Schilde stellen allerdings ein Problem dar.
+
+
+
+      60% höhere optimale Reichweite.
+
+      5% höhere Nachführungsgeschwindigkeit.
+    en: "Medium Projectile Ammo. This ammo uses a simple lead slug encased in a hard
+      shell of crystalline carbon. It is fairly cheap and works very well against
+      most armors. Shields, however, are a problem.\r\n\r\n60% increased optimal range.\r\n5%
+      increased tracking speed."
+    fr: |-
+      Munition de projectile intermédiaire. Cette munition se compose d'un noyau en plomb contenu dans une coquille de carbone cristallin. Elle est bon marché et donne de bons résultats sur la plupart des blindages. Elle est cependant beaucoup moins efficace contre les boucliers.
+
+      Augmente de 60 % la portée optimale.
+      Augmente de 5 % la vitesse de poursuite.
+    ja: 中型プロジェクタイル弾。この弾薬は、鉛弾を固い炭素結晶で覆っている。極めて安価で、ほとんどのアーマーに対して高い効力を発揮する。ただし、シールドには弱い。最適射程距離が60％延長。追跡速度が5%増加。
+    ru: |-
+      Снаряды среднего калибра. Эти снаряды представляют собой обычную свинцовую болванку, заключенную в прочную оболочку из кристаллического углерода. Их стоимость сравнительно невелика, но при этом они пробивают практически любую броню. К сожалению, против щитов они по большей части бессильны.
+
+
+
+      Повышает оптимальную дальность действия на 60%.
+
+      Повышает скорость слежения на 5%.
+    zh: 中型射弹弹药。这种弹药采用了一种简单的铅块，外面包着一层坚硬的晶化碳弹壳。它的价格相当便宜，而且对多数装甲非常有效。不过对能量护盾却没多大作用。最佳射程提升60%。跟踪速度提高5%。
+  graphicID: 1292
+  groupID: 83
+  iconID: 1292
+  marketGroupID: 112
+  mass: 0.05
+  metaGroupID: 1
+  name:
+    de: Carbonized Lead M
+    en: Carbonized Lead M
+    fr: Plomb trempé M
+    ja: 炭化鉛弾M
+    ru: Carbonized Lead M
+    zh: 碳铅弹 M
+  portionSize: 100
+  published: true
+  volume: 0.0125
+187:
+  basePrice: 1200.0
+  description:
+    de: |-
+      Mittelgroße Projektilmunition. Die meisten Völker halten Nuklearwaffen für simpel und primitiv. Aufgrund der enormen Ressourcen für die Plutoniumproduktion im Hoheitsgebiet der Minmatar bevorzugt dieses Volk jedoch Nuklearwaffen gegenüber höher entwickelten Waffensystemen.
+
+
+
+      60% höhere optimale Reichweite.
+
+      5% höhere Nachführungsgeschwindigkeit.
+    en: "Medium Projectile Ammo. Nuclear weapons are considered by most races to be
+      crude and primitive. However, the Minmatar still favor them over more sophisticated
+      weapons due to the abundance of materials for plutonium production in Minmatar
+      space.\r\n\r\n60% increased optimal range.\r\n5% increased tracking speed."
+    fr: |-
+      Munition de projectile intermédiaire. Les armes nucléaires sont considérées par la plupart des races comme des armes rudimentaires et primitives. Toutefois, les Minmatar ont encore tendance à les préférer aux armes plus sophistiquées en raison de l'abondance de matières premières disponibles pour la production de plutonium dans l'espace minmatar.
+
+      Augmente de 60 % la portée optimale.
+      Augmente de 5 % la vitesse de poursuite.
+    ja: 中型プロジェクタイル弾。核兵器はほとんどの種族が粗雑で原始的だとみなす。しかしミンマター人はむしろ他の高度な兵器より核兵器を好む。プルトニウム製造に必要な資源はミンマター宙域に豊富だからだ。最適射程距離が60％延長。追跡速度が5%増加。
+    ru: |-
+      Снаряды среднего калибра. Большинство рас считает атомное оружие грубым и примитивным. Однако пилоты Минматар по-прежнему предпочитают его более технологичным видам вооружений; причиной тому — изобилие месторождений плутония в принадлежащем Республике секторе галактики.
+
+
+
+      Повышает оптимальную дальность действия на 60%.
+
+      Повышает скорость слежения на 5%.
+    zh: 中型射弹弹药。在多数种族眼里，核芯武器是粗野而原始的。但在米玛塔尔共和国空域里，锰资源丰富，因此相比其他更现代的武器，米玛塔尔人仍偏爱核芯武器。最佳射程提升60%。跟踪速度提高5%。
+  graphicID: 1296
+  groupID: 83
+  iconID: 1296
+  marketGroupID: 112
+  mass: 0.05
+  metaGroupID: 1
+  name:
+    de: Nuclear M
+    en: Nuclear M
+    fr: Nucléaire M
+    ja: ニュークリア弾M
+    ru: Nuclear M
+    zh: 核芯弹 M
+  portionSize: 100
+  published: true
+  volume: 0.0125
+380:
+  description:
+    de: Steigert die maximale Stärke des Schildes.
+    en: Increases the maximum strength of the shield.
+    fr: Augmente la puissance maximale du bouclier.
+    ja: シールドの最大強度を向上させる。
+    ru: Увеличивает максимальную силу щита.
+    zh: 增加护盾的最大强度。
+  groupID: 38
+  iconID: 1044
+  marketGroupID: 605
+  metaGroupID: 2
+  name:
+    de: Small Shield Extender II
+    en: Small Shield Extender II
+    fr: Petit extenseur de bouclier II
+    ja: 小型シールドエクステンダーII
+    ru: Small Shield Extender II
+    zh: 小型护盾扩展装置 II
+  portionSize: 1
+  published: true
+  variationParentTypeID: 377
+  volume: 5.0
+400:
+  description:
+    de: Gibt Energie zur schnellen Erhöhung der Schutzschildstärke ab.
+    en: Expends energy to provide a quick boost in shield strength.
+    fr: Augmente l'énergie de manière à renforcer brièvement la résistance du bouclier.
+    ja: エネルギーを消費し、シールドの強度を即座に高める
+    ru: Использует энергию конденсатора, чтобы быстро восстановить заряд щитов.
+    zh: 消耗能量以快速提高护盾强度。
+  groupID: 40
+  iconID: 84
+  marketGroupID: 609
+  metaGroupID: 2
+  name:
+    de: Small Shield Booster II
+    en: Small Shield Booster II
+    fr: Petit booster de bouclier II
+    ja: 小型シールドブースターII
+    ru: Small Shield Booster II
+    zh: 小型护盾回充增量器 II
+  portionSize: 1
+  published: true
+  radius: 500.0
+  variationParentTypeID: 399
+  volume: 5.0
+405:
+  basePrice: 1998
+  description:
+    de: 'Überträgt die Schildenergie hinüber auf das Zielschiff, um dessen Verteidigung
+      zu verstärken. '
+    en: Transfers shield power over to the target ship, aiding in its defense.
+    fr: Transfère de l'énergie de bouclier vers le vaisseau cible, l'aidant ainsi
+      à se défendre.
+    ja: 味方艦船にシールドエネルギーを転送して、防衛能力を向上させる。
+    ru: Подкачивает энергией щиты корабля-цели, усиливая его защиту.
+    zh: 将护盾的能量传输到目标舰船上，帮助其进行防御。
+  groupID: 41
+  iconID: 86
+  marketGroupID: 603
+  metaGroupID: 3
+  name:
+    de: "'Micro' Remote Shield Booster"
+    en: "'Micro' Remote Shield Booster"
+    fr: Booster de bouclier à distance 'Micro'
+    ja: "「マイクロ」リモートシールドブースター"
+    ru: "'Micro' Remote Shield Booster"
+    zh: 微型远程护盾回充增量器
+  portionSize: 1
+  published: true
+  variationParentTypeID: 3586
+  volume: 2.5
+421:
+  description:
+    de: Erhöht die Energiespeicherladerate.
+    en: Increases the capacitor recharge rate.
+    fr: Améliore la vitesse de recharge du capaciteur.
+    ja: キャパシタ充電速度を向上させる。
+    ru: Увеличивает скорость перезарядки конденсатора.
+    zh: 提高电容器再充电的速率。
+  groupID: 43
+  iconID: 90
+  marketGroupID: 665
+  mass: 1.0
+  metaGroupID: 3
+  name:
+    de: "'Basic' Capacitor Recharger"
+    en: "'Basic' Capacitor Recharger"
+    fr: Rechargeur de capaciteur 'basique'
+    ja: "「標準型」キャパシタリチャージャー"
+    ru: Basic Capacitor Recharger
+    zh: 基础型电容回充器
+  portionSize: 1
+  published: true
+  variationParentTypeID: 1195
+  volume: 5.0
+438:
+  basePrice: 40566
+  description:
+    de: |-
+      Erhöht bei Aktivierung die Maximalgeschwindigkeit des Schiffs. Der Schub, der das Schiff vorantreibt und der daraus resultierende maximale Geschwindigkeitsgewinn wird durch die Masse des Schiffs begrenzt, das dieses Modul verwendet.
+
+
+
+      Hinweis: Dieses Modul ist für Fregatten und Zerstörer gedacht.
+    en: "Gives a boost to the maximum velocity of the ship when activated. The thrust
+      that boosts the ship, and the corresponding maximum velocity bonus, are limited
+      by the mass of the ship that uses this module.\r\n\r\nNote: Usually fit on Frigates
+      and Destroyers."
+    fr: |-
+      Accroît la vitesse maximale du vaisseau une fois activé. La force de la poussée et le bonus de vitesse maximale du module sont limités par la masse du vaisseau équipé.
+
+
+
+      Note : communément monté sur les frégates et les destroyers.
+    ja: 有効化すると船の最高速度が向上。推進力の向上により得られる最高速度のボーナスは、このモジュールを使用する艦の質量により制限されます。注： 通常はフリゲート艦および駆逐艦に装着される。
+    ru: |-
+      При включении повышает максимальную скорость корабля. Величина прироста скорости зависит не только от мощности модуля, но и от массы корабля, на котором установлен этот модуль.
+
+
+
+      Примечание: обычно устанавливается на фрегаты и эсминцы
+    zh: |-
+      激活后将增加舰船的最大速度。推进舰船的动力和相应的最大速度加成均受使用该装备的舰船重量所限。
+
+
+
+      注：通常装配在护卫舰和驱逐舰上。
+  groupID: 46
+  iconID: 96
+  marketGroupID: 542
+  metaGroupID: 2
+  name:
+    de: 1MN Afterburner II
+    en: 1MN Afterburner II
+    fr: Post-combustion 1MN II
+    ja: 1MNアフターバーナーII
+    ru: 1MN Afterburner II
+    zh: 1MN加力燃烧器 II
+  portionSize: 1
+  published: true
+  raceID: 4
+  variationParentTypeID: 439
+  volume: 5.0
+440:
+  basePrice: 134084
+  description:
+    de: |-
+      Ein gewaltiger Geschwindigkeitsschub für eine sehr kurze Zeit. Der Schub, der das Schiff vorantreibt und der daraus resultierende maximale Geschwindigkeitsgewinn wird durch die Masse des Schiffs begrenzt, das dieses Modul verwendet. Die unglaubliche Energiemenge, die benötigt wird, um diesen Antrieb zu aktivieren, bedeutet, dass permanent ein Teil der Energiespeicherleistung auf Reserve gehalten werden muss, um die Integrität des Warpeindämmungsfeldes aufrecht zu erhalten. Wenn der Antrieb aktiv ist, wird das EM-Profil des Schiffs erheblich erhöht.
+
+
+
+      Nachteil: Reduktion der maximalen Energiespeicherkapazität.
+
+
+
+      Hinweis: Dieses Modul ist für Fregatten und Zerstörer gedacht.
+    en: "Massive boost to speed for a very short time. The thrust that boosts the
+      ship, and the corresponding maximum velocity bonus, are limited by the mass
+      of the ship that uses this module. The sheer amount of energy needed to power
+      this system means that it must permanently reserve a fraction of the capacitor
+      output just to maintain the integrity of its warp containment field, and when
+      activated it substantially increases the ship's EM footprint.\r\n\r\nPenalty:
+      Max capacitor reduced.\r\n\r\nNote: Usually fit on Frigates and Destroyers."
+    fr: |-
+      Puissante accélération fugace. La force de la poussée et le bonus de vitesse maximale du module sont limités par la masse du vaisseau équipé. La quantité phénoménale d'énergie absorbée par ce système exige d'allouer en permanence une fraction de l'énergie produite par le capaciteur au champ de confinement de warp, dans le seul but de maintenir son intégrité. Par ailleurs, l'énergie libérée à l'activation du module accroît vertigineusement l'empreinte EM du vaisseau.
+
+
+
+      Pénalité : réduit la capacité maximale du capaciteur.
+
+
+
+      Note : communément monté sur les frégates et les destroyers.
+    ja: ごく短時間だけ速度を大幅に向上させる。推進力の向上により得られる最高速度のボーナスは、このモジュールを使用する艦の質量により制限されます。このシステムの稼働には莫大なエネルギーを要し、アイドル状態でも常時キャパシタ出力の一部を割り当ててワープコンテインメントフィールドを維持しておく必要がある。また、起動中は艦船のEM負荷が著しく増大してしまうという弊害もある。ペナルティ：
+      キャパシタの最大値が低下する。注： 通常はフリゲート艦および駆逐艦に装着される。
+    ru: |-
+      Значительно увеличивает скорость движения корабля на очень короткий промежуток времени. Величина прироста скорости зависит не только от мощности модуля, но и от массы корабля, на котором установлен этот модуль. К сожалению, показатели энергопотребления модуля настолько велики, что его установка приводит к фактическому уменьшению ёмкости бортового накопителя энергии — часть энергии, вырабатываемой кораблём, постоянно тратится на обеспечение варп-поля питанием; кроме того, при включении модуля значительно увеличивается радиус сигнатуры корабля.
+
+
+
+      Внимание: при установке модуля уменьшается максимальная емкость накопителя энергии!
+
+
+
+      Примечание: обычно устанавливается на фрегаты и эсминцы
+    zh: |-
+      在极短时间内大幅提高航行速度。推进舰船的动力和相应的最大速度加成均受使用该装备的舰船重量所限。该系统运转所需的高额能量值意味着它必须使用部分电容输出的能量，以确保跃迁有效力场的完整性。启用该装备会显著增加舰船的电磁辐射信号。
+
+
+
+      惩罚：最大电容量将减少。
+
+
+
+      注：通常装配在护卫舰和驱逐舰上。
+  groupID: 46
+  iconID: 10149
+  marketGroupID: 131
+  metaGroupID: 2
+  name:
+    de: 5MN Microwarpdrive II
+    en: 5MN Microwarpdrive II
+    fr: Micropropulseur de warp 5MN II
+    ja: 5MNマイクロワープドライブII
+    ru: 5MN Microwarpdrive II
+    zh: 5MN微型跃迁推进器 II
+  portionSize: 1
+  published: true
+  raceID: 4
+  variationParentTypeID: 434
+  volume: 10.0
+448:
+  description:
+    de: Stört den Navigationscomputer des Zielschiffes und schaltet die Warp-, Sprung-,
+      Mikrowarp- und Mikrosprungantriebe ab.
+    en: Disrupts the target ship's navigation computer, disabling warping, jumping,
+      microwarpdrives and micro jump drives.
+    fr: Le module perturbe l'ordinateur de navigation du vaisseau cible pour désactiver
+      ses capacités de warp et de saut, ainsi que son propulseur de micro-warp et
+      son propulseur de micro-sauts.
+    ja: ターゲットとなる艦船のナビゲーションコンピューター、ワープ、ジャンプ、マイクロワープドライブ、マイクロジャンプドライブを妨害する。
+    ru: Вносит помехи в работу навигационного компьютера корабля-цели, делая невозможным
+      переход в варп-режим, использование микроварп-ускорителей, гипердвигателей и
+      маневровых гипердвигателей.
+    zh: 干扰对方舰船的导航计算机，防止其跃迁、跳跃、使用微型跃迁推进器或微型跳跃引擎。
+  groupID: 52
+  iconID: 3433
+  marketGroupID: 1936
+  metaGroupID: 2
+  name:
+    de: Warp Scrambler II
+    en: Warp Scrambler II
+    fr: Inhibiteur de warp II
+    ja: ワープスクランブラーII
+    ru: Warp Scrambler II
+    zh: 跃迁扰频器 II
+  portionSize: 1
+  published: true
+  variationParentTypeID: 447
+  volume: 5.0
+482:
+  description:
+    de: Hat einen verbesserten Laserstrahl, was den Extraktionsprozess umso effizienter
+      macht. Der Laser ist einsetzbar für die Extraktion aller Erze, mit Ausnahme
+      der aller seltensten.
+    en: Has an improved technology beam, making the extraction process more efficient.
+      Useful for extracting all but the rarest ore.
+    fr: Dispose d'un rayon d'une technologie avancée qui rend l'extraction plus efficace.
+      Permet l'extraction de n'importe quel minerai, à l'exception des plus rares.
+    ja: 高い技術が駆使されたビームを持ち、効率的な採掘作業が可能。極めて希少な鉱石の採掘でない限り、非常に効果的。
+    ru: Усовершенствованная модель экстрактора, обеспечивающая более эффективную добычу
+      руды. Пригодна для добычи практически всех видов руды, кроме самых редких.
+    zh: 拥有经过技术改良的激光，使采矿更有效率。适合开采除最稀有矿石外的所有矿石。
+  graphicID: 11273
+  groupID: 54
+  iconID: 1061
+  marketGroupID: 1039
+  metaGroupID: 2
+  name:
+    de: Miner II
+    en: Miner II
+    fr: Laser d’extraction II
+    ja: 採掘機II
+    ru: Miner II
+    zh: 采矿器 II
+  portionSize: 1
+  published: true
+  radius: 25.0
+  sofFactionName: prospecting
+  variationParentTypeID: 483
+  volume: 5.0
+506:
+  description:
+    de: Verbessert die Energiespeicherladerate auf Kosten der Schildverstärkung.
+    en: Increases capacitor recharge rate at the expense of shield boosting.
+    fr: Améliore la vitesse de recharge du capaciteur au détriment du booster de bouclier.
+    ja: シールド効果を下げることにより、キャパシタ充電速度を高める。
+    ru: Увеличивает скорость подзарядки конденсатора за счет уменьшения эффективности
+      систем накачки щита.
+    zh: 牺牲护盾回充能力来提高电容充电速率。
+  groupID: 767
+  iconID: 90
+  marketGroupID: 667
+  mass: 20.0
+  metaGroupID: 3
+  name:
+    de: "'Basic' Capacitor Power Relay"
+    en: "'Basic' Capacitor Power Relay"
+    fr: Relais de puissance du capaciteur 'basique'
+    ja: "「標準型」キャパシタパワーリレー"
+    ru: "'Basic' Capacitor Power Relay"
+    zh: 基础型电容能源继电器
+  portionSize: 1
+  published: true
+  radius: 500.0
+  variationParentTypeID: 1445
+  volume: 5.0
+582:
+  basePrice: 300000.0
+  capacity: 270.0
+  description:
+    de: Im Jahr YC114 hatte jedes der führenden Großreiche aufgrund des entsetzlichen
+      und nicht enden wollenden Kriegs auf allen Ebenen erkannt, dass ihre Schiffe
+      Unterstützung und Logistikfunktionalität benötigten. Andernfalls würde der langwierige
+      interstellare Krieg die Teilnehmer aufreiben. Im Staat der Caldari führte dies
+      zur Umgestaltung und dem Neueinsatz der Bantam. Die Bantam, ein starkes und
+      robustes Schiff, war ursprünglich eine äußerst effiziente Bergbaufregatte. Nach
+      ihrer Umgestaltung wurde die breite Struktur der Bantam durch Logistiksysteme
+      ersetzt, die einigen Platz im Innenraum in Anspruch nahmen. Dies erlaubte ihr
+      jedoch, sich auf die Schildunterstützung verbündeter Schiffe zu konzentrieren.
+    en: "In YC114 each major empire faction, having been embroiled in a harrowing,
+      extensive, long-term war, recognized the growing need for support and logistics
+      functionality in their vessels during the kind of protracted interstellar warfare
+      that might otherwise prove exhausting for its participants. In the Caldari State,
+      this led to the redesign and redeployment of the Bantam.\r\n\r\nThe Bantam,
+      a strong and sturdy craft, was originally an extremely effective mining frigate.
+      After its redesign, the Bantam's large structure had to give way for logistics
+      systems that ate up some of its interior room but allowed it to focus extensively
+      on shield support for fellow vessels."
+    fr: |-
+      En 114 après CY, les grandes factions des empires ayant toutes été engagées dans une guerre longue et pénible, reconnurent le besoin grandissant d'intégrer des fonctionnalités de soutien et de logistique dans leurs vaisseaux afin de pouvoir faire face à la durée extrême des guerres interstellaires et à l'épuisement des participants. Au sein de l'État caldari, ce processus conduisit à la refonte et au redéploiement du Bantam.
+
+      Le Bantam, vaisseau résistant et puissant, était à l'origine une frégate d’extraction très efficace. Dans sa nouvelle version, la grande structure du Bantam accueille désormais des systèmes logistiques qui ont grignoté une partie de son espace intérieur mais lui permettent d'apporter une grande assistance de bouclier pour les autres vaisseaux qu'il accompagne.
+    ja: "YC114年、4大国を巻きこむ大規模戦争が勃発した。長く、凄惨で、広範にわたる戦いの中、各国では支援艦や補給艦の役割がしだいに重視されるようになった。そういった役割を果たす船がなければ戦力が疲弊してしまうのだ。これを受けて、カルダリ連合ではバンタムの設計を根本から見直し、再配備を行った。\n\t\t\nバンタムは馬力のある頑丈な艦船で、元々は採掘用フリゲートとしてその性能を高く評価されていた。設計見直しにより、大ぶりな船体に支援システムが詰めこまれ、多少手狭にはなったが、僚艦にシールドを補給する支援専門艦として生まれ変わった。"
+    ru: |-
+      В 114-м году по юлайскому летоисчислению крупнейшие государства галактики, увязшие в тяжёлой, затяжной войне без конца и края, были вынуждены обратить внимание на растущую потребность военных флотов в ремонтных кораблях и кораблях обеспечения — она диктовалась самим характером продолжительных боевых действий в межзвёздном масштабе, способных полностью измотать противоборствующие стороны. В Государстве Калдари такой корабль был создан на основе фрегата «Бэнтам» после существенной переработки конструкции.
+
+      «Бэнтам» — крепкий и прочный корабль. Он был чрезвычайно эффективен при добыче сырья. При перестройке конструкции обширный корпус «Бэнтама» был модифицирован для несения ремонтных систем. Это снизило полезный внутренний объем фрегата, но позволило сконцентрировать его функциональность на дистанционной накачке щитов дружественных кораблей.
+    zh: |-
+      YC114年，各大帝国势力都已经深陷战争泥潭。他们深刻意识到在这种星际持久战中对现有舰船增加后勤功能的重要​性，否则军力将消耗殆尽。加达里合众国决定对矮脚鸡级护卫舰进行重新设计，赋予它新的使命。
+
+      矮脚鸡级护卫舰船体坚固，采矿效率极高。重新设计后，它坚固的船体被后勤系统所取代，内部空间也有所减小，不过换来的是为友军舰船进行护盾传输的能力。
+  factionID: 500001
+  graphicID: 38
+  groupID: 25
+  marketGroupID: 61
+  mass: 1480000.0
+  masteries:
+    0:
+    - 96
+    - 139
+    - 85
+    - 87
+    - 94
+    1:
+    - 96
+    - 139
+    - 85
+    - 87
+    - 94
+    2:
+    - 96
+    - 139
+    - 85
+    - 87
+    - 94
+    3:
+    - 96
+    - 139
+    - 85
+    - 87
+    - 94
+    4:
+    - 96
+    - 139
+    - 85
+    - 118
+    - 87
+    - 94
+  metaGroupID: 1
+  name:
+    de: Bantam
+    en: Bantam
+    fr: Bantam
+    ja: バンタム
+    ru: Bantam
+    zh: 矮脚鸡级
+  portionSize: 1
+  published: true
+  raceID: 1
+  radius: 27.0
+  sofFactionName: caldaribase
+  soundID: 20070
+  traits:
+    miscBonuses: []
+    roleBonuses:
+    - bonus: 300.0
+      bonusText:
+        de: Bonus auf den Präzisionsabfall von <a href=showinfo:3422>Schildfernboostern</a>
+        en: bonus to <a href=showinfo:3422>Remote Shield Booster</a> falloff
+        fr: de bonus à la perte du <a href=showinfo:3422>booster de bouclier à distance</a>
+        ja: "<a href=showinfo:3422>リモートシールドブースター</a>の精度低下範囲が改善"
+        ru: увеличивается добавочная дальность действия <a href=showinfo:3422>установок
+          дистанционной накачки щитов</a>
+        zh: "<a href=showinfo:3422>远程护盾回充增量器</a>失准范围加成"
+      importance: 1
+      unitID: 105
+    types:
+      3330:
+      - bonus: 10.0
+        bonusText:
+          de: Bonus auf die Leistung von <a href=showinfo:3422>Schildfernboostern</a>
+          en: bonus to <a href=showinfo:3422>Remote Shield Booster</a> amount
+          fr: de bonus au montant des <a href=showinfo:3422>boosters de bouclier à
+            distance</a>
+          ja: "<a href=showinfo:3422>リモートシールドブースター</a>のブースト量が増加"
+          ru: повышается производительность <a href=showinfo:3422>установок дистанционной
+            накачки щитов</a>
+          zh: <a href="showinfo:3422">远程护盾回充增量器</a>回充量加成
+        importance: 1
+        unitID: 105
+      - bonus: 10.0
+        bonusText:
+          de: Reduktion der Aktivierungskosten von <a href=showinfo:3422>Schildfernboostern</a>
+          en: reduction in <a href=showinfo:3422>Remote Shield Booster</a> activation
+            cost
+          fr: de réduction du coût d'activation des <a href=showinfo:3422>boosters
+            de bouclier à distance</a>
+          ja: "<a href=showinfo:3422>リモートシールドブースター</a>の起動コストが軽減"
+          ru: сокращается потребление энергии <a href=showinfo:3422>установками дистанционной
+            накачки щитов</a>
+          zh: <a href="showinfo:3422">远程护盾回充增量器</a>启动消耗减少
+        importance: 2
+        unitID: 105
+  volume: 20000.0
+583:
+  basePrice: 400000.0
+  capacity: 130.0
+  description:
+    de: Die Condor ist schnell und wendig. Sie hat einen begrenzten Frachtraum und
+      eignet sich nicht besonders für Handel oder Bergbau. Sie wird am besten als
+      Angriffsfregatte in Guerilla-Einsätzen verwendet.
+    en: The Condor is fast and agile. It has limited cargo space so it's not very
+      suitable for trading or mining. It is best used as an assault vessel in a hit-and-run
+      type of operations.
+    fr: Le Condor est un vaisseau rapide et agile. L'espace de sa soute étant réduit,
+      il n'est pas très adapté pour le commerce ou l'extraction. Il est préférable
+      de l'utiliser comme vaisseau d'attaque pour les opérations de type raid éclair.
+    ja: コンドールは高速で敏捷だ。カーゴスペースが小さいため、トレードや採掘には向かない。奇襲作戦の強襲型艦船として理想的である。
+    ru: "«Кондор» быстр и маневрен. Из-за ограниченного объема грузового отсека этот
+      фрегат не слишком подходит для торговли или добычи сырья. Он наиболее эффективен
+      в качестве ударного корабля для молниеносных налётов."
+    zh: 秃鹫级快捷灵巧。其货柜容量有限，因此不适合用作贸易或采矿船。它最适合在游击战中承担突击舰的角色。
+  factionID: 500001
+  graphicID: 39
+  groupID: 25
+  marketGroupID: 61
+  mass: 1100000.0
+  masteries:
+    0:
+    - 96
+    - 99
+    - 150
+    - 75
+    - 139
+    - 85
+    - 94
+    1:
+    - 96
+    - 99
+    - 150
+    - 75
+    - 139
+    - 85
+    - 94
+    2:
+    - 96
+    - 99
+    - 150
+    - 75
+    - 139
+    - 85
+    - 94
+    3:
+    - 96
+    - 99
+    - 150
+    - 75
+    - 139
+    - 85
+    - 94
+    4:
+    - 96
+    - 99
+    - 150
+    - 75
+    - 139
+    - 85
+    - 118
+    - 94
+  metaGroupID: 1
+  name:
+    de: Condor
+    en: Condor
+    fr: Condor
+    ja: コンドール
+    ru: Condor
+    zh: 秃鹫级
+  portionSize: 1
+  published: true
+  raceID: 1
+  radius: 33.0
+  sofFactionName: caldaribase
+  soundID: 20070
+  traits:
+    roleBonuses:
+    - bonus: 80
+      bonusText:
+        de: Reduktion der Aktivierungskosten von <a href=showinfo:3435>Antriebsblockern</a>
+        en: reduction in <a href=showinfo:3435>Propulsion Jamming</a> systems activation
+          cost
+        fr: de réduction du coût d'activation des systèmes de <a href=showinfo:3435>brouillage
+          de propulsion</a>
+        ja: "<a href=showinfo:3435>推進力ジャミング</a>システムの起動コストが軽減"
+        ru: сокращается потребление энергии <a href=showinfo:3435>средствами ограничения
+          подвижности кораблей</a>
+        zh: <a href="showinfo:3435">推进抑制</a>系统启动消耗减少
+      importance: 1
+      unitID: 105
+    types:
+      3330:
+      - bonus: 10
+        bonusText:
+          de: Bonus auf den Kinetikschaden von <a href=showinfo:3321>leichten Lenkwaffen</a>
+            und <a href=showinfo:3320>Raketen</a>
+          en: bonus to kinetic <a href=showinfo:3321>Light Missile</a> and <a href=showinfo:3320>Rocket</a>
+            damage
+          fr: de bonus aux dégâts cinétiques des <a href=showinfo:3321>missiles légers</a>
+            et des <a href=showinfo:3320>roquettes</a>
+          ja: "<a href=showinfo:3321>ライトミサイル</a>と<a href=showinfo:3320>ロケット</a>のキネティックダメージが増加"
+          ru: увеличивается урон кинетических БЧ <a href=showinfo:3321>лёгких ракет</a>
+            и <a href=showinfo:3320>лёгких штурмовых ракет</a>
+          zh: <a href="showinfo:3321">轻型导弹</a>和<a href="showinfo:3320">火箭</a>动能伤害加成
+        importance: 1
+        unitID: 105
+  volume: 18000.0
+584:
+  basePrice: 300000.0
+  capacity: 260.0
+  description:
+    de: Die Griffin wird von der Caldari Navy häufig als Unterstützungsschiff in Kampfstaffeln
+      verwendet. Dabei wird ihre eindrucksvolle elektronische Apparatur dazu verwendet,
+      die Funktionsfähigkeit des Zielschiffes herabzusetzen und es so zu einer leichten
+      Beute für herkömmliche Kampfschiffe zu machen.
+    en: The Griffin is much used by the Caldari Navy as a support vessel in combat
+      squadrons, using its impressive array of electronic gadgetry to disrupt the
+      operation of target ships, making them easy prey for traditional combat vessels.
+    fr: Le Griffin est très apprécié de la Caldari Navy qui l'utilise comme vaisseau
+      de soutien dans les escadrons de combat. Son large éventail de systèmes électroniques
+      embarqués permet de perturber le fonctionnement des vaisseaux visés et d'en
+      faire des proies faciles pour les vaisseaux d'attaque conventionnels.
+    ja: グリフィンは戦闘分隊の支援艦としてカルダリ海軍で活躍している。その強力な電子戦装備でターゲット艦船の行動を妨害し、通常の戦闘機がたやすく餌食にできるようにする。
+    ru: "«Гриффин» часто используется флотом Государства Калдари в качестве корабля
+      сопровождения в боевых эскадрах. Благодаря впечатляющему электронному оснащению,
+      эти суда способны создавать серьёзные помехи нормальному функционированию кораблей
+      противника, превращая их в лёгкую добычу для обычных боевых кораблей."
+    zh: 狮鹫级常被加达里海军用作战斗中队的支援舰船，它出色的电子设备阵列能干扰目标舰船的运作，使得它们成为常规战斗舰船炮下待宰的羔羊。
+  factionID: 500001
+  graphicID: 40
+  groupID: 25
+  marketGroupID: 61
+  mass: 1056000.0
+  masteries:
+    0:
+    - 96
+    - 100
+    - 139
+    - 85
+    - 94
+    1:
+    - 96
+    - 100
+    - 139
+    - 85
+    - 94
+    2:
+    - 96
+    - 100
+    - 139
+    - 85
+    - 94
+    3:
+    - 96
+    - 100
+    - 139
+    - 85
+    - 94
+    4:
+    - 96
+    - 100
+    - 139
+    - 85
+    - 118
+    - 94
+  metaGroupID: 1
+  name:
+    de: Griffin
+    en: Griffin
+    fr: Griffin
+    ja: グリフィン
+    ru: Griffin
+    zh: 狮鹫级
+  portionSize: 1
+  published: true
+  raceID: 1
+  radius: 41.0
+  sofFactionName: caldaribase
+  soundID: 20070
+  traits:
+    types:
+      3330:
+      - bonus: 15
+        bonusText:
+          de: Bonus auf die Stärke von <a href=showinfo:3427>ECM-Zielstörsender-Modulen</a>
+          en: bonus to <a href=showinfo:3427>ECM Target Jammer</a> strength
+          fr: de bonus à la force des <a href=showinfo:3427>brouilleurs de cible CME</a>
+          ja: "<a href=showinfo:3427>ECMターゲットジャマー</a>の強度が増加"
+          ru: увеличивается выходная мощность <a href=showinfo:3427>модулей глушения
+            захвата целей</a>
+          zh: <a href="showinfo:3427">ECM目标干扰器</a>强度加成
+        importance: 1
+        unitID: 105
+      - bonus: 10
+        bonusText:
+          de: Reduktion der Aktivierungskosten von <a href=showinfo:3427>ECM-Zielstörsender-Modulen</a>
+          en: reduction in <a href=showinfo:3427>ECM Target Jammer</a> activation
+            cost
+          fr: de réduction du coût d'activation des <a href=showinfo:3427>brouilleurs
+            de cible CME</a>
+          ja: "<a href=showinfo:3427>ECMターゲットジャマー</a>の起動コストが軽減"
+          ru: сокращается потребление энергии <a href=showinfo:3427>модулями глушения
+            захвата целей</a>
+          zh: <a href="showinfo:3427">ECM目标干扰器</a>启动消耗减少
+        importance: 2
+        unitID: 105
+  volume: 19400.0
+585:
+  basePrice: 400000.0
+  capacity: 120.0
+  description:
+    de: Die Slasher ist preiswert, aber vielseitig. Sie wird in Massenproduktion hergestellt,
+      was sie zu einem der am weitesten verbreiteten Schiffe im Hoheitsgebiet der
+      Minmatar macht. Die Slasher ist extrem schnell, hat eine anständige Bewaffnung
+      und ist bei angehenden Piraten und Schmugglern beliebt.
+    en: The Slasher is cheap, but versatile. It's been manufactured en masse, making
+      it one of the most common vessels in Minmatar space. The Slasher is extremely
+      fast, with decent armaments, and is popular amongst budding pirates and smugglers.
+    fr: Le Slasher est bon marché et polyvalent. Il a fait l'objet d'une véritable
+      production de masse. C'est pour cette raison que c'est un des vaisseaux les
+      plus courants dans l'espace minmatar. Extrêmement rapide et bien armé, le Slasher
+      est très populaire parmi les pirates et les contrebandiers débutants.
+    ja: スラッシャーは安価でありながら用途が広い。大量製造されたため、ミンマター宙域で一般的に見られる船の一つである。卓越したスピードと並以上の火力を兼ね備えていることから、新進の海賊や密輸業者に人気が高い。
+    ru: "«Слэшер» — дешевый и на удивление универсальный корабль. В пространстве Республики
+      Минматар он встречается чуть ли не на каждом шагу, так как производят его в
+      огромных объёмах. «Слэшер» способен передвигаться с очень большой скоростью
+      и может быть оснащен неплохим набором оружейных систем; он пользуется особой
+      популярностью у начинающих пиратов и контрабандистов."
+    zh: 伐木者级护卫舰虽然廉价，但却是个多面手。它被大规模生产，是米玛塔尔空间内最常见的舰船之一。伐木者级速度极快，武器装备也不错，因此在新手海盗和走私者中很流行。
+  factionID: 500002
+  graphicID: 44
+  groupID: 25
+  marketGroupID: 64
+  mass: 1075000.0
+  masteries:
+    0:
+    - 96
+    - 99
+    - 150
+    - 71
+    - 141
+    - 85
+    - 94
+    1:
+    - 96
+    - 99
+    - 150
+    - 71
+    - 141
+    - 85
+    - 94
+    2:
+    - 96
+    - 99
+    - 150
+    - 71
+    - 141
+    - 85
+    - 94
+    3:
+    - 96
+    - 99
+    - 150
+    - 71
+    - 141
+    - 85
+    - 94
+    4:
+    - 96
+    - 99
+    - 150
+    - 71
+    - 141
+    - 85
+    - 118
+    - 94
+  metaGroupID: 1
+  name:
+    de: Slasher
+    en: Slasher
+    fr: Slasher
+    ja: スラッシャー
+    ru: Slasher
+    zh: 伐木者级
+  portionSize: 1
+  published: true
+  raceID: 2
+  radius: 31.0
+  sofFactionName: minmatarbase
+  soundID: 20078
+  traits:
+    roleBonuses:
+    - bonus: 80
+      bonusText:
+        de: Reduktion der Aktivierungskosten von <a href=showinfo:3435>Antriebsblockern</a>
+        en: reduction in <a href=showinfo:3435>Propulsion Jamming</a> systems activation
+          cost
+        fr: de réduction du coût d'activation des systèmes de <a href=showinfo:3435>brouillage
+          de propulsion</a>
+        ja: "<a href=showinfo:3435>推進力ジャミング</a>システムの起動コストが軽減"
+        ru: сокращается потребление энергии <a href=showinfo:3435>средствами ограничения
+          подвижности кораблей</a>
+        zh: <a href="showinfo:3435">推进抑制</a>系统启动消耗减少
+      importance: 1
+      unitID: 105
+    types:
+      3329:
+      - bonus: 5
+        bonusText:
+          de: Bonus auf den Schaden von <a href=showinfo:3302>kleinen Projektilgeschütztürmen</a>
+          en: bonus to <a href=showinfo:3302>Small Projectile Turret</a> damage
+          fr: de bonus aux dégâts des <a href=showinfo:3302>petites tourelles à projectiles</a>
+          ja: "<a href=showinfo:3302>小型プロジェクタイルタレット</a>のダメージが増加"
+          ru: увеличивается урон боеприпасов <a href=showinfo:3302>малых баллистических
+            орудий</a>
+          zh: <a href="showinfo:3302">小型射弹炮台</a>伤害加成
+        importance: 1
+        unitID: 105
+      - bonus: 7.5
+        bonusText:
+          de: Bonus auf die Nachführungsgeschwindigkeit von <a href=showinfo:3302>kleinen
+            Projektilgeschütztürmen</a>
+          en: bonus to <a href=showinfo:3302>Small Projectile Turret</a> tracking
+            speed
+          fr: de bonus à la vitesse de poursuite des <a href=showinfo:3302>petites
+            tourelles à projectiles</a>
+          ja: "<a href=showinfo:3302>小型プロジェクタイルタレット</a>の追跡速度が上昇"
+          ru: повышается скорость наводки на цель <a href=showinfo:3302>малых баллистических
+            орудий</a>
+          zh: <a href="showinfo:3302">小型射弹炮台</a>跟踪速度加成
+        importance: 2
+        unitID: 105
+  volume: 17400.0
+586:
+  basePrice: 400000.0
+  capacity: 400.0
+  description:
+    de: Im Vergleich zu den meisten Minmatar-Fregatten ist die Probe sehr groß und
+      wird als gutes Erkundungs- und Transportschiff angesehen. Ungewöhnlich für ein
+      Schiff der Minmatar ist die gepanzerte Außenhülle zwar sehr schwer zu zerstören,
+      allerdings ist das Schiff aufgrund seiner eingeschränkten Waffenmontageplätze
+      bei Kampfhandlungen auf die Unterstützung anderer Schiffe angewiesen.
+    en: The Probe is large compared to most Minmatar frigates and is considered a
+      good scout and cargo-runner. Uncharacteristically for a Minmatar ship, its hard
+      outer coating makes it difficult to destroy, while the limited weapon hardpoints
+      force it to rely on drone assistance if engaged in combat.
+    fr: Le Probe surclasse la plupart des frégates minmatar par sa taille imposante.
+      Ce vaisseau de reconnaissance est également plébiscité pour les missions de
+      transport. Si son revêtement extérieur extrêmement résistant est une singularité
+      de l'ingénierie minmatar, le nombre restreint de points de fixation le subordonne
+      au renfort de vaisseaux de combat en cas de conflit armé.
+    ja: プローブは、一般のミンマターフリゲートと比較すると大型で、偵察や輸送任務に適するとされている。ミンマター艦らしからぬ頑丈な装甲でなかなかのしぶとさを見せるが、兵装を搭載する余地が限られており、戦いにおいてはドローン頼みだ。
+    ru: Среди прочих фрегатов Республики Минматар «Проуб» примечателен большими размерами;
+      его считают пригодным для задач разведки и транспортировки. Кроме того, для
+      корабля матарского производства он на удивление хорошо бронирован; к сожалению,
+      нехватка точек монтажа вооружений приводит к тому, что пилоты этих фрегатов
+      вынуждены рассчитывать на поддержку собственных дронов.
+    zh: 探索级护卫舰是米玛塔尔护卫舰中的大家伙，是一艘不错的侦察舰和货运舰。与一般的米玛塔尔飞船不同，它坚硬的船体外壳使它很难被摧毁，但它有限的武器槽位使它在战斗中不得不依赖无人机的火力支援。
+  factionID: 500002
+  graphicID: 45
+  groupID: 25
+  marketGroupID: 64
+  mass: 1123000.0
+  masteries:
+    0:
+    - 96
+    - 104
+    - 105
+    - 141
+    - 85
+    - 94
+    1:
+    - 96
+    - 104
+    - 105
+    - 141
+    - 85
+    - 94
+    2:
+    - 96
+    - 104
+    - 105
+    - 141
+    - 85
+    - 94
+    3:
+    - 96
+    - 104
+    - 105
+    - 141
+    - 85
+    - 94
+    4:
+    - 96
+    - 104
+    - 105
+    - 107
+    - 141
+    - 85
+    - 118
+    - 94
+  metaGroupID: 1
+  name:
+    de: Probe
+    en: Probe
+    fr: Probe
+    ja: プローブ
+    ru: Probe
+    zh: 探索级
+  portionSize: 1
+  published: true
+  raceID: 2
+  radius: 19.95
+  sofFactionName: minmatarbase
+  soundID: 20078
+  traits:
+    roleBonuses:
+    - bonus: 5
+      bonusText:
+        de: Bonus auf die Virusstärke von <a href=showinfo:22177>Relikt-</a> und <a
+          href=showinfo:22175>Datenanalysatoren</a>
+        en: bonus to <a href=showinfo:22177>Relic</a> and <a href=showinfo:22175>Data
+          Analyzer</a> virus strength
+        fr: de bonus à la puissance du virus des <a href=showinfo:22177>analyseurs
+          de reliques</a> et des <a href=showinfo:22175>analyseurs de données</a>
+        ja: "<a href=showinfo:22177>遺物アナライザー</a>と<a href=showinfo:22175>データアナライザー</a>のウイルス強度が増加"
+        ru: повышается степень опасности вирусов, применяемых в <a href=showinfo:22175>комплексах
+          анализа данных</a> и <a href=showinfo:22177>комплексах анализа артефактов</a>
+        zh: <a href="showinfo:22177">遗迹分析仪</a>和<a href="showinfo:22175">数据分析仪</a>病毒强度加成
+      importance: 1
+      unitID: 139
+    types:
+      3329:
+      - bonus: 7.5
+        bonusText:
+          de: Bonus auf die Stärke von <a href=showinfo:30013>Basis-</a> und <a href=showinfo:30028>Gefechtsscansonden</a>
+          en: bonus to <a href=showinfo:30013>Core</a> and <a href=showinfo:30028>Combat
+            Scanner Probe</a> strength
+          fr: de bonus à la puissance des <a href=showinfo:30013>sondes d'exploration
+            principales</a> et des <a href=showinfo:30028>sondes d'exploration de
+            combat</a>
+          ja: "<a href=showinfo:30013>コアスキャナープローブ</a>と<a href=showinfo:30028>戦闘スキャナープローブ</a>の強度が増加"
+          ru: повышается чувствительность бортовой аппаратуры <a href=showinfo:30013>зондов
+            навигационной разведки</a> и <a href=showinfo:30028>боевых разведзондов</a>
+          zh: <a href="showinfo:30013">核心</a>和<a href="showinfo:30028">作战扫描探针</a>强度加成
+        importance: 1
+        unitID: 105
+      - bonus: 5
+        bonusText:
+          de: Reduktion der Dauer von <a href=showinfo:25861>Bergungsmodulen</a>
+          en: reduction in <a href=showinfo:25861>Salvager</a> duration
+          fr: de réduction à la durée des <a href=showinfo:25861>récupérateurs</a>
+          ja: "<a href=showinfo:25861>サルベージャー</a>の起動時間が短縮"
+          ru: сокращается продолжительность рабочего цикла <a href=showinfo:25861>демонтажных
+            модулей</a>
+          zh: <a href="showinfo:25861">打捞装置</a>运转周期降低
+        importance: 2
+        unitID: 105
+  volume: 19500.0
+587:
+  basePrice: 400000.0
+  capacity: 140.0
+  description:
+    de: Die Rifter ist eine sehr mächtige Kampffregatte und nimmt es problemlos mit
+      den besten Fregatten dort draußen auf. Ihr Design wurde häufig stark abgeändert,
+      nachdem sie erstmals während dem Aufstand der Minmatar zum Einsatz kam. Die
+      Angriffsmöglichkeiten der Rifter gestalten sich vielfältig, was sie zu einem
+      undurchschaubaren und gefährlichen Gegner macht.
+    en: The Rifter is a very powerful combat frigate and can easily tackle the best
+      frigates out there. It has gone through many radical design phases since its
+      inauguration during the Minmatar Rebellion. The Rifter has a wide variety of
+      offensive capabilities, making it an unpredictable and deadly adversary.
+    fr: Le Rifter est une puissante frégate de combat capable de rivaliser facilement
+      avec les meilleures frégates existantes. Le Rifter a subi de nombreuses transformations
+      radicales depuis son inauguration lors de la rébellion minmatar. Il possède
+      un grand éventail de capacités offensives, ce qui en fait un adversaire aussi
+      imprévisible que mortel.
+    ja: リフターは非常に強力な戦闘用フリゲートで、一流の性能をもつフリゲートを容易に捕捉してしまう。ミンマター蜂起の時期に開発が開始されて以来、数々の革新的な設計が組み込まれてきた。これによってリフターは多彩な攻撃能力を持つことになり、敵にとって予測不能で危険な船となった。
+    ru: "«Рифтер» — очень мощный боевой фрегат, способный с лёгкостью противостоять
+      наилучшим фрегатам врага. После боевого крещения в ходе Матарского Восстания
+      он был многократно и радикально модернизирован. «Рифтер» обладает широким ассортиментом
+      вооружения, благодаря чему является непредсказуемым и смертоносным противником."
+    zh: 裂谷级是一种非常强大的战斗护卫舰，可以轻松和当今最出色的护卫舰一较高下。它诞生于米玛塔尔起义期间，其后经历了许多次重大设计调整。裂谷级护卫舰具有多种多样的攻击能力，因此是战场上难以琢磨而又致命的对手。
+  factionID: 500002
+  graphicID: 46
+  groupID: 25
+  marketGroupID: 64
+  mass: 1067000.0
+  masteries:
+    0:
+    - 96
+    - 99
+    - 71
+    - 141
+    - 150
+    - 89
+    - 94
+    1:
+    - 96
+    - 99
+    - 71
+    - 141
+    - 150
+    - 89
+    - 94
+    2:
+    - 96
+    - 99
+    - 71
+    - 141
+    - 150
+    - 89
+    - 94
+    3:
+    - 96
+    - 99
+    - 71
+    - 141
+    - 150
+    - 89
+    - 94
+    4:
+    - 96
+    - 99
+    - 71
+    - 141
+    - 117
+    - 150
+    - 89
+    - 94
+  metaGroupID: 1
+  name:
+    de: Rifter
+    en: Rifter
+    fr: Rifter
+    ja: リフター
+    ru: Rifter
+    zh: 裂谷级
+  portionSize: 1
+  published: true
+  raceID: 2
+  radius: 31.0
+  sofFactionName: minmatarbase
+  soundID: 20078
+  traits:
+    miscBonuses: []
+    roleBonuses: []
+    types:
+      3329:
+      - bonus: 5
+        bonusText:
+          de: Bonus auf die Feuerrate von <a href=showinfo:3302>kleinen Projektilwaffentürmen</a>
+          en: bonus to <a href=showinfo:3302>Small Projectile Turret</a> rate of fire
+          fr: de bonus à la cadence de tir de la <a href=showinfo:3302>petite tourelle
+            à projectiles</a>
+          ja: "<a href=showinfo:3302>小型実体弾タレット</a>の発射速度が上昇"
+          ru: Бонус к циклу выстрела <a href=showinfo:3302>малых баллистических турелей</a>
+          zh: "<a href=showinfo:3302>小型射弹炮台</a>射速加成"
+        importance: 1
+        unitID: 105
+      - bonus: 10
+        bonusText:
+          de: Bonus auf den Präzisionsabfall von <a href=showinfo:3302>kleinen Projektilgeschütztürmen</a>
+          en: bonus to <a href=showinfo:3302>Small Projectile Turret</a> falloff
+          fr: bonus à la déperdition de la <a href=showinfo:3302>petite tourelle à
+            projectiles</a>
+          ja: "<a href=showinfo:3302>小型プロジェクタイルタレット</a>の精度低下範囲が拡大"
+          ru: увеличивается добавочная дальность ведения огня из <a href=showinfo:3302>малых
+            баллистических орудий</a>
+          zh: <a href="showinfo:3302">小型射弹炮台</a>失准范围加成
+        importance: 2
+        unitID: 105
+  volume: 27289.0
+588:
+  capacity: 120.0
+  description:
+    de: Die Reaper-Corvette ist das kleinste Schiff der Minmatar und erreicht gerade
+      noch den Status "Anfängerschiff" statt "bemannter Kampfgleiter". Die Reaper
+      ist sehr preiswert und wird in großer Anzahl bei waghalsigen Hit-And-Run Einsätzen
+      von Minmatar auf beiden Seiten des Gesetzes verwendet.
+    en: The Reaper-class corvette is one of the smallest of the Minmatar vessels,
+      just barely reaching rookie ship status instead of a manned fighter. The Reaper
+      is very cheap and is used en masse in daring hit-and-run operations by Minmatars
+      either side of the law.
+    fr: La corvette de classe Reaper est l'un des plus petits vaisseaux minmatar,
+      conçue aux dimensions d'un vaisseau de recrue sans même atteindre la taille
+      d'un chasseur piloté. Compte tenu de son prix très abordable, les pilotes minmatar
+      n'hésitent pas à le sacrifier dans d'audacieuses attaques éclair, légales comme
+      illicites.
+    ja: リーパー級コルベットはミンマター艦としては最小クラスで、ルーキー艦としての分類をようやく超える程度の大きさしかない。非常に安価で、これを使った集団での一撃離脱戦法は、法のどちらの側にいるミンマター人にも好まれている。
+    ru: Корветы типа «Рипер» — самые маленькие фрегаты Республики, по своим характеристикам
+      не сильно отличающиеся от палубных истребителей. Они очень дешевы и массово
+      используются для быстрых рейдерских акций как матарскими правоохранительными
+      органами, так и нарушителями закона.
+    zh: 死神号轻型护卫舰是最小的米玛塔尔护卫舰之一，刚好超过有人舰载机级别，达到新手船标准。死神号很便宜，被米玛塔尔黑白两道在危险的游击行动中大量使用。
+  factionID: 500002
+  graphicID: 53
+  groupID: 237
+  marketGroupID: 1819
+  mass: 1157000.0
+  masteries:
+    0:
+    - 96
+    - 99
+    - 150
+    - 71
+    - 103
+    - 141
+    - 85
+    - 94
+    1:
+    - 96
+    - 99
+    - 150
+    - 71
+    - 103
+    - 141
+    - 85
+    - 94
+    2:
+    - 96
+    - 99
+    - 150
+    - 71
+    - 103
+    - 141
+    - 85
+    - 94
+    3:
+    - 96
+    - 99
+    - 150
+    - 71
+    - 103
+    - 141
+    - 85
+    - 94
+    4:
+    - 96
+    - 99
+    - 150
+    - 71
+    - 103
+    - 141
+    - 85
+    - 118
+    - 94
+  name:
+    de: Reaper
+    en: Reaper
+    fr: Reaper
+    ja: リーパー
+    ru: Reaper
+    zh: 死神号
+  portionSize: 1
+  published: true
+  raceID: 2
+  radius: 38.4
+  sofFactionName: minmatarbase
+  soundID: 20078
+  traits:
+    roleBonuses:
+    - bonus: 10
+      bonusText:
+        de: Bonus auf die Maximalgeschwindigkeit des Schiffs
+        en: bonus to ship max velocity
+        fr: de bonus à la vitesse maximale du vaisseau
+        ja: 艦船の最高速度が上昇
+        ru: увеличивается скорость полного хода корабля
+        zh: 舰船最大速度加成
+      importance: 1
+      unitID: 105
+    - bonus: 10
+      bonusText:
+        de: Bonus auf den Schaden von <a href=showinfo:3302>kleinen Projektilgeschütztürmen</a>
+        en: bonus to <a href=showinfo:3302>Small Projectile Turret</a> damage
+        fr: de bonus aux dégâts des <a href=showinfo:3302>petites tourelles à projectiles</a>
+        ja: "<a href=showinfo:3302>小型プロジェクタイルタレット</a>のダメージが増加"
+        ru: увеличивается урон боеприпасов <a href=showinfo:3302>малых баллистических
+          орудий</a>
+        zh: <a href="showinfo:3302">小型射弹炮台</a>伤害加成
+      importance: 2
+      unitID: 105
+    - bonus: 15
+      bonusText:
+        de: Bonus auf die Effektivität von <a href=showinfo:19921>Zielmarkierungsmodulen</a>
+        en: bonus to <a href=showinfo:19921>Target Painter</a> effectiveness
+        fr: de bonus à l'efficacité des <a href=showinfo:19921>marqueurs de cible</a>
+        ja: "<a href=showinfo:19921>ターゲットペインター</a>の効果が増加"
+        ru: повышается эффективность действия <a href=showinfo:19921>систем подсветки
+          целей</a>
+        zh: <a href="showinfo:19921">目标标记装置</a>效果加成
+      importance: 3
+      unitID: 105
+    - bonus: 15
+      bonusText:
+        de: Bonus auf die Leistung von <a href=showinfo:3416>Schildboostern</a>
+        en: bonus to <a href=showinfo:3416>Shield Booster</a> amount
+        fr: de bonus au montant des <a href=showinfo:3416>boosters de bouclier</a>
+        ja: "<a href=showinfo:3416>シールドブースター</a>のブースト量が増加"
+        ru: повышается производительность <a href=showinfo:3416>установок накачки
+          щитов</a>
+        zh: <a href="showinfo:3416">护盾回充增量器</a>回充量加成
+      importance: 4
+      unitID: 105
+  volume: 15800.0
+589:
+  basePrice: 400000.0
+  capacity: 115.0
+  description:
+    de: Die Executioner ist ein weiteres neu zugelassenes Schiff der Amarr Imperial
+      Navy. Die Executioner ist speziell darauf ausgelegt, den kleinen, schnellen
+      Waffenfregatten der Republik Minmatar etwas entgegenzusetzen. Deswegen ist sie
+      – im Gegensatz zu den üblichen Schiffen der Amarr Navy – eher auf Geschwindigkeit
+      als auf Verteidigung getrimmt. Mit diesem schnellen Schiff eröffnen sich den
+      Amarr neue taktische Möglichkeiten auf dem Schlachtfeld.
+    en: The Executioner is another newly commissioned ship of the Amarr Imperial Navy.
+      The Executioner was designed specially to counter the small, fast raider frigates
+      of the Minmatar Republic; thus it is different from most Amarr ships in favoring
+      speed over defenses. With the Executioner, the Amarrians have expanded their
+      tactical capabilities on the battlefield.
+    fr: L'Executioner est un des nouveaux vaisseaux commandés par l'Amarr Navy impériale.
+      L'Executioner a été conçu dans le but de contrer les petites frégates rapides
+      que la République minmatar utilise pour ses raids éclair. Ce vaisseau est donc
+      différent de la plupart des vaisseaux amarr, car il met l'accent sur la vitesse
+      plutôt que sur les capacités défensives. Avec l'Executioner, les Amarr ont amélioré
+      leurs capacités tactiques sur le champ de bataille.
+    ja: エクスキューショナーもまた、アマー帝国海軍が新たに就役させた艦船である。エクスキューショナーは特に、ミンマター共和国の小型高機動フリゲート艦隊の襲撃に対抗する目的で設計されたため、防衛より速度を重視するという点で、アマー艦としては異色である。エクスキューショナーの登場により、戦場におけるアマーの戦術は幅が広がった。
+    ru: "«Экзекьюшнер» — ещё один фрегат, лишь недавно вошедший в строй флота Амаррской
+      Империи. Он специально разрабатывался для противостояния небольшим быстрым фрегатам
+      Республики Минматар, что и является причиной его необычно большой скорости,
+      достигнутой за счёт ослабления защитных систем. «Экзекьюшнер» расширил спектр
+      тактических возможностей амаррцев на поле боя."
+    zh: 刽子手级是艾玛帝国海军新近启用的舰船。刽子手级专门用来对抗米玛塔尔共和国轻巧快速的突袭护卫舰；因此，与多数艾玛舰船不同的是，该船侧重于速度而不是防御。有了刽子手级，艾玛人扩充了自己的战术能力。
+  factionID: 500003
+  graphicID: 54
+  groupID: 25
+  marketGroupID: 72
+  mass: 1090000.0
+  masteries:
+    0:
+    - 96
+    - 99
+    - 50
+    - 150
+    - 89
+    - 93
+    - 94
+    1:
+    - 96
+    - 99
+    - 50
+    - 150
+    - 89
+    - 93
+    - 94
+    2:
+    - 96
+    - 99
+    - 50
+    - 150
+    - 89
+    - 93
+    - 94
+    3:
+    - 96
+    - 99
+    - 50
+    - 150
+    - 89
+    - 93
+    - 94
+    4:
+    - 96
+    - 99
+    - 50
+    - 117
+    - 150
+    - 89
+    - 93
+    - 94
+  metaGroupID: 1
+  name:
+    de: Executioner
+    en: Executioner
+    fr: Executioner
+    ja: エクスキューショナー
+    ru: Executioner
+    zh: 刽子手级
+  portionSize: 1
+  published: true
+  raceID: 4
+  radius: 13.0
+  sofFactionName: amarrbase
+  soundID: 20063
+  traits:
+    roleBonuses:
+    - bonus: 80
+      bonusText:
+        de: Reduktion der Aktivierungskosten von <a href=showinfo:3435>Antriebsblockern</a>
+        en: reduction in <a href=showinfo:3435>Propulsion Jamming</a> systems activation
+          cost
+        fr: de réduction du coût d'activation des systèmes de <a href=showinfo:3435>brouillage
+          de propulsion</a>
+        ja: "<a href=showinfo:3435>推進力ジャミング</a>システムの起動コストが軽減"
+        ru: сокращается потребление энергии <a href=showinfo:3435>средствами ограничения
+          подвижности кораблей</a>
+        zh: <a href="showinfo:3435">推进抑制</a>系统启动消耗减少
+      importance: 1
+      unitID: 105
+    types:
+      3331:
+      - bonus: 10
+        bonusText:
+          de: Reduktion der Aktivierungskosten von <a href=showinfo:3303>kleinen Energiegeschütztürmen</a>
+          en: reduction in <a href=showinfo:3303>Small Energy Turret</a> activation
+            cost
+          fr: de réduction du coût d'activation des <a href=showinfo:3303>petites
+            tourelles à énergie</a>
+          ja: "<a href=showinfo:3303>小型エネルギータレット</a>の起動コストが軽減"
+          ru: сокращается расход энергии при ведении огня из <a href=showinfo:3303>малых
+            лазерных орудий</a>
+          zh: <a href="showinfo:3303">小型能量炮台</a>启动消耗减少
+        importance: 1
+        unitID: 105
+      - bonus: 5
+        bonusText:
+          de: Bonus auf den Schaden von <a href=showinfo:3303>kleinen Energiegeschütztürmen</a>
+          en: bonus to <a href=showinfo:3303>Small Energy Turret</a> damage
+          fr: de bonus aux dégâts des <a href=showinfo:3303>petites tourelles à énergie</a>
+          ja: "<a href=showinfo:3303>小型エネルギータレット</a>のダメージが増加"
+          ru: увеличивается урон <a href=showinfo:3303>малых лазерных орудий</a>
+          zh: <a href="showinfo:3303">小型能量炮台</a>伤害加成
+        importance: 2
+        unitID: 105
+  volume: 28100.0
+590:
+  basePrice: 300000.0
+  capacity: 250.0
+  description:
+    de: Im Jahr YC114 hatte jedes der führenden Großreiche aufgrund des entsetzlichen
+      und nicht enden wollenden Kriegs auf allen Ebenen erkannt, dass ihre Schiffe
+      Unterstützung und Logistikfunktionalität benötigten. Andernfalls würde der langwierige
+      interstellare Krieg die Teilnehmer aufreiben. Im Imperium der Amarr führte dies
+      zur Umgestaltung und dem Neueinsatz der Inquisitor. Die Inquisitor war ursprünglich
+      ein Beispiel dafür, wie die Amarr Imperial Navy das Design ihrer Schiffe veränderte,
+      um bestimmten Taktiken anderer Großreiche zu begegnen. Nach der Umgestaltung
+      diente sie ausschließlich als Unterstützungsfregatte. Anstelle ihrer bis dahin
+      gefürchteten Lenkwaffenfähigkeiten lag nun der Schwerpunkt auf der Panzerungs-Fernreparatur.
+    en: "In YC114 each major empire faction, having been embroiled in a harrowing,
+      extensive, long-term war, recognized the growing need for support and logistics
+      functionality in their vessels during the kind of protracted interstellar warfare
+      that might otherwise prove exhausting for its participants. In the Amarr Empire,
+      this led to the redesign and redeployment of the Inquisitor.\r\n\r\nThe Inquisitor
+      was originally an example of how the Amarr Imperial Navy modeled their design
+      to counter specific tactics employed by the other empires. After its redesign,
+      it was exclusively devoted to the role of a support frigate, and its formerly
+      renowned missile capabilities gave way to a focus on remote armor repair.\r\n"
+    fr: |
+      En 114 après CY, les grandes factions des empires ayant toutes été engagées dans une guerre longue et pénible, reconnurent le besoin grandissant d'intégrer des fonctionnalités d'appui et de logistique dans leurs vaisseaux afin de pouvoir faire face à la durée extrême des guerres interstellaires et à l'épuisement des participants. Au sein de l'Empire amarr, ce processus conduisit à la refonte et au redéploiement de l'Inquisitor.
+
+      L'Inquisitor était à l'origine un exemple de cette tendance de l'Amarr Navy impériale à concevoir ses vaisseaux pour contrer les tactiques spécifiques des autres empires. Le nouveau modèle fut conçu exclusivement pour remplir le rôle de frégate d'appui, et ses capacités en matière de missiles, qui l'avaient autrefois rendu célèbre, s'effacèrent pour un recentrage sur les systèmes de réparation de blindage à distance.
+    ja: "YC114年、4大国を巻きこむ大規模戦争が勃発した。長く、凄惨で、広範にわたる戦いの中、各国では支援艦や補給艦の役割がしだいに重視されるようになった。そういった役割を果たす船がなければ戦力が疲弊してしまうのだ。これを受けて、アマー帝国ではインクイジターの設計を根本から見直し、再配備を行った。\n\t\t\nインクイジターは元々、アマー帝国海軍が他国の特定の戦術に対抗するための艦船を作ったらどうなるかという見本だった。しかし設計の見直しで完全な支援専用フリゲートに生まれ変わり、かつての売りだったミサイル運用能力はリモートアーマーリペアに取って代わった。\r\n"
+    ru: В 114-м году по юлайскому летоисчислению крупнейшие государства галактики,
+      увязшие в тяжёлой, затяжной войне без конца и края, были вынуждены обратить
+      внимание на растущую потребность военных флотов в ремонтных кораблях и кораблях
+      обеспечения — она диктовалась самим характером продолжительных боевых действий
+      в межзвёздном масштабе, способных полностью измотать противоборствующие стороны.
+      В Амаррской Империи такой корабль был создан на основе фрегата типа «Инквизитор»
+      после существенной переработки конструкции. Первоначальный дизайн «Инквизитора»
+      мог служить наглядным примером того, как флот Амаррской Империи разрабатывает
+      корабли в ответ на тактические решения прочих сверхдержав. После переработки
+      конструкции и переориентировки на работу с установками дистанционного ремонта
+      брони «инквизиторы» утратили пусковые установки, которыми были примечательны
+      ранее, и взяли на себя роль ремонтных кораблей.
+    zh: |
+      YC114年，各大帝国势力都已经深陷战争泥潭。他们深刻意识到在这种星际持久战中对现有舰船增加后勤功能的重要​性，否则军力将消耗殆尽。艾玛帝国决定对检察官级护卫舰进行重新设计，赋予它新的使命。
+
+      近年来，艾玛皇家海军多次根据其他帝国的特殊战术来定制自己的舰船设计，检察官级护卫舰就是其中一个例子。重新设计后，它成为了一艘专门的支援护卫舰，它那曾名噪一时的导弹打击能力被远程装甲维修能力所取代。
+  factionID: 500003
+  graphicID: 55
+  groupID: 25
+  marketGroupID: 72
+  mass: 1630000.0
+  masteries:
+    0:
+    - 96
+    - 89
+    - 91
+    - 93
+    - 94
+    1:
+    - 96
+    - 89
+    - 91
+    - 93
+    - 94
+    2:
+    - 96
+    - 89
+    - 91
+    - 93
+    - 94
+    3:
+    - 96
+    - 89
+    - 91
+    - 93
+    - 94
+    4:
+    - 96
+    - 117
+    - 89
+    - 91
+    - 93
+    - 94
+  metaGroupID: 1
+  name:
+    de: Inquisitor
+    en: Inquisitor
+    fr: Inquisitor
+    ja: インクイジター
+    ru: Inquisitor
+    zh: 检察官级
+  portionSize: 1
+  published: true
+  raceID: 4
+  radius: 20.5
+  sofFactionName: amarrbase
+  soundID: 20063
+  traits:
+    roleBonuses:
+    - bonus: 50
+      bonusText:
+        de: Bonus auf die optimale Reichweite von <a href=showinfo:16069>Panzerungsfernreparatursystemen</a>
+        en: bonus to <a href=showinfo:16069>Remote Armor Repairer</a> optimal range
+        fr: de bonus à la portée optimale du <a href=showinfo:16069>réparateur de
+          blindage à distance</a>
+        ja: "<a href=showinfo:16069>リモートアーマーリペアラ</a>の最適射程距離が拡大"
+        ru: увеличивается оптимальная дальность действия <a href=showinfo:16069>установок
+          дистанционного ремонта брони</a>
+        zh: "<a href=showinfo:16069>远程装甲维修器</a>最佳射程加成"
+      importance: 1
+      unitID: 105
+    - bonus: 600
+      bonusText:
+        de: Bonus auf den Präzisionsabfall von <a href=showinfo:16069>Panzerungsfernreparatursystemen</a>
+        en: bonus to <a href=showinfo:16069>Remote Armor Repairer</a> falloff
+        fr: de bonus à la perte du <a href=showinfo:16069>réparateur de blindage à
+          distance</a>
+        ja: "<a href=showinfo:16069>リモートアーマーリペアラ</a>の精度低下範囲が改善"
+        ru: увеличивается добавочная дальность действия <a href=showinfo:16069>установок
+          дистанционного ремонта брони</a>
+        zh: "<a href=showinfo:16069>远程装甲维修器</a>失准范围加成"
+      importance: 2
+      unitID: 105
+    types:
+      3331:
+      - bonus: 10
+        bonusText:
+          de: Bonus auf die Leistung von <a href=showinfo:16069>Panzerungs-Fernreparatursystem</a>
+          en: bonus to <a href=showinfo:16069>Remote Armor Repairer</a> amount
+          fr: de bonus au montant des <a href=showinfo:16069>réparateurs de blindage
+            à distance</a>
+          ja: "<a href=showinfo:16069>リモートアーマーリペアラ</a>のリペア量が増加"
+          ru: повышается производительность <a href=showinfo:16069>установок дистанционного
+            ремонта брони</a>
+          zh: <a href="showinfo:16069">远程装甲维修器</a>维修量加成
+        importance: 1
+        unitID: 105
+      - bonus: 10
+        bonusText:
+          de: Reduktion der Aktivierungskosten von <a href=showinfo:16069>Panzerungs-Fernreparatursystemen</a>
+          en: reduction in <a href=showinfo:16069>Remote Armor Repairer</a> activation
+            cost
+          fr: de réduction du coût d'activation des <a href=showinfo:16069>réparateurs
+            de blindage à distance</a>
+          ja: "<a href=showinfo:16069>リモートアーマーリペアラ</a>の起動コストが軽減"
+          ru: сокращается потребление энергии <a href=showinfo:16069>установками дистанционного
+            ремонта брони</a>
+          zh: <a href="showinfo:16069">远程装甲维修器</a>启动消耗减少
+        importance: 2
+        unitID: 105
+  volume: 28700.0
+591:
+  basePrice: 400000.0
+  capacity: 130.0
+  description:
+    de: Die Tormentor ist bereits seit vielen Jahrzehnten im Einsatz. Die meiste Zeit
+      diente sie als Bergbauschiff, da sie aufgrund ihrer Größe auf dem Schlachtfeld
+      wenig ausrichten konnte. Wie die meisten Schiffe der Amarr war es allerdings
+      aufgrund seiner starken Verteidigung schon immer ein harter Gegner. Durch die
+      neuesten Fortschritte beim Energiespeicherverbrauch und der Schadenswirkung
+      von Geschütztürmen haben seine Laser nun aufgehört sich in totes Erz zu graben
+      und konzentrieren sich stattdessen auf das Bohren von Löchern durch die Schiffsrümpfe
+      glückloser Schiffe im Kampf.
+    en: The Tormentor has been in service for many decades. For most of that time
+      it saw service as a mining ship, its size barring it from making any kind of
+      impact on the battlefield. As with most Amarr ships, however, its strong defenses
+      always made it a tough opponent to crack, and with recent advances in turret
+      capacitor use and damage output, its lasers have now stopped digging into dead
+      ore and are instead focused on boring through the hulls of hapless vessels in
+      combat.
+    fr: Le Tormentor est en service depuis de nombreuses décennies. Pendant la plus
+      grande partie de cette période, il a servi de vaisseau d'extraction minière,
+      sa taille l'empêchant d'avoir un impact quelconque sur le champ de bataille.
+      Mais comme pour la plupart des vaisseaux amarr, ses solides défenses en ont
+      toujours fait un adversaire difficile à vaincre, et grâce aux récentes améliorations
+      en termes de consommation énergétique des tourelles et de puissance de feu,
+      ses lasers ont cessé de faire des trous dans les astéroïdes pour percer la coque
+      des vaisseaux malchanceux au combat.
+    ja: トーメンターは何十年にもわたり活動を続けてきた。もっぱら採掘艦として利用されてきたし、サイズ的にも戦場で目立つような艦船ではない。しかしアマー艦の例にもれず高い防御性能のおかげで、戦闘でもなかなかのしぶとさを発揮してきた。最近の仕様変更でタレットのキャパシタ消費やダメージ出力面が改善されたこともあり、レーザーの標的は物言わぬ鉱石から敵艦の船体に変わった。
+    ru: 'Фрегаты типа «Торментор» в строю уже многие десятилетия. До последнего времени
+      они использовались лишь в качестве буровых кораблей: их размер считался совершенно
+      недостаточным для применения на поле боя. Вместе с тем, как и большинство кораблей
+      Амаррской Империи, они всегда были крепким орешком благодаря эффективным защитным
+      системам. Недавние усовершенствования, приведшие к снижению потребления энергии
+      накопителя лазерными орудиями «торменторов», а также к увеличению наносимого
+      ими ущерба, привели к тому, что отныне лазеры «торменторов» прожигают не безжизненную
+      руду, а броню неудачливых врагов.'
+    zh: 巨神兵级已经服役了几十年，主要是作为采矿船。其体型尚够不上战斗护卫舰的标准，但和大多数艾玛舰船一样，它的强大防御使它成为难以击溃的对手。再加上它近来在电容消耗和火力输出方面的进步，它的激光器已不再徜徉于不会说话的矿石之间，而是闪烁在战场之上，在那些倒霉的飞船船体上钻下一个个孔洞。
+  factionID: 500003
+  graphicID: 56
+  groupID: 25
+  marketGroupID: 72
+  mass: 1080000.0
+  masteries:
+    0:
+    - 96
+    - 99
+    - 50
+    - 150
+    - 89
+    - 93
+    - 94
+    1:
+    - 96
+    - 99
+    - 50
+    - 150
+    - 89
+    - 93
+    - 94
+    2:
+    - 96
+    - 99
+    - 50
+    - 150
+    - 89
+    - 93
+    - 94
+    3:
+    - 96
+    - 99
+    - 50
+    - 150
+    - 89
+    - 93
+    - 94
+    4:
+    - 96
+    - 99
+    - 50
+    - 117
+    - 150
+    - 89
+    - 93
+    - 94
+  name:
+    de: Tormentor
+    en: Tormentor
+    fr: Tormentor
+    ja: トーメンター
+    ru: Tormentor
+    zh: 巨神兵级
+  portionSize: 1
+  published: true
+  raceID: 4
+  radius: 26.0
+  sofFactionName: amarrbase
+  soundID: 20063
+  traits:
+    types:
+      3331:
+      - bonus: 10
+        bonusText:
+          de: Reduktion der Aktivierungskosten von <a href=showinfo:3303>kleinen Energiegeschütztürmen</a>
+          en: reduction in <a href=showinfo:3303>Small Energy Turret</a> activation
+            cost
+          fr: de réduction du coût d'activation des <a href=showinfo:3303>petites
+            tourelles à énergie</a>
+          ja: "<a href=showinfo:3303>小型エネルギータレット</a>の起動コストが軽減"
+          ru: сокращается расход энергии при ведении огня из <a href=showinfo:3303>малых
+            лазерных орудий</a>
+          zh: <a href="showinfo:3303">小型能量炮台</a>启动消耗减少
+        importance: 1
+        unitID: 105
+      - bonus: 5
+        bonusText:
+          de: Bonus auf den Schaden von <a href=showinfo:3303>kleinen Energiegeschütztürmen</a>
+          en: bonus to <a href=showinfo:3303>Small Energy Turret</a> damage
+          fr: de bonus aux dégâts des <a href=showinfo:3303>petites tourelles à énergie</a>
+          ja: "<a href=showinfo:3303>小型エネルギータレット</a>のダメージが増加"
+          ru: увеличивается урон <a href=showinfo:3303>малых лазерных орудий</a>
+          zh: <a href="showinfo:3303">小型能量炮台</a>伤害加成
+        importance: 2
+        unitID: 105
+  volume: 24398.0
+2834:
+  basePrice: 200000.0
+  capacity: 165.0
+  description:
+    de: |-
+      Die Utu ist eine fortschrittliche Drohnenplattform, die speziell für das 8. Allianzturnier in Auftrag gegeben wurde. Obwohl das Schiff auf dem Design der Ishkur basiert, gehen die Designelemente, mit denen es ausgestattet ist, weit über die ursprüngliche Blaupause hinaus.
+
+      Zusätzlich zu den revolutionären Hitzeverteilung-Feldprojektoren ist die Utu mit topaktuellen, festverdrahteten Drohnenprotokollen und verbesserten Funktionen zur Warpunterbrechung ausgestattet. Zusammen mit der robusten Panzerung machen diese Qualitäten die Utu in jedem Gefecht zu einer mächtigen Verbündeten.
+    en: "The Utu is a highly advanced drone platform specially commissioned for the
+      8th Alliance Tournament. While based on the Ishkur's design, this ship features
+      design elements that go above and beyond the original blueprint.\r\n\r\nIn addition
+      to revolutionary heat dispersion field projectors, the Utu is equipped with
+      cutting-edge hardwired drone protocols and upgraded warp scrambling capability.
+      Combined with the sturdy armor plating, these qualities make the Utu a powerful
+      ally in any combat encounter."
+    fr: |-
+      Le Utu est une plateforme de drone avancée commandée spécialement pour le huitième Tournoi des alliances. S'il s'inspire du modèle Ishkur, ce vaisseau présente néanmoins des éléments qui vont au-delà du plan de construction original.
+
+      En plus de projecteurs de champ de dispersion thermique révolutionnaires, le Utu est équipé des protocoles de drone dernier cri et d'une inhibition de warp améliorée. Associées à du revêtement de blindage résistant, ces qualités en font un puissant allié au combat.
+    ja: |-
+      第8回アライアアンストーナメント用に製造された、高度に進化したドローンプラットフォーム。イシュカーの設計を基にしているが、この船は元のブループリントをはるかにしのぐ設計要素が特徴だ。
+
+      斬新な熱拡散フィールドプロジェクターに加えて、最新のハードワイヤリングドローンプロトコルと改良型ワープスクランブル機能を備えている。丈夫なアーマープレートと組み合わせると、どのような戦闘に遭遇しても強力な仲間となる。
+    ru: |-
+      Фрегаты типа «Уту» — это корабли-носители дронов нового поколения, разработанные по спецзаказу и выдававшиеся в качестве приза победителям 8-го «Турнира альянсов». Взяв за основу ударные корабли типа «Ишкур», конструкторы смогли существенно улучшить этот проект
+
+      путем установки на борту новых фрегатов систем отвода тепла от модулей, работающих в режиме перегрева, новейших комплексов управления дронами и модернизированного оборудования для глушения варп-двигателей. В сочетании с хорошей броневой защитой это оборудование делает «Уту» опасным противником в любом бою.
+    zh: |-
+      乌图级是一座非常先进的无人机平台，专门用于第八届联盟锦标赛。乌图级是基于伊什库尔级的基础设计建造的，但是它的一些设计元素已经远远高于原本的设计前身。
+
+      除了革命性设计的热能散发投射场之外，乌图级还装备了极为先进的无人机接口硬件，以及升级的跃迁干扰能力。再加上坚固的装甲，使得乌图级成为任何战斗中最为坚实有力的盟友。
+  factionID: 500004
+  graphicID: 21766
+  groupID: 324
+  marketGroupID: 1623
+  mass: 1216000.0
+  masteries:
+    0:
+    - 96
+    - 67
+    - 164
+    - 140
+    - 99
+    - 150
+    - 89
+    - 94
+    1:
+    - 96
+    - 67
+    - 164
+    - 140
+    - 99
+    - 150
+    - 89
+    - 94
+    2:
+    - 96
+    - 67
+    - 164
+    - 140
+    - 99
+    - 150
+    - 89
+    - 94
+    3:
+    - 96
+    - 67
+    - 164
+    - 140
+    - 99
+    - 150
+    - 89
+    - 94
+    4:
+    - 96
+    - 67
+    - 164
+    - 140
+    - 99
+    - 117
+    - 150
+    - 89
+    - 94
+  metaGroupID: 4
+  name:
+    de: Utu
+    en: Utu
+    fr: Utu
+    ja: ウツ
+    ru: Utu
+    zh: 乌图级
+  portionSize: 1
+  published: true
+  raceID: 8
+  radius: 39.0
+  sofFactionName: tournament-viii
+  sofMaterialSetID: 35
+  soundID: 20074
+  traits:
+    miscBonuses: []
+    roleBonuses:
+    - bonusText:
+        de: Kann <a href=showinfo:47254>Angriffsschadensregulierer</a> ausrüsten
+        en: Can fit <a href=showinfo:47254>Assault Damage Controls</a>
+        fr: Peut être équipé des <a href=showinfo:47254>contrôles des dégâts d'assaut</a>
+        ja: "<a href=showinfo:47254>アサルトダメージ制御</a>を装備可能"
+        ru: Позволяет установить <a href=showinfo:47254>ударные модули боевой живучести</a>
+        zh: 可以装配<a href=showinfo:47254>突击损伤控制</a>装备
+      importance: 4
+    - bonus: 50.0
+      bonusText:
+        de: Bonus auf die optimale Reichweite von <a href=showinfo:3301>kleinen Hybridgeschütztürmen</a>
+        en: bonus to <a href=showinfo:3301>Small Hybrid Turret</a> optimal range
+        fr: de bonus à la portée optimale des <a href=showinfo:3301>petites tourelles
+          hybrides</a>
+        ja: "<a href=showinfo:3301>小型ハイブリッドタレット</a>の最適射程距離が拡大"
+        ru: увеличивается оптимальная дальность ведения огня из <a href=showinfo:3301>малых
+          гибридных орудий</a>
+        zh: <a href="showinfo:3301">小型混合炮台</a>最佳射程加成
+      importance: 1
+      unitID: 105
+    - bonus: 50.0
+      bonusText:
+        de: Bonus auf die Nachführungsgeschwindigkeit von <a href=showinfo:3301>kleinen
+          Hybridgeschütztürmen</a>
+        en: bonus to <a href=showinfo:3301>Small Hybrid Turret</a> tracking speed
+        fr: de bonus à la vitesse de poursuite des <a href=showinfo:3301>petites tourelles
+          hybrides</a>
+        ja: "<a href=showinfo:3301>小型ハイブリッドタレット</a>の追跡速度が上昇"
+        ru: повышается скорость наводки на цель <a href=showinfo:3301>малых гибридных
+          орудий</a>
+        zh: <a href="showinfo:3301">小型混合炮台</a>跟踪速度加成
+      importance: 2
+      unitID: 105
+    - bonus: 50.0
+      bonusText:
+        de: Reduktion des Hitzeschadens an Modulen
+        en: reduction in module heat damage amount taken
+        fr: de réduction aux dégâts de chaleur subis par un module
+        ja: モジュールが受けるヒートダメージ量が軽減
+        ru: уменьшается объём температурных повреждений модулей, получаемых ими при
+          перегрузке
+        zh: 减少装备遭受的超载损伤
+      importance: 3
+      unitID: 105
+    types:
+      3328:
+      - bonus: 10.0
+        bonusText:
+          de: Bonus auf den Schaden von <a href=showinfo:3436>Drohnen</a>
+          en: bonus to <a href=showinfo:3436>Drone</a> damage
+          fr: de bonus aux dégâts des <a href=showinfo:3436>drones</a>
+          ja: "<a href=showinfo:3436>ドローン</a>のダメージが増加"
+          ru: увеличивается урон бортового оружия <a href=showinfo:3436>дронов</a>
+          zh: <a href="showinfo:3436">无人机</a>伤害加成
+        importance: 1
+        unitID: 105
+      - bonus: 10.0
+        bonusText:
+          de: Bonus auf die optimale Reichweite von <a href=showinfo:447>Warpunterbrechern</a>
+            und <a href=showinfo:3242>Warpstörern</a>
+          en: bonus to <a href=showinfo:447>Warp Scrambler</a> and <a href=showinfo:3242>Warp
+            Disruptor</a> optimal range
+          fr: de bonus à la portée optimale des <a href=showinfo:447>inhibiteurs de
+            warp</a> et des <a href=showinfo:3242>perturbateurs de warp</a>
+          ja: "<a href=showinfo:447>ワープスクランブラー</a>と<a href=showinfo:3242>ワープ妨害器</a>の最適射程距離が拡大"
+          ru: увеличивается оптимальная дальность действия <a href=showinfo:447>варп-глушителей</a>
+            и <a href=showinfo:3242>варп-подавителей</a>
+          zh: <a href="showinfo:447">跃迁扰频器</a>和<a href="showinfo:3242">跃迁扰断器</a>最佳射程加成
+        importance: 2
+        unitID: 105
+  volume: 29500.0
+2835:
+  graphicID: 21766
+  groupID: 105
+  metaGroupID: 4
+  name:
+    de: Utu Blueprint
+    en: Utu Blueprint
+    fr: Plan de construction Utu
+    ja: ウツブループリント
+    ru: Utu Blueprint
+    zh: 乌图级蓝图
+  portionSize: 1
+  published: false
+  sofFactionName: tournament-viii
+  sofMaterialSetID: 35
+  volume: 0.01
+3516:
+  basePrice: 16100000.0
+  capacity: 210.0
+  description:
+    de: 'Die Malice ist eine Angriffsfregatte, die exklusiv als Belohnung für das
+      9. Allianzturnier in Auftrag gegeben wurde. An ihrem metallüberzogenen Rumpf
+      trägt sie angepasste Metalllegierungen zur Schau und ist eines der teuersten
+      Schiffe ihrer Klasse. Die Malice ist jedoch weit mehr als nur ein Schmuckstück:
+      Sie ist mit qualitativen Waffensystemen, starker defensiver Panzerung und einem
+      massiven Energiespeicher ausgestattet und ihre stark angepassten Energie-Destabilisierungssysteme
+      machen sie in jeder Begegnung zu einem ernstzunehmenden Gegner.'
+    en: The Malice is an assault frigate design exclusively commissioned as a reward
+      in the ninth Alliance Tournament. Sporting custom metal alloys in its plated
+      carapace, it is one of the most expensive ships ever produced in its class.
+      Far from being a mere ornament, though, the Malice features quality armament
+      systems, strong defensive plating and a massive capacitor, and its vastly augmented
+      facility for energy destabilization makes it a formidable adversary in any engagement.
+    fr: Le Malice est une frégate d'assaut conçue spécialement en vue d'être offerte
+      en guise de récompense lors du neuvième Tournoi des alliances. L'alliage personnalisé
+      en métal qui forme son blindage en fait l'un des vaisseaux de sa classe les
+      plus chers. Bien plus qu'une simple décoration toutefois, le Malice présente
+      des systèmes d'armement de qualité, un blindage défensif solide et un capaciteur
+      imposant. Par ailleurs, son équipement de déstabilisation d'énergie en fait
+      un redoutable adversaire au combat.
+    ja: マライスは第9回アライアンストーナメントの賞品として贈呈された、限定生産モデルの強襲型フリゲートである。特注合金を装甲に使用しており、建造費用はこのクラスの艦船としては史上最高の部類に入る。しかしながら、マライスは単なるお飾りとはほど遠く、優秀な兵器システム、強固な防衛装甲、しっかりしたキャパシタを兼ね備え、大幅に強化されたエネルギーディスタビリゼーション用機関とあいまって、どのような戦闘でも手強い敵となる。
+    ru: Ударные корабли типа «Малис» были созданы специально для победителей девятого
+      Турнира альянсов. Им почти нет равных по дороговизне — бронеплиты, из которых
+      собраны их корпуса, изготовлены из особых сплавов. В то же время корабли этого
+      проекта никак не назовешь безделушками — они оснащены современными оружейными
+      системами, хорошей броневой защитой и энергетическим накопителем большой емкости.
+      Кроме того, не следует забывать об установленных на борту этих кораблей мощных
+      нейтрализаторах накопленного заряда; их стоит опасаться всем без исключения
+      пилотам.
+    zh: 恶意级是一艘突击护卫舰，经过特别设计，专门作为第九届联盟锦标赛的奖品。由于在外壳装甲中加入了特别定制的金属合金，它是同级别舰船中有史以来最昂贵的之一。不过，它可绝不仅仅只是一个华而不实的装饰品。恶意级不仅拥有高质量的武器系统、强大的防御装甲以及巨大的电容量，而且它那大大增强过的能量扰乱设备也使得它在任何战斗中都是一个难以对付的敌手。
+  factionID: 500003
+  graphicID: 10950
+  groupID: 324
+  marketGroupID: 1623
+  mass: 1271000.0
+  masteries:
+    0:
+    - 96
+    - 97
+    - 99
+    - 164
+    - 50
+    - 150
+    - 89
+    - 93
+    - 94
+    1:
+    - 96
+    - 97
+    - 99
+    - 164
+    - 50
+    - 150
+    - 89
+    - 93
+    - 94
+    2:
+    - 96
+    - 97
+    - 99
+    - 164
+    - 50
+    - 150
+    - 89
+    - 93
+    - 94
+    3:
+    - 96
+    - 97
+    - 99
+    - 164
+    - 50
+    - 150
+    - 89
+    - 93
+    - 94
+    4:
+    - 96
+    - 97
+    - 99
+    - 164
+    - 50
+    - 117
+    - 150
+    - 89
+    - 93
+    - 94
+  metaGroupID: 4
+  name:
+    de: Malice
+    en: Malice
+    fr: Malice
+    ja: マライス
+    ru: Malice
+    zh: 恶意级
+  portionSize: 1
+  published: true
+  raceID: 4
+  radius: 35.0
+  sofFactionName: tournament-ix
+  sofMaterialSetID: 36
+  soundID: 20063
+  traits:
+    miscBonuses: []
+    roleBonuses:
+    - bonusText:
+        de: Kann <a href=showinfo:47254>Angriffsschadensregulierer</a> ausrüsten
+        en: Can fit <a href=showinfo:47254>Assault Damage Controls</a>
+        fr: Peut être équipé des <a href=showinfo:47254>contrôles des dégâts d'assaut</a>
+        ja: "<a href=showinfo:47254>アサルトダメージ制御</a>を装備可能"
+        ru: Позволяет установить <a href=showinfo:47254>ударные модули боевой живучести</a>
+        zh: 可以装配<a href=showinfo:47254>突击损伤控制</a>装备
+      importance: 3
+    - bonus: 50.0
+      bonusText:
+        de: Bonus auf die optimale Reichweite von <a href=showinfo:3303>kleinen Energiegeschütztürmen</a>
+        en: bonus to <a href=showinfo:3303>Small Energy Turret</a> optimal range
+        fr: de bonus à la portée optimale des <a href=showinfo:3303>petites tourelles
+          à énergie</a>
+        ja: "<a href=showinfo:3303>小型エネルギータレット</a>の最適射程距離が拡大"
+        ru: увеличивается оптимальная дальность ведения огня из <a href=showinfo:3303>малых
+          лазерных орудий</a>
+        zh: <a href="showinfo:3303">小型能量炮台</a>最佳射程加成
+      importance: 2
+      unitID: 105
+    - bonus: 100.0
+      bonusText:
+        de: Bonus auf den Schaden von <a href=showinfo:3303>kleinen Energiegeschütztürmen</a>
+        en: bonus to <a href=showinfo:3303>Small Energy Turret</a> damage
+        fr: de bonus aux dégâts des <a href=showinfo:3303>petites tourelles à énergie</a>
+        ja: "<a href=showinfo:3303>小型エネルギータレット</a>のダメージが増加"
+        ru: увеличивается урон <a href=showinfo:3303>малых лазерных орудий</a>
+        zh: <a href="showinfo:3303">小型能量炮台</a>伤害加成
+      importance: 1
+      unitID: 105
+    types:
+      3331:
+      - bonus: 4.0
+        bonusText:
+          de: Bonus auf alle Panzerungsresistenzen
+          en: bonus to all armor resistances
+          fr: de bonus à toutes les résistances du blindage
+          ja: 全てのアーマーレジスタンスが増加
+          ru: повышается сопротивляемость брони корабля всем видам воздействия
+          zh: 装甲抗性加成
+        importance: 1
+        unitID: 105
+      - bonus: 10.0
+        bonusText:
+          de: Bonus auf die Präzisionsabfallreichweite von <a href=showinfo:3423>Nosferatu-</a>
+            und <a href=showinfo:3423>Energieneutralisierer</a>-Modulen
+          en: bonus to <a href=showinfo:3423>Energy Nosferatu</a> and <a href=showinfo:3423>Energy
+            Neutralizer</a> falloff range
+          fr: de bonus à la perte du <a href=showinfo:3423>nosferatu à énergie</a>
+            et du <a href=showinfo:3423>neutraliseur d'énergie</a>
+          ja: "<a href=showinfo:3423>エネルギーノスフェラトゥ</a>および<a href=showinfo:3423>エネルギーニュートライザー</a>の精度低下範囲が改善"
+          ru: увеличивается добавочная дальность действия <a href=showinfo:3423>дистанционных
+            нейтрализаторов заряда</a> и <a href=showinfo:3423>устройств паразитной
+            подзарядки накопителя</a>
+          zh: "<a href=showinfo:3423>掠能器</a>和<a href=showinfo:3423>能量中和器</a>失准范围加成"
+        importance: 4
+        unitID: 105
+      - bonus: 20.0
+        bonusText:
+          de: Bonus auf die Transfermenge von <a href=showinfo:3423>Nosferatu-</a>
+            und <a href=showinfo:3423>Energieneutralisierer</a>-Modulen
+          en: bonus to <a href=showinfo:3423>Energy Nosferatu</a> and <a href=showinfo:3423>Energy
+            Neutralizer</a> drain amount
+          fr: de bonus à la quantité d'énergie récupérée par le <a href=showinfo:3423>Nosferatu
+            à énergie</a> et le <a href=showinfo:3423>neutraliseur d'énergie</a>
+          ja: "<a href=showinfo:3423>エネルギーノスフェラトゥ</a>および<a href=showinfo:3423>エネルギーニュートライザー</a>の消費量が改善"
+          ru: увеличивается пропускная способность <a href=showinfo:3423>устройств
+            паразитной подзарядки накопителя</a> и <a href=showinfo:3423>дистанционных
+            нейтрализаторов заряда</a>
+          zh: "<a href=showinfo:3423>掠能器</a>和<a href=showinfo:3423>能量中和器</a>吸取量加成"
+        importance: 2
+        unitID: 105
+      - bonus: 20.0
+        bonusText:
+          de: Bonus auf die optimale Reichweite von <a href=showinfo:3423>Nosferatu-</a>
+            und <a href=showinfo:3423>Energieneutralisierer</a>-Modulen
+          en: bonus to <a href=showinfo:3423>Energy Nosferatu</a> and <a href=showinfo:3423>Energy
+            Neutralizer</a> optimal range
+          fr: de bonus à la portée optimale du <a href=showinfo:3423>nosferatu à énergie</a>
+            et du <a href=showinfo:3423>neutraliseur d'énergie</a>
+          ja: "<a href=showinfo:3423>エネルギーノスフェラトゥ</a>および<a href=showinfo:3423>エネルギーニュートライザー</a>の最適射程距離が拡大"
+          ru: увеличивается оптимальная дальность действия <a href=showinfo:3423>дистанционных
+            нейтрализаторов заряда</a> и <a href=showinfo:3423>устройств паразитной
+            подзарядки накопителя</a>
+          zh: "<a href=showinfo:3423>掠能器</a>和<a href=showinfo:3423>能量中和器</a>最佳射程加成"
+        importance: 3
+        unitID: 105
+  volume: 28600.0
+3517:
+  basePrice: 2875000.0
+  graphicID: 10950
+  groupID: 105
+  metaGroupID: 4
+  name:
+    de: Malice Blueprint
+    en: Malice Blueprint
+    fr: Plan de construction Malice
+    ja: マライスブループリント
+    ru: Malice Blueprint
+    zh: 恶意级蓝图
+  portionSize: 1
+  published: true
+  sofFactionName: tournament-ix
+  sofMaterialSetID: 36
+  volume: 0.01
+4363:
+  basePrice: 1600000.0
+  capacity: 5250.0
+  description:
+    de: Die Miasmos Quafe Ultra Edition wurde von der Quafe Corporation als Spezialschiff
+      für die Auslieferung von Quafe-Produkten im gesamten Cluster von New Eden in
+      Auftrag gegeben. Zu diesem Zweck wurde das Schiff wendiger gebaut und mit einem
+      schnelleren Warp-Antrieb sowie einem größeren Frachtraum ausgestattet, in dem
+      riesige Mengen krasses Quafe Platz haben. Zusätzlich wurde die Steuerung vereinfacht,
+      um die schnelle und effiziente Schulung neuer Piloten zu ermöglichen und auf
+      diese Weise niedrige Transportlöhne zu gewährleisten. Eine spätere Erweiterung
+      unter dem neuen Namen "Miasmos" enthielt eine kleine Anzahl versiegelter Behälter,
+      die auf Quafes Wunsch hin nur für Firmenvertreter zugänglich sind, während Besatzungsmitgliedern
+      und Kapselpiloten der Zutritt verboten ist.
+    en: "The Miasmos Quafe Ultra Edition was commissioned by the Quafe Corporation
+      as a specialized vessel for the distribution of Quafe throughout the New Eden
+      cluster.\r\n\r\nTo this end, the ship has been made more agile, given a faster
+      warp engine and fitted with an upgraded cargohold that can carry vast amounts
+      of sweet, sweet Quafe. Additionally, the controls have been simplified so that
+      new pilots can be trained quickly and efficiently, allowing for optimal transport
+      labor wages.\r\n\r\nA later addition under the new \"Miasmos\" moniker included
+      a small number of sealed vats, but Quafe has demanded that those be accessed
+      solely by corporate representatives, and not by crew nor capsuleer."
+    fr: |-
+      Le Miasmos édition Quafe Ultra a été commandé par la Quafe Corporation pour servir spécialement de vaisseau de distribution de Quafe à travers la galaxie de New Eden.
+
+      L'agilité du vaisseau a été améliorée, avec un moteur de warp plus rapide et il a été équipé d'une soute modernisée pour permettre le transport de grandes quantités du délicieux Quafe. Les contrôles ont en outre été simplifiés pour que la formation des nouveaux pilotes soit plus rapide et efficace, et ainsi permettre d'optimiser les salaires des pilotes de transport.
+
+      Un des derniers ajouts du Miasmos nouvelle version concerne un petit nombre de cuves scellées. Quafe ayant demandé à ce que l'accès à ces cuves soit exclusivement réservé aux représentants de la société et interdit aux équipages et capsuliers.
+    ja: "ミアスモスクァフェウルトラ仕様は、クァフェコーポレーションによる特注仕様で、クァフェをニューエデン星団中に流通させる輸送船である。\n\t\t\nそのために機動力を向上させ、より高速なワープエンジンに換装し、カーゴホールドも容量拡張版になっている。全ては甘くておいしいクァフェを大量に運搬するためである。さらに制御系統を簡略化し、より迅速かつ効率的なパイロット養成を可能にすることで、輸送人件費の最適化も狙う。\n\n後に『ミアスモス』と改称されてから、密封タンクがいくつか追加されたのだが、このタンクはクァフェ社の社員のみが開けられるものであり、クルーはもちろんカプセラであっても触らないようにと同社は求めている。"
+    ru: 'Грузовой корабль малосерийного проекта «Миазмос Квафе Ультра» построен по
+      заказу корпорации «Квафе» в качестве специализированного корабля для доставки
+      напитка по всей галактике. Ввиду этого корабль сделан более маневренным, оснащен
+      улучшенным варп-двигателем, а объем грузового отсека значительно расширен, что
+      позволяет быстро перевозить гигантские объемы сладчайшего квафе. Кроме того,
+      упрощенная система управления позволяет быстро и эффективно готовить начинающих
+      пилотов, оптимизируя расходы на зарплату. Более позднее новшество, добавленное
+      уже под маркой «Миазмос»: в корабле установлено несколько закрытых баков; установлено,
+      что доступ к ним имеют только и исключительно представители «Квафе», капсулёру
+      и команде же притрагиваться к ним запрещено.'
+    zh: |-
+      米亚莫斯级酷菲特强版，是酷菲集团专门用于向新伊甸宇宙各处配送酷菲饮料的船只。
+
+      因此它被打造得更为灵活、跃迁速度更快，升级后的货柜舱可以运载大量甘美的酷菲。另外，它的控制系统经过了简化，让新手飞行员也能很快掌握驾驶它所需的技能，从而降低了运输人力成本。
+
+      这种新型的米亚莫斯级货舱中有几个封闭的舱室，但是酷菲集团声明只有公司的代表才能进入这些舱室，船员和克隆飞行员都无权进入。
+  factionID: 500004
+  graphicID: 11876
+  groupID: 28
+  marketGroupID: 1614
+  mass: 11250000.0
+  masteries:
+    0:
+    - 96
+    - 118
+    - 117
+    - 94
+    1:
+    - 96
+    - 118
+    - 117
+    - 94
+    2:
+    - 96
+    - 118
+    - 117
+    - 94
+    3:
+    - 96
+    - 118
+    - 117
+    - 94
+    4:
+    - 96
+    - 118
+    - 117
+    - 94
+  metaGroupID: 4
+  name:
+    de: Miasmos Quafe Ultra Edition
+    en: Miasmos Quafe Ultra Edition
+    fr: Miasmos édition Quafe Ultra
+    ja: ミアスモスクァフェウルトラ仕様
+    ru: Miasmos Quafe Ultra Edition
+    zh: 米亚莫斯级酷菲特强版
+  portionSize: 1
+  published: true
+  raceID: 8
+  radius: 149.0
+  sofFactionName: quafeultra
+  sofMaterialSetID: 37
+  soundID: 20074
+  traits:
+    roleBonuses:
+    - bonus: 90
+      bonusText:
+        de: Reduktion der effektiv zurückgelegten Distanz für die Sprungerschöpfung
+        en: reduction to effective distance traveled for jump fatigue
+        fr: de réduction de la distance effectuée pour l'épuisement de saut
+        ja: ジャンプによる疲弊が飛行距離に及ぼす影響を低減
+        ru: медленнее накапливается усталость от гиперпереходов
+        zh: 减少跳跃距离对产生跳跃疲劳的影响
+      importance: 1
+      unitID: 105
+    types:
+      3340:
+      - bonus: 10
+        bonusText:
+          de: Bonus auf die Frachtraumkapazität des Schiffs
+          en: bonus to ship cargo capacity
+          fr: de bonus à la capacité de la soute du vaisseau
+          ja: 艦船のカーゴ容量が増加
+          ru: увеличивается вместимость грузового отсека корабля
+          zh: 舰船货柜舱容量加成
+        importance: 1
+        unitID: 105
+      - bonus: 5
+        bonusText:
+          de: Bonus auf die Maximalgeschwindigkeit des Schiffs
+          en: bonus to ship max velocity
+          fr: de bonus à la vitesse maximale du vaisseau
+          ja: 艦船の最高速度が上昇
+          ru: увеличивается скорость полного хода корабля
+          zh: 舰船最大速度加成
+        importance: 2
+        unitID: 105
+  variationParentTypeID: 656
+  volume: 265000.0
+4364:
+  basePrice: 4287500.0
+  graphicID: 11876
+  groupID: 108
+  metaGroupID: 4
+  name:
+    de: Miasmos Quafe Ultra Edition Blueprint
+    en: Miasmos Quafe Ultra Edition Blueprint
+    fr: Plan de construction Miasmos édition Quafe Ultra
+    ja: ミアスモスクァフェウルトラマリン仕様ブループリント
+    ru: Miasmos Quafe Ultra Edition Blueprint
+    zh: 米亚莫斯级酷菲特强版蓝图
+  portionSize: 1
+  published: true
+  sofFactionName: quafeultra
+  sofMaterialSetID: 37
+  volume: 0.01
+11718:
+  capacity: 2300.0
+  description:
+    de: Konvois sind ein alltäglicher Anblick im Universum. Sie transportieren Güter
+      von einem Ort zum anderen. Konvois haben in der Regel bewaffnete Eskorten, sie
+      anzugreifen ist daher gefährlich.
+    en: Convoys are a common sight in the universe of EVE, ferrying goods from one
+      place to another. Convoys usually have armed escorts, so attacking them is risky.
+    fr: Les convois transportant des marchandises d'un endroit à un autre sont monnaie
+      courante dans l'univers d'EVE. Les convois sont généralement fortement escortés
+      et s'en prendre à eux est une entreprise risquée.
+    ja: 輸送船団はEVEユニバースでは一般的に見られ、各地へと物資を輸送している。輸送船団は武装した護衛艦を従えていることが多いため、襲撃にはリスクが伴う。
+    ru: Конвои часто встречаются во вселенной EVE, перевозя товары с одного места
+      на другое. Конвои обычно ходят с хорошо вооруженным эскортом, поэтому нападать
+      на них довольно рискованно.
+    zh: 护航队在EVE宇宙中很常见，它们把货物从一个地方运送到另一个地方。运载舰队通常都带有武装护卫队，攻击它们风险很大。
+  graphicID: 20320
+  groupID: 613
+  mass: 96000000.0
+  name:
+    de: Guristas Transport Ship
+    en: Guristas Transport Ship
+    fr: Vaisseau de transport guristas
+    ja: ガリスタス輸送船
+    ru: Guristas Transport Ship
+    zh: 古斯塔斯 运输舰
+  portionSize: 1
+  published: false
+  raceID: 1
+  radius: 216.4
+  sofFactionName: guristas
+  sofMaterialSetID: 389
+  soundID: 20904
+  volume: 960000.0
+11942:
+  basePrice: 600000.0
+  capacity: 250.0
+  description:
+    de: "Dieses schmucke, luxuriöse Schiff ist eine Klasse für sich. Die Magnate-Fregatte
+      war über zehn Jahre lang das Lieblingsprojekt einer kleinen Elitegruppe kaiserlicher
+      Schiffsingenieure. Während jahrelanger und kostspieliger Forschung hat der Entwicklungsprozess
+      verschiedene Phasen durchlaufen, von denen jede neue Standards im Bereich des
+      Fregattendesigns gesetzt hat. Die Silver Magnate, die bei der Amarr-Meisterschaft
+      in den Jahren 105YC und YC118 als Preis gestellt wurde, ist eins der beeindruckendsten
+      Stücke in der Reihe dieser Meisterwerke.\n\n"
+    en: "This decoratively designed ship is a luxury in its own class. The Magnate
+      frigate has been the pet project of a small, elite group of royal ship engineers
+      for a decade. Over the long years of expensive research, the design process
+      has gone through several stages, and each stage has set a new standard in frigate
+      design. The Silver Magnate, offered as a reward in the Amarr Championships in
+      YC105 and YC118, is one of the most impressive iterations in this line of masterworks.\r\n"
+    fr: "Ce vaisseau aux lignes fastueuses revendique un design unique à sa classe.
+      La frégate Magnate est le fruit de l'investissement d'une décennie d'un petit
+      groupe d'ingénieurs d'élite affectés à la Marine royale. Au cours de ces longues
+      années de recherche, les différentes phases de développement du vaisseau ont
+      chacune établi de nouvelles normes de performance dans la conception de frégate.
+      Le Silver Magnate, offert en récompense lors des championnats amarr en CY 105
+      et en CY 118, est une sublime icône de cette gamme d'orfèvre.\n\n"
+    ja: "美しい装飾とともに設計されたこの艦船はまさに豪華なつくりになっている。マグニートフリゲートは、国家の艦船エンジニアが十年もの間計画を練ってきたプロジェクトにより誕生した。長年にわたって高額の研究費が費やされる中、設計プロセスはいくつかのフェーズを経たてきたが、どのフェーズもフリゲート設計の新基準を打ち立てることとなった。YC105年およびYC118年にアマーチャンピオンシップの賞品として提供されたシルバーマグニートは、この名機揃いのシリーズ中でもひと際注目を集める存在である。\r\n"
+    ru: "Этот фрегат демонстративно декоративного дизайна — предмет особой роскоши
+      даже в своём классе, среди прочих декоративных кораблей. В течение более десятка
+      лет проект «Магнат» был всего лишь личной инициативой маленькой группы лучших
+      королевских инженеров. С годами дорогостоящих исследований дизайн корабля прошел
+      через несколько этапов, и каждый этап всё выше задирал планку дизайна фрегатов.
+      «Серебряный Магнат», выдававшийся в качестве приза в амаррских Состязаниях 105
+      и 118 годов юлайской эры — один из последних представителей этой цепочки шедевров.\n\n"
+    zh: "这艘船设计非常精美，如同一件奢侈品。是一小群精英皇家工程师孕育十年才得出的成果。在多年代价高昂的研究中，设计过程经历了多个阶段，每一阶段都树立了更高的护卫舰设计标准。这一型号是该系列中最令人印象深刻的“白银限量版”，是YC105年和YC118年艾玛冠军杯的奖品。\n\n"
+  factionID: 500003
+  graphicID: 2241
+  groupID: 25
+  marketGroupID: 1619
+  mass: 1500000.0
+  masteries:
+    0:
+    - 96
+    - 99
+    - 50
+    - 150
+    - 89
+    - 93
+    - 94
+    1:
+    - 96
+    - 99
+    - 50
+    - 150
+    - 89
+    - 93
+    - 94
+    2:
+    - 96
+    - 99
+    - 50
+    - 150
+    - 89
+    - 93
+    - 94
+    3:
+    - 96
+    - 99
+    - 50
+    - 150
+    - 89
+    - 93
+    - 94
+    4:
+    - 96
+    - 99
+    - 50
+    - 117
+    - 150
+    - 89
+    - 93
+    - 94
+  metaGroupID: 4
+  name:
+    de: Silver Magnate
+    en: Silver Magnate
+    fr: Silver Magnate
+    ja: シルバーマグニート
+    ru: Silver Magnate
+    zh: 白银富豪级
+  portionSize: 1
+  published: true
+  raceID: 4
+  radius: 30.0
+  sofFactionName: tournament-i
+  sofMaterialSetID: 38
+  soundID: 20063
+  traits:
+    roleBonuses:
+    - bonus: 50
+      bonusText:
+        de: Bonus auf die optimale Reichweite von <a href=showinfo:3303>kleinen Energiegeschütztürmen</a>
+        en: bonus to <a href=showinfo:3303>Small Energy Turret</a> optimal range
+        fr: de bonus à la portée optimale des <a href=showinfo:3303>petites tourelles
+          à énergie</a>
+        ja: "<a href=showinfo:3303>小型エネルギータレット</a>の最適射程距離が拡大"
+        ru: увеличивается оптимальная дальность ведения огня из <a href=showinfo:3303>малых
+          лазерных орудий</a>
+        zh: "<a href=showinfo:3303>小型能量炮台</a>最佳射程加成"
+      importance: 1
+      unitID: 105
+    - bonus: 20
+      bonusText:
+        de: Bonus auf alle Panzerungsresistenzen
+        en: bonus to all Armor Resistances
+        fr: de bonus à toutes les résistances de blindage
+        ja: 全てのアーマーレジスタンスが増加
+        ru: повышается сопротивляемость брони корабля всем видам воздействия
+        zh: 装甲抗性加成
+      importance: 2
+      unitID: 105
+    types:
+      3331:
+      - bonus: 10
+        bonusText:
+          de: Reduktion der Aktivierungskosten von <a href=showinfo:3303>kleinen Energiegeschütztürmen</a>
+          en: reduction in <a href=showinfo:3303>Small Energy Turret</a> activation
+            cost
+          fr: de réduction du coût d'activation des <a href=showinfo:3303>petites
+            tourelles à énergie</a>
+          ja: "<a href=showinfo:3303>小型エネルギータレット</a>の起動コストが軽減"
+          ru: сокращается расход энергии при ведении огня из <a href=showinfo:3303>малых
+            лазерных орудий</a>
+          zh: <a href="showinfo:3303">小型能量炮台</a>启动消耗减少
+        importance: 1
+        unitID: 105
+      - bonus: 20
+        bonusText:
+          de: Bonus auf den Schaden von <a href=showinfo:3303>kleinen Energiegeschütztürmen</a>
+          en: bonus to <a href=showinfo:3303>Small Energy Turret</a> damage
+          fr: de bonus aux dégâts des <a href=showinfo:3303>petites tourelles à énergie</a>
+          ja: "<a href=showinfo:3303>小型エネルギータレット</a>のダメージが増加"
+          ru: увеличивается урон <a href=showinfo:3303>малых лазерных орудий</a>
+          zh: <a href="showinfo:3303">小型能量炮台</a>伤害加成
+        importance: 2
+        unitID: 105
+  variationParentTypeID: 29248
+  volume: 22100.0
+12729:
+  basePrice: 111500000.0
+  capacity: 4300.0
+  description:
+    de: |-
+      Entwickler: Kaalakiota
+
+
+
+      Blockadebrecher sind die schnellsten verfügbaren Industrieschiffe. Unter Verwendung von leichten, aber widerstandsfähigen Materialien und durch den Verzicht auf einen großen Frachtraum sind diese Transporter in der Lage, eine höhere Geschwindigkeit als Kreuzer zu erreichen und stecken zudem heftigen Beschuss weg. Damit sind die perfekt dazu geeignet, mit wertvoller Ladung schnell feindliches Gebiet zu durchqueren.
+    en: "Developer: Kaalakiota\r\n\r\nBlockade runner transports are the fastest type
+      of industrial available. Utilizing sturdy but lightweight construction materials
+      and sacrificing some cargo space, these haulers are able to reach speeds greater
+      than those of a cruiser while withstanding heavy fire - factors which make them
+      ideal for zipping through dangerous territories with valuable cargo."
+    fr: |-
+      Constructeur : Kaalakiota
+
+
+
+      Les vaisseaux de transport forceurs de blocus sont les vaisseaux industriels les plus rapides. L'utilisation de matériaux de construction légers et résistants et un espace de soute réduit permettent à ces vaisseaux d'être plus rapides que la plupart des croiseurs tout en résistant à un tir nourri, ce qui rend leur utilisation parfaite pour traverser des territoires dangereux avec de précieuses cargaisons.
+    ja: 開発元： カーラキオタ　封鎖突破型輸送艦は販売中の輸送艦としては最速型である。丈夫で軽量な建造資材を採用し、カーゴスペースを 若干犠牲にすることで、集中砲火に耐えつつ巡洋艦の速度を上回るスピードを誇る。そのため、危険宙域で高価な荷物を運ぶには理想の輸送艇である。
+    ru: |-
+      Разработчик: корпорация «Каалакиота»
+
+
+
+      Корабли прорыва блокады — самые быстрые из всех серийно выпускаемых грузовых кораблей. При их постройке использовались лёгкие, но прочные материалы; кроме того, был несколько сокращён объём грузового отсека. Как следствие, корабли этого класса способны обогнать крейсер и выжить под огнём противника. Они идеально подходят для передвижения по небезопасным территориям с ценным грузом на борту.
+    zh: |-
+      开发商：卡拉吉塔
+
+
+
+      偷运舰是工业舰中速度最快的。这类拖船使用坚固的轻质建筑材料，牺牲了一些货舱空间，从而可达到超过巡洋舰的速度并能够承受重型火力的攻击——这些因素使其成为运载贵重货物穿梭于危险区域的理想选择。
+  factionID: 500001
+  graphicID: 2709
+  groupID: 1202
+  marketGroupID: 631
+  mass: 11000000.0
+  masteries:
+    0:
+    - 96
+    - 118
+    - 108
+    - 117
+    - 94
+    1:
+    - 96
+    - 118
+    - 108
+    - 117
+    - 94
+    2:
+    - 96
+    - 118
+    - 108
+    - 117
+    - 94
+    3:
+    - 96
+    - 118
+    - 108
+    - 117
+    - 94
+    4:
+    - 96
+    - 118
+    - 108
+    - 117
+    - 94
+  metaGroupID: 2
+  name:
+    de: Crane
+    en: Crane
+    fr: Crane
+    ja: クレーン
+    ru: Crane
+    zh: 天鹤级
+  portionSize: 1
+  published: true
+  raceID: 1
+  radius: 216.4
+  sofFactionName: kaalakiota
+  sofMaterialSetID: 385
+  soundID: 20069
+  traits:
+    roleBonuses:
+    - bonusText:
+        de: Es können <a href=showinfo:11578>Covert Ops-Tarnmodule</a> und <a href=showinfo:28646>getarnte
+          Anziehungsfeldgeneratoren</a> eingebaut werden
+        en: Can fit <a href=showinfo:11578>Covert Ops Cloaking Device</a> and <a href=showinfo:28646>Covert
+          Cynosural Field Generator</a>
+        fr: Peut équiper des <a href=showinfo:11578>dispositifs de camouflage opérations
+          spéciales</a> et des <a href=showinfo:28646>générateurs de champ cynosural
+          furtif</a>
+        ja: "<a href=showinfo:11578>隠密行動用遮蔽装置</a>と<a href=showinfo:28646>潜伏用サイノシュラルフィールドジェネレータ</a>を装備できる"
+        ru: Корабли этого типа могут оснащаться <a href=showinfo:11578>всережимными
+          системами маскировки</a> и <a href=showinfo:28646>приводными маяками скрытого
+          действия</a>
+        zh: 可以装备<a href="showinfo:11578">隐秘行动隐形装置</a>和<a href="showinfo:28646">隐秘诱导力场发生器</a>
+      importance: 1
+    - bonusText:
+        de: Die Verzögerung bei Reaktivierung von <a href=showinfo:11579>Tarnmodulen</a>
+          wird auf 5 Sekunden reduziert.
+        en: "<a href=showinfo:11579>Cloak</a> reactivation delay reduced to 5 seconds"
+        fr: Délai de réactivation du <a href=showinfo:11579>camouflage</a> réduit
+          à 5 secondes
+        ja: "<a href=showinfo:11579>遮蔽装置</a>の再起動遅延が5秒に短縮"
+        ru: Задержка повторного включения <a href=showinfo:11579>систем маскировки</a>
+          сокращена до 5 секунд
+        zh: <a href="showinfo:11579">隐形装置</a>重启延时降到5秒
+      importance: 2
+    - bonusText:
+        de: Immun gegen jede Art von <a href=showinfo:442>Frachtscanner</a>
+        en: Immune to all <a href=showinfo:442>Cargo Scanners</a>
+        fr: Immunité contre tous les <a href=showinfo:442>scanners de soute</a>
+        ja: 全ての<a href=showinfo:442>カーゴスキャナー</a>に対して無効
+        ru: Корабли этого типа оборудованы <a href=showinfo:442>экранированными грузовыми
+          отсеками</a>
+        zh: 免疫<a href="showinfo:442">货舱扫描</a>
+      importance: 3
+    - bonus: 90
+      bonusText:
+        de: Reduktion der effektiv zurückgelegten Distanz für die Sprungerschöpfung
+        en: reduction to effective distance traveled for jump fatigue
+        fr: de réduction de la distance effectuée pour l'épuisement de saut
+        ja: ジャンプによる疲弊が飛行距離に及ぼす影響を低減
+        ru: медленнее накапливается усталость от гиперпереходов
+        zh: 减少跳跃距离对产生跳跃疲劳的影响
+      importance: 4
+      unitID: 105
+    types:
+      3342:
+      - bonus: 5
+        bonusText:
+          de: Bonus auf die Frachtraumkapazität des Schiffs
+          en: bonus to ship cargo capacity
+          fr: de bonus à la capacité de la soute du vaisseau
+          ja: 艦船のカーゴ容量が増加
+          ru: увеличивается вместимость грузового отсека корабля
+          zh: 舰船货柜舱容量加成
+        importance: 1
+        unitID: 105
+      - bonus: 5
+        bonusText:
+          de: Bonus auf die Maximalgeschwindigkeit des Schiffs
+          en: bonus to ship max velocity
+          fr: de bonus à la vitesse maximale du vaisseau
+          ja: 艦船の最高速度が上昇
+          ru: увеличивается скорость полного хода корабля
+          zh: 舰船最大速度加成
+        importance: 2
+        unitID: 105
+      19719:
+      - bonus: 5
+        bonusText:
+          de: Bonus auf die Warpgeschwindigkeit und Warpbeschleunigung
+          en: bonus to warp speed and warp acceleration
+          fr: de bonus à la vitesse de warp et à l'accélération de warp
+          ja: ワープ速度とワープ加速が上昇
+          ru: повышается скорость полёта и ускорение корабля (только в варп-режиме)
+          zh: 跃迁速度和跃迁加速加成
+        importance: 1
+        unitID: 105
+      - bonus: 20
+        bonusText:
+          de: Reduktion des CPU-Bedarfs von <a href=showinfo:11579>Tarnmodulen</a>
+          en: reduction in <a href=showinfo:11579>Cloaking Devices</a> CPU requirement
+          fr: de réduction du CPU requis par les <a href=showinfo:11579>dispositifs
+            de camouflage</a>
+          ja: "<a href=showinfo:11579>遮蔽装置</a>のCPU使用量が減少"
+          ru: сокращается потребность <a href=showinfo:11579>систем маскировки</a>
+            в мощностях ЦПУ
+          zh: <a href="showinfo:11579">隐形装置</a>的CPU需求降低
+        importance: 2
+        unitID: 105
+  variationParentTypeID: 648
+  volume: 195000.0
+12730:
+  basePrice: 50000000000.0
+  graphicID: 2709
+  groupID: 503
+  marketGroupID: 636
+  metaGroupID: 2
+  name:
+    de: Crane Blueprint
+    en: Crane Blueprint
+    fr: Plan de construction Crane
+    ja: クレーンブループリント
+    ru: Crane Blueprint
+    zh: 天鹤级蓝图
+  portionSize: 1
+  published: true
+  sofFactionName: kaalakiota
+  sofMaterialSetID: 385
+  volume: 0.01

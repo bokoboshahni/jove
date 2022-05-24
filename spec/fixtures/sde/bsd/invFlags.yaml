@@ -1,0 +1,201 @@
+---
+- flagID: 0
+  flagName: None
+  flagText: None
+  orderID: 0
+- flagID: 1
+  flagName: Wallet
+  flagText: Wallet
+  orderID: 10
+- flagID: 2
+  flagName: Offices
+  flagText: OfficeFolder
+  orderID: 0
+- flagID: 3
+  flagName: Wardrobe
+  flagText: Wardrobe
+  orderID: 0
+- flagID: 4
+  flagName: Hangar
+  flagText: Hangar
+  orderID: 30
+- flagID: 5
+  flagName: Cargo
+  flagText: Cargo
+  orderID: 3000
+- flagID: 6
+  flagName: OfficeImpound
+  flagText: Impounded Offices
+  orderID: 0
+- flagID: 7
+  flagName: Skill
+  flagText: Skill
+  orderID: 15
+- flagID: 8
+  flagName: Reward
+  flagText: Reward
+  orderID: 17
+- flagID: 11
+  flagName: LoSlot0
+  flagText: Low power slot 1
+  orderID: 0
+- flagID: 12
+  flagName: LoSlot1
+  flagText: Low power slot 2
+  orderID: 0
+- flagID: 13
+  flagName: LoSlot2
+  flagText: Low power slot 3
+  orderID: 0
+- flagID: 14
+  flagName: LoSlot3
+  flagText: Low power slot 4
+  orderID: 0
+- flagID: 15
+  flagName: LoSlot4
+  flagText: Low power slot 5
+  orderID: 0
+- flagID: 16
+  flagName: LoSlot5
+  flagText: Low power slot 6
+  orderID: 0
+- flagID: 17
+  flagName: LoSlot6
+  flagText: Low power slot 7
+  orderID: 0
+- flagID: 18
+  flagName: LoSlot7
+  flagText: Low power slot 8
+  orderID: 0
+- flagID: 19
+  flagName: MedSlot0
+  flagText: Medium power slot 1
+  orderID: 0
+- flagID: 20
+  flagName: MedSlot1
+  flagText: Medium power slot 2
+  orderID: 0
+- flagID: 21
+  flagName: MedSlot2
+  flagText: Medium power slot 3
+  orderID: 0
+- flagID: 22
+  flagName: MedSlot3
+  flagText: Medium power slot 4
+  orderID: 0
+- flagID: 23
+  flagName: MedSlot4
+  flagText: Medium power slot 5
+  orderID: 0
+- flagID: 24
+  flagName: MedSlot5
+  flagText: Medium power slot 6
+  orderID: 0
+- flagID: 25
+  flagName: MedSlot6
+  flagText: Medium power slot 7
+  orderID: 0
+- flagID: 26
+  flagName: MedSlot7
+  flagText: Medium power slot 8
+  orderID: 0
+- flagID: 27
+  flagName: HiSlot0
+  flagText: High power slot 1
+  orderID: 0
+- flagID: 28
+  flagName: HiSlot1
+  flagText: High power slot 2
+  orderID: 0
+- flagID: 29
+  flagName: HiSlot2
+  flagText: High power slot 3
+  orderID: 0
+- flagID: 30
+  flagName: HiSlot3
+  flagText: High power slot 4
+  orderID: 0
+- flagID: 31
+  flagName: HiSlot4
+  flagText: High power slot 5
+  orderID: 0
+- flagID: 32
+  flagName: HiSlot5
+  flagText: High power slot 6
+  orderID: 0
+- flagID: 33
+  flagName: HiSlot6
+  flagText: High power slot 7
+  orderID: 0
+- flagID: 34
+  flagName: HiSlot7
+  flagText: High power slot 8
+  orderID: 0
+- flagID: 35
+  flagName: Fixed Slot
+  flagText: Fixed Slot
+  orderID: 0
+- flagID: 36
+  flagName: AssetSafety
+  flagText: Asset Safety
+  orderID: 0
+- flagID: 56
+  flagName: Capsule
+  flagText: Capsule
+  orderID: 0
+- flagID: 57
+  flagName: Pilot
+  flagText: Pilot
+  orderID: 0
+- flagID: 61
+  flagName: Skill In Training
+  flagText: Skill in training
+  orderID: 0
+- flagID: 62
+  flagName: CorpMarket
+  flagText: Corporation Market Deliveries / Returns
+  orderID: 0
+- flagID: 63
+  flagName: Locked
+  flagText: Locked item, can not be moved unless unlocked
+  orderID: 0
+- flagID: 64
+  flagName: Unlocked
+  flagText: Unlocked item, can be moved
+  orderID: 0
+- flagID: 70
+  flagName: Office Slot 1
+  flagText: Office slot 1
+  orderID: 0
+- flagID: 71
+  flagName: Office Slot 2
+  flagText: Office slot 2
+  orderID: 0
+- flagID: 72
+  flagName: Office Slot 3
+  flagText: Office slot 3
+  orderID: 0
+- flagID: 73
+  flagName: Office Slot 4
+  flagText: Office slot 4
+  orderID: 0
+- flagID: 74
+  flagName: Office Slot 5
+  flagText: Office slot 5
+  orderID: 0
+- flagID: 75
+  flagName: Office Slot 6
+  flagText: Office slot 6
+  orderID: 0
+- flagID: 76
+  flagName: Office Slot 7
+  flagText: Office slot 7
+  orderID: 0
+- flagID: 77
+  flagName: Office Slot 8
+  flagText: Office slot 8
+  orderID: 0
+- flagID: 78
+  flagName: Office Slot 9
+  flagText: Office slot 9
+  orderID: 0

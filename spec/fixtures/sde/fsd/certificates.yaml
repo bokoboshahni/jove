@@ -1,0 +1,962 @@
+---
+50:
+  description: This certificate represents a level of competence in handling small
+    energy turrets. The holder has learned that pulse lasers are short range weapons,
+    beam lasers are long range, and both use crystal ammunition which can be swapped
+    with no reload time. This is a good skillset for capsuleers specializing in small
+    Amarr vessels based on Frigate and Destroyer hulls.
+  groupID: 255
+  name: Small Energy Turret
+  recommendedFor:
+  - 42685
+  - 33079
+  - 37453
+  - 589
+  - 591
+  - 596
+  - 597
+  - 615
+  - 33655
+  - 11184
+  - 35779
+  - 33879
+  - 11393
+  - 33657
+  - 37481
+  - 42246
+  - 17703
+  - 58745
+  - 3516
+  - 17924
+  - 17926
+  - 34317
+  - 44993
+  - 11940
+  - 11942
+  - 16236
+  skillTypes:
+    3300:
+      advanced: 5
+      basic: 3
+      elite: 5
+      improved: 4
+      standard: 4
+    3303:
+      advanced: 5
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3310:
+      advanced: 4
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3311:
+      advanced: 4
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3312:
+      advanced: 4
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3315:
+      advanced: 4
+      basic: 0
+      elite: 5
+      improved: 4
+      standard: 3
+    3316:
+      advanced: 4
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3317:
+      advanced: 4
+      basic: 0
+      elite: 5
+      improved: 4
+      standard: 3
+    11083:
+      advanced: 1
+      basic: 0
+      elite: 5
+      improved: 0
+      standard: 0
+    12213:
+      advanced: 1
+      basic: 0
+      elite: 5
+      improved: 0
+      standard: 0
+64:
+  description: This certificate represents a level of competence in handling medium
+    energy turrets. The holder has learned that pulse lasers are short range weapons,
+    beam lasers are long range, and both use crystal ammunition which can be swapped
+    with no reload time. This is a good skillset for capsuleers specializing in medium
+    Amarr vessels based on Cruiser and Battlecruiser hulls.
+  groupID: 255
+  name: Medium Energy Turret
+  recommendedFor:
+  - 24696
+  - 33155
+  - 624
+  - 29337
+  - 33470
+  - 33553
+  - 33639
+  - 33641
+  - 35781
+  - 52267
+  - 29986
+  - 17709
+  - 17718
+  - 17922
+  - 3756
+  - 12003
+  - 12017
+  - 22448
+  - 44995
+  - 2006
+  skillTypes:
+    3300:
+      advanced: 5
+      basic: 3
+      elite: 5
+      improved: 5
+      standard: 4
+    3303:
+      advanced: 3
+      basic: 3
+      elite: 3
+      improved: 3
+      standard: 3
+    3306:
+      advanced: 5
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3310:
+      advanced: 4
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3311:
+      advanced: 4
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3312:
+      advanced: 4
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3315:
+      advanced: 4
+      basic: 0
+      elite: 5
+      improved: 4
+      standard: 3
+    3316:
+      advanced: 4
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3317:
+      advanced: 4
+      basic: 0
+      elite: 5
+      improved: 4
+      standard: 3
+    12204:
+      advanced: 1
+      basic: 0
+      elite: 5
+      improved: 0
+      standard: 0
+    12214:
+      advanced: 1
+      basic: 0
+      elite: 5
+      improved: 0
+      standard: 0
+65:
+  description: This certificate represents a level of competence in handling large
+    energy turrets. The holder has learned that pulse lasers are short-range weapons,
+    beam lasers are long range, and that both use crystal ammunition which can be
+    swapped with no reload time. This is a good skillset for capsuleers specializing
+    in medium to large Amarr vessels based on the Battlecruiser and Battleship hulls.
+  groupID: 255
+  name: Large Energy Turret
+  recommendedFor:
+  - 24692
+  - 4302
+  - 47466
+  - 642
+  - 33472
+  - 33623
+  - 33625
+  - 17726
+  - 17736
+  - 17920
+  - 32305
+  - 44996
+  - 11936
+  - 11938
+  - 22428
+  - 28659
+  skillTypes:
+    3300:
+      advanced: 5
+      basic: 5
+      elite: 5
+      improved: 5
+      standard: 5
+    3303:
+      advanced: 3
+      basic: 3
+      elite: 3
+      improved: 3
+      standard: 3
+    3306:
+      advanced: 3
+      basic: 3
+      elite: 3
+      improved: 3
+      standard: 3
+    3309:
+      advanced: 5
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3310:
+      advanced: 4
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3311:
+      advanced: 5
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3312:
+      advanced: 5
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3315:
+      advanced: 4
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3316:
+      advanced: 4
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3317:
+      advanced: 4
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    12205:
+      advanced: 1
+      basic: 0
+      elite: 5
+      improved: 0
+      standard: 0
+    12215:
+      advanced: 1
+      basic: 0
+      elite: 5
+      improved: 0
+      standard: 0
+66:
+  description: This certificate represents a level of competence in handling capital
+    energy turrets. The holder has learned that pulse lasers are short-range weapons,
+    beam lasers are long range, and that both use crystal ammunition which can be
+    swapped with no reload time. This is a good skillset for capsuleers specializing
+    in capital Amarr vessels based on Dreadnought and Titan hulls.
+  groupID: 255
+  name: Capital Energy Turret
+  recommendedFor:
+  - 42241
+  - 42243
+  - 19720
+  - 11567
+  skillTypes:
+    3300:
+      advanced: 5
+      basic: 5
+      elite: 5
+      improved: 5
+      standard: 5
+    3303:
+      advanced: 3
+      basic: 3
+      elite: 3
+      improved: 3
+      standard: 3
+    3306:
+      advanced: 3
+      basic: 3
+      elite: 3
+      improved: 3
+      standard: 3
+    3309:
+      advanced: 5
+      basic: 5
+      elite: 5
+      improved: 5
+      standard: 5
+    3310:
+      advanced: 5
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3311:
+      advanced: 5
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3312:
+      advanced: 5
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3315:
+      advanced: 5
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3316:
+      advanced: 5
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3317:
+      advanced: 5
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    20327:
+      advanced: 5
+      basic: 1
+      elite: 5
+      improved: 3
+      standard: 2
+    41407:
+      advanced: 1
+      basic: 0
+      elite: 5
+      improved: 0
+      standard: 0
+    41408:
+      advanced: 1
+      basic: 0
+      elite: 5
+      improved: 0
+      standard: 0
+67:
+  description: This certificate represents a level of competence in handling small
+    hybrid turrets. The holder has learned that blasters are extremely close range
+    weapons, while railguns are their counterpart at very long range, and that both
+    use hybrid charges as ammunition. This is a good skillset for capsuleers specializing
+    in small Caldari or Gallente vessels based on Frigate and Destroyer hulls.
+  groupID: 255
+  name: Small Hybrid Turret
+  recommendedFor:
+  - 32840
+  - 32842
+  - 32844
+  - 32846
+  - 32848
+  - 32872
+  - 42685
+  - 33083
+  - 45530
+  - 35683
+  - 593
+  - 594
+  - 601
+  - 603
+  - 606
+  - 608
+  - 37483
+  - 2834
+  - 33659
+  - 33661
+  - 33667
+  - 33669
+  - 33677
+  - 33678
+  - 11178
+  - 11200
+  - 11202
+  - 33877
+  - 33881
+  - 11381
+  - 17841
+  - 37455
+  - 37456
+  - 17928
+  - 44993
+  - 12042
+  - 12044
+  - 16238
+  - 16240
+  - 22460
+  skillTypes:
+    3300:
+      advanced: 5
+      basic: 3
+      elite: 5
+      improved: 4
+      standard: 4
+    3301:
+      advanced: 5
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3310:
+      advanced: 4
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3311:
+      advanced: 4
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3312:
+      advanced: 4
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3315:
+      advanced: 4
+      basic: 0
+      elite: 5
+      improved: 4
+      standard: 3
+    3316:
+      advanced: 4
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3317:
+      advanced: 4
+      basic: 0
+      elite: 5
+      improved: 4
+      standard: 3
+    11082:
+      advanced: 1
+      basic: 0
+      elite: 5
+      improved: 0
+      standard: 0
+    12210:
+      advanced: 1
+      basic: 0
+      elite: 5
+      improved: 0
+      standard: 0
+68:
+  description: This certificate represents a level of competence in handling medium
+    hybrid turrets. The holder has learned that blasters are extremely close range
+    weapons, while railguns are their counterpart at very long range, and that both
+    use hybrid charges as ammunition. This is a good skillset for capsuleers specializing
+    in medium Caldari or Gallente vessels based on Cruiser and Battlecruiser hulls.
+  groupID: 255
+  name: Medium Hybrid Turret
+  recommendedFor:
+  - 33151
+  - 45531
+  - 623
+  - 626
+  - 627
+  - 11011
+  - 2836
+  - 33651
+  - 33653
+  - 33869
+  - 33873
+  - 29988
+  - 17722
+  - 29984
+  - 17843
+  - 3756
+  - 11969
+  - 11971
+  - 12011
+  - 12021
+  - 12023
+  - 16227
+  - 16229
+  - 22442
+  - 22446
+  - 29344
+  - 22466
+  - 44995
+  skillTypes:
+    3300:
+      advanced: 5
+      basic: 3
+      elite: 5
+      improved: 5
+      standard: 4
+    3301:
+      advanced: 3
+      basic: 3
+      elite: 3
+      improved: 3
+      standard: 3
+    3304:
+      advanced: 5
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3310:
+      advanced: 4
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3311:
+      advanced: 4
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3312:
+      advanced: 4
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3315:
+      advanced: 4
+      basic: 0
+      elite: 5
+      improved: 4
+      standard: 3
+    3316:
+      advanced: 4
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3317:
+      advanced: 4
+      basic: 0
+      elite: 5
+      improved: 4
+      standard: 3
+    12206:
+      advanced: 1
+      basic: 0
+      elite: 5
+      improved: 0
+      standard: 0
+    12211:
+      advanced: 1
+      basic: 0
+      elite: 5
+      improved: 0
+      standard: 0
+69:
+  description: This certificate represents a level of competence in handling large
+    hybrid turrets. The holder has learned that blasters are extreme close range weapons,
+    while railguns are their counterpart at very long range, and that both use hybrid
+    charges as ammunition. This is a good skillset for capsuleers specializing in
+    medium to large Caldari or Gallente vessels based on the Battlecruiser and Battleship
+    hulls.
+  groupID: 255
+  name: Large Hybrid Turret
+  recommendedFor:
+  - 24688
+  - 24690
+  - 4306
+  - 4308
+  - 47466
+  - 641
+  - 33627
+  - 33629
+  - 33635
+  - 33637
+  - 13202
+  - 17728
+  - 34118
+  - 17740
+  - 32307
+  - 44996
+  - 22430
+  - 28661
+  skillTypes:
+    3300:
+      advanced: 5
+      basic: 5
+      elite: 5
+      improved: 5
+      standard: 5
+    3301:
+      advanced: 3
+      basic: 3
+      elite: 3
+      improved: 3
+      standard: 3
+    3304:
+      advanced: 3
+      basic: 3
+      elite: 3
+      improved: 3
+      standard: 3
+    3307:
+      advanced: 5
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3310:
+      advanced: 4
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3311:
+      advanced: 5
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3312:
+      advanced: 5
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3315:
+      advanced: 4
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3316:
+      advanced: 4
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3317:
+      advanced: 4
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    12207:
+      advanced: 1
+      basic: 0
+      elite: 5
+      improved: 0
+      standard: 0
+    12212:
+      advanced: 1
+      basic: 0
+      elite: 5
+      improved: 0
+      standard: 0
+70:
+  description: This certificate represents a level of competence in handling capital
+    hybrid turrets. The holder has learned that blasters are extreme close range weapons,
+    while railguns are their counterpart at very long range, and that both use hybrid
+    charges as ammunition. This is a good skillset for capsuleers specializing in
+    capital Gallente vessels based on Dreadnought and Titan hulls.
+  groupID: 255
+  name: Capital Hybrid Turret
+  recommendedFor:
+  - 671
+  - 42124
+  - 42126
+  - 19724
+  skillTypes:
+    3300:
+      advanced: 5
+      basic: 5
+      elite: 5
+      improved: 5
+      standard: 5
+    3301:
+      advanced: 3
+      basic: 3
+      elite: 3
+      improved: 3
+      standard: 3
+    3304:
+      advanced: 3
+      basic: 3
+      elite: 3
+      improved: 3
+      standard: 3
+    3307:
+      advanced: 5
+      basic: 5
+      elite: 5
+      improved: 5
+      standard: 5
+    3310:
+      advanced: 5
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3311:
+      advanced: 5
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3312:
+      advanced: 5
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3315:
+      advanced: 5
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3316:
+      advanced: 5
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3317:
+      advanced: 5
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    21666:
+      advanced: 4
+      basic: 1
+      elite: 5
+      improved: 3
+      standard: 2
+    41405:
+      advanced: 1
+      basic: 0
+      elite: 5
+      improved: 0
+      standard: 0
+    41406:
+      advanced: 1
+      basic: 0
+      elite: 5
+      improved: 0
+      standard: 0
+71:
+  description: This certificate represents a level of competence in handling small
+    projectile turrets. The holder has learned that autocannons are close range weapons,
+    while artillery cannons are medium to long range turrets with good alpha damage.
+    This is a good skillset for capsuleers specializing in small Minmatar vessels
+    based on Frigate and Destroyer hulls.
+  groupID: 255
+  name: Small Projectile Turret
+  recommendedFor:
+  - 42685
+  - 33099
+  - 34562
+  - 585
+  - 587
+  - 588
+  - 617
+  - 33663
+  - 33665
+  - 11196
+  - 11198
+  - 33883
+  - 11371
+  - 17812
+  - 32207
+  - 17932
+  - 44993
+  - 33397
+  - 16242
+  - 22456
+  skillTypes:
+    3300:
+      advanced: 5
+      basic: 3
+      elite: 5
+      improved: 4
+      standard: 4
+    3302:
+      advanced: 5
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3310:
+      advanced: 4
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3311:
+      advanced: 4
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3312:
+      advanced: 4
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3315:
+      advanced: 4
+      basic: 0
+      elite: 5
+      improved: 4
+      standard: 3
+    3317:
+      advanced: 4
+      basic: 0
+      elite: 5
+      improved: 4
+      standard: 3
+    11084:
+      advanced: 1
+      basic: 0
+      elite: 5
+      improved: 0
+      standard: 0
+    12201:
+      advanced: 1
+      basic: 0
+      elite: 5
+      improved: 0
+      standard: 0
+72:
+  description: This certificate represents a level of competence in handling medium
+    projectile turrets. The holder has learned that autocannons are close range weapons,
+    while artillery cannons are medium to long range turrets with good alpha damage.
+    This is a good skillset for capsuleers specializing in medium Minmatar vessels
+    based on Cruiser and Battlecruiser hulls.
+  groupID: 255
+  name: Medium Projectile Turret
+  recommendedFor:
+  - 24702
+  - 33157
+  - 622
+  - 629
+  - 29336
+  - 33647
+  - 33649
+  - 29990
+  - 17713
+  - 17720
+  - 32209
+  - 3756
+  - 11961
+  - 11999
+  - 12013
+  - 12015
+  - 22444
+  - 44995
+  skillTypes:
+    3300:
+      advanced: 5
+      basic: 3
+      elite: 5
+      improved: 5
+      standard: 4
+    3302:
+      advanced: 3
+      basic: 3
+      elite: 3
+      improved: 3
+      standard: 3
+    3305:
+      advanced: 5
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3310:
+      advanced: 4
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3311:
+      advanced: 4
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3312:
+      advanced: 4
+      basic: 1
+      elite: 5
+      improved: 4
+      standard: 3
+    3315:
+      advanced: 4
+      basic: 0
+      elite: 5
+      improved: 4
+      standard: 3
+    3317:
+      advanced: 4
+      basic: 0
+      elite: 5
+      improved: 4
+      standard: 3
+    12202:
+      advanced: 1
+      basic: 0
+      elite: 5
+      improved: 0
+      standard: 0
+    12208:
+      advanced: 1
+      basic: 0
+      elite: 5
+      improved: 0
+      standard: 0

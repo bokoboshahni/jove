@@ -1,0 +1,318 @@
+---
+5:
+  allowCCPDevs: true
+  internalName: Megathron Quafe
+  skinID: 5
+  skinMaterialID: 3
+  types:
+  - 641
+  visibleSerenity: false
+  visibleTranquility: true
+8:
+  allowCCPDevs: true
+  internalName: Dominix Quafe
+  skinID: 8
+  skinMaterialID: 3
+  types:
+  - 645
+  visibleSerenity: false
+  visibleTranquility: true
+9:
+  allowCCPDevs: true
+  internalName: Oracle Khanid
+  skinID: 9
+  skinMaterialID: 4
+  types:
+  - 4302
+  visibleSerenity: false
+  visibleTranquility: true
+10:
+  allowCCPDevs: true
+  internalName: Oracle Sarum
+  skinID: 10
+  skinMaterialID: 5
+  types:
+  - 4302
+  visibleSerenity: false
+  visibleTranquility: true
+11:
+  allowCCPDevs: true
+  internalName: Prophecy Blood Raiders
+  skinID: 11
+  skinMaterialID: 25
+  types:
+  - 16233
+  visibleSerenity: true
+  visibleTranquility: true
+12:
+  allowCCPDevs: true
+  internalName: Prophecy Kador
+  skinID: 12
+  skinMaterialID: 2
+  types:
+  - 16233
+  visibleSerenity: false
+  visibleTranquility: true
+13:
+  allowCCPDevs: true
+  internalName: Prophecy Tash-Murkon
+  skinID: 13
+  skinMaterialID: 6
+  types:
+  - 16233
+  visibleSerenity: false
+  visibleTranquility: true
+14:
+  allowCCPDevs: true
+  internalName: Ferox Guristas
+  skinID: 14
+  skinMaterialID: 26
+  types:
+  - 16227
+  visibleSerenity: true
+  visibleTranquility: true
+15:
+  allowCCPDevs: true
+  internalName: Ferox Laidai
+  skinID: 15
+  skinMaterialID: 9
+  types:
+  - 16227
+  visibleSerenity: false
+  visibleTranquility: true
+16:
+  allowCCPDevs: true
+  internalName: Naga Wiyrkomi
+  skinID: 16
+  skinMaterialID: 12
+  types:
+  - 4306
+  visibleSerenity: false
+  visibleTranquility: true
+17:
+  allowCCPDevs: false
+  internalName: Brutix Inner Zone Shipping
+  isStructureSkin: false
+  skinID: 17
+  skinMaterialID: 15
+  types:
+  - 16229
+  visibleSerenity: true
+  visibleTranquility: false
+43:
+  allowCCPDevs: true
+  internalName: Dominix Inner Zone Shipping
+  isStructureSkin: false
+  skinID: 43
+  skinMaterialID: 15
+  types:
+  - 645
+  visibleSerenity: true
+  visibleTranquility: true
+92:
+  allowCCPDevs: true
+  internalName: Obelisk Inner Zone Shipping
+  isStructureSkin: false
+  skinID: 92
+  skinMaterialID: 15
+  types:
+  - 20187
+  visibleSerenity: true
+  visibleTranquility: true
+116:
+  allowCCPDevs: true
+  internalName: Thorax Inner Zone Shipping
+  isStructureSkin: false
+  skinID: 116
+  skinMaterialID: 15
+  types:
+  - 627
+  visibleSerenity: false
+  visibleTranquility: true
+133:
+  allowCCPDevs: true
+  internalName: Catalyst Intaki Syndicate
+  isStructureSkin: false
+  skinID: 133
+  skinMaterialID: 16
+  types:
+  - 16240
+  visibleSerenity: true
+  visibleTranquility: true
+140:
+  allowCCPDevs: true
+  internalName: Comet Federal Police Pursuit
+  isStructureSkin: false
+  skinID: 140
+  skinMaterialID: 18
+  types:
+  - 17841
+  visibleSerenity: true
+  visibleTranquility: true
+150:
+  allowCCPDevs: true
+  internalName: Punisher Kador
+  isStructureSkin: false
+  skinID: 150
+  skinMaterialID: 2
+  types:
+  - 597
+  visibleSerenity: true
+  visibleTranquility: true
+156:
+  allowCCPDevs: true
+  internalName: Merlin Nugoeihuvi
+  isStructureSkin: false
+  skinID: 156
+  skinMaterialID: 10
+  types:
+  - 603
+  visibleSerenity: true
+  visibleTranquility: true
+160:
+  allowCCPDevs: true
+  internalName: Imicus Inner Zone Shipping
+  isStructureSkin: false
+  skinID: 160
+  skinMaterialID: 15
+  types:
+  - 607
+  visibleSerenity: false
+  visibleTranquility: true
+163:
+  allowCCPDevs: true
+  internalName: Incursus Inner Zone Shipping
+  isStructureSkin: false
+  skinID: 163
+  skinMaterialID: 15
+  types:
+  - 594
+  visibleSerenity: false
+  visibleTranquility: true
+5476:
+  allowCCPDevs: true
+  internalName: Tengu Storm Bear
+  skinDescription: Caldari Prime's climate is renowned for being colder than most
+    temperate worlds, but the large polar and subpolar regions are frigid indeed.
+    The huge swathes of territory circled around the poles contain various biomes,
+    including vast tundras, but the taigas of the subpolar belts are iconic in Caldari
+    culture and mythology. The most charismatic of the fauna inhabiting these belts
+    are the great bears of Caldari Prime. In the northern taiga, the Storm Bear reigns
+    supreme, a creature larger than any other predator save the Emperor Bears of the
+    southern polar archipelagos.  The realm of the Storm Bear is far more mountainous
+    than the southern islands and is known for the sky-wracking storms that sweep
+    the forested slopes of the region. The Storm Bear, also called "Thunder Bear"
+    in some Caldari animist traditions, takes its name from its rain-cloud grey pelt
+    and its complete fearlessness, even in the face of the wind, rain and lightning
+    of the greatest mountain storms.
+  skinID: 5476
+  skinMaterialID: 314
+  types:
+  - 29984
+  visibleSerenity: true
+  visibleTranquility: true
+5477:
+  allowCCPDevs: true
+  internalName: Gila Storm Bear
+  skinDescription: Caldari Prime's climate is renowned for being colder than most
+    temperate worlds, but the large polar and subpolar regions are frigid indeed.
+    The huge swathes of territory circled around the poles contain various biomes,
+    including vast tundras, but the taigas of the subpolar belts are iconic in Caldari
+    culture and mythology. The most charismatic of the fauna inhabiting these belts
+    are the great bears of Caldari Prime. In the northern taiga, the Storm Bear reigns
+    supreme, a creature larger than any other predator save the Emperor Bears of the
+    southern polar archipelagos.  The realm of the Storm Bear is far more mountainous
+    than the southern islands and is known for the sky-wracking storms that sweep
+    the forested slopes of the region. The Storm Bear, also called "Thunder Bear"
+    in some Caldari animist traditions, takes its name from its rain-cloud grey pelt
+    and its complete fearlessness, even in the face of the wind, rain and lightning
+    of the greatest mountain storms.
+  skinID: 5477
+  skinMaterialID: 314
+  types:
+  - 17715
+  visibleSerenity: true
+  visibleTranquility: true
+5784:
+  allowCCPDevs: true
+  internalName: Gila Abyssal Afterglow
+  isStructureSkin: false
+  skinDescription: 543488
+  skinID: 5784
+  skinMaterialID: 336
+  types:
+  - 17715
+  visibleSerenity: true
+  visibleTranquility: true
+5785:
+  allowCCPDevs: true
+  internalName: Gila Abyssal Firestorm (Guristas)
+  isStructureSkin: false
+  skinDescription: 543487
+  skinID: 5785
+  skinMaterialID: 337
+  types:
+  - 17715
+  visibleSerenity: true
+  visibleTranquility: true
+5786:
+  allowCCPDevs: true
+  internalName: Gila Abyssal Thunderstorm
+  isStructureSkin: false
+  skinDescription: 543486
+  skinID: 5786
+  skinMaterialID: 338
+  types:
+  - 17715
+  visibleSerenity: true
+  visibleTranquility: true
+5790:
+  allowCCPDevs: true
+  internalName: Confessor Lavacore Imperial
+  skinDescription: 543994
+  skinID: 5790
+  skinMaterialID: 340
+  types:
+  - 34317
+  visibleSerenity: true
+  visibleTranquility: true
+5791:
+  allowCCPDevs: true
+  internalName: Apocalypse Lavacore Imperial
+  skinDescription: 543997
+  skinID: 5791
+  skinMaterialID: 340
+  types:
+  - 642
+  visibleSerenity: true
+  visibleTranquility: true
+5792:
+  allowCCPDevs: true
+  internalName: Armageddon Lavacore Imperial
+  skinDescription: 544000
+  skinID: 5792
+  skinMaterialID: 340
+  types:
+  - 643
+  visibleSerenity: true
+  visibleTranquility: true
+5793:
+  allowCCPDevs: true
+  internalName: Redeemer Lavacore Imperial
+  skinDescription: 544003
+  skinID: 5793
+  skinMaterialID: 340
+  types:
+  - 22428
+  visibleSerenity: true
+  visibleTranquility: true
+5794:
+  allowCCPDevs: true
+  internalName: Apocalypse Navy Issue Lavacore Imperial
+  skinDescription: 544006
+  skinID: 5794
+  skinMaterialID: 340
+  types:
+  - 17726
+  visibleSerenity: true
+  visibleTranquility: true

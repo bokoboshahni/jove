@@ -1,0 +1,880 @@
+---
+2:
+  attributeID: 2
+  categoryID: 9
+  dataType: 0
+  defaultValue: 0.0
+  description: Boolean to store status of online effect
+  highIsGood: true
+  name: isOnline
+  published: false
+  stackable: true
+3:
+  attributeID: 3
+  categoryID: 7
+  dataType: 1
+  defaultValue: 0.0
+  description: current structure damage dealt to module
+  displayNameID:
+    de: Gegenstandsschaden
+    en: Item Damage
+    fr: Objet endommagé
+    ja: アイテムダメージ
+    ko: 아이템 손상도
+    ru: Повреждение предмета
+    zh: 物品损坏
+  highIsGood: false
+  iconID: 1386
+  name: damage
+  published: true
+  stackable: true
+  tooltipDescriptionID:
+    de: Modulschaden
+    en: Module Damage
+    fr: Détérioration du module
+    ja: モジュールへのダメージ
+    ko: 모듈 피해량
+    ru: Повреждение модулей
+    zh: 装备损耗
+  tooltipTitleID:
+    de: Modulschaden
+    en: Module Damage
+    fr: Détérioration du module
+    ja: モジュールへのダメージ
+    ko: 모듈 피해량
+    ru: Повреждение модулей
+    zh: 装备损耗
+  unitID: 113
+4:
+  attributeID: 4
+  categoryID: 4
+  dataType: 9
+  defaultValue: 0.0
+  description: Integer that describes the types mass
+  displayNameID:
+    de: Masse
+    en: Mass
+    fr: Masse
+    ja: 質量
+    ko: 질량
+    ru: Масса
+    zh: 质量
+  highIsGood: true
+  iconID: 76
+  name: mass
+  published: true
+  stackable: false
+  tooltipDescriptionID:
+    de: Bei aufsteigender Masse werden Beschleunigung und Wendegeschwindigkeit negativ
+      beeinflusst
+    en: Affects acceleration and turning speed negatively as the mass increases
+    fr: Diminue l'accélération et la vitesse dans les virages lorsque la masse augmente.
+    ja: 数値が増えると加速／旋回速度が鈍ります
+    ko: 질량이 증가할수록 가속도 및 방향 전환 속도가 감소합니다.
+    ru: Увеличение этой характеристики ухудшает приёмистость и маневренность корабля
+    zh: 质量越大，加速和转向就越慢
+  tooltipTitleID:
+    de: Masse
+    en: Mass
+    fr: Masse
+    ja: 質量
+    ko: 질량
+    ru: Вес
+    zh: 质量
+  unitID: 2
+6:
+  attributeID: 6
+  categoryID: 5
+  dataType: 5
+  defaultValue: 0.0
+  description: The amount of charge used from the capacitor for a module activation.
+  displayNameID:
+    de: Aktivierungskosten
+    en: Activation Cost
+    fr: Coût énergétique d'activation
+    ja: 起動コスト
+    ko: 활성화 비용
+    ru: Потребление энергии (за цикл)
+    zh: 启用耗电量
+  highIsGood: false
+  iconID: 1400
+  name: capacitorNeed
+  published: true
+  stackable: true
+  unitID: 114
+8:
+  attributeID: 8
+  categoryID: 9
+  dataType: 4
+  defaultValue: 0.0
+  description: tbd
+  highIsGood: true
+  iconID: 1391
+  name: minRange
+  published: false
+  stackable: true
+9:
+  attributeID: 9
+  categoryID: 4
+  dataType: 4
+  defaultValue: 0.0
+  description: The maximum hitpoints of an object.
+  displayNameID:
+    de: HP der Struktur
+    en: Structure Hitpoints
+    fr: PV de la structure
+    ja: ストラクチャのヒットポイント
+    ko: 내구도
+    ru: Запас прочности корпуса
+    zh: 结构值
+  highIsGood: true
+  iconID: 67
+  name: hp
+  published: true
+  stackable: true
+  tooltipDescriptionID:
+    de: Die HP der Struktur regeneriert sich nicht von alleine, kann aber von Modulen
+      oder Stationsdiensten repariert werden
+    en: Structure hitpoints do not regenerate naturally but can be repaired by modules
+      or station services
+    fr: Les PV de la structure ne se régénèrent pas automatiquement, mais peuvent
+      être réparés par des modules ou des stations.
+    ja: 自動的には回復せず、モジュールやステーションサービスで修復されます
+    ko: 내구도는 자동으로 재생되지 않으며 모듈이나 정거장 서비스를 이용해 수리할 수 있습니다.
+    ru: Запас прочности корпуса не восстанавливается естественным образом, но его
+      можно восстановить с помощью модулей или станционных служб
+    zh: 结构不会自动恢复，不过可以用装备或空间站维修服务进行修理
+  tooltipTitleID:
+    de: HP der Struktur
+    en: Structure Hitpoints
+    fr: PV de la structure
+    ja: ストラクチャのヒットポイント
+    ko: 내구도
+    ru: Запас прочности корпуса
+    zh: 结构值
+  unitID: 113
+11:
+  attributeID: 11
+  categoryID: 1
+  dataType: 4
+  defaultValue: 0.0
+  description: power output of power core
+  displayNameID:
+    de: Stromnetzleistung
+    en: Powergrid Output
+    fr: Puissance du réseau d'alimentation
+    ja: パワーグリッド出力
+    ko: 파워그리드
+    ru: Мощность реактора
+    zh: 能量栅格输出
+  highIsGood: true
+  iconID: 1400
+  name: powerOutput
+  published: true
+  stackable: true
+  unitID: 107
+12:
+  attributeID: 12
+  categoryID: 1
+  dataType: 4
+  defaultValue: 0.0
+  description: The number of low power slots on the ship.
+  displayNameID:
+    de: Low Slots
+    en: Low Slots
+    fr: Emplacements basse puissance
+    ja: ローパワースロット
+    ko: 로우 슬롯
+    ru: Разъемы малой мощности
+    zh: 低能量槽
+  highIsGood: true
+  iconID: 295
+  name: lowSlots
+  published: true
+  stackable: true
+  unitID: 122
+13:
+  attributeID: 13
+  categoryID: 1
+  dataType: 4
+  defaultValue: 0.0
+  description: tbd
+  displayNameID:
+    de: Medium Slots
+    en: Medium Slots
+    fr: Emplacements intermédiaires
+    ja: ミディアムスロット
+    ko: 미디움 슬롯
+    ru: Разъёмы средней мощности
+    zh: 中能量槽
+  highIsGood: true
+  iconID: 294
+  name: medSlots
+  published: true
+  stackable: true
+  unitID: 122
+14:
+  attributeID: 14
+  categoryID: 1
+  dataType: 4
+  defaultValue: 0.0
+  description: tbd
+  displayNameID:
+    de: High Slots
+    en: High Slots
+    fr: Emplacements haute puissance
+    ja: ハイパワースロット
+    ko: 하이 슬롯
+    ru: Разъёмы большой мощности
+    zh: 高能量槽
+  highIsGood: true
+  iconID: 293
+  name: hiSlots
+  published: true
+  stackable: true
+  unitID: 122
+15:
+  attributeID: 15
+  categoryID: 7
+  dataType: 4
+  defaultValue: 0.0
+  description: Current load of power core
+  displayNameID:
+    de: Energielast
+    en: Power Load
+    fr: Facteur de charge
+    ja: パワー負荷
+    ko: 전력 사용량
+    ru: Нагрузка
+    zh: 能量负荷
+  highIsGood: true
+  iconID: 1400
+  name: powerLoad
+  published: true
+  stackable: true
+  unitID: 107
+20:
+  attributeID: 20
+  categoryID: 28
+  dataType: 5
+  defaultValue: 1.0
+  description: Factor by which topspeed increases.
+  displayNameID:
+    de: Höchstgeschwindigkeitsbonus
+    en: Maximum Velocity Bonus
+    fr: Bonus de vitesse maximale
+    ja: 最高速度ボーナス
+    ko: 최대 속도 보너스
+    ru: Влияние на максимальную скорость
+    zh: 最大速度加成
+  highIsGood: true
+  iconID: 1389
+  name: speedFactor
+  published: true
+  stackable: false
+  unitID: 124
+37:
+  attributeID: 37
+  categoryID: 17
+  dataType: 4
+  defaultValue: 0.0
+  description: Maximum velocity of ship
+  displayNameID:
+    de: Maximalgeschwindigkeit
+    en: Maximum Velocity
+    fr: Vitesse maximale
+    ja: 最高速度
+    ko: 최대 속도
+    ru: Максимальная скорость
+    zh: 最大速度
+  highIsGood: true
+  iconID: 1389
+  maxAttributeID: 2033
+  name: maxVelocity
+  published: true
+  stackable: false
+  tooltipDescriptionID:
+    de: Die maximale Geschwindigkeit, die dieses Schiff ohne Warpantrieb erreichen
+      kann
+    en: The maximum velocity that can be achieved in subwarp flight
+    fr: La vitesse maximale pouvant être atteinte en sous-warp.
+    ja: サブワープ航行時に到達できる最高速度です
+    ko: 서브워프 비행시 낼 수 있는 최대 속도입니다.
+    ru: Максимальная скорость, достижимая вне варп-режима
+    zh: 在非跃迁状态下能达到的最大飞行速度
+  tooltipTitleID:
+    de: Maximale Geschwindigkeit
+    en: Maximum Velocity
+    fr: Vitesse maximale
+    ja: 最高速度
+    ko: 최대 속도
+    ru: Скорость полного хода / Скорость полёта
+    zh: 最大速度
+  unitID: 11
+38:
+  attributeID: 38
+  categoryID: 4
+  dataType: 9
+  defaultValue: 0.0
+  description: The cargo space allowed
+  displayNameID:
+    de: Kapazität
+    en: Capacity
+    fr: Capacité
+    ja: 容量
+    ko: 적재량
+    ru: Вместимость грузового отсека
+    zh: 容量
+  highIsGood: true
+  iconID: 71
+  name: capacity
+  published: true
+  stackable: true
+  tooltipDescriptionID:
+    de: Das maximale Volumen an Gegenständen, das im Frachtraum transportiert werden
+      kann
+    en: The maximum volume of items that can be carried in the cargo hold
+    fr: Volume d'objets maximum pouvant être transportés dans la soute de chargement.
+    ja: カーゴホールドに積んで運搬できる体積量です
+    ko: 화물실의 총 적재량입니다.
+    ru: Объём, максимально допустимый к размещению в грузовом отсеке
+    zh: 货柜舱能够装载的最大体积
+  tooltipTitleID:
+    de: Kapazität
+    en: Capacity
+    fr: Capacité
+    ja: 容量
+    ko: 적재량
+    ru: Вместимость грузового отсека
+    zh: 容量
+  unitID: 9
+55:
+  attributeID: 55
+  categoryID: 5
+  dataType: 5
+  defaultValue: 0.0
+  description: Amount of time taken to fully recharge the capacitor.
+  displayNameID:
+    de: Wiederaufladezeit des Energiespeichers
+    en: Capacitor Recharge time
+    fr: Temps de recharge du capaciteur
+    ja: キャパシタリチャージ時間
+    ko: 캐패시터 충전 시간
+    ru: Время восстановления заряда
+    zh: 电容回充时间
+  highIsGood: false
+  iconID: 1392
+  name: rechargeRate
+  published: true
+  stackable: true
+  tooltipDescriptionID:
+    de: Benötigte Zeit um den Energiespeicher wieder voll aufzuladen
+    en: Amount of time taken to fully recharge the capacitor
+    fr: Temps nécessaire à la recharge totale du capaciteur.
+    ja: キャパシタのフル充電にかかる時間です
+    ko: 캐패시터를 전부 충전하기까지 걸리는 시간입니다.
+    ru: Количество времени, требуемое для полной перезарядки бортового накопителя
+    zh: 电容恢复至最大值所需要的时间
+  tooltipTitleID:
+    de: Wiederaufladezeit des Energiespeichers
+    en: Capacitor Recharge Time
+    fr: Temps de recharge du capaciteur
+    ja: キャパシタリチャージ時間
+    ko: 캐패시터 충전 시간
+    ru: Время восстановления заряда
+    zh: 电容回充时间
+  unitID: 101
+70:
+  attributeID: 70
+  categoryID: 17
+  dataType: 5
+  defaultValue: 0.0
+  description: The agility of the object.
+  displayNameID:
+    de: Trägheitsmodifikator
+    en: Inertia Modifier
+    fr: Modificateur d'inertie
+    ja: 慣性修正乗数
+    ko: 관성 계수
+    ru: Влияние инертности конструкции
+    zh: 惯性调整
+  highIsGood: false
+  iconID: 1401
+  name: agility
+  published: true
+  stackable: false
+  tooltipDescriptionID:
+    de: Bei abnehmenden Wert werden Beschleunigung und Wendegeschwindigkeit positiv
+      beeinflusst
+    en: Affects acceleration and turning speed positively as the value decreases
+    fr: Augmente l'accélération et la vitesse dans les virages lorsque cette valeur
+      diminue.
+    ja: 数値が減少すると加速・回転スピードに影響します
+    ko: 수치가 낮을수록 가속도 및 방향 전환 속도가 증가합니다.
+    ru: Уменьшение этой характеристики повышает приёмистость и маневренность корабля
+    zh: 该数值越小，加速和转向就越快
+  tooltipTitleID:
+    de: Trägheitsmodifikator
+    en: Inertia Modifier
+    fr: Modificateur d'inertie
+    ja: 慣性乗数
+    ko: 관성 계수
+    ru: Влияние инертности конструкции
+    zh: 惯性调整系数
+  unitID: 104
+76:
+  attributeID: 76
+  categoryID: 6
+  dataType: 5
+  defaultValue: 0.0
+  description: Maximum range at which the scanner can lock a target.
+  displayNameID:
+    de: Max. Zielaufschaltungsreichweite
+    en: Maximum Targeting Range
+    fr: Portée maximale du système de ciblage
+    ja: 最大ターゲット範囲
+    ko: 최대 타겟팅 거리
+    ru: Максимальная дальность захвата целей
+    zh: 锁定范围上限
+  highIsGood: true
+  iconID: 1391
+  maxAttributeID: 797
+  name: maxTargetRange
+  published: true
+  stackable: false
+  tooltipDescriptionID:
+    de: Die maximale Reichweite, in der Ziele aufgeschaltet und erfasst gehalten werden
+      können
+    en: The maximum range at which it is possible to acquire and hold target locks
+    fr: La portée maximale à laquelle il est possible d'acquérir et de maintenir le
+      verrouillage de cible.
+    ja: ターゲットを捕捉・ロックできる最大範囲です
+    ko: 타겟을 확보하고 조준 완료할 수 있는 최대 거리입니다.
+    ru: Максимальная дальность действия бортовых систем обнаружения целей
+    zh: 能够锁定目标的最大范围
+  tooltipTitleID:
+    de: Maximale Zielerfassungsreichweite
+    en: Maximum Targeting Range
+    fr: Portée maximale du système de ciblage
+    ja: 最大ターゲット範囲
+    ko: 최대 타겟팅 거리
+    ru: Максимальная дальность обнаружения целей
+    zh: 锁定范围上限
+  unitID: 1
+101:
+  attributeID: 101
+  categoryID: 1
+  dataType: 4
+  defaultValue: 0.0
+  description: The number of remaining unused launcher slots.
+  displayNameID:
+    de: Montageplätze für Werfer
+    en: Launcher Hardpoints
+    fr: Points de fixation pour lanceur
+    ja: ランチャーハードポイント
+    ko: 런처 슬롯
+    ru: Точки монтажа пусковых установок
+    zh: 发射器安装数
+  highIsGood: true
+  iconID: 168
+  name: launcherSlotsLeft
+  published: true
+  stackable: true
+  tooltipDescriptionID:
+    de: Diese Montageplätze schränken die Anzahl an ausrüstbaren Lenkwaffenwerfer-Modulen
+      ein
+    en: These hardpoints limit the number of missile launcher modules that can be
+      fitted
+    fr: Ces points de fixation limitent le nombre de modules de lance-missiles pouvant
+      être équipés.
+    ja: ミサイルランチャーモジュールの装備可能な数を示します
+    ko: 미사일 런처를 장착할 수 있는 최대 개수입니다.
+    ru: Точки монтажа данного типа ограничивают количество пусковых установок, которыми
+      может быть оснащён корабль
+    zh: 这个数字决定了舰船能够装配导弹发射器的数量
+  tooltipTitleID:
+    de: Montageplätze für Werfer
+    en: Launcher Hardpoints
+    fr: Points de fixation pour lanceur
+    ja: ランチャーハードポイント
+    ko: 런처 슬롯
+    ru: Точки монтажа пусковых установок
+    zh: 发射器安装数
+  unitID: 141
+102:
+  attributeID: 102
+  categoryID: 1
+  dataType: 4
+  defaultValue: 0.0
+  description: Remaining number of unused turret slots on the ship.
+  displayNameID:
+    de: Montageplätze für Geschütztürme
+    en: Turret Hardpoints
+    fr: Points de fixation de tourelle
+    ja: タレットハードポイント
+    ko: 터렛 슬롯
+    ru: Точки монтажа орудийных установок
+    zh: 炮台安装数
+  highIsGood: true
+  iconID: 387
+  name: turretSlotsLeft
+  published: true
+  stackable: true
+  tooltipDescriptionID:
+    de: Diese Montageplätze schränken die Anzahl an ausrüstbaren Waffen- und Bergbautürmen
+      ein
+    en: These hardpoints limit the number of gunnery and mining turrets that can be
+      fitted
+    fr: Ces points de fixation limitent le nombre de tourelles d'armement et d'extraction
+      minière pouvant être équipées.
+    ja: ガンナリーおよび採掘タレットの装備可能な数を示します
+    ko: 터렛 및 채굴 레이저를 장착할 수 있는 최대 개수입니다.
+    ru: Точки монтажа данного типа ограничивают количество орудий и буровых лазеров,
+      которыми может быть оснащён корабль
+    zh: 这个数字决定了舰船能够装配炮台和采矿激光器的数量
+  tooltipTitleID:
+    de: Montageplätze für Geschütztürme
+    en: Turret Hardpoints
+    fr: Points de fixation de tourelle
+    ja: タレットハードポイント
+    ko: 터렛 슬롯
+    ru: Точки монтажа орудийных установок
+    zh: 炮台安装数
+  unitID: 141
+18:
+  attributeID: 18
+  categoryID: 9
+  chargeRechargeTimeID: 55
+  dataType: 6
+  defaultValue: 0.0
+  description: charge of module
+  highIsGood: true
+  iconID: 1668
+  maxAttributeID: 482
+  name: charge
+  published: false
+  stackable: true
+  unitID: 114
+114:
+  attributeID: 114
+  categoryID: 29
+  chargeRechargeTimeID: 113
+  dataType: 8
+  defaultValue: 0.0
+  description: EM damage done.
+  displayNameID:
+    de: EM-Schaden
+    en: EM damage
+    fr: Dégâts EM
+    ja: EM ダメージ
+    ko: EM 피해량
+    ru: ЭМ-урон
+    zh: 电磁伤害
+  highIsGood: true
+  iconID: 1388
+  name: emDamage
+  published: true
+  stackable: true
+  unitID: 113
+116:
+  attributeID: 116
+  categoryID: 29
+  chargeRechargeTimeID: 111
+  dataType: 8
+  defaultValue: 0.0
+  description: Explosive damage done.
+  displayNameID:
+    de: 'Explosivschaden '
+    en: Explosive damage
+    fr: Dégâts explosifs
+    ja: エクスプローシブダメージ
+    ko: 폭발 피해
+    ru: Фугасный урон
+    zh: 爆炸伤害
+  highIsGood: true
+  iconID: 1387
+  name: explosiveDamage
+  published: true
+  stackable: true
+  unitID: 113
+117:
+  attributeID: 117
+  categoryID: 29
+  chargeRechargeTimeID: 109
+  dataType: 8
+  defaultValue: 0.0
+  description: Kinetic damage done.
+  displayNameID:
+    de: Kinetikschaden
+    en: Kinetic damage
+    fr: Dégâts cinétiques
+    ja: キネティックダメージ
+    ko: 키네틱 피해량
+    ru: Кинетический урон
+    zh: 动能伤害
+  highIsGood: true
+  iconID: 1385
+  name: kineticDamage
+  published: true
+  stackable: true
+  unitID: 113
+118:
+  attributeID: 118
+  categoryID: 29
+  chargeRechargeTimeID: 110
+  dataType: 8
+  defaultValue: 0.0
+  description: Thermal damage done.
+  displayNameID:
+    de: Thermalschaden
+    en: Thermal damage
+    fr: Dégâts thermiques
+    ja: サーマルダメージ
+    ko: 열 피해량
+    ru: Термический урон
+    zh: 热能伤害
+  highIsGood: true
+  iconID: 1386
+  name: thermalDamage
+  published: true
+  stackable: true
+  unitID: 113
+264:
+  attributeID: 264
+  categoryID: 9
+  chargeRechargeTimeID: 479
+  dataType: 6
+  defaultValue: 0.0
+  description: "DO NOT MESS WITH. Helper attribute for entities, stands in for the
+    shield charge.\r\nThe amount of starting shield capacity of the NPC."
+  highIsGood: true
+  iconID: 0
+  maxAttributeID: 263
+  name: shieldCharge
+  published: false
+  stackable: true
+109:
+  attributeID: 109
+  categoryID: 4
+  dataType: 5
+  defaultValue: 1.0
+  description: damage multiplier vs. kinetic damagers.
+  displayNameID:
+    de: Widerstandsfähigkeit der Struktur gegen Kinetikschaden
+    en: Structure Kinetic Damage Resistance
+    fr: Résistance de la structure aux dégâts cinétiques
+    ja: ストラクチャキネティックダメージレジスタンス
+    ko: 선체 키네틱 저항력
+    ru: Сопротивляемость корпуса кинетическому урону
+    zh: 结构动能伤害抗性
+  highIsGood: false
+  iconID: 1393
+  maxAttributeID: 2770
+  name: kineticDamageResonance
+  published: true
+  stackable: false
+  unitID: 108
+110:
+  attributeID: 110
+  categoryID: 4
+  dataType: 5
+  defaultValue: 1.0
+  description: damage multiplier vs. thermal.
+  displayNameID:
+    de: Resistenz der Struktur gegen Thermalschaden
+    en: Structure Thermal Damage Resistance
+    fr: Résistance de la structure aux dégâts thermiques
+    ja: ストラクチャサーマルダメージレジスタンス
+    ko: 선체 열 저항력
+    ru: Сопротивляемость корпуса термическому урону
+    zh: 结构热能伤害抗性
+  highIsGood: false
+  iconID: 1394
+  maxAttributeID: 2769
+  name: thermalDamageResonance
+  published: true
+  stackable: false
+  unitID: 108
+111:
+  attributeID: 111
+  categoryID: 4
+  dataType: 5
+  defaultValue: 1.0
+  description: damage multiplier vs. explosive damagers.
+  displayNameID:
+    de: Resistenz der Struktur gegen Explosionsschaden
+    en: Structure Explosive Damage Resistance
+    fr: Résistance de la structure aux dégâts explosifs
+    ja: ストラクチャエクスプローシブダメージレジスタンス
+    ko: 선체 폭발 저항력
+    ru: Сопротивляемость корпуса фугасному урону
+    zh: 结构爆炸伤害抗性
+  highIsGood: false
+  iconID: 1395
+  maxAttributeID: 2771
+  name: explosiveDamageResonance
+  published: true
+  stackable: false
+  unitID: 108
+113:
+  attributeID: 113
+  categoryID: 4
+  dataType: 5
+  defaultValue: 1.0
+  description: Electro magnetic damage multiplier for shield and armor. Represented
+    as "% Resistance" in the UI.
+  displayNameID:
+    de: Widerstandsfähigkeit der Struktur gegen EM-Schaden
+    en: Structure EM Damage Resistance
+    fr: Résistance de la structure aux dégâts électromagnétiques
+    ja: ストラクチャEMダメージレジスタンス
+    ko: 선체 EM 저항력
+    ru: Сопротивляемость корпуса ЭМ-урону
+    zh: 结构电磁伤害抗性
+  highIsGood: false
+  iconID: 1396
+  maxAttributeID: 2768
+  name: emDamageResonance
+  published: true
+  stackable: false
+  unitID: 108
+267:
+  attributeID: 267
+  categoryID: 3
+  dataType: 5
+  defaultValue: 1.0
+  description: 'Multiplies EM damage taken by Armor. '
+  displayNameID:
+    de: Widerstandsfähigkeit der Panzerung gegen EM-Schaden
+    en: Armor EM Damage Resistance
+    fr: Résistance du blindage aux dégâts EM
+    ja: アーマーEMダメージレジスタンス
+    ko: 장갑 EM 저항력
+    ru: Сопротивляемость брони ЭМ-урону
+    zh: 装甲电磁伤害抗性
+  highIsGood: false
+  iconID: 1396
+  maxAttributeID: 1527
+  name: armorEmDamageResonance
+  published: true
+  stackable: false
+  unitID: 108
+268:
+  attributeID: 268
+  categoryID: 3
+  dataType: 5
+  defaultValue: 1.0
+  description: 'Multiplies EXPLOSIVE damage taken by Armor. '
+  displayNameID:
+    de: Panzerung-Explosivschadensresistenz
+    en: Armor Explosive Damage Resistance
+    fr: Résistance du blindage aux dégâts explosifs
+    ja: アーマーエクスプローシブダメージレジスタンス
+    ko: 장갑 폭발 저항력
+    ru: Сопротивляемость брони фугасному урону
+    zh: 装甲爆炸伤害抗性
+  highIsGood: false
+  iconID: 1395
+  maxAttributeID: 1527
+  name: armorExplosiveDamageResonance
+  published: true
+  stackable: false
+  unitID: 108
+633:
+  attributeID: 633
+  categoryID: 7
+  dataType: 4
+  defaultValue: 0.0
+  description: "Authoring has been moved to FSD\r\nThe ranking of the module within
+    its tech level"
+  displayNameID:
+    de: Meta-Level
+    en: Meta Level
+    fr: Niveau méta
+    ja: メタレベル
+    ko: 메타 레벨
+    ru: Метауровень
+    zh: 衍生等级
+  displayWhenZero: true
+  highIsGood: true
+  name: metaLevelOld
+  published: true
+  stackable: true
+  unitID: 140
+3153:
+  attributeID: 3153
+  categoryID: 51
+  dataType: 2
+  defaultValue: 1.0
+  description: This multiplier is applied to the Mining Volume of the actor (module,
+    drone etc.) to calculate the potential wasted volume per cycle
+  displayNameID:
+    de: Rückstandsvolumen-Multiplikator
+    en: Residue Volume Multiplier
+    fr: Multiplicateur de volume de résidus
+    ja: 残留物体積乗数
+    ko: 손실 배수
+    ru: Коэффициент объёма отходов
+  displayWhenZero: true
+  highIsGood: false
+  name: miningWastedVolumeMultiplier
+  published: true
+  stackable: false
+  unitID: 104
+3154:
+  attributeID: 3154
+  categoryID: 51
+  dataType: 2
+  defaultValue: 0.0
+  description: The probability of volume getting wasted every cycle
+  displayNameID:
+    de: Rückstandswahrscheinlichkeit
+    en: Residue Probability
+    fr: Probabilité de résidus
+    ja: 残留物率
+    ko: 손실 확률
+    ru: Шанс получения отходов
+  displayWhenZero: true
+  highIsGood: false
+  name: miningWasteProbability
+  published: true
+  stackable: false
+  unitID: 121
+3159:
+  attributeID: 3159
+  categoryID: 51
+  dataType: 2
+  defaultValue: 0.0
+  description: Attribute added to the waste multiplier (mainly used in mining crystals)
+  displayNameID:
+    de: Rückstandsvolumen-Multiplikator-Bonus
+    en: Residue Volume Multiplier Bonus
+    fr: Bonus au multiplicateur de volume de résidus
+    ja: 残留物体積乗数ボーナス
+    ko: 손실량 배수 보너스
+    ru: Прибавка к коэффициенту объёма отходов
+  displayWhenZero: true
+  highIsGood: false
+  name: specializationCrystalMiningWastedVolumeMultiplierBonus
+  published: true
+  stackable: false
+  unitID: 205
+3160:
+  attributeID: 3160
+  categoryID: 51
+  dataType: 2
+  defaultValue: 0.0
+  description: Attribute added to the waste probability (mainly used in mining crystals)
+  displayNameID:
+    de: Rückstandswahrscheinlichkeits-Bonus
+    en: Residue Probability Bonus
+    fr: Bonus à la probabilité de résidus
+    ja: 残留物率ボーナス
+    ko: 손실 확률 보너스
+    ru: Прибавка к шансу получения отходов
+  displayWhenZero: true
+  highIsGood: false
+  name: specializationCrystalMiningWasteProbabilityBonus
+  published: true
+  stackable: false
+  unitID: 205

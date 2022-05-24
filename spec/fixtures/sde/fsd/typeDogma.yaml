@@ -1,0 +1,179 @@
+---
+18:
+  dogmaAttributes:
+  - attributeID: 182
+    value: 3386.0
+  - attributeID: 277
+    value: 1.0
+  - attributeID: 790
+    value: 60377.0
+  - attributeID: 1940
+    value: 28422.0
+  - attributeID: 1941
+    value: 100.0
+  - attributeID: 1980
+    value: 0.5
+  - attributeID: 2115
+    value: 0.0
+  - attributeID: 2699
+    value: 1.0
+  - attributeID: 2711
+    value: 18.0
+  dogmaEffects: []
+19:
+  dogmaAttributes:
+  - attributeID: 182
+    value: 3386.0
+  - attributeID: 277
+    value: 1.0
+  - attributeID: 790
+    value: 60380.0
+  - attributeID: 1940
+    value: 28420.0
+  - attributeID: 1941
+    value: 100.0
+  - attributeID: 1980
+    value: 0.425
+  - attributeID: 1981
+    value: 600.0
+  - attributeID: 2115
+    value: 0.0
+  - attributeID: 2699
+    value: 1.0
+  - attributeID: 2711
+    value: 19.0
+  dogmaEffects: []
+20:
+  dogmaAttributes:
+  - attributeID: 182
+    value: 3386.0
+  - attributeID: 277
+    value: 1.0
+  - attributeID: 790
+    value: 60378.0
+  - attributeID: 1940
+    value: 28410.0
+  - attributeID: 1941
+    value: 100.0
+  - attributeID: 1980
+    value: 0.5
+  - attributeID: 2115
+    value: 0.0
+  - attributeID: 2699
+    value: 1.0
+  - attributeID: 2711
+    value: 20.0
+  dogmaEffects: []
+21:
+  dogmaAttributes:
+  - attributeID: 182
+    value: 3386.0
+  - attributeID: 277
+    value: 1.0
+  - attributeID: 790
+    value: 60378.0
+  - attributeID: 1940
+    value: 28401.0
+  - attributeID: 1941
+    value: 100.0
+  - attributeID: 1980
+    value: 0.5
+  - attributeID: 2115
+    value: 0.0
+  - attributeID: 2699
+    value: 1.0
+  - attributeID: 2711
+    value: 21.0
+  dogmaEffects: []
+22:
+  dogmaAttributes:
+  - attributeID: 182
+    value: 3386.0
+  - attributeID: 277
+    value: 1.0
+  - attributeID: 790
+    value: 60380.0
+  - attributeID: 1940
+    value: 28367.0
+  - attributeID: 1941
+    value: 100.0
+  - attributeID: 1980
+    value: 0.425
+  - attributeID: 1981
+    value: 600.0
+  - attributeID: 2115
+    value: 0.0
+  - attributeID: 2699
+    value: 1.0
+  - attributeID: 2711
+    value: 22.0
+  dogmaEffects: []
+23:
+  dogmaAttributes:
+  - attributeID: 9
+    value: 500.0
+  - attributeID: 525
+    value: 1.0
+  - attributeID: 552
+    value: 5000.0
+  dogmaEffects: []
+25:
+  dogmaAttributes:
+  - attributeID: 9
+    value: 10.0
+  - attributeID: 552
+    value: 50.0
+  dogmaEffects: []
+44:
+  dogmaAttributes:
+  - attributeID: 1640
+    value: 7200.0
+  - attributeID: 1641
+    value: 7200.0
+  dogmaEffects: []
+50:
+  dogmaAttributes:
+  - attributeID: 37
+    value: 3750.0
+  - attributeID: 70
+    value: 1000.0
+  - attributeID: 108
+    value: 35.0
+  - attributeID: 114
+    value: 0.0
+  - attributeID: 116
+    value: 240.0
+  - attributeID: 117
+    value: 0.0
+  - attributeID: 118
+    value: 0.0
+  - attributeID: 137
+    value: 506.0
+  - attributeID: 144
+    value: 1.125
+  - attributeID: 182
+    value: 3326.0
+  - attributeID: 183
+    value: 3319.0
+  - attributeID: 277
+    value: 4.0
+  - attributeID: 278
+    value: 1.0
+  - attributeID: 281
+    value: 20000.0
+  - attributeID: 525
+    value: 1.0
+  - attributeID: 653
+    value: 1000.0
+  - attributeID: 654
+    value: 150.0
+  - attributeID: 655
+    value: 1500.0
+  dogmaEffects: []
+54:
+  dogmaAttributes:
+  - attributeID: 9
+    value: 100000000.0
+  - attributeID: 524
+    value: 1.0
+  dogmaEffects: []
