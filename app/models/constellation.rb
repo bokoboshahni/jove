@@ -47,6 +47,8 @@ class Constellation < ApplicationRecord
 
   belongs_to :region
 
+  has_many :solar_systems
+
   def self.import_all_from_sde
     region_ids = map_region_ids
     paths = Dir[File.join(sde_path, 'fsd/universe/**/constellation.staticdata')]

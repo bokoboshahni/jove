@@ -426,6 +426,62 @@ CREATE TABLE public.schema_migrations (
 
 
 --
+-- Name: solar_systems; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.solar_systems (
+    id bigint NOT NULL,
+    constellation_id bigint NOT NULL,
+    faction_id bigint,
+    wormhole_class_id bigint,
+    border boolean NOT NULL,
+    center_x numeric NOT NULL,
+    center_y numeric NOT NULL,
+    center_z numeric NOT NULL,
+    corridor boolean NOT NULL,
+    disallowed_anchor_categories integer[],
+    disallowed_anchor_groups integer[],
+    fringe boolean NOT NULL,
+    hub boolean NOT NULL,
+    international boolean NOT NULL,
+    luminosity numeric NOT NULL,
+    max_x numeric NOT NULL,
+    max_y numeric NOT NULL,
+    max_z numeric NOT NULL,
+    min_x numeric NOT NULL,
+    min_y numeric NOT NULL,
+    min_z numeric NOT NULL,
+    radius numeric NOT NULL,
+    regional boolean NOT NULL,
+    security numeric NOT NULL,
+    security_class text,
+    name text NOT NULL,
+    visual_effect text,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: solar_systems_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.solar_systems_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: solar_systems_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.solar_systems_id_seq OWNED BY public.solar_systems.id;
+
+
+--
 -- Name: static_data_imports; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -612,6 +668,13 @@ ALTER TABLE ONLY public.regions ALTER COLUMN id SET DEFAULT nextval('public.regi
 
 
 --
+-- Name: solar_systems id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.solar_systems ALTER COLUMN id SET DEFAULT nextval('public.solar_systems_id_seq'::regclass);
+
+
+--
 -- Name: static_data_imports id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -741,6 +804,14 @@ ALTER TABLE ONLY public.regions
 
 ALTER TABLE ONLY public.schema_migrations
     ADD CONSTRAINT schema_migrations_pkey PRIMARY KEY (version);
+
+
+--
+-- Name: solar_systems solar_systems_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.solar_systems
+    ADD CONSTRAINT solar_systems_pkey PRIMARY KEY (id);
 
 
 --
@@ -944,6 +1015,27 @@ CREATE INDEX index_regions_on_wormhole_class_id ON public.regions USING btree (w
 
 
 --
+-- Name: index_solar_systems_on_constellation_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_solar_systems_on_constellation_id ON public.solar_systems USING btree (constellation_id);
+
+
+--
+-- Name: index_solar_systems_on_faction_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_solar_systems_on_faction_id ON public.solar_systems USING btree (faction_id);
+
+
+--
+-- Name: index_solar_systems_on_wormhole_class_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_solar_systems_on_wormhole_class_id ON public.solar_systems USING btree (wormhole_class_id);
+
+
+--
 -- Name: index_static_data_imports_on_version_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -1049,6 +1141,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220523164503'),
 ('20220523210147'),
 ('20220523211416'),
-('20220524172419');
+('20220524172419'),
+('20220524180358');
 
 

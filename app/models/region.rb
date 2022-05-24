@@ -61,6 +61,7 @@ class Region < ApplicationRecord
   self.sde_name_lookup = true
 
   has_many :constellations
+  has_many :solar_systems, through: :constellations
 
   def self.import_all_from_sde
     paths = Dir[File.join(sde_path, 'fsd/universe/**/region.staticdata')]

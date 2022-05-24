@@ -25,5 +25,9 @@ namespace :sde do
     task regions: :environment do
       Region.import_all_from_sde
     end
+
+    task solar_systems: :environment do
+      SolarSystem.import_all_from_sde
+    end
   end
 end
