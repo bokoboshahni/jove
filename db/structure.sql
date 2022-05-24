@@ -196,7 +196,9 @@ CREATE TABLE public.constellations (
     radius numeric NOT NULL,
     name text NOT NULL,
     created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    updated_at timestamp(6) without time zone NOT NULL,
+    faction_id bigint,
+    wormhole_class_id bigint
 );
 
 
@@ -910,10 +912,24 @@ CREATE INDEX index_characters_on_race_id ON public.characters USING btree (race_
 
 
 --
+-- Name: index_constellations_on_faction_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_constellations_on_faction_id ON public.constellations USING btree (faction_id);
+
+
+--
 -- Name: index_constellations_on_region_id; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_constellations_on_region_id ON public.constellations USING btree (region_id);
+
+
+--
+-- Name: index_constellations_on_wormhole_class_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_constellations_on_wormhole_class_id ON public.constellations USING btree (wormhole_class_id);
 
 
 --
@@ -1142,6 +1158,8 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220523210147'),
 ('20220523211416'),
 ('20220524172419'),
-('20220524180358');
+('20220524180358'),
+('20220524195739'),
+('20220524195908');
 
 
