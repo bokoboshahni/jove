@@ -1,5 +1,6 @@
 # Jove Changelog
 
+<<<<<<< HEAD
 ## [1.1.4-beta.4](https://github.com/bokoboshahni/jove/compare/v1.1.4-beta.3...v1.1.4-beta.4) (2022-05-23)
 
 ## [1.1.4-beta.3](https://github.com/bokoboshahni/jove/compare/v1.1.4-beta.2...v1.1.4-beta.3) (2022-05-23)
@@ -17,6 +18,13 @@
 ## [1.1.3](https://github.com/bokoboshahni/jove/compare/v1.1.3-beta.1...v1.1.3) (2022-05-21)
 
 
+||||||| parent of 726766c (chore(release): 1.1.4 [skip ci])
+## [1.1.3](https://github.com/bokoboshahni/jove/compare/v1.1.2...v1.1.3) (2022-05-21)
+=======
+## [1.1.4](https://github.com/bokoboshahni/jove/compare/v1.1.3...v1.1.4) (2022-05-24)
+
+## [1.1.3](https://github.com/bokoboshahni/jove/compare/v1.1.2...v1.1.3) (2022-05-21)
+>>>>>>> 726766c (chore(release): 1.1.4 [skip ci])
 
 ## [1.1.3-beta.1](https://github.com/bokoboshahni/jove/compare/v1.1.2...v1.1.3-beta.1) (2022-05-21)
 
