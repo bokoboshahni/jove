@@ -52,10 +52,4 @@ RSpec.describe Region, type: :model do
       expect(described_class.import_all_from_sde.rows.flatten).to match_array(region_ids)
     end
   end
-
-  describe '.import_from_sde' do
-    it 'saves the region' do
-      expect(described_class.import_from_sde('TheForge')).to be_persisted
-    end
-  end
 end

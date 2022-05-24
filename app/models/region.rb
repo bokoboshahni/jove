@@ -66,22 +66,8 @@ class Region < ApplicationRecord
     paths = Dir[File.join(sde_path, 'fsd/universe/**/region.staticdata')]
     rows = paths.map do |path|
       universe = File.basename(File.dirname(path, 2))
-      load_from_sde(File.basename(File.dirname(path)), universe:)
+      map_sde_attributes(YAML.load_file(path), context: { universe: })
     end
     upsert_all(rows)
-  end
-
-  def self.import_from_sde(sde_name, universe: :eve)
-    data = load_from_sde(sde_name, universe:)
-    create_with(data).find_or_create_by(id: data[:id])
-  end
-
-  def self.load_from_sde(sde_name, universe: :eve)
-    path = File.join(sde_path, "fsd/universe/#{universe}/#{sde_name}/region.staticdata")
-    map_sde(YAML.load_file(path), universe:)
-  end
-
-  def self.map_sde(data, universe: :eve)
-    map_sde_attributes(data, context: { universe: })
   end
 end
