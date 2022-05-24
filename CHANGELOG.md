@@ -1,5 +1,7 @@
 # Jove Changelog
 
+## [1.1.5](https://github.com/bokoboshahni/jove/compare/v1.1.4...v1.1.5) (2022-05-24)
+
 ## [1.1.4](https://github.com/bokoboshahni/jove/compare/v1.1.3...v1.1.4) (2022-05-24)
 
 ## [1.1.3](https://github.com/bokoboshahni/jove/compare/v1.1.2...v1.1.3) (2022-05-21)
