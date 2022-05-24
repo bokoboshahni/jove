@@ -73,6 +73,7 @@ RSpec.configure do |config| # rubocop:disable Metrics/BlockLength
 
   config.before(:each) do
     FileUtils.rm_rf(Rails.root.join('tmp/storage'))
+    FileUtils.mkdir_p(Rails.root.join('tmp/storage'))
     FileUtils.touch(Rails.root.join('tmp/storage/.keep'))
   end
 
