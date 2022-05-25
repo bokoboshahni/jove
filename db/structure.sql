@@ -551,6 +551,39 @@ ALTER SEQUENCE public.groups_id_seq OWNED BY public.groups.id;
 
 
 --
+-- Name: icons; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.icons (
+    id bigint NOT NULL,
+    description text,
+    file text NOT NULL,
+    obsolete boolean,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: icons_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.icons_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: icons_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.icons_id_seq OWNED BY public.icons.id;
+
+
+--
 -- Name: identities; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1158,6 +1191,13 @@ ALTER TABLE ONLY public.groups ALTER COLUMN id SET DEFAULT nextval('public.group
 
 
 --
+-- Name: icons id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.icons ALTER COLUMN id SET DEFAULT nextval('public.icons_id_seq'::regclass);
+
+
+--
 -- Name: identities id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -1365,6 +1405,14 @@ ALTER TABLE ONLY public.graphics
 
 ALTER TABLE ONLY public.groups
     ADD CONSTRAINT groups_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: icons icons_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.icons
+    ADD CONSTRAINT icons_pkey PRIMARY KEY (id);
 
 
 --
@@ -2119,6 +2167,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220525125404'),
 ('20220525135721'),
 ('20220525142514'),
-('20220525142902');
+('20220525142902'),
+('20220525143716');
 
 

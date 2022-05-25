@@ -68,6 +68,12 @@ namespace :sde do # rubocop:disable Metrics/BlockLength
       puts "Imported #{results.rows.count} groups"
     end
 
+    task icons: :environment do
+      progress = TTY::ProgressBar.new("Icons #{IMPORT_PROGRESS_FORMAT}")
+      results = Icon.import_all_from_sde(progress:)
+      puts "Imported #{results.rows.count} icons"
+    end
+
     task market_groups: :environment do
       progress = TTY::ProgressBar.new("Market Groups #{IMPORT_PROGRESS_FORMAT}")
       results = MarketGroup.import_all_from_sde(progress:)
@@ -140,7 +146,7 @@ namespace :sde do # rubocop:disable Metrics/BlockLength
 
     task entities: %i[races bloodlines corporations factions]
 
-    task images: %i[graphics]
+    task images: %i[graphics icons]
 
     task structures: %i[stargates]
 

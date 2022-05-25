@@ -38,6 +38,8 @@ class Faction < ApplicationRecord
 
   self.sde_localized = %i[description name short_description]
 
+  belongs_to :icon
+
   has_many :faction_races
 
   has_many :races, through: :faction_races

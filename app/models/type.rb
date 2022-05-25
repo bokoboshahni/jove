@@ -71,6 +71,7 @@ class Type < ApplicationRecord
   belongs_to :faction, optional: true
   belongs_to :graphic, optional: true
   belongs_to :group
+  belongs_to :icon, optional: true
   belongs_to :market_group, optional: true
   belongs_to :meta_group, optional: true
   belongs_to :variation_parent_type, optional: true

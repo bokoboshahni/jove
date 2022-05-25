@@ -2,7 +2,7 @@
 
 # ## Schema Information
 #
-# Table name: `meta_groups`
+# Table name: `icons`
 #
 # ### Columns
 #
@@ -10,28 +10,28 @@
 # ------------------ | ------------------ | ---------------------------
 # **`id`**           | `bigint`           | `not null, primary key`
 # **`description`**  | `text`             |
-# **`icon_suffix`**  | `text`             |
-# **`name`**         | `text`             | `not null`
+# **`file`**         | `text`             | `not null`
+# **`obsolete`**     | `boolean`          |
 # **`created_at`**   | `datetime`         | `not null`
 # **`updated_at`**   | `datetime`         | `not null`
-# **`icon_id`**      | `bigint`           |
 #
-# ### Indexes
-#
-# * `index_meta_groups_on_icon_id`:
-#     * **`icon_id`**
-#
-class MetaGroup < ApplicationRecord
+class Icon < ApplicationRecord
   include SDEImportable
 
-  self.sde_localized = %i[description name]
+  self.sde_rename = { icon_file: :file }
 
-  belongs_to :icon, optional: true
-
+  has_many :bloodlines
+  has_many :categories
+  has_many :corporations
+  has_many :factions
+  has_many :groups
+  has_many :market_groups
+  has_many :meta_groups
+  has_many :races
   has_many :types
 
   def self.import_all_from_sde(progress: nil)
-    data = YAML.load_file(File.join(sde_path, 'fsd/metaGroups.yaml'))
+    data = YAML.load_file(File.join(sde_path, 'fsd/iconIDs.yaml'))
     progress&.update(total: data.count)
     rows = data.map do |id, orig|
       record = map_sde_attributes(orig, id:)

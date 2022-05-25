@@ -45,6 +45,8 @@ class MarketGroup < ApplicationRecord
 
   has_ancestry cache_depth: true
 
+  belongs_to :icon, optional: true
+
   def self.import_all_from_sde(progress: nil)
     data = YAML.load_file(File.join(sde_path, 'fsd/marketGroups.yaml'))
     rows = Marshal.load(Marshal.dump(data)).map do |id, orig|

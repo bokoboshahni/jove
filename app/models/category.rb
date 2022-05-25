@@ -25,6 +25,8 @@ class Category < ApplicationRecord
 
   self.sde_localized = %i[name]
 
+  belongs_to :icon, optional: true
+
   has_many :groups
 
   def self.import_all_from_sde(progress: nil)

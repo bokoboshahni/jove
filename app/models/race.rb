@@ -30,6 +30,7 @@ class Race < ApplicationRecord
 
   self.sde_localized = %i[description name]
 
+  belongs_to :icon, optional: true
   belongs_to :ship_type, class_name: 'Type', optional: true
 
   def self.import_all_from_sde(progress: nil)

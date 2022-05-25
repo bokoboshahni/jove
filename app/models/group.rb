@@ -33,6 +33,7 @@ class Group < ApplicationRecord
   self.sde_localized = %i[name]
 
   belongs_to :category
+  belongs_to :icon, optional: true
 
   def self.import_all_from_sde(progress: nil)
     data = YAML.load_file(File.join(sde_path, 'fsd/groupIDs.yaml'))
