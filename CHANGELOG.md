@@ -1,5 +1,18 @@
 # Jove Changelog
 
+# [1.2.0-beta.4](https://github.com/bokoboshahni/jove/compare/v1.2.0-beta.3...v1.2.0-beta.4) (2022-05-25)
+
+
+### Features
+
+* import categories from sde ([37cf7e0](https://github.com/bokoboshahni/jove/commit/37cf7e0bc0a98c0f7bc0b1911dc438a4825d1724))
+* import graphics from sde ([7656d24](https://github.com/bokoboshahni/jove/commit/7656d241d772c6cdeb4594bdf946876732b6c4dc))
+* import groups from sde ([8cafba8](https://github.com/bokoboshahni/jove/commit/8cafba804a91e9442b82626740f2a0bcb8710afa))
+* import icons from sde ([2e20a22](https://github.com/bokoboshahni/jove/commit/2e20a22d7351a9a102348b43b15f926ca12d8493))
+* import market groups from sde ([4e10ea4](https://github.com/bokoboshahni/jove/commit/4e10ea45f1f3c45f1b34bea601615890618c057b))
+* import meta groups from sde ([70522a6](https://github.com/bokoboshahni/jove/commit/70522a6f5181d9aae0af5c6637c8f038ac498684))
+* import types from sde ([75301d6](https://github.com/bokoboshahni/jove/commit/75301d67c334f966c0020fde19eb42139d1f4562))
+
 # [1.2.0-beta.3](https://github.com/bokoboshahni/jove/compare/v1.2.0-beta.2...v1.2.0-beta.3) (2022-05-25)
 
 
