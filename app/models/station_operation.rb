@@ -42,19 +42,18 @@ class StationOperation < ApplicationRecord
 
   has_many :services, class_name: 'StationService', through: :station_operation_services
 
-  def self.import_all_from_sde(progress: nil) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength
+  def self.import_all_from_sde(progress: nil) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
     data = YAML.load_file(File.join(sde_path, 'fsd/stationOperations.yaml'))
     progress&.update(total: data.count)
 
-    station_services = data.map do |operation_id, operation|
-      operation['services'].map { |service_id| { operation_id:, service_id: } }
-    end.flatten
-    StationOperationService.upsert_all(station_services)
-
-    station_types = data.map do |operation_id, operation|
-      operation['stationTypes']&.map { |race_id, type_id| { operation_id:, race_id:, type_id: } }
-    end.flatten.compact
-    StationOperationStationType.upsert_all(station_types)
+    station_services = []
+    station_types = []
+    data.each do |operation_id, operation|
+      station_services.append(*operation['services'].map { |service_id| { operation_id:, service_id: } })
+      station_types.append(*operation['stationTypes']&.map { |race_id, type_id| { operation_id:, race_id:, type_id: } })
+    end
+    StationOperationService.upsert_all(station_services.compact)
+    StationOperationStationType.upsert_all(station_types.compact)
 
     rows = data.map do |id, orig|
       record = map_sde_attributes(orig, id:)
