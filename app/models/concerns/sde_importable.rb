@@ -33,7 +33,6 @@ module SDEImportable
 
     def map_sde_attributes(data, id: nil, context: {}) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/PerceivedComplexity
       data.deep_transform_keys! { |k| k.is_a?(String) ? k.underscore.to_sym : k }
-      data.except!(*sde_exclude)
 
       sde_mapper&.call(data, context:)
 
@@ -50,6 +49,8 @@ module SDEImportable
       sde_localized.each do |field|
         data[field] = data.delete(:"#{field}_id")&.fetch(:en, '') if data[:"#{field}_id"].is_a?(Hash)
       end
+
+      data.except!(*sde_exclude)
 
       attribute_names.reject { |a| %w[created_at updated_at].include?(a) }
                      .map(&:to_sym).each { |a| data[a] = nil unless data.key?(a) }

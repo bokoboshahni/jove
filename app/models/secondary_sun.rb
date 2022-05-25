@@ -67,6 +67,8 @@ class SecondarySun < Celestial
     data[:position_x], data[:position_y], data[:position_z] = data.delete(:position)
   }
 
+  belongs_to :effect_beacon_type, class_name: 'Type'
+
   def self.import_all_from_sde(progress: nil) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
     paths = Dir[File.join(sde_path, 'fsd/universe/**/solarsystem.staticdata')]
     progress&.update(total: paths.count)

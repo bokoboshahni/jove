@@ -102,6 +102,7 @@ class Corporation < ApplicationRecord
   self.sde_localized = %i[description name]
 
   belongs_to :alliance, optional: true
+  belongs_to :icon, optional: true
 
   has_one :login_permit, as: :permittable
 

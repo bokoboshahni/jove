@@ -32,6 +32,12 @@ namespace :sde do # rubocop:disable Metrics/BlockLength
       puts "Imported #{results.rows.count} bloodlines"
     end
 
+    task categories: :environment do
+      progress = TTY::ProgressBar.new("Categories #{IMPORT_PROGRESS_FORMAT}")
+      results = Category.import_all_from_sde(progress:)
+      puts "Imported #{results.rows.count} categories"
+    end
+
     task constellations: :environment do
       progress = TTY::ProgressBar.new("Constellations #{IMPORT_PROGRESS_FORMAT}")
       results = Constellation.import_all_from_sde(progress:)
@@ -48,6 +54,36 @@ namespace :sde do # rubocop:disable Metrics/BlockLength
       progress = TTY::ProgressBar.new("Factions #{IMPORT_PROGRESS_FORMAT}")
       results = Faction.import_all_from_sde(progress:)
       puts "Imported #{results.rows.count} factions"
+    end
+
+    task graphics: :environment do
+      progress = TTY::ProgressBar.new("Graphics #{IMPORT_PROGRESS_FORMAT}")
+      results = Graphic.import_all_from_sde(progress:)
+      puts "Imported #{results.rows.count} graphics"
+    end
+
+    task groups: :environment do
+      progress = TTY::ProgressBar.new("Groups #{IMPORT_PROGRESS_FORMAT}")
+      results = Group.import_all_from_sde(progress:)
+      puts "Imported #{results.rows.count} groups"
+    end
+
+    task icons: :environment do
+      progress = TTY::ProgressBar.new("Icons #{IMPORT_PROGRESS_FORMAT}")
+      results = Icon.import_all_from_sde(progress:)
+      puts "Imported #{results.rows.count} icons"
+    end
+
+    task market_groups: :environment do
+      progress = TTY::ProgressBar.new("Market Groups #{IMPORT_PROGRESS_FORMAT}")
+      results = MarketGroup.import_all_from_sde(progress:)
+      puts "Imported #{results.rows.count} market groups"
+    end
+
+    task meta_groups: :environment do
+      progress = TTY::ProgressBar.new("Meta Groups #{IMPORT_PROGRESS_FORMAT}")
+      results = MetaGroup.import_all_from_sde(progress:)
+      puts "Imported #{results.rows.count} meta groups"
     end
 
     task moons: :environment do
@@ -98,12 +134,24 @@ namespace :sde do # rubocop:disable Metrics/BlockLength
       puts "Imported #{results.rows.count} stars"
     end
 
+    task types: :environment do
+      progress = TTY::ProgressBar.new("Types #{IMPORT_PROGRESS_FORMAT}")
+      results = Type.import_all_from_sde(progress:)
+      puts "Imported #{results.rows.count} types"
+    end
+
     task areas: %i[regions constellations solar_systems]
 
     task celestials: %i[stars secondary_suns planets moons asteroid_belts]
 
+    task entities: %i[races bloodlines corporations factions]
+
+    task images: %i[graphics icons]
+
     task structures: %i[stargates]
 
-    task universe: %i[areas celestials structures]
+    task taxonomies: %i[categories groups market_groups meta_groups]
+
+    task universe: %i[areas celestials structures entities taxonomies types images]
   end
 end

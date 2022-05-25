@@ -187,6 +187,39 @@ ALTER SEQUENCE public.bloodlines_id_seq OWNED BY public.bloodlines.id;
 
 
 --
+-- Name: categories; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.categories (
+    id bigint NOT NULL,
+    icon_id bigint,
+    name text NOT NULL,
+    published boolean NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: categories_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.categories_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: categories_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.categories_id_seq OWNED BY public.categories.id;
+
+
+--
 -- Name: celestials; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -444,6 +477,113 @@ ALTER SEQUENCE public.factions_id_seq OWNED BY public.factions.id;
 
 
 --
+-- Name: graphics; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.graphics (
+    id bigint NOT NULL,
+    description text,
+    graphic_file text,
+    icon_folder text,
+    skin_faction_name text,
+    skin_hull_name text,
+    skin_race_name text,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: graphics_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.graphics_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: graphics_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.graphics_id_seq OWNED BY public.graphics.id;
+
+
+--
+-- Name: groups; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.groups (
+    id bigint NOT NULL,
+    category_id bigint NOT NULL,
+    icon_id bigint,
+    anchorable boolean NOT NULL,
+    anchored boolean NOT NULL,
+    fittable_non_singleton boolean NOT NULL,
+    name text NOT NULL,
+    published boolean NOT NULL,
+    use_base_price boolean NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: groups_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.groups_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: groups_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.groups_id_seq OWNED BY public.groups.id;
+
+
+--
+-- Name: icons; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.icons (
+    id bigint NOT NULL,
+    description text,
+    file text NOT NULL,
+    obsolete boolean,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: icons_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.icons_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: icons_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.icons_id_seq OWNED BY public.icons.id;
+
+
+--
 -- Name: identities; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -546,6 +686,76 @@ CREATE SEQUENCE public.login_permits_id_seq
 --
 
 ALTER SEQUENCE public.login_permits_id_seq OWNED BY public.login_permits.id;
+
+
+--
+-- Name: market_groups; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.market_groups (
+    id bigint NOT NULL,
+    icon_id bigint,
+    ancestry text,
+    ancestry_depth integer DEFAULT 0 NOT NULL,
+    description text,
+    has_types boolean NOT NULL,
+    name text NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: market_groups_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.market_groups_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: market_groups_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.market_groups_id_seq OWNED BY public.market_groups.id;
+
+
+--
+-- Name: meta_groups; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.meta_groups (
+    id bigint NOT NULL,
+    icon_id bigint,
+    description text,
+    icon_suffix text,
+    name text NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: meta_groups_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.meta_groups_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: meta_groups_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.meta_groups_id_seq OWNED BY public.meta_groups.id;
 
 
 --
@@ -794,6 +1004,57 @@ ALTER SEQUENCE public.static_data_versions_id_seq OWNED BY public.static_data_ve
 
 
 --
+-- Name: types; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.types (
+    id bigint NOT NULL,
+    faction_id bigint,
+    graphic_id bigint,
+    group_id bigint NOT NULL,
+    icon_id bigint,
+    market_group_id bigint,
+    meta_group_id bigint,
+    race_id bigint,
+    skin_material_set_id bigint,
+    sound_id bigint,
+    variation_parent_type_id bigint,
+    base_price numeric,
+    capacity numeric,
+    description text,
+    mass numeric,
+    name text NOT NULL,
+    packaged_volume numeric,
+    portion_size integer NOT NULL,
+    published boolean NOT NULL,
+    radius numeric,
+    skin_faction_name text,
+    volume numeric,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: types_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.types_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: types_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.types_id_seq OWNED BY public.types.id;
+
+
+--
 -- Name: users; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -874,6 +1135,13 @@ ALTER TABLE ONLY public.bloodlines ALTER COLUMN id SET DEFAULT nextval('public.b
 
 
 --
+-- Name: categories id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.categories ALTER COLUMN id SET DEFAULT nextval('public.categories_id_seq'::regclass);
+
+
+--
 -- Name: celestials id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -909,6 +1177,27 @@ ALTER TABLE ONLY public.factions ALTER COLUMN id SET DEFAULT nextval('public.fac
 
 
 --
+-- Name: graphics id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.graphics ALTER COLUMN id SET DEFAULT nextval('public.graphics_id_seq'::regclass);
+
+
+--
+-- Name: groups id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.groups ALTER COLUMN id SET DEFAULT nextval('public.groups_id_seq'::regclass);
+
+
+--
+-- Name: icons id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.icons ALTER COLUMN id SET DEFAULT nextval('public.icons_id_seq'::regclass);
+
+
+--
 -- Name: identities id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -927,6 +1216,20 @@ ALTER TABLE ONLY public.login_activities ALTER COLUMN id SET DEFAULT nextval('pu
 --
 
 ALTER TABLE ONLY public.login_permits ALTER COLUMN id SET DEFAULT nextval('public.login_permits_id_seq'::regclass);
+
+
+--
+-- Name: market_groups id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.market_groups ALTER COLUMN id SET DEFAULT nextval('public.market_groups_id_seq'::regclass);
+
+
+--
+-- Name: meta_groups id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.meta_groups ALTER COLUMN id SET DEFAULT nextval('public.meta_groups_id_seq'::regclass);
 
 
 --
@@ -969,6 +1272,13 @@ ALTER TABLE ONLY public.static_data_imports ALTER COLUMN id SET DEFAULT nextval(
 --
 
 ALTER TABLE ONLY public.static_data_versions ALTER COLUMN id SET DEFAULT nextval('public.static_data_versions_id_seq'::regclass);
+
+
+--
+-- Name: types id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.types ALTER COLUMN id SET DEFAULT nextval('public.types_id_seq'::regclass);
 
 
 --
@@ -1034,6 +1344,14 @@ ALTER TABLE ONLY public.bloodlines
 
 
 --
+-- Name: categories categories_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.categories
+    ADD CONSTRAINT categories_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: celestials celestials_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -1074,6 +1392,30 @@ ALTER TABLE ONLY public.factions
 
 
 --
+-- Name: graphics graphics_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.graphics
+    ADD CONSTRAINT graphics_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: groups groups_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.groups
+    ADD CONSTRAINT groups_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: icons icons_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.icons
+    ADD CONSTRAINT icons_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: identities identities_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -1095,6 +1437,22 @@ ALTER TABLE ONLY public.login_activities
 
 ALTER TABLE ONLY public.login_permits
     ADD CONSTRAINT login_permits_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: market_groups market_groups_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.market_groups
+    ADD CONSTRAINT market_groups_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: meta_groups meta_groups_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.meta_groups
+    ADD CONSTRAINT meta_groups_pkey PRIMARY KEY (id);
 
 
 --
@@ -1151,6 +1509,14 @@ ALTER TABLE ONLY public.static_data_imports
 
 ALTER TABLE ONLY public.static_data_versions
     ADD CONSTRAINT static_data_versions_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: types types_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.types
+    ADD CONSTRAINT types_pkey PRIMARY KEY (id);
 
 
 --
@@ -1223,6 +1589,13 @@ CREATE INDEX index_bloodlines_on_icon_id ON public.bloodlines USING btree (icon_
 --
 
 CREATE INDEX index_bloodlines_on_race_id ON public.bloodlines USING btree (race_id);
+
+
+--
+-- Name: index_categories_on_icon_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_categories_on_icon_id ON public.categories USING btree (icon_id);
 
 
 --
@@ -1443,6 +1816,20 @@ CREATE INDEX index_factions_on_solar_system_id ON public.factions USING btree (s
 
 
 --
+-- Name: index_groups_on_category_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_groups_on_category_id ON public.groups USING btree (category_id);
+
+
+--
+-- Name: index_groups_on_icon_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_groups_on_icon_id ON public.groups USING btree (icon_id);
+
+
+--
 -- Name: index_identities_on_character_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -1482,6 +1869,27 @@ CREATE INDEX index_login_activities_on_user ON public.login_activities USING btr
 --
 
 CREATE INDEX index_login_permits_on_permittable ON public.login_permits USING btree (permittable_type, permittable_id);
+
+
+--
+-- Name: index_market_groups_on_ancestry; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_market_groups_on_ancestry ON public.market_groups USING btree (ancestry);
+
+
+--
+-- Name: index_market_groups_on_icon_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_market_groups_on_icon_id ON public.market_groups USING btree (icon_id);
+
+
+--
+-- Name: index_meta_groups_on_icon_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_meta_groups_on_icon_id ON public.meta_groups USING btree (icon_id);
 
 
 --
@@ -1566,6 +1974,76 @@ CREATE INDEX index_stargates_on_type_id ON public.stargates USING btree (type_id
 --
 
 CREATE INDEX index_static_data_imports_on_version_id ON public.static_data_imports USING btree (version_id);
+
+
+--
+-- Name: index_types_on_faction_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_types_on_faction_id ON public.types USING btree (faction_id);
+
+
+--
+-- Name: index_types_on_graphic_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_types_on_graphic_id ON public.types USING btree (graphic_id);
+
+
+--
+-- Name: index_types_on_group_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_types_on_group_id ON public.types USING btree (group_id);
+
+
+--
+-- Name: index_types_on_icon_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_types_on_icon_id ON public.types USING btree (icon_id);
+
+
+--
+-- Name: index_types_on_market_group_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_types_on_market_group_id ON public.types USING btree (market_group_id);
+
+
+--
+-- Name: index_types_on_meta_group_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_types_on_meta_group_id ON public.types USING btree (meta_group_id);
+
+
+--
+-- Name: index_types_on_race_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_types_on_race_id ON public.types USING btree (race_id);
+
+
+--
+-- Name: index_types_on_skin_material_set_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_types_on_skin_material_set_id ON public.types USING btree (skin_material_set_id);
+
+
+--
+-- Name: index_types_on_sound_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_types_on_sound_id ON public.types USING btree (sound_id);
+
+
+--
+-- Name: index_types_on_variation_parent_type_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_types_on_variation_parent_type_id ON public.types USING btree (variation_parent_type_id);
 
 
 --
@@ -1683,6 +2161,13 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220525015515'),
 ('20220525020938'),
 ('20220525021716'),
-('20220525030011');
+('20220525030011'),
+('20220525123955'),
+('20220525124621'),
+('20220525125404'),
+('20220525135721'),
+('20220525142514'),
+('20220525142902'),
+('20220525143716');
 
 
