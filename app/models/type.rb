@@ -71,6 +71,7 @@ class Type < ApplicationRecord
   belongs_to :faction, optional: true
   belongs_to :group
   belongs_to :market_group, optional: true
+  belongs_to :meta_group, optional: true
   belongs_to :variation_parent_type, optional: true
 
   def self.import_all_from_sde(progress: nil)

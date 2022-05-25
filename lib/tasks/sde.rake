@@ -68,6 +68,12 @@ namespace :sde do # rubocop:disable Metrics/BlockLength
       puts "Imported #{results.rows.count} market groups"
     end
 
+    task meta_groups: :environment do
+      progress = TTY::ProgressBar.new("Meta Groups #{IMPORT_PROGRESS_FORMAT}")
+      results = MetaGroup.import_all_from_sde(progress:)
+      puts "Imported #{results.rows.count} meta groups"
+    end
+
     task moons: :environment do
       progress = TTY::ProgressBar.new("Moons #{IMPORT_PROGRESS_FORMAT}")
       results = Moon.import_all_from_sde(progress:)
@@ -130,7 +136,7 @@ namespace :sde do # rubocop:disable Metrics/BlockLength
 
     task structures: %i[stargates]
 
-    task taxonomies: %i[categories groups market_groups]
+    task taxonomies: %i[categories groups market_groups meta_groups]
 
     task universe: %i[areas celestials structures entities taxonomies types]
   end

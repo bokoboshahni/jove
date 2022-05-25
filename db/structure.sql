@@ -656,6 +656,40 @@ ALTER SEQUENCE public.market_groups_id_seq OWNED BY public.market_groups.id;
 
 
 --
+-- Name: meta_groups; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.meta_groups (
+    id bigint NOT NULL,
+    icon_id bigint,
+    description text,
+    icon_suffix text,
+    name text NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: meta_groups_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.meta_groups_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: meta_groups_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.meta_groups_id_seq OWNED BY public.meta_groups.id;
+
+
+--
 -- Name: races; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1109,6 +1143,13 @@ ALTER TABLE ONLY public.market_groups ALTER COLUMN id SET DEFAULT nextval('publi
 
 
 --
+-- Name: meta_groups id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.meta_groups ALTER COLUMN id SET DEFAULT nextval('public.meta_groups_id_seq'::regclass);
+
+
+--
 -- Name: races id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -1305,6 +1346,14 @@ ALTER TABLE ONLY public.login_permits
 
 ALTER TABLE ONLY public.market_groups
     ADD CONSTRAINT market_groups_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: meta_groups meta_groups_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.meta_groups
+    ADD CONSTRAINT meta_groups_pkey PRIMARY KEY (id);
 
 
 --
@@ -1738,6 +1787,13 @@ CREATE INDEX index_market_groups_on_icon_id ON public.market_groups USING btree 
 
 
 --
+-- Name: index_meta_groups_on_icon_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_meta_groups_on_icon_id ON public.meta_groups USING btree (icon_id);
+
+
+--
 -- Name: index_races_on_icon_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -2010,6 +2066,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220525123955'),
 ('20220525124621'),
 ('20220525125404'),
-('20220525135721');
+('20220525135721'),
+('20220525142514');
 
 
