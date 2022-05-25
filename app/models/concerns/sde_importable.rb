@@ -15,6 +15,9 @@ module SDEImportable
 
     class_attribute :sde_name_lookup
     self.sde_name_lookup = nil
+
+    class_attribute :sde_localized
+    self.sde_localized = []
   end
 
   module ClassMethods
@@ -28,17 +31,24 @@ module SDEImportable
       Jove.config.sde_path
     end
 
-    def map_sde_attributes(data, context: {}) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/PerceivedComplexity
+    def map_sde_attributes(data, id: nil, context: {}) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/PerceivedComplexity
       data.deep_transform_keys! { |k| k.is_a?(String) ? k.underscore.to_sym : k }
       data.except!(*sde_exclude)
-      data.transform_keys! { |k| sde_rename.fetch(k, k) }
 
       sde_mapper&.call(data, context:)
+
+      data.transform_keys! { |k| sde_rename.fetch(k, k) }
 
       if sde_name_lookup.is_a?(Symbol)
         data[:name] = sde_names.fetch(data.fetch(sde_name_lookup))
       elsif sde_name_lookup
         data[:name] = sde_names.fetch(data.fetch(:id))
+      end
+
+      data[:id] = id if id
+
+      sde_localized.each do |field|
+        data[field] = data.delete(:"#{field}_id")&.fetch(:en, '') if data[:"#{field}_id"].is_a?(Hash)
       end
 
       attribute_names.reject { |a| %w[created_at updated_at].include?(a) }

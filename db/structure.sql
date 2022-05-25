@@ -24,6 +24,19 @@ COMMENT ON EXTENSION pgcrypto IS 'cryptographic functions';
 
 
 --
+-- Name: celestial_type; Type: TYPE; Schema: public; Owner: -
+--
+
+CREATE TYPE public.celestial_type AS ENUM (
+    'asteroid_belt',
+    'moon',
+    'planet',
+    'secondary_sun',
+    'star'
+);
+
+
+--
 -- Name: universe; Type: TYPE; Schema: public; Owner: -
 --
 
@@ -134,6 +147,108 @@ CREATE TABLE public.ar_internal_metadata (
 
 
 --
+-- Name: bloodlines; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.bloodlines (
+    id bigint NOT NULL,
+    corporation_id bigint NOT NULL,
+    icon_id bigint,
+    race_id bigint NOT NULL,
+    charisma integer NOT NULL,
+    description text NOT NULL,
+    intelligence integer NOT NULL,
+    memory integer NOT NULL,
+    name text NOT NULL,
+    perception integer NOT NULL,
+    willpower integer NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: bloodlines_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.bloodlines_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: bloodlines_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.bloodlines_id_seq OWNED BY public.bloodlines.id;
+
+
+--
+-- Name: celestials; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.celestials (
+    id bigint NOT NULL,
+    effect_beacon_type_id bigint,
+    height_map_1_id bigint,
+    height_map_2_id bigint,
+    shader_preset_id bigint,
+    solar_system_id bigint NOT NULL,
+    type_id bigint NOT NULL,
+    age numeric,
+    ancestry text,
+    celestial_index integer,
+    celestial_type public.celestial_type NOT NULL,
+    density numeric,
+    eccentricity numeric,
+    escape_velocity numeric,
+    fragmented boolean,
+    life numeric,
+    locked boolean,
+    luminosity numeric,
+    mass_dust numeric,
+    mass_gas numeric,
+    orbit_period numeric,
+    orbit_radius numeric,
+    name text NOT NULL,
+    population boolean,
+    position_x numeric NOT NULL,
+    position_y numeric NOT NULL,
+    position_z numeric NOT NULL,
+    pressure numeric,
+    radius numeric,
+    rotation_rate numeric,
+    spectral_class text,
+    surface_gravity numeric,
+    temperature numeric,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: celestials_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.celestials_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: celestials_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.celestials_id_seq OWNED BY public.celestials.id;
+
+
+--
 -- Name: characters; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -178,30 +293,86 @@ ALTER SEQUENCE public.characters_id_seq OWNED BY public.characters.id;
 
 
 --
+-- Name: constellations; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.constellations (
+    id bigint NOT NULL,
+    region_id bigint NOT NULL,
+    center_x numeric NOT NULL,
+    center_y numeric NOT NULL,
+    center_z numeric NOT NULL,
+    max_x numeric NOT NULL,
+    max_y numeric NOT NULL,
+    max_z numeric NOT NULL,
+    min_x numeric NOT NULL,
+    min_y numeric NOT NULL,
+    min_z numeric NOT NULL,
+    radius numeric NOT NULL,
+    name text NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL,
+    faction_id bigint,
+    wormhole_class_id bigint
+);
+
+
+--
+-- Name: constellations_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.constellations_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: constellations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.constellations_id_seq OWNED BY public.constellations.id;
+
+
+--
 -- Name: corporations; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.corporations (
     id bigint NOT NULL,
     alliance_id bigint,
-    ceo_id bigint NOT NULL,
-    creator_id bigint NOT NULL,
+    ceo_id bigint,
+    creator_id bigint,
     faction_id bigint,
     home_station_id bigint,
     description text,
-    esi_etag text NOT NULL,
-    esi_expires_at timestamp without time zone NOT NULL,
-    esi_last_modified_at timestamp without time zone NOT NULL,
+    esi_etag text,
+    esi_expires_at timestamp without time zone,
+    esi_last_modified_at timestamp without time zone,
     founded_on date,
-    member_count integer NOT NULL,
+    member_count integer,
     name text NOT NULL,
-    share_count integer,
+    share_count bigint,
     tax_rate numeric NOT NULL,
     ticker text NOT NULL,
     url text,
     war_eligible boolean,
     created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    updated_at timestamp(6) without time zone NOT NULL,
+    enemy_id bigint,
+    friend_id bigint,
+    icon_id bigint,
+    main_activity_id bigint,
+    race_id bigint,
+    secondary_activity_id bigint,
+    solar_system_id bigint,
+    deleted boolean,
+    extent text,
+    npc boolean,
+    size_factor numeric,
+    size text
 );
 
 
@@ -222,6 +393,54 @@ CREATE SEQUENCE public.corporations_id_seq
 --
 
 ALTER SEQUENCE public.corporations_id_seq OWNED BY public.corporations.id;
+
+
+--
+-- Name: faction_races; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.faction_races (
+    faction_id bigint NOT NULL,
+    race_id bigint NOT NULL
+);
+
+
+--
+-- Name: factions; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.factions (
+    id bigint NOT NULL,
+    corporation_id bigint,
+    icon_id bigint NOT NULL,
+    militia_corporation_id bigint,
+    solar_system_id bigint NOT NULL,
+    description text NOT NULL,
+    name text NOT NULL,
+    short_description text,
+    size_factor numeric NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: factions_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.factions_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: factions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.factions_id_seq OWNED BY public.factions.id;
 
 
 --
@@ -330,6 +549,40 @@ ALTER SEQUENCE public.login_permits_id_seq OWNED BY public.login_permits.id;
 
 
 --
+-- Name: races; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.races (
+    id bigint NOT NULL,
+    icon_id bigint,
+    ship_type_id bigint,
+    description text,
+    name text NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: races_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.races_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: races_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.races_id_seq OWNED BY public.races.id;
+
+
+--
 -- Name: regions; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -381,6 +634,99 @@ ALTER SEQUENCE public.regions_id_seq OWNED BY public.regions.id;
 CREATE TABLE public.schema_migrations (
     version character varying NOT NULL
 );
+
+
+--
+-- Name: solar_systems; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.solar_systems (
+    id bigint NOT NULL,
+    constellation_id bigint NOT NULL,
+    faction_id bigint,
+    wormhole_class_id bigint,
+    border boolean NOT NULL,
+    center_x numeric NOT NULL,
+    center_y numeric NOT NULL,
+    center_z numeric NOT NULL,
+    corridor boolean NOT NULL,
+    disallowed_anchor_categories integer[],
+    disallowed_anchor_groups integer[],
+    fringe boolean NOT NULL,
+    hub boolean NOT NULL,
+    international boolean NOT NULL,
+    luminosity numeric NOT NULL,
+    max_x numeric NOT NULL,
+    max_y numeric NOT NULL,
+    max_z numeric NOT NULL,
+    min_x numeric NOT NULL,
+    min_y numeric NOT NULL,
+    min_z numeric NOT NULL,
+    radius numeric NOT NULL,
+    regional boolean NOT NULL,
+    security numeric NOT NULL,
+    security_class text,
+    name text NOT NULL,
+    visual_effect text,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: solar_systems_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.solar_systems_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: solar_systems_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.solar_systems_id_seq OWNED BY public.solar_systems.id;
+
+
+--
+-- Name: stargates; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.stargates (
+    id bigint NOT NULL,
+    destination_id bigint NOT NULL,
+    solar_system_id bigint NOT NULL,
+    type_id bigint NOT NULL,
+    name text NOT NULL,
+    position_x numeric NOT NULL,
+    position_y numeric NOT NULL,
+    position_z numeric NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: stargates_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.stargates_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: stargates_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.stargates_id_seq OWNED BY public.stargates.id;
 
 
 --
@@ -521,6 +867,20 @@ ALTER TABLE ONLY public.alliances ALTER COLUMN id SET DEFAULT nextval('public.al
 
 
 --
+-- Name: bloodlines id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.bloodlines ALTER COLUMN id SET DEFAULT nextval('public.bloodlines_id_seq'::regclass);
+
+
+--
+-- Name: celestials id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.celestials ALTER COLUMN id SET DEFAULT nextval('public.celestials_id_seq'::regclass);
+
+
+--
 -- Name: characters id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -528,10 +888,24 @@ ALTER TABLE ONLY public.characters ALTER COLUMN id SET DEFAULT nextval('public.c
 
 
 --
+-- Name: constellations id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.constellations ALTER COLUMN id SET DEFAULT nextval('public.constellations_id_seq'::regclass);
+
+
+--
 -- Name: corporations id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.corporations ALTER COLUMN id SET DEFAULT nextval('public.corporations_id_seq'::regclass);
+
+
+--
+-- Name: factions id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.factions ALTER COLUMN id SET DEFAULT nextval('public.factions_id_seq'::regclass);
 
 
 --
@@ -556,10 +930,31 @@ ALTER TABLE ONLY public.login_permits ALTER COLUMN id SET DEFAULT nextval('publi
 
 
 --
+-- Name: races id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.races ALTER COLUMN id SET DEFAULT nextval('public.races_id_seq'::regclass);
+
+
+--
 -- Name: regions id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.regions ALTER COLUMN id SET DEFAULT nextval('public.regions_id_seq'::regclass);
+
+
+--
+-- Name: solar_systems id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.solar_systems ALTER COLUMN id SET DEFAULT nextval('public.solar_systems_id_seq'::regclass);
+
+
+--
+-- Name: stargates id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.stargates ALTER COLUMN id SET DEFAULT nextval('public.stargates_id_seq'::regclass);
 
 
 --
@@ -631,6 +1026,22 @@ ALTER TABLE ONLY public.ar_internal_metadata
 
 
 --
+-- Name: bloodlines bloodlines_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.bloodlines
+    ADD CONSTRAINT bloodlines_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: celestials celestials_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.celestials
+    ADD CONSTRAINT celestials_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: characters characters_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -639,11 +1050,27 @@ ALTER TABLE ONLY public.characters
 
 
 --
+-- Name: constellations constellations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.constellations
+    ADD CONSTRAINT constellations_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: corporations corporations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.corporations
     ADD CONSTRAINT corporations_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: factions factions_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.factions
+    ADD CONSTRAINT factions_pkey PRIMARY KEY (id);
 
 
 --
@@ -671,6 +1098,14 @@ ALTER TABLE ONLY public.login_permits
 
 
 --
+-- Name: races races_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.races
+    ADD CONSTRAINT races_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: regions regions_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -684,6 +1119,22 @@ ALTER TABLE ONLY public.regions
 
 ALTER TABLE ONLY public.schema_migrations
     ADD CONSTRAINT schema_migrations_pkey PRIMARY KEY (version);
+
+
+--
+-- Name: solar_systems solar_systems_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.solar_systems
+    ADD CONSTRAINT solar_systems_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: stargates stargates_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.stargates
+    ADD CONSTRAINT stargates_pkey PRIMARY KEY (id);
 
 
 --
@@ -754,6 +1205,69 @@ CREATE INDEX index_alliances_on_faction_id ON public.alliances USING btree (fact
 
 
 --
+-- Name: index_bloodlines_on_corporation_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_bloodlines_on_corporation_id ON public.bloodlines USING btree (corporation_id);
+
+
+--
+-- Name: index_bloodlines_on_icon_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_bloodlines_on_icon_id ON public.bloodlines USING btree (icon_id);
+
+
+--
+-- Name: index_bloodlines_on_race_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_bloodlines_on_race_id ON public.bloodlines USING btree (race_id);
+
+
+--
+-- Name: index_celestials_on_effect_beacon_type_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_celestials_on_effect_beacon_type_id ON public.celestials USING btree (effect_beacon_type_id);
+
+
+--
+-- Name: index_celestials_on_height_map_1_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_celestials_on_height_map_1_id ON public.celestials USING btree (height_map_1_id);
+
+
+--
+-- Name: index_celestials_on_height_map_2_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_celestials_on_height_map_2_id ON public.celestials USING btree (height_map_2_id);
+
+
+--
+-- Name: index_celestials_on_shader_preset_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_celestials_on_shader_preset_id ON public.celestials USING btree (shader_preset_id);
+
+
+--
+-- Name: index_celestials_on_solar_system_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_celestials_on_solar_system_id ON public.celestials USING btree (solar_system_id);
+
+
+--
+-- Name: index_celestials_on_type_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_celestials_on_type_id ON public.celestials USING btree (type_id);
+
+
+--
 -- Name: index_characters_on_bloodline_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -782,6 +1296,27 @@ CREATE INDEX index_characters_on_race_id ON public.characters USING btree (race_
 
 
 --
+-- Name: index_constellations_on_faction_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_constellations_on_faction_id ON public.constellations USING btree (faction_id);
+
+
+--
+-- Name: index_constellations_on_region_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_constellations_on_region_id ON public.constellations USING btree (region_id);
+
+
+--
+-- Name: index_constellations_on_wormhole_class_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_constellations_on_wormhole_class_id ON public.constellations USING btree (wormhole_class_id);
+
+
+--
 -- Name: index_corporations_on_alliance_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -803,6 +1338,13 @@ CREATE INDEX index_corporations_on_creator_id ON public.corporations USING btree
 
 
 --
+-- Name: index_corporations_on_enemy_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_corporations_on_enemy_id ON public.corporations USING btree (enemy_id);
+
+
+--
 -- Name: index_corporations_on_faction_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -810,10 +1352,94 @@ CREATE INDEX index_corporations_on_faction_id ON public.corporations USING btree
 
 
 --
+-- Name: index_corporations_on_friend_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_corporations_on_friend_id ON public.corporations USING btree (friend_id);
+
+
+--
 -- Name: index_corporations_on_home_station_id; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_corporations_on_home_station_id ON public.corporations USING btree (home_station_id);
+
+
+--
+-- Name: index_corporations_on_icon_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_corporations_on_icon_id ON public.corporations USING btree (icon_id);
+
+
+--
+-- Name: index_corporations_on_main_activity_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_corporations_on_main_activity_id ON public.corporations USING btree (main_activity_id);
+
+
+--
+-- Name: index_corporations_on_race_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_corporations_on_race_id ON public.corporations USING btree (race_id);
+
+
+--
+-- Name: index_corporations_on_secondary_activity_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_corporations_on_secondary_activity_id ON public.corporations USING btree (secondary_activity_id);
+
+
+--
+-- Name: index_corporations_on_solar_system_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_corporations_on_solar_system_id ON public.corporations USING btree (solar_system_id);
+
+
+--
+-- Name: index_faction_races_on_faction_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_faction_races_on_faction_id ON public.faction_races USING btree (faction_id);
+
+
+--
+-- Name: index_faction_races_on_race_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_faction_races_on_race_id ON public.faction_races USING btree (race_id);
+
+
+--
+-- Name: index_factions_on_corporation_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_factions_on_corporation_id ON public.factions USING btree (corporation_id);
+
+
+--
+-- Name: index_factions_on_icon_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_factions_on_icon_id ON public.factions USING btree (icon_id);
+
+
+--
+-- Name: index_factions_on_militia_corporation_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_factions_on_militia_corporation_id ON public.factions USING btree (militia_corporation_id);
+
+
+--
+-- Name: index_factions_on_solar_system_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_factions_on_solar_system_id ON public.factions USING btree (solar_system_id);
 
 
 --
@@ -859,6 +1485,20 @@ CREATE INDEX index_login_permits_on_permittable ON public.login_permits USING bt
 
 
 --
+-- Name: index_races_on_icon_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_races_on_icon_id ON public.races USING btree (icon_id);
+
+
+--
+-- Name: index_races_on_ship_type_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_races_on_ship_type_id ON public.races USING btree (ship_type_id);
+
+
+--
 -- Name: index_regions_on_faction_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -877,6 +1517,48 @@ CREATE INDEX index_regions_on_nebula_id ON public.regions USING btree (nebula_id
 --
 
 CREATE INDEX index_regions_on_wormhole_class_id ON public.regions USING btree (wormhole_class_id);
+
+
+--
+-- Name: index_solar_systems_on_constellation_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_solar_systems_on_constellation_id ON public.solar_systems USING btree (constellation_id);
+
+
+--
+-- Name: index_solar_systems_on_faction_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_solar_systems_on_faction_id ON public.solar_systems USING btree (faction_id);
+
+
+--
+-- Name: index_solar_systems_on_wormhole_class_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_solar_systems_on_wormhole_class_id ON public.solar_systems USING btree (wormhole_class_id);
+
+
+--
+-- Name: index_stargates_on_destination_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_stargates_on_destination_id ON public.stargates USING btree (destination_id);
+
+
+--
+-- Name: index_stargates_on_solar_system_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_stargates_on_solar_system_id ON public.stargates USING btree (solar_system_id);
+
+
+--
+-- Name: index_stargates_on_type_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_stargates_on_type_id ON public.stargates USING btree (type_id);
 
 
 --
@@ -912,6 +1594,13 @@ CREATE UNIQUE INDEX index_unique_active_storage_variant_records ON public.active
 --
 
 CREATE UNIQUE INDEX index_unique_default_identities ON public.identities USING btree (user_id, "default");
+
+
+--
+-- Name: index_unique_faction_races; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_unique_faction_races ON public.faction_races USING btree (faction_id, race_id);
 
 
 --
@@ -984,6 +1673,16 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220523164403'),
 ('20220523164503'),
 ('20220523210147'),
-('20220523211416');
+('20220523211416'),
+('20220524172419'),
+('20220524180358'),
+('20220524195739'),
+('20220524195908'),
+('20220524200058'),
+('20220525014307'),
+('20220525015515'),
+('20220525020938'),
+('20220525021716'),
+('20220525030011');
 
 

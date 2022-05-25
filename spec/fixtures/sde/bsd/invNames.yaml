@@ -887,6 +887,8 @@
   itemName: Krai Perun
 - itemID: 21000311
   itemName: A-C00311
+- itemID: 21000312
+  itemName: A-C00312
 - itemID: 22000001
   itemName: ADC01
 - itemID: 24000001
@@ -1079,10 +1081,14 @@
   itemName: Alentene
 - itemID: 31000008
   itemName: J100744
+- itemID: 31000017
+  itemName: J105711
 - itemID: 32000001
   itemName: AD001
 - itemID: 34000001
   itemName: V-001
+- itemID: 40008888
+  itemName: Urlen - Star
 - itemID: 40008889
   itemName: Urlen I
 - itemID: 40008890
@@ -1145,6 +1151,8 @@
   itemName: Urlen IX
 - itemID: 40008919
   itemName: Urlen IX - Moon 1
+- itemID: 40008920
+  itemName: Maurasi - Star
 - itemID: 40008921
   itemName: Maurasi I
 - itemID: 40008922
@@ -1401,6 +1409,8 @@
   itemName: Maurasi XII - Asteroid Belt 1
 - itemID: 40009048
   itemName: Maurasi XII - Moon 1
+- itemID: 40009049
+  itemName: Kisogo - Star
 - itemID: 40009050
   itemName: Kisogo I
 - itemID: 40009051
@@ -1453,6 +1463,8 @@
   itemName: Kisogo IX - Moon 1
 - itemID: 40009075
   itemName: Kisogo IX - Moon 2
+- itemID: 40009076
+  itemName: Jita - Star
 - itemID: 40009077
   itemName: Jita I
 - itemID: 40009078
@@ -1535,6 +1547,8 @@
   itemName: Jita VII - Moon 2
 - itemID: 40009123
   itemName: Jita VIII
+- itemID: 40009126
+  itemName: Niyabainen - Star
 - itemID: 40009127
   itemName: Niyabainen I
 - itemID: 40009128
@@ -1737,6 +1751,8 @@
   itemName: Niyabainen IX - Asteroid Belt 3
 - itemID: 40009227
   itemName: Niyabainen IX - Moon 21
+- itemID: 40009228
+  itemName: Perimeter - Star
 - itemID: 40009229
   itemName: Perimeter I
 - itemID: 40009230
@@ -1783,6 +1799,8 @@
   itemName: Perimeter X - Moon 1
 - itemID: 40009251
   itemName: Perimeter X - Moon 2
+- itemID: 40009252
+  itemName: New Caldari - Star
 - itemID: 40009253
   itemName: New Caldari I (Matigu)
 - itemID: 40009254
@@ -1813,6 +1831,8 @@
   itemName: New Caldari V (Oniteseru) - Moon 2
 - itemID: 40009267
   itemName: New Caldari V (Oniteseru) - Moon 3
+- itemID: 40091703
+  itemName: Saranen - Star
 - itemID: 40091704
   itemName: Saranen I
 - itemID: 40091705
@@ -1961,6 +1981,8 @@
   itemName: Saranen VI - Asteroid Belt 1
 - itemID: 40091777
   itemName: Saranen VI - Moon 1
+- itemID: 40128775
+  itemName: F-NMX6 - Star
 - itemID: 40128776
   itemName: F-NMX6 I
 - itemID: 40128777
@@ -2131,6 +2153,8 @@
   itemName: F-NMX6 VIII - Asteroid Belt 1
 - itemID: 40128860
   itemName: F-NMX6 VIII - Asteroid Belt 2
+- itemID: 40187875
+  itemName: Arzad - Star
 - itemID: 40187876
   itemName: Arzad I
 - itemID: 40187877
@@ -2293,6 +2317,8 @@
   itemName: Arzad X - Moon 11
 - itemID: 40187956
   itemName: Arzad X - Asteroid Belt 7
+- itemID: 40285017
+  itemName: 4C-B7X - Star
 - itemID: 40285018
   itemName: 4C-B7X I
 - itemID: 40285019
@@ -2399,6 +2425,8 @@
   itemName: 4C-B7X IX - Asteroid Belt 1
 - itemID: 40285070
   itemName: 4C-B7X IX - Moon 1
+- itemID: 40317021
+  itemName: Ignebaener - Star
 - itemID: 40317022
   itemName: Ignebaener I
 - itemID: 40317023
@@ -2429,6 +2457,8 @@
   itemName: Ignebaener VI - Moon 1
 - itemID: 40317039
   itemName: Ignebaener VI - Moon 2
+- itemID: 40350803
+  itemName: J100744 - Star
 - itemID: 40350804
   itemName: J100744 I
 - itemID: 40350805
@@ -2459,7 +2489,99 @@
   itemName: J100744 VIII - Moon 3
 - itemID: 40350818
   itemName: J100744 VIII - Moon 4
+- itemID: 40351222
+  itemName: J105711 - Star
+- itemID: 40351223
+  itemName: J105711 I
+- itemID: 40351224
+  itemName: J105711 II
+- itemID: 40351225
+  itemName: J105711 III
+- itemID: 40351226
+  itemName: J105711 IV
+- itemID: 40351227
+  itemName: J105711 V
+- itemID: 40351228
+  itemName: J105711 VI
+- itemID: 40351229
+  itemName: J105711 VI - Moon 1
+- itemID: 40351230
+  itemName: J105711 VI - Moon 2
+- itemID: 40351231
+  itemName: J105711 VI - Moon 3
+- itemID: 40351232
+  itemName: J105711 VI - Moon 4
+- itemID: 40351233
+  itemName: J105711 VII
+- itemID: 40351234
+  itemName: J105711 VII - Moon 1
+- itemID: 40351235
+  itemName: J105711 VII - Moon 2
+- itemID: 40351236
+  itemName: J105711 VII - Moon 3
+- itemID: 40351237
+  itemName: J105711 VII - Moon 4
+- itemID: 40351238
+  itemName: J105711 VII - Moon 5
+- itemID: 40351239
+  itemName: J105711 VIII
+- itemID: 40351240
+  itemName: J105711 VIII - Moon 1
+- itemID: 40351241
+  itemName: J105711 VIII - Moon 2
+- itemID: 40351242
+  itemName: J105711 VIII - Moon 3
+- itemID: 40351243
+  itemName: J105711 VIII - Moon 4
+- itemID: 40351244
+  itemName: J105711 VIII - Moon 5
+- itemID: 40351245
+  itemName: J105711 VIII - Moon 6
+- itemID: 40351246
+  itemName: J105711 VIII - Moon 7
+- itemID: 40351247
+  itemName: J105711 VIII - Moon 8
+- itemID: 40351248
+  itemName: J105711 VIII - Moon 9
+- itemID: 40351249
+  itemName: J105711 VIII - Moon 10
+- itemID: 40351250
+  itemName: J105711 VIII - Moon 11
+- itemID: 40351251
+  itemName: J105711 VIII - Moon 12
+- itemID: 40351252
+  itemName: J105711 VIII - Moon 13
+- itemID: 40351253
+  itemName: J105711 VIII - Moon 14
+- itemID: 40351254
+  itemName: J105711 VIII - Moon 15
+- itemID: 40351255
+  itemName: J105711 VIII - Moon 16
+- itemID: 40351256
+  itemName: J105711 VIII - Moon 17
+- itemID: 40351257
+  itemName: J105711 VIII - Moon 18
+- itemID: 40351258
+  itemName: J105711 VIII - Moon 19
+- itemID: 40351259
+  itemName: J105711 VIII - Moon 20
+- itemID: 40351260
+  itemName: J105711 VIII - Moon 21
+- itemID: 40351261
+  itemName: J105711 VIII - Moon 22
+- itemID: 40351262
+  itemName: J105711 VIII - Moon 23
+- itemID: 40351263
+  itemName: J105711 IX
+- itemID: 40351264
+  itemName: J105711 IX - Moon 1
+- itemID: 40351265
+  itemName: J105711 IX - Moon 2
+- itemID: 40351266
+  itemName: J105711 IX - Moon 3
 - itemID: 40485497
+  itemName: Unknown Anomaly
+- itemID: 40486223
   itemName: Unknown Anomaly
 - itemID: 50000547
   itemName: Stargate (Kisogo)
