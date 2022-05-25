@@ -85,6 +85,8 @@ class Celestial < ApplicationRecord
   belongs_to :solar_system
   belongs_to :type
 
+  has_many :stations
+
   has_one :constellation, through: :solar_system
 
   has_one :region, through: :constellation
