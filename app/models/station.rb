@@ -71,6 +71,7 @@ class Station < ApplicationRecord
   belongs_to :celestial
   belongs_to :corporation
   belongs_to :graphic
+  belongs_to :operation, class_name: 'StationOperation'
   belongs_to :type
 
   has_many :corporations_as_home_station, class_name: 'Corporation', foreign_key: :home_station_id

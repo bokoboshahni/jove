@@ -77,6 +77,7 @@ class Type < ApplicationRecord
   belongs_to :variation_parent_type, optional: true
 
   has_many :stations
+  has_many :station_operation_station_types
 
   def self.import_all_from_sde(progress: nil)
     data = YAML.load_file(File.join(sde_path, 'fsd/typeIDs.yaml'))

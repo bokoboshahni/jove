@@ -140,6 +140,12 @@ namespace :sde do # rubocop:disable Metrics/BlockLength
       puts "Imported #{results.rows.count} stations"
     end
 
+    task station_operations: :environment do
+      progress = TTY::ProgressBar.new("Stations #{IMPORT_PROGRESS_FORMAT}")
+      results = StationOperation.import_all_from_sde(progress:)
+      puts "Imported #{results.rows.count} station operations"
+    end
+
     task types: :environment do
       progress = TTY::ProgressBar.new("Types #{IMPORT_PROGRESS_FORMAT}")
       results = Type.import_all_from_sde(progress:)
@@ -158,6 +164,6 @@ namespace :sde do # rubocop:disable Metrics/BlockLength
 
     task taxonomies: %i[categories groups market_groups meta_groups]
 
-    task universe: %i[areas celestials structures entities taxonomies types images stations]
+    task universe: %i[areas celestials structures entities taxonomies types images stations station_operations]
   end
 end
