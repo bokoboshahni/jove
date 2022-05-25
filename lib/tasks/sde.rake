@@ -26,6 +26,12 @@ namespace :sde do # rubocop:disable Metrics/BlockLength
       puts "Imported #{results.rows.count} asteroid belts"
     end
 
+    task bloodlines: :environment do
+      progress = TTY::ProgressBar.new("Bloodlines #{IMPORT_PROGRESS_FORMAT}")
+      results = Bloodline.import_all_from_sde(progress:)
+      puts "Imported #{results.rows.count} bloodlines"
+    end
+
     task constellations: :environment do
       progress = TTY::ProgressBar.new("Constellations #{IMPORT_PROGRESS_FORMAT}")
       results = Constellation.import_all_from_sde(progress:)

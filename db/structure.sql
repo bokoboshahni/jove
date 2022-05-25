@@ -147,6 +147,46 @@ CREATE TABLE public.ar_internal_metadata (
 
 
 --
+-- Name: bloodlines; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.bloodlines (
+    id bigint NOT NULL,
+    corporation_id bigint NOT NULL,
+    icon_id bigint,
+    race_id bigint NOT NULL,
+    charisma integer NOT NULL,
+    description text NOT NULL,
+    intelligence integer NOT NULL,
+    memory integer NOT NULL,
+    name text NOT NULL,
+    perception integer NOT NULL,
+    willpower integer NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: bloodlines_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.bloodlines_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: bloodlines_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.bloodlines_id_seq OWNED BY public.bloodlines.id;
+
+
+--
 -- Name: celestials; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -767,6 +807,13 @@ ALTER TABLE ONLY public.alliances ALTER COLUMN id SET DEFAULT nextval('public.al
 
 
 --
+-- Name: bloodlines id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.bloodlines ALTER COLUMN id SET DEFAULT nextval('public.bloodlines_id_seq'::regclass);
+
+
+--
 -- Name: celestials id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -909,6 +956,14 @@ ALTER TABLE ONLY public.alliances
 
 ALTER TABLE ONLY public.ar_internal_metadata
     ADD CONSTRAINT ar_internal_metadata_pkey PRIMARY KEY (key);
+
+
+--
+-- Name: bloodlines bloodlines_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.bloodlines
+    ADD CONSTRAINT bloodlines_pkey PRIMARY KEY (id);
 
 
 --
@@ -1072,6 +1127,27 @@ CREATE INDEX index_alliances_on_executor_corporation_id ON public.alliances USIN
 --
 
 CREATE INDEX index_alliances_on_faction_id ON public.alliances USING btree (faction_id);
+
+
+--
+-- Name: index_bloodlines_on_corporation_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_bloodlines_on_corporation_id ON public.bloodlines USING btree (corporation_id);
+
+
+--
+-- Name: index_bloodlines_on_icon_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_bloodlines_on_icon_id ON public.bloodlines USING btree (icon_id);
+
+
+--
+-- Name: index_bloodlines_on_race_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_bloodlines_on_race_id ON public.bloodlines USING btree (race_id);
 
 
 --
@@ -1431,6 +1507,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220524195908'),
 ('20220524200058'),
 ('20220525014307'),
-('20220525015515');
+('20220525015515'),
+('20220525020938');
 
 
