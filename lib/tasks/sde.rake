@@ -32,6 +32,12 @@ namespace :sde do # rubocop:disable Metrics/BlockLength
       puts "Imported #{results.rows.count} bloodlines"
     end
 
+    task categories: :environment do
+      progress = TTY::ProgressBar.new("Categories #{IMPORT_PROGRESS_FORMAT}")
+      results = Category.import_all_from_sde(progress:)
+      puts "Imported #{results.rows.count} categories"
+    end
+
     task constellations: :environment do
       progress = TTY::ProgressBar.new("Constellations #{IMPORT_PROGRESS_FORMAT}")
       results = Constellation.import_all_from_sde(progress:)
@@ -102,8 +108,12 @@ namespace :sde do # rubocop:disable Metrics/BlockLength
 
     task celestials: %i[stars secondary_suns planets moons asteroid_belts]
 
+    task entities: %i[races bloodlines corporations factions]
+
     task structures: %i[stargates]
 
-    task universe: %i[areas celestials structures]
+    task types: %i[categories]
+
+    task universe: %i[areas celestials structures entities types]
   end
 end

@@ -187,6 +187,39 @@ ALTER SEQUENCE public.bloodlines_id_seq OWNED BY public.bloodlines.id;
 
 
 --
+-- Name: categories; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.categories (
+    id bigint NOT NULL,
+    icon_id bigint,
+    name text NOT NULL,
+    published boolean NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: categories_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.categories_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: categories_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.categories_id_seq OWNED BY public.categories.id;
+
+
+--
 -- Name: celestials; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -874,6 +907,13 @@ ALTER TABLE ONLY public.bloodlines ALTER COLUMN id SET DEFAULT nextval('public.b
 
 
 --
+-- Name: categories id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.categories ALTER COLUMN id SET DEFAULT nextval('public.categories_id_seq'::regclass);
+
+
+--
 -- Name: celestials id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -1031,6 +1071,14 @@ ALTER TABLE ONLY public.ar_internal_metadata
 
 ALTER TABLE ONLY public.bloodlines
     ADD CONSTRAINT bloodlines_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: categories categories_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.categories
+    ADD CONSTRAINT categories_pkey PRIMARY KEY (id);
 
 
 --
@@ -1223,6 +1271,13 @@ CREATE INDEX index_bloodlines_on_icon_id ON public.bloodlines USING btree (icon_
 --
 
 CREATE INDEX index_bloodlines_on_race_id ON public.bloodlines USING btree (race_id);
+
+
+--
+-- Name: index_categories_on_icon_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_categories_on_icon_id ON public.categories USING btree (icon_id);
 
 
 --
@@ -1683,6 +1738,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220525015515'),
 ('20220525020938'),
 ('20220525021716'),
-('20220525030011');
+('20220525030011'),
+('20220525123955');
 
 
