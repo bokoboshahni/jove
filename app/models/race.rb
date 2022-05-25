@@ -30,6 +30,8 @@ class Race < ApplicationRecord
 
   self.sde_localized = %i[description name]
 
+  belongs_to :ship_type, class_name: 'Type', optional: true
+
   def self.import_all_from_sde(progress: nil)
     data = YAML.load_file(File.join(sde_path, 'fsd/races.yaml'))
     progress&.update(total: data.count)

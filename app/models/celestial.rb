@@ -83,6 +83,7 @@ class Celestial < ApplicationRecord
   has_ancestry
 
   belongs_to :solar_system
+  belongs_to :type
 
   has_one :constellation, through: :solar_system
 

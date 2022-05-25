@@ -31,6 +31,8 @@
 class Stargate < ApplicationRecord
   include SDEImportable
 
+  self.inheritance_column = nil
+
   self.sde_mapper = lambda { |data, context:|
     data[:id] = context[:id]
     data[:solar_system_id] = context[:solar_system_id]
@@ -43,6 +45,7 @@ class Stargate < ApplicationRecord
 
   belongs_to :solar_system
   belongs_to :destination, class_name: 'Stargate'
+  belongs_to :type
 
   def self.import_all_from_sde(progress: nil) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
     paths = Dir[File.join(sde_path, 'fsd/universe/**/solarsystem.staticdata')]

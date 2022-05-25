@@ -901,6 +901,57 @@ ALTER SEQUENCE public.static_data_versions_id_seq OWNED BY public.static_data_ve
 
 
 --
+-- Name: types; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.types (
+    id bigint NOT NULL,
+    faction_id bigint,
+    graphic_id bigint,
+    group_id bigint NOT NULL,
+    icon_id bigint,
+    market_group_id bigint,
+    meta_group_id bigint,
+    race_id bigint,
+    skin_material_set_id bigint,
+    sound_id bigint,
+    variation_parent_type_id bigint,
+    base_price numeric,
+    capacity numeric,
+    description text,
+    mass numeric,
+    name text NOT NULL,
+    packaged_volume numeric,
+    portion_size integer NOT NULL,
+    published boolean NOT NULL,
+    radius numeric,
+    skin_faction_name text,
+    volume numeric,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: types_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.types_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: types_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.types_id_seq OWNED BY public.types.id;
+
+
+--
 -- Name: users; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1097,6 +1148,13 @@ ALTER TABLE ONLY public.static_data_imports ALTER COLUMN id SET DEFAULT nextval(
 --
 
 ALTER TABLE ONLY public.static_data_versions ALTER COLUMN id SET DEFAULT nextval('public.static_data_versions_id_seq'::regclass);
+
+
+--
+-- Name: types id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.types ALTER COLUMN id SET DEFAULT nextval('public.types_id_seq'::regclass);
 
 
 --
@@ -1303,6 +1361,14 @@ ALTER TABLE ONLY public.static_data_imports
 
 ALTER TABLE ONLY public.static_data_versions
     ADD CONSTRAINT static_data_versions_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: types types_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.types
+    ADD CONSTRAINT types_pkey PRIMARY KEY (id);
 
 
 --
@@ -1756,6 +1822,76 @@ CREATE INDEX index_static_data_imports_on_version_id ON public.static_data_impor
 
 
 --
+-- Name: index_types_on_faction_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_types_on_faction_id ON public.types USING btree (faction_id);
+
+
+--
+-- Name: index_types_on_graphic_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_types_on_graphic_id ON public.types USING btree (graphic_id);
+
+
+--
+-- Name: index_types_on_group_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_types_on_group_id ON public.types USING btree (group_id);
+
+
+--
+-- Name: index_types_on_icon_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_types_on_icon_id ON public.types USING btree (icon_id);
+
+
+--
+-- Name: index_types_on_market_group_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_types_on_market_group_id ON public.types USING btree (market_group_id);
+
+
+--
+-- Name: index_types_on_meta_group_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_types_on_meta_group_id ON public.types USING btree (meta_group_id);
+
+
+--
+-- Name: index_types_on_race_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_types_on_race_id ON public.types USING btree (race_id);
+
+
+--
+-- Name: index_types_on_skin_material_set_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_types_on_skin_material_set_id ON public.types USING btree (skin_material_set_id);
+
+
+--
+-- Name: index_types_on_sound_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_types_on_sound_id ON public.types USING btree (sound_id);
+
+
+--
+-- Name: index_types_on_variation_parent_type_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_types_on_variation_parent_type_id ON public.types USING btree (variation_parent_type_id);
+
+
+--
 -- Name: index_unique_active_storage_attachments; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -1873,6 +2009,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220525030011'),
 ('20220525123955'),
 ('20220525124621'),
-('20220525125404');
+('20220525125404'),
+('20220525135721');
 
 
