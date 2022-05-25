@@ -1004,6 +1004,53 @@ ALTER SEQUENCE public.static_data_versions_id_seq OWNED BY public.static_data_ve
 
 
 --
+-- Name: stations; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.stations (
+    id bigint NOT NULL,
+    celestial_id bigint NOT NULL,
+    corporation_id bigint NOT NULL,
+    graphic_id bigint NOT NULL,
+    operation_id bigint NOT NULL,
+    reprocessing_hangar_flag_id bigint NOT NULL,
+    type_id bigint NOT NULL,
+    conquerable boolean NOT NULL,
+    docking_cost_per_volume numeric NOT NULL,
+    max_ship_volume_dockable numeric NOT NULL,
+    name text NOT NULL,
+    office_rental_cost numeric NOT NULL,
+    position_x numeric NOT NULL,
+    position_y numeric NOT NULL,
+    position_z numeric NOT NULL,
+    reprocessing_efficiency numeric NOT NULL,
+    reprocessing_station_take numeric NOT NULL,
+    use_operation_name boolean NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: stations_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.stations_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: stations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.stations_id_seq OWNED BY public.stations.id;
+
+
+--
 -- Name: types; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1275,6 +1322,13 @@ ALTER TABLE ONLY public.static_data_versions ALTER COLUMN id SET DEFAULT nextval
 
 
 --
+-- Name: stations id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.stations ALTER COLUMN id SET DEFAULT nextval('public.stations_id_seq'::regclass);
+
+
+--
 -- Name: types id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -1509,6 +1563,14 @@ ALTER TABLE ONLY public.static_data_imports
 
 ALTER TABLE ONLY public.static_data_versions
     ADD CONSTRAINT static_data_versions_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: stations stations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.stations
+    ADD CONSTRAINT stations_pkey PRIMARY KEY (id);
 
 
 --
@@ -1977,6 +2039,48 @@ CREATE INDEX index_static_data_imports_on_version_id ON public.static_data_impor
 
 
 --
+-- Name: index_stations_on_celestial_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_stations_on_celestial_id ON public.stations USING btree (celestial_id);
+
+
+--
+-- Name: index_stations_on_corporation_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_stations_on_corporation_id ON public.stations USING btree (corporation_id);
+
+
+--
+-- Name: index_stations_on_graphic_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_stations_on_graphic_id ON public.stations USING btree (graphic_id);
+
+
+--
+-- Name: index_stations_on_operation_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_stations_on_operation_id ON public.stations USING btree (operation_id);
+
+
+--
+-- Name: index_stations_on_reprocessing_hangar_flag_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_stations_on_reprocessing_hangar_flag_id ON public.stations USING btree (reprocessing_hangar_flag_id);
+
+
+--
+-- Name: index_stations_on_type_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_stations_on_type_id ON public.stations USING btree (type_id);
+
+
+--
 -- Name: index_types_on_faction_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -2168,6 +2272,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220525135721'),
 ('20220525142514'),
 ('20220525142902'),
-('20220525143716');
+('20220525143716'),
+('20220525151451');
 
 

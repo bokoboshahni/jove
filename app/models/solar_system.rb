@@ -63,7 +63,13 @@ class SolarSystem < ApplicationRecord
 
   self.sde_name_lookup = true
 
-  belongs_to :region
+  belongs_to :constellation
+
+  has_many :celestials
+
+  has_many :stations, through: :celestials
+
+  has_one :region, through: :constellation
 
   def self.import_all_from_sde(progress: nil)
     constellation_ids = map_constellation_ids

@@ -76,6 +76,8 @@ class Type < ApplicationRecord
   belongs_to :meta_group, optional: true
   belongs_to :variation_parent_type, optional: true
 
+  has_many :stations
+
   def self.import_all_from_sde(progress: nil)
     data = YAML.load_file(File.join(sde_path, 'fsd/typeIDs.yaml'))
     progress&.update(total: data.count)
