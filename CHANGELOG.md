@@ -1,5 +1,24 @@
 # Jove Changelog
 
+# [1.2.0-beta.3](https://github.com/bokoboshahni/jove/compare/v1.2.0-beta.2...v1.2.0-beta.3) (2022-05-25)
+
+
+### Bug Fixes
+
+* add faction and wormhole class to constellations ([48b396c](https://github.com/bokoboshahni/jove/commit/48b396c89b2d4457199acc2c53b6d7c78b90907a))
+
+
+### Features
+
+* import bloodlines from sde ([323bcf9](https://github.com/bokoboshahni/jove/commit/323bcf904e5031e71870a9649e9781dcb1b162c3))
+* import celestials from sde ([ae9feb4](https://github.com/bokoboshahni/jove/commit/ae9feb458d90771e811535d14adfd15af85528b2))
+* import constellations from sde ([852efc5](https://github.com/bokoboshahni/jove/commit/852efc516a33bcf2866a94f643eae5a230dc1c1c))
+* import factions from sde ([2ae3906](https://github.com/bokoboshahni/jove/commit/2ae3906e92e119ccd53324d92edd8de13436a0bc))
+* import npc corporations from sde ([50fc3f2](https://github.com/bokoboshahni/jove/commit/50fc3f2f4e4b63bf27acb5f358a3ed6ad528c891))
+* import races from sde ([08a7221](https://github.com/bokoboshahni/jove/commit/08a7221f9bb0d0ed5367058f90083846d4285702))
+* import solar systems from sde ([49215f8](https://github.com/bokoboshahni/jove/commit/49215f852db06f74f281068c3b0f3893a0e414ea))
+* import stargates from sde ([29fe515](https://github.com/bokoboshahni/jove/commit/29fe5156fb4d73ebebc455a79a78d5c9d2cb4a76))
+
 # [1.2.0-beta.2](https://github.com/bokoboshahni/jove/compare/v1.2.0-beta.1...v1.2.0-beta.2) (2022-05-24)
 
 
