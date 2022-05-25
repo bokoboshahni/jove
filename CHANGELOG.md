@@ -1,5 +1,14 @@
 # Jove Changelog
 
+# [1.2.0-beta.5](https://github.com/bokoboshahni/jove/compare/v1.2.0-beta.4...v1.2.0-beta.5) (2022-05-25)
+
+
+### Features
+
+* import station operations ([c25f1ef](https://github.com/bokoboshahni/jove/commit/c25f1ef3661107fde15b22a4f436fecca7510feb))
+* import station services from sde ([d48b2d5](https://github.com/bokoboshahni/jove/commit/d48b2d55048b2bf1efe91cbb8b610264e844fdf4))
+* import stations from sde ([8369abb](https://github.com/bokoboshahni/jove/commit/8369abb48e92b0d92d6e37f35d81613e869066d6))
+
 # [1.2.0-beta.4](https://github.com/bokoboshahni/jove/compare/v1.2.0-beta.3...v1.2.0-beta.4) (2022-05-25)
 
 
