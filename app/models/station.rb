@@ -76,6 +76,8 @@ class Station < ApplicationRecord
 
   has_many :corporations_as_home_station, class_name: 'Corporation', foreign_key: :home_station_id
 
+  has_many :services, class_name: 'StationService', through: :operation
+
   has_one :solar_system, through: :celestial
   has_one :constellation, through: :solar_system
   has_one :region, through: :constellation

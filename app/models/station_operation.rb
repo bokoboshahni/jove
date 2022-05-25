@@ -37,12 +37,19 @@ class StationOperation < ApplicationRecord
   self.sde_localized = %i[description name]
 
   has_many :stations, foreign_key: :operation_id
-
+  has_many :station_operation_services, foreign_key: :operation_id
   has_many :station_types, class_name: 'StationOperationStationType', foreign_key: :operation_id
 
-  def self.import_all_from_sde(progress: nil) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
+  has_many :services, class_name: 'StationService', through: :station_operation_services
+
+  def self.import_all_from_sde(progress: nil) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength
     data = YAML.load_file(File.join(sde_path, 'fsd/stationOperations.yaml'))
     progress&.update(total: data.count)
+
+    station_services = data.map do |operation_id, operation|
+      operation['services'].map { |service_id| { operation_id:, service_id: } }
+    end.flatten
+    StationOperationService.upsert_all(station_services)
 
     station_types = data.map do |operation_id, operation|
       operation['stationTypes']&.map { |race_id, type_id| { operation_id:, race_id:, type_id: } }

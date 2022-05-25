@@ -1004,6 +1004,16 @@ ALTER SEQUENCE public.static_data_versions_id_seq OWNED BY public.static_data_ve
 
 
 --
+-- Name: station_operation_services; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.station_operation_services (
+    operation_id bigint NOT NULL,
+    service_id bigint NOT NULL
+);
+
+
+--
 -- Name: station_operation_station_types; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1052,6 +1062,38 @@ CREATE SEQUENCE public.station_operations_id_seq
 --
 
 ALTER SEQUENCE public.station_operations_id_seq OWNED BY public.station_operations.id;
+
+
+--
+-- Name: station_services; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.station_services (
+    id bigint NOT NULL,
+    description text,
+    name text NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: station_services_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.station_services_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: station_services_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.station_services_id_seq OWNED BY public.station_services.id;
 
 
 --
@@ -1380,6 +1422,13 @@ ALTER TABLE ONLY public.station_operations ALTER COLUMN id SET DEFAULT nextval('
 
 
 --
+-- Name: station_services id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.station_services ALTER COLUMN id SET DEFAULT nextval('public.station_services_id_seq'::regclass);
+
+
+--
 -- Name: stations id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -1629,6 +1678,14 @@ ALTER TABLE ONLY public.static_data_versions
 
 ALTER TABLE ONLY public.station_operations
     ADD CONSTRAINT station_operations_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: station_services station_services_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.station_services
+    ADD CONSTRAINT station_services_pkey PRIMARY KEY (id);
 
 
 --
@@ -2105,6 +2162,20 @@ CREATE INDEX index_static_data_imports_on_version_id ON public.static_data_impor
 
 
 --
+-- Name: index_station_operation_services_on_operation_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_station_operation_services_on_operation_id ON public.station_operation_services USING btree (operation_id);
+
+
+--
+-- Name: index_station_operation_services_on_service_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_station_operation_services_on_service_id ON public.station_operation_services USING btree (service_id);
+
+
+--
 -- Name: index_station_operation_station_types_on_operation_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -2294,6 +2365,13 @@ CREATE UNIQUE INDEX index_unique_static_data_versions ON public.static_data_vers
 
 
 --
+-- Name: index_unique_station_operation_services; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_unique_station_operation_services ON public.station_operation_services USING btree (operation_id, service_id);
+
+
+--
 -- Name: index_unique_station_operation_station_types; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -2375,6 +2453,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220525142902'),
 ('20220525143716'),
 ('20220525151451'),
-('20220525161306');
+('20220525161306'),
+('20220525163516');
 
 
