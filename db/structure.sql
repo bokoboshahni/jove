@@ -343,24 +343,36 @@ ALTER SEQUENCE public.constellations_id_seq OWNED BY public.constellations.id;
 CREATE TABLE public.corporations (
     id bigint NOT NULL,
     alliance_id bigint,
-    ceo_id bigint NOT NULL,
-    creator_id bigint NOT NULL,
+    ceo_id bigint,
+    creator_id bigint,
     faction_id bigint,
     home_station_id bigint,
     description text,
-    esi_etag text NOT NULL,
-    esi_expires_at timestamp without time zone NOT NULL,
-    esi_last_modified_at timestamp without time zone NOT NULL,
+    esi_etag text,
+    esi_expires_at timestamp without time zone,
+    esi_last_modified_at timestamp without time zone,
     founded_on date,
-    member_count integer NOT NULL,
+    member_count integer,
     name text NOT NULL,
-    share_count integer,
+    share_count bigint,
     tax_rate numeric NOT NULL,
     ticker text NOT NULL,
     url text,
     war_eligible boolean,
     created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    updated_at timestamp(6) without time zone NOT NULL,
+    enemy_id bigint,
+    friend_id bigint,
+    icon_id bigint,
+    main_activity_id bigint,
+    race_id bigint,
+    secondary_activity_id bigint,
+    solar_system_id bigint,
+    deleted boolean,
+    extent text,
+    npc boolean,
+    size_factor numeric,
+    size text
 );
 
 
@@ -1326,6 +1338,13 @@ CREATE INDEX index_corporations_on_creator_id ON public.corporations USING btree
 
 
 --
+-- Name: index_corporations_on_enemy_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_corporations_on_enemy_id ON public.corporations USING btree (enemy_id);
+
+
+--
 -- Name: index_corporations_on_faction_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -1333,10 +1352,52 @@ CREATE INDEX index_corporations_on_faction_id ON public.corporations USING btree
 
 
 --
+-- Name: index_corporations_on_friend_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_corporations_on_friend_id ON public.corporations USING btree (friend_id);
+
+
+--
 -- Name: index_corporations_on_home_station_id; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_corporations_on_home_station_id ON public.corporations USING btree (home_station_id);
+
+
+--
+-- Name: index_corporations_on_icon_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_corporations_on_icon_id ON public.corporations USING btree (icon_id);
+
+
+--
+-- Name: index_corporations_on_main_activity_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_corporations_on_main_activity_id ON public.corporations USING btree (main_activity_id);
+
+
+--
+-- Name: index_corporations_on_race_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_corporations_on_race_id ON public.corporations USING btree (race_id);
+
+
+--
+-- Name: index_corporations_on_secondary_activity_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_corporations_on_secondary_activity_id ON public.corporations USING btree (secondary_activity_id);
+
+
+--
+-- Name: index_corporations_on_solar_system_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_corporations_on_solar_system_id ON public.corporations USING btree (solar_system_id);
 
 
 --
@@ -1621,6 +1682,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220525014307'),
 ('20220525015515'),
 ('20220525020938'),
-('20220525021716');
+('20220525021716'),
+('20220525030011');
 
 
