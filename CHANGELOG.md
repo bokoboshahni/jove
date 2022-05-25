@@ -51,38 +51,31 @@
 * create schema for active_storage ([fd694a5](https://github.com/bokoboshahni/jove/commit/fd694a55dd8747927b8760874b2cb117fca0d2c3))
 
 
+## [1.1.6](https://github.com/bokoboshahni/jove/compare/v1.1.5...v1.1.6) (2022-05-25)
+
+## [1.1.5](https://github.com/bokoboshahni/jove/compare/v1.1.4...v1.1.5) (2022-05-24)
+
+## [1.1.4](https://github.com/bokoboshahni/jove/compare/v1.1.3...v1.1.4) (2022-05-24)
+
 
 ## [1.1.4-beta.4](https://github.com/bokoboshahni/jove/compare/v1.1.4-beta.3...v1.1.4-beta.4) (2022-05-23)
-
-
 
 ## [1.1.4-beta.3](https://github.com/bokoboshahni/jove/compare/v1.1.4-beta.2...v1.1.4-beta.3) (2022-05-23)
 
 
-
 ## [1.1.4-beta.2](https://github.com/bokoboshahni/jove/compare/v1.1.4-beta.1...v1.1.4-beta.2) (2022-05-23)
-
-
 
 ## [1.1.4-beta.1](https://github.com/bokoboshahni/jove/compare/v1.1.3...v1.1.4-beta.1) (2022-05-21)
 
 
-
-## [1.1.3](https://github.com/bokoboshahni/jove/compare/v1.1.3-beta.1...v1.1.3) (2022-05-21)
-
-
+## [1.1.3](https://github.com/bokoboshahni/jove/compare/v1.1.2...v1.1.3) (2022-05-21)
 
 ## [1.1.3-beta.1](https://github.com/bokoboshahni/jove/compare/v1.1.2...v1.1.3-beta.1) (2022-05-21)
 
 
-
 ## [1.1.2](https://github.com/bokoboshahni/jove/compare/v1.1.1...v1.1.2) (2022-05-21)
 
-
-
 ## [1.1.1](https://github.com/bokoboshahni/jove/compare/v1.1.0...v1.1.1) (2022-05-21)
-
-
 
 # [1.1.0](https://github.com/bokoboshahni/jove/compare/v1.0.0...v1.1.0) (2022-05-21)
 

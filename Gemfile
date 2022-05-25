@@ -67,7 +67,7 @@ group :development do
   gem 'kramdown-parser-gfm', '~> 1.1'
   gem 'rouge', '~> 3.28'
   gem 'rubocop', '~> 1.29'
-  gem 'rubocop-performance', '~> 1.13'
+  gem 'rubocop-performance', '~> 1.14'
   gem 'rubocop-rails', '~> 2.14'
   gem 'rubocop-rspec', '~> 2.11'
   gem 'web-console', '~> 4.2'
