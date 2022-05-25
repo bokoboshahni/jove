@@ -8,9 +8,9 @@
 #
 # Name                | Type               | Attributes
 # ------------------- | ------------------ | ---------------------------
-# **`operation_id`**  | `bigint`           | `not null`
-# **`race_id`**       | `bigint`           | `not null`
-# **`type_id`**       | `bigint`           | `not null`
+# **`operation_id`**  | `bigint`           | `not null, primary key`
+# **`race_id`**       | `bigint`           | `not null, primary key`
+# **`type_id`**       | `bigint`           | `not null, primary key`
 #
 # ### Indexes
 #
