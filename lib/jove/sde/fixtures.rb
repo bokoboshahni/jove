@@ -35,9 +35,12 @@ module Jove
         fsd/universe/wormhole/A-R00001/region.staticdata
         fsd/universe/wormhole/A-R00001/A-C00311/constellation.staticdata
         fsd/universe/wormhole/A-R00001/A-C00311/J100744/solarsystem.staticdata
+        fsd/universe/wormhole/A-R00001/A-C00312/constellation.staticdata
+        fsd/universe/wormhole/A-R00001/A-C00312/J105711/solarsystem.staticdata
       ].freeze
 
       def generate
+        FileUtils.rm_rf(Rails.root.join('spec/fixtures/sde'))
         TRUNCATE_FIXTURES.each { |f| truncate_fixtures(f) }
         COPY_FIXTURES.each { |f| copy_fixtures(f) }
         write_inv_names
@@ -51,8 +54,8 @@ module Jove
         fixtures = Dir[Rails.root.join('spec/fixtures/sde/**/*.{staticdata,yaml}')]
         Parallel.each(fixtures, in_threads: Etc.nprocessors * 2) do |fixture|
           fixture_name_ids.push(
-            *File.readlines(fixture).grep(/\A(\s+)?(\d+:|\w+ID:)/)
-                                .map { |l| l.gsub(/\w+ID:/, '') }
+            *File.readlines(fixture).grep(/\A(\s+)?(\d+:|\w+ID:|id:)/)
+                                .map { |l| l.gsub(/(\w+ID|id):/, '') }
                                 .map { |l| l.gsub(/:/, '') }
                                 .map(&:chomp)
                                 .map(&:strip)

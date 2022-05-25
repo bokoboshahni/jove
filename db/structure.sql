@@ -24,6 +24,19 @@ COMMENT ON EXTENSION pgcrypto IS 'cryptographic functions';
 
 
 --
+-- Name: celestial_type; Type: TYPE; Schema: public; Owner: -
+--
+
+CREATE TYPE public.celestial_type AS ENUM (
+    'asteroid_belt',
+    'moon',
+    'planet',
+    'secondary_sun',
+    'star'
+);
+
+
+--
 -- Name: universe; Type: TYPE; Schema: public; Owner: -
 --
 
@@ -131,6 +144,68 @@ CREATE TABLE public.ar_internal_metadata (
     created_at timestamp(6) without time zone NOT NULL,
     updated_at timestamp(6) without time zone NOT NULL
 );
+
+
+--
+-- Name: celestials; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.celestials (
+    id bigint NOT NULL,
+    effect_beacon_type_id bigint,
+    height_map_1_id bigint,
+    height_map_2_id bigint,
+    shader_preset_id bigint,
+    solar_system_id bigint NOT NULL,
+    type_id bigint NOT NULL,
+    age numeric,
+    ancestry text,
+    celestial_index integer,
+    celestial_type public.celestial_type NOT NULL,
+    density numeric,
+    eccentricity numeric,
+    escape_velocity numeric,
+    fragmented boolean,
+    life numeric,
+    locked boolean,
+    luminosity numeric,
+    mass_dust numeric,
+    mass_gas numeric,
+    orbit_period numeric,
+    orbit_radius numeric,
+    name text NOT NULL,
+    population boolean,
+    position_x numeric NOT NULL,
+    position_y numeric NOT NULL,
+    position_z numeric NOT NULL,
+    pressure numeric,
+    radius numeric,
+    rotation_rate numeric,
+    spectral_class text,
+    surface_gravity numeric,
+    temperature numeric,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: celestials_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.celestials_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: celestials_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.celestials_id_seq OWNED BY public.celestials.id;
 
 
 --
@@ -621,6 +696,13 @@ ALTER TABLE ONLY public.alliances ALTER COLUMN id SET DEFAULT nextval('public.al
 
 
 --
+-- Name: celestials id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.celestials ALTER COLUMN id SET DEFAULT nextval('public.celestials_id_seq'::regclass);
+
+
+--
 -- Name: characters id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -742,6 +824,14 @@ ALTER TABLE ONLY public.alliances
 
 ALTER TABLE ONLY public.ar_internal_metadata
     ADD CONSTRAINT ar_internal_metadata_pkey PRIMARY KEY (key);
+
+
+--
+-- Name: celestials celestials_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.celestials
+    ADD CONSTRAINT celestials_pkey PRIMARY KEY (id);
 
 
 --
@@ -881,6 +971,48 @@ CREATE INDEX index_alliances_on_executor_corporation_id ON public.alliances USIN
 --
 
 CREATE INDEX index_alliances_on_faction_id ON public.alliances USING btree (faction_id);
+
+
+--
+-- Name: index_celestials_on_effect_beacon_type_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_celestials_on_effect_beacon_type_id ON public.celestials USING btree (effect_beacon_type_id);
+
+
+--
+-- Name: index_celestials_on_height_map_1_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_celestials_on_height_map_1_id ON public.celestials USING btree (height_map_1_id);
+
+
+--
+-- Name: index_celestials_on_height_map_2_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_celestials_on_height_map_2_id ON public.celestials USING btree (height_map_2_id);
+
+
+--
+-- Name: index_celestials_on_shader_preset_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_celestials_on_shader_preset_id ON public.celestials USING btree (shader_preset_id);
+
+
+--
+-- Name: index_celestials_on_solar_system_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_celestials_on_solar_system_id ON public.celestials USING btree (solar_system_id);
+
+
+--
+-- Name: index_celestials_on_type_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_celestials_on_type_id ON public.celestials USING btree (type_id);
 
 
 --
@@ -1160,6 +1292,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220524172419'),
 ('20220524180358'),
 ('20220524195739'),
-('20220524195908');
+('20220524195908'),
+('20220524200058');
 
 

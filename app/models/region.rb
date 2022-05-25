@@ -63,11 +63,14 @@ class Region < ApplicationRecord
   has_many :constellations
   has_many :solar_systems, through: :constellations
 
-  def self.import_all_from_sde
+  def self.import_all_from_sde(progress: nil)
     paths = Dir[File.join(sde_path, 'fsd/universe/**/region.staticdata')]
+    progress&.update(total: paths.count)
     rows = paths.map do |path|
       universe = File.basename(File.dirname(path, 2))
-      map_sde_attributes(YAML.load_file(path), context: { universe: })
+      region = map_sde_attributes(YAML.load_file(path), context: { universe: })
+      progress&.advance
+      region
     end
     upsert_all(rows)
   end

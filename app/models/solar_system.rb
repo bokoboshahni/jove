@@ -65,12 +65,15 @@ class SolarSystem < ApplicationRecord
 
   belongs_to :region
 
-  def self.import_all_from_sde
+  def self.import_all_from_sde(progress: nil)
     constellation_ids = map_constellation_ids
     paths = Dir[File.join(sde_path, 'fsd/universe/**/solarsystem.staticdata')]
+    progress&.update(total: paths.count)
     rows = Parallel.map(paths, in_threads: Etc.nprocessors * 2) do |path|
       constellation_id = constellation_ids.fetch(File.dirname(path, 2))
-      map_sde_attributes(YAML.load_file(path), context: { constellation_id: })
+      solar_systems = map_sde_attributes(YAML.load_file(path), context: { constellation_id: })
+      progress&.advance
+      solar_systems
     end
     upsert_all(rows)
   end

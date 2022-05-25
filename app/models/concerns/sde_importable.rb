@@ -31,9 +31,10 @@ module SDEImportable
     def map_sde_attributes(data, context: {}) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/PerceivedComplexity
       data.deep_transform_keys! { |k| k.is_a?(String) ? k.underscore.to_sym : k }
       data.except!(*sde_exclude)
-      data.transform_keys! { |k| sde_rename.fetch(k, k) }
 
       sde_mapper&.call(data, context:)
+
+      data.transform_keys! { |k| sde_rename.fetch(k, k) }
 
       if sde_name_lookup.is_a?(Symbol)
         data[:name] = sde_names.fetch(data.fetch(sde_name_lookup))
