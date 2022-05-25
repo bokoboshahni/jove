@@ -31,6 +31,7 @@ class Graphic < ApplicationRecord
     sof_race_name: :skin_race_name
   }
 
+  has_many :stations
   has_many :types
 
   def self.import_all_from_sde(progress: nil)

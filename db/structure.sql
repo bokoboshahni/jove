@@ -1004,6 +1004,146 @@ ALTER SEQUENCE public.static_data_versions_id_seq OWNED BY public.static_data_ve
 
 
 --
+-- Name: station_operation_services; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.station_operation_services (
+    operation_id bigint NOT NULL,
+    service_id bigint NOT NULL
+);
+
+
+--
+-- Name: station_operation_station_types; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.station_operation_station_types (
+    operation_id bigint NOT NULL,
+    race_id bigint NOT NULL,
+    type_id bigint NOT NULL
+);
+
+
+--
+-- Name: station_operations; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.station_operations (
+    id bigint NOT NULL,
+    activity_id bigint NOT NULL,
+    border boolean NOT NULL,
+    corridor boolean NOT NULL,
+    description text,
+    fringe boolean NOT NULL,
+    hub boolean NOT NULL,
+    manufacturing_factor numeric NOT NULL,
+    name text NOT NULL,
+    ratio numeric NOT NULL,
+    research_factor numeric NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: station_operations_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.station_operations_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: station_operations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.station_operations_id_seq OWNED BY public.station_operations.id;
+
+
+--
+-- Name: station_services; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.station_services (
+    id bigint NOT NULL,
+    description text,
+    name text NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: station_services_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.station_services_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: station_services_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.station_services_id_seq OWNED BY public.station_services.id;
+
+
+--
+-- Name: stations; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.stations (
+    id bigint NOT NULL,
+    celestial_id bigint NOT NULL,
+    corporation_id bigint NOT NULL,
+    graphic_id bigint NOT NULL,
+    operation_id bigint NOT NULL,
+    reprocessing_hangar_flag_id bigint NOT NULL,
+    type_id bigint NOT NULL,
+    conquerable boolean NOT NULL,
+    docking_cost_per_volume numeric NOT NULL,
+    max_ship_volume_dockable numeric NOT NULL,
+    name text NOT NULL,
+    office_rental_cost numeric NOT NULL,
+    position_x numeric NOT NULL,
+    position_y numeric NOT NULL,
+    position_z numeric NOT NULL,
+    reprocessing_efficiency numeric NOT NULL,
+    reprocessing_station_take numeric NOT NULL,
+    use_operation_name boolean NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: stations_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.stations_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: stations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.stations_id_seq OWNED BY public.stations.id;
+
+
+--
 -- Name: types; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1275,6 +1415,27 @@ ALTER TABLE ONLY public.static_data_versions ALTER COLUMN id SET DEFAULT nextval
 
 
 --
+-- Name: station_operations id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.station_operations ALTER COLUMN id SET DEFAULT nextval('public.station_operations_id_seq'::regclass);
+
+
+--
+-- Name: station_services id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.station_services ALTER COLUMN id SET DEFAULT nextval('public.station_services_id_seq'::regclass);
+
+
+--
+-- Name: stations id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.stations ALTER COLUMN id SET DEFAULT nextval('public.stations_id_seq'::regclass);
+
+
+--
 -- Name: types id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -1509,6 +1670,30 @@ ALTER TABLE ONLY public.static_data_imports
 
 ALTER TABLE ONLY public.static_data_versions
     ADD CONSTRAINT static_data_versions_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: station_operations station_operations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.station_operations
+    ADD CONSTRAINT station_operations_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: station_services station_services_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.station_services
+    ADD CONSTRAINT station_services_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: stations stations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.stations
+    ADD CONSTRAINT stations_pkey PRIMARY KEY (id);
 
 
 --
@@ -1977,6 +2162,90 @@ CREATE INDEX index_static_data_imports_on_version_id ON public.static_data_impor
 
 
 --
+-- Name: index_station_operation_services_on_operation_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_station_operation_services_on_operation_id ON public.station_operation_services USING btree (operation_id);
+
+
+--
+-- Name: index_station_operation_services_on_service_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_station_operation_services_on_service_id ON public.station_operation_services USING btree (service_id);
+
+
+--
+-- Name: index_station_operation_station_types_on_operation_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_station_operation_station_types_on_operation_id ON public.station_operation_station_types USING btree (operation_id);
+
+
+--
+-- Name: index_station_operation_station_types_on_race_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_station_operation_station_types_on_race_id ON public.station_operation_station_types USING btree (race_id);
+
+
+--
+-- Name: index_station_operation_station_types_on_type_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_station_operation_station_types_on_type_id ON public.station_operation_station_types USING btree (type_id);
+
+
+--
+-- Name: index_station_operations_on_activity_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_station_operations_on_activity_id ON public.station_operations USING btree (activity_id);
+
+
+--
+-- Name: index_stations_on_celestial_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_stations_on_celestial_id ON public.stations USING btree (celestial_id);
+
+
+--
+-- Name: index_stations_on_corporation_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_stations_on_corporation_id ON public.stations USING btree (corporation_id);
+
+
+--
+-- Name: index_stations_on_graphic_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_stations_on_graphic_id ON public.stations USING btree (graphic_id);
+
+
+--
+-- Name: index_stations_on_operation_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_stations_on_operation_id ON public.stations USING btree (operation_id);
+
+
+--
+-- Name: index_stations_on_reprocessing_hangar_flag_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_stations_on_reprocessing_hangar_flag_id ON public.stations USING btree (reprocessing_hangar_flag_id);
+
+
+--
+-- Name: index_stations_on_type_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_stations_on_type_id ON public.stations USING btree (type_id);
+
+
+--
 -- Name: index_types_on_faction_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -2096,6 +2365,20 @@ CREATE UNIQUE INDEX index_unique_static_data_versions ON public.static_data_vers
 
 
 --
+-- Name: index_unique_station_operation_services; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_unique_station_operation_services ON public.station_operation_services USING btree (operation_id, service_id);
+
+
+--
+-- Name: index_unique_station_operation_station_types; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_unique_station_operation_station_types ON public.station_operation_station_types USING btree (operation_id, race_id, type_id);
+
+
+--
 -- Name: index_versions_on_item; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -2168,6 +2451,9 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220525135721'),
 ('20220525142514'),
 ('20220525142902'),
-('20220525143716');
+('20220525143716'),
+('20220525151451'),
+('20220525161306'),
+('20220525163516');
 
 

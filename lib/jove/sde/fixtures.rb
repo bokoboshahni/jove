@@ -8,6 +8,7 @@ module Jove
 
       COPY_FIXTURES = %w[
         fsd/landmarks/landmarks.staticdata
+        fsd/marketGroups.yaml
         fsd/translationLanguages.yaml
         fsd/universe/abyssal/12000001/region.staticdata
         fsd/universe/abyssal/12000001/22000001/constellation.staticdata
@@ -44,6 +45,7 @@ module Jove
         TRUNCATE_FIXTURES.each { |f| truncate_fixtures(f) }
         COPY_FIXTURES.each { |f| copy_fixtures(f) }
         write_inv_names
+        write_sta_stations
       end
 
       private
@@ -52,7 +54,7 @@ module Jove
         names = YAML.load_file(Rails.root.join('tmp/sde/bsd/invNames.yaml'))
         fixture_name_ids = []
         fixtures = Dir[Rails.root.join('spec/fixtures/sde/**/*.{staticdata,yaml}')]
-        Parallel.each(fixtures, in_threads: Etc.nprocessors * 2) do |fixture|
+        Parallel.each(fixtures, in_threads: Etc.nprocessors) do |fixture|
           fixture_name_ids.push(
             *File.readlines(fixture).grep(/\A(\s+)?(\d+:|\w+ID:|id:)/)
                                 .map { |l| l.gsub(/(\w+ID|id):/, '') }
@@ -69,6 +71,26 @@ module Jove
         File.write(Rails.root.join('spec/fixtures/sde/bsd/invNames.yaml'), fixture_names.to_yaml)
 
         puts 'Wrote all names for IDs found in spec/fixtures/sde to spec/fixtures/sde/bsd/invNames.yaml'
+      end
+
+      def write_sta_stations # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/PerceivedComplexity
+        sta_stations = YAML.load_file(Rails.root.join('tmp/sde/bsd/staStations.yaml'))
+        fixtures = Dir[Rails.root.join('spec/fixtures/sde/**/solarsystem.staticdata')]
+        station_ids = Parallel.map(fixtures, in_threads: Etc.nprocessors) do |path|
+          solar_system = YAML.load_file(path)
+          solar_system['planets']&.each_with_object({}) do |(_planet_id, planet), h|
+            h.merge!(planet['npcStations']) if planet['npcStations']
+            planet['moons']&.each do |_moon_id, moon|
+              next unless moon['npcStations']
+
+              h.merge!(moon['npcStations'])
+            end
+          end
+        end.reduce(&:merge).keys
+        new_sta_stations = sta_stations.select { |s| station_ids.include?(s['stationID']) }
+        File.write(Rails.root.join('spec/fixtures/sde/bsd/staStations.yaml'), new_sta_stations.to_yaml)
+
+        puts 'Wrote spec/fixtures/sde/bsd/staStations.yaml to match stations in spec/fixtures/sde/fsd/universe'
       end
 
       def copy_fixtures(path)
