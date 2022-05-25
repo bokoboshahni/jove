@@ -56,6 +56,12 @@ namespace :sde do # rubocop:disable Metrics/BlockLength
       puts "Imported #{results.rows.count} factions"
     end
 
+    task graphics: :environment do
+      progress = TTY::ProgressBar.new("Graphics #{IMPORT_PROGRESS_FORMAT}")
+      results = Graphic.import_all_from_sde(progress:)
+      puts "Imported #{results.rows.count} graphics"
+    end
+
     task groups: :environment do
       progress = TTY::ProgressBar.new("Groups #{IMPORT_PROGRESS_FORMAT}")
       results = Group.import_all_from_sde(progress:)
@@ -134,10 +140,12 @@ namespace :sde do # rubocop:disable Metrics/BlockLength
 
     task entities: %i[races bloodlines corporations factions]
 
+    task images: %i[graphics]
+
     task structures: %i[stargates]
 
     task taxonomies: %i[categories groups market_groups meta_groups]
 
-    task universe: %i[areas celestials structures entities taxonomies types]
+    task universe: %i[areas celestials structures entities taxonomies types images]
   end
 end

@@ -477,6 +477,42 @@ ALTER SEQUENCE public.factions_id_seq OWNED BY public.factions.id;
 
 
 --
+-- Name: graphics; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.graphics (
+    id bigint NOT NULL,
+    description text,
+    graphic_file text,
+    icon_folder text,
+    skin_faction_name text,
+    skin_hull_name text,
+    skin_race_name text,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: graphics_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.graphics_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: graphics_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.graphics_id_seq OWNED BY public.graphics.id;
+
+
+--
 -- Name: groups; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1108,6 +1144,13 @@ ALTER TABLE ONLY public.factions ALTER COLUMN id SET DEFAULT nextval('public.fac
 
 
 --
+-- Name: graphics id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.graphics ALTER COLUMN id SET DEFAULT nextval('public.graphics_id_seq'::regclass);
+
+
+--
 -- Name: groups id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -1306,6 +1349,14 @@ ALTER TABLE ONLY public.corporations
 
 ALTER TABLE ONLY public.factions
     ADD CONSTRAINT factions_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: graphics graphics_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.graphics
+    ADD CONSTRAINT graphics_pkey PRIMARY KEY (id);
 
 
 --
@@ -2067,6 +2118,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220525124621'),
 ('20220525125404'),
 ('20220525135721'),
-('20220525142514');
+('20220525142514'),
+('20220525142902');
 
 

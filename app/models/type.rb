@@ -69,6 +69,7 @@ class Type < ApplicationRecord
   self.sde_localized = %i[description name]
 
   belongs_to :faction, optional: true
+  belongs_to :graphic, optional: true
   belongs_to :group
   belongs_to :market_group, optional: true
   belongs_to :meta_group, optional: true
