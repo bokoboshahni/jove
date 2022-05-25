@@ -477,6 +477,44 @@ ALTER SEQUENCE public.factions_id_seq OWNED BY public.factions.id;
 
 
 --
+-- Name: groups; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.groups (
+    id bigint NOT NULL,
+    category_id bigint NOT NULL,
+    icon_id bigint,
+    anchorable boolean NOT NULL,
+    anchored boolean NOT NULL,
+    fittable_non_singleton boolean NOT NULL,
+    name text NOT NULL,
+    published boolean NOT NULL,
+    use_base_price boolean NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: groups_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.groups_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: groups_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.groups_id_seq OWNED BY public.groups.id;
+
+
+--
 -- Name: identities; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -949,6 +987,13 @@ ALTER TABLE ONLY public.factions ALTER COLUMN id SET DEFAULT nextval('public.fac
 
 
 --
+-- Name: groups id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.groups ALTER COLUMN id SET DEFAULT nextval('public.groups_id_seq'::regclass);
+
+
+--
 -- Name: identities id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -1119,6 +1164,14 @@ ALTER TABLE ONLY public.corporations
 
 ALTER TABLE ONLY public.factions
     ADD CONSTRAINT factions_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: groups groups_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.groups
+    ADD CONSTRAINT groups_pkey PRIMARY KEY (id);
 
 
 --
@@ -1498,6 +1551,20 @@ CREATE INDEX index_factions_on_solar_system_id ON public.factions USING btree (s
 
 
 --
+-- Name: index_groups_on_category_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_groups_on_category_id ON public.groups USING btree (category_id);
+
+
+--
+-- Name: index_groups_on_icon_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_groups_on_icon_id ON public.groups USING btree (icon_id);
+
+
+--
 -- Name: index_identities_on_character_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -1739,6 +1806,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220525020938'),
 ('20220525021716'),
 ('20220525030011'),
-('20220525123955');
+('20220525123955'),
+('20220525124621');
 
 
