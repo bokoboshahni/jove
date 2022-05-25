@@ -62,6 +62,12 @@ namespace :sde do # rubocop:disable Metrics/BlockLength
       puts "Imported #{results.rows.count} solar systems"
     end
 
+    task stargates: :environment do
+      progress = TTY::ProgressBar.new("Stargates #{IMPORT_PROGRESS_FORMAT}")
+      results = Stargate.import_all_from_sde(progress:)
+      puts "Imported #{results.rows.count} stargates"
+    end
+
     task stars: :environment do
       progress = TTY::ProgressBar.new("Stars #{IMPORT_PROGRESS_FORMAT}")
       results = Star.import_all_from_sde(progress:)
@@ -72,6 +78,8 @@ namespace :sde do # rubocop:disable Metrics/BlockLength
 
     task celestials: %i[stars secondary_suns planets moons asteroid_belts]
 
-    task universe: %i[areas celestials]
+    task structures: %i[stargates]
+
+    task universe: %i[areas celestials structures]
   end
 end

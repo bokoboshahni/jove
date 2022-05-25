@@ -559,6 +559,43 @@ ALTER SEQUENCE public.solar_systems_id_seq OWNED BY public.solar_systems.id;
 
 
 --
+-- Name: stargates; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.stargates (
+    id bigint NOT NULL,
+    destination_id bigint NOT NULL,
+    solar_system_id bigint NOT NULL,
+    type_id bigint NOT NULL,
+    name text NOT NULL,
+    position_x numeric NOT NULL,
+    position_y numeric NOT NULL,
+    position_z numeric NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: stargates_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.stargates_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: stargates_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.stargates_id_seq OWNED BY public.stargates.id;
+
+
+--
 -- Name: static_data_imports; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -759,6 +796,13 @@ ALTER TABLE ONLY public.solar_systems ALTER COLUMN id SET DEFAULT nextval('publi
 
 
 --
+-- Name: stargates id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.stargates ALTER COLUMN id SET DEFAULT nextval('public.stargates_id_seq'::regclass);
+
+
+--
 -- Name: static_data_imports id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -904,6 +948,14 @@ ALTER TABLE ONLY public.schema_migrations
 
 ALTER TABLE ONLY public.solar_systems
     ADD CONSTRAINT solar_systems_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: stargates stargates_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.stargates
+    ADD CONSTRAINT stargates_pkey PRIMARY KEY (id);
 
 
 --
@@ -1184,6 +1236,27 @@ CREATE INDEX index_solar_systems_on_wormhole_class_id ON public.solar_systems US
 
 
 --
+-- Name: index_stargates_on_destination_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_stargates_on_destination_id ON public.stargates USING btree (destination_id);
+
+
+--
+-- Name: index_stargates_on_solar_system_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_stargates_on_solar_system_id ON public.stargates USING btree (solar_system_id);
+
+
+--
+-- Name: index_stargates_on_type_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_stargates_on_type_id ON public.stargates USING btree (type_id);
+
+
+--
 -- Name: index_static_data_imports_on_version_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -1293,6 +1366,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220524180358'),
 ('20220524195739'),
 ('20220524195908'),
-('20220524200058');
+('20220524200058'),
+('20220525014307');
 
 
