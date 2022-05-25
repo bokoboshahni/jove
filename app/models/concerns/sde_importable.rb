@@ -16,11 +16,8 @@ module SDEImportable
     class_attribute :sde_name_lookup
     self.sde_name_lookup = nil
 
-    class_attribute :sde_localized_description
-    self.sde_localized_description = false
-
-    class_attribute :sde_localized_name
-    self.sde_localized_name = false
+    class_attribute :sde_localized
+    self.sde_localized = []
   end
 
   module ClassMethods
@@ -49,8 +46,10 @@ module SDEImportable
       end
 
       data[:id] = id if id
-      data[:description] = data.delete(:description_id)&.fetch(:en, '') if sde_localized_description
-      data[:name] = data.delete(:name_id)&.fetch(:en, '') if sde_localized_name
+
+      sde_localized.each do |field|
+        data[field] = data.delete(:"#{field}_id")&.fetch(:en, '') if data[:"#{field}_id"].is_a?(Hash)
+      end
 
       attribute_names.reject { |a| %w[created_at updated_at].include?(a) }
                      .map(&:to_sym).each { |a| data[a] = nil unless data.key?(a) }

@@ -34,8 +34,7 @@
 class Bloodline < ApplicationRecord
   include SDEImportable
 
-  self.sde_localized_description = true
-  self.sde_localized_name = true
+  self.sde_localized = %i[description name]
 
   def self.import_all_from_sde(progress: nil)
     data = YAML.load_file(File.join(sde_path, 'fsd/bloodlines.yaml'))

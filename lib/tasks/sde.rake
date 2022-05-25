@@ -38,6 +38,12 @@ namespace :sde do # rubocop:disable Metrics/BlockLength
       puts "Imported #{results.rows.count} constellations"
     end
 
+    task factions: :environment do
+      progress = TTY::ProgressBar.new("Factions #{IMPORT_PROGRESS_FORMAT}")
+      results = Faction.import_all_from_sde(progress:)
+      puts "Imported #{results.rows.count} factions"
+    end
+
     task moons: :environment do
       progress = TTY::ProgressBar.new("Moons #{IMPORT_PROGRESS_FORMAT}")
       results = Moon.import_all_from_sde(progress:)

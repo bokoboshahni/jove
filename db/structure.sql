@@ -384,6 +384,54 @@ ALTER SEQUENCE public.corporations_id_seq OWNED BY public.corporations.id;
 
 
 --
+-- Name: faction_races; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.faction_races (
+    faction_id bigint NOT NULL,
+    race_id bigint NOT NULL
+);
+
+
+--
+-- Name: factions; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.factions (
+    id bigint NOT NULL,
+    corporation_id bigint,
+    icon_id bigint NOT NULL,
+    militia_corporation_id bigint,
+    solar_system_id bigint NOT NULL,
+    description text NOT NULL,
+    name text NOT NULL,
+    short_description text,
+    size_factor numeric NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: factions_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.factions_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: factions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.factions_id_seq OWNED BY public.factions.id;
+
+
+--
 -- Name: identities; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -842,6 +890,13 @@ ALTER TABLE ONLY public.corporations ALTER COLUMN id SET DEFAULT nextval('public
 
 
 --
+-- Name: factions id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.factions ALTER COLUMN id SET DEFAULT nextval('public.factions_id_seq'::regclass);
+
+
+--
 -- Name: identities id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -996,6 +1051,14 @@ ALTER TABLE ONLY public.constellations
 
 ALTER TABLE ONLY public.corporations
     ADD CONSTRAINT corporations_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: factions factions_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.factions
+    ADD CONSTRAINT factions_pkey PRIMARY KEY (id);
 
 
 --
@@ -1277,6 +1340,48 @@ CREATE INDEX index_corporations_on_home_station_id ON public.corporations USING 
 
 
 --
+-- Name: index_faction_races_on_faction_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_faction_races_on_faction_id ON public.faction_races USING btree (faction_id);
+
+
+--
+-- Name: index_faction_races_on_race_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_faction_races_on_race_id ON public.faction_races USING btree (race_id);
+
+
+--
+-- Name: index_factions_on_corporation_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_factions_on_corporation_id ON public.factions USING btree (corporation_id);
+
+
+--
+-- Name: index_factions_on_icon_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_factions_on_icon_id ON public.factions USING btree (icon_id);
+
+
+--
+-- Name: index_factions_on_militia_corporation_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_factions_on_militia_corporation_id ON public.factions USING btree (militia_corporation_id);
+
+
+--
+-- Name: index_factions_on_solar_system_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_factions_on_solar_system_id ON public.factions USING btree (solar_system_id);
+
+
+--
 -- Name: index_identities_on_character_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -1431,6 +1536,13 @@ CREATE UNIQUE INDEX index_unique_default_identities ON public.identities USING b
 
 
 --
+-- Name: index_unique_faction_races; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_unique_faction_races ON public.faction_races USING btree (faction_id, race_id);
+
+
+--
 -- Name: index_unique_login_permits; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -1508,6 +1620,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220524200058'),
 ('20220525014307'),
 ('20220525015515'),
-('20220525020938');
+('20220525020938'),
+('20220525021716');
 
 
