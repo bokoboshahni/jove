@@ -15,6 +15,12 @@ module SDEImportable
 
     class_attribute :sde_name_lookup
     self.sde_name_lookup = nil
+
+    class_attribute :sde_localized_description
+    self.sde_localized_description = false
+
+    class_attribute :sde_localized_name
+    self.sde_localized_name = false
   end
 
   module ClassMethods
@@ -28,7 +34,7 @@ module SDEImportable
       Jove.config.sde_path
     end
 
-    def map_sde_attributes(data, context: {}) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/PerceivedComplexity
+    def map_sde_attributes(data, id: nil, context: {}) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/PerceivedComplexity
       data.deep_transform_keys! { |k| k.is_a?(String) ? k.underscore.to_sym : k }
       data.except!(*sde_exclude)
 
@@ -41,6 +47,10 @@ module SDEImportable
       elsif sde_name_lookup
         data[:name] = sde_names.fetch(data.fetch(:id))
       end
+
+      data[:id] = id if id
+      data[:description] = data.delete(:description_id)&.fetch(:en, '') if sde_localized_description
+      data[:name] = data.delete(:name_id)&.fetch(:en, '') if sde_localized_name
 
       attribute_names.reject { |a| %w[created_at updated_at].include?(a) }
                      .map(&:to_sym).each { |a| data[a] = nil unless data.key?(a) }

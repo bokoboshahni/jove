@@ -44,6 +44,12 @@ namespace :sde do # rubocop:disable Metrics/BlockLength
       puts "Imported #{results.rows.count} planets"
     end
 
+    task races: :environment do
+      progress = TTY::ProgressBar.new("Races #{IMPORT_PROGRESS_FORMAT}")
+      results = Race.import_all_from_sde(progress:)
+      puts "Imported #{results.rows.count} races"
+    end
+
     task regions: :environment do
       progress = TTY::ProgressBar.new("Regions #{IMPORT_PROGRESS_FORMAT}")
       results = Region.import_all_from_sde(progress:)

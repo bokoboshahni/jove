@@ -449,6 +449,40 @@ ALTER SEQUENCE public.login_permits_id_seq OWNED BY public.login_permits.id;
 
 
 --
+-- Name: races; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.races (
+    id bigint NOT NULL,
+    icon_id bigint,
+    ship_type_id bigint,
+    description text,
+    name text NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: races_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.races_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: races_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.races_id_seq OWNED BY public.races.id;
+
+
+--
 -- Name: regions; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -782,6 +816,13 @@ ALTER TABLE ONLY public.login_permits ALTER COLUMN id SET DEFAULT nextval('publi
 
 
 --
+-- Name: races id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.races ALTER COLUMN id SET DEFAULT nextval('public.races_id_seq'::regclass);
+
+
+--
 -- Name: regions id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -924,6 +965,14 @@ ALTER TABLE ONLY public.login_activities
 
 ALTER TABLE ONLY public.login_permits
     ADD CONSTRAINT login_permits_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: races races_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.races
+    ADD CONSTRAINT races_pkey PRIMARY KEY (id);
 
 
 --
@@ -1194,6 +1243,20 @@ CREATE INDEX index_login_permits_on_permittable ON public.login_permits USING bt
 
 
 --
+-- Name: index_races_on_icon_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_races_on_icon_id ON public.races USING btree (icon_id);
+
+
+--
+-- Name: index_races_on_ship_type_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_races_on_ship_type_id ON public.races USING btree (ship_type_id);
+
+
+--
 -- Name: index_regions_on_faction_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -1367,6 +1430,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220524195739'),
 ('20220524195908'),
 ('20220524200058'),
-('20220525014307');
+('20220525014307'),
+('20220525015515');
 
 
