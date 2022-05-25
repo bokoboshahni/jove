@@ -33,6 +33,8 @@ class Race < ApplicationRecord
   belongs_to :icon, optional: true
   belongs_to :ship_type, class_name: 'Type', optional: true
 
+  has_many :station_operation_station_types
+
   def self.import_all_from_sde(progress: nil)
     data = YAML.load_file(File.join(sde_path, 'fsd/races.yaml'))
     progress&.update(total: data.count)
