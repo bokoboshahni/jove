@@ -22,6 +22,7 @@
 # **`published`**                 | `boolean`          | `not null`
 # **`radius`**                    | `decimal(, )`      |
 # **`skin_faction_name`**         | `text`             |
+# **`traits`**                    | `jsonb`            |
 # **`volume`**                    | `decimal(, )`      |
 # **`created_at`**                | `datetime`         | `not null`
 # **`updated_at`**                | `datetime`         | `not null`
