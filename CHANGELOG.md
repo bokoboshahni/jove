@@ -1,5 +1,12 @@
 # Jove Changelog
 
+# [1.2.0-beta.7](https://github.com/bokoboshahni/jove/compare/v1.2.0-beta.6...v1.2.0-beta.7) (2022-05-26)
+
+
+### Bug Fixes
+
+* add source to planet schematic relations ([eb029f7](https://github.com/bokoboshahni/jove/commit/eb029f7cd39de55f74aa039ad29b6602dca3aef2))
+
 # [1.2.0-beta.6](https://github.com/bokoboshahni/jove/compare/v1.2.0-beta.5...v1.2.0-beta.6) (2022-05-26)
 
 
