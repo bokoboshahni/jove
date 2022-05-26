@@ -32,6 +32,12 @@ namespace :sde do # rubocop:disable Metrics/BlockLength
       puts "Imported #{results.rows.count} bloodlines"
     end
 
+    task blueprints: :environment do
+      progress = TTY::ProgressBar.new("Blueprints #{IMPORT_PROGRESS_FORMAT}")
+      results = BlueprintActivity.import_all_from_sde(progress:)
+      puts "Imported #{results} blueprints"
+    end
+
     task categories: :environment do
       progress = TTY::ProgressBar.new("Categories #{IMPORT_PROGRESS_FORMAT}")
       results = Category.import_all_from_sde(progress:)
@@ -165,6 +171,8 @@ namespace :sde do # rubocop:disable Metrics/BlockLength
     task entities: %i[races bloodlines corporations factions]
 
     task images: %i[graphics icons]
+
+    task industry: %i[blueprints]
 
     task structures: %i[stargates]
 

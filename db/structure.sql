@@ -24,6 +24,20 @@ COMMENT ON EXTENSION pgcrypto IS 'cryptographic functions';
 
 
 --
+-- Name: blueprint_activity; Type: TYPE; Schema: public; Owner: -
+--
+
+CREATE TYPE public.blueprint_activity AS ENUM (
+    'copying',
+    'invention',
+    'manufacturing',
+    'reaction',
+    'research_material',
+    'research_time'
+);
+
+
+--
 -- Name: celestial_type; Type: TYPE; Schema: public; Owner: -
 --
 
@@ -184,6 +198,54 @@ CREATE SEQUENCE public.bloodlines_id_seq
 --
 
 ALTER SEQUENCE public.bloodlines_id_seq OWNED BY public.bloodlines.id;
+
+
+--
+-- Name: blueprint_activities; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.blueprint_activities (
+    blueprint_id bigint NOT NULL,
+    activity public.blueprint_activity NOT NULL,
+    "time" interval NOT NULL
+);
+
+
+--
+-- Name: blueprint_activity_materials; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.blueprint_activity_materials (
+    blueprint_id bigint NOT NULL,
+    material_id bigint NOT NULL,
+    activity public.blueprint_activity NOT NULL,
+    quantity integer NOT NULL
+);
+
+
+--
+-- Name: blueprint_activity_products; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.blueprint_activity_products (
+    blueprint_id bigint NOT NULL,
+    product_id bigint NOT NULL,
+    activity public.blueprint_activity NOT NULL,
+    quantity integer NOT NULL,
+    probability numeric
+);
+
+
+--
+-- Name: blueprint_activity_skills; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.blueprint_activity_skills (
+    blueprint_id bigint NOT NULL,
+    skill_id bigint NOT NULL,
+    activity public.blueprint_activity NOT NULL,
+    level integer NOT NULL
+);
 
 
 --
@@ -1171,7 +1233,8 @@ CREATE TABLE public.types (
     skin_faction_name text,
     volume numeric,
     created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    updated_at timestamp(6) without time zone NOT NULL,
+    max_production_limit integer
 );
 
 
@@ -1777,6 +1840,55 @@ CREATE INDEX index_bloodlines_on_race_id ON public.bloodlines USING btree (race_
 
 
 --
+-- Name: index_blueprint_activities_on_blueprint_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_blueprint_activities_on_blueprint_id ON public.blueprint_activities USING btree (blueprint_id);
+
+
+--
+-- Name: index_blueprint_activity_materials_on_blueprint_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_blueprint_activity_materials_on_blueprint_id ON public.blueprint_activity_materials USING btree (blueprint_id);
+
+
+--
+-- Name: index_blueprint_activity_materials_on_material_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_blueprint_activity_materials_on_material_id ON public.blueprint_activity_materials USING btree (material_id);
+
+
+--
+-- Name: index_blueprint_activity_products_on_blueprint_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_blueprint_activity_products_on_blueprint_id ON public.blueprint_activity_products USING btree (blueprint_id);
+
+
+--
+-- Name: index_blueprint_activity_products_on_product_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_blueprint_activity_products_on_product_id ON public.blueprint_activity_products USING btree (product_id);
+
+
+--
+-- Name: index_blueprint_activity_skills_on_blueprint_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_blueprint_activity_skills_on_blueprint_id ON public.blueprint_activity_skills USING btree (blueprint_id);
+
+
+--
+-- Name: index_blueprint_activity_skills_on_skill_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_blueprint_activity_skills_on_skill_id ON public.blueprint_activity_skills USING btree (skill_id);
+
+
+--
 -- Name: index_categories_on_icon_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -2337,6 +2449,34 @@ CREATE UNIQUE INDEX index_unique_active_storage_variant_records ON public.active
 
 
 --
+-- Name: index_unique_blueprint_activities; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_unique_blueprint_activities ON public.blueprint_activities USING btree (blueprint_id, activity);
+
+
+--
+-- Name: index_unique_blueprint_activity_materials; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_unique_blueprint_activity_materials ON public.blueprint_activity_materials USING btree (blueprint_id, activity, material_id);
+
+
+--
+-- Name: index_unique_blueprint_activity_products; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_unique_blueprint_activity_products ON public.blueprint_activity_products USING btree (blueprint_id, activity, product_id);
+
+
+--
+-- Name: index_unique_blueprint_activity_skills; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_unique_blueprint_activity_skills ON public.blueprint_activity_skills USING btree (blueprint_id, activity, skill_id);
+
+
+--
 -- Name: index_unique_default_identities; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -2454,6 +2594,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220525143716'),
 ('20220525151451'),
 ('20220525161306'),
-('20220525163516');
+('20220525163516'),
+('20220525181655');
 
 

@@ -8,8 +8,8 @@
 #
 # Name                | Type               | Attributes
 # ------------------- | ------------------ | ---------------------------
-# **`operation_id`**  | `bigint`           | `not null`
-# **`service_id`**    | `bigint`           | `not null`
+# **`operation_id`**  | `bigint`           | `not null, primary key`
+# **`service_id`**    | `bigint`           | `not null, primary key`
 #
 # ### Indexes
 #

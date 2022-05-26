@@ -13,6 +13,7 @@
 # **`capacity`**                  | `decimal(, )`      |
 # **`description`**               | `text`             |
 # **`mass`**                      | `decimal(, )`      |
+# **`max_production_limit`**      | `integer`          |
 # **`name`**                      | `text`             | `not null`
 # **`packaged_volume`**           | `decimal(, )`      |
 # **`portion_size`**              | `integer`          | `not null`

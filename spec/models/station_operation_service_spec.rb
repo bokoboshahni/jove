@@ -8,8 +8,8 @@
 #
 # Name                | Type               | Attributes
 # ------------------- | ------------------ | ---------------------------
-# **`operation_id`**  | `bigint`           | `not null`
-# **`service_id`**    | `bigint`           | `not null`
+# **`operation_id`**  | `bigint`           | `not null, primary key`
+# **`service_id`**    | `bigint`           | `not null, primary key`
 #
 # ### Indexes
 #
@@ -24,5 +24,4 @@
 require 'rails_helper'
 
 RSpec.describe StationOperationService, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
 end

@@ -85,22 +85,64 @@
   itemName: EVE Junkyard - Month 12
 - itemID: 1401
   itemName: EVE Character Delete Junkyard
+- itemID: 1402
+  itemName: EVE Corporation Delete Junkyard
+- itemID: 1403
+  itemName: EVE Alliance Delete Junkyard
 - itemID: 1501
   itemName: EVE Character Graveyard
+- itemID: 1502
+  itemName: EVE Corporation Graveyard
+- itemID: 1504
+  itemName: EVE Scenario Junkyard
 - itemID: 1505
   itemName: EVE Alliance Graveyard
+- itemID: 1506
+  itemName: EVE Universe Junkyard
+- itemID: 1507
+  itemName: EVE Structure Singleton Junkyard
+- itemID: 1508
+  itemName: EVE Station Singleton Junkyard
+- itemID: 1601
+  itemName: EVE Asteroid & Mineral Junkyard - Week 1
+- itemID: 1602
+  itemName: EVE Asteroid & Mineral Junkyard - Week 2
+- itemID: 1603
+  itemName: EVE Asteroid & Mineral Junkyard - Week 3
 - itemID: 1604
   itemName: EVE Asteroid & Mineral Junkyard - Week 4
 - itemID: 1605
   itemName: EVE Asteroid & Mineral Junkyard - Week 5
+- itemID: 1610
+  itemName: EVE Asteroid & Mineral Junkyard - Week 10
 - itemID: 1611
   itemName: EVE Asteroid & Mineral Junkyard - Week 11
+- itemID: 1612
+  itemName: EVE Asteroid & Mineral Junkyard - Week 12
 - itemID: 1614
   itemName: EVE Asteroid & Mineral Junkyard - Week 14
+- itemID: 1616
+  itemName: EVE Asteroid & Mineral Junkyard - Week 16
+- itemID: 1617
+  itemName: EVE Asteroid & Mineral Junkyard - Week 17
+- itemID: 1618
+  itemName: EVE Asteroid & Mineral Junkyard - Week 18
 - itemID: 1619
   itemName: EVE Asteroid & Mineral Junkyard - Week 19
+- itemID: 1620
+  itemName: EVE Asteroid & Mineral Junkyard - Week 20
+- itemID: 1621
+  itemName: EVE Asteroid & Mineral Junkyard - Week 21
 - itemID: 1623
   itemName: EVE Asteroid & Mineral Junkyard - Week 23
+- itemID: 1624
+  itemName: EVE Asteroid & Mineral Junkyard - Week 24
+- itemID: 1625
+  itemName: EVE Asteroid & Mineral Junkyard - Week 25
+- itemID: 1626
+  itemName: EVE Asteroid & Mineral Junkyard - Week 26
+- itemID: 1627
+  itemName: EVE Asteroid & Mineral Junkyard - Week 27
 - itemID: 1628
   itemName: EVE Asteroid & Mineral Junkyard - Week 28
 - itemID: 1629
@@ -117,6 +159,10 @@
   itemName: EVE Asteroid & Mineral Junkyard - Week 34
 - itemID: 1635
   itemName: EVE Asteroid & Mineral Junkyard - Week 35
+- itemID: 1639
+  itemName: EVE Asteroid & Mineral Junkyard - Week 39
+- itemID: 1640
+  itemName: EVE Asteroid & Mineral Junkyard - Week 40
 - itemID: 1641
   itemName: EVE Asteroid & Mineral Junkyard - Week 41
 - itemID: 1642
@@ -127,6 +173,8 @@
   itemName: EVE Asteroid & Mineral Junkyard - Week 44
 - itemID: 1645
   itemName: EVE Asteroid & Mineral Junkyard - Week 45
+- itemID: 1646
+  itemName: EVE Asteroid & Mineral Junkyard - Week 46
 - itemID: 1647
   itemName: EVE Asteroid & Mineral Junkyard - Week 47
 - itemID: 1648
@@ -137,28 +185,276 @@
   itemName: EVE Asteroid & Mineral Junkyard - Week 50
 - itemID: 1651
   itemName: EVE Asteroid & Mineral Junkyard - Week 51
+- itemID: 1652
+  itemName: EVE Asteroid & Mineral Junkyard - Week 52
+- itemID: 1653
+  itemName: EVE Asteroid & Mineral Junkyard - Week 53
+- itemID: 1701
+  itemName: EVE Non-Singleton Junkyard - Week 1
+- itemID: 1702
+  itemName: EVE Non-Singleton Junkyard - Week 2
+- itemID: 1703
+  itemName: EVE Non-Singleton Junkyard - Week 3
+- itemID: 1704
+  itemName: EVE Non-Singleton Junkyard - Week 4
+- itemID: 1707
+  itemName: EVE Non-Singleton Junkyard - Week 7
+- itemID: 1708
+  itemName: EVE Non-Singleton Junkyard - Week 8
+- itemID: 1709
+  itemName: EVE Non-Singleton Junkyard - Week 9
+- itemID: 1710
+  itemName: EVE Non-Singleton Junkyard - Week 10
+- itemID: 1711
+  itemName: EVE Non-Singleton Junkyard - Week 11
+- itemID: 1712
+  itemName: EVE Non-Singleton Junkyard - Week 12
+- itemID: 1713
+  itemName: EVE Non-Singleton Junkyard - Week 13
+- itemID: 1715
+  itemName: EVE Non-Singleton Junkyard - Week 15
+- itemID: 1716
+  itemName: EVE Non-Singleton Junkyard - Week 16
+- itemID: 1717
+  itemName: EVE Non-Singleton Junkyard - Week 17
+- itemID: 1718
+  itemName: EVE Non-Singleton Junkyard - Week 18
+- itemID: 1719
+  itemName: EVE Non-Singleton Junkyard - Week 19
+- itemID: 1720
+  itemName: EVE Non-Singleton Junkyard - Week 20
+- itemID: 1721
+  itemName: EVE Non-Singleton Junkyard - Week 21
+- itemID: 1722
+  itemName: EVE Non-Singleton Junkyard - Week 22
+- itemID: 1723
+  itemName: EVE Non-Singleton Junkyard - Week 23
+- itemID: 1724
+  itemName: EVE Non-Singleton Junkyard - Week 24
+- itemID: 1725
+  itemName: EVE Non-Singleton Junkyard - Week 25
+- itemID: 1726
+  itemName: EVE Non-Singleton Junkyard - Week 26
+- itemID: 1727
+  itemName: EVE Non-Singleton Junkyard - Week 27
+- itemID: 1728
+  itemName: EVE Non-Singleton Junkyard - Week 28
+- itemID: 1729
+  itemName: EVE Non-Singleton Junkyard - Week 29
+- itemID: 1730
+  itemName: EVE Non-Singleton Junkyard - Week 30
+- itemID: 1731
+  itemName: EVE Non-Singleton Junkyard - Week 31
+- itemID: 1732
+  itemName: EVE Non-Singleton Junkyard - Week 32
+- itemID: 1733
+  itemName: EVE Non-Singleton Junkyard - Week 33
+- itemID: 1734
+  itemName: EVE Non-Singleton Junkyard - Week 34
+- itemID: 1735
+  itemName: EVE Non-Singleton Junkyard - Week 35
+- itemID: 1736
+  itemName: EVE Non-Singleton Junkyard - Week 36
+- itemID: 1737
+  itemName: EVE Non-Singleton Junkyard - Week 37
+- itemID: 1739
+  itemName: EVE Non-Singleton Junkyard - Week 39
+- itemID: 1740
+  itemName: EVE Non-Singleton Junkyard - Week 40
+- itemID: 1745
+  itemName: EVE Non-Singleton Junkyard - Week 45
+- itemID: 1746
+  itemName: EVE Non-Singleton Junkyard - Week 46
+- itemID: 1747
+  itemName: EVE Non-Singleton Junkyard - Week 47
+- itemID: 1748
+  itemName: EVE Non-Singleton Junkyard - Week 48
+- itemID: 1801
+  itemName: EVE Singleton Non-Parent Junkyard - Week 1
+- itemID: 1802
+  itemName: EVE Singleton Non-Parent Junkyard - Week 2
+- itemID: 1803
+  itemName: EVE Singleton Non-Parent Junkyard - Week 3
+- itemID: 1804
+  itemName: EVE Singleton Non-Parent Junkyard - Week 4
+- itemID: 1805
+  itemName: EVE Singleton Non-Parent Junkyard - Week 5
+- itemID: 1806
+  itemName: EVE Singleton Non-Parent Junkyard - Week 6
+- itemID: 1807
+  itemName: EVE Singleton Non-Parent Junkyard - Week 7
+- itemID: 1808
+  itemName: EVE Singleton Non-Parent Junkyard - Week 8
+- itemID: 1809
+  itemName: EVE Singleton Non-Parent Junkyard - Week 9
+- itemID: 1810
+  itemName: EVE Singleton Non-Parent Junkyard - Week 10
 - itemID: 1811
   itemName: EVE Singleton Non-Parent Junkyard - Week 11
+- itemID: 1812
+  itemName: EVE Singleton Non-Parent Junkyard - Week 12
+- itemID: 1813
+  itemName: EVE Singleton Non-Parent Junkyard - Week 13
+- itemID: 1814
+  itemName: EVE Singleton Non-Parent Junkyard - Week 14
 - itemID: 1815
   itemName: EVE Singleton Non-Parent Junkyard - Week 15
+- itemID: 1816
+  itemName: EVE Singleton Non-Parent Junkyard - Week 16
 - itemID: 1817
   itemName: EVE Singleton Non-Parent Junkyard - Week 17
+- itemID: 1818
+  itemName: EVE Singleton Non-Parent Junkyard - Week 18
 - itemID: 1819
   itemName: EVE Singleton Non-Parent Junkyard - Week 19
+- itemID: 1822
+  itemName: EVE Singleton Non-Parent Junkyard - Week 22
+- itemID: 1823
+  itemName: EVE Singleton Non-Parent Junkyard - Week 23
+- itemID: 1824
+  itemName: EVE Singleton Non-Parent Junkyard - Week 24
+- itemID: 1827
+  itemName: EVE Singleton Non-Parent Junkyard - Week 27
+- itemID: 1828
+  itemName: EVE Singleton Non-Parent Junkyard - Week 28
+- itemID: 1829
+  itemName: EVE Singleton Non-Parent Junkyard - Week 29
+- itemID: 1830
+  itemName: EVE Singleton Non-Parent Junkyard - Week 30
+- itemID: 1831
+  itemName: EVE Singleton Non-Parent Junkyard - Week 31
+- itemID: 1832
+  itemName: EVE Singleton Non-Parent Junkyard - Week 32
+- itemID: 1833
+  itemName: EVE Singleton Non-Parent Junkyard - Week 33
+- itemID: 1834
+  itemName: EVE Singleton Non-Parent Junkyard - Week 34
+- itemID: 1835
+  itemName: EVE Singleton Non-Parent Junkyard - Week 35
+- itemID: 1836
+  itemName: EVE Singleton Non-Parent Junkyard - Week 36
+- itemID: 1837
+  itemName: EVE Singleton Non-Parent Junkyard - Week 37
+- itemID: 1838
+  itemName: EVE Singleton Non-Parent Junkyard - Week 38
+- itemID: 1840
+  itemName: EVE Singleton Non-Parent Junkyard - Week 40
+- itemID: 1841
+  itemName: EVE Singleton Non-Parent Junkyard - Week 41
+- itemID: 1842
+  itemName: EVE Singleton Non-Parent Junkyard - Week 42
+- itemID: 1843
+  itemName: EVE Singleton Non-Parent Junkyard - Week 43
+- itemID: 1844
+  itemName: EVE Singleton Non-Parent Junkyard - Week 44
+- itemID: 1845
+  itemName: EVE Singleton Non-Parent Junkyard - Week 45
+- itemID: 1846
+  itemName: EVE Singleton Non-Parent Junkyard - Week 46
+- itemID: 1847
+  itemName: EVE Singleton Non-Parent Junkyard - Week 47
+- itemID: 1849
+  itemName: EVE Singleton Non-Parent Junkyard - Week 49
+- itemID: 1850
+  itemName: EVE Singleton Non-Parent Junkyard - Week 50
+- itemID: 1851
+  itemName: EVE Singleton Non-Parent Junkyard - Week 51
+- itemID: 1852
+  itemName: EVE Singleton Non-Parent Junkyard - Week 52
+- itemID: 1853
+  itemName: EVE Singleton Non-Parent Junkyard - Week 53
+- itemID: 1901
+  itemName: EVE Singleton Parent Junkyard - Week 1
+- itemID: 1902
+  itemName: EVE Singleton Parent Junkyard - Week 2
+- itemID: 1903
+  itemName: EVE Singleton Parent Junkyard - Week 3
+- itemID: 1904
+  itemName: EVE Singleton Parent Junkyard - Week 4
+- itemID: 1905
+  itemName: EVE Singleton Parent Junkyard - Week 5
+- itemID: 1906
+  itemName: EVE Singleton Parent Junkyard - Week 6
+- itemID: 1907
+  itemName: EVE Singleton Parent Junkyard - Week 7
+- itemID: 1908
+  itemName: EVE Singleton Parent Junkyard - Week 8
+- itemID: 1909
+  itemName: EVE Singleton Parent Junkyard - Week 9
+- itemID: 1912
+  itemName: EVE Singleton Parent Junkyard - Week 12
+- itemID: 1913
+  itemName: EVE Singleton Parent Junkyard - Week 13
+- itemID: 1918
+  itemName: EVE Singleton Parent Junkyard - Week 18
+- itemID: 1919
+  itemName: EVE Singleton Parent Junkyard - Week 19
+- itemID: 1920
+  itemName: EVE Singleton Parent Junkyard - Week 20
+- itemID: 1921
+  itemName: EVE Singleton Parent Junkyard - Week 21
+- itemID: 1922
+  itemName: EVE Singleton Parent Junkyard - Week 22
+- itemID: 1923
+  itemName: EVE Singleton Parent Junkyard - Week 23
+- itemID: 1924
+  itemName: EVE Singleton Parent Junkyard - Week 24
 - itemID: 1927
   itemName: EVE Singleton Parent Junkyard - Week 27
 - itemID: 1929
   itemName: EVE Singleton Parent Junkyard - Week 29
 - itemID: 1930
   itemName: EVE Singleton Parent Junkyard - Week 30
+- itemID: 1931
+  itemName: EVE Singleton Parent Junkyard - Week 31
+- itemID: 1932
+  itemName: EVE Singleton Parent Junkyard - Week 32
+- itemID: 1935
+  itemName: EVE Singleton Parent Junkyard - Week 35
 - itemID: 1936
   itemName: EVE Singleton Parent Junkyard - Week 36
+- itemID: 1937
+  itemName: EVE Singleton Parent Junkyard - Week 37
+- itemID: 1938
+  itemName: EVE Singleton Parent Junkyard - Week 38
+- itemID: 1939
+  itemName: EVE Singleton Parent Junkyard - Week 39
+- itemID: 1940
+  itemName: EVE Singleton Parent Junkyard - Week 40
+- itemID: 1941
+  itemName: EVE Singleton Parent Junkyard - Week 41
+- itemID: 1942
+  itemName: EVE Singleton Parent Junkyard - Week 42
+- itemID: 1943
+  itemName: EVE Singleton Parent Junkyard - Week 43
+- itemID: 1944
+  itemName: EVE Singleton Parent Junkyard - Week 44
+- itemID: 1945
+  itemName: EVE Singleton Parent Junkyard - Week 45
 - itemID: 1949
   itemName: EVE Singleton Parent Junkyard - Week 49
+- itemID: 1950
+  itemName: EVE Singleton Parent Junkyard - Week 50
 - itemID: 1951
   itemName: EVE Singleton Parent Junkyard - Week 51
+- itemID: 1952
+  itemName: EVE Singleton Parent Junkyard - Week 52
+- itemID: 1953
+  itemName: EVE Singleton Parent Junkyard - Week 53
+- itemID: 2000
+  itemName: "[EVE TEMPORARY ITEMS]"
+- itemID: 2001
+  itemName: EVE Temp
+- itemID: 2002
+  itemName: EVE Trading
+- itemID: 2003
+  itemName: EVE Research & Manufacturing Installed Items
+- itemID: 2004
+  itemName: EVE Asset Safety
 - itemID: 3000
   itemName: "[EVE SPECIFIC ITEMS]"
+- itemID: 3007
+  itemName: EVE Alliance
 - itemID: 500001
   itemName: Caldari State
 - itemID: 500002
