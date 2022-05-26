@@ -200,6 +200,12 @@ namespace :sde do # rubocop:disable Metrics/BlockLength
       puts "Imported #{results.rows.count} type materials"
     end
 
+    task units: :environment do
+      progress = TTY::ProgressBar.new("Units #{IMPORT_PROGRESS_FORMAT}")
+      results = Unit.import_all_from_sde(progress:)
+      puts "Imported #{results.rows.count} units"
+    end
+
     task areas: %i[regions constellations solar_systems]
 
     task celestials: %i[stars secondary_suns planets moons asteroid_belts]
@@ -214,7 +220,7 @@ namespace :sde do # rubocop:disable Metrics/BlockLength
 
     task structures: %i[stargates]
 
-    task taxonomies: %i[categories groups market_groups meta_groups]
+    task taxonomies: %i[categories groups market_groups meta_groups units]
 
     task universe: %i[areas celestials structures entities taxonomies types images stations station_operations
                       station_services]

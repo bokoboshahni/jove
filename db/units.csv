@@ -1,0 +1,59 @@
+unitID,unitName,displayName,description
+1,Length,None,None
+2,Mass,None,None
+3,Time,None,None
+4,Electric Current,None,None
+5,Temperature,None,None
+6,Amount Of Substance,None,None
+7,Luminous Intensity,None,None
+8,Area,None,None
+9,Volume,None,None
+10,Speed,None,None
+11,Acceleration,None,None
+12,Wave Number,None,None
+13,Mass Density,None,None
+14,Specific Volume,None,None
+15,Current Density,None,None
+16,Magnetic Field Strength,None,None
+17,Amount-Of-Substance Concentration,None,None
+18,Luminance,None,None
+19,Mass Fraction,None,None
+101,Milliseconds,None,None
+102,Millimeters,None,None
+103,MegaPascals,None,None
+104,Multiplier,None,None
+105,Percentage,None,None
+106,Teraflops,None,None
+107,MegaWatts,None,None
+108,Inverse Absolute Percent,None,None
+109,Modifier Percent,None,None
+111,Inversed Modifier Percent,None,None
+112,Radians/Second,None,None
+113,Hitpoints,None,None
+114,capacitor units,None,None
+115,groupID,None,None
+116,typeID,None,None
+117,Sizeclass,None,None
+118,Ore units,None,None
+119,attributeID,None,None
+120,attributePoints,None,None
+121,realPercent,None,None
+122,Fitting slots,None,None
+123,trueTime,None,None
+124,Modifier Relative Percent,None,None
+125,Newton,None,None
+126,Light Year,None,None
+127,Absolute Percent,None,None
+128,Drone bandwidth,None,None
+129,Hours,None,None
+133,Money,None,None
+134,Logistical Capacity,None,None
+135,Astronomical Unit,None,None
+136,Slot,None,None
+137,Boolean,None,None
+138,Units,None,None
+139,Bonus,None,None
+140,Level,None,None
+141,Hardpoints,None,None
+142,Sex,None,None
+143,Datetime,None,None
