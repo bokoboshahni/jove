@@ -1,5 +1,14 @@
 # Jove Changelog
 
+# [1.2.0-beta.6](https://github.com/bokoboshahni/jove/compare/v1.2.0-beta.5...v1.2.0-beta.6) (2022-05-26)
+
+
+### Features
+
+* import blueprints from sde ([fb174fb](https://github.com/bokoboshahni/jove/commit/fb174fb3947de53b76ad25fe7b7acdc63430ccdb))
+* import planet schematics from sde ([f41bee8](https://github.com/bokoboshahni/jove/commit/f41bee86403f81e08590ff2f71579ff4b3696296))
+* import type materials from sde ([928ae61](https://github.com/bokoboshahni/jove/commit/928ae61bd466684b9c34151485d80d6c85432980))
+
 # [1.2.0-beta.5](https://github.com/bokoboshahni/jove/compare/v1.2.0-beta.4...v1.2.0-beta.5) (2022-05-25)
 
 
