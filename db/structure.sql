@@ -491,6 +491,52 @@ ALTER SEQUENCE public.corporations_id_seq OWNED BY public.corporations.id;
 
 
 --
+-- Name: dogma_attributes; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.dogma_attributes (
+    id bigint NOT NULL,
+    category_id bigint,
+    recharge_time_attribute_id bigint,
+    data_type_id bigint,
+    icon_id bigint,
+    max_attribute_id bigint,
+    unit_id bigint,
+    default_value numeric NOT NULL,
+    description text,
+    display_name text,
+    display_when_zero boolean,
+    high_is_good boolean NOT NULL,
+    name text NOT NULL,
+    published boolean NOT NULL,
+    stackable boolean NOT NULL,
+    tooltip_description text,
+    tooltip_title text,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: dogma_attributes_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.dogma_attributes_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: dogma_attributes_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.dogma_attributes_id_seq OWNED BY public.dogma_attributes.id;
+
+
+--
 -- Name: faction_races; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1442,6 +1488,13 @@ ALTER TABLE ONLY public.corporations ALTER COLUMN id SET DEFAULT nextval('public
 
 
 --
+-- Name: dogma_attributes id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.dogma_attributes ALTER COLUMN id SET DEFAULT nextval('public.dogma_attributes_id_seq'::regclass);
+
+
+--
 -- Name: factions id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -1681,6 +1734,14 @@ ALTER TABLE ONLY public.constellations
 
 ALTER TABLE ONLY public.corporations
     ADD CONSTRAINT corporations_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: dogma_attributes dogma_attributes_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.dogma_attributes
+    ADD CONSTRAINT dogma_attributes_pkey PRIMARY KEY (id);
 
 
 --
@@ -2152,6 +2213,48 @@ CREATE INDEX index_corporations_on_secondary_activity_id ON public.corporations 
 --
 
 CREATE INDEX index_corporations_on_solar_system_id ON public.corporations USING btree (solar_system_id);
+
+
+--
+-- Name: index_dogma_attributes_on_category_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_dogma_attributes_on_category_id ON public.dogma_attributes USING btree (category_id);
+
+
+--
+-- Name: index_dogma_attributes_on_data_type_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_dogma_attributes_on_data_type_id ON public.dogma_attributes USING btree (data_type_id);
+
+
+--
+-- Name: index_dogma_attributes_on_icon_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_dogma_attributes_on_icon_id ON public.dogma_attributes USING btree (icon_id);
+
+
+--
+-- Name: index_dogma_attributes_on_max_attribute_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_dogma_attributes_on_max_attribute_id ON public.dogma_attributes USING btree (max_attribute_id);
+
+
+--
+-- Name: index_dogma_attributes_on_recharge_time_attribute_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_dogma_attributes_on_recharge_time_attribute_id ON public.dogma_attributes USING btree (recharge_time_attribute_id);
+
+
+--
+-- Name: index_dogma_attributes_on_unit_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_dogma_attributes_on_unit_id ON public.dogma_attributes USING btree (unit_id);
 
 
 --
@@ -2709,6 +2812,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220525163516'),
 ('20220525181655'),
 ('20220526135502'),
-('20220526141538');
+('20220526141538'),
+('20220526154906');
 
 
