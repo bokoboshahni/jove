@@ -12,6 +12,8 @@
 # **`base_price`**                | `decimal(, )`      |
 # **`capacity`**                  | `decimal(, )`      |
 # **`description`**               | `text`             |
+# **`dogma_attributes`**          | `jsonb`            |
+# **`dogma_effects`**             | `jsonb`            |
 # **`mass`**                      | `decimal(, )`      |
 # **`max_production_limit`**      | `integer`          |
 # **`name`**                      | `text`             | `not null`
@@ -120,13 +122,20 @@ class Type < ApplicationRecord
   has_many :type_materials_as_material, class_name: 'TypeMaterial', foreign_key: :material_id
   has_many :types_as_material, class_name: 'Type', through: :type_materials_as_material, source: :type
 
-  def self.import_all_from_sde(progress: nil) # rubocop:disable Metrics/MethodLength
+  def self.import_all_from_sde(progress: nil) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
     data = YAML.load_file(File.join(sde_path, 'fsd/typeIDs.yaml'))
+    dogma = YAML.load_file(File.join(sde_path, 'fsd/typeDogma.yaml'))
     blueprints = YAML.load_file(File.join(sde_path, 'fsd/blueprints.yaml'))
     progress&.update(total: data.count)
     rows = data.map do |id, orig|
       blueprint = blueprints[id]
       orig.merge!(max_production_limit: blueprint['maxProductionLimit']) if blueprint
+      if dogma[id]
+        orig.merge!(
+          dogma_attributes: dogma[id]['dogmaAttributes'],
+          dogma_effects: dogma[id]['dogmaEffects']
+        )
+      end
       record = map_sde_attributes(orig, id:)
       progress&.advance
       record

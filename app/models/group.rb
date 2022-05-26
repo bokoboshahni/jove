@@ -35,6 +35,8 @@ class Group < ApplicationRecord
   belongs_to :category
   belongs_to :icon, optional: true
 
+  has_many :dogma_effect_modifiers
+
   def self.import_all_from_sde(progress: nil)
     data = YAML.load_file(File.join(sde_path, 'fsd/groupIDs.yaml'))
     progress&.update(total: data.count)

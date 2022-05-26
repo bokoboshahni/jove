@@ -491,6 +491,157 @@ ALTER SEQUENCE public.corporations_id_seq OWNED BY public.corporations.id;
 
 
 --
+-- Name: dogma_attributes; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.dogma_attributes (
+    id bigint NOT NULL,
+    category_id bigint,
+    recharge_time_attribute_id bigint,
+    data_type_id bigint,
+    icon_id bigint,
+    max_attribute_id bigint,
+    unit_id bigint,
+    default_value numeric NOT NULL,
+    description text,
+    display_name text,
+    display_when_zero boolean,
+    high_is_good boolean NOT NULL,
+    name text NOT NULL,
+    published boolean NOT NULL,
+    stackable boolean NOT NULL,
+    tooltip_description text,
+    tooltip_title text,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: dogma_attributes_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.dogma_attributes_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: dogma_attributes_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.dogma_attributes_id_seq OWNED BY public.dogma_attributes.id;
+
+
+--
+-- Name: dogma_categories; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.dogma_categories (
+    id bigint NOT NULL,
+    description text,
+    name text NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: dogma_categories_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.dogma_categories_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: dogma_categories_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.dogma_categories_id_seq OWNED BY public.dogma_categories.id;
+
+
+--
+-- Name: dogma_effect_modifiers; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.dogma_effect_modifiers (
+    id uuid DEFAULT gen_random_uuid() NOT NULL,
+    effect_id bigint NOT NULL,
+    group_id bigint,
+    modified_attribute_id bigint,
+    modified_effect_id bigint,
+    modifying_attribute_id bigint,
+    operation_id bigint,
+    skill_id bigint,
+    domain text NOT NULL,
+    function text NOT NULL
+);
+
+
+--
+-- Name: dogma_effects; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.dogma_effects (
+    id bigint NOT NULL,
+    category_id bigint NOT NULL,
+    discharge_attribute_id bigint,
+    duration_attribute_id bigint,
+    falloff_attribute_id bigint,
+    fitting_usage_chance_attribute_id bigint,
+    icon_id bigint,
+    npc_activation_chance_attribute_id bigint,
+    npc_usage_chance_attribute_id bigint,
+    range_attribute_id bigint,
+    resistance_attribute_id bigint,
+    tracking_speed_attribute_id bigint,
+    description text,
+    disallow_auto_repeat boolean NOT NULL,
+    display_name text,
+    distribution integer,
+    electronic_chance boolean NOT NULL,
+    guid text,
+    is_assistance boolean NOT NULL,
+    is_offensive boolean NOT NULL,
+    is_warp_safe boolean NOT NULL,
+    name text NOT NULL,
+    propulsion_chance boolean NOT NULL,
+    published boolean NOT NULL,
+    range_chance boolean NOT NULL,
+    sfx_name text,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: dogma_effects_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.dogma_effects_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: dogma_effects_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.dogma_effects_id_seq OWNED BY public.dogma_effects.id;
+
+
+--
 -- Name: faction_races; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1303,7 +1454,9 @@ CREATE TABLE public.types (
     volume numeric,
     created_at timestamp(6) without time zone NOT NULL,
     updated_at timestamp(6) without time zone NOT NULL,
-    max_production_limit integer
+    max_production_limit integer,
+    dogma_attributes jsonb,
+    dogma_effects jsonb
 );
 
 
@@ -1324,6 +1477,37 @@ CREATE SEQUENCE public.types_id_seq
 --
 
 ALTER SEQUENCE public.types_id_seq OWNED BY public.types.id;
+
+
+--
+-- Name: units; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.units (
+    id bigint NOT NULL,
+    name text NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: units_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.units_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: units_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.units_id_seq OWNED BY public.units.id;
 
 
 --
@@ -1439,6 +1623,27 @@ ALTER TABLE ONLY public.constellations ALTER COLUMN id SET DEFAULT nextval('publ
 --
 
 ALTER TABLE ONLY public.corporations ALTER COLUMN id SET DEFAULT nextval('public.corporations_id_seq'::regclass);
+
+
+--
+-- Name: dogma_attributes id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.dogma_attributes ALTER COLUMN id SET DEFAULT nextval('public.dogma_attributes_id_seq'::regclass);
+
+
+--
+-- Name: dogma_categories id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.dogma_categories ALTER COLUMN id SET DEFAULT nextval('public.dogma_categories_id_seq'::regclass);
+
+
+--
+-- Name: dogma_effects id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.dogma_effects ALTER COLUMN id SET DEFAULT nextval('public.dogma_effects_id_seq'::regclass);
 
 
 --
@@ -1582,6 +1787,13 @@ ALTER TABLE ONLY public.types ALTER COLUMN id SET DEFAULT nextval('public.types_
 
 
 --
+-- Name: units id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.units ALTER COLUMN id SET DEFAULT nextval('public.units_id_seq'::regclass);
+
+
+--
 -- Name: users id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -1681,6 +1893,38 @@ ALTER TABLE ONLY public.constellations
 
 ALTER TABLE ONLY public.corporations
     ADD CONSTRAINT corporations_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: dogma_attributes dogma_attributes_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.dogma_attributes
+    ADD CONSTRAINT dogma_attributes_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: dogma_categories dogma_categories_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.dogma_categories
+    ADD CONSTRAINT dogma_categories_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: dogma_effect_modifiers dogma_effect_modifiers_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.dogma_effect_modifiers
+    ADD CONSTRAINT dogma_effect_modifiers_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: dogma_effects dogma_effects_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.dogma_effects
+    ADD CONSTRAINT dogma_effects_pkey PRIMARY KEY (id);
 
 
 --
@@ -1849,6 +2093,14 @@ ALTER TABLE ONLY public.stations
 
 ALTER TABLE ONLY public.types
     ADD CONSTRAINT types_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: units units_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.units
+    ADD CONSTRAINT units_pkey PRIMARY KEY (id);
 
 
 --
@@ -2152,6 +2404,174 @@ CREATE INDEX index_corporations_on_secondary_activity_id ON public.corporations 
 --
 
 CREATE INDEX index_corporations_on_solar_system_id ON public.corporations USING btree (solar_system_id);
+
+
+--
+-- Name: index_dogma_attributes_on_category_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_dogma_attributes_on_category_id ON public.dogma_attributes USING btree (category_id);
+
+
+--
+-- Name: index_dogma_attributes_on_data_type_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_dogma_attributes_on_data_type_id ON public.dogma_attributes USING btree (data_type_id);
+
+
+--
+-- Name: index_dogma_attributes_on_icon_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_dogma_attributes_on_icon_id ON public.dogma_attributes USING btree (icon_id);
+
+
+--
+-- Name: index_dogma_attributes_on_max_attribute_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_dogma_attributes_on_max_attribute_id ON public.dogma_attributes USING btree (max_attribute_id);
+
+
+--
+-- Name: index_dogma_attributes_on_recharge_time_attribute_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_dogma_attributes_on_recharge_time_attribute_id ON public.dogma_attributes USING btree (recharge_time_attribute_id);
+
+
+--
+-- Name: index_dogma_attributes_on_unit_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_dogma_attributes_on_unit_id ON public.dogma_attributes USING btree (unit_id);
+
+
+--
+-- Name: index_dogma_effect_modifiers_on_effect_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_dogma_effect_modifiers_on_effect_id ON public.dogma_effect_modifiers USING btree (effect_id);
+
+
+--
+-- Name: index_dogma_effect_modifiers_on_group_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_dogma_effect_modifiers_on_group_id ON public.dogma_effect_modifiers USING btree (group_id);
+
+
+--
+-- Name: index_dogma_effect_modifiers_on_modified_attribute_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_dogma_effect_modifiers_on_modified_attribute_id ON public.dogma_effect_modifiers USING btree (modified_attribute_id);
+
+
+--
+-- Name: index_dogma_effect_modifiers_on_modified_effect_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_dogma_effect_modifiers_on_modified_effect_id ON public.dogma_effect_modifiers USING btree (modified_effect_id);
+
+
+--
+-- Name: index_dogma_effect_modifiers_on_modifying_attribute_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_dogma_effect_modifiers_on_modifying_attribute_id ON public.dogma_effect_modifiers USING btree (modifying_attribute_id);
+
+
+--
+-- Name: index_dogma_effect_modifiers_on_operation_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_dogma_effect_modifiers_on_operation_id ON public.dogma_effect_modifiers USING btree (operation_id);
+
+
+--
+-- Name: index_dogma_effect_modifiers_on_skill_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_dogma_effect_modifiers_on_skill_id ON public.dogma_effect_modifiers USING btree (skill_id);
+
+
+--
+-- Name: index_dogma_effects_on_category_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_dogma_effects_on_category_id ON public.dogma_effects USING btree (category_id);
+
+
+--
+-- Name: index_dogma_effects_on_discharge_attribute_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_dogma_effects_on_discharge_attribute_id ON public.dogma_effects USING btree (discharge_attribute_id);
+
+
+--
+-- Name: index_dogma_effects_on_duration_attribute_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_dogma_effects_on_duration_attribute_id ON public.dogma_effects USING btree (duration_attribute_id);
+
+
+--
+-- Name: index_dogma_effects_on_falloff_attribute_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_dogma_effects_on_falloff_attribute_id ON public.dogma_effects USING btree (falloff_attribute_id);
+
+
+--
+-- Name: index_dogma_effects_on_fitting_usage_chance_attribute_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_dogma_effects_on_fitting_usage_chance_attribute_id ON public.dogma_effects USING btree (fitting_usage_chance_attribute_id);
+
+
+--
+-- Name: index_dogma_effects_on_icon_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_dogma_effects_on_icon_id ON public.dogma_effects USING btree (icon_id);
+
+
+--
+-- Name: index_dogma_effects_on_npc_activation_chance_attribute_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_dogma_effects_on_npc_activation_chance_attribute_id ON public.dogma_effects USING btree (npc_activation_chance_attribute_id);
+
+
+--
+-- Name: index_dogma_effects_on_npc_usage_chance_attribute_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_dogma_effects_on_npc_usage_chance_attribute_id ON public.dogma_effects USING btree (npc_usage_chance_attribute_id);
+
+
+--
+-- Name: index_dogma_effects_on_range_attribute_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_dogma_effects_on_range_attribute_id ON public.dogma_effects USING btree (range_attribute_id);
+
+
+--
+-- Name: index_dogma_effects_on_resistance_attribute_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_dogma_effects_on_resistance_attribute_id ON public.dogma_effects USING btree (resistance_attribute_id);
+
+
+--
+-- Name: index_dogma_effects_on_tracking_speed_attribute_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_dogma_effects_on_tracking_speed_attribute_id ON public.dogma_effects USING btree (tracking_speed_attribute_id);
 
 
 --
@@ -2709,6 +3129,11 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220525163516'),
 ('20220525181655'),
 ('20220526135502'),
-('20220526141538');
+('20220526141538'),
+('20220526154906'),
+('20220526161623'),
+('20220526165548'),
+('20220526171131'),
+('20220526190300');
 
 

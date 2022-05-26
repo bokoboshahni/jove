@@ -2,7 +2,7 @@
 
 # ## Schema Information
 #
-# Table name: `icons`
+# Table name: `dogma_categories`
 #
 # ### Columns
 #
@@ -10,30 +10,18 @@
 # ------------------ | ------------------ | ---------------------------
 # **`id`**           | `bigint`           | `not null, primary key`
 # **`description`**  | `text`             |
-# **`file`**         | `text`             | `not null`
-# **`obsolete`**     | `boolean`          |
+# **`name`**         | `text`             | `not null`
 # **`created_at`**   | `datetime`         | `not null`
 # **`updated_at`**   | `datetime`         | `not null`
 #
-class Icon < ApplicationRecord
+class DogmaCategory < ApplicationRecord
   include SDEImportable
 
-  self.sde_rename = { icon_file: :file }
-
-  has_many :bloodlines
-  has_many :categories
-  has_many :corporations
-  has_many :dogma_attributes
-  has_many :dogma_effects
-  has_many :factions
-  has_many :groups
-  has_many :market_groups
-  has_many :meta_groups
-  has_many :races
-  has_many :types
+  has_many :dogma_attributes, foreign_key: :category_id
+  has_many :dogma_effects, foreign_key: :category_id
 
   def self.import_all_from_sde(progress: nil)
-    data = YAML.load_file(File.join(sde_path, 'fsd/iconIDs.yaml'))
+    data = YAML.load_file(File.join(sde_path, 'fsd/dogmaAttributeCategories.yaml'))
     progress&.update(total: data.count)
     rows = data.map do |id, orig|
       record = map_sde_attributes(orig, id:)

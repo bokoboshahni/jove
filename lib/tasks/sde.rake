@@ -56,6 +56,30 @@ namespace :sde do # rubocop:disable Metrics/BlockLength
       puts "Imported #{results.rows.count} corporations"
     end
 
+    task dogma_attributes: :environment do
+      progress = TTY::ProgressBar.new("Dogma Attributes #{IMPORT_PROGRESS_FORMAT}")
+      results = DogmaAttribute.import_all_from_sde(progress:)
+      puts "Imported #{results.rows.count} dogma attributes"
+    end
+
+    task dogma_categories: :environment do
+      progress = TTY::ProgressBar.new("Dogma Categories #{IMPORT_PROGRESS_FORMAT}")
+      results = DogmaCategory.import_all_from_sde(progress:)
+      puts "Imported #{results.rows.count} dogma categories"
+    end
+
+    task dogma_effects: :environment do
+      progress = TTY::ProgressBar.new("Dogma Effects #{IMPORT_PROGRESS_FORMAT}")
+      results = DogmaEffect.import_all_from_sde(progress:)
+      puts "Imported #{results.rows.count} dogma effects"
+    end
+
+    task dogma_effect_modifiers: :environment do
+      progress = TTY::ProgressBar.new("Dogma Effect Modifiers #{IMPORT_PROGRESS_FORMAT}")
+      results = DogmaEffectModifier.import_all_from_sde(progress:)
+      puts "Imported #{results.rows.count} dogma effect modifiers"
+    end
+
     task factions: :environment do
       progress = TTY::ProgressBar.new("Factions #{IMPORT_PROGRESS_FORMAT}")
       results = Faction.import_all_from_sde(progress:)
@@ -170,15 +194,36 @@ namespace :sde do # rubocop:disable Metrics/BlockLength
       puts "Imported #{results.rows.count} types"
     end
 
+    task type_dogma_attributes: :environment do
+      progress = TTY::ProgressBar.new("Type Dogma Attributes #{IMPORT_PROGRESS_FORMAT}")
+      TypeDogmaAttribute.import_all_from_sde(progress:)
+      puts "Imported #{TypeDogmaAttribute.count} type dogma attributes"
+    end
+
+    task type_dogma_effects: :environment do
+      progress = TTY::ProgressBar.new("Type Dogma Effects #{IMPORT_PROGRESS_FORMAT}")
+      TypeDogmaEffect.import_all_from_sde(progress:)
+      puts "Imported #{TypeDogmaEffect.count} type dogma effects"
+    end
+
     task type_materials: :environment do
       progress = TTY::ProgressBar.new("Type Materials #{IMPORT_PROGRESS_FORMAT}")
       results = TypeMaterial.import_all_from_sde(progress:)
       puts "Imported #{results.rows.count} type materials"
     end
 
+    task units: :environment do
+      progress = TTY::ProgressBar.new("Units #{IMPORT_PROGRESS_FORMAT}")
+      results = Unit.import_all_from_sde(progress:)
+      puts "Imported #{results.rows.count} units"
+    end
+
     task areas: %i[regions constellations solar_systems]
 
     task celestials: %i[stars secondary_suns planets moons asteroid_belts]
+
+    task dogma: %i[dogma_attributes dogma_effects dogma_effect_modifiers dogma_categories type_dogma_attributes
+                   type_dogma_effects]
 
     task entities: %i[races bloodlines corporations factions]
 
@@ -188,7 +233,7 @@ namespace :sde do # rubocop:disable Metrics/BlockLength
 
     task structures: %i[stargates]
 
-    task taxonomies: %i[categories groups market_groups meta_groups]
+    task taxonomies: %i[categories groups market_groups meta_groups units]
 
     task universe: %i[areas celestials structures entities taxonomies types images stations station_operations
                       station_services]
