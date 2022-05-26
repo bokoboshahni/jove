@@ -821,6 +821,62 @@ ALTER SEQUENCE public.meta_groups_id_seq OWNED BY public.meta_groups.id;
 
 
 --
+-- Name: planet_schematic_inputs; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.planet_schematic_inputs (
+    schematic_id bigint NOT NULL,
+    type_id bigint NOT NULL,
+    quantity integer NOT NULL
+);
+
+
+--
+-- Name: planet_schematic_pins; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.planet_schematic_pins (
+    schematic_id bigint NOT NULL,
+    type_id bigint NOT NULL
+);
+
+
+--
+-- Name: planet_schematics; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.planet_schematics (
+    id bigint NOT NULL,
+    output_id bigint NOT NULL,
+    "time" interval NOT NULL,
+    name text NOT NULL,
+    output_quantity integer NOT NULL,
+    pins integer[] NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: planet_schematics_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.planet_schematics_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: planet_schematics_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.planet_schematics_id_seq OWNED BY public.planet_schematics.id;
+
+
+--
 -- Name: races; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1449,6 +1505,13 @@ ALTER TABLE ONLY public.meta_groups ALTER COLUMN id SET DEFAULT nextval('public.
 
 
 --
+-- Name: planet_schematics id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.planet_schematics ALTER COLUMN id SET DEFAULT nextval('public.planet_schematics_id_seq'::regclass);
+
+
+--
 -- Name: races id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -1690,6 +1753,14 @@ ALTER TABLE ONLY public.market_groups
 
 ALTER TABLE ONLY public.meta_groups
     ADD CONSTRAINT meta_groups_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: planet_schematics planet_schematics_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.planet_schematics
+    ADD CONSTRAINT planet_schematics_pkey PRIMARY KEY (id);
 
 
 --
@@ -2203,6 +2274,13 @@ CREATE INDEX index_meta_groups_on_icon_id ON public.meta_groups USING btree (ico
 
 
 --
+-- Name: index_planet_schematics_on_output_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_planet_schematics_on_output_id ON public.planet_schematics USING btree (output_id);
+
+
+--
 -- Name: index_races_on_icon_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -2511,6 +2589,20 @@ CREATE UNIQUE INDEX index_unique_login_permits ON public.login_permits USING btr
 
 
 --
+-- Name: index_unique_planet_schematic_inputs; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_unique_planet_schematic_inputs ON public.planet_schematic_inputs USING btree (schematic_id, type_id);
+
+
+--
+-- Name: index_unique_planet_schematic_pins; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_unique_planet_schematic_pins ON public.planet_schematic_pins USING btree (schematic_id, type_id);
+
+
+--
 -- Name: index_unique_static_data_versions; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -2616,6 +2708,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220525161306'),
 ('20220525163516'),
 ('20220525181655'),
-('20220526135502');
+('20220526135502'),
+('20220526141538');
 
 

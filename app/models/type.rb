@@ -77,6 +77,8 @@ class Type < ApplicationRecord
   belongs_to :meta_group, optional: true
   belongs_to :variation_parent_type, optional: true
 
+  has_one :planet_schematic_output, class_name: 'PlanetSchematic', foreign_key: :output_id
+
   has_many :stations
   has_many :station_operation_station_types
 
@@ -104,6 +106,12 @@ class Type < ApplicationRecord
                                            through: :blueprint_activity_skills_as_skill,
                                            source: :activity
   has_many :blueprints_as_skill, class_name: 'Type', through: :blueprint_activities_as_skill, source: :blueprint
+
+  has_many :planet_schematic_inputs
+  has_many :planet_schematics_as_input, class_name: 'PlanetSchematic', through: :planet_schematic_inputs
+
+  has_many :planet_schematic_pins
+  has_many :planet_schematics_as_pin, class_name: 'PlanetSchematic', through: :planet_schematic_pins
 
   has_many :type_materials_as_type, class_name: 'TypeMaterial', foreign_key: :type_id
   has_many :materials, class_name: 'Type', through: :type_materials_as_type

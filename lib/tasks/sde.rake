@@ -98,6 +98,12 @@ namespace :sde do # rubocop:disable Metrics/BlockLength
       puts "Imported #{results.rows.count} moons"
     end
 
+    task planet_schematics: :environment do
+      progress = TTY::ProgressBar.new("Planet Schematics #{IMPORT_PROGRESS_FORMAT}")
+      results = PlanetSchematic.import_all_from_sde(progress:)
+      puts "Imported #{results.rows.count} planet schematics"
+    end
+
     task planets: :environment do
       progress = TTY::ProgressBar.new("Planets #{IMPORT_PROGRESS_FORMAT}")
       results = Planet.import_all_from_sde(progress:)
@@ -178,7 +184,7 @@ namespace :sde do # rubocop:disable Metrics/BlockLength
 
     task images: %i[graphics icons]
 
-    task industry: %i[blueprints type_materials]
+    task industry: %i[blueprints type_materials planet_schematics]
 
     task structures: %i[stargates]
 

@@ -11,8 +11,8 @@
 # **`quantity`**     | `integer`          | `not null`
 # **`created_at`**   | `datetime`         | `not null`
 # **`updated_at`**   | `datetime`         | `not null`
-# **`material_id`**  | `bigint`           | `not null`
-# **`type_id`**      | `bigint`           | `not null`
+# **`material_id`**  | `bigint`           | `not null, primary key`
+# **`type_id`**      | `bigint`           | `not null, primary key`
 #
 # ### Indexes
 #
