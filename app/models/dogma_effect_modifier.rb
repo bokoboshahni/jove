@@ -53,7 +53,7 @@ class DogmaEffectModifier < ApplicationRecord
   belongs_to :modifying_attribute, class_name: 'DogmaAttribute', optional: true
   belongs_to :skill, class_name: 'Type', optional: true
 
-  def self.import_all_from_sde(progress: nil)
+  def self.import_all_from_sde(progress: nil) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
     data = YAML.load_file(File.join(sde_path, 'fsd/dogmaEffects.yaml'))
     progress&.update(total: data.count)
     rows = data.each_with_object([]) do |(id, orig), a|
@@ -63,6 +63,10 @@ class DogmaEffectModifier < ApplicationRecord
 
       progress&.advance
     end
-    upsert_all(rows)
+
+    DogmaEffectModifier.transaction do
+      delete_all
+      upsert_all(rows)
+    end
   end
 end

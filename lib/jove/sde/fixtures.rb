@@ -48,6 +48,7 @@ module Jove
         write_inv_names
         write_sta_stations
         write_type_dependencies
+        write_type_dogma
       end
 
       private
@@ -102,6 +103,15 @@ module Jove
         groups = YAML.load_file(Rails.root.join('spec/fixtures/sde/fsd/groupIDs.yaml'))
         File.write(Rails.root.join('spec/fixtures/sde/fsd/groupIDs.yaml'), groups.slice(*group_ids).to_yaml)
         puts 'Wrote spec/fixtures/sde/fsd/groupIDs.yaml to include groups from typeIDs.yaml'
+      end
+
+      def write_type_dogma # rubocop:disable Metrics/AbcSize
+        dogma = YAML.load_file(Rails.root.join('tmp/sde/fsd/typeDogma.yaml'))
+        type_ids = []
+        type_ids.append(*dogma.select { |_type_id, d| d['dogmaAttributes'].any? }.keys.take(50))
+        type_ids.append(*dogma.select { |_type_id, d| d['dogmaEffects'].any? }.keys.take(50))
+        File.write(Rails.root.join('spec/fixtures/sde/fsd/typeDogma.yaml'), dogma.slice(*type_ids).to_yaml)
+        puts 'Wrote spec/fixture/sde/fsd/typeDogma.yaml to include types with both attributes and effects'
       end
 
       def copy_fixtures(path)

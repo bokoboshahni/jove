@@ -12,6 +12,8 @@
 # **`base_price`**                | `decimal(, )`      |
 # **`capacity`**                  | `decimal(, )`      |
 # **`description`**               | `text`             |
+# **`dogma_attributes`**          | `jsonb`            |
+# **`dogma_effects`**             | `jsonb`            |
 # **`mass`**                      | `decimal(, )`      |
 # **`max_production_limit`**      | `integer`          |
 # **`name`**                      | `text`             | `not null`

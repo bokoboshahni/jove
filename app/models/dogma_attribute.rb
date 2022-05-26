@@ -78,6 +78,9 @@ class DogmaAttribute < ApplicationRecord
   has_many :modifiers_as_modified_attribute, class_name: 'DogmaEffectModifier', foreign_key: :modified_attribute_id
   has_many :modifiers_as_modifying_attribute, class_name: 'DogmaEffectModifier', foreign_key: :modifying_attribute_id
 
+  has_many :type_dogma_attributes
+  has_many :types, through: :type_dogma_attributes
+
   def self.import_all_from_sde(progress: nil)
     data = YAML.load_file(File.join(sde_path, 'fsd/dogmaAttributes.yaml'))
     progress&.update(total: data.count)
