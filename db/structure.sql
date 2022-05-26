@@ -537,6 +537,38 @@ ALTER SEQUENCE public.dogma_attributes_id_seq OWNED BY public.dogma_attributes.i
 
 
 --
+-- Name: dogma_categories; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.dogma_categories (
+    id bigint NOT NULL,
+    description text,
+    name text NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: dogma_categories_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.dogma_categories_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: dogma_categories_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.dogma_categories_id_seq OWNED BY public.dogma_categories.id;
+
+
+--
 -- Name: dogma_effect_modifiers; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1568,6 +1600,13 @@ ALTER TABLE ONLY public.dogma_attributes ALTER COLUMN id SET DEFAULT nextval('pu
 
 
 --
+-- Name: dogma_categories id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.dogma_categories ALTER COLUMN id SET DEFAULT nextval('public.dogma_categories_id_seq'::regclass);
+
+
+--
 -- Name: dogma_effects id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -1822,6 +1861,14 @@ ALTER TABLE ONLY public.corporations
 
 ALTER TABLE ONLY public.dogma_attributes
     ADD CONSTRAINT dogma_attributes_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: dogma_categories dogma_categories_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.dogma_categories
+    ADD CONSTRAINT dogma_categories_pkey PRIMARY KEY (id);
 
 
 --
@@ -3036,6 +3083,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220526135502'),
 ('20220526141538'),
 ('20220526154906'),
-('20220526161623');
+('20220526161623'),
+('20220526165548');
 
 

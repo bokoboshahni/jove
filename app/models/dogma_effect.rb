@@ -88,6 +88,10 @@ class DogmaEffect < ApplicationRecord
   belongs_to :resistance_attribute, class_name: 'DogmaAttribute', optional: true
   belongs_to :tracking_speed_attribute, class_name: 'DogmaAttribute', optional: true
 
+  has_many :modifiers, class_name: 'DogmaEffectModifier', foreign_key: :effect_id
+
+  has_many :modifiers_as_modified_effect, class_name: 'DogmaEffectModifier', foreign_key: :modified_effect_id
+
   def self.import_all_from_sde(progress: nil)
     data = YAML.load_file(File.join(sde_path, 'fsd/dogmaEffects.yaml'))
     progress&.update(total: data.count)

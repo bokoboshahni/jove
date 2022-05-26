@@ -61,6 +61,23 @@ class DogmaAttribute < ApplicationRecord
   belongs_to :max_attribute, class_name: 'DogmaAttribute', optional: true
   belongs_to :unit, optional: true
 
+  has_many :attributes_as_charge_recharge_time, class_name: 'DogmaAttribute',
+                                                foreign_key: :charge_recharge_time_attribute_id
+  has_many :attributes_as_max, class_name: 'DogmaAttribute', foreign_key: :max_attribute_id
+
+  has_many :effects_as_discharge, class_name: 'DogmaEffect', foreign_key: :discharge_attribute_id
+  has_many :effects_as_duration, class_name: 'DogmaEffect', foreign_key: :duration_attribute_id
+  has_many :effects_as_falloff, class_name: 'DogmaEffect', foreign_key: :falloff_attribute_id
+  has_many :effects_as_fitting_usage_chance, class_name: 'DogmaEffect', foreign_key: :fitting_usage_chance_attribute_id
+  has_many :effects_as_npc_activation_chance, class_name: 'DogmaEffect',
+                                              foreign_key: :npc_activation_chance_attribute_id
+  has_many :effects_as_range, class_name: 'DogmaEffect', foreign_key: :range_attribute_id
+  has_many :effects_as_resistance, class_name: 'DogmaEffect', foreign_key: :resistance_attribute_id
+  has_many :effects_as_tracking_speed, class_name: 'DogmaEffect', foreign_key: :tracking_speed_attribute_id
+
+  has_many :modifiers_as_modified_attribute, class_name: 'DogmaEffectModifier', foreign_key: :modified_attribute_id
+  has_many :modifiers_as_modifying_attribute, class_name: 'DogmaEffectModifier', foreign_key: :modifying_attribute_id
+
   def self.import_all_from_sde(progress: nil)
     data = YAML.load_file(File.join(sde_path, 'fsd/dogmaAttributes.yaml'))
     progress&.update(total: data.count)

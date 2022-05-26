@@ -62,6 +62,12 @@ namespace :sde do # rubocop:disable Metrics/BlockLength
       puts "Imported #{results.rows.count} dogma attributes"
     end
 
+    task dogma_categories: :environment do
+      progress = TTY::ProgressBar.new("Dogma Categories #{IMPORT_PROGRESS_FORMAT}")
+      results = DogmaCategory.import_all_from_sde(progress:)
+      puts "Imported #{results.rows.count} dogma categories"
+    end
+
     task dogma_effects: :environment do
       progress = TTY::ProgressBar.new("Dogma Effects #{IMPORT_PROGRESS_FORMAT}")
       results = DogmaEffect.import_all_from_sde(progress:)
@@ -198,7 +204,7 @@ namespace :sde do # rubocop:disable Metrics/BlockLength
 
     task celestials: %i[stars secondary_suns planets moons asteroid_belts]
 
-    task dogma: %i[dogma_attributes dogma_effects dogma_effect_modifiers]
+    task dogma: %i[dogma_attributes dogma_effects dogma_effect_modifiers dogma_categories]
 
     task entities: %i[races bloodlines corporations factions]
 
