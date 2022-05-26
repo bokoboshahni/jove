@@ -1206,6 +1206,19 @@ ALTER SEQUENCE public.stations_id_seq OWNED BY public.stations.id;
 
 
 --
+-- Name: type_materials; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.type_materials (
+    type_id bigint NOT NULL,
+    material_id bigint NOT NULL,
+    quantity integer NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
 -- Name: types; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -2519,6 +2532,13 @@ CREATE UNIQUE INDEX index_unique_station_operation_station_types ON public.stati
 
 
 --
+-- Name: index_unique_type_materials; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_unique_type_materials ON public.type_materials USING btree (type_id, material_id);
+
+
+--
 -- Name: index_versions_on_item; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -2595,6 +2615,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220525151451'),
 ('20220525161306'),
 ('20220525163516'),
-('20220525181655');
+('20220525181655'),
+('20220526135502');
 
 

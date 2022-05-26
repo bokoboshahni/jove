@@ -105,6 +105,12 @@ class Type < ApplicationRecord
                                            source: :activity
   has_many :blueprints_as_skill, class_name: 'Type', through: :blueprint_activities_as_skill, source: :blueprint
 
+  has_many :type_materials_as_type, class_name: 'TypeMaterial', foreign_key: :type_id
+  has_many :materials, class_name: 'Type', through: :type_materials_as_type
+
+  has_many :type_materials_as_material, class_name: 'TypeMaterial', foreign_key: :material_id
+  has_many :types_as_material, class_name: 'Type', through: :type_materials_as_material, source: :type
+
   def self.import_all_from_sde(progress: nil) # rubocop:disable Metrics/MethodLength
     data = YAML.load_file(File.join(sde_path, 'fsd/typeIDs.yaml'))
     blueprints = YAML.load_file(File.join(sde_path, 'fsd/blueprints.yaml'))
