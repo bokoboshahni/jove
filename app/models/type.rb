@@ -22,6 +22,7 @@
 # **`published`**                 | `boolean`          | `not null`
 # **`radius`**                    | `decimal(, )`      |
 # **`skin_faction_name`**         | `text`             |
+# **`traits`**                    | `jsonb`            |
 # **`volume`**                    | `decimal(, )`      |
 # **`created_at`**                | `datetime`         | `not null`
 # **`updated_at`**                | `datetime`         | `not null`
@@ -62,7 +63,21 @@
 class Type < ApplicationRecord
   include SDEImportable
 
-  self.sde_exclude = %i[masteries traits]
+  self.sde_mapper = lambda { |data, **_kwargs|
+    next unless data[:traits]
+
+    %i[misc_bonuses role_bonuses].each do |bonus_type|
+      data[:traits][bonus_type]&.each do |bonus|
+        bonus[:bonus_text] = bonus[:bonus_text][:en]
+      end
+    end
+
+    data[:traits][:types]&.each_value do |bonuses|
+      bonuses.each { |bonus| bonus[:bonus_text] = bonus[:bonus_text][:en] }
+    end
+  }
+
+  self.sde_exclude = %i[masteries]
 
   self.sde_rename = {
     sof_faction_name: :skin_faction_name,

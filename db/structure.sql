@@ -1456,7 +1456,8 @@ CREATE TABLE public.types (
     updated_at timestamp(6) without time zone NOT NULL,
     max_production_limit integer,
     dogma_attributes jsonb,
-    dogma_effects jsonb
+    dogma_effects jsonb,
+    traits jsonb
 );
 
 
@@ -3134,6 +3135,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220526161623'),
 ('20220526165548'),
 ('20220526171131'),
-('20220526190300');
+('20220526190300'),
+('20220526201528');
 
 
