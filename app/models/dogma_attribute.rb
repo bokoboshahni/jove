@@ -55,10 +55,10 @@ class DogmaAttribute < ApplicationRecord
 
   self.sde_localized = %i[display_name tooltip_description tooltip_title]
 
-  belongs_to :category, optional: true
-  belongs_to :charge_recharge_time_attribute, optional: true
+  belongs_to :category, class_name: 'DogmaCategory', optional: true
+  belongs_to :charge_recharge_time_attribute, class_name: 'DogmaAttribute', optional: true
   belongs_to :icon, optional: true
-  belongs_to :max_attribute, optional: true
+  belongs_to :max_attribute, class_name: 'DogmaAttribute', optional: true
   belongs_to :unit, optional: true
 
   def self.import_all_from_sde(progress: nil)
