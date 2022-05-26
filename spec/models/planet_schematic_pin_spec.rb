@@ -8,8 +8,8 @@
 #
 # Name                | Type               | Attributes
 # ------------------- | ------------------ | ---------------------------
-# **`schematic_id`**  | `bigint`           | `not null`
-# **`type_id`**       | `bigint`           | `not null`
+# **`schematic_id`**  | `bigint`           | `not null, primary key`
+# **`type_id`**       | `bigint`           | `not null, primary key`
 #
 # ### Indexes
 #
