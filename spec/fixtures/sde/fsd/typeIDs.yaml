@@ -4545,3 +4545,159 @@
   sofFactionName: kaalakiota
   sofMaterialSetID: 385
   volume: 0.01
+681:
+  basePrice: 9999999.0
+  groupID: 104
+  iconID: 34
+  name:
+    de: Clone Grade Beta Blueprint
+    en: Clone Grade Beta Blueprint
+    fr: Plan de construction Clone grade Bêta
+    ja: クローングレードベータブループリント
+    ru: Clone Grade Beta Blueprint
+    zh: B级克隆蓝图
+  portionSize: 1
+  published: false
+  volume: 0.01
+682:
+  basePrice: 9999999.0
+  groupID: 104
+  iconID: 34
+  name:
+    de: Clone Grade Gamma Blueprint
+    en: Clone Grade Gamma Blueprint
+    fr: Plan de construction Clone grade Gamma
+    ja: クローングレードガンマブループリント
+    ru: Clone Grade Gamma Blueprint
+    zh: C级克隆蓝图
+  portionSize: 1
+  published: false
+  volume: 0.01
+683:
+  basePrice: 2550000.0
+  graphicID: 38
+  groupID: 105
+  marketGroupID: 261
+  name:
+    de: Bantam Blueprint
+    en: Bantam Blueprint
+    fr: Plan de construction Bantam
+    ja: バンタムブループリント
+    ru: Bantam Blueprint
+    zh: 矮脚鸡级蓝图
+  portionSize: 1
+  published: true
+  sofFactionName: caldaribase
+  volume: 0.01
+684:
+  basePrice: 2150000.0
+  graphicID: 39
+  groupID: 105
+  marketGroupID: 261
+  name:
+    de: Condor Blueprint
+    en: Condor Blueprint
+    fr: Plan de construction Condor
+    ja: コンドールブループリント
+    ru: Condor Blueprint
+    zh: 秃鹫级蓝图
+  portionSize: 1
+  published: true
+  sofFactionName: caldaribase
+  volume: 0.01
+685:
+  basePrice: 2350000.0
+  graphicID: 40
+  groupID: 105
+  marketGroupID: 261
+  name:
+    de: Griffin Blueprint
+    en: Griffin Blueprint
+    fr: Plan de construction Griffin
+    ja: グリフィンブループリント
+    ru: Griffin Blueprint
+    zh: 狮鹫级蓝图
+  portionSize: 1
+  published: true
+  sofFactionName: caldaribase
+  volume: 0.01
+686:
+  basePrice: 80500000.0
+  graphicID: 41
+  groupID: 106
+  marketGroupID: 275
+  name:
+    de: Osprey Blueprint
+    en: Osprey Blueprint
+    fr: Plan de construction Osprey
+    ja: オスプレイブループリント
+    ru: Osprey Blueprint
+    zh: 鱼鹰级蓝图
+  portionSize: 1
+  published: true
+  sofFactionName: caldaribase
+  volume: 0.01
+687:
+  basePrice: 82500000.0
+  graphicID: 42
+  groupID: 106
+  marketGroupID: 275
+  name:
+    de: Caracal Blueprint
+    en: Caracal Blueprint
+    fr: Plan de construction Caracal
+    ja: カラカルブループリント
+    ru: Caracal Blueprint
+    zh: 狞獾级蓝图
+  portionSize: 1
+  published: true
+  sofFactionName: caldaribase
+  volume: 0.01
+688:
+  basePrice: 1135000000.0
+  graphicID: 43
+  groupID: 107
+  marketGroupID: 280
+  name:
+    de: Raven Blueprint
+    en: Raven Blueprint
+    fr: Plan de construction Raven
+    ja: レイブンブループリント
+    ru: Raven Blueprint
+    zh: 乌鸦级蓝图
+  portionSize: 1
+  published: true
+  sofFactionName: caldaribase
+  volume: 0.01
+689:
+  basePrice: 2100000.0
+  graphicID: 44
+  groupID: 105
+  marketGroupID: 264
+  name:
+    de: Slasher Blueprint
+    en: Slasher Blueprint
+    fr: Plan de construction Slasher
+    ja: スラッシャーブループリント
+    ru: Slasher Blueprint
+    zh: 伐木者级蓝图
+  portionSize: 1
+  published: true
+  sofFactionName: minmatarbase
+  volume: 0.01
+690:
+  basePrice: 2700000.0
+  graphicID: 45
+  groupID: 105
+  marketGroupID: 264
+  name:
+    de: Probe Blueprint
+    en: Probe Blueprint
+    fr: Plan de construction Probe
+    ja: プローブブループリント
+    ru: Probe Blueprint
+    zh: 探索级蓝图
+  portionSize: 1
+  published: true
+  sofFactionName: minmatarbase
+  volume: 0.01

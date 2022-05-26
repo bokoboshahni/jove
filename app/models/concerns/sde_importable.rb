@@ -47,7 +47,8 @@ module SDEImportable
       data[:id] = id if id
 
       sde_localized.each do |field|
-        data[field] = data.delete(:"#{field}_id")&.fetch(:en, '') if data[:"#{field}_id"].is_a?(Hash)
+        key = data.key?(:"#{field}_id") ? :"#{field}_id" : field
+        data[field] = data.delete(key)&.fetch(:en, '') if data[key].is_a?(Hash)
       end
 
       data.except!(*sde_exclude)

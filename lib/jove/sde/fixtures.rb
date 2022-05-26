@@ -42,10 +42,12 @@ module Jove
 
       def generate
         FileUtils.rm_rf(Rails.root.join('spec/fixtures/sde'))
+
         TRUNCATE_FIXTURES.each { |f| truncate_fixtures(f) }
         COPY_FIXTURES.each { |f| copy_fixtures(f) }
         write_inv_names
         write_sta_stations
+        write_type_dependencies
       end
 
       private
@@ -93,6 +95,15 @@ module Jove
         puts 'Wrote spec/fixtures/sde/bsd/staStations.yaml to match stations in spec/fixtures/sde/fsd/universe'
       end
 
+      def write_type_dependencies
+        types = YAML.load_file(Rails.root.join('spec/fixtures/sde/fsd/typeIDs.yaml'))
+        group_ids = []
+        types.each_value { |type| group_ids << type['groupID'] }
+        groups = YAML.load_file(Rails.root.join('spec/fixtures/sde/fsd/groupIDs.yaml'))
+        File.write(Rails.root.join('spec/fixtures/sde/fsd/groupIDs.yaml'), groups.slice(*group_ids).to_yaml)
+        puts 'Wrote spec/fixtures/sde/fsd/groupIDs.yaml to include groups from typeIDs.yaml'
+      end
+
       def copy_fixtures(path)
         sde_path = Rails.root.join('tmp/sde', path)
         relative_path = Pathname.new(sde_path).relative_path_from(Rails.root.join('tmp/sde')).to_s
@@ -104,7 +115,7 @@ module Jove
       end
 
       def truncate_fixtures(dir) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/PerceivedComplexity
-        Dir.glob(Rails.root.join('tmp/sde', "#{dir}/*.{staticdata,yaml}")).each do |filename|
+        Dir.glob(Rails.root.join('tmp/sde', "#{dir}/*.{staticdata,yaml}")).each do |filename| # rubocop:disable Metrics/BlockLength
           next if filename.ends_with?('translationLanguages.yaml')
 
           data = YAML.load_file(filename)
@@ -126,6 +137,11 @@ module Jove
               end
               fixtures.to_a
             end
+
+          if filename.ends_with?('typeIDs.yaml')
+            blueprint_ids = YAML.load_file(Rails.root.join('spec/fixtures/sde/fsd/blueprints.yaml')).keys
+            fixtures.merge!(data.slice(*blueprint_ids))
+          end
 
           fixture_file = Rails.root.join("spec/fixtures/sde/#{dir}/#{File.basename(filename)}")
           FileUtils.mkdir_p(File.dirname(fixture_file))

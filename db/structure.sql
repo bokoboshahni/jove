@@ -24,6 +24,20 @@ COMMENT ON EXTENSION pgcrypto IS 'cryptographic functions';
 
 
 --
+-- Name: blueprint_activity; Type: TYPE; Schema: public; Owner: -
+--
+
+CREATE TYPE public.blueprint_activity AS ENUM (
+    'copying',
+    'invention',
+    'manufacturing',
+    'reaction',
+    'research_material',
+    'research_time'
+);
+
+
+--
 -- Name: celestial_type; Type: TYPE; Schema: public; Owner: -
 --
 
@@ -184,6 +198,54 @@ CREATE SEQUENCE public.bloodlines_id_seq
 --
 
 ALTER SEQUENCE public.bloodlines_id_seq OWNED BY public.bloodlines.id;
+
+
+--
+-- Name: blueprint_activities; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.blueprint_activities (
+    blueprint_id bigint NOT NULL,
+    activity public.blueprint_activity NOT NULL,
+    "time" interval NOT NULL
+);
+
+
+--
+-- Name: blueprint_activity_materials; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.blueprint_activity_materials (
+    blueprint_id bigint NOT NULL,
+    material_id bigint NOT NULL,
+    activity public.blueprint_activity NOT NULL,
+    quantity integer NOT NULL
+);
+
+
+--
+-- Name: blueprint_activity_products; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.blueprint_activity_products (
+    blueprint_id bigint NOT NULL,
+    product_id bigint NOT NULL,
+    activity public.blueprint_activity NOT NULL,
+    quantity integer NOT NULL,
+    probability numeric
+);
+
+
+--
+-- Name: blueprint_activity_skills; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.blueprint_activity_skills (
+    blueprint_id bigint NOT NULL,
+    skill_id bigint NOT NULL,
+    activity public.blueprint_activity NOT NULL,
+    level integer NOT NULL
+);
 
 
 --
@@ -759,6 +821,62 @@ ALTER SEQUENCE public.meta_groups_id_seq OWNED BY public.meta_groups.id;
 
 
 --
+-- Name: planet_schematic_inputs; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.planet_schematic_inputs (
+    schematic_id bigint NOT NULL,
+    type_id bigint NOT NULL,
+    quantity integer NOT NULL
+);
+
+
+--
+-- Name: planet_schematic_pins; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.planet_schematic_pins (
+    schematic_id bigint NOT NULL,
+    type_id bigint NOT NULL
+);
+
+
+--
+-- Name: planet_schematics; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.planet_schematics (
+    id bigint NOT NULL,
+    output_id bigint NOT NULL,
+    "time" interval NOT NULL,
+    name text NOT NULL,
+    output_quantity integer NOT NULL,
+    pins integer[] NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: planet_schematics_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.planet_schematics_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: planet_schematics_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.planet_schematics_id_seq OWNED BY public.planet_schematics.id;
+
+
+--
 -- Name: races; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1144,6 +1262,19 @@ ALTER SEQUENCE public.stations_id_seq OWNED BY public.stations.id;
 
 
 --
+-- Name: type_materials; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.type_materials (
+    type_id bigint NOT NULL,
+    material_id bigint NOT NULL,
+    quantity integer NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
 -- Name: types; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1171,7 +1302,8 @@ CREATE TABLE public.types (
     skin_faction_name text,
     volume numeric,
     created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    updated_at timestamp(6) without time zone NOT NULL,
+    max_production_limit integer
 );
 
 
@@ -1370,6 +1502,13 @@ ALTER TABLE ONLY public.market_groups ALTER COLUMN id SET DEFAULT nextval('publi
 --
 
 ALTER TABLE ONLY public.meta_groups ALTER COLUMN id SET DEFAULT nextval('public.meta_groups_id_seq'::regclass);
+
+
+--
+-- Name: planet_schematics id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.planet_schematics ALTER COLUMN id SET DEFAULT nextval('public.planet_schematics_id_seq'::regclass);
 
 
 --
@@ -1617,6 +1756,14 @@ ALTER TABLE ONLY public.meta_groups
 
 
 --
+-- Name: planet_schematics planet_schematics_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.planet_schematics
+    ADD CONSTRAINT planet_schematics_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: races races_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -1774,6 +1921,55 @@ CREATE INDEX index_bloodlines_on_icon_id ON public.bloodlines USING btree (icon_
 --
 
 CREATE INDEX index_bloodlines_on_race_id ON public.bloodlines USING btree (race_id);
+
+
+--
+-- Name: index_blueprint_activities_on_blueprint_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_blueprint_activities_on_blueprint_id ON public.blueprint_activities USING btree (blueprint_id);
+
+
+--
+-- Name: index_blueprint_activity_materials_on_blueprint_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_blueprint_activity_materials_on_blueprint_id ON public.blueprint_activity_materials USING btree (blueprint_id);
+
+
+--
+-- Name: index_blueprint_activity_materials_on_material_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_blueprint_activity_materials_on_material_id ON public.blueprint_activity_materials USING btree (material_id);
+
+
+--
+-- Name: index_blueprint_activity_products_on_blueprint_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_blueprint_activity_products_on_blueprint_id ON public.blueprint_activity_products USING btree (blueprint_id);
+
+
+--
+-- Name: index_blueprint_activity_products_on_product_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_blueprint_activity_products_on_product_id ON public.blueprint_activity_products USING btree (product_id);
+
+
+--
+-- Name: index_blueprint_activity_skills_on_blueprint_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_blueprint_activity_skills_on_blueprint_id ON public.blueprint_activity_skills USING btree (blueprint_id);
+
+
+--
+-- Name: index_blueprint_activity_skills_on_skill_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_blueprint_activity_skills_on_skill_id ON public.blueprint_activity_skills USING btree (skill_id);
 
 
 --
@@ -2078,6 +2274,13 @@ CREATE INDEX index_meta_groups_on_icon_id ON public.meta_groups USING btree (ico
 
 
 --
+-- Name: index_planet_schematics_on_output_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_planet_schematics_on_output_id ON public.planet_schematics USING btree (output_id);
+
+
+--
 -- Name: index_races_on_icon_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -2337,6 +2540,34 @@ CREATE UNIQUE INDEX index_unique_active_storage_variant_records ON public.active
 
 
 --
+-- Name: index_unique_blueprint_activities; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_unique_blueprint_activities ON public.blueprint_activities USING btree (blueprint_id, activity);
+
+
+--
+-- Name: index_unique_blueprint_activity_materials; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_unique_blueprint_activity_materials ON public.blueprint_activity_materials USING btree (blueprint_id, activity, material_id);
+
+
+--
+-- Name: index_unique_blueprint_activity_products; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_unique_blueprint_activity_products ON public.blueprint_activity_products USING btree (blueprint_id, activity, product_id);
+
+
+--
+-- Name: index_unique_blueprint_activity_skills; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_unique_blueprint_activity_skills ON public.blueprint_activity_skills USING btree (blueprint_id, activity, skill_id);
+
+
+--
 -- Name: index_unique_default_identities; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -2358,6 +2589,20 @@ CREATE UNIQUE INDEX index_unique_login_permits ON public.login_permits USING btr
 
 
 --
+-- Name: index_unique_planet_schematic_inputs; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_unique_planet_schematic_inputs ON public.planet_schematic_inputs USING btree (schematic_id, type_id);
+
+
+--
+-- Name: index_unique_planet_schematic_pins; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_unique_planet_schematic_pins ON public.planet_schematic_pins USING btree (schematic_id, type_id);
+
+
+--
 -- Name: index_unique_static_data_versions; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -2376,6 +2621,13 @@ CREATE UNIQUE INDEX index_unique_station_operation_services ON public.station_op
 --
 
 CREATE UNIQUE INDEX index_unique_station_operation_station_types ON public.station_operation_station_types USING btree (operation_id, race_id, type_id);
+
+
+--
+-- Name: index_unique_type_materials; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_unique_type_materials ON public.type_materials USING btree (type_id, material_id);
 
 
 --
@@ -2454,6 +2706,9 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220525143716'),
 ('20220525151451'),
 ('20220525161306'),
-('20220525163516');
+('20220525163516'),
+('20220525181655'),
+('20220526135502'),
+('20220526141538');
 
 
