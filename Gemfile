@@ -61,7 +61,7 @@ group :development do
   gem 'erb_lint', '~> 0.1.1'
   gem 'kramdown-parser-gfm', '~> 1.1'
   gem 'rouge', '~> 3.28'
-  gem 'rubocop', '~> 1.29'
+  gem 'rubocop', '~> 1.30'
   gem 'rubocop-performance', '~> 1.14'
   gem 'rubocop-rails', '~> 2.14'
   gem 'rubocop-rspec', '~> 2.11'
