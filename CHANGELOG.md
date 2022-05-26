@@ -1,5 +1,16 @@
 # Jove Changelog
 
+# [1.2.0-beta.8](https://github.com/bokoboshahni/jove/compare/v1.2.0-beta.7...v1.2.0-beta.8) (2022-05-26)
+
+
+### Features
+
+* add dogma columns to types ([fbeda4d](https://github.com/bokoboshahni/jove/commit/fbeda4dab2e3fc5816e9d4ca33c61de90c9c3fde))
+* import dogma attributes from sde ([7159205](https://github.com/bokoboshahni/jove/commit/7159205f79b3d82a3dbed0047be686aef473475f))
+* import dogma categories from sde ([0e9ee7f](https://github.com/bokoboshahni/jove/commit/0e9ee7fda4eef0539a64c318c8d867ccbbdf4a08))
+* import dogma effects from sde ([ccbef5a](https://github.com/bokoboshahni/jove/commit/ccbef5a3387b6bc33a2bfbb410a2400f24f8998e))
+* import units from sde ([b7bd1a4](https://github.com/bokoboshahni/jove/commit/b7bd1a48fe802dd2fd514c6eae1050cdd3bab1d2))
+
 # [1.2.0-beta.7](https://github.com/bokoboshahni/jove/compare/v1.2.0-beta.6...v1.2.0-beta.7) (2022-05-26)
 
 
