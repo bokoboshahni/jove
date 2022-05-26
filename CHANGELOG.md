@@ -1,5 +1,12 @@
 # Jove Changelog
 
+# [1.2.0-beta.9](https://github.com/bokoboshahni/jove/compare/v1.2.0-beta.8...v1.2.0-beta.9) (2022-05-26)
+
+
+### Features
+
+* add trait column to types ([cecfb46](https://github.com/bokoboshahni/jove/commit/cecfb467993d8bf5f3cc36e1b5abae83f10396f3))
+
 # [1.2.0-beta.8](https://github.com/bokoboshahni/jove/compare/v1.2.0-beta.7...v1.2.0-beta.8) (2022-05-26)
 
 
