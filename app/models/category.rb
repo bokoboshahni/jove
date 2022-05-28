@@ -21,22 +21,7 @@
 #     * **`icon_id`**
 #
 class Category < ApplicationRecord
-  include SDEImportable
-
-  self.sde_localized = %i[name]
-
   belongs_to :icon, optional: true
 
   has_many :groups
-
-  def self.import_all_from_sde(progress: nil)
-    data = YAML.load_file(File.join(sde_path, 'fsd/categoryIDs.yaml'))
-    progress&.update(total: data.count)
-    rows = data.map do |id, orig|
-      record = map_sde_attributes(orig, id:)
-      progress&.advance
-      record
-    end
-    upsert_all(rows)
-  end
 end

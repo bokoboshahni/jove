@@ -65,13 +65,4 @@
 require 'rails_helper'
 
 RSpec.describe DogmaEffect, type: :model do
-  describe '.import_all_from_sde' do
-    let(:dogma_effect_ids) do
-      YAML.load_file(File.join(Jove.config.sde_path, 'fsd/dogmaEffects.yaml')).keys
-    end
-
-    it 'saves each dogma effect' do
-      expect(described_class.import_all_from_sde.rows.flatten).to match_array(dogma_effect_ids)
-    end
-  end
 end

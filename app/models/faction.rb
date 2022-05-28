@@ -32,32 +32,9 @@
 #     * **`solar_system_id`**
 #
 class Faction < ApplicationRecord
-  include SDEImportable
-
-  self.sde_exclude = %i[member_races unique_name]
-
-  self.sde_localized = %i[description name short_description]
-
   belongs_to :icon
 
   has_many :faction_races
 
   has_many :races, through: :faction_races
-
-  def self.import_all_from_sde(progress: nil) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-    data = YAML.load_file(File.join(sde_path, 'fsd/factions.yaml'))
-    progress&.update(total: data.count)
-
-    faction_races = data.map do |faction_id, faction|
-      faction['memberRaces']&.map { |race_id| { faction_id:, race_id: } }
-    end.flatten.compact
-    FactionRace.upsert_all(faction_races)
-
-    rows = data.map do |id, orig|
-      record = map_sde_attributes(orig, id:)
-      progress&.advance
-      record
-    end
-    upsert_all(rows)
-  end
 end

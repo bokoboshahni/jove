@@ -39,15 +39,4 @@
 require 'rails_helper'
 
 RSpec.describe DogmaEffectModifier, type: :model do
-  describe '.import_all_from_sde' do
-    let(:dogma_effect_modifiers) do
-      YAML.load_file(File.join(Jove.config.sde_path, 'fsd/dogmaEffects.yaml')).values.map do |e|
-        e['modifierInfo']
-      end.flatten.compact
-    end
-
-    it 'saves each dogma effect modifier' do
-      expect(described_class.import_all_from_sde.rows.count).to eq(dogma_effect_modifiers.count)
-    end
-  end
 end

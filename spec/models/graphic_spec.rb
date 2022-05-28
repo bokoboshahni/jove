@@ -21,13 +21,4 @@
 require 'rails_helper'
 
 RSpec.describe Graphic, type: :model do
-  describe '.import_all_from_sde' do
-    let(:graphic_ids) do
-      YAML.load_file(File.join(Jove.config.sde_path, 'fsd/graphicIDs.yaml')).keys
-    end
-
-    it 'saves each graphic' do
-      expect(described_class.import_all_from_sde.rows.flatten).to match_array(graphic_ids)
-    end
-  end
 end

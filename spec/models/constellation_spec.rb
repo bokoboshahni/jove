@@ -38,17 +38,4 @@
 require 'rails_helper'
 
 RSpec.describe Constellation, type: :model do
-  describe '.import_all_from_sde' do
-    let(:constellation_data) do
-      Dir[File.join(Jove.config.sde_path, 'fsd/universe/**/constellation.staticdata')].map do |constellation_path|
-        YAML.load_file(constellation_path)
-      end
-    end
-
-    let(:constellation_ids) { constellation_data.map { |r| r['constellationID'] } }
-
-    it 'saves each constellation' do
-      expect(described_class.import_all_from_sde.rows.flatten).to match_array(constellation_ids)
-    end
-  end
 end

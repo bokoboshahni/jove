@@ -31,18 +31,4 @@
 require 'rails_helper'
 
 RSpec.describe Stargate, type: :model do
-  describe '.import_all_from_sde' do
-    let(:stargate_ids) do
-      Dir[File.join(Jove.config.sde_path, 'fsd/universe/**/solarsystem.staticdata')].each_with_object([]) do |path, a|
-        solar_system = YAML.load_file(path)
-        next unless solar_system['stargates']
-
-        solar_system['stargates'].each_key { |stargate_id| a << stargate_id }
-      end
-    end
-
-    it 'saves each stargate' do
-      expect(described_class.import_all_from_sde.rows.flatten).to match_array(stargate_ids)
-    end
-  end
 end

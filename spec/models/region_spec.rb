@@ -39,17 +39,4 @@
 require 'rails_helper'
 
 RSpec.describe Region, type: :model do
-  describe '.import_all_from_sde' do
-    let(:region_data) do
-      Dir[File.join(Jove.config.sde_path, 'fsd/universe/**/region.staticdata')].map do |region_path|
-        YAML.load_file(region_path)
-      end
-    end
-
-    let(:region_ids) { region_data.map { |r| r['regionID'] } }
-
-    it 'saves each region' do
-      expect(described_class.import_all_from_sde.rows.flatten).to match_array(region_ids)
-    end
-  end
 end

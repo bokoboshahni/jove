@@ -28,18 +28,4 @@
 require 'rails_helper'
 
 RSpec.describe MarketGroup, type: :model do
-  describe '.import_all_from_sde' do
-    let(:market_group_ids) do
-      YAML.load_file(File.join(Jove.config.sde_path, 'fsd/marketGroups.yaml')).keys
-    end
-
-    it 'saves each market group' do
-      expect(described_class.import_all_from_sde.rows.flatten).to match_array(market_group_ids)
-    end
-
-    it 'builds ancestry' do
-      described_class.import_all_from_sde
-      expect(MarketGroup.find(1016).ancestry).to eq('2/211')
-    end
-  end
 end

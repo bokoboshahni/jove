@@ -62,18 +62,4 @@
 require 'rails_helper'
 
 RSpec.describe Star, type: :model do
-  describe '.import_all_from_sde' do
-    let(:star_ids) do
-      Dir[File.join(Jove.config.sde_path, 'fsd/universe/**/solarsystem.staticdata')].each_with_object([]) do |path, a|
-        solar_system = YAML.load_file(path)
-        next unless solar_system['star']
-
-        a << solar_system['star']['id']
-      end
-    end
-
-    it 'saves each star' do
-      expect(described_class.import_all_from_sde.rows.flatten).to match_array(star_ids)
-    end
-  end
 end

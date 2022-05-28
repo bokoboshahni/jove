@@ -17,13 +17,4 @@
 require 'rails_helper'
 
 RSpec.describe StationService, type: :model do
-  describe '.import_all_from_sde' do
-    let(:service_ids) do
-      YAML.load_file(File.join(Jove.config.sde_path, 'fsd/stationServices.yaml')).keys
-    end
-
-    it 'saves each station service' do
-      expect(described_class.import_all_from_sde.rows.flatten).to match_array(service_ids)
-    end
-  end
 end

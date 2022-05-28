@@ -70,36 +70,6 @@
 #
 class Corporation < ApplicationRecord
   include ESISyncable
-  include SDEImportable
-
-  self.sde_mapper = lambda { |data, **_kwargs|
-    data[:npc] = true
-  }
-
-  self.sde_exclude = %i[
-    allowed_member_races
-    corporation_trades
-    divisions
-    exchange_rates
-    has_player_personnel_manager
-    initial_price
-    investors
-    lp_offer_tables
-    member_limit
-    min_security
-    minimum_join_standing
-    public_shares
-    send_char_termination_message
-    unique_name
-  ]
-
-  self.sde_rename = {
-    shares: :share_count,
-    station_id: :home_station_id,
-    ticker_name: :ticker
-  }
-
-  self.sde_localized = %i[description name]
 
   belongs_to :alliance, optional: true
   belongs_to :home_station, optional: true
@@ -119,17 +89,6 @@ class Corporation < ApplicationRecord
   has_many :users, through: :characters
 
   delegate :name, to: :alliance, prefix: true, allow_nil: true
-
-  def self.import_all_from_sde(progress: nil)
-    data = YAML.load_file(File.join(sde_path, 'fsd/npcCorporations.yaml'))
-    progress&.update(total: data.count)
-    rows = data.map do |id, orig|
-      record = map_sde_attributes(orig, id:)
-      progress&.advance
-      record
-    end
-    upsert_all(rows)
-  end
 
   def avatar_url
     "https://images.evetech.net/corporations/#{id}/logo"

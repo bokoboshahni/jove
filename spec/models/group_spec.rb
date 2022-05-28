@@ -30,13 +30,4 @@
 require 'rails_helper'
 
 RSpec.describe Group, type: :model do
-  describe '.import_all_from_sde' do
-    let(:group_ids) do
-      YAML.load_file(File.join(Jove.config.sde_path, 'fsd/groupIDs.yaml')).keys
-    end
-
-    it 'saves each group' do
-      expect(described_class.import_all_from_sde.rows.flatten).to match_array(group_ids)
-    end
-  end
 end

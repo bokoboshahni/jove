@@ -63,19 +63,6 @@
 #     * **`tracking_speed_attribute_id`**
 #
 class DogmaEffect < ApplicationRecord
-  include SDEImportable
-
-  self.sde_exclude = %i[modifier_info effect_id]
-
-  self.sde_rename = {
-    charge_recharge_time_id: :recharge_time_attribute_id,
-    data_type: :data_type_id,
-    effect_category: :category_id,
-    effect_name: :name
-  }
-
-  self.sde_localized = %i[description display_name]
-
   belongs_to :category, class_name: 'DogmaCategory'
   belongs_to :discharge_attribute, class_name: 'DogmaAttribute', optional: true
   belongs_to :duration_attribute, class_name: 'DogmaAttribute', optional: true
@@ -94,15 +81,4 @@ class DogmaEffect < ApplicationRecord
 
   has_many :type_dogma_effects
   has_many :types, through: :type_dogma_effects
-
-  def self.import_all_from_sde(progress: nil)
-    data = YAML.load_file(File.join(sde_path, 'fsd/dogmaEffects.yaml'))
-    progress&.update(total: data.count)
-    rows = data.map do |id, orig|
-      record = map_sde_attributes(orig, id:)
-      progress&.advance
-      record
-    end
-    upsert_all(rows)
-  end
 end

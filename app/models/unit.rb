@@ -21,15 +21,4 @@ class Unit < ApplicationRecord
 
   has_many :dogma_attributes
   has_many :types
-
-  def self.import_all_from_sde(progress: nil)
-    data = CSV.read(Rails.root.join('db/units.csv'), headers: true)
-    progress&.update(total: data.count)
-    rows = data.map do |orig|
-      record = { id: orig.fetch('unitID'), name: orig.fetch('unitName') }
-      progress&.advance
-      record
-    end
-    upsert_all(rows)
-  end
 end

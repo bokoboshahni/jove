@@ -34,13 +34,4 @@
 require 'rails_helper'
 
 RSpec.describe Faction, type: :model do
-  describe '.import_all_from_sde' do
-    let(:faction_ids) do
-      YAML.load_file(File.join(Jove.config.sde_path, 'fsd/factions.yaml')).keys
-    end
-
-    it 'saves each faction' do
-      expect(described_class.import_all_from_sde.rows.flatten).to match_array(faction_ids)
-    end
-  end
 end

@@ -24,13 +24,4 @@
 require 'rails_helper'
 
 RSpec.describe MetaGroup, type: :model do
-  describe '.import_all_from_sde' do
-    let(:meta_group_ids) do
-      YAML.load_file(File.join(Jove.config.sde_path, 'fsd/metaGroups.yaml')).keys
-    end
-
-    it 'saves each meta group' do
-      expect(described_class.import_all_from_sde.rows.flatten).to match_array(meta_group_ids)
-    end
-  end
 end

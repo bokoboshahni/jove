@@ -34,13 +34,4 @@
 require 'rails_helper'
 
 RSpec.describe Bloodline, type: :model do
-  describe '.import_all_from_sde' do
-    let(:bloodline_ids) do
-      YAML.load_file(File.join(Jove.config.sde_path, 'fsd/bloodlines.yaml')).keys
-    end
-
-    it 'saves each bloodline' do
-      expect(described_class.import_all_from_sde.rows.flatten).to match_array(bloodline_ids)
-    end
-  end
 end
