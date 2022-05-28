@@ -33,6 +33,6 @@ RSpec.configure do |config|
   config.default_formatter = 'doc' if config.files_to_run.one?
   config.example_status_persistence_file_path = 'tmp/examples.txt'
   config.order = :random
-  config.profile_examples = 10
+  config.profile_examples = 10 if ENV['RSPEC_PROFILE_EXAMPLES']
   config.shared_context_metadata_behavior = :apply_to_host_groups
 end

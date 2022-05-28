@@ -51,6 +51,21 @@ CREATE TYPE public.celestial_type AS ENUM (
 
 
 --
+-- Name: static_data_version_status; Type: TYPE; Schema: public; Owner: -
+--
+
+CREATE TYPE public.static_data_version_status AS ENUM (
+    'pending',
+    'downloading',
+    'downloaded',
+    'downloading_failed',
+    'importing',
+    'imported',
+    'importing_failed'
+);
+
+
+--
 -- Name: universe; Type: TYPE; Schema: public; Owner: -
 --
 
@@ -1209,45 +1224,21 @@ ALTER SEQUENCE public.stargates_id_seq OWNED BY public.stargates.id;
 
 
 --
--- Name: static_data_imports; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.static_data_imports (
-    id bigint NOT NULL,
-    version_id bigint NOT NULL,
-    state text NOT NULL,
-    created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
-);
-
-
---
--- Name: static_data_imports_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE public.static_data_imports_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: static_data_imports_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
---
-
-ALTER SEQUENCE public.static_data_imports_id_seq OWNED BY public.static_data_imports.id;
-
-
---
 -- Name: static_data_versions; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.static_data_versions (
     id bigint NOT NULL,
     checksum text NOT NULL,
-    state text NOT NULL,
+    current boolean,
+    downloaded_at timestamp(6) without time zone,
+    downloading_at timestamp(6) without time zone,
+    downloading_failed_at timestamp(6) without time zone,
+    imported_at timestamp(6) without time zone,
+    importing_at timestamp(6) without time zone,
+    importing_failed_at timestamp(6) without time zone,
+    status public.static_data_version_status NOT NULL,
+    status_exception jsonb,
     created_at timestamp(6) without time zone NOT NULL,
     updated_at timestamp(6) without time zone NOT NULL
 );
@@ -1746,13 +1737,6 @@ ALTER TABLE ONLY public.stargates ALTER COLUMN id SET DEFAULT nextval('public.st
 
 
 --
--- Name: static_data_imports id; Type: DEFAULT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.static_data_imports ALTER COLUMN id SET DEFAULT nextval('public.static_data_imports_id_seq'::regclass);
-
-
---
 -- Name: static_data_versions id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -2046,14 +2030,6 @@ ALTER TABLE ONLY public.solar_systems
 
 ALTER TABLE ONLY public.stargates
     ADD CONSTRAINT stargates_pkey PRIMARY KEY (id);
-
-
---
--- Name: static_data_imports static_data_imports_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.static_data_imports
-    ADD CONSTRAINT static_data_imports_pkey PRIMARY KEY (id);
 
 
 --
@@ -2779,10 +2755,17 @@ CREATE INDEX index_stargates_on_type_id ON public.stargates USING btree (type_id
 
 
 --
--- Name: index_static_data_imports_on_version_id; Type: INDEX; Schema: public; Owner: -
+-- Name: index_static_data_versions_on_checksum; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX index_static_data_imports_on_version_id ON public.static_data_imports USING btree (version_id);
+CREATE UNIQUE INDEX index_static_data_versions_on_checksum ON public.static_data_versions USING btree (checksum);
+
+
+--
+-- Name: index_static_data_versions_on_current; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_static_data_versions_on_current ON public.static_data_versions USING btree (current);
 
 
 --
@@ -3024,13 +3007,6 @@ CREATE UNIQUE INDEX index_unique_planet_schematic_pins ON public.planet_schemati
 
 
 --
--- Name: index_unique_static_data_versions; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE UNIQUE INDEX index_unique_static_data_versions ON public.static_data_versions USING btree (checksum);
-
-
---
 -- Name: index_unique_station_operation_services; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -3081,14 +3057,6 @@ ALTER TABLE ONLY public.active_storage_variant_records
 
 
 --
--- Name: static_data_imports fk_rails_c097cc8b57; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.static_data_imports
-    ADD CONSTRAINT fk_rails_c097cc8b57 FOREIGN KEY (version_id) REFERENCES public.static_data_versions(id);
-
-
---
 -- Name: active_storage_attachments fk_rails_c3b3935057; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -3136,6 +3104,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220526165548'),
 ('20220526171131'),
 ('20220526190300'),
-('20220526201528');
+('20220526201528'),
+('20220526204250');
 
 

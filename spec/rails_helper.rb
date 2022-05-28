@@ -10,6 +10,7 @@ require 'rspec/rails'
 require 'paper_trail/frameworks/rspec'
 require 'pundit/rspec'
 require 'pundit/matchers'
+require 'sidekiq/testing'
 require 'webmock/rspec'
 require 'vcr'
 
@@ -36,9 +37,8 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 
-Jove.config.sde_path = Rails.root.join('spec/fixtures/sde')
-
 RSpec.configure do |config| # rubocop:disable Metrics/BlockLength
+  config.include ActiveSupport::Testing::TimeHelpers
   config.include Capybara::RSpecMatchers, type: :component
   config.include Devise::Test::ControllerHelpers, type: :component
   config.include Devise::Test::ControllerHelpers, type: :controller
@@ -77,6 +77,8 @@ RSpec.configure do |config| # rubocop:disable Metrics/BlockLength
     FileUtils.rm_rf(Rails.root.join('tmp/storage'))
     FileUtils.mkdir_p(Rails.root.join('tmp/storage'))
     FileUtils.touch(Rails.root.join('tmp/storage/.keep'))
+
+    Sidekiq::Worker.clear_all
   end
 
   config.after(:each, type: :component, snapshot: true) do
