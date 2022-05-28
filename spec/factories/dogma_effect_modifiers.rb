@@ -11,8 +11,8 @@
 # **`domain`**                  | `text`             | `not null`
 # **`function`**                | `text`             | `not null`
 # **`log_data`**                | `jsonb`            |
-# **`position`**                | `integer`          | `not null`
-# **`effect_id`**               | `bigint`           | `not null`
+# **`position`**                | `integer`          | `not null, primary key`
+# **`effect_id`**               | `bigint`           | `not null, primary key`
 # **`group_id`**                | `bigint`           |
 # **`modified_attribute_id`**   | `bigint`           |
 # **`modified_effect_id`**      | `bigint`           |
