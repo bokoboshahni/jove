@@ -1667,7 +1667,8 @@ CREATE TABLE public.static_data_versions (
     status public.static_data_version_status NOT NULL,
     status_exception jsonb,
     created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    updated_at timestamp(6) without time zone NOT NULL,
+    log_data jsonb
 );
 
 
@@ -3665,6 +3666,13 @@ CREATE TRIGGER logidze_on_solar_systems BEFORE INSERT OR UPDATE ON public.solar_
 
 
 --
+-- Name: static_data_versions logidze_on_static_data_versions; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER logidze_on_static_data_versions BEFORE INSERT OR UPDATE ON public.static_data_versions FOR EACH ROW WHEN ((COALESCE(current_setting('logidze.disabled'::text, true), ''::text) <> 'on'::text)) EXECUTE FUNCTION public.logidze_logger('null', 'updated_at');
+
+
+--
 -- Name: station_operation_services logidze_on_station_operation_services; Type: TRIGGER; Schema: public; Owner: -
 --
 
@@ -3814,6 +3822,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220528154801'),
 ('20220528154811'),
 ('20220528155025'),
-('20220528155421');
+('20220528155421'),
+('20220528200046');
 
 

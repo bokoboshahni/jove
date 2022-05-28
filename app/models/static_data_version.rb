@@ -20,6 +20,7 @@ require 'json/add/exception'
 # **`imported_at`**            | `datetime`         |
 # **`importing_at`**           | `datetime`         |
 # **`importing_failed_at`**    | `datetime`         |
+# **`log_data`**               | `jsonb`            |
 # **`status`**                 | `enum`             | `not null`
 # **`status_exception`**       | `jsonb`            |
 # **`created_at`**             | `datetime`         | `not null`
@@ -34,6 +35,7 @@ require 'json/add/exception'
 #
 class StaticDataVersion < ApplicationRecord
   include AASM
+  include Auditable
 
   class Error < RuntimeError; end
 
