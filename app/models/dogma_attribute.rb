@@ -14,6 +14,7 @@
 # **`display_name`**                | `text`             |
 # **`display_when_zero`**           | `boolean`          |
 # **`high_is_good`**                | `boolean`          | `not null`
+# **`log_data`**                    | `jsonb`            |
 # **`name`**                        | `text`             | `not null`
 # **`published`**                   | `boolean`          | `not null`
 # **`stackable`**                   | `boolean`          | `not null`
@@ -44,6 +45,8 @@
 #     * **`unit_id`**
 #
 class DogmaAttribute < ApplicationRecord
+  include SDEImportable
+
   belongs_to :category, class_name: 'DogmaCategory', optional: true
   belongs_to :charge_recharge_time_attribute, class_name: 'DogmaAttribute', optional: true
   belongs_to :icon, optional: true

@@ -19,6 +19,7 @@
 # **`fragmented`**             | `boolean`          |
 # **`life`**                   | `decimal(, )`      |
 # **`locked`**                 | `boolean`          |
+# **`log_data`**               | `jsonb`            |
 # **`luminosity`**             | `decimal(, )`      |
 # **`mass_dust`**              | `decimal(, )`      |
 # **`mass_gas`**               | `decimal(, )`      |

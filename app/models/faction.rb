@@ -10,6 +10,7 @@
 # ----------------------------- | ------------------ | ---------------------------
 # **`id`**                      | `bigint`           | `not null, primary key`
 # **`description`**             | `text`             | `not null`
+# **`log_data`**                | `jsonb`            |
 # **`name`**                    | `text`             | `not null`
 # **`short_description`**       | `text`             |
 # **`size_factor`**             | `decimal(, )`      | `not null`
@@ -32,6 +33,8 @@
 #     * **`solar_system_id`**
 #
 class Faction < ApplicationRecord
+  include SDEImportable
+
   belongs_to :icon
 
   has_many :faction_races

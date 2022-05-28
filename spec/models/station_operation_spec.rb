@@ -14,6 +14,7 @@
 # **`description`**           | `text`             |
 # **`fringe`**                | `boolean`          | `not null`
 # **`hub`**                   | `boolean`          | `not null`
+# **`log_data`**              | `jsonb`            |
 # **`manufacturing_factor`**  | `decimal(, )`      | `not null`
 # **`name`**                  | `text`             | `not null`
 # **`ratio`**                 | `decimal(, )`      | `not null`

@@ -12,6 +12,7 @@
 # **`description`**        | `text`             |
 # **`graphic_file`**       | `text`             |
 # **`icon_folder`**        | `text`             |
+# **`log_data`**           | `jsonb`            |
 # **`skin_faction_name`**  | `text`             |
 # **`skin_hull_name`**     | `text`             |
 # **`skin_race_name`**     | `text`             |

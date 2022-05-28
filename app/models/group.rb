@@ -12,6 +12,7 @@
 # **`anchorable`**              | `boolean`          | `not null`
 # **`anchored`**                | `boolean`          | `not null`
 # **`fittable_non_singleton`**  | `boolean`          | `not null`
+# **`log_data`**                | `jsonb`            |
 # **`name`**                    | `text`             | `not null`
 # **`published`**               | `boolean`          | `not null`
 # **`use_base_price`**          | `boolean`          | `not null`
@@ -28,6 +29,8 @@
 #     * **`icon_id`**
 #
 class Group < ApplicationRecord
+  include SDEImportable
+
   belongs_to :category
   belongs_to :icon, optional: true
 

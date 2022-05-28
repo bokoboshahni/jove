@@ -8,9 +8,10 @@
 #
 # Name                          | Type               | Attributes
 # ----------------------------- | ------------------ | ---------------------------
-# **`id`**                      | `uuid`             | `not null, primary key`
 # **`domain`**                  | `text`             | `not null`
 # **`function`**                | `text`             | `not null`
+# **`log_data`**                | `jsonb`            |
+# **`position`**                | `integer`          | `not null`
 # **`effect_id`**               | `bigint`           | `not null`
 # **`group_id`**                | `bigint`           |
 # **`modified_attribute_id`**   | `bigint`           |
@@ -35,8 +36,15 @@
 #     * **`operation_id`**
 # * `index_dogma_effect_modifiers_on_skill_id`:
 #     * **`skill_id`**
+# * `index_unique_dogma_effect_modifiers` (_unique_):
+#     * **`effect_id`**
+#     * **`position`**
 #
 class DogmaEffectModifier < ApplicationRecord
+  include SDEImportable
+
+  self.primary_keys = :effect_id, :position
+
   belongs_to :effect, class_name: 'DogmaEffect'
   belongs_to :group, optional: true
   belongs_to :modified_attribute, class_name: 'DogmaAttribute', optional: true

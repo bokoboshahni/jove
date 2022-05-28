@@ -18,6 +18,7 @@
 # **`is_assistance`**                       | `boolean`          | `not null`
 # **`is_offensive`**                        | `boolean`          | `not null`
 # **`is_warp_safe`**                        | `boolean`          | `not null`
+# **`log_data`**                            | `jsonb`            |
 # **`name`**                                | `text`             | `not null`
 # **`propulsion_chance`**                   | `boolean`          | `not null`
 # **`published`**                           | `boolean`          | `not null`
@@ -63,6 +64,8 @@
 #     * **`tracking_speed_attribute_id`**
 #
 class DogmaEffect < ApplicationRecord
+  include SDEImportable
+
   belongs_to :category, class_name: 'DogmaCategory'
   belongs_to :discharge_attribute, class_name: 'DogmaAttribute', optional: true
   belongs_to :duration_attribute, class_name: 'DogmaAttribute', optional: true

@@ -12,6 +12,7 @@
 # **`charisma`**        | `integer`          | `not null`
 # **`description`**     | `text`             | `not null`
 # **`intelligence`**    | `integer`          | `not null`
+# **`log_data`**        | `jsonb`            |
 # **`memory`**          | `integer`          | `not null`
 # **`name`**            | `text`             | `not null`
 # **`perception`**      | `integer`          | `not null`

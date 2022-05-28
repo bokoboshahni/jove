@@ -13,6 +13,7 @@
 # **`center_y`**           | `decimal(, )`      | `not null`
 # **`center_z`**           | `decimal(, )`      | `not null`
 # **`description`**        | `text`             |
+# **`log_data`**           | `jsonb`            |
 # **`max_x`**              | `decimal(, )`      | `not null`
 # **`max_y`**              | `decimal(, )`      | `not null`
 # **`max_z`**              | `decimal(, )`      | `not null`
@@ -37,6 +38,8 @@
 #     * **`wormhole_class_id`**
 #
 class Region < ApplicationRecord
+  include SDEImportable
+
   enum universe: %i[abyssal eve void wormhole].index_with(&:to_s)
 
   has_many :constellations

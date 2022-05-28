@@ -8,6 +8,7 @@
 #
 # Name               | Type               | Attributes
 # ------------------ | ------------------ | ---------------------------
+# **`log_data`**     | `jsonb`            |
 # **`quantity`**     | `integer`          | `not null`
 # **`created_at`**   | `datetime`         | `not null`
 # **`updated_at`**   | `datetime`         | `not null`

@@ -136,7 +136,7 @@ class StaticDataVersion < ApplicationRecord
     archive.open do |file|
       raise UnzipError if cmd.run!('unzip', file).failure?
 
-      transaction do
+      Logidze.with_responsible(id) do
         sde_path = File.dirname(file)
         Jove::SDE::Importers.all.each { |i| i.new(sde_path:).import_all }
       end

@@ -13,6 +13,7 @@
 # **`center_y`**           | `decimal(, )`      | `not null`
 # **`center_z`**           | `decimal(, )`      | `not null`
 # **`description`**        | `text`             |
+# **`log_data`**           | `jsonb`            |
 # **`max_x`**              | `decimal(, )`      | `not null`
 # **`max_y`**              | `decimal(, )`      | `not null`
 # **`max_z`**              | `decimal(, )`      | `not null`

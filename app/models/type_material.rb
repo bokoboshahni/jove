@@ -8,6 +8,7 @@
 #
 # Name               | Type               | Attributes
 # ------------------ | ------------------ | ---------------------------
+# **`log_data`**     | `jsonb`            |
 # **`quantity`**     | `integer`          | `not null`
 # **`created_at`**   | `datetime`         | `not null`
 # **`updated_at`**   | `datetime`         | `not null`
@@ -21,6 +22,8 @@
 #     * **`material_id`**
 #
 class TypeMaterial < ApplicationRecord
+  include SDEImportable
+
   self.primary_keys = :type_id, :material_id
 
   belongs_to :type

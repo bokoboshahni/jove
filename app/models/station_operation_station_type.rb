@@ -8,6 +8,7 @@
 #
 # Name                | Type               | Attributes
 # ------------------- | ------------------ | ---------------------------
+# **`log_data`**      | `jsonb`            |
 # **`operation_id`**  | `bigint`           | `not null, primary key`
 # **`race_id`**       | `bigint`           | `not null, primary key`
 # **`type_id`**       | `bigint`           | `not null, primary key`
@@ -26,6 +27,8 @@
 #     * **`type_id`**
 #
 class StationOperationStationType < ApplicationRecord
+  include SDEImportable
+
   self.primary_keys = :operation_id, :race_id, :type_id
 
   self.inheritance_column = nil

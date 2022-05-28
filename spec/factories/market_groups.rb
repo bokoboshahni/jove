@@ -13,6 +13,7 @@
 # **`ancestry_depth`**  | `integer`          | `default(0), not null`
 # **`description`**     | `text`             |
 # **`has_types`**       | `boolean`          | `not null`
+# **`log_data`**        | `jsonb`            |
 # **`name`**            | `text`             | `not null`
 # **`created_at`**      | `datetime`         | `not null`
 # **`updated_at`**      | `datetime`         | `not null`

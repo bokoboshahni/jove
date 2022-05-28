@@ -13,21 +13,17 @@ module Jove
           skill_type_id: :skill_id
         }
 
-        def import_all # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
+        def import_all # rubocop:disable Metrics/AbcSize
           data = YAML.load_file(File.join(sde_path, 'fsd/dogmaEffects.yaml'))
           progress&.update(total: data.count)
-          rows = data.each_with_object([]) do |(id, orig), a|
-            orig['modifierInfo']&.each do |modifier|
-              a << map_sde_attributes(modifier, id: SecureRandom.uuid).merge!(effect_id: id)
+          rows = data.each_with_object([]) do |(effect_id, orig), a|
+            orig['modifierInfo']&.each_with_index do |modifier, position|
+              a << map_sde_attributes(modifier).merge!(effect_id:, position:)
             end
 
             progress&.advance
           end
-
-          DogmaEffectModifier.transaction do
-            ::DogmaEffectModifier.delete_all
-            sde_model.upsert_all(rows)
-          end
+          sde_model.upsert_all(rows)
         end
       end
     end

@@ -12,6 +12,7 @@
 # **`charisma`**        | `integer`          | `not null`
 # **`description`**     | `text`             | `not null`
 # **`intelligence`**    | `integer`          | `not null`
+# **`log_data`**        | `jsonb`            |
 # **`memory`**          | `integer`          | `not null`
 # **`name`**            | `text`             | `not null`
 # **`perception`**      | `integer`          | `not null`
@@ -32,5 +33,7 @@
 #     * **`race_id`**
 #
 class Bloodline < ApplicationRecord
+  include SDEImportable
+
   belongs_to :icon, optional: true
 end

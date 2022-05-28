@@ -10,11 +10,14 @@
 # ------------------ | ------------------ | ---------------------------
 # **`id`**           | `bigint`           | `not null, primary key`
 # **`description`**  | `text`             |
+# **`log_data`**     | `jsonb`            |
 # **`name`**         | `text`             | `not null`
 # **`created_at`**   | `datetime`         | `not null`
 # **`updated_at`**   | `datetime`         | `not null`
 #
 class DogmaCategory < ApplicationRecord
+  include SDEImportable
+
   has_many :dogma_attributes, foreign_key: :category_id
   has_many :dogma_effects, foreign_key: :category_id
 end

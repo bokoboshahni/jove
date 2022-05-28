@@ -14,6 +14,7 @@
 # **`description`**               | `text`             |
 # **`dogma_attributes`**          | `jsonb`            |
 # **`dogma_effects`**             | `jsonb`            |
+# **`log_data`**                  | `jsonb`            |
 # **`mass`**                      | `decimal(, )`      |
 # **`max_production_limit`**      | `integer`          |
 # **`name`**                      | `text`             | `not null`
@@ -61,6 +62,8 @@
 #     * **`variation_parent_type_id`**
 #
 class Type < ApplicationRecord
+  include SDEImportable
+
   belongs_to :faction, optional: true
   belongs_to :graphic, optional: true
   belongs_to :group

@@ -19,6 +19,7 @@
 # **`fringe`**                        | `boolean`          | `not null`
 # **`hub`**                           | `boolean`          | `not null`
 # **`international`**                 | `boolean`          | `not null`
+# **`log_data`**                      | `jsonb`            |
 # **`luminosity`**                    | `decimal(, )`      | `not null`
 # **`max_x`**                         | `decimal(, )`      | `not null`
 # **`max_y`**                         | `decimal(, )`      | `not null`
@@ -48,6 +49,8 @@
 #     * **`wormhole_class_id`**
 #
 class SolarSystem < ApplicationRecord
+  include SDEImportable
+
   belongs_to :constellation
 
   has_many :celestials

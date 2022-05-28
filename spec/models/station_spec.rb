@@ -11,6 +11,7 @@
 # **`id`**                           | `bigint`           | `not null, primary key`
 # **`conquerable`**                  | `boolean`          | `not null`
 # **`docking_cost_per_volume`**      | `decimal(, )`      | `not null`
+# **`log_data`**                     | `jsonb`            |
 # **`max_ship_volume_dockable`**     | `decimal(, )`      | `not null`
 # **`name`**                         | `text`             | `not null`
 # **`office_rental_cost`**           | `decimal(, )`      | `not null`

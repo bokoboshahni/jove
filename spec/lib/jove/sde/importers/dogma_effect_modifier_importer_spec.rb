@@ -12,7 +12,8 @@ RSpec.describe Jove::SDE::Importers::DogmaEffectModifierImporter, type: :lib do
     end
 
     it 'saves each dogma effect modifier' do
-      expect(importer.import_all.rows.count).to eq(dogma_effect_modifiers.count)
+      importer.import_all
+      expect(DogmaEffectModifier.count).to eq(dogma_effect_modifiers.count)
     end
   end
 end

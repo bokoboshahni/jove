@@ -9,6 +9,7 @@
 # Name                   | Type               | Attributes
 # ---------------------- | ------------------ | ---------------------------
 # **`id`**               | `bigint`           | `not null, primary key`
+# **`log_data`**         | `jsonb`            |
 # **`name`**             | `text`             | `not null`
 # **`output_quantity`**  | `integer`          | `not null`
 # **`pins`**             | `integer`          | `not null, is an Array`

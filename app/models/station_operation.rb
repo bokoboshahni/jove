@@ -14,6 +14,7 @@
 # **`description`**           | `text`             |
 # **`fringe`**                | `boolean`          | `not null`
 # **`hub`**                   | `boolean`          | `not null`
+# **`log_data`**              | `jsonb`            |
 # **`manufacturing_factor`**  | `decimal(, )`      | `not null`
 # **`name`**                  | `text`             | `not null`
 # **`ratio`**                 | `decimal(, )`      | `not null`
@@ -28,6 +29,8 @@
 #     * **`activity_id`**
 #
 class StationOperation < ApplicationRecord
+  include SDEImportable
+
   has_many :stations, foreign_key: :operation_id
   has_many :station_operation_services, foreign_key: :operation_id
   has_many :station_types, class_name: 'StationOperationStationType', foreign_key: :operation_id

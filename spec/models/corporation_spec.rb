@@ -16,6 +16,7 @@
 # **`esi_last_modified_at`**   | `datetime`         |
 # **`extent`**                 | `text`             |
 # **`founded_on`**             | `date`             |
+# **`log_data`**               | `jsonb`            |
 # **`member_count`**           | `integer`          |
 # **`name`**                   | `text`             | `not null`
 # **`npc`**                    | `boolean`          |

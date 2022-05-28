@@ -10,6 +10,7 @@
 # ------------------- | ------------------ | ---------------------------
 # **`id`**            | `bigint`           | `not null, primary key`
 # **`description`**   | `text`             |
+# **`log_data`**      | `jsonb`            |
 # **`name`**          | `text`             | `not null`
 # **`created_at`**    | `datetime`         | `not null`
 # **`updated_at`**    | `datetime`         | `not null`
@@ -24,6 +25,8 @@
 #     * **`ship_type_id`**
 #
 class Race < ApplicationRecord
+  include SDEImportable
+
   belongs_to :icon, optional: true
   belongs_to :ship_type, class_name: 'Type', optional: true
 

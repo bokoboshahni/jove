@@ -8,6 +8,7 @@
 #
 # Name                | Type               | Attributes
 # ------------------- | ------------------ | ---------------------------
+# **`log_data`**      | `jsonb`            |
 # **`operation_id`**  | `bigint`           | `not null, primary key`
 # **`service_id`**    | `bigint`           | `not null, primary key`
 #
@@ -22,6 +23,8 @@
 #     * **`service_id`**
 #
 class StationOperationService < ApplicationRecord
+  include SDEImportable
+
   self.primary_keys = :operation_id, :service_id
 
   belongs_to :operation, class_name: 'StationOperation'

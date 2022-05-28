@@ -19,6 +19,7 @@
 # **`fragmented`**             | `boolean`          |
 # **`life`**                   | `decimal(, )`      |
 # **`locked`**                 | `boolean`          |
+# **`log_data`**               | `jsonb`            |
 # **`luminosity`**             | `decimal(, )`      |
 # **`mass_dust`**              | `decimal(, )`      |
 # **`mass_gas`**               | `decimal(, )`      |
@@ -60,6 +61,8 @@
 #     * **`type_id`**
 #
 class Celestial < ApplicationRecord
+  include SDEImportable
+
   enum celestial_type: {
     'AsteroidBelt' => 'asteroid_belt',
     'Moon' => 'moon',

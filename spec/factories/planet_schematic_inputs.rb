@@ -8,6 +8,7 @@
 #
 # Name                | Type               | Attributes
 # ------------------- | ------------------ | ---------------------------
+# **`log_data`**      | `jsonb`            |
 # **`quantity`**      | `integer`          | `not null`
 # **`schematic_id`**  | `bigint`           | `not null, primary key`
 # **`type_id`**       | `bigint`           | `not null, primary key`

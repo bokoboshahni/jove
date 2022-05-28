@@ -11,6 +11,7 @@
 # **`id`**           | `bigint`           | `not null, primary key`
 # **`description`**  | `text`             |
 # **`file`**         | `text`             | `not null`
+# **`log_data`**     | `jsonb`            |
 # **`obsolete`**     | `boolean`          |
 # **`created_at`**   | `datetime`         | `not null`
 # **`updated_at`**   | `datetime`         | `not null`

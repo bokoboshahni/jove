@@ -11,6 +11,7 @@
 # **`id`**           | `bigint`           | `not null, primary key`
 # **`description`**  | `text`             |
 # **`icon_suffix`**  | `text`             |
+# **`log_data`**     | `jsonb`            |
 # **`name`**         | `text`             | `not null`
 # **`created_at`**   | `datetime`         | `not null`
 # **`updated_at`**   | `datetime`         | `not null`
@@ -22,6 +23,8 @@
 #     * **`icon_id`**
 #
 class MetaGroup < ApplicationRecord
+  include SDEImportable
+
   belongs_to :icon, optional: true
 
   has_many :types
