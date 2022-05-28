@@ -1,3 +1,13 @@
+GIT
+  remote: https://github.com/baygeldin/logidze.git
+  revision: 528640f156d79a4d683e58eabfadcceef4661a6c
+  branch: fix/support-json-columns
+  specs:
+    logidze (1.2.1)
+      activerecord (>= 5.0)
+      railties (>= 5.0)
+      ruby-next-core (~> 0.9)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -438,6 +448,7 @@ GEM
       rubocop (>= 1.7.0, < 2.0)
     rubocop-rspec (2.11.1)
       rubocop (~> 1.19)
+    ruby-next-core (0.15.1)
     ruby-progressbar (1.11.0)
     ruby2_keywords (0.0.5)
     rufus-scheduler (3.8.1)
@@ -582,6 +593,7 @@ DEPENDENCIES
   kramdown-parser-gfm (~> 1.1)
   kredis (~> 1.2)
   local_time (~> 2.1)
+  logidze!
   lookbook (~> 0.8)
   memory_profiler (~> 1.0)
   oj (~> 3.13)
