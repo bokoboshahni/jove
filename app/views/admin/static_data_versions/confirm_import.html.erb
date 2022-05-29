@@ -1,0 +1,9 @@
+<%= render(Jove::TurboDialog::Component.new(title: t('.title'), icon: 'heroicons/outline/database', dismissable: true)) do |d| %>
+  <%= t('.body') %>
+
+  <% d.action do %>
+    <%= form_tag admin_static_data_version_import_path(@version) do %>
+      <%= render(Jove::Button::Component.new(variant: :text, color: :danger, label: t('.import'), type: :submit, data: { turbo: false })) %>
+    <% end %>
+  <% end %>
+<% end %>

@@ -41,6 +41,18 @@ Rails.application.routes.draw do # rubocop:disable Metrics/BlockLength
     resources :login_permits, path: 'authentication', only: %i[index new create destroy] do
       get :confirm_destroy
     end
+
+    resources :static_data_versions, path: 'static-data', only: %i[index] do
+      collection do
+        put :check
+      end
+
+      get :confirm_download
+      get :confirm_import
+      post :download
+      post :import
+    end
+
     resources :users, only: %i[index destroy] do
       get :confirm_destroy
     end

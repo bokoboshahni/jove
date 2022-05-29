@@ -114,6 +114,34 @@ RSpec.describe StaticDataVersion, type: :model do
     end
   end
 
+  describe '#downloadable' do
+    it 'returns true when pending and latest' do
+      create(:static_data_version, created_at: 1.hour.ago)
+      latest = create(:static_data_version)
+
+      expect(latest).to be_downloadable
+    end
+
+    it 'returns true when downloading failed and latest' do
+      create(:static_data_version, created_at: 1.hour.ago)
+      latest = create(:static_data_version, status: :downloading_failed)
+
+      expect(latest).to be_downloadable
+    end
+
+    it 'returns false when pending but not latest' do
+      previous = create(:static_data_version, created_at: 1.hour.ago)
+      create(:static_data_version)
+
+      expect(previous).not_to be_downloadable
+    end
+
+    it 'returns false when already downloaded' do
+      version = create(:static_data_version, :downloaded)
+      expect(version).not_to be_downloadable
+    end
+  end
+
   describe '#import!' do
     let(:which_unzip_result) { instance_double('TTY::Command::Result') }
     let(:unzip_result) { instance_double('TTY::Command::Result') }
@@ -245,6 +273,23 @@ RSpec.describe StaticDataVersion, type: :model do
       it 'updates the importing_failed_at timestamp' do
         expect(version.importing_failed_at).to eq(time)
       end
+    end
+  end
+
+  describe '#importable' do
+    it 'returns true when downloaded' do
+      version = create(:static_data_version, :downloaded, created_at: 1.hour.ago)
+      expect(version).to be_importable
+    end
+
+    it 'returns true when importing failed' do
+      version = create(:static_data_version, :downloaded, status: :importing_failed, created_at: 1.hour.ago)
+      expect(version).to be_importable
+    end
+
+    it 'returns false when already imported' do
+      version = create(:static_data_version, status: :imported)
+      expect(version).not_to be_importable
     end
   end
 end

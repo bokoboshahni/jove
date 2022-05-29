@@ -33,7 +33,7 @@ require 'json/add/exception'
 # * `index_static_data_versions_on_current` (_unique_):
 #     * **`current`**
 #
-class StaticDataVersion < ApplicationRecord
+class StaticDataVersion < ApplicationRecord # rubocop:disable Metrics/ClassLength
   include AASM
   include Auditable
 
@@ -79,7 +79,7 @@ class StaticDataVersion < ApplicationRecord
     end
 
     event :import do
-      transitions from: :downloaded, to: :importing
+      transitions from: %i[downloaded importing_failed], to: :importing
 
       after_commit :import_archive
     end
@@ -105,7 +105,17 @@ class StaticDataVersion < ApplicationRecord
     StaticDataVersion.create!(checksum:)
   end
 
-  def self.import!; end
+  def latest?
+    self == self.class.order(:created_at).last
+  end
+
+  def downloadable?
+    (pending? || downloading_failed?) && latest?
+  end
+
+  def importable?
+    downloaded? || importing_failed?
+  end
 
   private
 
@@ -134,13 +144,15 @@ class StaticDataVersion < ApplicationRecord
     raise UnzipNotInstalledError if cmd.run!('which unzip').failure?
   end
 
-  def import_models
+  def import_models # rubocop:disable Metrics/AbcSize
     archive.open do |file|
-      raise UnzipError if cmd.run!('unzip', file).failure?
+      Dir.chdir(File.dirname(file.path)) do
+        raise UnzipError if cmd.run!('unzip', file.path).failure?
 
-      Logidze.with_responsible(id) do
-        sde_path = File.dirname(file)
-        Jove::SDE::Importers.all.each { |i| i.new(sde_path:).import_all }
+        Logidze.with_responsible(id) do
+          sde_path = File.join(File.dirname(file.path), 'sde')
+          Jove::SDE::Importers.all.each { |i| i.new(sde_path:).import_all }
+        end
       end
     end
   end
