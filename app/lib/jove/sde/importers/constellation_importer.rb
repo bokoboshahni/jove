@@ -29,7 +29,7 @@ module Jove
             progress&.advance
             constellation
           end
-          sde_model.upsert_all(rows)
+          sde_model.upsert_all(rows, returning: false) unless rows.empty?
         end
 
         def map_region_ids

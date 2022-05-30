@@ -20,6 +20,7 @@
 # **`log_data`**               | `jsonb`            |
 # **`status`**                 | `enum`             | `not null`
 # **`status_exception`**       | `jsonb`            |
+# **`status_log`**             | `text`             | `is an Array`
 # **`created_at`**             | `datetime`         | `not null`
 # **`updated_at`**             | `datetime`         | `not null`
 #
@@ -48,7 +49,7 @@ FactoryBot.define do
 
       before(:create) do |version|
         version.archive.attach(
-          io: File.open(Rails.root.join('spec/fixtures/sde.zip')),
+          io: File.open(Rails.root.join('spec/fixtures/sde-tiny.zip')),
           filename: "sde-#{version.checksum}.zip",
           content_type: 'application/zip'
         )

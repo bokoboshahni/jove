@@ -10,21 +10,27 @@ module Jove
 
         self.sde_localized = %i[description name short_description]
 
-        def import_all # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
+        def import_all
           data = YAML.load_file(File.join(sde_path, 'fsd/factions.yaml'))
           progress&.update(total: data.count)
-
-          faction_races = data.map do |faction_id, faction|
-            faction['memberRaces']&.map { |race_id| { faction_id:, race_id: } }
-          end.flatten.compact
-          ::FactionRace.upsert_all(faction_races)
-
-          rows = data.map do |id, orig|
-            record = map_sde_attributes(orig, id:)
+          data.each do |faction_id, faction|
+            races = map_races(faction_id, faction['memberRaces'])
+            upsert_faction(faction_id, faction, races)
             progress&.advance
-            record
           end
-          sde_model.upsert_all(rows)
+        end
+
+        private
+
+        def upsert_faction(faction_id, faction, races)
+          sde_model.transaction do
+            FactionRace.upsert_all(races, returning: false)
+            sde_model.upsert(map_sde_attributes(faction, id: faction_id), returning: false)
+          end
+        end
+
+        def map_races(faction_id, races)
+          races&.map { |race_id| { faction_id:, race_id: } }
         end
       end
     end

@@ -14,7 +14,8 @@ RSpec.describe Jove::SDE::Importers::ConstellationImporter, type: :lib do
     let(:constellation_ids) { constellation_data.map { |r| r['constellationID'] } }
 
     it 'saves each constellation' do
-      expect(importer.import_all.rows.flatten).to match_array(constellation_ids)
+      importer.import_all
+      expect(Constellation.pluck(:id)).to match_array(constellation_ids)
     end
   end
 end

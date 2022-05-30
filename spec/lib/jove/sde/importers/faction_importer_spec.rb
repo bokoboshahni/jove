@@ -10,7 +10,8 @@ RSpec.describe Jove::SDE::Importers::FactionImporter, type: :lib do
     end
 
     it 'saves each faction' do
-      expect(importer.import_all.rows.flatten).to match_array(faction_ids)
+      importer.import_all
+      expect(Faction.pluck(:id)).to match_array(faction_ids)
     end
   end
 end

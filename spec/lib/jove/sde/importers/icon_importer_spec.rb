@@ -10,7 +10,8 @@ RSpec.describe Jove::SDE::Importers::IconImporter, type: :lib do
     end
 
     it 'saves each icon' do
-      expect(importer.import_all.rows.flatten).to match_array(icon_ids)
+      importer.import_all
+      expect(Icon.pluck(:id)).to match_array(icon_ids)
     end
   end
 end

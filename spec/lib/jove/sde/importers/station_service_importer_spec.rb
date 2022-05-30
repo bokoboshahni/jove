@@ -10,7 +10,8 @@ RSpec.describe Jove::SDE::Importers::StationServiceImporter, type: :lib do
     end
 
     it 'saves each station service' do
-      expect(importer.import_all.rows.flatten).to match_array(service_ids)
+      importer.import_all
+      expect(StationService.pluck(:id)).to match_array(service_ids)
     end
   end
 end

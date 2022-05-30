@@ -10,7 +10,8 @@ RSpec.describe Jove::SDE::Importers::MetaGroupImporter, type: :lib do
     end
 
     it 'saves each meta group' do
-      expect(importer.import_all.rows.flatten).to match_array(meta_group_ids)
+      importer.import_all
+      expect(MetaGroup.pluck(:id)).to match_array(meta_group_ids)
     end
   end
 end

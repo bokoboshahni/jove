@@ -10,7 +10,8 @@ RSpec.describe Jove::SDE::Importers::CorporationImporter, type: :lib do
     end
 
     it 'saves each corporation' do
-      expect(importer.import_all.rows.flatten).to match_array(corporation_ids)
+      importer.import_all
+      expect(Corporation.pluck(:id)).to match_array(corporation_ids)
     end
   end
 end

@@ -14,7 +14,8 @@ RSpec.describe Jove::SDE::Importers::TypeImporter, type: :lib do
     end
 
     it 'saves each type' do
-      expect(importer.import_all.rows.flatten).to match_array(type_ids)
+      importer.import_all
+      expect(Type.pluck(:id)).to match_array(type_ids)
     end
 
     it 'saves dogma attributes for each type' do

@@ -17,31 +17,35 @@ module Jove
 
         self.sde_localized = %i[name]
 
-        def import_all # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength
+        def import_all
           data = YAML.load_file(File.join(sde_path, 'fsd/planetSchematics.yaml'))
           progress&.update(total: data.count)
-
-          inputs = []
-          pins = []
-
           data.each do |schematic_id, schematic|
-            schematic['pins'].each { |type_id| pins << { schematic_id:, type_id: } }
-            schematic['types'].select { |_, t| t['isInput'] }.each do |type_id, input|
-              inputs << { schematic_id:, type_id:, quantity: input['quantity'] }
-            end
-          end
-
-          rows = data.map do |id, orig|
-            record = map_sde_attributes(orig, id:)
+            inputs = map_inputs(schematic_id, schematic['types'])
+            pins = map_pins(schematic_id, schematic['pins'])
+            upsert_schematic(schematic_id, schematic, inputs, pins)
             progress&.advance
-            record
           end
+        end
 
-          PlanetSchematic.transaction do
-            PlanetSchematicInput.upsert_all(inputs)
-            PlanetSchematicPin.upsert_all(pins)
-            sde_model.upsert_all(rows)
+        private
+
+        def upsert_schematic(schematic_id, schematic, inputs, pins)
+          sde_model.transaction do
+            PlanetSchematicInput.upsert_all(inputs) unless inputs.empty?
+            PlanetSchematicPin.upsert_all(pins) unless pins.empty?
+            sde_model.upsert(map_sde_attributes(schematic, id: schematic_id), returning: false)
           end
+        end
+
+        def map_inputs(schematic_id, inputs)
+          inputs.select { |_, t| t['isInput'] }.map do |type_id, input|
+            { schematic_id:, type_id:, quantity: input['quantity'] }
+          end
+        end
+
+        def map_pins(schematic_id, pins)
+          pins.map { |type_id| { schematic_id:, type_id: } }
         end
       end
     end

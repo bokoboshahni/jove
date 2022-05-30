@@ -16,20 +16,18 @@ module Jove
 
         self.sde_rename = { destination: :destination_id }
 
-        def import_all # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-          paths = Dir[File.join(sde_path, 'fsd/universe/**/solarsystem.staticdata')]
-          progress&.update(total: paths.count)
-          rows = Parallel.map(paths, in_threads: Etc.nprocessors) do |path|
-            solar_system = YAML.load_file(path)
-            next unless solar_system['stargates']
-
-            stargates = solar_system['stargates'].map do |id, stargate|
-              map_sde_attributes(stargate, context: { id:, solar_system_id: solar_system['solarSystemID'] })
-            end
-            progress&.advance
-            stargates
+        def import_solar_system(solar_system)
+          rows = solar_system.fetch('stargates', {}).map do |id, stargate|
+            map_stargate(id, stargate, solar_system)
           end
-          sde_model.upsert_all(rows.flatten)
+
+          sde_model.upsert_all(rows, returning: false) unless rows.empty?
+        end
+
+        private
+
+        def map_stargate(id, stargate, solar_system)
+          map_sde_attributes(stargate, context: { id:, solar_system_id: solar_system['solarSystemID'] })
         end
       end
     end

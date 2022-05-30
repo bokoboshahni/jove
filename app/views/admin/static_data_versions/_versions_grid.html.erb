@@ -13,7 +13,7 @@
       <% row.cell do %><%= local_time(version.imported_at) if version.imported_at %><% end %>
       <% row.cell do %>
         <%= render(Jove::Dropdown::Component.new(wrapper_class: 'max-w-menu mt-1')) do |d| %>
-          <% d.button label: t('.actions.button', id: version.id), variant: :overflow, color: :surface %>
+          <% d.button(label: t('.actions.button', id: version.id), variant: :overflow, color: :surface, disabled: !version.importable? && !version.downloadable?) %>
           <% d.menu do %>
             <%= render(Jove::Menu::Component.new) do |m| %>
               <% m.group do |g| %>

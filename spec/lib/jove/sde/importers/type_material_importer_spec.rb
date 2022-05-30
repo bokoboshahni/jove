@@ -13,7 +13,8 @@ RSpec.describe Jove::SDE::Importers::TypeMaterialImporter, type: :lib do
     end
 
     it 'saves each type material' do
-      expect(importer.import_all.rows).to match_array(type_material_ids)
+      importer.import_all
+      expect(TypeMaterial.pluck(:type_id, :material_id)).to match_array(type_material_ids)
     end
   end
 end

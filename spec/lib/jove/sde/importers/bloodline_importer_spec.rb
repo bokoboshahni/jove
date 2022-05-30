@@ -10,7 +10,8 @@ RSpec.describe Jove::SDE::Importers::BloodlineImporter, type: :lib do
     end
 
     it 'saves each bloodline' do
-      expect(importer.import_all.rows.flatten).to match_array(bloodline_ids)
+      importer.import_all
+      expect(Bloodline.pluck(:id)).to match_array(bloodline_ids)
     end
   end
 end

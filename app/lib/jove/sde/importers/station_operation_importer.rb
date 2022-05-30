@@ -12,27 +12,33 @@ module Jove
 
         self.sde_localized = %i[description name]
 
-        def import_all # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength
+        def import_all
           data = YAML.load_file(File.join(sde_path, 'fsd/stationOperations.yaml'))
           progress&.update(total: data.count)
-
-          station_services = []
-          station_types = []
           data.each do |operation_id, operation|
-            station_services.append(*operation['services'].map { |service_id| { operation_id:, service_id: } })
-            station_types.append(*operation['stationTypes']&.map do |race_id, type_id|
-                                   { operation_id:, race_id:, type_id: }
-                                 end)
-          end
-          ::StationOperationService.upsert_all(station_services.compact)
-          ::StationOperationStationType.upsert_all(station_types.compact)
-
-          rows = data.map do |id, orig|
-            record = map_sde_attributes(orig, id:)
+            services = map_services(operation_id, operation['services'])
+            types = map_types(operation_id, operation['stationTypes'])
+            upsert_operation(operation_id, operation, services, types)
             progress&.advance
-            record
           end
-          sde_model.upsert_all(rows)
+        end
+
+        private
+
+        def upsert_operation(operation_id, operation, services, types)
+          sde_model.transaction do
+            StationOperationService.upsert_all(services) unless services.empty?
+            StationOperationStationType.upsert_all(types) unless types.empty?
+            sde_model.upsert(map_sde_attributes(operation, id: operation_id), returning: false)
+          end
+        end
+
+        def map_services(operation_id, services)
+          (services || []).map { |service_id| { operation_id:, service_id: } }
+        end
+
+        def map_types(operation_id, types)
+          (types || {}).map { |race_id, type_id| { operation_id:, race_id:, type_id: } }
         end
       end
     end

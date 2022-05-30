@@ -18,25 +18,15 @@ module Jove
 
         self.sde_exclude = %i[asteroid_belt_name_id]
 
-        def import_all # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength
-          paths = Dir[File.join(sde_path, 'fsd/universe/**/solarsystem.staticdata')]
-          progress&.update(total: paths.count)
-          rows = Parallel.map(paths, in_threads: Etc.nprocessors) do |path|
-            solar_system = YAML.load_file(path)
-            next unless solar_system['planets']
-
-            belts = solar_system['planets'].each_with_object([]) do |(planet_id, planet), a|
-              planet['asteroidBelts']&.each do |id, belt|
-                a << map_sde_attributes(belt,
-                                        context: { id:, planet_id:,
-                                                   solar_system_id: solar_system['solarSystemID'] })
-              end
+        def import_solar_system(solar_system)
+          rows = solar_system.fetch('planets', {}).each_with_object([]) do |(planet_id, planet), a|
+            planet['asteroidBelts']&.each do |id, belt|
+              a << map_sde_attributes(belt,
+                                      context: { id:, planet_id:, solar_system_id: solar_system['solarSystemID'] })
             end
+          end
 
-            progress&.advance
-            belts
-          end.flatten
-          sde_model.upsert_all(rows.flatten)
+          sde_model.upsert_all(rows, returning: false) unless rows.empty?
         end
       end
     end

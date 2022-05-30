@@ -10,7 +10,8 @@ RSpec.describe Jove::SDE::Importers::StationOperationImporter, type: :lib do
     end
 
     it 'saves each operation' do
-      expect(importer.import_all.rows.flatten).to match_array(operation_ids)
+      importer.import_all
+      expect(StationOperation.pluck(:id)).to match_array(operation_ids)
     end
   end
 end

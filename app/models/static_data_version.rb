@@ -23,6 +23,7 @@ require 'json/add/exception'
 # **`log_data`**               | `jsonb`            |
 # **`status`**                 | `enum`             | `not null`
 # **`status_exception`**       | `jsonb`            |
+# **`status_log`**             | `text`             | `is an Array`
 # **`created_at`**             | `datetime`         | `not null`
 # **`updated_at`**             | `datetime`         | `not null`
 #
@@ -42,6 +43,8 @@ class StaticDataVersion < ApplicationRecord # rubocop:disable Metrics/ClassLengt
   class UnzipError < Error; end
 
   class UnzipNotInstalledError < Error; end
+
+  kredis_list :status_log_lines
 
   enum :status, %i[
     pending
@@ -63,23 +66,30 @@ class StaticDataVersion < ApplicationRecord # rubocop:disable Metrics/ClassLengt
     event :download do
       transitions from: :pending, to: :downloading
 
+      before { reset_status_log }
+
       after_commit :download_archive
     end
 
     event :finish_download do
       transitions from: :downloading, to: :downloaded
 
-      before { self.status_exception = nil }
+      before do
+        self.status_exception = nil
+        self.status_log = status_log_lines.elements
+      end
     end
 
     event :fail_download do
       transitions from: :downloading, to: :downloading_failed
 
-      before { |exception| update!(status_exception: exception) }
+      before { |exception| update!(status_exception: exception, status_log: status_log_lines.elements) }
     end
 
     event :import do
       transitions from: %i[downloaded importing_failed], to: :importing
+
+      before { reset_status_log }
 
       after_commit :import_archive
     end
@@ -87,13 +97,18 @@ class StaticDataVersion < ApplicationRecord # rubocop:disable Metrics/ClassLengt
     event :finish_import do
       transitions from: :importing, to: :imported
 
-      before { self.status_exception = nil }
+      before do
+        self.status_exception = nil
+        self.status_log = status_log_lines.elements
+      end
     end
 
     event :fail_import do
       transitions from: :importing, to: :importing_failed
 
-      before { |exception| update!(status_exception: exception) }
+      before do |exception|
+        update!(status_exception: exception, status_log: status_log_lines.elements)
+      end
     end
   end
 
@@ -141,19 +156,48 @@ class StaticDataVersion < ApplicationRecord # rubocop:disable Metrics/ClassLengt
   end
 
   def check_requirements
-    raise UnzipNotInstalledError if cmd.run!('which unzip').failure?
+    result = cmd.run!('which unzip')
+    result.each { |l| add_status_log(l) }
+
+    raise UnzipNotInstalledError if result.failure?
   end
 
-  def import_models # rubocop:disable Metrics/AbcSize
+  def import_models
     archive.open do |file|
       Dir.chdir(File.dirname(file.path)) do
-        raise UnzipError if cmd.run!('unzip', file.path).failure?
-
-        Logidze.with_responsible(id) do
-          sde_path = File.join(File.dirname(file.path), 'sde')
-          Jove::SDE::Importers.all.each { |i| i.new(sde_path:).import_all }
-        end
+        sde_path = File.join(File.dirname(file.path), 'sde')
+        FileUtils.rm_rf(sde_path)
+        unzip_archive(file.path)
+        run_importers(sde_path)
       end
+    end
+  end
+
+  def unzip_archive(path)
+    result = cmd.run!('unzip -qq', path, only_output_on_error: true)
+    result.each { |l| add_status_log(l) }
+
+    raise UnzipError if result.failure?
+  end
+
+  def run_importers(sde_path) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
+    Logidze.with_responsible(id) do
+      max_mem = GetProcessMem.new.mb
+      Jove::SDE::Importers.all.each do |importer_class|
+        mem_before = GetProcessMem.new.mb
+        importer = importer_class.new(sde_path:, logger: Rails.logger, threads: Rails.env.test? ? 0 : 2)
+        importer.import_all
+        mem_after = GetProcessMem.new.mb
+        max_mem = mem_after if mem_after > max_mem
+        add_status_log(
+          "Imported #{importer_class.sde_model.name} - " \
+          "Memory: #{mem_after.round - mem_before.round}MB"
+        )
+      ensure
+        GC.start
+      end
+    ensure
+      add_status_log("Max memory: #{max_mem}MB")
     end
   end
 
@@ -164,8 +208,21 @@ class StaticDataVersion < ApplicationRecord # rubocop:disable Metrics/ClassLengt
     end
   end
 
+  def add_status_log(msg)
+    status_log_lines.append(msg)
+  end
+
+  def reset_status_log
+    status_log_lines.clear
+  end
+
+  def run(*args, **kwargs)
+    result = cmd.run!(*args, **kwargs.merge(err: :out))
+    result.each { |l| add_status_log(l) }
+  end
+
   def cmd
-    @cmd ||= TTY::Command.new
+    @cmd ||= TTY::Command.new(output: Rails.logger)
   end
 
   def archive_filename

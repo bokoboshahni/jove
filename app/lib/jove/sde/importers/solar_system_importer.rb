@@ -6,8 +6,7 @@ module Jove
       class SolarSystemImporter < BaseImporter
         self.sde_model = SolarSystem
 
-        self.sde_mapper = lambda { |data, context:|
-          data[:constellation_id] = context[:constellation_id]
+        self.sde_mapper = lambda { |data, **_kwargs|
           data[:center_x], data[:center_y], data[:center_z] = data.delete(:center)
           data[:max_x], data[:max_y], data[:max_z] = data.delete(:max)
           data[:min_x], data[:min_y], data[:min_z] = data.delete(:min)
@@ -19,17 +18,39 @@ module Jove
 
         self.sde_name_lookup = true
 
+        def initialize(**kwargs)
+          super(**kwargs)
+
+          @constellation_ids = map_constellation_ids
+        end
+
         def import_all # rubocop:disable Metrics/AbcSize
-          constellation_ids = map_constellation_ids
           paths = Dir[File.join(sde_path, 'fsd/universe/**/solarsystem.staticdata')]
           progress&.update(total: paths.count)
-          rows = Parallel.map(paths, in_threads: Etc.nprocessors * 2) do |path|
-            constellation_id = constellation_ids.fetch(File.dirname(path, 2))
-            solar_systems = map_sde_attributes(YAML.load_file(path), context: { constellation_id: })
+          Parallel.each(paths, in_threads: threads) do |path|
+            solar_system = load_solar_system(path)
+            child_importers.each { |i| i.import_solar_system(solar_system) }
+            sde_model.upsert(map_sde_attributes(solar_system))
             progress&.advance
-            solar_systems
           end
-          sde_model.upsert_all(rows)
+          paths
+        end
+
+        private
+
+        CHILD_IMPORTERS = [PlanetImporter, MoonImporter, AsteroidBeltImporter, StarImporter, StargateImporter,
+                           SecondarySunImporter, StationImporter].freeze
+
+        attr_reader :constellation_ids
+
+        def load_solar_system(path)
+          solar_system = YAML.load_file(path)
+          solar_system['constellationID'] = constellation_ids.fetch(File.dirname(path, 2))
+          solar_system
+        end
+
+        def child_importers
+          @child_importers ||= CHILD_IMPORTERS.map { |i| i.new(sde_path:, threads:) }
         end
 
         def map_constellation_ids

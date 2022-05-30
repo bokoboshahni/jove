@@ -6,9 +6,8 @@ module Jove
       class StarImporter < CelestialImporter
         self.sde_model = Star
 
-        self.sde_mapper = lambda { |data, context:|
+        self.sde_mapper = lambda { |data, **_kwargs|
           data[:celestial_type] = 'Star'
-          data[:solar_system_id] = context[:solar_system_id]
           data[:position_x] = 0.0
           data[:position_y] = 0.0
           data[:position_z] = 0.0
@@ -16,19 +15,12 @@ module Jove
           data.merge!(data.delete(:statistics))
         }
 
-        def import_all # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-          paths = Dir[File.join(sde_path, 'fsd/universe/**/solarsystem.staticdata')]
-          progress&.update(total: paths.count)
-          rows = Parallel.map(paths, in_threads: Etc.nprocessors) do |path|
-            solar_system = YAML.load_file(path)
-            next unless solar_system['star']
+        def import_solar_system(solar_system)
+          return unless solar_system['star']
 
-            stars = map_sde_attributes(solar_system['star'],
-                                       context: { solar_system_id: solar_system['solarSystemID'] })
-            progress&.advance
-            stars
-          end.compact
-          sde_model.upsert_all(rows.flatten)
+          star = solar_system['star'].merge!('solarSystemID' => solar_system['solarSystemID'])
+          star = map_sde_attributes(star)
+          sde_model.upsert(star)
         end
       end
     end

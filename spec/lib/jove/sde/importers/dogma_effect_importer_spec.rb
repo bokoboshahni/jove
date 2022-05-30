@@ -10,7 +10,8 @@ RSpec.describe Jove::SDE::Importers::DogmaEffectImporter, type: :lib do
     end
 
     it 'saves each dogma effect' do
-      expect(importer.import_all.rows.flatten).to match_array(dogma_effect_ids)
+      importer.import_all
+      expect(DogmaEffect.pluck(:id)).to match_array(dogma_effect_ids)
     end
   end
 end

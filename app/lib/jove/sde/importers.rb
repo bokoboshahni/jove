@@ -7,8 +7,7 @@ module Jove
         [
           GraphicImporter, IconImporter,
           RegionImporter, ConstellationImporter, SolarSystemImporter,
-          StarImporter, SecondarySunImporter, PlanetImporter, MoonImporter, AsteroidBeltImporter,
-          StargateImporter, StationImporter, StationOperationImporter, StationServiceImporter,
+          StationOperationImporter, StationServiceImporter,
           CategoryImporter, GroupImporter, MarketGroupImporter, MetaGroupImporter, UnitImporter,
           TypeImporter, DogmaAttributeImporter, DogmaEffectImporter, DogmaEffectModifierImporter, DogmaCategoryImporter,
           BlueprintActivityImporter, TypeMaterialImporter, PlanetSchematicImporter,

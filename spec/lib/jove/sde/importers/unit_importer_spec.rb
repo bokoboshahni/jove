@@ -10,7 +10,8 @@ RSpec.describe Jove::SDE::Importers::UnitImporter, type: :lib do
     end
 
     it 'saves each unit' do
-      expect(importer.import_all.rows.flatten).to match_array(unit_ids)
+      importer.import_all
+      expect(Unit.pluck(:id)).to match_array(unit_ids)
     end
   end
 end

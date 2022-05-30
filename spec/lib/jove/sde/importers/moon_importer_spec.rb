@@ -4,18 +4,22 @@ require 'rails_helper'
 
 RSpec.describe Jove::SDE::Importers::MoonImporter, type: :lib do
   subject(:importer) { described_class.new(sde_path: Rails.root.join('spec/fixtures/sde')) }
-  describe '#import_all' do
+
+  describe '#import_solar_system' do
+    let(:solar_system_data) do
+      YAML.load_file('spec/fixtures/sde/fsd/universe/eve/TheForge/Kimotoro/Jita/solarsystem.staticdata')
+    end
+    let(:solar_system_id) { solar_system_data['solarSystemID'] }
+
     let(:moon_ids) do
-      Dir[Rails.root.join('spec/fixtures/sde/fsd/universe/**/solarsystem.staticdata')].each_with_object([]) do |path, a|
-        solar_system = YAML.load_file(path)
-        solar_system['planets'].each_value do |planet|
-          planet['moons']&.each_key { |moon_id| a << moon_id }
-        end
+      solar_system_data['planets'].values.each_with_object([]) do |planet, a|
+        planet['moons']&.each_key { |id| a << id }
       end
     end
 
     it 'saves each moon' do
-      expect(importer.import_all.rows.flatten).to match_array(moon_ids)
+      importer.import_solar_system(solar_system_data)
+      expect(Moon.pluck(:id)).to match_array(moon_ids)
     end
   end
 end

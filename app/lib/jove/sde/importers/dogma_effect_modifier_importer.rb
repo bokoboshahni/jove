@@ -23,7 +23,7 @@ module Jove
 
             progress&.advance
           end
-          sde_model.upsert_all(rows)
+          sde_model.upsert_all(rows, returning: sde_model.primary_key) unless rows.empty?
         end
       end
     end

@@ -10,7 +10,8 @@ RSpec.describe Jove::SDE::Importers::CategoryImporter, type: :lib do
     end
 
     it 'saves each category' do
-      expect(importer.import_all.rows.flatten).to match_array(category_ids)
+      importer.import_all
+      expect(Category.pluck(:id)).to match_array(category_ids)
     end
   end
 end

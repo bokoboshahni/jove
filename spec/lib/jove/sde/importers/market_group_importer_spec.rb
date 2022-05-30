@@ -10,7 +10,8 @@ RSpec.describe Jove::SDE::Importers::MarketGroupImporter, type: :lib do
     end
 
     it 'saves each market group' do
-      expect(importer.import_all.rows.flatten).to match_array(market_group_ids)
+      importer.import_all
+      expect(MarketGroup.pluck(:id)).to match_array(market_group_ids)
     end
 
     it 'builds ancestry' do

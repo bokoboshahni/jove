@@ -10,7 +10,8 @@ RSpec.describe Jove::SDE::Importers::DogmaAttributeImporter, type: :lib do
     end
 
     it 'saves each dogma attribute' do
-      expect(importer.import_all.rows.flatten).to match_array(dogma_attribute_ids)
+      importer.import_all
+      expect(DogmaAttribute.pluck(:id)).to match_array(dogma_attribute_ids)
     end
   end
 end

@@ -20,6 +20,7 @@
 # **`log_data`**               | `jsonb`            |
 # **`status`**                 | `enum`             | `not null`
 # **`status_exception`**       | `jsonb`            |
+# **`status_log`**             | `text`             | `is an Array`
 # **`created_at`**             | `datetime`         | `not null`
 # **`updated_at`**             | `datetime`         | `not null`
 #
@@ -149,7 +150,10 @@ RSpec.describe StaticDataVersion, type: :model do
     before do
       command = instance_double('TTY::Command')
       allow(command).to receive(:run!).with('which unzip').and_return(which_unzip_result)
-      allow(command).to receive(:run!).with('unzip', anything).and_return(unzip_result)
+      allow(command).to receive(:run!).with('unzip -qq', anything, any_args).and_return(unzip_result)
+
+      allow(which_unzip_result).to receive(:each)
+      allow(unzip_result).to receive(:each)
 
       command_class = class_double('TTY::Command').as_stubbed_const
       allow(command_class).to receive(:new).and_return(command)
@@ -170,6 +174,7 @@ RSpec.describe StaticDataVersion, type: :model do
 
           importer_class_double = class_double(importer_class.name).as_stubbed_const
           allow(importer_class_double).to receive(:new).and_return(importer_double)
+          allow(importer_class_double).to receive(:sde_model).and_return(importer_class.sde_model)
         end
 
         version.import!
@@ -190,6 +195,12 @@ RSpec.describe StaticDataVersion, type: :model do
 
       it 'updates the current version' do
         expect(version).to be_current
+      end
+
+      it 'writes the status log to the version' do
+        Jove::SDE::Importers.all.each do |importer_class|
+          expect(version.status_log.grep(/Imported #{importer_class.sde_model.name}/)).not_to be_empty
+        end
       end
     end
 

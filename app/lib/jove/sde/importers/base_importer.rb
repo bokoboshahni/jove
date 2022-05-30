@@ -31,9 +31,11 @@ module Jove
         class_attribute :sde_localized
         self.sde_localized = []
 
-        def initialize(sde_path:, progress: nil)
+        def initialize(sde_path:, progress: nil, logger: Rails.logger, threads: Etc.nprocessors)
+          @logger = logger
           @sde_path = sde_path
           @progress = progress
+          @threads = threads
         end
 
         def import_all
@@ -45,7 +47,7 @@ module Jove
 
         protected
 
-        attr_reader :progress, :sde_path
+        attr_reader :logger, :progress, :sde_path, :threads
 
         def names
           @names ||=
@@ -65,10 +67,18 @@ module Jove
             progress&.advance
             record
           end
-          sde_model.upsert_all(rows)
+          sde_model.upsert_all(rows, returning: false) unless rows.empty?
         end
 
-        def map_sde_attributes(data, id: nil, model_class: nil, context: {}) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/PerceivedComplexity
+        def map_paths(paths)
+          Parallel.map(paths, in_threads: threads) do |path|
+            record = YAML.load_file(path)
+            yield(path, record) if block_given?
+            record
+          end
+        end
+
+        def map_sde_attributes(data, id: nil, context: {}) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/PerceivedComplexity
           data.deep_transform_keys! { |k| k.is_a?(String) ? k.underscore.to_sym : k }
 
           sde_mapper&.call(data, context:)
@@ -90,11 +100,27 @@ module Jove
 
           data.except!(*sde_exclude)
 
-          attribute_names = (model_class || sde_model).attribute_names
-          attribute_names.reject { |a| %w[created_at updated_at].include?(a) }
-                         .map(&:to_sym).each { |a| data[a] = nil unless data.key?(a) }
+          attribute_names.each { |a| data[a] = nil unless data.key?(a) }
 
           data
+        end
+
+        def attribute_names
+          @attribute_names ||= sde_model.attribute_names
+                                        .reject { |a| %w[created_at log_data updated_at].include?(a) }
+                                        .map!(&:to_sym)
+        end
+
+        def print_usage(description)
+          mb = GetProcessMem.new.mb
+          puts "#{description} - MEMORY USAGE(MB): #{mb.round}"
+        end
+
+        def print_usage_before_and_after
+          print_usage('Before')
+          result = yield
+          print_usage('After')
+          result
         end
       end
     end

@@ -10,7 +10,8 @@ RSpec.describe Jove::SDE::Importers::RaceImporter, type: :lib do
     end
 
     it 'saves each race' do
-      expect(importer.import_all.rows.flatten).to match_array(race_ids)
+      importer.import_all
+      expect(Race.pluck(:id)).to match_array(race_ids)
     end
   end
 end

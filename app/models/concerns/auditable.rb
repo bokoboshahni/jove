@@ -4,7 +4,7 @@ module Auditable
   extend ActiveSupport::Concern
 
   included do
-    has_logidze
+    has_logidze ignore_log_data: true
   end
 
   def last_modified_by

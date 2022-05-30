@@ -41,23 +41,25 @@ RSpec.describe Jove::SDE::Importers::BlueprintActivityImporter, type: :lib do
       end
     end
 
-    before { importer.import_all }
-
     it 'saves each blueprint activity' do
+      importer.import_all
       expect(BlueprintActivity.pluck(:blueprint_id, :activity)).to match_array(blueprint_activity_ids)
     end
 
     it 'saves each blueprint activity material' do
+      importer.import_all
       expect(BlueprintActivityMaterial.pluck(:blueprint_id, :activity, :material_id))
         .to match_array(blueprint_activity_material_ids)
     end
 
     it 'saves each blueprint activity product' do
+      importer.import_all
       expect(BlueprintActivityProduct.pluck(:blueprint_id, :activity, :product_id))
         .to match_array(blueprint_activity_product_ids)
     end
 
     it 'saves each blueprint activity material' do
+      importer.import_all
       expect(BlueprintActivitySkill.pluck(:blueprint_id, :activity, :skill_id))
         .to match_array(blueprint_activity_skill_ids)
     end

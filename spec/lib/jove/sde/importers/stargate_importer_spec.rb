@@ -4,18 +4,20 @@ require 'rails_helper'
 
 RSpec.describe Jove::SDE::Importers::StargateImporter, type: :lib do
   subject(:importer) { described_class.new(sde_path: Rails.root.join('spec/fixtures/sde')) }
-  describe '#import_all' do
-    let(:stargate_ids) do
-      Dir[Rails.root.join('spec/fixtures/sde/fsd/universe/**/solarsystem.staticdata')].each_with_object([]) do |path, a|
-        solar_system = YAML.load_file(path)
-        next unless solar_system['stargates']
 
-        solar_system['stargates'].each_key { |stargate_id| a << stargate_id }
-      end
+  describe '#import_all' do
+    let(:solar_system_data) do
+      YAML.load_file('spec/fixtures/sde/fsd/universe/eve/TheForge/Kimotoro/Jita/solarsystem.staticdata')
+    end
+    let(:solar_system_id) { solar_system_data['solarSystemID'] }
+
+    let(:stargate_ids) do
+      solar_system_data['stargates'].keys
     end
 
     it 'saves each stargate' do
-      expect(importer.import_all.rows.flatten).to match_array(stargate_ids)
+      importer.import_solar_system(solar_system_data)
+      expect(Stargate.pluck(:id)).to match_array(stargate_ids)
     end
   end
 end

@@ -10,7 +10,8 @@ RSpec.describe Jove::SDE::Importers::GraphicImporter, type: :lib do
     end
 
     it 'saves each graphic' do
-      expect(importer.import_all.rows.flatten).to match_array(graphic_ids)
+      importer.import_all
+      expect(Graphic.pluck(:id)).to match_array(graphic_ids)
     end
   end
 end

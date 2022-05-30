@@ -1668,7 +1668,8 @@ CREATE TABLE public.static_data_versions (
     status_exception jsonb,
     created_at timestamp(6) without time zone NOT NULL,
     updated_at timestamp(6) without time zone NOT NULL,
-    log_data jsonb
+    log_data jsonb,
+    status_log text[]
 );
 
 
@@ -3823,6 +3824,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220528154811'),
 ('20220528155025'),
 ('20220528155421'),
-('20220528200046');
+('20220528200046'),
+('20220529005304');
 
 

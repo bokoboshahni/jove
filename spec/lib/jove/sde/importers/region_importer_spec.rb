@@ -14,7 +14,8 @@ RSpec.describe Jove::SDE::Importers::RegionImporter, type: :lib do
     let(:region_ids) { region_data.map { |r| r['regionID'] } }
 
     it 'saves each region' do
-      expect(importer.import_all.rows.flatten).to match_array(region_ids)
+      importer.import_all
+      expect(Region.pluck(:id)).to match_array(region_ids)
     end
   end
 end

@@ -14,7 +14,8 @@ RSpec.describe Jove::SDE::Importers::SolarSystemImporter, type: :lib do
     let(:solar_system_ids) { solar_system_data.map { |r| r['solarSystemID'] } }
 
     it 'saves each solar system' do
-      expect(importer.import_all.rows.flatten).to match_array(solar_system_ids)
+      importer.import_all
+      expect(SolarSystem.pluck(:id)).to match_array(solar_system_ids)
     end
   end
 end

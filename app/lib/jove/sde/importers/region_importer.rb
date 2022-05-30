@@ -27,12 +27,22 @@ module Jove
           paths = Dir[File.join(sde_path, 'fsd/universe/**/region.staticdata')]
           progress&.update(total: paths.count)
           rows = paths.map do |path|
-            universe = File.basename(File.dirname(path, 2))
-            region = map_sde_attributes(YAML.load_file(path), context: { universe: })
+            universe = universe_from_path(path)
+            region = map_region(YAML.load_file(path), universe)
             progress&.advance
             region
           end
-          sde_model.upsert_all(rows)
+          sde_model.upsert_all(rows, returning: false) unless rows.empty?
+        end
+
+        private
+
+        def map_region(region, universe)
+          map_sde_attributes(region, context: { universe: })
+        end
+
+        def universe_from_path(path)
+          File.basename(File.dirname(path, 2))
         end
       end
     end

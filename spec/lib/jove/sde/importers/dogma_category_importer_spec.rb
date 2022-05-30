@@ -10,7 +10,8 @@ RSpec.describe Jove::SDE::Importers::DogmaCategoryImporter, type: :lib do
     end
 
     it 'saves each dogma category' do
-      expect(importer.import_all.rows.flatten).to match_array(dogma_category_ids)
+      importer.import_all
+      expect(DogmaCategory.pluck(:id)).to match_array(dogma_category_ids)
     end
   end
 end

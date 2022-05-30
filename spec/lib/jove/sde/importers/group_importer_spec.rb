@@ -10,7 +10,8 @@ RSpec.describe Jove::SDE::Importers::GroupImporter, type: :lib do
     end
 
     it 'saves each group' do
-      expect(importer.import_all.rows.flatten).to match_array(group_ids)
+      importer.import_all
+      expect(Group.pluck(:id)).to match_array(group_ids)
     end
   end
 end

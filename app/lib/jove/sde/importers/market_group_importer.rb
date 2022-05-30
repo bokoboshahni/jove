@@ -28,7 +28,7 @@ module Jove
             progress&.advance
             record
           end
-          sde_model.upsert_all(rows)
+          sde_model.upsert_all(rows, returning: false) unless rows.empty?
         end
 
         def self.build_ancestry_from_parent_ids(market_groups, parent_id = nil, ancestor_ids = [])

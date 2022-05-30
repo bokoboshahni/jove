@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'down/errors'
+
 module Jove
   class Configuration
     DEFAULT_USER_AGENT = 'Jove/1.0; (+https://github.com/bokoboshahni/jove)'
