@@ -4,6 +4,8 @@ module Admin
   class StaticDataVersionsController < AdminController
     include TabularController
 
+    around_action :use_logidze_responsible, only: %i[check download import]
+
     before_action :find_version, only: %i[show confirm_download download confirm_import import]
 
     def index

@@ -1,4 +1,7 @@
 :dynamic: true
+:schedule:
+  CheckNewStaticDataVersionJob:
+    cron: '0 0 * * *'
 :queues:
   - [default, 1]
   - [low, 10]

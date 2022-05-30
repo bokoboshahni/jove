@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CheckStaticDataVersionsJob
+class CheckNewStaticDataVersionJob
   include Sidekiq::Job
 
   def perform
