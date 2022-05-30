@@ -94,6 +94,8 @@
 * create schema for active_storage ([fd694a5](https://github.com/bokoboshahni/jove/commit/fd694a55dd8747927b8760874b2cb117fca0d2c3))
 
 
+## [1.1.7](https://github.com/bokoboshahni/jove/compare/v1.1.6...v1.1.7) (2022-05-30)
+
 ## [1.1.6](https://github.com/bokoboshahni/jove/compare/v1.1.5...v1.1.6) (2022-05-25)
 
 ## [1.1.5](https://github.com/bokoboshahni/jove/compare/v1.1.4...v1.1.5) (2022-05-24)
