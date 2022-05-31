@@ -17,7 +17,6 @@
 # **`imported_at`**            | `datetime`         |
 # **`importing_at`**           | `datetime`         |
 # **`importing_failed_at`**    | `datetime`         |
-# **`log_data`**               | `jsonb`            |
 # **`status`**                 | `enum`             | `not null`
 # **`status_exception`**       | `jsonb`            |
 # **`status_log`**             | `text`             | `is an Array`

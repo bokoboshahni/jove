@@ -33,6 +33,7 @@ module Jove
           data = YAML.load_file(File.join(sde_path, 'fsd/typeIDs.yaml'))
           dogma = YAML.load_file(File.join(sde_path, 'fsd/typeDogma.yaml'))
           blueprints = YAML.load_file(File.join(sde_path, 'fsd/blueprints.yaml'))
+          packaged_volumes = JSON.parse(File.read(Rails.root.join('db/packaged_volumes.json')))
           progress&.update(total: data.count)
           rows = data.map do |id, orig|
             blueprint = blueprints[id]
@@ -43,6 +44,7 @@ module Jove
                 dogma_effects: dogma[id]['dogmaEffects']
               )
             end
+            orig[:packaged_volume] = packaged_volumes[id.to_s]
             record = map_sde_attributes(orig, id:)
             progress&.advance
             record

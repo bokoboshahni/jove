@@ -1916,7 +1916,9 @@ CREATE TABLE public.units (
     name text NOT NULL,
     created_at timestamp(6) without time zone NOT NULL,
     updated_at timestamp(6) without time zone NOT NULL,
-    log_data jsonb
+    log_data jsonb,
+    description text,
+    display_name text
 );
 
 
@@ -3825,6 +3827,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220528155025'),
 ('20220528155421'),
 ('20220528200046'),
-('20220529005304');
+('20220529005304'),
+('20220531005714');
 
 

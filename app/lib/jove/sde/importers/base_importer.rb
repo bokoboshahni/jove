@@ -60,7 +60,7 @@ module Jove
         end
 
         def import_merged
-          data = YAML.load_file(File.join(sde_path, sde_file))
+          data = YAML.load_file(resolve_path(sde_file))
           progress&.update(total: data.count)
           rows = data.map do |id, orig|
             record = map_sde_attributes(orig, id:)
@@ -68,6 +68,14 @@ module Jove
             record
           end
           sde_model.upsert_all(rows, returning: false) unless rows.empty?
+        end
+
+        def resolve_path(path)
+          if Pathname.new(path).absolute?
+            path
+          else
+            File.join(sde_path, path)
+          end
         end
 
         def map_paths(paths)

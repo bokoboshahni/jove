@@ -18,6 +18,12 @@ RSpec.describe Jove::SDE::Importers::TypeImporter, type: :lib do
       expect(Type.pluck(:id)).to match_array(type_ids)
     end
 
+    it 'saves packaged volumes' do
+      importer.import_all
+      type = Type.find(588)
+      expect([type.packaged_volume, type.volume]).to eq([2500.0, 15_800.0])
+    end
+
     it 'saves dogma attributes for each type' do
       importer.import_all
       Type.where(id: type_dogma.keys).each do |type|

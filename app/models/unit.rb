@@ -8,13 +8,15 @@ require 'csv'
 #
 # ### Columns
 #
-# Name              | Type               | Attributes
-# ----------------- | ------------------ | ---------------------------
-# **`id`**          | `bigint`           | `not null, primary key`
-# **`log_data`**    | `jsonb`            |
-# **`name`**        | `text`             | `not null`
-# **`created_at`**  | `datetime`         | `not null`
-# **`updated_at`**  | `datetime`         | `not null`
+# Name                | Type               | Attributes
+# ------------------- | ------------------ | ---------------------------
+# **`id`**            | `bigint`           | `not null, primary key`
+# **`description`**   | `text`             |
+# **`display_name`**  | `text`             |
+# **`log_data`**      | `jsonb`            |
+# **`name`**          | `text`             | `not null`
+# **`created_at`**    | `datetime`         | `not null`
+# **`updated_at`**    | `datetime`         | `not null`
 #
 class Unit < ApplicationRecord
   include SDEImportable
