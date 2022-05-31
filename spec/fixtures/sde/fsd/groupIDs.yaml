@@ -1,0 +1,173 @@
+---
+0:
+  anchorable: false
+  anchored: false
+  categoryID: 0
+  fittableNonSingleton: false
+  name:
+    de: "#System"
+    en: "#System"
+    fr: "#Système"
+    ja: "#システム"
+    ru: "#Система"
+    zh: "#星系"
+  published: false
+  useBasePrice: false
+2:
+  anchorable: false
+  anchored: false
+  categoryID: 1
+  fittableNonSingleton: false
+  name:
+    de: Corporation
+    en: Corporation
+    fr: Corporation
+    ja: コーポレーション
+    ru: Корпорация
+    zh: 军团
+  published: false
+  useBasePrice: false
+3:
+  anchorable: false
+  anchored: false
+  categoryID: 2
+  fittableNonSingleton: false
+  name:
+    de: Region
+    en: Region
+    fr: Région
+    ja: リージョン
+    ru: Сектор
+    zh: 星域
+  published: false
+  useBasePrice: false
+4:
+  anchorable: false
+  anchored: false
+  categoryID: 2
+  fittableNonSingleton: false
+  name:
+    de: Konstellation
+    en: Constellation
+    fr: Constellation
+    ja: コンステレーション
+    ru: Созвездие
+    zh: 星座
+  published: false
+  useBasePrice: false
+5:
+  anchorable: false
+  anchored: false
+  categoryID: 2
+  fittableNonSingleton: false
+  name:
+    de: Sonnensystem
+    en: Solar System
+    fr: Système solaire
+    ja: ソーラーシステム
+    ru: Планетная система
+    zh: 星系
+  published: false
+  useBasePrice: false
+6:
+  anchorable: false
+  anchored: false
+  categoryID: 2
+  fittableNonSingleton: false
+  name:
+    de: Sonne
+    en: Sun
+    fr: Soleil
+    ja: 恒星
+    ru: Звезда
+    zh: 恒星
+  published: false
+  useBasePrice: false
+7:
+  anchorable: false
+  anchored: false
+  categoryID: 2
+  fittableNonSingleton: false
+  name:
+    de: Planet
+    en: Planet
+    fr: Planète
+    ja: 惑星
+    ru: Планета
+    zh: 行星
+  published: false
+  useBasePrice: false
+8:
+  anchorable: false
+  anchored: false
+  categoryID: 2
+  fittableNonSingleton: false
+  name:
+    de: Mond
+    en: Moon
+    fr: Lune
+    ja: 衛星
+    ru: Луна
+    zh: 卫星
+  published: false
+  useBasePrice: false
+9:
+  anchorable: false
+  anchored: false
+  categoryID: 2
+  fittableNonSingleton: false
+  iconID: 15
+  name:
+    de: Asteroidengürtel
+    en: Asteroid Belt
+    fr: Ceinture d'astéroïdes
+    ja: アステロイドベルト
+    ru: Пояс астероидов
+    zh: 小行星带
+  published: false
+  useBasePrice: false
+12:
+  anchorable: false
+  anchored: false
+  categoryID: 2
+  fittableNonSingleton: false
+  iconID: 16
+  name:
+    de: Frachtcontainer
+    en: Cargo Container
+    fr: Conteneur de fret
+    ja: カーゴコンテナ
+    ru: Грузовой контейнер
+    zh: 货柜
+  published: true
+  useBasePrice: true
+14:
+  anchorable: false
+  anchored: false
+  categoryID: 2
+  fittableNonSingleton: false
+  iconID: 0
+  name:
+    de: Biomasse
+    en: Biomass
+    fr: Biomasse
+    ja: バイオマス
+    ru: Биомасса
+    zh: 生物质
+  published: true
+  useBasePrice: false
+18:
+  anchorable: false
+  anchored: false
+  categoryID: 4
+  fittableNonSingleton: false
+  iconID: 22
+  name:
+    de: Mineralien
+    en: Mineral
+    fr: Minéral
+    ja: 無機物
+    ru: Минералы
+    zh: 矿物
+  published: true
+  useBasePrice: true

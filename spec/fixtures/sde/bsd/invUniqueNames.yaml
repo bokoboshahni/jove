@@ -1,0 +1,151 @@
+---
+- groupID: 19
+  itemID: 500001
+  itemName: Caldari State
+- groupID: 19
+  itemID: 500002
+  itemName: Minmatar Republic
+- groupID: 19
+  itemID: 500003
+  itemName: Amarr Empire
+- groupID: 19
+  itemID: 500004
+  itemName: Gallente Federation
+- groupID: 19
+  itemID: 500005
+  itemName: Jove Empire
+- groupID: 19
+  itemID: 500006
+  itemName: CONCORD Assembly
+- groupID: 19
+  itemID: 500007
+  itemName: Ammatar Mandate
+- groupID: 19
+  itemID: 500008
+  itemName: Khanid Kingdom
+- groupID: 19
+  itemID: 500009
+  itemName: The Syndicate
+- groupID: 19
+  itemID: 500010
+  itemName: Guristas Pirates
+- groupID: 19
+  itemID: 500011
+  itemName: Angel Cartel
+- groupID: 19
+  itemID: 500012
+  itemName: Blood Raider Covenant
+- groupID: 19
+  itemID: 500013
+  itemName: The InterBus
+- groupID: 19
+  itemID: 500014
+  itemName: ORE
+- groupID: 19
+  itemID: 500015
+  itemName: Thukker Tribe
+- groupID: 19
+  itemID: 500016
+  itemName: Servant Sisters of EVE
+- groupID: 19
+  itemID: 500017
+  itemName: The Society of Conscious Thought
+- groupID: 19
+  itemID: 500018
+  itemName: Mordu's Legion Command
+- groupID: 19
+  itemID: 500019
+  itemName: Sansha's Nation
+- groupID: 19
+  itemID: 500020
+  itemName: Serpentis
+- groupID: 19
+  itemID: 500026
+  itemName: Triglavian Collective
+- groupID: 19
+  itemID: 500028
+  itemName: Association for Interdisciplinary Research
+- groupID: 2
+  itemID: 1000002
+  itemName: CBD Corporation
+- groupID: 2
+  itemID: 1000003
+  itemName: Prompt Delivery
+- groupID: 2
+  itemID: 1000004
+  itemName: Ytiri
+- groupID: 2
+  itemID: 1000005
+  itemName: Hyasyoda Corporation
+- groupID: 2
+  itemID: 1000006
+  itemName: Deep Core Mining Inc.
+- groupID: 2
+  itemID: 1000007
+  itemName: Poksu Mineral Group
+- groupID: 2
+  itemID: 1000008
+  itemName: Minedrill
+- groupID: 2
+  itemID: 1000009
+  itemName: Caldari Provisions
+- groupID: 2
+  itemID: 1000010
+  itemName: Kaalakiota Corporation
+- groupID: 2
+  itemID: 1000011
+  itemName: Wiyrkomi Corporation
+- groupID: 2
+  itemID: 1000012
+  itemName: Top Down
+- groupID: 2
+  itemID: 1000013
+  itemName: Rapid Assembly
+- groupID: 2
+  itemID: 1000014
+  itemName: Perkone
+- groupID: 2
+  itemID: 1000015
+  itemName: Caldari Steel
+- groupID: 2
+  itemID: 1000016
+  itemName: Zainou
+- groupID: 2
+  itemID: 1000017
+  itemName: Nugoeihuvi Corporation
+- groupID: 2
+  itemID: 1000018
+  itemName: Echelon Entertainment
+- groupID: 2
+  itemID: 1000019
+  itemName: Ishukone Corporation
+- groupID: 2
+  itemID: 1000020
+  itemName: Lai Dai Corporation
+- groupID: 2
+  itemID: 1000021
+  itemName: Zero-G Research Firm
+- groupID: 2
+  itemID: 1000022
+  itemName: Propel Dynamics
+- groupID: 2
+  itemID: 1000023
+  itemName: Expert Distribution
+- groupID: 2
+  itemID: 1000024
+  itemName: CBD Sell Division
+- groupID: 2
+  itemID: 1000025
+  itemName: Sukuuvestaa Corporation
+- groupID: 2
+  itemID: 1000026
+  itemName: Caldari Constructions
+- groupID: 2
+  itemID: 1000027
+  itemName: Expert Housing
+- groupID: 2
+  itemID: 1000028
+  itemName: Caldari Funds Unlimited
+- groupID: 2
+  itemID: 1000029
+  itemName: State and Region Bank

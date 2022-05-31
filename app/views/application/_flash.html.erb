@@ -7,5 +7,9 @@
     <%= render(Jove::Banner::Component.new(color: :success, auto_dismiss: flash[:auto_dismiss])) do |b| %>
       <%= flash[:success] %>
     <% end %>
+  <% elsif flash[:primary] %>
+    <%= render(Jove::Banner::Component.new(color: :primary, auto_dismiss: flash[:auto_dismiss])) do |b| %>
+      <%= flash[:primary] %>
+    <% end %>
   <% end %>
 <% end %>

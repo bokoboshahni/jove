@@ -1,0 +1,29 @@
+<%= render(Jove::TurboGrid::Component.new(id: :versions, scope: versions, params:)) do |grid| %>
+  <% grid.column(label: t('.columns.checksum'), sorted: sorted?(:checksum), sort_dir:) %>
+  <% grid.column(label: t('.columns.status'), sorted: sorted?(:status), sort_dir:) %>
+  <% grid.column(label: t('.columns.downloaded_at'), sorted: sorted?(:downloaded_at), sort_dir:) %>
+  <% grid.column(label: t('.columns.imported_at'), sorted: sorted?(:imported_at), sort_dir:) %>
+  <% grid.column(actions: true, class: 'w-10') %>
+
+  <% versions.each do |version| %>
+    <% grid.row do |row| %>
+      <% row.cell do %><%= version.checksum %><% end %>
+      <% row.cell do %><%= render(Jove::Badge::Component.new(color: static_data_version_status_color(version), label: version.status.humanize)) %><% end %>
+      <% row.cell do %><%= local_time(version.downloaded_at) if version.downloaded_at %><% end %>
+      <% row.cell do %><%= local_time(version.imported_at) if version.imported_at %><% end %>
+      <% row.cell do %>
+        <%= render(Jove::Dropdown::Component.new(wrapper_class: 'max-w-menu mt-1')) do |d| %>
+          <% d.button(label: t('.actions.button', id: version.id), variant: :overflow, color: :surface, disabled: !version.importable? && !version.downloadable?) %>
+          <% d.menu do %>
+            <%= render(Jove::Menu::Component.new) do |m| %>
+              <% m.group do |g| %>
+                <% g.item label: t('.actions.download'), href: admin_static_data_version_confirm_download_path(version), leading_icon: 'heroicons/outline/cloud-download', form: true, data: { turbo_frame: 'modal' } if version.downloadable? %>
+                <% g.item label: t('.actions.import'), href: admin_static_data_version_confirm_import_path(version), leading_icon: 'heroicons/outline/database', form: true, data: { turbo_frame: 'modal' } if version.importable? %>
+              <% end %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

@@ -1,0 +1,71 @@
+---
+3008416:
+  agentTypeID: 2
+  corporationID: 1000002
+  divisionID: 22
+  isLocator: false
+  level: 1
+  locationID: 60000004
+3008417:
+  agentTypeID: 2
+  corporationID: 1000002
+  divisionID: 22
+  isLocator: false
+  level: 1
+  locationID: 60000259
+3008418:
+  agentTypeID: 2
+  corporationID: 1000002
+  divisionID: 24
+  isLocator: false
+  level: 1
+  locationID: 60000262
+3008419:
+  agentTypeID: 2
+  corporationID: 1000002
+  divisionID: 22
+  isLocator: true
+  level: 2
+  locationID: 60000268
+3008420:
+  agentTypeID: 2
+  corporationID: 1000002
+  divisionID: 22
+  isLocator: false
+  level: 2
+  locationID: 60000265
+3008421:
+  agentTypeID: 2
+  corporationID: 1000002
+  divisionID: 23
+  isLocator: false
+  level: 2
+  locationID: 60000196
+3008422:
+  agentTypeID: 2
+  corporationID: 1000002
+  divisionID: 22
+  isLocator: true
+  level: 2
+  locationID: 60000184
+3008423:
+  agentTypeID: 2
+  corporationID: 1000002
+  divisionID: 22
+  isLocator: true
+  level: 3
+  locationID: 60000187
+3008424:
+  agentTypeID: 2
+  corporationID: 1000002
+  divisionID: 24
+  isLocator: true
+  level: 1
+  locationID: 60000190
+3008425:
+  agentTypeID: 2
+  corporationID: 1000002
+  divisionID: 24
+  isLocator: true
+  level: 2
+  locationID: 60000193

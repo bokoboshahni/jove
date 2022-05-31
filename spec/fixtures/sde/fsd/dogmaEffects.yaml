@@ -1,0 +1,2220 @@
+---
+4:
+  disallowAutoRepeat: false
+  dischargeAttributeID: 6
+  durationAttributeID: 73
+  effectCategory: 1
+  effectID: 4
+  effectName: shieldBoosting
+  electronicChance: false
+  guid: effects.ShieldBoosting
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: true
+  propulsionChance: false
+  published: false
+  rangeChance: false
+9:
+  disallowAutoRepeat: false
+  effectCategory: 2
+  effectID: 9
+  effectName: missileLaunching
+  electronicChance: false
+  guid: effects.MissileDeployment
+  isAssistance: false
+  isOffensive: true
+  isWarpSafe: false
+  propulsionChance: false
+  published: false
+  rangeChance: false
+10:
+  disallowAutoRepeat: false
+  dischargeAttributeID: 6
+  distribution: 2
+  durationAttributeID: 51
+  effectCategory: 2
+  effectID: 10
+  effectName: targetAttack
+  electronicChance: false
+  falloffAttributeID: 158
+  guid: effects.Laser
+  isAssistance: false
+  isOffensive: true
+  isWarpSafe: false
+  propulsionChance: false
+  published: false
+  rangeAttributeID: 54
+  rangeChance: false
+  trackingSpeedAttributeID: 160
+11:
+  descriptionID:
+    de: Benötigt einen Low Power Slot
+    en: Requires a low power slot
+    fr: Nécessite un emplacement basse puissance
+    ja: ローパワースロットが必要
+    ko: 로우 슬롯 전용 모듈
+    ru: Требуется разъём малой мощности
+    zh: 需要低能量槽
+  disallowAutoRepeat: false
+  displayNameID:
+    de: Low power
+    en: Low power
+    fr: Basse puissance
+    ja: ローパワー
+    ko: 로우 슬롯
+    ru: Разъёмы малой мощности
+    zh: 低能量
+  effectCategory: 0
+  effectID: 11
+  effectName: loPower
+  electronicChance: false
+  guid: ''
+  iconID: 295
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  propulsionChance: false
+  published: true
+  rangeChance: false
+12:
+  descriptionID:
+    de: Benötigt einen High Power Slot
+    en: Requires a high power slot
+    fr: Nécessite un emplacement haute puissance
+    ja: ハイパワースロットが必要
+    ko: 하이 슬롯 전용 모듈
+    ru: Требуется разъём высокой мощности
+    zh: 需要高能量槽
+  disallowAutoRepeat: false
+  displayNameID:
+    de: High power
+    en: High power
+    fr: Haute puissance
+    ja: ハイパワー
+    ko: 하이 슬롯
+    ru: Разъёмы большой мощности
+    zh: 高能量
+  effectCategory: 0
+  effectID: 12
+  effectName: hiPower
+  electronicChance: false
+  guid: ''
+  iconID: 293
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  propulsionChance: false
+  published: true
+  rangeChance: false
+13:
+  descriptionID:
+    de: Benötigt einen Medium Power Slot
+    en: Requires a medium power slot
+    fr: Nécessite un emplacement de puissance moyenne
+    ja: ミディアムパワースロットが必要
+    ko: 미드 슬롯 전용 모듈
+    ru: Требуется разъём средней мощности
+    zh: 需要中能量槽
+  disallowAutoRepeat: false
+  displayNameID:
+    de: Medium power
+    en: Medium power
+    fr: Moyenne puissance
+    ja: ミディアムパワー
+    ko: 미드 슬롯
+    ru: " Разъёмы средней мощности"
+    zh: 中级能量
+  effectCategory: 0
+  effectID: 13
+  effectName: medPower
+  electronicChance: false
+  guid: ''
+  iconID: 294
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  propulsionChance: false
+  published: true
+  rangeChance: false
+16:
+  disallowAutoRepeat: false
+  effectCategory: 1
+  effectID: 16
+  effectName: online
+  electronicChance: false
+  guid: ''
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  propulsionChance: false
+  published: false
+  rangeChance: false
+17:
+  disallowAutoRepeat: false
+  distribution: 2
+  durationAttributeID: 73
+  effectCategory: 2
+  effectID: 17
+  effectName: mining
+  electronicChance: false
+  guid: effects.Mining
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  propulsionChance: false
+  published: false
+  rangeAttributeID: 54
+  rangeChance: false
+18:
+  disallowAutoRepeat: false
+  dischargeAttributeID: 6
+  distribution: 1
+  durationAttributeID: 73
+  effectCategory: 2
+  effectID: 18
+  effectName: shieldTransfer
+  electronicChance: false
+  guid: effects.ShieldTransfer
+  isAssistance: true
+  isOffensive: false
+  isWarpSafe: false
+  propulsionChance: false
+  published: false
+  rangeAttributeID: 87
+  rangeChance: false
+21:
+  disallowAutoRepeat: false
+  effectCategory: 4
+  effectID: 21
+  effectName: shieldCapacityBonusOnline
+  electronicChance: false
+  guid: ''
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  modifierInfo:
+  - domain: shipID
+    func: ItemModifier
+    modifiedAttributeID: 263
+    modifyingAttributeID: 72
+    operation: 2
+  propulsionChance: false
+  published: false
+  rangeChance: false
+26:
+  disallowAutoRepeat: false
+  dischargeAttributeID: 6
+  durationAttributeID: 73
+  effectCategory: 1
+  effectID: 26
+  effectName: structureRepair
+  electronicChance: false
+  guid: effects.StructureRepair
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: true
+  propulsionChance: false
+  published: false
+  rangeChance: false
+27:
+  disallowAutoRepeat: false
+  dischargeAttributeID: 6
+  durationAttributeID: 73
+  effectCategory: 1
+  effectID: 27
+  effectName: armorRepair
+  electronicChance: false
+  guid: effects.ArmorRepair
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: true
+  propulsionChance: false
+  published: false
+  rangeChance: false
+34:
+  disallowAutoRepeat: false
+  dischargeAttributeID: 6
+  distribution: 2
+  durationAttributeID: 51
+  effectCategory: 2
+  effectID: 34
+  effectName: projectileFired
+  electronicChance: false
+  falloffAttributeID: 158
+  guid: effects.ProjectileFired
+  isAssistance: false
+  isOffensive: true
+  isWarpSafe: false
+  propulsionChance: false
+  published: false
+  rangeAttributeID: 54
+  rangeChance: false
+  trackingSpeedAttributeID: 160
+38:
+  disallowAutoRepeat: false
+  dischargeAttributeID: 6
+  distribution: 2
+  durationAttributeID: 73
+  effectCategory: 1
+  effectID: 38
+  effectName: empWave
+  electronicChance: false
+  guid: effects.EMPWave
+  isAssistance: false
+  isOffensive: true
+  isWarpSafe: false
+  propulsionChance: false
+  published: false
+  rangeAttributeID: 99
+  rangeChance: false
+39:
+  disallowAutoRepeat: false
+  dischargeAttributeID: 6
+  distribution: 1
+  durationAttributeID: 73
+  effectCategory: 2
+  effectID: 39
+  effectName: warpDisrupt
+  electronicChance: false
+  guid: effects.WarpDisrupt
+  isAssistance: false
+  isOffensive: true
+  isWarpSafe: false
+  modifierInfo:
+  - domain: targetID
+    func: ItemModifier
+    modifiedAttributeID: 104
+    modifyingAttributeID: 105
+    operation: 2
+  propulsionChance: false
+  published: false
+  rangeAttributeID: 54
+  rangeChance: false
+46:
+  disallowAutoRepeat: false
+  dischargeAttributeID: 6
+  durationAttributeID: 73
+  effectCategory: 2
+  effectID: 46
+  effectName: shipScan
+  electronicChance: false
+  falloffAttributeID: 510
+  guid: effects.ShipScan
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  propulsionChance: false
+  published: false
+  rangeAttributeID: 125
+  rangeChance: false
+47:
+  disallowAutoRepeat: false
+  dischargeAttributeID: 6
+  durationAttributeID: 73
+  effectCategory: 2
+  effectID: 47
+  effectName: cargoScan
+  electronicChance: false
+  guid: effects.CargoScan
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  propulsionChance: false
+  published: false
+  rangeAttributeID: 126
+  rangeChance: false
+  sfxName: None
+67:
+  disallowAutoRepeat: false
+  dischargeAttributeID: 6
+  distribution: 2
+  durationAttributeID: 73
+  effectCategory: 2
+  effectID: 67
+  effectName: miningLaser
+  electronicChance: false
+  guid: effects.Laser
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  propulsionChance: false
+  published: false
+  rangeAttributeID: 54
+  rangeChance: false
+  sfxName: None
+101:
+  disallowAutoRepeat: false
+  dischargeAttributeID: 6
+  distribution: 2
+  durationAttributeID: 51
+  effectCategory: 1
+  effectID: 101
+  effectName: useMissiles
+  electronicChance: false
+  guid: ''
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  propulsionChance: false
+  published: false
+  rangeChance: false
+103:
+  disallowAutoRepeat: false
+  distribution: 2
+  effectCategory: 1
+  effectID: 103
+  effectName: defenderMissileLaunching
+  electronicChance: false
+  guid: ''
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  propulsionChance: false
+  published: false
+  rangeChance: false
+104:
+  disallowAutoRepeat: false
+  distribution: 2
+  effectCategory: 1
+  effectID: 104
+  effectName: fofMissileLaunching
+  electronicChance: false
+  guid: effects.MissileDeployment
+  isAssistance: false
+  isOffensive: true
+  isWarpSafe: false
+  propulsionChance: false
+  published: false
+  rangeChance: false
+263:
+  descriptionID:
+    de: Sperrfeuer-Angriff - Angriff mit barrageDmgMultiplier als Multiplikator.
+    en: Barrage Attack, Attack with barrageDmgMultiplier as a damage multiplier
+    fr: Barrage Attack, Attack with barrageDmgMultiplier as a damage multiplier
+    ja: バラージ攻撃、ダメージ乗数としてバラージダメージ乗数を使用する攻撃
+    ko: 버라지 공격으로 버라지 데미지 변동을 데미지 변동으로 반영해 공격합니다.
+    ru: Barrage Attack, Attack with barrageDmgMultiplier as a damage multiplier
+    zh: 弹幕攻击，以弹幕伤害乘数作为伤害乘数进行攻击
+  disallowAutoRepeat: false
+  dischargeAttributeID: 6
+  displayNameID:
+    de: Barrage Attack
+    en: Barrage Attack
+    fr: Attaque de barrage
+    ja: バラージ攻撃
+    ko: 버라지 공격
+    ru: Barrage Attack
+    zh: 弹幕攻击
+  durationAttributeID: 51
+  effectCategory: 2
+  effectID: 263
+  effectName: barrage
+  electronicChance: false
+  falloffAttributeID: 328
+  guid: effects.Barrage
+  isAssistance: false
+  isOffensive: true
+  isWarpSafe: false
+  propulsionChance: false
+  published: true
+  rangeAttributeID: 54
+  rangeChance: false
+  trackingSpeedAttributeID: 160
+1086:
+  disallowAutoRepeat: false
+  dischargeAttributeID: 6
+  displayNameID:
+    de: projectileFired
+    en: projectileFired
+    fr: projectileFired
+    ja: プロジェクタイル発射
+    ko: 발사체 발포
+    ru: projectileFired
+    zh: 射弹已发射
+  distribution: 1
+  durationAttributeID: 51
+  effectCategory: 2
+  effectID: 1086
+  effectName: projectileFiredForEntities
+  electronicChance: false
+  falloffAttributeID: 158
+  guid: effects.ProjectileFiredForEntities
+  isAssistance: false
+  isOffensive: true
+  isWarpSafe: false
+  propulsionChance: false
+  published: true
+  rangeAttributeID: 54
+  rangeChance: false
+  trackingSpeedAttributeID: 160
+1199:
+  descriptionID:
+    de: Kampf
+    en: Combat
+    fr: Combat
+    ja: 戦闘
+    ko: 전투
+    ru: Combat
+    zh: 战斗
+  disallowAutoRepeat: false
+  dischargeAttributeID: 6
+  displayNameID:
+    de: targetAttack
+    en: targetAttack
+    fr: targetAttack
+    ja: ターゲット攻撃
+    ko: 타겟 공격
+    ru: targetAttack
+    zh: 目标攻击
+  distribution: 2
+  durationAttributeID: 51
+  effectCategory: 2
+  effectID: 1199
+  effectName: targetAttackForStructures
+  electronicChance: false
+  falloffAttributeID: 158
+  guid: effects.ProjectileFiredForEntities
+  isAssistance: false
+  isOffensive: true
+  isWarpSafe: false
+  propulsionChance: false
+  published: true
+  rangeAttributeID: 54
+  rangeChance: false
+  trackingSpeedAttributeID: 160
+1549:
+  disallowAutoRepeat: false
+  dischargeAttributeID: 6
+  distribution: 1
+  durationAttributeID: 73
+  effectCategory: 2
+  effectID: 1549
+  effectName: ewTargetPaint
+  electronicChance: false
+  falloffAttributeID: 158
+  guid: effects.TargetPaint
+  iconID: 0
+  isAssistance: false
+  isOffensive: true
+  isWarpSafe: false
+  modifierInfo:
+  - domain: targetID
+    func: ItemModifier
+    modifiedAttributeID: 552
+    modifyingAttributeID: 554
+    operation: 6
+  propulsionChance: false
+  published: false
+  rangeAttributeID: 54
+  rangeChance: true
+1878:
+  disallowAutoRepeat: false
+  distribution: 1
+  durationAttributeID: 943
+  effectCategory: 2
+  effectID: 1878
+  effectName: entitySensorDampen
+  electronicChance: false
+  falloffAttributeID: 950
+  guid: effects.ElectronicAttributeModifyTarget
+  isAssistance: false
+  isOffensive: true
+  isWarpSafe: false
+  modifierInfo:
+  - domain: targetID
+    func: ItemModifier
+    modifiedAttributeID: 76
+    modifyingAttributeID: 237
+    operation: 4
+  - domain: targetID
+    func: ItemModifier
+    modifiedAttributeID: 79
+    modifyingAttributeID: 242
+    operation: 4
+  - domain: targetID
+    func: ItemModifier
+    modifiedAttributeID: 192
+    modifyingAttributeID: 235
+    operation: 2
+  - domain: targetID
+    func: ItemModifier
+    modifiedAttributeID: 564
+    modifyingAttributeID: 565
+    operation: 0
+  npcActivationChanceAttributeID: 932
+  propulsionChance: false
+  published: false
+  rangeAttributeID: 938
+  rangeChance: true
+1879:
+  disallowAutoRepeat: false
+  distribution: 1
+  durationAttributeID: 945
+  effectCategory: 2
+  effectID: 1879
+  effectName: entityTargetPaint
+  electronicChance: false
+  falloffAttributeID: 954
+  guid: effects.TargetPaint
+  iconID: 0
+  isAssistance: false
+  isOffensive: true
+  isWarpSafe: false
+  modifierInfo:
+  - domain: targetID
+    func: ItemModifier
+    modifiedAttributeID: 552
+    modifyingAttributeID: 554
+    operation: 6
+  npcActivationChanceAttributeID: 935
+  propulsionChance: false
+  published: false
+  rangeAttributeID: 941
+  rangeChance: true
+2246:
+  disallowAutoRepeat: false
+  dischargeAttributeID: 6
+  durationAttributeID: 73
+  effectCategory: 2
+  effectID: 2246
+  effectName: scanStrengthTargetPercentBonus
+  electronicChance: false
+  falloffAttributeID: 158
+  guid: ''
+  isAssistance: true
+  isOffensive: false
+  isWarpSafe: false
+  modifierInfo:
+  - domain: targetID
+    func: ItemModifier
+    modifiedAttributeID: 211
+    modifyingAttributeID: 1027
+    operation: 6
+  - domain: targetID
+    func: ItemModifier
+    modifiedAttributeID: 210
+    modifyingAttributeID: 1029
+    operation: 6
+  - domain: targetID
+    func: ItemModifier
+    modifiedAttributeID: 209
+    modifyingAttributeID: 1028
+    operation: 6
+  - domain: targetID
+    func: ItemModifier
+    modifiedAttributeID: 208
+    modifyingAttributeID: 1030
+    operation: 6
+  propulsionChance: false
+  published: false
+  rangeAttributeID: 54
+  rangeChance: true
+81:
+  disallowAutoRepeat: false
+  dischargeAttributeID: 6
+  durationAttributeID: 73
+  effectCategory: 1
+  effectID: 81
+  effectName: surveyScan
+  electronicChance: false
+  guid: effects.SurveyScan
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  propulsionChance: false
+  published: false
+  rangeAttributeID: 197
+  rangeChance: false
+6995:
+  descriptionID:
+    de: Haupteffekt atomarer Strahlenkanone
+    en: Atomic Beam Cannon main effect
+    fr: Effet principal du Canon à Rayons Atomique
+    ja: アトミックビームキャノンの主な効果
+    ko: 원자 빔 캐넌 주요 효과
+    ru: Основной эффект атомно-лучевой пушки
+    zh: 原子集束加农炮主效果
+  disallowAutoRepeat: false
+  dischargeAttributeID: 6
+  distribution: 2
+  durationAttributeID: 51
+  effectCategory: 2
+  effectID: 6995
+  effectName: targetDisintegratorAttack
+  electronicChance: false
+  guid: effects.TriglavianBeam,effects.AttackMode
+  isAssistance: false
+  isOffensive: true
+  isWarpSafe: false
+  propulsionChance: false
+  published: false
+  rangeAttributeID: 54
+  rangeChance: false
+  trackingSpeedAttributeID: 160
+40:
+  descriptionID:
+    de: Benötigt einen Montageplatz für Werfer
+    en: Requries a launcher hardpoint
+    fr: Nécessite un point de fixation de lanceur
+    ja: ランチャーハードポイントが必要です
+    ko: 런처 하드포인트 요구
+    ru: Требуется точка монтажа пусковых установок
+    zh: 需要发射器挂点
+  disallowAutoRepeat: false
+  displayNameID:
+    de: Werfer
+    en: Launcher
+    fr: Lanceur
+    ja: ランチャー
+    ko: 런처
+    ru: Пусковая установка
+    zh: 发射器
+  effectCategory: 0
+  effectID: 40
+  effectName: launcherFitted
+  electronicChance: false
+  guid: ''
+  iconID: 168
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  propulsionChance: false
+  published: true
+  rangeChance: false
+42:
+  descriptionID:
+    de: Benötigt einen Montageplatz für Geschütztürme
+    en: Requries a turret hardpoint
+    fr: Nécessite un point de fixation de tourelle
+    ja: タレットハードポイントが必要です
+    ko: 터렛 하드포인트 요구
+    ru: Требуется точка монтажа турелей
+    zh: 需要炮台挂点
+  disallowAutoRepeat: false
+  displayNameID:
+    de: Geschützturm
+    en: Turret
+    fr: Tourelle
+    ja: タレット
+    ko: 터렛
+    ru: Турель
+    zh: 炮台
+  effectCategory: 0
+  effectID: 42
+  effectName: turretFitted
+  electronicChance: false
+  guid: ''
+  iconID: 1432
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  propulsionChance: false
+  published: true
+  rangeChance: false
+109:
+  descriptionID:
+    de: Skaliert den Energiespeicherbedarf von allen eingebauten Geschütztürmen.
+    en: Scales the capacitor need for all the fitted turret weapons.
+    fr: Échelonne les besoins énergétiques du capaciteur pour chaque tourelle installée.
+    ja: 装備されたすべてのタレット武器についてキャパシタの必要量を拡大。
+    ko: 피팅된 모든 터렛 무기에 필요한 캐패시터를 측정합니다.
+    ru: Scales the capacitor need for all the fitted turret weapons.
+    zh: 按照比例修正所有已装载的炮台武器电容需求。
+  disallowAutoRepeat: false
+  displayNameID:
+    de: turretWeaponCapacitorMultiply
+    en: turretWeaponCapacitorMultiply
+    fr: turretWeaponCapacitorMultiply
+    ja: タレット兵器キャパシタ増加
+    ko: 터렛 무기 캐패시터 변동
+    ru: turretWeaponCapacitorMultiply
+    zh: 炮台武器电容修正值
+  effectCategory: 0
+  effectID: 109
+  effectName: turretWeaponCapacitorNeedMultiply
+  electronicChance: false
+  guid: ''
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  modifierInfo:
+  - domain: shipID
+    func: LocationGroupModifier
+    groupID: 55
+    modifiedAttributeID: 6
+    modifyingAttributeID: 216
+    operation: 4
+  - domain: shipID
+    func: LocationGroupModifier
+    groupID: 53
+    modifiedAttributeID: 6
+    modifyingAttributeID: 216
+    operation: 4
+  - domain: shipID
+    func: LocationGroupModifier
+    groupID: 74
+    modifiedAttributeID: 6
+    modifyingAttributeID: 216
+    operation: 4
+  propulsionChance: false
+  published: true
+  rangeChance: false
+146:
+  descriptionID:
+    de: Boost des barrageDmgMultiplier mit PreMul des skillLevel.
+    en: Boost of damageMultiplier by PreMul of skillLevel
+    fr: Boost of damageMultiplier by PreMul of skillLevel
+    ja: スキルレベルのプレマルによるダメージ乗数のブースト
+    ko: 스킬 레벨의 변동 전 수치에 따른 데미지 변동 증폭입니다.
+    ru: Boost of damageMultiplier by PreMul of skillLevel
+    zh: 伤害乘数乘以原始技能等级后得到的加成值
+  disallowAutoRepeat: false
+  displayNameID:
+    de: DamageBonus
+    en: DamageBonus
+    fr: DamageBonus
+    ja: ダメージボーナス
+    ko: 데미지 보너스
+    ru: DamageBonus
+    zh: 伤害加成
+  effectCategory: 0
+  effectID: 146
+  effectName: damageMultiplierSkillBonus
+  electronicChance: false
+  guid: ''
+  iconID: 0
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  modifierInfo:
+  - domain: itemID
+    func: ItemModifier
+    modifiedAttributeID: 292
+    modifyingAttributeID: 280
+    operation: 0
+  propulsionChance: false
+  published: true
+  rangeChance: false
+152:
+  descriptionID:
+    de: Boost des damageMultiplierBonus mit PreMul des skillLevel
+    en: Boost of damageMultiplierBonus by PreMul of skillLevel
+    fr: Boost of damageMultiplierBonus by PreMul of skillLevel
+    ja: スキルレベルのプレマルによるダメージ乗数ボーナスのブースト
+    ko: 스킬 레벨의 변동 전 수치에 따른 데미지 변동 보너스 증폭입니다.
+    ru: Boost of damageMultiplierBonus by PreMul of skillLevel
+    zh: 伤害乘数加成乘以原始技能等级后得到的加成值
+  disallowAutoRepeat: false
+  displayNameID:
+    de: SkillBoostDamageMultiplierBonus
+    en: SkillBoostDamageMultiplierBonus
+    fr: SkillBoostDamageMultiplierBonus
+    ja: スキルブーストダメージ乗数ボーナス
+    ko: SkillBoostDamageMultiplierBonus
+    ru: SkillBoostDamageMultiplierBonus
+    zh: 技能增加伤害修正值加成
+  effectCategory: 0
+  effectID: 152
+  effectName: skillBoostDamageMultiplierBonus
+  electronicChance: false
+  guid: ''
+  iconID: 0
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  modifierInfo:
+  - domain: itemID
+    func: ItemModifier
+    modifiedAttributeID: 292
+    modifyingAttributeID: 280
+    operation: 0
+  propulsionChance: false
+  published: true
+  rangeChance: false
+550:
+  descriptionID:
+    de: Automatisch generierter Effekt
+    en: Automatically generated effect
+    fr: Effet généré automatiquement
+    ja: 自動生成効果
+    ko: 자동 생성 효과
+    ru: Automatically generated effect
+    zh: 自动生成效果
+  disallowAutoRepeat: false
+  displayNameID:
+    de: shipHTDmgBonus
+    en: shipHTDmgBonus
+    fr: shipHTDmgBonus
+    ja: 艦船HTダメージボーナス
+    ko: 함선 열 데미지 보너스
+    ru: shipHTDmgBonus
+    zh: 舰船混合炮台伤害加成
+  effectCategory: 0
+  effectID: 550
+  effectName: shipHTDmgBonusGB
+  electronicChance: false
+  guid: ''
+  iconID: 0
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  modifierInfo:
+  - domain: shipID
+    func: LocationRequiredSkillModifier
+    modifiedAttributeID: 64
+    modifyingAttributeID: 500
+    operation: 6
+    skillTypeID: 3307
+  propulsionChance: false
+  published: true
+  rangeChance: false
+157:
+  disallowAutoRepeat: false
+  effectCategory: 0
+  effectID: 157
+  effectName: largeHybridTurretDamageMultiplierBonusPostPercentDamageMultiplierLocationShipModulesRequiringLargeHybridTurret
+  electronicChance: false
+  guid: ''
+  iconID: 0
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  modifierInfo:
+  - domain: shipID
+    func: LocationRequiredSkillModifier
+    modifiedAttributeID: 64
+    modifyingAttributeID: 292
+    operation: 6
+    skillTypeID: 3307
+  propulsionChance: false
+  published: false
+  rangeChance: false
+159:
+  disallowAutoRepeat: false
+  effectCategory: 0
+  effectID: 159
+  effectName: mediumEnergyTurretDamageMultiplierBonusPostPercentDamageMultiplierLocationShipModulesRequiringMediumEnergyTurret
+  electronicChance: false
+  guid: ''
+  iconID: 0
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  modifierInfo:
+  - domain: shipID
+    func: LocationRequiredSkillModifier
+    modifiedAttributeID: 64
+    modifyingAttributeID: 292
+    operation: 6
+    skillTypeID: 3306
+  propulsionChance: false
+  published: false
+  rangeChance: false
+160:
+  disallowAutoRepeat: false
+  effectCategory: 0
+  effectID: 160
+  effectName: mediumHybridTurretDamageMultiplierBonusPostPercentDamageMultiplierLocationShipModulesRequiringMediumHybridTurret
+  electronicChance: false
+  guid: ''
+  iconID: 0
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  modifierInfo:
+  - domain: shipID
+    func: LocationRequiredSkillModifier
+    modifiedAttributeID: 64
+    modifyingAttributeID: 292
+    operation: 6
+    skillTypeID: 3304
+  propulsionChance: false
+  published: false
+  rangeChance: false
+25:
+  disallowAutoRepeat: false
+  effectCategory: 4
+  effectID: 25
+  effectName: capacitorCapacityBonus
+  electronicChance: false
+  guid: ''
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  modifierInfo:
+  - domain: shipID
+    func: ItemModifier
+    modifiedAttributeID: 482
+    modifyingAttributeID: 67
+    operation: 2
+  propulsionChance: false
+  published: false
+  rangeChance: false
+50:
+  disallowAutoRepeat: false
+  effectCategory: 4
+  effectID: 50
+  effectName: modifyShieldRechargeRate
+  electronicChance: false
+  guid: ''
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  modifierInfo:
+  - domain: shipID
+    func: ItemModifier
+    modifiedAttributeID: 479
+    modifyingAttributeID: 134
+    operation: 4
+  propulsionChance: false
+  published: false
+  rangeChance: false
+51:
+  disallowAutoRepeat: false
+  effectCategory: 4
+  effectID: 51
+  effectName: modifyPowerRechargeRate
+  electronicChance: false
+  guid: ''
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  modifierInfo:
+  - domain: shipID
+    func: ItemModifier
+    modifiedAttributeID: 55
+    modifyingAttributeID: 144
+    operation: 4
+  propulsionChance: false
+  published: false
+  rangeChance: false
+56:
+  disallowAutoRepeat: false
+  effectCategory: 4
+  effectID: 56
+  effectName: powerOutputMultiply
+  electronicChance: false
+  guid: ''
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  modifierInfo:
+  - domain: shipID
+    func: ItemModifier
+    modifiedAttributeID: 11
+    modifyingAttributeID: 145
+    operation: 4
+  propulsionChance: false
+  published: false
+  rangeChance: false
+57:
+  disallowAutoRepeat: false
+  effectCategory: 4
+  effectID: 57
+  effectName: shieldCapacityMultiply
+  electronicChance: false
+  guid: ''
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  modifierInfo:
+  - domain: shipID
+    func: ItemModifier
+    modifiedAttributeID: 263
+    modifyingAttributeID: 146
+    operation: 4
+  propulsionChance: false
+  published: false
+  rangeChance: false
+58:
+  disallowAutoRepeat: false
+  effectCategory: 4
+  effectID: 58
+  effectName: capacitorCapacityMultiply
+  electronicChance: false
+  guid: ''
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  modifierInfo:
+  - domain: shipID
+    func: ItemModifier
+    modifiedAttributeID: 482
+    modifyingAttributeID: 147
+    operation: 4
+  propulsionChance: false
+  published: false
+  rangeChance: false
+59:
+  disallowAutoRepeat: false
+  effectCategory: 4
+  effectID: 59
+  effectName: cargoCapacityMultiply
+  electronicChance: false
+  guid: ''
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  modifierInfo:
+  - domain: shipID
+    func: ItemModifier
+    modifiedAttributeID: 38
+    modifyingAttributeID: 149
+    operation: 4
+  propulsionChance: false
+  published: false
+  rangeChance: false
+60:
+  disallowAutoRepeat: false
+  effectCategory: 4
+  effectID: 60
+  effectName: structureHPMultiply
+  electronicChance: false
+  guid: ''
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  modifierInfo:
+  - domain: shipID
+    func: ItemModifier
+    modifiedAttributeID: 9
+    modifyingAttributeID: 150
+    operation: 4
+  propulsionChance: false
+  published: false
+  rangeChance: false
+54:
+  disallowAutoRepeat: false
+  dischargeAttributeID: 6
+  durationAttributeID: 73
+  effectCategory: 2
+  effectID: 54
+  effectName: targetPassively
+  electronicChance: false
+  guid: ''
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  propulsionChance: false
+  published: false
+  rangeChance: false
+  sfxName: None
+87:
+  disallowAutoRepeat: false
+  effectCategory: 0
+  effectID: 87
+  effectName: cpuUsageMultiply
+  electronicChance: false
+  guid: ''
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  modifierInfo:
+  - domain: shipID
+    func: LocationModifier
+    modifiedAttributeID: 50
+    modifyingAttributeID: 202
+    operation: 4
+  propulsionChance: false
+  published: false
+  rangeChance: false
+  sfxName: None
+88:
+  disallowAutoRepeat: false
+  effectCategory: 0
+  effectID: 88
+  effectName: miningDurationMultiply
+  electronicChance: false
+  guid: ''
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  modifierInfo:
+  - domain: shipID
+    func: LocationGroupModifier
+    groupID: 54
+    modifiedAttributeID: 73
+    modifyingAttributeID: 203
+    operation: 4
+  propulsionChance: false
+  published: false
+  rangeChance: false
+  sfxName: None
+97:
+  disallowAutoRepeat: false
+  effectCategory: 0
+  effectID: 97
+  effectName: turretWeaponAccuracyMultiply
+  electronicChance: false
+  guid: ''
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  modifierInfo:
+  - domain: shipID
+    func: LocationGroupModifier
+    groupID: 55
+    modifiedAttributeID: 205
+    modifyingAttributeID: 205
+    operation: 4
+  - domain: shipID
+    func: LocationGroupModifier
+    groupID: 53
+    modifiedAttributeID: 205
+    modifyingAttributeID: 205
+    operation: 4
+  - domain: shipID
+    func: LocationGroupModifier
+    groupID: 74
+    modifiedAttributeID: 205
+    modifyingAttributeID: 205
+    operation: 4
+  propulsionChance: false
+  published: false
+  rangeChance: false
+  sfxName: None
+100:
+  disallowAutoRepeat: false
+  effectCategory: 0
+  effectID: 100
+  effectName: hybridWeaponAccuracyMultiply
+  electronicChance: false
+  guid: ''
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  modifierInfo:
+  - domain: shipID
+    func: LocationGroupModifier
+    groupID: 74
+    modifiedAttributeID: 205
+    modifyingAttributeID: 205
+    operation: 4
+  propulsionChance: false
+  published: false
+  rangeChance: false
+  sfxName: None
+102:
+  disallowAutoRepeat: false
+  effectCategory: 1
+  effectID: 102
+  effectName: mineLaying
+  electronicChance: false
+  guid: ''
+  isAssistance: false
+  isOffensive: true
+  isWarpSafe: false
+  propulsionChance: false
+  published: false
+  rangeChance: false
+  sfxName: None
+105:
+  disallowAutoRepeat: false
+  effectCategory: 4
+  effectID: 105
+  effectName: shieldResonanceMultiplyOnline
+  electronicChance: false
+  guid: ''
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  modifierInfo:
+  - domain: shipID
+    func: ItemModifier
+    modifiedAttributeID: 274
+    modifyingAttributeID: 130
+    operation: 4
+  - domain: shipID
+    func: ItemModifier
+    modifiedAttributeID: 273
+    modifyingAttributeID: 131
+    operation: 4
+  - domain: shipID
+    func: ItemModifier
+    modifiedAttributeID: 271
+    modifyingAttributeID: 133
+    operation: 4
+  - domain: shipID
+    func: ItemModifier
+    modifiedAttributeID: 272
+    modifyingAttributeID: 132
+    operation: 4
+  propulsionChance: false
+  published: false
+  rangeChance: false
+  sfxName: None
+1156:
+  disallowAutoRepeat: false
+  effectCategory: 4
+  effectID: 1156
+  effectName: controlTowerTrackingArrayHybridOptimalBonus
+  electronicChance: false
+  guid: ''
+  iconID: 0
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  modifierInfo:
+  - domain: shipID
+    func: LocationGroupModifier
+    groupID: 449
+    modifiedAttributeID: 54
+    modifyingAttributeID: 769
+    operation: 6
+  propulsionChance: false
+  published: false
+  rangeChance: false
+  sfxName: None
+563:
+  descriptionID:
+    de: Versucht, das Ziel vom Warpen abzuhalten.
+    en: Attempts to prevent the target from warping.
+    fr: Essaie d'empêcher la cible de warper.
+    ja: ターゲットのワープ阻止を試みる。
+    ko: 타겟의 워프를 막기 위한 시도입니다.
+    ru: Attempts to prevent the target from warping.
+    zh: 阻止目标进行跃迁。
+  disallowAutoRepeat: false
+  dischargeAttributeID: 6
+  displayNameID:
+    de: Warp Scramble
+    en: Warp Scramble
+    fr: Inhibition de warp
+    ja: ワープスクランブル
+    ko: 워프 스크램블
+    ru: Warp Scramble
+    zh: 跃迁干扰
+  distribution: 1
+  durationAttributeID: 505
+  effectCategory: 2
+  effectID: 563
+  effectName: warpScrambleForEntity
+  electronicChance: false
+  guid: effects.WarpScramble
+  isAssistance: false
+  isOffensive: true
+  isWarpSafe: false
+  modifierInfo:
+  - domain: targetID
+    func: ItemModifier
+    modifiedAttributeID: 104
+    modifyingAttributeID: 105
+    operation: 2
+  npcUsageChanceAttributeID: 504
+  propulsionChance: false
+  published: true
+  rangeAttributeID: 103
+  rangeChance: false
+575:
+  disallowAutoRepeat: false
+  dischargeAttributeID: 515
+  displayNameID:
+    de: modifyTargetSpeed
+    en: modifyTargetSpeed
+    fr: modifyTargetSpeed
+    ja: ターゲット速度を修正
+    ko: 타겟 속도 변경
+    ru: modifyTargetSpeed
+    zh: 修正目标速度
+  distribution: 2
+  durationAttributeID: 513
+  effectCategory: 2
+  effectID: 575
+  effectName: modifyTargetSpeed2
+  electronicChance: false
+  guid: effects.ModifyTargetSpeed
+  isAssistance: false
+  isOffensive: true
+  isWarpSafe: false
+  modifierInfo:
+  - domain: targetID
+    func: ItemModifier
+    modifiedAttributeID: 37
+    modifyingAttributeID: 20
+    operation: 6
+  npcUsageChanceAttributeID: 512
+  propulsionChance: false
+  published: true
+  rangeAttributeID: 514
+  rangeChance: false
+2481:
+  descriptionID:
+    de: Versucht, das Ziel vom Warpen abzuhalten.
+    en: Attempts to prevent the target from warping.
+    fr: Essaie d'empêcher la cible de warper.
+    ja: ターゲットのワープ阻止を試みる。
+    ko: 타겟의 워프를 막기 위한 시도입니다.
+    ru: Attempts to prevent the target from warping.
+    zh: 阻止目标进行跃迁。
+  disallowAutoRepeat: false
+  dischargeAttributeID: 6
+  displayNameID:
+    de: Warp Scramble
+    en: Warp Scramble
+    fr: Inhibition de warp
+    ja: ワープスクランブル
+    ko: 워프 스크램블
+    ru: Warp Scramble
+    zh: 跃迁干扰
+  distribution: 1
+  durationAttributeID: 505
+  effectCategory: 2
+  effectID: 2481
+  effectName: warpScrambleForStructure
+  electronicChance: false
+  guid: effects.WarpScramble
+  isAssistance: false
+  isOffensive: true
+  isWarpSafe: false
+  modifierInfo:
+  - domain: targetID
+    func: ItemModifier
+    modifiedAttributeID: 104
+    modifyingAttributeID: 105
+    operation: 2
+  npcUsageChanceAttributeID: 504
+  propulsionChance: false
+  published: true
+  rangeAttributeID: 103
+  rangeChance: false
+3713:
+  descriptionID:
+    de: Versucht, das Ziel vom Warpen abzuhalten.
+    en: Attempts to prevent the target from warping.
+    fr: Essaie d'empêcher la cible de warper.
+    ja: ターゲットのワープ阻止を試みる。
+    ko: 타겟의 워프를 막기 위한 시도입니다.
+    ru: Attempts to prevent the target from warping.
+    zh: 阻止目标进行跃迁。
+  disallowAutoRepeat: false
+  dischargeAttributeID: 6
+  displayNameID:
+    de: Warp Scramble
+    en: Warp Scramble
+    fr: Inhibition de warp
+    ja: ワープスクランブル
+    ko: 워프 스크램블
+    ru: Warp Scramble
+    zh: 跃迁干扰
+  distribution: 1
+  durationAttributeID: 505
+  effectCategory: 2
+  effectID: 3713
+  effectName: concordWarpScramble
+  electronicChance: false
+  guid: effects.WarpScramble
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  modifierInfo:
+  - domain: targetID
+    func: ItemModifier
+    modifiedAttributeID: 104
+    modifyingAttributeID: 105
+    operation: 2
+  npcUsageChanceAttributeID: 504
+  propulsionChance: false
+  published: true
+  rangeAttributeID: 103
+  rangeChance: false
+3714:
+  disallowAutoRepeat: false
+  dischargeAttributeID: 515
+  displayNameID:
+    de: modifyTargetSpeed
+    en: modifyTargetSpeed
+    fr: modifyTargetSpeed
+    ja: ターゲット速度を修正
+    ko: 타겟 속도 변경
+    ru: modifyTargetSpeed
+    zh: 修正目标速度
+  distribution: 2
+  durationAttributeID: 513
+  effectCategory: 2
+  effectID: 3714
+  effectName: concordModifyTargetSpeed
+  electronicChance: false
+  guid: effects.ModifyTargetSpeed
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  modifierInfo:
+  - domain: targetID
+    func: ItemModifier
+    modifiedAttributeID: 37
+    modifyingAttributeID: 20
+    operation: 6
+  npcUsageChanceAttributeID: 512
+  propulsionChance: false
+  published: true
+  rangeAttributeID: 514
+  rangeChance: false
+4656:
+  disallowAutoRepeat: false
+  distribution: 2
+  durationAttributeID: 1658
+  effectCategory: 1
+  effectID: 4656
+  effectName: NPCRemoteECM
+  electronicChance: true
+  guid: ''
+  isAssistance: false
+  isOffensive: true
+  isWarpSafe: false
+  npcUsageChanceAttributeID: 1664
+  propulsionChance: false
+  published: false
+  rangeChance: false
+5928:
+  disallowAutoRepeat: false
+  dischargeAttributeID: 6
+  displayNameID:
+    de: Warpunterbrechung
+    en: Warp Scramble
+    fr: Inhibition de warp
+    ja: ワープスクランブル
+    ko: 워프 스크램블
+    ru: Глушение варп-двигателя
+    zh: 跃迁干扰
+  distribution: 1
+  durationAttributeID: 505
+  effectCategory: 2
+  effectID: 5928
+  effectName: warpScrambleTargetMWDBlockActivationForEntity
+  electronicChance: false
+  guid: effects.WarpScramble
+  isAssistance: false
+  isOffensive: true
+  isWarpSafe: false
+  modifierInfo:
+  - domain: targetID
+    func: ItemModifier
+    modifiedAttributeID: 104
+    modifyingAttributeID: 105
+    operation: 2
+  - domain: targetID
+    func: LocationRequiredSkillModifier
+    modifiedAttributeID: 1349
+    modifyingAttributeID: 1350
+    operation: 2
+    skillTypeID: 3454
+  - domain: target
+    effectID: 6441
+    func: EffectStopper
+  - domain: target
+    effectID: 6442
+    func: EffectStopper
+  - domain: targetID
+    func: LocationRequiredSkillModifier
+    modifiedAttributeID: 1349
+    modifyingAttributeID: 1350
+    operation: 2
+    skillTypeID: 4385
+  npcUsageChanceAttributeID: 504
+  propulsionChance: false
+  published: true
+  rangeAttributeID: 103
+  rangeChance: false
+2192:
+  disallowAutoRepeat: false
+  durationAttributeID: 636
+  effectCategory: 1
+  effectID: 2192
+  effectName: entityShieldBoostingSmall
+  electronicChance: false
+  guid: effects.ShieldBoosting
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  npcActivationChanceAttributeID: 1006
+  propulsionChance: false
+  published: false
+  rangeChance: false
+2193:
+  disallowAutoRepeat: false
+  durationAttributeID: 636
+  effectCategory: 1
+  effectID: 2193
+  effectName: entityShieldBoostingMedium
+  electronicChance: false
+  guid: effects.ShieldBoosting
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  npcActivationChanceAttributeID: 1007
+  propulsionChance: false
+  published: false
+  rangeChance: false
+2194:
+  disallowAutoRepeat: false
+  durationAttributeID: 636
+  effectCategory: 1
+  effectID: 2194
+  effectName: entityShieldBoostingLarge
+  electronicChance: false
+  guid: effects.ShieldBoosting
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  npcActivationChanceAttributeID: 1008
+  propulsionChance: false
+  published: false
+  rangeChance: false
+2195:
+  disallowAutoRepeat: false
+  durationAttributeID: 630
+  effectCategory: 1
+  effectID: 2195
+  effectName: entityArmorRepairingSmall
+  electronicChance: false
+  guid: effects.ArmorRepair
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  npcActivationChanceAttributeID: 1009
+  propulsionChance: false
+  published: false
+  rangeChance: false
+2196:
+  disallowAutoRepeat: false
+  durationAttributeID: 630
+  effectCategory: 1
+  effectID: 2196
+  effectName: entityArmorRepairingMedium
+  electronicChance: false
+  guid: effects.ArmorRepair
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  npcActivationChanceAttributeID: 1010
+  propulsionChance: false
+  published: false
+  rangeChance: false
+2197:
+  disallowAutoRepeat: false
+  durationAttributeID: 630
+  effectCategory: 1
+  effectID: 2197
+  effectName: entityArmorRepairingLarge
+  electronicChance: false
+  guid: effects.ArmorRepair
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  npcActivationChanceAttributeID: 1011
+  propulsionChance: false
+  published: false
+  rangeChance: false
+2662:
+  disallowAutoRepeat: false
+  distribution: 2
+  durationAttributeID: 73
+  effectCategory: 1
+  effectID: 2662
+  effectName: entityEnvironmentalEffectDamageTest
+  electronicChance: false
+  guid: effects.EMPWave
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  npcActivationChanceAttributeID: 930
+  propulsionChance: false
+  published: false
+  rangeAttributeID: 99
+  rangeChance: false
+  sfxName: None
+3710:
+  disallowAutoRepeat: false
+  durationAttributeID: 929
+  effectCategory: 2
+  effectID: 3710
+  effectName: concordTargetJam
+  electronicChance: true
+  falloffAttributeID: 953
+  guid: ''
+  iconID: 0
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  modifierInfo:
+  - domain: targetID
+    func: ItemModifier
+    modifiedAttributeID: 192
+    modifyingAttributeID: 928
+    operation: 4
+  npcActivationChanceAttributeID: 930
+  propulsionChance: false
+  published: false
+  rangeAttributeID: 936
+  rangeChance: false
+2735:
+  descriptionID:
+    de: Automatisch generierter Effekt
+    en: Automatically generated effect
+    fr: Effet généré automatiquement
+    ja: 自動生成効果
+    ko: 자동 생성 효과
+    ru: Automatically generated effect
+    zh: 自动生成效果
+  disallowAutoRepeat: false
+  displayNameID:
+    de: Armor Hitpoint Penalty
+    en: Armor Hitpoint Penalty
+    fr: Pénalité de PV du blindage
+    ja: アーマーヒットポイントペナルティ
+    ko: 장갑 내구도 페널티
+    ru: Armor Hitpoint Penalty
+    zh: 装甲强度值惩罚
+  effectCategory: 0
+  effectID: 2735
+  effectName: boosterArmorHpPenalty
+  electronicChance: false
+  fittingUsageChanceAttributeID: 1091
+  guid: None
+  iconID: 1383
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  modifierInfo:
+  - domain: shipID
+    func: ItemModifier
+    modifiedAttributeID: 265
+    modifyingAttributeID: 1141
+    operation: 6
+  propulsionChance: false
+  published: true
+  rangeChance: false
+  sfxName: None
+2736:
+  descriptionID:
+    de: Automatisch generierter Effekt
+    en: Automatically generated effect
+    fr: Effet généré automatiquement
+    ja: 自動生成効果
+    ko: 자동 생성 효과
+    ru: Automatically generated effect
+    zh: 自动生成效果
+  disallowAutoRepeat: false
+  displayNameID:
+    de: Armor Repairer Penalty
+    en: Armor Repairer Penalty
+    fr: Pénalité de réparateur de blindage
+    ja: アーマーリペアペナルティ
+    ko: 장갑 수리장치 페널티
+    ru: Armor Repairer Penalty
+    zh: 装甲维修器惩罚
+  effectCategory: 0
+  effectID: 2736
+  effectName: boosterArmorRepairAmountPenalty
+  electronicChance: false
+  fittingUsageChanceAttributeID: 1091
+  iconID: 80
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  modifierInfo:
+  - domain: shipID
+    func: LocationGroupModifier
+    groupID: 62
+    modifiedAttributeID: 84
+    modifyingAttributeID: 1142
+    operation: 6
+  - domain: shipID
+    func: LocationGroupModifier
+    groupID: 1199
+    modifiedAttributeID: 84
+    modifyingAttributeID: 1142
+    operation: 6
+  propulsionChance: false
+  published: true
+  rangeChance: false
+2737:
+  descriptionID:
+    de: Automatisch generierter Effekt
+    en: Automatically generated effect
+    fr: Effet généré automatiquement
+    ja: 自動生成効果
+    ko: 자동 생성 효과
+    ru: Automatically generated effect
+    zh: 自动生成效果
+  disallowAutoRepeat: false
+  displayNameID:
+    de: Shield Capacity Penalty
+    en: Shield Capacity Penalty
+    fr: Pénalité de capacité du bouclier
+    ja: シールド容量ペナルティ
+    ko: 실드량 페널티
+    ru: Shield Capacity Penalty
+    zh: 护盾容量值惩罚
+  effectCategory: 0
+  effectID: 2737
+  effectName: boosterShieldCapacityPenalty
+  electronicChance: false
+  fittingUsageChanceAttributeID: 1089
+  guid: None
+  iconID: 1384
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  modifierInfo:
+  - domain: shipID
+    func: ItemModifier
+    modifiedAttributeID: 263
+    modifyingAttributeID: 1143
+    operation: 6
+  propulsionChance: false
+  published: true
+  rangeChance: false
+  sfxName: None
+2739:
+  descriptionID:
+    de: Automatisch generierter Effekt
+    en: Automatically generated effect
+    fr: Effet généré automatiquement
+    ja: 自動生成効果
+    ko: 자동 생성 효과
+    ru: Automatically generated effect
+    zh: 自动生成效果
+  disallowAutoRepeat: false
+  displayNameID:
+    de: Abzug auf die Optimale Reichweite von Geschütztürmen
+    en: Turret Optimal Range Penalty
+    fr: Pénalité de portée optimale des tourelles
+    ja: タレット最適射程距離ペナルティ
+    ko: 터렛 최적사거리 페널티
+    ru: Сокращение оптимальной дальности ведения орудийного огня
+    zh: 炮台最佳射程惩罚
+  effectCategory: 0
+  effectID: 2739
+  effectName: boosterTurretOptimalRangePenalty
+  electronicChance: false
+  fittingUsageChanceAttributeID: 1092
+  iconID: 1391
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  modifierInfo:
+  - domain: shipID
+    func: LocationRequiredSkillModifier
+    modifiedAttributeID: 54
+    modifyingAttributeID: 1144
+    operation: 6
+    skillTypeID: 3300
+  propulsionChance: false
+  published: true
+  rangeChance: false
+2741:
+  descriptionID:
+    de: Automatisch generierter Effekt
+    en: Automatically generated effect
+    fr: Effet généré automatiquement
+    ja: 自動生成効果
+    ko: 자동 생성 효과
+    ru: Automatically generated effect
+    zh: 自动生成效果
+  disallowAutoRepeat: false
+  displayNameID:
+    de: Geschützturm-Präzisionsabfall
+    en: Turret Falloff Penalty
+    fr: Pénalité de distance de perte des tourelles
+    ja: タレット精度低下ペナルティ
+    ko: 터렛 유효사거리 페널티
+    ru: Штраф к эффективной дальности действия
+    zh: 炮台失准范围惩罚
+  effectCategory: 0
+  effectID: 2741
+  effectName: boosterTurretFalloffPenalty
+  electronicChance: false
+  fittingUsageChanceAttributeID: 1093
+  guid: None
+  iconID: 1399
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  modifierInfo:
+  - domain: shipID
+    func: LocationRequiredSkillModifier
+    modifiedAttributeID: 158
+    modifyingAttributeID: 1146
+    operation: 6
+    skillTypeID: 3300
+  propulsionChance: false
+  published: true
+  rangeChance: false
+  sfxName: None
+2745:
+  descriptionID:
+    de: Automatisch generierter Effekt
+    en: Automatically generated effect
+    fr: Effet généré automatiquement
+    ja: 自動生成効果
+    ko: 자동 생성 효과
+    ru: Automatically generated effect
+    zh: 自动生成效果
+  disallowAutoRepeat: false
+  displayNameID:
+    de: Capacitor Capacity Penalty
+    en: Capacitor Capacity Penalty
+    fr: Pénalité de charge de capaciteur
+    ja: キャパシタ容量ペナルティ
+    ko: 캐패시터 용량 페널티
+    ru: Capacitor Capacity Penalty
+    zh: 电容容量惩罚
+  effectCategory: 0
+  effectID: 2745
+  effectName: boosterCapacitorCapacityPenalty
+  electronicChance: false
+  fittingUsageChanceAttributeID: 1090
+  guid: None
+  iconID: 1400
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  modifierInfo:
+  - domain: shipID
+    func: ItemModifier
+    modifiedAttributeID: 482
+    modifyingAttributeID: 1150
+    operation: 6
+  propulsionChance: false
+  published: true
+  rangeChance: false
+  sfxName: None
+2746:
+  descriptionID:
+    de: Automatisch generierter Effekt
+    en: Automatically generated effect
+    fr: Effet généré automatiquement
+    ja: 自動生成効果
+    ko: 자동 생성 효과
+    ru: Automatically generated effect
+    zh: 自动生成效果
+  disallowAutoRepeat: false
+  displayNameID:
+    de: Max Velocity Penalty
+    en: Max Velocity Penalty
+    fr: Pénalité de vitesse max
+    ja: 最高速度ペナルティ
+    ko: 최대 속도 페널티
+    ru: Max Velocity Penalty
+    zh: 最大速度惩罚
+  effectCategory: 0
+  effectID: 2746
+  effectName: boosterMaxVelocityPenalty
+  electronicChance: false
+  fittingUsageChanceAttributeID: 1090
+  guid: None
+  iconID: 1389
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  modifierInfo:
+  - domain: shipID
+    func: ItemModifier
+    modifiedAttributeID: 37
+    modifyingAttributeID: 1151
+    operation: 6
+  propulsionChance: false
+  published: true
+  rangeChance: false
+  sfxName: None
+2747:
+  descriptionID:
+    de: Automatisch generierter Effekt
+    en: Automatically generated effect
+    fr: Effet généré automatiquement
+    ja: 自動生成効果
+    ko: 자동 생성 효과
+    ru: Automatically generated effect
+    zh: 自动生成效果
+  disallowAutoRepeat: false
+  displayNameID:
+    de: Turret Tracking Penalty
+    en: Turret Tracking Penalty
+    fr: Pénalité de suivi des tourelles
+    ja: タレット追跡ペナルティ
+    ko: 터렛 트래킹 페널티
+    ru: Turret Tracking Penalty
+    zh: 炮台跟踪惩罚
+  effectCategory: 0
+  effectID: 2747
+  effectName: boosterTurretTrackingPenalty
+  electronicChance: false
+  fittingUsageChanceAttributeID: 1092
+  guid: None
+  iconID: 1398
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  modifierInfo:
+  - domain: shipID
+    func: LocationRequiredSkillModifier
+    modifiedAttributeID: 160
+    modifyingAttributeID: 1145
+    operation: 6
+    skillTypeID: 3300
+  propulsionChance: false
+  published: true
+  rangeChance: false
+  sfxName: None
+2748:
+  descriptionID:
+    de: Automatisch generierter Effekt
+    en: Automatically generated effect
+    fr: Effet généré automatiquement
+    ja: 自動生成効果
+    ko: 자동 생성 효과
+    ru: Automatically generated effect
+    zh: 自动生成效果
+  disallowAutoRepeat: false
+  displayNameID:
+    de: Missile Velocity Penalty
+    en: Missile Velocity Penalty
+    fr: Pénalité de vitesse des missiles
+    ja: ミサイル速度ペナルティ
+    ko: 미사일 속도 페널티
+    ru: Missile Velocity Penalty
+    zh: 导弹飞行速度惩罚
+  effectCategory: 0
+  effectID: 2748
+  effectName: boosterMissileVelocityPenalty
+  electronicChance: false
+  fittingUsageChanceAttributeID: 1093
+  guid: None
+  iconID: 1389
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  modifierInfo:
+  - domain: charID
+    func: OwnerRequiredSkillModifier
+    modifiedAttributeID: 37
+    modifyingAttributeID: 1148
+    operation: 6
+    skillTypeID: 3319
+  propulsionChance: false
+  published: true
+  rangeChance: false
+  sfxName: None
+2749:
+  descriptionID:
+    de: Automatisch generierter Effekt
+    en: Automatically generated effect
+    fr: Effet généré automatiquement
+    ja: 自動生成効果
+    ko: 자동 생성 효과
+    ru: Automatically generated effect
+    zh: 自动生成效果
+  disallowAutoRepeat: false
+  displayNameID:
+    de: Explosion Velocity Penalty
+    en: Explosion Velocity Penalty
+    fr: Pénalité de vitesse d'explosion
+    ja: 爆発速度ペナルティ
+    ko: 폭발속도 페널티
+    ru: Explosion Velocity Penalty
+    zh: 爆炸速度惩罚
+  effectCategory: 0
+  effectID: 2749
+  effectName: boosterMissileExplosionVelocityPenalty
+  electronicChance: false
+  fittingUsageChanceAttributeID: 1093
+  guid: None
+  iconID: 1389
+  isAssistance: false
+  isOffensive: false
+  isWarpSafe: false
+  modifierInfo:
+  - domain: charID
+    func: OwnerRequiredSkillModifier
+    modifiedAttributeID: 653
+    modifyingAttributeID: 1147
+    operation: 6
+    skillTypeID: 3319
+  propulsionChance: false
+  published: true
+  rangeChance: false
+  sfxName: None
+6184:
+  disallowAutoRepeat: false
+  dischargeAttributeID: 6
+  durationAttributeID: 73
+  effectCategory: 2
+  effectID: 6184
+  effectName: shipModuleRemoteCapacitorTransmitter
+  electronicChance: false
+  falloffAttributeID: 2044
+  guid: effects.EnergyTransfer
+  isAssistance: true
+  isOffensive: false
+  isWarpSafe: false
+  propulsionChance: false
+  published: false
+  rangeAttributeID: 54
+  rangeChance: false
+  resistanceAttributeID: 2116
+6185:
+  disallowAutoRepeat: false
+  dischargeAttributeID: 6
+  durationAttributeID: 73
+  effectCategory: 2
+  effectID: 6185
+  effectName: shipModuleRemoteHullRepairer
+  electronicChance: false
+  falloffAttributeID: 2044
+  guid: effects.RemoteArmourRepair
+  isAssistance: true
+  isOffensive: false
+  isWarpSafe: false
+  propulsionChance: false
+  published: false
+  rangeAttributeID: 54
+  rangeChance: false
+  resistanceAttributeID: 2116
+6186:
+  disallowAutoRepeat: false
+  dischargeAttributeID: 6
+  durationAttributeID: 73
+  effectCategory: 2
+  effectID: 6186
+  effectName: shipModuleRemoteShieldBooster
+  electronicChance: false
+  falloffAttributeID: 2044
+  guid: effects.ShieldTransfer
+  isAssistance: true
+  isOffensive: false
+  isWarpSafe: false
+  propulsionChance: false
+  published: false
+  rangeAttributeID: 54
+  rangeChance: false
+  resistanceAttributeID: 2116
+6187:
+  disallowAutoRepeat: false
+  dischargeAttributeID: 6
+  durationAttributeID: 73
+  effectCategory: 2
+  effectID: 6187
+  effectName: energyNeutralizerFalloff
+  electronicChance: false
+  falloffAttributeID: 2044
+  guid: effects.EnergyDestabilization
+  isAssistance: false
+  isOffensive: true
+  isWarpSafe: false
+  propulsionChance: false
+  published: false
+  rangeAttributeID: 54
+  rangeChance: false
+  resistanceAttributeID: 2045
+6188:
+  disallowAutoRepeat: false
+  dischargeAttributeID: 6
+  durationAttributeID: 73
+  effectCategory: 2
+  effectID: 6188
+  effectName: shipModuleRemoteArmorRepairer
+  electronicChance: false
+  falloffAttributeID: 2044
+  guid: effects.RemoteArmourRepair
+  isAssistance: true
+  isOffensive: false
+  isWarpSafe: false
+  propulsionChance: false
+  published: false
+  rangeAttributeID: 54
+  rangeChance: false
+  resistanceAttributeID: 2116
+6197:
+  disallowAutoRepeat: false
+  dischargeAttributeID: 6
+  durationAttributeID: 73
+  effectCategory: 2
+  effectID: 6197
+  effectName: energyNosferatuFalloff
+  electronicChance: false
+  falloffAttributeID: 2044
+  guid: effects.EnergyVampire
+  isAssistance: false
+  isOffensive: true
+  isWarpSafe: false
+  propulsionChance: false
+  published: false
+  rangeAttributeID: 54
+  rangeChance: false
+  resistanceAttributeID: 2045
+6216:
+  disallowAutoRepeat: false
+  dischargeAttributeID: 6
+  durationAttributeID: 73
+  effectCategory: 2
+  effectID: 6216
+  effectName: structureEnergyNeutralizerFalloff
+  electronicChance: false
+  falloffAttributeID: 2044
+  guid: effects.Laser
+  isAssistance: false
+  isOffensive: true
+  isWarpSafe: false
+  propulsionChance: false
+  published: false
+  rangeAttributeID: 54
+  rangeChance: false
+  resistanceAttributeID: 2045
+6423:
+  disallowAutoRepeat: false
+  dischargeAttributeID: 6
+  distribution: 1
+  durationAttributeID: 73
+  effectCategory: 2
+  effectID: 6423
+  effectName: shipModuleGuidanceDisruptor
+  electronicChance: false
+  falloffAttributeID: 2044
+  guid: effects.ElectronicAttributeModifyTarget
+  isAssistance: false
+  isOffensive: true
+  isWarpSafe: false
+  propulsionChance: false
+  published: false
+  rangeAttributeID: 54
+  rangeChance: false
+  resistanceAttributeID: 2113
+6424:
+  disallowAutoRepeat: false
+  dischargeAttributeID: 6
+  distribution: 1
+  durationAttributeID: 73
+  effectCategory: 2
+  effectID: 6424
+  effectName: shipModuleTrackingDisruptor
+  electronicChance: false
+  falloffAttributeID: 2044
+  guid: effects.TrackingDisruption
+  isAssistance: false
+  isOffensive: true
+  isWarpSafe: false
+  propulsionChance: false
+  published: false
+  rangeAttributeID: 54
+  rangeChance: false
+  resistanceAttributeID: 2113
+6428:
+  disallowAutoRepeat: false
+  dischargeAttributeID: 6
+  distribution: 1
+  durationAttributeID: 73
+  effectCategory: 2
+  effectID: 6428
+  effectName: shipModuleRemoteTrackingComputer
+  electronicChance: false
+  falloffAttributeID: 2044
+  guid: effects.TurretWeaponRangeTrackingSpeedMultiplyTarget
+  isAssistance: true
+  isOffensive: false
+  isWarpSafe: false
+  propulsionChance: false
+  published: false
+  rangeAttributeID: 54
+  rangeChance: false
+  resistanceAttributeID: 2135

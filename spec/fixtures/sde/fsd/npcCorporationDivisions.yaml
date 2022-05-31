@@ -1,0 +1,274 @@
+---
+18:
+  description: Research and development division
+  internalName: R&D
+  leaderTypeNameID:
+    de: Leitender Forscher
+    en: Chief Researcher
+    fr: Directeur de la recherche
+    ja: 研究主任
+    ko: 최고 연구원
+    ru: Главный исследователь
+    zh: 首席研究员
+  nameID:
+    de: Forschung und Entwicklung
+    en: R&D
+    fr: R & D
+    ja: R&D
+    ko: 연구개발
+    ru: Научно-исследовательский отдел
+    zh: 研发
+22:
+  description: New distribution division
+  internalName: Distribution
+  leaderTypeNameID:
+    de: Vertriebsleiter
+    en: Distribution Manager
+    fr: Responsable de la distribution
+    ja: 流通管理者
+    ko: 보급 관리자
+    ru: Начальник отдела сбыта
+    zh: 分销经理
+  nameID:
+    de: Vertrieb
+    en: Distribution
+    fr: Distribution
+    ja: 流通
+    ko: 보급
+    ru: Отдел сбыта
+    zh: 物流
+23:
+  description: New mining division
+  internalName: Mining
+  leaderTypeNameID:
+    de: Bergbaukoordinator
+    en: Mining Coordinator
+    fr: Coordinateur d'extraction
+    ja: 採掘コーディネーター
+    ko: 채굴 담당자
+    ru: Координатор добычи
+    zh: 矿业协调员
+  nameID:
+    de: Bergbau
+    en: Mining
+    fr: Extraction minière
+    ja: 採掘
+    ko: 채굴
+    ru: Добыча полезных ископаемых
+    zh: 采矿
+24:
+  description: New security division
+  internalName: Security
+  leaderTypeNameID:
+    de: Kommandeur
+    en: Commander
+    fr: Commandant
+    ja: 司令官
+    ko: 사령관
+    ru: Командир
+    zh: 指挥官
+  nameID:
+    de: Sicherheit
+    en: Security
+    fr: Sécurité
+    ja: セキュリティ
+    ko: 보안
+    ru: Служба безопасности
+    zh: 安全
+25:
+  description: Business career
+  descriptionID:
+    de: Diese Piloten sind Meister der Arbitragegeschäfte, Gewinnmaximierung und dem
+      Profitieren von anderer Leute Arbeit. Schlagen Sie diesen Karrierepfad ein,
+      wenn Sie gern in Lederstühlen sitzen, Zigarren rauchen und Ihre Milliarden zählen,
+      während das Proletariat sich mit der echten Arbeit abmüht.
+    en: These pilots are masters of arbitrage, profiteering, and generally making
+      a space-buck off the sweat of another man's brow. Join this career if you prefer
+      to sit in a leather executive chair, smoking a cigar and counting your billions
+      as the proletariat does the real work.
+    fr: Ces pilotes sont des maîtres des affaires et du profit et savent généralement
+      comment s'y prendre pour récolter le fruit du labeur d'autrui. Rejoignez cette
+      voie si vous préférez vous asseoir dans un siège en cuir pour fumer un cigare
+      et compter vos milliards pendant que le prolétariat se tue à la tâche.
+    ja: 商業を営むパイロットは、転売や価格操作や、その他、他人の労働の成果を利用して金銭を稼ぎ出す手練手管を身につけている。骨折り仕事は他人に任せ、自分は革張りの重役椅子で葉巻をくゆらせながら口座残高を10億単位で数える、そんな生活に憧れるなら、このキャリアへ進もう。
+    ko: 부당이득과 차익거래의 달인으로, 다른 사람들이 땀 흘려 번 돈을 갈취하는 일을 주로 합니다. 노동자들이 일을 하는 동안 시가를 물고
+      가죽 의자에 앉아 여유롭게 돈을 세고 싶다면 이 커리어에 선택하세요.
+    ru: Эти пилоты — мастера арбитража, спекуляции и зарабатывания денег на чужом
+      горбу. Выбирайте эту карьеру, если вы любите сидеть в кожаном кресле, курить
+      сигару и считать свои миллиарды, пока пролетариат трудится в поте лица.
+    zh: "这些飞行员都是做买卖的高手，腰缠万贯，他们的财富基本上都是从别人的血汗中赚取的。如果你希望坐上皮革的老板椅，左手拿雪茄右手点钞票的话，就加入这个行业吧。\r\n\r\n新手玩家推荐从<color=\"#FF00FFFF\"><b>军事职业指导</b></color>任务做起。\r\n"
+  internalName: Industrialist - Entrepreneur
+  leaderTypeNameID:
+    de: Oberberater
+    en: Chief Advisor
+    fr: Conseiller principal
+    ja: チーフアドバイザー
+    ko: 최고 고문
+    ru: Главный советник
+    zh: 首席咨询官
+  nameID:
+    de: Industrieller – Entrepreneur
+    en: Industrialist - Entrepreneur
+    fr: Industriel - Entrepreneur
+    ja: インダストリアリスト - 起業家
+    ko: 산업가 - 기업가
+    ru: Промышленник-предприниматель
+    zh: '商业职业指导<font color=yellow>（难度: 中级）</font>'
+26:
+  description: Exploration career
+  descriptionID:
+    de: Das All ist weit, und größtenteils nicht kartiert. Entdecker haben sich der
+      Erkundung kosmischer Anomalien und verschiedenen Signaturen verschrieben. Obwohl
+      dies viele Risiken birgt, werden Piloten oftmals reich belohnt. Schlagen Sie
+      diesen Karrierepfad ein, um die Geheimnisse der Erkundung zu lernen.
+    en: Space is vast, and a lot of it remains uncharted. Explorers are dedicated
+      to discovering cosmic anomalies and various signatures. Although risky, pilots
+      are often rewarded greatly. Enter this career path if you wish to find out more
+      about the secrets of exploration.
+    fr: L'espace est immense et reste encore inexploré. Les explorateurs consacrent
+      leur temps à découvrir des anomalies cosmiques et diverses signatures. Et malgré
+      les risques encourus, les pilotes sont souvent grassement récompensés. Choisissez
+      cette voie pour en savoir davantage sur les secrets de l'exploration.
+    ja: 宇宙は広大で、未知の世界が広がっている。探検家は宇宙の特異点や様々なシグネチャの探索を生きがいにしている。危険は伴うが、見返りもまた大きい。探検の魅力についてもっと知りたいと思うなら、このキャリアパスへ。
+    ko: 우주는 넓고 여전히 많은 부분이 베일에 싸여 있습니다. 탐험가는 미지를 개척하는 자들로, 위험이 동반되는 대신 그만큼의 보상이 뒤따릅니다.
+      탐사의 비밀을 알고 싶다면 이 커리어를 선택하세요.
+    ru: Вселенная полна неизведанных уголков. Исследователи посвящают своё время поиску
+      космических аномалий и различных сигнатур, и эта рискованная деятельность щедро
+      вознаграждается. Начните карьеру исследователя, если вы стремитесь разгадать
+      секреты космоса.
+    zh: "宇宙广阔，还有很多未涉足的地方。探险家热衷于探索各种异常空间与死亡信号空间。虽然风险巨大，但回报也异常丰厚。如果你想发掘与探索有关的更多秘密，请选择该条职业道路。\r\n\r\n新手玩家推荐从<color=\"#FF00FFFF\"><b>军事职业指导</b></color>任务做起。\r\n"
+  internalName: Explorer
+  leaderTypeNameID:
+    de: Oberberater
+    en: Chief Advisor
+    fr: Conseiller principal
+    ja: チーフアドバイザー
+    ko: 최고 고문
+    ru: Главный советник
+    zh: 首席咨询官
+  nameID:
+    de: Entdecker
+    en: Explorer
+    fr: Explorateur
+    ja: 探検家
+    ko: 탐험가
+    ru: Исследователь
+    zh: '探索职业指导<font color=red>（难度: 高级）</font>'
+27:
+  description: Industry career
+  descriptionID:
+    de: Industriepiloten sind grobe Typen, die Asteroiden zerlegen, um diese in Materialien
+      zu verschmelzen, welche die galaktische Kriegsmaschinerie antreiben. Schlagen
+      Sie diesen Karrierepfad ein, wenn Sie nutzlose Steine in kolossale Maschinen
+      verwandeln wollen.
+    en: Industrial pilots are the rugged individuals tearing asunder asteroids and
+      reforging them into material to sate the galaxy's ravenous engines of war. Join
+      this career if you wish to transmute useless space rocks into the mightiest
+      machines mankind has ever known.
+    fr: Les pilotes industriels exploitent les astéroïdes qu'ils trouvent pour fabriquer
+      des matériaux servant à soutenir l'énorme effort de guerre dans la galaxie.
+      Rejoignez cette voie si vous voulez changer des rochers spatiaux sans intérêt
+      en machines de guerre ultra puissantes.
+    ja: インダストリーの道を選んだパイロットは、アステロイドを砕き資源へ精錬し、銀河戦争を翔る艦船を補強する無骨な実業家だ。宇宙に浮かぶ無価値な岩を人類史上最強マシンに生まれ変わらせてみたいと思うなら、このキャリアへ進もう。
+    ko: 산업 파일럿들은 소행성을 쪼개 광석을 캐고, 탐욕으로 가득 찬 우주 전쟁에 물자를 보급합니다. 우주에 떠다니는 암석을 가공하여 강력한
+      전쟁기계로 만들고 싶다면 이 커리어를 선택하세요.
+    ru: Пилоты грузовых кораблей — крепкие ребята, которые взрывают астероиды и перековывают
+      их в материалы для боевых машин галактики, удовлетворяя ненасытный спрос. Выбирайте
+      эту карьеру, если хотите превращать бесполезные камни, болтающиеся по космосу,
+      в машины невиданной мощи.
+    zh: "工业人士将不起眼的小行星矿打造成种类丰富的装备，专发战争横财。如果你立志要将石块点化成有史以来最强大的机器设备，那不妨加入此行。\r\n\r\n新手玩家推荐从<color=\"#FF00FFFF\"><b>军事职业指导</b></color>任务做起。\r\n"
+  internalName: Industrialist - Producer
+  leaderTypeNameID:
+    de: Oberberater
+    en: Chief Advisor
+    fr: Conseiller principal
+    ja: チーフアドバイザー
+    ko: 최고 고문
+    ru: Главный советник
+    zh: 首席咨询官
+  nameID:
+    de: Industrieller – Produzent
+    en: Industrialist - Producer
+    fr: Industriel - Producteur
+    ja: インダストリアリスト - 生産者
+    ko: 산업가 - 제조업자
+    ru: Промышленник-производитель
+    zh: '工业职业指导<font color=yellow>（难度: 中级）</font>'
+28:
+  description: Military career
+  descriptionID:
+    de: Enforcer-Piloten leben für den Krieg und beherrschen unvorstellbare Zerstörungskräfte,
+      durch die das Antlitz von New Eden tagtäglich aufs Neue verändert wird. Schlagen
+      Sie diesen Karrierepfad ein, wenn Sie Laser und Lenkwaffen mögen und sicherstellen
+      wollen, dass jemand anders einen wirklich schlechten Tag hat.
+    en: Enforcer pilots live for war, wielding unimaginable destructive forces that
+      daily reforge the landscape of New Eden. Join this career if you enjoy lasers,
+      missiles and generally making sure that someone else has a really bad day.
+    fr: Les pilotes exécuteurs ne vivent que pour la guerre et manient d'inimaginables
+      forces destructrices qui transforment le paysage de New Eden au quotidien. Rejoignez
+      cette voie si vous aimez les lasers, les missiles et pourrir la journée d'autrui.
+    ja: エンフォーサーパイロットは、ニューエデンの勢力図を日々塗り替える絶大な威力の破壊兵器を操り、戦場に生きる者たちだ。レーザーやミサイルを愛し、敵を叩きのめすのが趣味というなら、ぜひともこのキャリアへ進もう。
+    ko: 집행관은 뉴에덴의 지형을 뒤바꿀 수 있는 강력한 파괴력을 보유한 자들입니다. 레이저와 미사일을 좋아하고 다른 사람에게 최악의 하루를
+      선사하는 것을 즐긴다면 이 커리어를 선택하세요.
+    ru: Бойцы живут войной и повелевают невероятно разрушительными силами, которые
+      перекраивают ландшафт Нового Эдема. Выбирайте эту карьеру, если вам нравятся
+      лазеры и ракеты, а думать вы можете лишь о том, как устроить кому-нибудь худший
+      день в жизни.
+    zh: "靠打仗吃饭的战斗飞行员，有着难以估量的破坏能力。如果你对激光与导弹有兴趣，喜欢凭拳头说话，那加入此行便可发挥你的真正才能。\r\n\r\n新手玩家推荐从<color=\"#FF00FFFF\"><b>军事职业指导</b></color>任务做起。\r\n"
+  internalName: Enforcer
+  leaderTypeNameID:
+    de: Oberberater
+    en: Chief Advisor
+    fr: Conseiller principal
+    ja: チーフアドバイザー
+    ko: 최고 고문
+    ru: Главный советник
+    zh: 首席咨询官
+  nameID:
+    de: Enforcer
+    en: Enforcer
+    fr: Exécuteur
+    ja: エンフォーサー
+    ko: 집행관
+    ru: Боец
+    zh: '军事职业指导<font color="#FF00FF00">（难度: 初级）</font>'
+29:
+  description: Advanced Military career
+  descriptionID:
+    de: Dieses erweiterte Trainingsprogramm stellt Piloten häufig verwandte Module
+      und Taktiken, z. B. Unterbrechung, Logistik und Ausweichmanöver auf dem Schlachtfeld,
+      vor. Um das Tutorial abzuschließen, muss der Kapselpilot ebenfalls lernen, seine
+      unnötige Todesangst zu überwinden.
+    en: Pilots on this advanced training program will be introduced to the many commonly
+      used modules and tactics on the battlefield, including interdiction, logistics,
+      and evasive maneuvering. In order to complete this tutorial, a capsuleer must
+      also come to master their own needless fear of death.
+    fr: Les pilotes de ce programme d'entraînement avancé se familiariseront avec
+      les modules et les tactiques les plus utilisés pour le combat, comme les interdictions,
+      la logistique et les manœuvres évasives. Pour terminer ce didacticiel, un capsulier
+      doit également parvenir à surmonter sa peur vaine de mourir.
+    ja: この上級訓練課程では、実戦でよく使われる各種モジュールや戦術について学ぶ。敵艦の足止め、僚艦支援、回避機動などだ。このチュートリアルを終えれば、死に対する無意味な恐怖も克服できること間違いなしである。
+    ko: 해당 프로그램에 지원한 파일럿들은 주요 모듈에 대한 사용법을 숙지하고 교란, 지원, 회피 등의 전술을 배우게 됩니다. 이 과정을 통해
+      지원자들은 캡슐리어에게 불필요한 죽음의 공포를 극복하게 됩니다.
+    ru: Пилоты этой продвинутой учебной программы познакомятся с большим количеством
+      широко используемых модулей и боевых тактик, включая перехват, логистику и манёвры
+      уклонения. Чтобы завершить обучение, капсулёру необходимо справиться с бессмысленным
+      страхом смерти.
+    zh: "在这个高级训练项目中，你将了解到战场上多种常用武器与战术，包括截击、后勤和机动技巧。要顺利完成本教程，你必须对死亡无所畏惧。\r\n\r\n新手玩家推荐从<color=\"#FF00FFFF\"><b>军事职业指导</b></color>任务做起。\r\n"
+  internalName: Soldier of Fortune
+  leaderTypeNameID:
+    de: Oberberater
+    en: Chief Advisor
+    fr: Conseiller principal
+    ja: チーフアドバイザー
+    ko: 최고 고문
+    ru: Главный советник
+    zh: 首席咨询官
+  nameID:
+    de: Glücksritter
+    en: Soldier of Fortune
+    fr: Mercenaire
+    ja: ソルジャーオブフォーチュン（傭兵）
+    ko: 용병
+    ru: Солдат удачи
+    zh: '高级军事职业指导<font color=yellow>（难度: 中级）</font>'

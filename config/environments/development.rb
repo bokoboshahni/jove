@@ -2,7 +2,7 @@
 
 require 'active_support/core_ext/integer/time'
 
-Rails.application.configure do # rubocop:disable Metrics/BlockLength
+Rails.application.configure do
   # General Rails settings
   config.cache_classes = false
   config.consider_all_requests_local = true
@@ -22,9 +22,6 @@ Rails.application.configure do # rubocop:disable Metrics/BlockLength
     config.action_controller.perform_caching = false
     config.cache_store = :null_store
   end
-
-  # ActiveStorage settings
-  config.active_storage.service = :local
 
   # ActionMailer settings
   config.action_mailer.perform_caching = false

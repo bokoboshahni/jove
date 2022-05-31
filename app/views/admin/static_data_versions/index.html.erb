@@ -1,0 +1,22 @@
+<%- title -%>
+
+<div class="mx-auto mt-8 max-w-7xl">
+  <%= render(Jove::Header::Component.new) do |header| %>
+    <% header.title do %><%= t('.title') %><% end %>
+    <% header.description do %><%= t('.body.html') %><% end %>
+
+    <% header.action do %>
+      <%= form_tag check_admin_static_data_versions_path, method: :put, data: { turbo_frame: '_top' } do %>
+        <%= render(Jove::Button::Component.new(label: t('.check'))) %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="mx-auto mt-8 max-w-7xl">
+  <%= render(Jove::Panel::Component.new) do %>
+    <div class="p-4 space-y-4">
+      <%= render partial: 'versions_grid', locals: { versions: @versions } %>
+    </div>
+  <% end %>
+</div>

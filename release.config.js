@@ -8,24 +8,27 @@ module.exports = {
   ],
   plugins: [
     ['@semantic-release/commit-analyzer', {
+      preset: 'angular',
       releaseRules: [
         { breaking: true, release: 'major' },
         { revert: true, release: 'patch' },
+        { type: 'ci', release: 'patch' },
+        { type: 'deps', release: 'patch' },
+        { type: 'docs', release: 'patch' },
         { type: 'feat', release: 'minor' },
         { type: 'fix', release: 'patch' },
         { type: 'perf', release: 'patch' },
         { type: 'refactor', release: 'patch' },
         { type: 'test', release: 'patch' },
-        { type: 'ci', release: 'patch' },
-        { type: 'docs', release: false },
-        { type: 'chore', scope: 'deps', release: 'patch' },
-        { type: 'chore', scope: 'deps-dev', release: 'patch' },
+        { scope: 'no-release', release: false }
       ]
     }],
     ['@semantic-release/exec', {
       'prepareCmd': 'bin/ci-release-version ${nextRelease.version}'
     }],
-    '@semantic-release/release-notes-generator',
+    ['@semantic-release/release-notes-generator', {
+      preset: 'angular'
+    }],
     ['@semantic-release/changelog', {
       changelogTitle: '# Jove Changelog'
     }],

@@ -1,0 +1,454 @@
+---
+1:
+  bloodlineID: 5
+  charisma: 3
+  descriptionID:
+    de: Die meisten Ländereien Amarrs gehören den Großgrundbesitzern, die üblicherweise
+      erzkonservativ sind und die Tradition hochhalten. Einige haben sich indes von
+      ihren engstirnigen und machtgierigen Zeitgenossen distanziert und setzen sich
+      lieber für religiöse und grundlegende wirtschaftliche Reformen innerhalb ihrer
+      Gesellschaft ein. Dabei hat sich besonders der udorianische Thronanwärter Catiz
+      Tash-Murkon hervorgetan.
+    en: Holders, the major landholding class in Amarr society, are generally conservative
+      traditionalists. A few, however, have elected to break ranks with their hidebound
+      and power-hungry peers, instead supporting the modernization of their society's
+      religion and substantial economic reform. Their champion is Catiz Tash-Murkon,
+      the Udorian Royal Heir.
+    fr: Les grands propriétaires, l'aristocratie terrienne de la société amarr, sont
+      généralement des traditionalistes conservateurs. Toutefois, une poignée d'entre
+      eux a décidé de se désolidariser de leurs pairs réactionnaires et avides de
+      pouvoir, préférant au contraire promouvoir la réforme religieuse et la modernisation
+      économique de leur société. La figure de proue de ce mouvement progressiste
+      n'est autre que Catiz Tash-Murkon, prétendante au trône d'ascendance udorian.
+    ja: アマー社会の主要な地主階級である領主は、総じて保守的な伝統主義者だ。しかし少数の者たちは、その頑迷で権力欲の強い閉鎖的な階級を打破する道を選び、社会の宗教的近代化と大幅な経済改革を支持している。彼らにとっての英雄は、ユードリアン皇位継承者であるキャティスタッシュムーコンである。
+    ko: 아마르 사회에서 가장 많은 땅을 소유한 계급인 홀더는 일반적으로 보수적인 전통주의자들입니다. 하지만 이들 중 소수가 사회 종교의 현대화와
+      실질적인 경제 개혁을 지지하면서 고집스럽고 권력에 굶주린 동료와의 관계를 끊기로 했습니다. 이들을 이끄는 사람은 유도리안 왕족의 계승자인
+      카티즈 타쉬-머르콘입니다.
+    ru: Владетели, крупный землевладельческий класс в обществе Amarr, являются в большинстве
+      своём консервативными традиционалистами. Тем не менее, некоторые из них решили
+      отдалиться от своих узколобых и властолюбивых соплеменников, поддерживая модернизацию
+      религии своего общества и серьёзные экономические реформы. Их лидером является
+      Catiz Tash-Murkon, наследник королевского престола Udorian.
+    zh: 贵族是艾玛社会中掌控地盘的一个主要阶层，他们通常都是传统保守人士。不过，其中有些人已打破了权力欲盛却碌碌无为的传统形象，成了宗教现代化与经济大变革的倡导支持者。其中的先驱便是尤朵的皇位继承人：卡蒂斯•塔什蒙贡。
+  iconID: 1641
+  intelligence: 0
+  memory: 0
+  nameID:
+    de: Liberale Großgrundbesitzer
+    en: Liberal Holders
+    fr: Propriétaires libéraux
+    ja: リベラルな領主
+    ko: 자유주의 홀더
+    ru: Либеральная знать
+    zh: 自由派贵族
+  perception: 0
+  shortDescription: Progressive members of the upper class who have rejected their
+    traditional ways.
+  willpower: 1
+2:
+  bloodlineID: 5
+  charisma: 1
+  descriptionID:
+    de: Einige Bürgerliche können aus dem strikten Kastensystem der amarrianischen
+      Gesellschaft ausbrechen und sich einen Namen machen - zumeist durch Handel oder
+      andere kaufmännische Tätigkeiten. Politische Positionen innerhalb des Imperiums
+      bleiben ihnen zwar auf immer verwehrt, jedoch können sie durch interstellaren
+      Handel zu viel Reichtum, Macht und Einfluss gelangen.
+    en: Some commoners manage to break out of Amarrian society's rigid class divisions
+      and carve out an elevated niche for themselves, usually through trade or other
+      mercantile activities. Though they can never attain political office within
+      the empire, they are free to accrue vast amounts of wealth – along with no small
+      measure of power and influence - through interstellar trade.
+    fr: Certains roturiers parviennent à s'affranchir du système de classe rigide
+      pour faire leur trou dans la société amarr, le plus souvent grâce au commerce
+      ou à d'autres activités mercantiles. Bien qu'il leur soit impossible d'accéder
+      au cercle restreint de la politique impériale, ils sont libres d'amasser d'immenses
+      fortunes, ainsi que le pouvoir et l'influence qui en découlent, grâce au commerce
+      interstellaire.
+    ja: 一般庶民の中には、アマー社会の厳格な階級分離から抜け出し、自分の力で、大抵は貿易などの商業活動を足がかりにして高い地位にのし上がった者もいる。帝国で政治的官職に就くことは決してできないが、星間貿易で巨大な富を築き、権力と影響力を手に入れるのは自由だ。
+    ko: 아마르 평민 중에서는 아마르 사회의 엄격한 계급 구분을 벗어나 무역이나 상업 활동을 통해 가까스로 높은 지위를 손에 넣는 이들도 있습니다.
+      비록 제국 내에서 정치적 지위는 절대 얻을 수 없지만 성간 무역을 통해 적잖은 권력과 영향력뿐만 아니라 막대한 부를 마음껏 축적할 수 있습니다.
+    ru: Некоторым простолюдинам иногда удается преодолеть жёсткие классовые рамки
+      общества Amarr и обеспечить для себя более высокое положение, как правило, посредством
+      торговли или другой коммерческой деятельности. Несмотря на то, что они никогда
+      не смогут занять государственный пост в Империи, им никто не мешает обрести
+      огромное богатство - вместе с серьёзной властью и влиянием благодаря межзвёздной
+      торговле.
+    zh: 一些普通平民靠着贸易或其他商业活动，冲破了艾玛社会严格的阶级限制，为自己闯出了名气。虽然他们永远无法在帝国内享有政治权力，但却能通过星际贸易积累大量财富——同时还具有不小的影响力。
+  iconID: 1642
+  intelligence: 0
+  memory: 3
+  nameID:
+    de: Wohlhabende Bürgerliche
+    en: Wealthy Commoners
+    fr: Riche bourgeoisie
+    ja: 裕福な民間人
+    ko: 부유한 일반인
+    ru: Богатые простолюдины
+    zh: 富有平民
+  perception: 0
+  shortDescription: Commoners who have transcended their class through shrewd business
+    sense.
+  willpower: 0
+3:
+  bloodlineID: 5
+  charisma: 0
+  descriptionID:
+    de: Viele Amarr gedenken noch der Hochzeit des Imperiums, als scheinbar keine
+      Macht des Universums ihren Siegeszug aufhalten konnte. Sie verabscheuen das
+      neue System und sehen dessen Beschwichtigungspolitik als Schwäche an, weil sie
+      der glorreichen Vergangenheit des Imperiums spottet.
+    en: Many Amarrians still dream of the glory days of the Empire, when it seemed
+      that no power in the cluster could defy the will of the Empire. They abhor the
+      conciliatory policies of recent regimes, regarding them as weak and counter
+      to everything the Empire has stood for in its magnificent history.
+    fr: De nombreux Amarr rêvent encore et toujours de renouer avec l'âge d'or de
+      leur civilisation, une époque où la volonté de l'empire régnait en maîtresse
+      incontestée sur la galaxie. Ils exècrent la politique complaisante des régimes
+      récents, qu'ils considèrent comme faible et contraire à tous les principes défendus
+      par l'empire au cours de sa glorieuse histoire.
+    ja: アマー人の多くは、帝国の意向に背くことができる勢力は星団内に存在しないかに思えた帝国の全盛期を今も夢に見ている。彼らは昨今の政権の融和政策について、ひ弱で、帝国の輝かしい歴史を支えてきた全てのものに反すると考え、憎悪の視線を向けている。
+    ko: 아마르인 대부분은 여전히 제국의 그 영광스러웠던 나날을 꿈꾸고 있습니다. 당시에는 클러스터에 있는 그 어떤 세력도 제국을 거스를 수
+      없을 것 같았습니다. 아마르인은 최근 정권이 회유 정책을 펼치는 게 자신들을 약자 취급한다고 생각하며, 이는 위대한 제국이 여태까지 쌓아온
+      역사를 부정하는 것과 마찬가지라며 혐오합니다.
+    ru: 'Многие Amarr всё ещё мечтают о днях славы Империи, когда казалось, что никакая
+      сила в галактике не способна противиться ее воле. Они с отвращением относятся
+      к примиренческой политике современных режимов, считая её слабой и противной
+      идеалам блистательной Империи былых времен. '
+    zh: 许多艾玛人仍旧在梦中怀念着帝国的光辉岁月，那时的艾玛一家独大。他们痛恨近几届政府的调解政策，认为那些政府软弱无能，且推行的政策与帝国在其光辉时期所倡导的一切背道而驰。
+  iconID: 1643
+  intelligence: 0
+  memory: 0
+  nameID:
+    de: Religiöse Forderer
+    en: Religious Reclaimers
+    fr: Reconquérants religieux
+    ja: 信心深い開拓者
+    ko: 종교 교화
+    ru: Религиозные освоители
+    zh: 宗教复兴派
+  perception: 0
+  shortDescription: Traditionalists who wish to see the Empire regain its former glory.
+  willpower: 4
+4:
+  bloodlineID: 6
+  charisma: 4
+  descriptionID:
+    de: Das einstige Sklavenvolk der Ni-Kunni hat sich nunmehr beinahe vollständig
+      als freie Bürgerschicht in der Gesellschaft des Amarr-Imperiums etabliert. Die
+      Antipathie der amarrianischen Oberschicht gegenüber dem Handelswesen kam ihnen
+      dabei zugute, denn die wirtschaftlichen Schlüsselpositionen des Imperiums sind
+      heute größtenteils von Ni-Kunni besetzt.
+    en: The Ni-Kunni, originally a slave race within the Amarr Empire, are today almost
+      fully integrated in society as free people. They have used the Amarrian upper
+      classes' inherent dislike of mercantile work to their advantage, and Ni-Kunni
+      merchants now dominate many sectors of the Empire's economy.
+    fr: Les Ni-Kunni, autrefois une race d'esclaves au sein de l'Empire amarr, bénéficient
+      aujourd'hui du statut d'hommes libres pleinement intégrés à la société contemporaine.
+      Ils ont tiré parti du mépris des classes supérieures amarr à l'égard du monde
+      des affaires pour prendre le contrôle de nombreux secteurs de l'économie impériale.
+    ja: ニクンニ人は、元々はアマー帝国の奴隷人種だったが、現在は自由民として社会にほぼ完全に溶け込んでいる。彼らはアマーの上流階級が商売を嫌っていることを自分たちに有利になるように利用してきた。現在は帝国の多くの経済分野をニクンニ商人が独占している。
+    ko: 원래 아마르 제국의 노예 인종이었던 니쿠니는 오늘날, 자유인으로 사회에 거의 완전히 통합되었습니다. 니쿠니는 아마르 상류층이 대대로
+      상업을 혐오한다는 점을 이점으로 활용했고, 현재 니쿠니 상인들은 제국 경제의 많은 분야를 독차지하고 있습니다.
+    ru: Ni-Kunni, изначально являвшиеся расой рабов в Империи Amarr, сегодня практически
+      полностью интегрировались в общество в качестве свободных людей. Они воспользовались
+      отвращением высших слоёв общества Amarr к коммерческой деятельности себе на
+      пользу, и теперь торговцы Ni-Kunni доминируют во многих секторах экономики Империи.
+    zh: 曾经是艾玛帝国内部的一个劳工族群，尼库恩纳人如今已取得自由公民的身份，融入了社会。他们利用了艾玛上层阶级对商业与生俱来的厌恶，牢牢地把占了帝国的经济命脉。
+  iconID: 1644
+  intelligence: 0
+  memory: 0
+  nameID:
+    de: Freie Kaufleute
+    en: Free Merchants
+    fr: Marchands
+    ja: 自由な商人
+    ko: 자유 무역상
+    ru: Свободные купцы
+    zh: 自由商人
+  perception: 0
+  shortDescription: Roaming businessmen who find opportunity in any marketplace.
+  willpower: 0
+5:
+  bloodlineID: 6
+  charisma: 0
+  descriptionID:
+    de: Die strengen Handelsbestimmungen des Amarr-Imperiums im Umgang mit fremden
+      Rassen fordern den Warenschmuggel geradezu heraus. Die Ni-Kunni sind besonders
+      gewiefte Händler auf dem Schwarzmarkt und haben ihre Fähigkeiten als Schieber
+      über Generationen hinweg perfektioniert.
+    en: The Amarr Empire imposes strict trading rules with other races, all but encouraging
+      smuggling operations to flourish. The wily Ni-Kunni are experts when it comes
+      to exploiting black market opportunities, and have spent generations perfecting
+      their smuggling methods.
+    fr: L'Empire amarr impose une réglementation stricte en matière d'échanges avec
+      les autres races, créant ainsi un terreau fertile au développement d'une économie
+      parallèle. Rusés renards, les Ni-Kunni sont passés maîtres dans l'art d'exploiter
+      les opportunités offertes par le marché noir et ont consacré plusieurs générations
+      au perfectionnement de leurs méthodes de contrebande.
+    ja: アマー帝国は、他の人種との間に厳格な貿易ルールを定めているが、密輸は奨励しているも同然だ。ずる賢いニクンニ人は、ブラックマーケットでのチャンスを生かすことにかけてはエキスパートで、数世代をかけて密輸手法を磨き上げてきた。
+    ko: 아마르 제국은 다른 인종에게 엄격한 무역 규칙을 적용하는데, 이 같은 정책이 오히려 밀수입을 부추기는 셈이 되었습니다. 약삭빠른 니쿠니는
+      암시장에 내다 팔 기회를 찾는데 아주 둘째라면 서러울 정도의 전문가이며, 몇 세대에 걸쳐 밀수 노하우를 쌓아왔습니다.
+    ru: Империя Amarr накладывает серьёзные ограничения на торговлю с другими расами,
+      но единственным их результатом является расцвет контрабандистской деятельности.
+      Хитрые Ni-Kunni являются специалистами в использовании возможностей, предоставляемых
+      чёрными рынками, и на протяжении многих поколений они занимались совершенствованием
+      способов контрабанды.
+    zh: 艾玛帝国在跨种族贸易方面有着严格的规定，但这反而催生助长了地下贸易活动。尼库恩纳人是这一市场上的专家能手，他们代代相传，地下活动的技巧也日益成熟。
+  iconID: 1645
+  intelligence: 1
+  memory: 0
+  nameID:
+    de: Grenzläufer
+    en: Border Runners
+    fr: Passeurs
+    ja: 国境のランナー
+    ko: 국경 밀수업자
+    ru: Контрабандисты
+    zh: 边贸商人
+  perception: 3
+  shortDescription: Wily smugglers, bound by no border.
+  willpower: 0
+6:
+  bloodlineID: 6
+  charisma: 0
+  descriptionID:
+    de: Ein Großteil der Ni-Kunni lebt nach wie vor verarmt in kärglichen Verhältnissen.
+      Die Imperiale Navy bietet den Mittellosen eine Fluchtmöglichkeit, denn dort
+      werden sie ausgebildet und auf eine erfolgreiche - wenn auch gefährliche - Karriere
+      vorbereitet, durch die sie für sich und ihre Familien aufkommen können.
+    en: A large population of the Ni-Kunni remain impoverished, and many reside in
+      underdeveloped districts. When no economic opportunities are available, one
+      of the few ways for them to escape is to enlist in the Imperial Navy, where
+      they receive the career training and education they need to make a prosperous
+      - if dangerous - life for themselves and their families.
+    fr: Une vaste proportion de Ni-Kunni vit dans le dénuement, et nombreux sont ceux
+      qui habitent des secteurs sous-développés. En l'absence d'opportunités économiques,
+      une des rares échappatoires qui s'offrent à eux consiste à s'enrôler dans la
+      Navy impériale, où ils reçoivent la formation professionnelle nécessaire pour
+      subvenir aux besoins de leurs familles et mener une vie lucrative certes, mais
+      tout aussi dangereuse.
+    ja: ニクンニの人々の大半は未だに困窮生活を送っており、多くの者たちが未開発地区に住んでいる。ビジネスチャンスがない現況を抜け出す数少ない手段の一つは、帝国海軍に入隊することだ。帝国海軍では、たとえ危険でも家族が豊かな生活を手にするために必要なキャリア訓練や教育を受けることができる。
+    ko: 니쿠니 인구 대부분은 여전히 빈곤하며, 대다수가 낙후 지역에서 살고 있습니다. 경제적으로 나아질 기회조차 없어서, 가난에서 탈출할 몇
+      안 되는 방법 중 하나는 제국 해군에 입대하는 것입니다. 해군에서는 자신과 가족을 위한 삶을 여유롭고도 어쩌면 위험하게 만들 직업 훈련과
+      교육을 받습니다.
+    ru: Большая часть народности Ni-Kunni прозябает в нищете, обитая в слаборазвитых
+      районах Империи. Одним из немногих способов улучшения материального положения
+      для Ni-Kunni является поступление на службу в имперский флот; там члены племен
+      получают образование и профессиональную подготовку, позволяющие им после увольнения
+      в запас вести безбедное (и зачастую сопряженное с риском для жизни) существование.
+    zh: 很多尼库恩纳人的生活水平依旧处于贫穷线以下，他们生活在欠发达地区。尼库恩纳人为数不多的脱贫方法之一就是加入帝国海军，这样他们就可以在军中接受必要的职业训练和教育来为自己和家人创造一份富足的——也可以说是危险的——生活。
+  intelligence: 0
+  memory: 0
+  nameID:
+    de: Kämpfer der Navy
+    en: Navy Veterans
+    fr: Vétérans de la Navy
+    ja: 海軍の退役軍人
+    ko: 해군 베테랑
+    ru: Ветераны флота
+    zh: 海军老兵
+  perception: 0
+  shortDescription: Those who have escaped poverty through enlisted service on behalf
+    of the Empire.
+  willpower: 4
+7:
+  bloodlineID: 2
+  charisma: 0
+  descriptionID:
+    de: Civire gelten nicht unbedingt als ausgemachte Geschäftsleute, aber wenn sie
+      sich auf Verhandlungen einlassen, dann verhalten sie sich dabei genauso aggressiv
+      und selbstbewusst wie auf dem Schlachtfeld. Für sie sind Geschäftsangelegenheiten
+      ein geistiger Wettstreit, den man ohne Skrupel und mit Umsicht führen muss.
+    en: Civire are not usually known for business acumen, but when they choose to
+      engage in business affairs they conduct themselves with the same aggression
+      and confidence as they would on the battlefield. To them, business is a battle
+      of wills, to be pursued with focused vigilance and ruthlessness.
+    fr: Les Civire ne sont certes pas réputés pour leur sens des affaires, mais quand
+      ils se lancent sur le marché, ils le font avec la même ardeur conquérante qu'on
+      leur connaît sur le champ de bataille. À leurs yeux, le commerce est une sorte
+      de bras de fer nécessitant vigilance, détermination et férocité.
+    ja: シバーは、その商才をあまり知られていないが、ビジネスの道を歩むことを選択した場合は、戦場で戦うときと同じく好戦的に自信を持って行動する。彼らにとって、ビジネスは意思の戦いであり、決して警戒を怠ることなく冷酷に挑むべきものだ。
+    ko: 시비레는 사업 감각이 그다지 뛰어나지 않다고 알려져 있지만 한번 사업 분야에 종사하기로 했을 때는 마치 전장에서 전투를 치르는 것처럼
+      과감하고 자신 있게 행동합니다. 시비레에게 사업은 의지를 겨루는 전투이며, 방심하지 않고 주변을 철저하게 경계하며 무자비하게 운영해야 하는
+      것입니다.
+    ru: Как правило, Civire не славятся проницательностью в коммерческих делах, но
+      если они решат заняться каким либо предпринимательством, они будут вести себя
+      также агрессивно и самоуверенно, как на поле боя. Для них коммерческая деятельность
+      является битвой умов, которая должна вестись со всей бдительностью и беспощадностью.
+    zh: 赛维勒人虽然在商业领域并不享有盛名，但只要一涉足其中，他们就会像在战场上一样咄咄逼人与自信。对他们而言，商场就是战场，需要用战士般的警觉和凶狠来实现商场中的目标。
+  iconID: 1647
+  intelligence: 0
+  memory: 4
+  nameID:
+    de: Unternehmer
+    en: Entrepreneurs
+    fr: Entrepreneurs
+    ja: 起業家
+    ko: 사업가
+    ru: Предприниматели
+    zh: 企业家
+  perception: 0
+  shortDescription: Warriors of the board room.
+  willpower: 0
+8:
+  bloodlineID: 2
+  charisma: 0
+  descriptionID:
+    de: Viele Civire sind geradezu fasziniert von der Brutalität des Kampfes. Die
+      Dreistigkeit, mit der sie sich stets dem Höchstbietenden andienen, resultiert
+      aus ihrer ständigen Hoffnung auf ein Gefecht. Die Söldnertradition reicht in
+      einigen ihrer Familien, die gleichwohl dem zwielichtigen Teil der Gesellschaft
+      angehören, mehrere Generationen weit in die Vergangenheit zurück.
+    en: Many Civire have a deep fascination with the brutality of battle. For these
+      brazen individuals, the promise of steady combat is what drives the eager sale
+      of their own services to the highest bidder. Some even hail from families who
+      have followed the mercenary tradition for generations, albeit within the shadows
+      of society.
+    fr: De nombreux Civire éprouvent une profonde fascination pour la brutalité du
+      combat. Pour ces intrépides, la promesse de conflits permanents est une motivation
+      supplémentaire les incitant à vendre leurs services au plus offrant. Certains
+      sont même issus de familles qui observent la tradition du mercenariat depuis
+      des générations, même si elles ne l'affichent pas ouvertement.
+    ja: 多くのシバー人は戦闘の残忍さに深い魅力を感じている。傲岸な彼らにとって、常に戦闘が見込まれる状態は、自分たちのサービスを何としても最高値で売りたいという思いの原動力となっている。中には、社会の影に身を落としながらも、幾世にも渡り傭兵としての伝統を継ぐ家系に生まれた者もいる。
+    ko: 많은 시비레는 전투의 잔인함에 깊이 매료되어 있습니다. 뻔뻔한 시비레는 끊임없이 전투를 계속하고 싶어 하기 때문에 가장 높은 가격을
+      부르는 이들에게 기꺼이 자신들의 무력을 제공합니다. 비록 사회의 그늘 속에 존재하더라도 시비레 중에는 수 세대 동안 용병 일을 해온 가문에서
+      태어난 이들도 있습니다.
+    ru: Многие Civire наслаждаются жестокостью битвы. Для этих ожесточенных людей
+      предвкушение яростной схватки стоит даже выше денег, которые они получают за
+      своих услуги. Некоторые из них являются выходцами семей, следовавших традициям
+      наёмничества на протяжении многих поколений, хотя и в тени общества.
+    zh: "很多赛维勒人热爱战场的硝烟和野蛮气息。这些厚脸皮的人为了保证他们始终有仗可打，不断向那些有钱的个人和势力兜售各种服务。有些人甚至将佣兵作为家族世世代代传承的事业，沉浸在社会黑暗阴影的洗礼中。\r\n"
+  iconID: 1648
+  intelligence: 0
+  memory: 0
+  nameID:
+    de: Söldner
+    en: Mercs
+    fr: Mercenaires
+    ja: 傭兵
+    ko: 용병
+    ru: Наемники
+    zh: 职业佣兵
+  perception: 0
+  shortDescription: Guns for hire that are always available to the highest bidder.
+  willpower: 4
+9:
+  bloodlineID: 2
+  charisma: 2
+  descriptionID:
+    de: Die kühle Disziplin der caldarischen Gesellschaft ist genauso wenig jedermanns
+      Sache wie die Strenge, mit der die Oberhäupter der herrschenden Firmen das Alltagsleben
+      bestimmen. Rebellion findet im Verborgenen statt, denn Dissidenten bemühen sich
+      intensiv um einen Umsturz aus dem Inneren des Systems heraus. Der Staat behält
+      solche Individuen sehr genau im Auge.
+    en: The cold discipline of Caldari society does not appeal to everyone, nor is
+      everyone happy with the stranglehold that corporate rulers have on everyday
+      life. While not outright rebellious, dissenters nonetheless invest considerable
+      time and effort in trying to change the system from within. The State keeps
+      a close eye on these individuals.
+    fr: La discipline rigide régissant la société caldari n'est pas du goût de tout
+      le monde, de même que la mainmise des chefs d'entreprise sur la vie quotidienne.
+      Même s'ils ne déclenchent pas de conflit ouvert, les dissidents investissent
+      énormément de temps et d'efforts pour tenter de changer le système de l'intérieur.
+      Bien évidemment, l'État surveille ces individus de très près.
+    ja: カルダリ社会の冷酷な戒律に魅力を感じる者や、コーポレーションの支配者たちが日々の生活にもたらす束縛を歓迎する者は、誰もいない。完全な反体制というわけではないが、異を唱える者たちは多大な時間と労力を費やして内側からシステムを変えようとしている。連合は、こうした者たちに細心の注意を払っている。
+    ko: 칼다리 사회의 엄격한 규율을 싫어하는 사람도 있으며, 코퍼레이션의 지배자가 일상을 구속한다는 점에 불만을 품는 사람도 있습니다. 이처럼
+      규율에 반대하는 사람은 노골적으로 저항하진 않지만 내부로부터 체제를 바꾸기 위해 상당한 시간과 노력을 투자합니다. 연합은 이런 사람들을
+      감시합니다.
+    ru: Железная дисциплина общества Caldari не всем приходится по нраву, и не каждый
+      доволен тем, каким огромным влиянием на повседневную жизнь обладает корпоративное
+      руководство. Несмотря на то, что они не являются настоящими повстанцами, диссиденты,
+      тем не менее, уделяют много времени и сил на попытки изменения системы изнутри.
+      Государство тщательно следит за этими людьми.
+    zh: 并不是每个人都对加达里社会的冷漠秩序感到满意，也不是每个人都对超级集团强加于人们生活之中的束缚感到快乐。这些人并不打算暴力反抗，但多年来他们一直在试图从内部改变社会体系。合众国一直在密切留意这些人。
+  iconID: 1649
+  intelligence: 0
+  memory: 0
+  nameID:
+    de: Dissidenten
+    en: Dissenters
+    fr: Dissidents
+    ja: 造反者
+    ko: 반대자
+    ru: Диссиденты
+    zh: 异议者
+  perception: 0
+  shortDescription: Unhappy cogs in the capitalist machine.
+  willpower: 2
+10:
+  bloodlineID: 1
+  charisma: 0
+  descriptionID:
+    de: Deteis sind sehr darauf bedacht, ihre Geschäfte vollständig unter Kontrolle
+      zu haben - besonders, was industrielle Produktion betrifft. Jeden Schritt im
+      Herstellungsprozess möchten sie perfektionieren - von der Rohstoffbeschaffung
+      über die Fertigung bis hin zur Vermarktung der Endprodukte.
+    en: The Deteis love nothing more than having complete control over their enterprises,
+      especially industrial production. They seek personal mastery of every aspect
+      of the process, all the way from the procurement of raw materials to the manufacturing
+      and marketing of the final good.
+    fr: Les Deteis ont à cœur d'exercer un contrôle total sur leurs entreprises, en
+      particulier dans le domaine de la production industrielle. Ils cherchent à diriger
+      personnellement chaque aspect du processus, de l'acquisition des matières premières
+      à la commercialisation du produit fini en passant par la production.
+    ja: ディティス人は、組織活動、中でも特に工業生産を完全に身に付けることを何よりも好む。原料の調達から製造、そして最終製品の販売に至る全工程に渡るプロセスのあらゆる部分を自分が支配したいと考えている。
+    ko: 데테이스는 자신의 코퍼레이션, 그 중에서도 특히 제조 과정을 완벽하게 통솔하는 것을 즐기고 사랑합니다. 데테이스는 원재료 조달에서부터
+      제조, 그리고 소비재 마케팅에 이르기까지 모든 과정을 개인적으로 익히고, 숙달하고자 합니다.
+    ru: Deteis больше всего на свете любят полностью контролировать свои предприятия,
+      особенно промышленное производство. Они стремятся к личному контролю над всеми
+      этапами процесса, начиная с поставок сырья и оптимизации производственных линий,
+      заканчивая распределением и продажей конечного продукта.
+    zh: 蒂泰斯人最热爱的是对自己的事业拥有完全的控制力，尤其是在工业生产方面。他们希望掌控整个流程的各方面，包括开采原料、实际生产及最后的营销工作。
+  iconID: 1650
+  intelligence: 0
+  memory: 4
+  nameID:
+    de: Kaufmänner
+    en: Merchandisers
+    fr: Magnats
+    ja: マーチャンダイザー
+    ko: 상인
+    ru: Торговцы
+    zh: 商人
+  perception: 0
+  shortDescription: Intrepid industrialists with a passion for mastery of production.
+  willpower: 0
+11:
+  bloodlineID: 1
+  charisma: 0
+  descriptionID:
+    de: Die Deteis sind hervorragende Forscher und Wissenschaftler, weil sie auf wunderbare
+      Weise nüchterne Effizienz mit Ideenreichtum verbinden. Durch diese Talente und
+      ihrer kulturell bedingte Entschlossenheit, wurde der Staat der Caldari zur ersten
+      Adresse, wenn es um technische Innovation geht.
+    en: The Deteis beautifully combine efficiency with inventiveness, which makes
+      them superb researchers and scientists. Between these talents and their cultural
+      determination, the Caldari State is the leading innovator of bleeding-edge technology.
+    fr: Les Deteis conjuguent à merveille efficacité et inventivité, ce qui en fait
+      d'éminents chercheurs et scientifiques. Entre ces talents et une identité culturelle
+      forte, l'État caldari joue un rôle de pionnier en matière d'innovation technologique
+      de pointe.
+    ja: ディティス人は能率と創意を見事に融合させる力があるため、優秀な研究者や科学者になる素質がある。こうした才能と文化的水準の高さから、カルダリ連合は最先端技術開発の牽引役を担っている。
+    ko: 데테이스는 효율성과 창의성 두 가지를 훌륭하게 조합해내기 때문에 뛰어난 연구자이자 과학자입니다. 이러한 데테이스의 재능과 문화적 환경
+      덕분에 칼다리 연합은 최첨단 기술의 선도자입니다.
+    ru: Deteis прекрасно совмещают эффективность с изобретательностью, что делает
+      их превосходными исследователями и учеными. Благодаря талантам и врожденной
+      целеустремленности его населения, Государство Caldari является ведущим разработчиком
+      новейших технологий.
+    zh: 蒂泰斯人将效率与创造性完美地融为一体，这使得他们成为出色的研究者和科学家。正是蒂泰斯人的才华和对文化施加的影响，才使加达里合众国成为科技领域的领头羊。
+  iconID: 1651
+  intelligence: 3
+  memory: 0
+  nameID:
+    de: Wissenschaftler
+    en: Scientists
+    fr: Scientifiques
+    ja: 科学者
+    ko: 과학자
+    ru: Ученые
+    zh: 科学家
+  perception: 1
+  shortDescription: Combining efficiency with inventiveness, Deteis scientists are
+    on the bleeding edge of technology.
+  willpower: 0

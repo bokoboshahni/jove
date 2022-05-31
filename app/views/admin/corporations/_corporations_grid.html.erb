@@ -11,7 +11,7 @@
       <% row.cell do %><%= corporation.ticker %><% end %>
       <% row.cell do %><%= corporation.alliance_name %><% end %>
       <% row.cell do %><%= local_time(corporation.created_at) %><% end %>
-      <% row.cell do %><%= local_time(corporation.esi_last_modified_at) %><% end %>
+      <% row.cell do %><%= local_time(corporation.esi_last_modified_at) if corporation.esi_last_modified_at %><% end %>
     <% end %>
   <% end %>
 <% end %>

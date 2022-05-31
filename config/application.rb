@@ -28,11 +28,17 @@ module Jove
 
     config.load_defaults 7.0
 
+    # ActiveJob settings
+    config.active_job.queue_adapter = :sidekiq
+
     # ActiveRecord settings
     config.active_record.encryption.primary_key = ENV.fetch('ACTIVE_RECORD_ENCRYPTION_PRIMARY_KEY')
     config.active_record.encryption.deterministic_key = ENV.fetch('ACTIVE_RECORD_ENCRYPTION_DETERMINISTIC_KEY')
     config.active_record.encryption.key_derivation_salt = ENV.fetch('ACTIVE_RECORD_ENCRYPTION_KEY_DERIVATION_SALT')
     config.active_record.schema_format = :sql
+
+    # ActiveStorage settiings
+    config.active_storage.service = ENV.fetch('ACTIVE_STORAGE_SERVICE', 'local').to_sym
 
     # I18n settings
     config.i18n.load_path += Dir[Rails.root.join('config/locales/**/*.{rb,yml}')]

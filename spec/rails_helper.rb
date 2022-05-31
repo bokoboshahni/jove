@@ -7,8 +7,10 @@ require_relative '../config/environment'
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 
 require 'rspec/rails'
+require 'paper_trail/frameworks/rspec'
 require 'pundit/rspec'
 require 'pundit/matchers'
+require 'sidekiq/testing'
 require 'webmock/rspec'
 require 'vcr'
 
@@ -36,6 +38,7 @@ rescue ActiveRecord::PendingMigrationError => e
 end
 
 RSpec.configure do |config| # rubocop:disable Metrics/BlockLength
+  config.include ActiveSupport::Testing::TimeHelpers
   config.include Capybara::RSpecMatchers, type: :component
   config.include Devise::Test::ControllerHelpers, type: :component
   config.include Devise::Test::ControllerHelpers, type: :controller
@@ -68,6 +71,14 @@ RSpec.configure do |config| # rubocop:disable Metrics/BlockLength
 
   config.before(:each, type: :component) do
     @request = controller.request
+  end
+
+  config.before(:each) do
+    FileUtils.rm_rf(Rails.root.join('tmp/storage'))
+    FileUtils.mkdir_p(Rails.root.join('tmp/storage'))
+    FileUtils.touch(Rails.root.join('tmp/storage/.keep'))
+
+    Sidekiq::Worker.clear_all
   end
 
   config.after(:each, type: :component, snapshot: true) do

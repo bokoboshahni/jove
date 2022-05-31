@@ -24,7 +24,7 @@ CommitMsg:
 
   MessageFormat:
     enabled: true
-    pattern: '(feat|fix|perf|refactor|revert|style|test|build|ci|docs|chore)(\(\.*\))?!?: .+'
+    pattern: '(feat|fix|perf|refactor|revert|style|test|build|ci|docs|chore|deps)(\([^()]*\))?!?: .+'
     expected_pattern_message: '<type>[optional scope]: <description>'
     sample_message: 'feat: allow provided config object to extend other configs'
 

@@ -1,0 +1,91 @@
+---
+34599:
+  duration: -1
+  licenseTypeID: 34599
+  skinID: 187
+34600:
+  duration: -1
+  licenseTypeID: 34600
+  skinID: 188
+34601:
+  duration: -1
+  licenseTypeID: 34601
+  skinID: 44
+34602:
+  duration: -1
+  licenseTypeID: 34602
+  skinID: 45
+34603:
+  duration: -1
+  licenseTypeID: 34603
+  skinID: 9
+34604:
+  duration: -1
+  licenseTypeID: 34604
+  skinID: 10
+34605:
+  duration: -1
+  licenseTypeID: 34605
+  skinID: 1093
+34606:
+  duration: -1
+  licenseTypeID: 34606
+  skinID: 12
+34607:
+  duration: -1
+  licenseTypeID: 34607
+  skinID: 13
+34608:
+  duration: -1
+  licenseTypeID: 34608
+  skinID: 1098
+45029:
+  duration: -1
+  isSingleUse: false
+  licenseTypeID: 45029
+  skinID: 4068
+45475:
+  duration: -1
+  isSingleUse: false
+  licenseTypeID: 45475
+  skinID: 4068
+45476:
+  duration: 7
+  isSingleUse: false
+  licenseTypeID: 45476
+  skinID: 4068
+45477:
+  duration: -1
+  isSingleUse: false
+  licenseTypeID: 45477
+  skinID: 4068
+45478:
+  duration: 90
+  isSingleUse: false
+  licenseTypeID: 45478
+  skinID: 4068
+45479:
+  duration: 365
+  isSingleUse: false
+  licenseTypeID: 45479
+  skinID: 4068
+46585:
+  duration: -1
+  isSingleUse: true
+  licenseTypeID: 46585
+  skinID: 4698
+46586:
+  duration: -1
+  isSingleUse: true
+  licenseTypeID: 46586
+  skinID: 4699
+46587:
+  duration: -1
+  isSingleUse: true
+  licenseTypeID: 46587
+  skinID: 4700
+46588:
+  duration: -1
+  isSingleUse: true
+  licenseTypeID: 46588
+  skinID: 4701

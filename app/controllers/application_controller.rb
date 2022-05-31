@@ -53,4 +53,8 @@ class ApplicationController < ActionController::Base
 
     redirect_to(root_path) unless turbo_frame_request?
   end
+
+  def use_logidze_responsible(&)
+    Logidze.with_responsible(current_identity&.id, &)
+  end
 end

@@ -1,0 +1,16 @@
+---
+en:
+  admin:
+    static_data_versions:
+      check:
+        success:
+          new_version: New static data version available!
+          no_new_version: No new static data version is available.
+      download:
+        failure: 'Failed to queue static data version #%{version} for download because the archive is no longer available from CCP.'
+        success: 'Successfully queued static data version #%{version} for download.'
+      import:
+        failure:
+          already_imported: 'Failed to queue static data version #%{version} for import because it has already been imported.'
+          not_downloaded: 'Failed to queue static data version #%{version} for import because the archive has not been downloaded from CCP.'
+        success: 'Successfully queued static data version #%{version} for import.'

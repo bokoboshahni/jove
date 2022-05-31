@@ -1,0 +1,43 @@
+---
+0:
+  description: Unknown
+  iconFile: res:/ui/texture/icons/7_64_15.png
+15:
+  description: Asteroid
+  iconFile: res:/ui/texture/icons/5_64_11.png
+16:
+  description: CargoContainer
+  iconFile: res:/ui/texture/icons/26_64_11.png
+21:
+  description: Money - Money
+  iconFile: res:/ui/texture/icons/6_64_3.png
+22:
+  description: Mineral - Tritium
+  iconFile: res:/ui/texture/icons/6_64_14.png
+26:
+  description: Commodity - ConstructionBlocks
+  iconFile: res:/ui/texture/icons/6_64_5.png
+27:
+  description: Commodity - SpicedWine
+  iconFile: res:/ui/texture/icons/6_64_11.png
+28:
+  description: Commodity - Antibiotics
+  iconFile: res:/ui/texture/icons/6_64_9.png
+29:
+  description: Commodity - DepletedUranium
+  iconFile: res:/ui/texture/icons/6_64_6.png
+30:
+  description: Commodity - FrozenPlantSeeds
+  iconFile: res:/ui/texture/icons/11_64_8.png
+21771:
+  description: 45743_male_TopMiddle_TshirtM01_Types_TshirtM01_Exo.png
+  iconFile: res:/UI/Asset/mannequin/topmiddle/45743_male_TopMiddle_TshirtM01_Types_TshirtM01_Exo.png
+  obsolete: false
+21819:
+  description: 46674_male_outer_JacketCMM01_Types_JacketCMM01_Minmatar_RW.png
+  iconFile: res:/UI/Asset/mannequin/outer/46674_male_outer_JacketCMM01_Types_JacketCMM01_Minmatar_RW.png
+  obsolete: false
+25245:
+  description: Booster A Red I
+  iconFile: res:/UI/Texture/Icons/Inventory/BoosterARedI.png
+  obsolete: false
