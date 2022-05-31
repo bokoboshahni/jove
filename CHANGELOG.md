@@ -1,5 +1,12 @@
 # Jove Changelog
 
+# [1.2.0-beta.13](https://github.com/bokoboshahni/jove/compare/v1.2.0-beta.12...v1.2.0-beta.13) (2022-05-31)
+
+
+### Features
+
+* move dogma effect modifiers to dogma effects table ([a854d0c](https://github.com/bokoboshahni/jove/commit/a854d0c1ba219b73bf9ac4fb5853df9ca8a666cf))
+
 # [1.2.0-beta.12](https://github.com/bokoboshahni/jove/compare/v1.2.0-beta.11...v1.2.0-beta.12) (2022-05-31)
 
 
