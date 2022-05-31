@@ -99,14 +99,6 @@ namespace :sde do # rubocop:disable Metrics/BlockLength
       end
     end
 
-    task dogma_effect_modifiers: :environment do
-      Logidze.with_responsible(ENV.fetch('SDE_VERSION_ID')) do
-        progress = TTY::ProgressBar.new("Dogma Effect Modifiers #{IMPORT_PROGRESS_FORMAT}")
-        Jove::SDE::Importers::DogmaEffectModifierImporter.new(sde_path: SDE_PATH, progress:).import_all
-        puts "Imported #{DogmaEffectModifier.count} dogma effect modifiers"
-      end
-    end
-
     task factions: :environment do
       Logidze.with_responsible(ENV.fetch('SDE_VERSION_ID')) do
         progress = TTY::ProgressBar.new("Factions #{IMPORT_PROGRESS_FORMAT}")

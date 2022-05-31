@@ -19,6 +19,7 @@
 # **`is_offensive`**                        | `boolean`          | `not null`
 # **`is_warp_safe`**                        | `boolean`          | `not null`
 # **`log_data`**                            | `jsonb`            |
+# **`modifiers`**                           | `jsonb`            |
 # **`name`**                                | `text`             | `not null`
 # **`propulsion_chance`**                   | `boolean`          | `not null`
 # **`published`**                           | `boolean`          | `not null`
@@ -77,10 +78,6 @@ class DogmaEffect < ApplicationRecord
   belongs_to :range_attribute, class_name: 'DogmaAttribute', optional: true
   belongs_to :resistance_attribute, class_name: 'DogmaAttribute', optional: true
   belongs_to :tracking_speed_attribute, class_name: 'DogmaAttribute', optional: true
-
-  has_many :modifiers, class_name: 'DogmaEffectModifier', foreign_key: :effect_id
-
-  has_many :modifiers_as_modified_effect, class_name: 'DogmaEffectModifier', foreign_key: :modified_effect_id
 
   has_many :type_dogma_effects
   has_many :types, through: :type_dogma_effects

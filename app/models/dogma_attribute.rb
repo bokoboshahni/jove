@@ -67,9 +67,6 @@ class DogmaAttribute < ApplicationRecord
   has_many :effects_as_resistance, class_name: 'DogmaEffect', foreign_key: :resistance_attribute_id
   has_many :effects_as_tracking_speed, class_name: 'DogmaEffect', foreign_key: :tracking_speed_attribute_id
 
-  has_many :modifiers_as_modified_attribute, class_name: 'DogmaEffectModifier', foreign_key: :modified_attribute_id
-  has_many :modifiers_as_modifying_attribute, class_name: 'DogmaEffectModifier', foreign_key: :modifying_attribute_id
-
   has_many :type_dogma_attributes
   has_many :types, through: :type_dogma_attributes
 end
