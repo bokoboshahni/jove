@@ -1,14 +1,18 @@
 # frozen_string_literal: true
 
+require 'down/errors'
+
 module Jove
   class Configuration
     DEFAULT_USER_AGENT = 'Jove/1.0; (+https://github.com/bokoboshahni/jove)'
 
-    DEFAULT_SDE_PATH = Rails.root.join('tmp/sde')
-
     DEFAULT_SDE_CHECKSUM_URL = 'https://eve-static-data-export.s3-eu-west-1.amazonaws.com/tranquility/checksum'
 
-    DEFAULT_SDE_ZIP_URL = 'https://eve-static-data-export.s3-eu-west-1.amazonaws.com/tranquility/sde.zip'
+    DEFAULT_SDE_DOWNLOAD_RETRIES = 10
+
+    DEFAULT_SDE_ARCHIVE_URL = 'https://eve-static-data-export.s3-eu-west-1.amazonaws.com/tranquility/sde.zip'
+
+    SDE_DOWNLOAD_RETRY_EXCEPTIONS = [Down::ServerError, Down::ConnectionError, Down::TimeoutError].freeze
 
     attr_writer :esi_client_id, :esi_client_secret, :sde_path, :site_url, :user_agent
 
@@ -32,12 +36,15 @@ module Jove
       @sde_checksum_url ||= from_env(:sde_checksum_url, DEFAULT_SDE_CHECKSUM_URL)
     end
 
-    def sde_zip_url
-      @sde_zip_url ||= from_env(:sde_zip_url, DEFAULT_SDE_ZIP_URL)
+    def sde_download_retry_options
+      @sde_download_retry_options ||= {
+        on: SDE_DOWNLOAD_RETRY_EXCEPTIONS,
+        tries: Rails.env.test? ? 1 : from_env(:sde_download_retries, DEFAULT_SDE_DOWNLOAD_RETRIES)
+      }
     end
 
-    def sde_path
-      @sde_path ||= from_env(:sde_path, DEFAULT_SDE_PATH)
+    def sde_archive_url
+      @sde_archive_url ||= from_env(:sde_archive_url, DEFAULT_SDE_ARCHIVE_URL)
     end
 
     def site_host

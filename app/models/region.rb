@@ -13,6 +13,7 @@
 # **`center_y`**           | `decimal(, )`      | `not null`
 # **`center_z`**           | `decimal(, )`      | `not null`
 # **`description`**        | `text`             |
+# **`log_data`**           | `jsonb`            |
 # **`max_x`**              | `decimal(, )`      | `not null`
 # **`max_y`**              | `decimal(, )`      | `not null`
 # **`max_z`**              | `decimal(, )`      | `not null`
@@ -39,42 +40,11 @@
 class Region < ApplicationRecord
   include SDEImportable
 
-  UNIVERSES = %w[abyssal eve void wormhole].freeze
-
-  enum universe: UNIVERSES.each_with_object({}) { |e, h| h[e.to_sym] = e }
-
-  self.sde_mapper = lambda { |data, context:|
-    universe = context.fetch(:universe)
-    data[:center_x], data[:center_y], data[:center_z] = data.delete(:center)
-    data[:max_x], data[:max_y], data[:max_z] = data.delete(:max)
-    data[:min_x], data[:min_y], data[:min_z] = data.delete(:min)
-    data[:universe] = universe
-  }
-
-  self.sde_exclude = %i[description_id name_id]
-
-  self.sde_rename = {
-    nebula: :nebula_id,
-    region_id: :id
-  }
-
-  self.sde_name_lookup = true
+  enum universe: %i[abyssal eve void wormhole].index_with(&:to_s)
 
   has_many :constellations
 
   has_many :solar_systems, through: :constellations
 
   has_many :stations, through: :solar_systems
-
-  def self.import_all_from_sde(progress: nil)
-    paths = Dir[File.join(sde_path, 'fsd/universe/**/region.staticdata')]
-    progress&.update(total: paths.count)
-    rows = paths.map do |path|
-      universe = File.basename(File.dirname(path, 2))
-      region = map_sde_attributes(YAML.load_file(path), context: { universe: })
-      progress&.advance
-      region
-    end
-    upsert_all(rows)
-  end
 end

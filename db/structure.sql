@@ -10,6 +10,20 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
+-- Name: hstore; Type: EXTENSION; Schema: -; Owner: -
+--
+
+CREATE EXTENSION IF NOT EXISTS hstore WITH SCHEMA public;
+
+
+--
+-- Name: EXTENSION hstore; Type: COMMENT; Schema: -; Owner: -
+--
+
+COMMENT ON EXTENSION hstore IS 'data type for storing sets of (key, value) pairs';
+
+
+--
 -- Name: pgcrypto; Type: EXTENSION; Schema: -; Owner: -
 --
 
@@ -51,6 +65,21 @@ CREATE TYPE public.celestial_type AS ENUM (
 
 
 --
+-- Name: static_data_version_status; Type: TYPE; Schema: public; Owner: -
+--
+
+CREATE TYPE public.static_data_version_status AS ENUM (
+    'pending',
+    'downloading',
+    'downloaded',
+    'downloading_failed',
+    'importing',
+    'imported',
+    'importing_failed'
+);
+
+
+--
 -- Name: universe; Type: TYPE; Schema: public; Owner: -
 --
 
@@ -60,6 +89,393 @@ CREATE TYPE public.universe AS ENUM (
     'void',
     'wormhole'
 );
+
+
+--
+-- Name: logidze_capture_exception(jsonb); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION public.logidze_capture_exception(error_data jsonb) RETURNS boolean
+    LANGUAGE plpgsql
+    AS $$
+  -- version: 1
+BEGIN
+  -- Feel free to change this function to change Logidze behavior on exception.
+  --
+  -- Return `false` to raise exception or `true` to commit record changes.
+  --
+  -- `error_data` contains:
+  --   - returned_sqlstate
+  --   - message_text
+  --   - pg_exception_detail
+  --   - pg_exception_hint
+  --   - pg_exception_context
+  --   - schema_name
+  --   - table_name
+  -- Learn more about available keys:
+  -- https://www.postgresql.org/docs/9.6/plpgsql-control-structures.html#PLPGSQL-EXCEPTION-DIAGNOSTICS-VALUES
+  --
+
+  return false;
+END;
+$$;
+
+
+--
+-- Name: logidze_compact_history(jsonb, integer); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION public.logidze_compact_history(log_data jsonb, cutoff integer DEFAULT 1) RETURNS jsonb
+    LANGUAGE plpgsql
+    AS $$
+  -- version: 1
+  DECLARE
+    merged jsonb;
+  BEGIN
+    LOOP
+      merged := jsonb_build_object(
+        'ts',
+        log_data#>'{h,1,ts}',
+        'v',
+        log_data#>'{h,1,v}',
+        'c',
+        (log_data#>'{h,0,c}') || (log_data#>'{h,1,c}')
+      );
+
+      IF (log_data#>'{h,1}' ? 'm') THEN
+        merged := jsonb_set(merged, ARRAY['m'], log_data#>'{h,1,m}');
+      END IF;
+
+      log_data := jsonb_set(
+        log_data,
+        '{h}',
+        jsonb_set(
+          log_data->'h',
+          '{1}',
+          merged
+        ) - 0
+      );
+
+      cutoff := cutoff - 1;
+
+      EXIT WHEN cutoff <= 0;
+    END LOOP;
+
+    return log_data;
+  END;
+$$;
+
+
+--
+-- Name: logidze_filter_keys(jsonb, text[], boolean); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION public.logidze_filter_keys(obj jsonb, keys text[], include_columns boolean DEFAULT false) RETURNS jsonb
+    LANGUAGE plpgsql
+    AS $$
+  -- version: 1
+  DECLARE
+    res jsonb;
+    key text;
+  BEGIN
+    res := '{}';
+
+    IF include_columns THEN
+      FOREACH key IN ARRAY keys
+      LOOP
+        IF obj ? key THEN
+          res = jsonb_insert(res, ARRAY[key], obj->key);
+        END IF;
+      END LOOP;
+    ELSE
+      res = obj;
+      FOREACH key IN ARRAY keys
+      LOOP
+        res = res - key;
+      END LOOP;
+    END IF;
+
+    RETURN res;
+  END;
+$$;
+
+
+--
+-- Name: logidze_logger(); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION public.logidze_logger() RETURNS trigger
+    LANGUAGE plpgsql
+    AS $$
+  -- version: 2
+  DECLARE
+    changes jsonb;
+    version jsonb;
+    snapshot jsonb;
+    new_v integer;
+    size integer;
+    history_limit integer;
+    debounce_time integer;
+    current_version integer;
+    k text;
+    iterator integer;
+    item record;
+    columns text[];
+    include_columns boolean;
+    ts timestamp with time zone;
+    ts_column text;
+    err_sqlstate text;
+    err_message text;
+    err_detail text;
+    err_hint text;
+    err_context text;
+    err_table_name text;
+    err_schema_name text;
+    err_jsonb jsonb;
+    err_captured boolean;
+  BEGIN
+    ts_column := NULLIF(TG_ARGV[1], 'null');
+    columns := NULLIF(TG_ARGV[2], 'null');
+    include_columns := NULLIF(TG_ARGV[3], 'null');
+
+    IF TG_OP = 'INSERT' THEN
+      IF columns IS NOT NULL THEN
+        snapshot = logidze_snapshot(to_jsonb(NEW.*), ts_column, columns, include_columns);
+      ELSE
+        snapshot = logidze_snapshot(to_jsonb(NEW.*), ts_column);
+      END IF;
+
+      IF snapshot#>>'{h, -1, c}' != '{}' THEN
+        NEW.log_data := snapshot;
+      END IF;
+
+    ELSIF TG_OP = 'UPDATE' THEN
+
+      IF OLD.log_data is NULL OR OLD.log_data = '{}'::jsonb THEN
+        IF columns IS NOT NULL THEN
+          snapshot = logidze_snapshot(to_jsonb(NEW.*), ts_column, columns, include_columns);
+        ELSE
+          snapshot = logidze_snapshot(to_jsonb(NEW.*), ts_column);
+        END IF;
+
+        IF snapshot#>>'{h, -1, c}' != '{}' THEN
+          NEW.log_data := snapshot;
+        END IF;
+        RETURN NEW;
+      END IF;
+
+      history_limit := NULLIF(TG_ARGV[0], 'null');
+      debounce_time := NULLIF(TG_ARGV[4], 'null');
+
+      current_version := (NEW.log_data->>'v')::int;
+
+      IF ts_column IS NULL THEN
+        ts := statement_timestamp();
+      ELSE
+        ts := (to_jsonb(NEW.*)->>ts_column)::timestamp with time zone;
+        IF ts IS NULL OR ts = (to_jsonb(OLD.*)->>ts_column)::timestamp with time zone THEN
+          ts := statement_timestamp();
+        END IF;
+      END IF;
+
+      IF to_jsonb(NEW.*) = to_jsonb(OLD.*) THEN
+        RETURN NEW;
+      END IF;
+
+      IF current_version < (NEW.log_data#>>'{h,-1,v}')::int THEN
+        iterator := 0;
+        FOR item in SELECT * FROM jsonb_array_elements(NEW.log_data->'h')
+        LOOP
+          IF (item.value->>'v')::int > current_version THEN
+            NEW.log_data := jsonb_set(
+              NEW.log_data,
+              '{h}',
+              (NEW.log_data->'h') - iterator
+            );
+          END IF;
+          iterator := iterator + 1;
+        END LOOP;
+      END IF;
+
+      changes := '{}';
+
+      IF (coalesce(current_setting('logidze.full_snapshot', true), '') = 'on') THEN
+        BEGIN
+          changes = hstore_to_jsonb_loose(hstore(NEW.*));
+        EXCEPTION
+          WHEN NUMERIC_VALUE_OUT_OF_RANGE THEN
+            changes = row_to_json(NEW.*)::jsonb;
+            FOR k IN (SELECT key FROM jsonb_each(changes))
+            LOOP
+              IF jsonb_typeof(changes->k) = 'object' THEN
+                changes = jsonb_set(changes, ARRAY[k], to_jsonb(changes->>k));
+              END IF;
+            END LOOP;
+        END;
+      ELSE
+        BEGIN
+          changes = hstore_to_jsonb_loose(
+                hstore(NEW.*) - hstore(OLD.*)
+            );
+        EXCEPTION
+          WHEN NUMERIC_VALUE_OUT_OF_RANGE THEN
+            changes = (SELECT
+              COALESCE(json_object_agg(key, value), '{}')::jsonb
+              FROM
+              jsonb_each(row_to_json(NEW.*)::jsonb)
+              WHERE NOT jsonb_build_object(key, value) <@ row_to_json(OLD.*)::jsonb);
+            FOR k IN (SELECT key FROM jsonb_each(changes))
+            LOOP
+              IF jsonb_typeof(changes->k) = 'object' THEN
+                changes = jsonb_set(changes, ARRAY[k], to_jsonb(changes->>k));
+              END IF;
+            END LOOP;
+        END;
+      END IF;
+
+      changes = changes - 'log_data';
+
+      IF columns IS NOT NULL THEN
+        changes = logidze_filter_keys(changes, columns, include_columns);
+      END IF;
+
+      IF changes = '{}' THEN
+        RETURN NEW;
+      END IF;
+
+      new_v := (NEW.log_data#>>'{h,-1,v}')::int + 1;
+
+      size := jsonb_array_length(NEW.log_data->'h');
+      version := logidze_version(new_v, changes, ts);
+
+      IF (
+        debounce_time IS NOT NULL AND
+        (version->>'ts')::bigint - (NEW.log_data#>'{h,-1,ts}')::text::bigint <= debounce_time
+      ) THEN
+        -- merge new version with the previous one
+        new_v := (NEW.log_data#>>'{h,-1,v}')::int;
+        version := logidze_version(new_v, (NEW.log_data#>'{h,-1,c}')::jsonb || changes, ts);
+        -- remove the previous version from log
+        NEW.log_data := jsonb_set(
+          NEW.log_data,
+          '{h}',
+          (NEW.log_data->'h') - (size - 1)
+        );
+      END IF;
+
+      NEW.log_data := jsonb_set(
+        NEW.log_data,
+        ARRAY['h', size::text],
+        version,
+        true
+      );
+
+      NEW.log_data := jsonb_set(
+        NEW.log_data,
+        '{v}',
+        to_jsonb(new_v)
+      );
+
+      IF history_limit IS NOT NULL AND history_limit <= size THEN
+        NEW.log_data := logidze_compact_history(NEW.log_data, size - history_limit + 1);
+      END IF;
+    END IF;
+
+    return NEW;
+  EXCEPTION
+    WHEN OTHERS THEN
+      GET STACKED DIAGNOSTICS err_sqlstate = RETURNED_SQLSTATE,
+                              err_message = MESSAGE_TEXT,
+                              err_detail = PG_EXCEPTION_DETAIL,
+                              err_hint = PG_EXCEPTION_HINT,
+                              err_context = PG_EXCEPTION_CONTEXT,
+                              err_schema_name = SCHEMA_NAME,
+                              err_table_name = TABLE_NAME;
+      err_jsonb := jsonb_build_object(
+        'returned_sqlstate', err_sqlstate,
+        'message_text', err_message,
+        'pg_exception_detail', err_detail,
+        'pg_exception_hint', err_hint,
+        'pg_exception_context', err_context,
+        'schema_name', err_schema_name,
+        'table_name', err_table_name
+      );
+      err_captured = logidze_capture_exception(err_jsonb);
+      IF err_captured THEN
+        return NEW;
+      ELSE
+        RAISE;
+      END IF;
+  END;
+$$;
+
+
+--
+-- Name: logidze_snapshot(jsonb, text, text[], boolean); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION public.logidze_snapshot(item jsonb, ts_column text DEFAULT NULL::text, columns text[] DEFAULT NULL::text[], include_columns boolean DEFAULT false) RETURNS jsonb
+    LANGUAGE plpgsql
+    AS $$
+  -- version: 3
+  DECLARE
+    ts timestamp with time zone;
+    k text;
+  BEGIN
+    item = item - 'log_data';
+    IF ts_column IS NULL THEN
+      ts := statement_timestamp();
+    ELSE
+      ts := coalesce((item->>ts_column)::timestamp with time zone, statement_timestamp());
+    END IF;
+
+    IF columns IS NOT NULL THEN
+      item := logidze_filter_keys(item, columns, include_columns);
+    END IF;
+
+    FOR k IN (SELECT key FROM jsonb_each(item))
+    LOOP
+      IF jsonb_typeof(item->k) = 'object' THEN
+         item := jsonb_set(item, ARRAY[k], to_jsonb(item->>k));
+      END IF;
+    END LOOP;
+
+    return json_build_object(
+      'v', 1,
+      'h', jsonb_build_array(
+              logidze_version(1, item, ts)
+            )
+      );
+  END;
+$$;
+
+
+--
+-- Name: logidze_version(bigint, jsonb, timestamp with time zone); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION public.logidze_version(v bigint, data jsonb, ts timestamp with time zone) RETURNS jsonb
+    LANGUAGE plpgsql
+    AS $$
+  -- version: 2
+  DECLARE
+    buf jsonb;
+  BEGIN
+    data = data - 'log_data';
+    buf := jsonb_build_object(
+              'ts',
+              (extract(epoch from ts) * 1000)::bigint,
+              'v',
+              v,
+              'c',
+              data
+              );
+    IF coalesce(current_setting('logidze.meta', true), '') <> '' THEN
+      buf := jsonb_insert(buf, '{m}', current_setting('logidze.meta')::jsonb);
+    END IF;
+    RETURN buf;
+  END;
+$$;
 
 
 SET default_tablespace = '';
@@ -177,7 +593,8 @@ CREATE TABLE public.bloodlines (
     perception integer NOT NULL,
     willpower integer NOT NULL,
     created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    updated_at timestamp(6) without time zone NOT NULL,
+    log_data jsonb
 );
 
 
@@ -207,7 +624,8 @@ ALTER SEQUENCE public.bloodlines_id_seq OWNED BY public.bloodlines.id;
 CREATE TABLE public.blueprint_activities (
     blueprint_id bigint NOT NULL,
     activity public.blueprint_activity NOT NULL,
-    "time" interval NOT NULL
+    "time" interval NOT NULL,
+    log_data jsonb
 );
 
 
@@ -219,7 +637,8 @@ CREATE TABLE public.blueprint_activity_materials (
     blueprint_id bigint NOT NULL,
     material_id bigint NOT NULL,
     activity public.blueprint_activity NOT NULL,
-    quantity integer NOT NULL
+    quantity integer NOT NULL,
+    log_data jsonb
 );
 
 
@@ -232,7 +651,8 @@ CREATE TABLE public.blueprint_activity_products (
     product_id bigint NOT NULL,
     activity public.blueprint_activity NOT NULL,
     quantity integer NOT NULL,
-    probability numeric
+    probability numeric,
+    log_data jsonb
 );
 
 
@@ -244,7 +664,8 @@ CREATE TABLE public.blueprint_activity_skills (
     blueprint_id bigint NOT NULL,
     skill_id bigint NOT NULL,
     activity public.blueprint_activity NOT NULL,
-    level integer NOT NULL
+    level integer NOT NULL,
+    log_data jsonb
 );
 
 
@@ -258,7 +679,8 @@ CREATE TABLE public.categories (
     name text NOT NULL,
     published boolean NOT NULL,
     created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    updated_at timestamp(6) without time zone NOT NULL,
+    log_data jsonb
 );
 
 
@@ -320,7 +742,8 @@ CREATE TABLE public.celestials (
     surface_gravity numeric,
     temperature numeric,
     created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    updated_at timestamp(6) without time zone NOT NULL,
+    log_data jsonb
 );
 
 
@@ -408,7 +831,8 @@ CREATE TABLE public.constellations (
     created_at timestamp(6) without time zone NOT NULL,
     updated_at timestamp(6) without time zone NOT NULL,
     faction_id bigint,
-    wormhole_class_id bigint
+    wormhole_class_id bigint,
+    log_data jsonb
 );
 
 
@@ -467,7 +891,8 @@ CREATE TABLE public.corporations (
     extent text,
     npc boolean,
     size_factor numeric,
-    size text
+    size text,
+    log_data jsonb
 );
 
 
@@ -513,7 +938,8 @@ CREATE TABLE public.dogma_attributes (
     tooltip_description text,
     tooltip_title text,
     created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    updated_at timestamp(6) without time zone NOT NULL,
+    log_data jsonb
 );
 
 
@@ -545,7 +971,8 @@ CREATE TABLE public.dogma_categories (
     description text,
     name text NOT NULL,
     created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    updated_at timestamp(6) without time zone NOT NULL,
+    log_data jsonb
 );
 
 
@@ -573,7 +1000,6 @@ ALTER SEQUENCE public.dogma_categories_id_seq OWNED BY public.dogma_categories.i
 --
 
 CREATE TABLE public.dogma_effect_modifiers (
-    id uuid DEFAULT gen_random_uuid() NOT NULL,
     effect_id bigint NOT NULL,
     group_id bigint,
     modified_attribute_id bigint,
@@ -582,7 +1008,9 @@ CREATE TABLE public.dogma_effect_modifiers (
     operation_id bigint,
     skill_id bigint,
     domain text NOT NULL,
-    function text NOT NULL
+    function text NOT NULL,
+    log_data jsonb,
+    "position" integer NOT NULL
 );
 
 
@@ -618,7 +1046,8 @@ CREATE TABLE public.dogma_effects (
     range_chance boolean NOT NULL,
     sfx_name text,
     created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    updated_at timestamp(6) without time zone NOT NULL,
+    log_data jsonb
 );
 
 
@@ -647,7 +1076,8 @@ ALTER SEQUENCE public.dogma_effects_id_seq OWNED BY public.dogma_effects.id;
 
 CREATE TABLE public.faction_races (
     faction_id bigint NOT NULL,
-    race_id bigint NOT NULL
+    race_id bigint NOT NULL,
+    log_data jsonb
 );
 
 
@@ -666,7 +1096,8 @@ CREATE TABLE public.factions (
     short_description text,
     size_factor numeric NOT NULL,
     created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    updated_at timestamp(6) without time zone NOT NULL,
+    log_data jsonb
 );
 
 
@@ -702,7 +1133,8 @@ CREATE TABLE public.graphics (
     skin_hull_name text,
     skin_race_name text,
     created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    updated_at timestamp(6) without time zone NOT NULL,
+    log_data jsonb
 );
 
 
@@ -740,7 +1172,8 @@ CREATE TABLE public.groups (
     published boolean NOT NULL,
     use_base_price boolean NOT NULL,
     created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    updated_at timestamp(6) without time zone NOT NULL,
+    log_data jsonb
 );
 
 
@@ -773,7 +1206,8 @@ CREATE TABLE public.icons (
     file text NOT NULL,
     obsolete boolean,
     created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    updated_at timestamp(6) without time zone NOT NULL,
+    log_data jsonb
 );
 
 
@@ -914,7 +1348,8 @@ CREATE TABLE public.market_groups (
     has_types boolean NOT NULL,
     name text NOT NULL,
     created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    updated_at timestamp(6) without time zone NOT NULL,
+    log_data jsonb
 );
 
 
@@ -948,7 +1383,8 @@ CREATE TABLE public.meta_groups (
     icon_suffix text,
     name text NOT NULL,
     created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    updated_at timestamp(6) without time zone NOT NULL,
+    log_data jsonb
 );
 
 
@@ -978,7 +1414,8 @@ ALTER SEQUENCE public.meta_groups_id_seq OWNED BY public.meta_groups.id;
 CREATE TABLE public.planet_schematic_inputs (
     schematic_id bigint NOT NULL,
     type_id bigint NOT NULL,
-    quantity integer NOT NULL
+    quantity integer NOT NULL,
+    log_data jsonb
 );
 
 
@@ -988,7 +1425,8 @@ CREATE TABLE public.planet_schematic_inputs (
 
 CREATE TABLE public.planet_schematic_pins (
     schematic_id bigint NOT NULL,
-    type_id bigint NOT NULL
+    type_id bigint NOT NULL,
+    log_data jsonb
 );
 
 
@@ -1004,7 +1442,8 @@ CREATE TABLE public.planet_schematics (
     output_quantity integer NOT NULL,
     pins integer[] NOT NULL,
     created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    updated_at timestamp(6) without time zone NOT NULL,
+    log_data jsonb
 );
 
 
@@ -1038,7 +1477,8 @@ CREATE TABLE public.races (
     description text,
     name text NOT NULL,
     created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    updated_at timestamp(6) without time zone NOT NULL,
+    log_data jsonb
 );
 
 
@@ -1083,7 +1523,8 @@ CREATE TABLE public.regions (
     name text NOT NULL,
     universe public.universe NOT NULL,
     created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    updated_at timestamp(6) without time zone NOT NULL,
+    log_data jsonb
 );
 
 
@@ -1148,7 +1589,8 @@ CREATE TABLE public.solar_systems (
     name text NOT NULL,
     visual_effect text,
     created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    updated_at timestamp(6) without time zone NOT NULL,
+    log_data jsonb
 );
 
 
@@ -1209,47 +1651,25 @@ ALTER SEQUENCE public.stargates_id_seq OWNED BY public.stargates.id;
 
 
 --
--- Name: static_data_imports; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.static_data_imports (
-    id bigint NOT NULL,
-    version_id bigint NOT NULL,
-    state text NOT NULL,
-    created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
-);
-
-
---
--- Name: static_data_imports_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE public.static_data_imports_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: static_data_imports_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
---
-
-ALTER SEQUENCE public.static_data_imports_id_seq OWNED BY public.static_data_imports.id;
-
-
---
 -- Name: static_data_versions; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE public.static_data_versions (
     id bigint NOT NULL,
     checksum text NOT NULL,
-    state text NOT NULL,
+    current boolean,
+    downloaded_at timestamp(6) without time zone,
+    downloading_at timestamp(6) without time zone,
+    downloading_failed_at timestamp(6) without time zone,
+    imported_at timestamp(6) without time zone,
+    importing_at timestamp(6) without time zone,
+    importing_failed_at timestamp(6) without time zone,
+    status public.static_data_version_status NOT NULL,
+    status_exception jsonb,
     created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    updated_at timestamp(6) without time zone NOT NULL,
+    log_data jsonb,
+    status_log text[]
 );
 
 
@@ -1278,7 +1698,8 @@ ALTER SEQUENCE public.static_data_versions_id_seq OWNED BY public.static_data_ve
 
 CREATE TABLE public.station_operation_services (
     operation_id bigint NOT NULL,
-    service_id bigint NOT NULL
+    service_id bigint NOT NULL,
+    log_data jsonb
 );
 
 
@@ -1289,7 +1710,8 @@ CREATE TABLE public.station_operation_services (
 CREATE TABLE public.station_operation_station_types (
     operation_id bigint NOT NULL,
     race_id bigint NOT NULL,
-    type_id bigint NOT NULL
+    type_id bigint NOT NULL,
+    log_data jsonb
 );
 
 
@@ -1310,7 +1732,8 @@ CREATE TABLE public.station_operations (
     ratio numeric NOT NULL,
     research_factor numeric NOT NULL,
     created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    updated_at timestamp(6) without time zone NOT NULL,
+    log_data jsonb
 );
 
 
@@ -1342,7 +1765,8 @@ CREATE TABLE public.station_services (
     description text,
     name text NOT NULL,
     created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    updated_at timestamp(6) without time zone NOT NULL,
+    log_data jsonb
 );
 
 
@@ -1389,7 +1813,8 @@ CREATE TABLE public.stations (
     reprocessing_station_take numeric NOT NULL,
     use_operation_name boolean NOT NULL,
     created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    updated_at timestamp(6) without time zone NOT NULL,
+    log_data jsonb
 );
 
 
@@ -1421,7 +1846,8 @@ CREATE TABLE public.type_materials (
     material_id bigint NOT NULL,
     quantity integer NOT NULL,
     created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    updated_at timestamp(6) without time zone NOT NULL,
+    log_data jsonb
 );
 
 
@@ -1457,7 +1883,8 @@ CREATE TABLE public.types (
     max_production_limit integer,
     dogma_attributes jsonb,
     dogma_effects jsonb,
-    traits jsonb
+    traits jsonb,
+    log_data jsonb
 );
 
 
@@ -1488,7 +1915,8 @@ CREATE TABLE public.units (
     id bigint NOT NULL,
     name text NOT NULL,
     created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    updated_at timestamp(6) without time zone NOT NULL,
+    log_data jsonb
 );
 
 
@@ -1746,13 +2174,6 @@ ALTER TABLE ONLY public.stargates ALTER COLUMN id SET DEFAULT nextval('public.st
 
 
 --
--- Name: static_data_imports id; Type: DEFAULT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.static_data_imports ALTER COLUMN id SET DEFAULT nextval('public.static_data_imports_id_seq'::regclass);
-
-
---
 -- Name: static_data_versions id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -1913,14 +2334,6 @@ ALTER TABLE ONLY public.dogma_categories
 
 
 --
--- Name: dogma_effect_modifiers dogma_effect_modifiers_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.dogma_effect_modifiers
-    ADD CONSTRAINT dogma_effect_modifiers_pkey PRIMARY KEY (id);
-
-
---
 -- Name: dogma_effects dogma_effects_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -2046,14 +2459,6 @@ ALTER TABLE ONLY public.solar_systems
 
 ALTER TABLE ONLY public.stargates
     ADD CONSTRAINT stargates_pkey PRIMARY KEY (id);
-
-
---
--- Name: static_data_imports static_data_imports_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.static_data_imports
-    ADD CONSTRAINT static_data_imports_pkey PRIMARY KEY (id);
 
 
 --
@@ -2779,10 +3184,17 @@ CREATE INDEX index_stargates_on_type_id ON public.stargates USING btree (type_id
 
 
 --
--- Name: index_static_data_imports_on_version_id; Type: INDEX; Schema: public; Owner: -
+-- Name: index_static_data_versions_on_checksum; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX index_static_data_imports_on_version_id ON public.static_data_imports USING btree (version_id);
+CREATE UNIQUE INDEX index_static_data_versions_on_checksum ON public.static_data_versions USING btree (checksum);
+
+
+--
+-- Name: index_static_data_versions_on_current; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_static_data_versions_on_current ON public.static_data_versions USING btree (current);
 
 
 --
@@ -2996,6 +3408,13 @@ CREATE UNIQUE INDEX index_unique_default_identities ON public.identities USING b
 
 
 --
+-- Name: index_unique_dogma_effect_modifiers; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_unique_dogma_effect_modifiers ON public.dogma_effect_modifiers USING btree (effect_id, "position");
+
+
+--
 -- Name: index_unique_faction_races; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -3021,13 +3440,6 @@ CREATE UNIQUE INDEX index_unique_planet_schematic_inputs ON public.planet_schema
 --
 
 CREATE UNIQUE INDEX index_unique_planet_schematic_pins ON public.planet_schematic_pins USING btree (schematic_id, type_id);
-
-
---
--- Name: index_unique_static_data_versions; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE UNIQUE INDEX index_unique_static_data_versions ON public.static_data_versions USING btree (checksum);
 
 
 --
@@ -3073,19 +3485,256 @@ CREATE INDEX index_versions_on_whodunnit_and_item_type_and_event ON public.versi
 
 
 --
+-- Name: bloodlines logidze_on_bloodlines; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER logidze_on_bloodlines BEFORE INSERT OR UPDATE ON public.bloodlines FOR EACH ROW WHEN ((COALESCE(current_setting('logidze.disabled'::text, true), ''::text) <> 'on'::text)) EXECUTE FUNCTION public.logidze_logger('null', 'updated_at');
+
+
+--
+-- Name: blueprint_activities logidze_on_blueprint_activities; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER logidze_on_blueprint_activities BEFORE INSERT OR UPDATE ON public.blueprint_activities FOR EACH ROW WHEN ((COALESCE(current_setting('logidze.disabled'::text, true), ''::text) <> 'on'::text)) EXECUTE FUNCTION public.logidze_logger('null', 'updated_at');
+
+
+--
+-- Name: blueprint_activity_materials logidze_on_blueprint_activity_materials; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER logidze_on_blueprint_activity_materials BEFORE INSERT OR UPDATE ON public.blueprint_activity_materials FOR EACH ROW WHEN ((COALESCE(current_setting('logidze.disabled'::text, true), ''::text) <> 'on'::text)) EXECUTE FUNCTION public.logidze_logger('null', 'updated_at');
+
+
+--
+-- Name: blueprint_activity_products logidze_on_blueprint_activity_products; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER logidze_on_blueprint_activity_products BEFORE INSERT OR UPDATE ON public.blueprint_activity_products FOR EACH ROW WHEN ((COALESCE(current_setting('logidze.disabled'::text, true), ''::text) <> 'on'::text)) EXECUTE FUNCTION public.logidze_logger('null', 'updated_at');
+
+
+--
+-- Name: blueprint_activity_skills logidze_on_blueprint_activity_skills; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER logidze_on_blueprint_activity_skills BEFORE INSERT OR UPDATE ON public.blueprint_activity_skills FOR EACH ROW WHEN ((COALESCE(current_setting('logidze.disabled'::text, true), ''::text) <> 'on'::text)) EXECUTE FUNCTION public.logidze_logger('null', 'updated_at');
+
+
+--
+-- Name: categories logidze_on_categories; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER logidze_on_categories BEFORE INSERT OR UPDATE ON public.categories FOR EACH ROW WHEN ((COALESCE(current_setting('logidze.disabled'::text, true), ''::text) <> 'on'::text)) EXECUTE FUNCTION public.logidze_logger('null', 'updated_at');
+
+
+--
+-- Name: celestials logidze_on_celestials; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER logidze_on_celestials BEFORE INSERT OR UPDATE ON public.celestials FOR EACH ROW WHEN ((COALESCE(current_setting('logidze.disabled'::text, true), ''::text) <> 'on'::text)) EXECUTE FUNCTION public.logidze_logger('null', 'updated_at');
+
+
+--
+-- Name: constellations logidze_on_constellations; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER logidze_on_constellations BEFORE INSERT OR UPDATE ON public.constellations FOR EACH ROW WHEN ((COALESCE(current_setting('logidze.disabled'::text, true), ''::text) <> 'on'::text)) EXECUTE FUNCTION public.logidze_logger('null', 'updated_at');
+
+
+--
+-- Name: corporations logidze_on_corporations; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER logidze_on_corporations BEFORE INSERT OR UPDATE ON public.corporations FOR EACH ROW WHEN ((COALESCE(current_setting('logidze.disabled'::text, true), ''::text) <> 'on'::text)) EXECUTE FUNCTION public.logidze_logger('null', 'updated_at');
+
+
+--
+-- Name: dogma_attributes logidze_on_dogma_attributes; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER logidze_on_dogma_attributes BEFORE INSERT OR UPDATE ON public.dogma_attributes FOR EACH ROW WHEN ((COALESCE(current_setting('logidze.disabled'::text, true), ''::text) <> 'on'::text)) EXECUTE FUNCTION public.logidze_logger('null', 'updated_at');
+
+
+--
+-- Name: dogma_categories logidze_on_dogma_categories; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER logidze_on_dogma_categories BEFORE INSERT OR UPDATE ON public.dogma_categories FOR EACH ROW WHEN ((COALESCE(current_setting('logidze.disabled'::text, true), ''::text) <> 'on'::text)) EXECUTE FUNCTION public.logidze_logger('null', 'updated_at');
+
+
+--
+-- Name: dogma_effect_modifiers logidze_on_dogma_effect_modifiers; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER logidze_on_dogma_effect_modifiers BEFORE INSERT OR UPDATE ON public.dogma_effect_modifiers FOR EACH ROW WHEN ((COALESCE(current_setting('logidze.disabled'::text, true), ''::text) <> 'on'::text)) EXECUTE FUNCTION public.logidze_logger('null', 'updated_at');
+
+
+--
+-- Name: dogma_effects logidze_on_dogma_effects; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER logidze_on_dogma_effects BEFORE INSERT OR UPDATE ON public.dogma_effects FOR EACH ROW WHEN ((COALESCE(current_setting('logidze.disabled'::text, true), ''::text) <> 'on'::text)) EXECUTE FUNCTION public.logidze_logger('null', 'updated_at');
+
+
+--
+-- Name: faction_races logidze_on_faction_races; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER logidze_on_faction_races BEFORE INSERT OR UPDATE ON public.faction_races FOR EACH ROW WHEN ((COALESCE(current_setting('logidze.disabled'::text, true), ''::text) <> 'on'::text)) EXECUTE FUNCTION public.logidze_logger('null', 'updated_at');
+
+
+--
+-- Name: factions logidze_on_factions; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER logidze_on_factions BEFORE INSERT OR UPDATE ON public.factions FOR EACH ROW WHEN ((COALESCE(current_setting('logidze.disabled'::text, true), ''::text) <> 'on'::text)) EXECUTE FUNCTION public.logidze_logger('null', 'updated_at');
+
+
+--
+-- Name: graphics logidze_on_graphics; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER logidze_on_graphics BEFORE INSERT OR UPDATE ON public.graphics FOR EACH ROW WHEN ((COALESCE(current_setting('logidze.disabled'::text, true), ''::text) <> 'on'::text)) EXECUTE FUNCTION public.logidze_logger('null', 'updated_at');
+
+
+--
+-- Name: groups logidze_on_groups; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER logidze_on_groups BEFORE INSERT OR UPDATE ON public.groups FOR EACH ROW WHEN ((COALESCE(current_setting('logidze.disabled'::text, true), ''::text) <> 'on'::text)) EXECUTE FUNCTION public.logidze_logger('null', 'updated_at');
+
+
+--
+-- Name: icons logidze_on_icons; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER logidze_on_icons BEFORE INSERT OR UPDATE ON public.icons FOR EACH ROW WHEN ((COALESCE(current_setting('logidze.disabled'::text, true), ''::text) <> 'on'::text)) EXECUTE FUNCTION public.logidze_logger('null', 'updated_at');
+
+
+--
+-- Name: market_groups logidze_on_market_groups; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER logidze_on_market_groups BEFORE INSERT OR UPDATE ON public.market_groups FOR EACH ROW WHEN ((COALESCE(current_setting('logidze.disabled'::text, true), ''::text) <> 'on'::text)) EXECUTE FUNCTION public.logidze_logger('null', 'updated_at');
+
+
+--
+-- Name: meta_groups logidze_on_meta_groups; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER logidze_on_meta_groups BEFORE INSERT OR UPDATE ON public.meta_groups FOR EACH ROW WHEN ((COALESCE(current_setting('logidze.disabled'::text, true), ''::text) <> 'on'::text)) EXECUTE FUNCTION public.logidze_logger('null', 'updated_at');
+
+
+--
+-- Name: planet_schematic_inputs logidze_on_planet_schematic_inputs; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER logidze_on_planet_schematic_inputs BEFORE INSERT OR UPDATE ON public.planet_schematic_inputs FOR EACH ROW WHEN ((COALESCE(current_setting('logidze.disabled'::text, true), ''::text) <> 'on'::text)) EXECUTE FUNCTION public.logidze_logger('null', 'updated_at');
+
+
+--
+-- Name: planet_schematic_pins logidze_on_planet_schematic_pins; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER logidze_on_planet_schematic_pins BEFORE INSERT OR UPDATE ON public.planet_schematic_pins FOR EACH ROW WHEN ((COALESCE(current_setting('logidze.disabled'::text, true), ''::text) <> 'on'::text)) EXECUTE FUNCTION public.logidze_logger('null', 'updated_at');
+
+
+--
+-- Name: planet_schematics logidze_on_planet_schematics; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER logidze_on_planet_schematics BEFORE INSERT OR UPDATE ON public.planet_schematics FOR EACH ROW WHEN ((COALESCE(current_setting('logidze.disabled'::text, true), ''::text) <> 'on'::text)) EXECUTE FUNCTION public.logidze_logger('null', 'updated_at');
+
+
+--
+-- Name: races logidze_on_races; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER logidze_on_races BEFORE INSERT OR UPDATE ON public.races FOR EACH ROW WHEN ((COALESCE(current_setting('logidze.disabled'::text, true), ''::text) <> 'on'::text)) EXECUTE FUNCTION public.logidze_logger('null', 'updated_at');
+
+
+--
+-- Name: regions logidze_on_regions; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER logidze_on_regions BEFORE INSERT OR UPDATE ON public.regions FOR EACH ROW WHEN ((COALESCE(current_setting('logidze.disabled'::text, true), ''::text) <> 'on'::text)) EXECUTE FUNCTION public.logidze_logger('null', 'updated_at');
+
+
+--
+-- Name: solar_systems logidze_on_solar_systems; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER logidze_on_solar_systems BEFORE INSERT OR UPDATE ON public.solar_systems FOR EACH ROW WHEN ((COALESCE(current_setting('logidze.disabled'::text, true), ''::text) <> 'on'::text)) EXECUTE FUNCTION public.logidze_logger('null', 'updated_at');
+
+
+--
+-- Name: static_data_versions logidze_on_static_data_versions; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER logidze_on_static_data_versions BEFORE INSERT OR UPDATE ON public.static_data_versions FOR EACH ROW WHEN ((COALESCE(current_setting('logidze.disabled'::text, true), ''::text) <> 'on'::text)) EXECUTE FUNCTION public.logidze_logger('null', 'updated_at');
+
+
+--
+-- Name: station_operation_services logidze_on_station_operation_services; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER logidze_on_station_operation_services BEFORE INSERT OR UPDATE ON public.station_operation_services FOR EACH ROW WHEN ((COALESCE(current_setting('logidze.disabled'::text, true), ''::text) <> 'on'::text)) EXECUTE FUNCTION public.logidze_logger('null', 'updated_at');
+
+
+--
+-- Name: station_operation_station_types logidze_on_station_operation_station_types; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER logidze_on_station_operation_station_types BEFORE INSERT OR UPDATE ON public.station_operation_station_types FOR EACH ROW WHEN ((COALESCE(current_setting('logidze.disabled'::text, true), ''::text) <> 'on'::text)) EXECUTE FUNCTION public.logidze_logger('null', 'updated_at');
+
+
+--
+-- Name: station_operations logidze_on_station_operations; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER logidze_on_station_operations BEFORE INSERT OR UPDATE ON public.station_operations FOR EACH ROW WHEN ((COALESCE(current_setting('logidze.disabled'::text, true), ''::text) <> 'on'::text)) EXECUTE FUNCTION public.logidze_logger('null', 'updated_at');
+
+
+--
+-- Name: station_services logidze_on_station_services; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER logidze_on_station_services BEFORE INSERT OR UPDATE ON public.station_services FOR EACH ROW WHEN ((COALESCE(current_setting('logidze.disabled'::text, true), ''::text) <> 'on'::text)) EXECUTE FUNCTION public.logidze_logger('null', 'updated_at');
+
+
+--
+-- Name: stations logidze_on_stations; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER logidze_on_stations BEFORE INSERT OR UPDATE ON public.stations FOR EACH ROW WHEN ((COALESCE(current_setting('logidze.disabled'::text, true), ''::text) <> 'on'::text)) EXECUTE FUNCTION public.logidze_logger('null', 'updated_at');
+
+
+--
+-- Name: type_materials logidze_on_type_materials; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER logidze_on_type_materials BEFORE INSERT OR UPDATE ON public.type_materials FOR EACH ROW WHEN ((COALESCE(current_setting('logidze.disabled'::text, true), ''::text) <> 'on'::text)) EXECUTE FUNCTION public.logidze_logger('null', 'updated_at');
+
+
+--
+-- Name: types logidze_on_types; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER logidze_on_types BEFORE INSERT OR UPDATE ON public.types FOR EACH ROW WHEN ((COALESCE(current_setting('logidze.disabled'::text, true), ''::text) <> 'on'::text)) EXECUTE FUNCTION public.logidze_logger('null', 'updated_at');
+
+
+--
+-- Name: units logidze_on_units; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER logidze_on_units BEFORE INSERT OR UPDATE ON public.units FOR EACH ROW WHEN ((COALESCE(current_setting('logidze.disabled'::text, true), ''::text) <> 'on'::text)) EXECUTE FUNCTION public.logidze_logger('null', 'updated_at');
+
+
+--
 -- Name: active_storage_variant_records fk_rails_993965df05; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.active_storage_variant_records
     ADD CONSTRAINT fk_rails_993965df05 FOREIGN KEY (blob_id) REFERENCES public.active_storage_blobs(id);
-
-
---
--- Name: static_data_imports fk_rails_c097cc8b57; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.static_data_imports
-    ADD CONSTRAINT fk_rails_c097cc8b57 FOREIGN KEY (version_id) REFERENCES public.static_data_versions(id);
 
 
 --
@@ -3136,6 +3785,46 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220526165548'),
 ('20220526171131'),
 ('20220526190300'),
-('20220526201528');
+('20220526201528'),
+('20220526204250'),
+('20220528152440'),
+('20220528152441'),
+('20220528152902'),
+('20220528153914'),
+('20220528153926'),
+('20220528153939'),
+('20220528153953'),
+('20220528154006'),
+('20220528154118'),
+('20220528154129'),
+('20220528154151'),
+('20220528154203'),
+('20220528154328'),
+('20220528154338'),
+('20220528154401'),
+('20220528154414'),
+('20220528154423'),
+('20220528154435'),
+('20220528154451'),
+('20220528154512'),
+('20220528154522'),
+('20220528154532'),
+('20220528154542'),
+('20220528154553'),
+('20220528154607'),
+('20220528154621'),
+('20220528154632'),
+('20220528154640'),
+('20220528154700'),
+('20220528154715'),
+('20220528154727'),
+('20220528154736'),
+('20220528154749'),
+('20220528154801'),
+('20220528154811'),
+('20220528155025'),
+('20220528155421'),
+('20220528200046'),
+('20220529005304');
 
 

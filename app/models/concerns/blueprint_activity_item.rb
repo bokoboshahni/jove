@@ -6,6 +6,8 @@ module BlueprintActivityItem
   include BlueprintActivityEnum
 
   included do
+    include SDEImportable
+
     belongs_to :activity, class_name: 'BlueprintActivity', foreign_key: %i[blueprint_id activity]
   end
 end

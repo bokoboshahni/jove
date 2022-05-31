@@ -18,6 +18,7 @@
 # **`is_assistance`**                       | `boolean`          | `not null`
 # **`is_offensive`**                        | `boolean`          | `not null`
 # **`is_warp_safe`**                        | `boolean`          | `not null`
+# **`log_data`**                            | `jsonb`            |
 # **`name`**                                | `text`             | `not null`
 # **`propulsion_chance`**                   | `boolean`          | `not null`
 # **`published`**                           | `boolean`          | `not null`

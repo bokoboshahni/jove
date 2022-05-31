@@ -19,6 +19,7 @@
 # **`fragmented`**             | `boolean`          |
 # **`life`**                   | `decimal(, )`      |
 # **`locked`**                 | `boolean`          |
+# **`log_data`**               | `jsonb`            |
 # **`luminosity`**             | `decimal(, )`      |
 # **`mass_dust`**              | `decimal(, )`      |
 # **`mass_gas`**               | `decimal(, )`      |
@@ -60,27 +61,5 @@
 #     * **`type_id`**
 #
 class SecondarySun < Celestial
-  self.sde_mapper = lambda { |data, context:|
-    data[:id] = data.delete(:item_id)
-    data[:celestial_type] = 'SecondarySun'
-    data[:solar_system_id] = context[:solar_system_id]
-    data[:position_x], data[:position_y], data[:position_z] = data.delete(:position)
-  }
-
   belongs_to :effect_beacon_type, class_name: 'Type'
-
-  def self.import_all_from_sde(progress: nil) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-    paths = Dir[File.join(sde_path, 'fsd/universe/**/solarsystem.staticdata')]
-    progress&.update(total: paths.count)
-    rows = Parallel.map(paths, in_threads: Etc.nprocessors) do |path|
-      solar_system = YAML.load_file(path)
-      next unless solar_system['secondarySun']
-
-      suns = map_sde_attributes(solar_system['secondarySun'],
-                                context: { solar_system_id: solar_system['solarSystemID'] })
-      progress&.advance
-      suns
-    end.compact
-    upsert_all(rows.flatten)
-  end
 end

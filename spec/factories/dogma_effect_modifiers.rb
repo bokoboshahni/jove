@@ -8,10 +8,11 @@
 #
 # Name                          | Type               | Attributes
 # ----------------------------- | ------------------ | ---------------------------
-# **`id`**                      | `uuid`             | `not null, primary key`
 # **`domain`**                  | `text`             | `not null`
 # **`function`**                | `text`             | `not null`
-# **`effect_id`**               | `bigint`           | `not null`
+# **`log_data`**                | `jsonb`            |
+# **`position`**                | `integer`          | `not null, primary key`
+# **`effect_id`**               | `bigint`           | `not null, primary key`
 # **`group_id`**                | `bigint`           |
 # **`modified_attribute_id`**   | `bigint`           |
 # **`modified_effect_id`**      | `bigint`           |
@@ -35,6 +36,9 @@
 #     * **`operation_id`**
 # * `index_dogma_effect_modifiers_on_skill_id`:
 #     * **`skill_id`**
+# * `index_unique_dogma_effect_modifiers` (_unique_):
+#     * **`effect_id`**
+#     * **`position`**
 #
 FactoryBot.define do
   factory :dogma_effect_modifier do

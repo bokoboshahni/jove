@@ -9,6 +9,7 @@
 # Name              | Type               | Attributes
 # ----------------- | ------------------ | ---------------------------
 # **`id`**          | `bigint`           | `not null, primary key`
+# **`log_data`**    | `jsonb`            |
 # **`name`**        | `text`             | `not null`
 # **`published`**   | `boolean`          | `not null`
 # **`created_at`**  | `datetime`         | `not null`
@@ -23,20 +24,7 @@
 class Category < ApplicationRecord
   include SDEImportable
 
-  self.sde_localized = %i[name]
-
   belongs_to :icon, optional: true
 
   has_many :groups
-
-  def self.import_all_from_sde(progress: nil)
-    data = YAML.load_file(File.join(sde_path, 'fsd/categoryIDs.yaml'))
-    progress&.update(total: data.count)
-    rows = data.map do |id, orig|
-      record = map_sde_attributes(orig, id:)
-      progress&.advance
-      record
-    end
-    upsert_all(rows)
-  end
 end

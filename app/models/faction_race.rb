@@ -8,6 +8,7 @@
 #
 # Name              | Type               | Attributes
 # ----------------- | ------------------ | ---------------------------
+# **`log_data`**    | `jsonb`            |
 # **`faction_id`**  | `bigint`           | `not null, primary key`
 # **`race_id`**     | `bigint`           | `not null, primary key`
 #
@@ -22,6 +23,8 @@
 #     * **`race_id`**
 #
 class FactionRace < ApplicationRecord
+  include SDEImportable
+
   self.primary_keys = :faction_id, :race_id
 
   belongs_to :faction

@@ -8,6 +8,7 @@
 #
 # Name                | Type               | Attributes
 # ------------------- | ------------------ | ---------------------------
+# **`log_data`**      | `jsonb`            |
 # **`schematic_id`**  | `bigint`           | `not null, primary key`
 # **`type_id`**       | `bigint`           | `not null, primary key`
 #
@@ -18,6 +19,8 @@
 #     * **`type_id`**
 #
 class PlanetSchematicPin < ApplicationRecord
+  include SDEImportable
+
   self.primary_keys = :schematic_id, :type_id
 
   belongs_to :schematic, class_name: 'PlanetSchematic'

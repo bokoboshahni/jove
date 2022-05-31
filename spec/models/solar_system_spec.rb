@@ -19,6 +19,7 @@
 # **`fringe`**                        | `boolean`          | `not null`
 # **`hub`**                           | `boolean`          | `not null`
 # **`international`**                 | `boolean`          | `not null`
+# **`log_data`**                      | `jsonb`            |
 # **`luminosity`**                    | `decimal(, )`      | `not null`
 # **`max_x`**                         | `decimal(, )`      | `not null`
 # **`max_y`**                         | `decimal(, )`      | `not null`
@@ -50,17 +51,4 @@
 require 'rails_helper'
 
 RSpec.describe SolarSystem, type: :model do
-  describe '.import_all_from_sde' do
-    let(:solar_system_data) do
-      Dir[File.join(Jove.config.sde_path, 'fsd/universe/**/solarsystem.staticdata')].map do |path|
-        YAML.load_file(path)
-      end
-    end
-
-    let(:solar_system_ids) { solar_system_data.map { |r| r['solarSystemID'] } }
-
-    it 'saves each solar system' do
-      expect(described_class.import_all_from_sde.rows.flatten).to match_array(solar_system_ids)
-    end
-  end
 end

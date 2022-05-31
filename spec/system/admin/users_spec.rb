@@ -27,7 +27,7 @@ RSpec.describe 'User administration', type: :system do
 
     expect(page).to have_text('Delete user?')
 
-    click_on 'Confirm'
+    click_on('Confirm')
 
     expect(page).to have_text("deleted account for #{name}")
   end

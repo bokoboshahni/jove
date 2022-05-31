@@ -19,6 +19,7 @@
 # **`fragmented`**             | `boolean`          |
 # **`life`**                   | `decimal(, )`      |
 # **`locked`**                 | `boolean`          |
+# **`log_data`**               | `jsonb`            |
 # **`luminosity`**             | `decimal(, )`      |
 # **`mass_dust`**              | `decimal(, )`      |
 # **`mass_gas`**               | `decimal(, )`      |
@@ -62,16 +63,4 @@
 require 'rails_helper'
 
 RSpec.describe Planet, type: :model do
-  describe '.import_all_from_sde' do
-    let(:planet_ids) do
-      Dir[File.join(Jove.config.sde_path, 'fsd/universe/**/solarsystem.staticdata')].each_with_object([]) do |path, a|
-        solar_system = YAML.load_file(path)
-        solar_system['planets'].each_key { |planet_id| a << planet_id }
-      end
-    end
-
-    it 'saves each planet' do
-      expect(described_class.import_all_from_sde.rows.flatten).to match_array(planet_ids)
-    end
-  end
 end

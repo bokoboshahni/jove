@@ -12,6 +12,7 @@
 # **`anchorable`**              | `boolean`          | `not null`
 # **`anchored`**                | `boolean`          | `not null`
 # **`fittable_non_singleton`**  | `boolean`          | `not null`
+# **`log_data`**                | `jsonb`            |
 # **`name`**                    | `text`             | `not null`
 # **`published`**               | `boolean`          | `not null`
 # **`use_base_price`**          | `boolean`          | `not null`
@@ -30,21 +31,8 @@
 class Group < ApplicationRecord
   include SDEImportable
 
-  self.sde_localized = %i[name]
-
   belongs_to :category
   belongs_to :icon, optional: true
 
   has_many :dogma_effect_modifiers
-
-  def self.import_all_from_sde(progress: nil)
-    data = YAML.load_file(File.join(sde_path, 'fsd/groupIDs.yaml'))
-    progress&.update(total: data.count)
-    rows = data.map do |id, orig|
-      record = map_sde_attributes(orig, id:)
-      progress&.advance
-      record
-    end
-    upsert_all(rows)
-  end
 end

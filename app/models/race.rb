@@ -10,6 +10,7 @@
 # ------------------- | ------------------ | ---------------------------
 # **`id`**            | `bigint`           | `not null, primary key`
 # **`description`**   | `text`             |
+# **`log_data`**      | `jsonb`            |
 # **`name`**          | `text`             | `not null`
 # **`created_at`**    | `datetime`         | `not null`
 # **`updated_at`**    | `datetime`         | `not null`
@@ -26,23 +27,8 @@
 class Race < ApplicationRecord
   include SDEImportable
 
-  self.sde_exclude = %i[skills]
-
-  self.sde_localized = %i[description name]
-
   belongs_to :icon, optional: true
   belongs_to :ship_type, class_name: 'Type', optional: true
 
   has_many :station_operation_station_types
-
-  def self.import_all_from_sde(progress: nil)
-    data = YAML.load_file(File.join(sde_path, 'fsd/races.yaml'))
-    progress&.update(total: data.count)
-    rows = data.map do |id, orig|
-      record = map_sde_attributes(orig, id:)
-      progress&.advance
-      record
-    end
-    upsert_all(rows)
-  end
 end

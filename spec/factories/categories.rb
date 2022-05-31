@@ -9,6 +9,7 @@
 # Name              | Type               | Attributes
 # ----------------- | ------------------ | ---------------------------
 # **`id`**          | `bigint`           | `not null, primary key`
+# **`log_data`**    | `jsonb`            |
 # **`name`**        | `text`             | `not null`
 # **`published`**   | `boolean`          | `not null`
 # **`created_at`**  | `datetime`         | `not null`

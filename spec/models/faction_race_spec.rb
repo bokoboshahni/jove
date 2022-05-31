@@ -8,6 +8,7 @@
 #
 # Name              | Type               | Attributes
 # ----------------- | ------------------ | ---------------------------
+# **`log_data`**    | `jsonb`            |
 # **`faction_id`**  | `bigint`           | `not null, primary key`
 # **`race_id`**     | `bigint`           | `not null, primary key`
 #

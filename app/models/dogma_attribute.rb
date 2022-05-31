@@ -14,6 +14,7 @@
 # **`display_name`**                | `text`             |
 # **`display_when_zero`**           | `boolean`          |
 # **`high_is_good`**                | `boolean`          | `not null`
+# **`log_data`**                    | `jsonb`            |
 # **`name`**                        | `text`             | `not null`
 # **`published`**                   | `boolean`          | `not null`
 # **`stackable`**                   | `boolean`          | `not null`
@@ -46,15 +47,6 @@
 class DogmaAttribute < ApplicationRecord
   include SDEImportable
 
-  self.sde_exclude = %i[attribute_id]
-
-  self.sde_rename = {
-    charge_recharge_time_id: :recharge_time_attribute_id,
-    data_type: :data_type_id
-  }
-
-  self.sde_localized = %i[display_name tooltip_description tooltip_title]
-
   belongs_to :category, class_name: 'DogmaCategory', optional: true
   belongs_to :charge_recharge_time_attribute, class_name: 'DogmaAttribute', optional: true
   belongs_to :icon, optional: true
@@ -80,15 +72,4 @@ class DogmaAttribute < ApplicationRecord
 
   has_many :type_dogma_attributes
   has_many :types, through: :type_dogma_attributes
-
-  def self.import_all_from_sde(progress: nil)
-    data = YAML.load_file(File.join(sde_path, 'fsd/dogmaAttributes.yaml'))
-    progress&.update(total: data.count)
-    rows = data.map do |id, orig|
-      record = map_sde_attributes(orig, id:)
-      progress&.advance
-      record
-    end
-    upsert_all(rows)
-  end
 end

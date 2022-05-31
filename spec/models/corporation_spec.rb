@@ -16,6 +16,7 @@
 # **`esi_last_modified_at`**   | `datetime`         |
 # **`extent`**                 | `text`             |
 # **`founded_on`**             | `date`             |
+# **`log_data`**               | `jsonb`            |
 # **`member_count`**           | `integer`          |
 # **`name`**                   | `text`             | `not null`
 # **`npc`**                    | `boolean`          |
@@ -71,13 +72,4 @@
 require 'rails_helper'
 
 RSpec.describe Corporation, type: :model do
-  describe '.import_all_from_sde' do
-    let(:corporation_ids) do
-      YAML.load_file(File.join(Jove.config.sde_path, 'fsd/npcCorporations.yaml')).keys
-    end
-
-    it 'saves each corporation' do
-      expect(described_class.import_all_from_sde.rows.flatten).to match_array(corporation_ids)
-    end
-  end
 end

@@ -14,6 +14,7 @@
 # **`description`**               | `text`             |
 # **`dogma_attributes`**          | `jsonb`            |
 # **`dogma_effects`**             | `jsonb`            |
+# **`log_data`**                  | `jsonb`            |
 # **`mass`**                      | `decimal(, )`      |
 # **`max_production_limit`**      | `integer`          |
 # **`name`**                      | `text`             | `not null`
@@ -63,37 +64,4 @@
 require 'rails_helper'
 
 RSpec.describe Type, type: :model do
-  describe '.import_all_from_sde' do
-    let(:type_ids) do
-      YAML.load_file(File.join(Jove.config.sde_path, 'fsd/typeIDs.yaml')).keys
-    end
-
-    let(:type_dogma) do
-      YAML.load_file(File.join(Jove.config.sde_path, 'fsd/typeDogma.yaml'))
-    end
-
-    it 'saves each type' do
-      expect(described_class.import_all_from_sde.rows.flatten).to match_array(type_ids)
-    end
-
-    it 'saves dogma attributes for each type' do
-      described_class.import_all_from_sde
-      Type.where(id: type_dogma.keys).each do |type|
-        dogma_attributes = type_dogma[type.id]['dogmaAttributes'].map do |attr|
-          attr.deep_transform_keys!(&:underscore)
-        end
-        expect(type.dogma_attributes).to eq(dogma_attributes)
-      end
-    end
-
-    it 'saves dogma effects for each type' do
-      described_class.import_all_from_sde
-      Type.where(id: type_dogma.keys).each do |type|
-        dogma_effects = type_dogma[type.id]['dogmaEffects'].map do |attr|
-          attr.deep_transform_keys!(&:underscore)
-        end
-        expect(type.dogma_effects).to eq(dogma_effects)
-      end
-    end
-  end
 end

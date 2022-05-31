@@ -9,6 +9,7 @@
 # Name                | Type               | Attributes
 # ------------------- | ------------------ | ---------------------------
 # **`activity`**      | `enum`             | `not null, primary key`
+# **`log_data`**      | `jsonb`            |
 # **`probability`**   | `decimal(, )`      |
 # **`quantity`**      | `integer`          | `not null`
 # **`blueprint_id`**  | `bigint`           | `not null, primary key`

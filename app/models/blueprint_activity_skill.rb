@@ -10,6 +10,7 @@
 # ------------------- | ------------------ | ---------------------------
 # **`activity`**      | `enum`             | `not null, primary key`
 # **`level`**         | `integer`          | `not null`
+# **`log_data`**      | `jsonb`            |
 # **`blueprint_id`**  | `bigint`           | `not null, primary key`
 # **`skill_id`**      | `bigint`           | `not null, primary key`
 #

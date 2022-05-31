@@ -19,6 +19,7 @@
 # **`fragmented`**             | `boolean`          |
 # **`life`**                   | `decimal(, )`      |
 # **`locked`**                 | `boolean`          |
+# **`log_data`**               | `jsonb`            |
 # **`luminosity`**             | `decimal(, )`      |
 # **`mass_dust`**              | `decimal(, )`      |
 # **`mass_gas`**               | `decimal(, )`      |
@@ -71,14 +72,6 @@ class Celestial < ApplicationRecord
   }
 
   self.inheritance_column = :celestial_type
-
-  self.sde_rename = {
-    height_map1: :height_map_1_id,
-    height_map2: :height_map_2_id,
-    shader_preset: :shader_preset_id
-  }
-
-  self.sde_name_lookup = true
 
   has_ancestry
 

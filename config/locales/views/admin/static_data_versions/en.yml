@@ -1,0 +1,27 @@
+---
+en:
+  admin:
+    static_data_versions:
+      confirm_download:
+        body: This action will download the latest version of the static data export from CCP.
+        download: Confirm
+        title: Download?
+      confirm_import:
+        body: This action will import the the static data export from CCP into the database.
+        import: Confirm
+        title: Import?
+      index:
+        body:
+          html: Data from CCP's <a href="https://docs.esi.evetech.net/docs/sde_introduction.html" class="text-secondary hover:text-secondary visited:text-secondary">static data export</a>.
+        check: Check for new version
+        title: Static data versions
+      versions_grid:
+        actions:
+          button: Actions for %{id}
+          download: Download
+          import: Import
+        columns:
+          checksum: Checksum
+          downloaded_at: Downloaded
+          imported_at: Imported
+          status: Status
