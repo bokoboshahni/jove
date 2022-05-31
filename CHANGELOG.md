@@ -1,5 +1,12 @@
 # Jove Changelog
 
+# [1.2.0-beta.14](https://github.com/bokoboshahni/jove/compare/v1.2.0-beta.13...v1.2.0-beta.14) (2022-05-31)
+
+
+### Features
+
+* index models for full text search ([fbbcc7f](https://github.com/bokoboshahni/jove/commit/fbbcc7f8dbdb0b055542dd721c044b96c934c153))
+
 # [1.2.0-beta.13](https://github.com/bokoboshahni/jove/compare/v1.2.0-beta.12...v1.2.0-beta.13) (2022-05-31)
 
 
