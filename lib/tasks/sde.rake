@@ -139,6 +139,14 @@ namespace :sde do # rubocop:disable Metrics/BlockLength
       end
     end
 
+    task inventory_flags: :environment do
+      Logidze.with_responsible(ENV.fetch('SDE_VERSION_ID')) do
+        progress = TTY::ProgressBar.new("Inventory Flags #{IMPORT_PROGRESS_FORMAT}")
+        Jove::SDE::Importers::InventoryFlagImporter.new(sde_path: SDE_PATH, progress:).import_all
+        puts "Imported #{InventoryFlag.count} inventory flags"
+      end
+    end
+
     task market_groups: :environment do
       Logidze.with_responsible(ENV.fetch('SDE_VERSION_ID')) do
         progress = TTY::ProgressBar.new("Market Groups #{IMPORT_PROGRESS_FORMAT}")

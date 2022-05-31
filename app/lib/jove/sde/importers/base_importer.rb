@@ -3,7 +3,7 @@
 module Jove
   module SDE
     module Importers
-      class BaseImporter
+      class BaseImporter # rubocop:disable Metrics/ClassLength
         class_attribute :sde_mapper
         self.sde_mapper = nil
 
@@ -62,11 +62,12 @@ module Jove
         def import_merged
           data = YAML.load_file(resolve_path(sde_file))
           progress&.update(total: data.count)
-          rows = data.map do |id, orig|
-            record = map_sde_attributes(orig, id:)
-            progress&.advance
-            record
-          end
+          rows = case data
+                 when Array
+                   map_data_array(data)
+                 when Hash
+                   map_data_hash(data)
+                 end
           sde_model.upsert_all(rows, returning: false) unless rows.empty?
         end
 
@@ -82,6 +83,22 @@ module Jove
           Parallel.map(paths, in_threads: threads) do |path|
             record = YAML.load_file(path)
             yield(path, record) if block_given?
+            record
+          end
+        end
+
+        def map_data_array(data)
+          data.map! do |orig|
+            record = map_sde_attributes(orig)
+            progress&.advance
+            record
+          end
+        end
+
+        def map_data_hash(data)
+          data.map do |id, orig|
+            record = map_sde_attributes(orig, id:)
+            progress&.advance
             record
           end
         end

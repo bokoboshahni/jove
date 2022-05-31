@@ -11,7 +11,8 @@ module Jove
           CategoryImporter, GroupImporter, MarketGroupImporter, MetaGroupImporter, UnitImporter,
           TypeImporter, DogmaAttributeImporter, DogmaEffectImporter, DogmaEffectModifierImporter, DogmaCategoryImporter,
           BlueprintActivityImporter, TypeMaterialImporter, PlanetSchematicImporter,
-          RaceImporter, BloodlineImporter, CorporationImporter, FactionImporter
+          RaceImporter, BloodlineImporter, CorporationImporter, FactionImporter,
+          InventoryFlagImporter
         ]
       end
     end
