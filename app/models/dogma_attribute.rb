@@ -46,6 +46,9 @@
 #
 class DogmaAttribute < ApplicationRecord
   include SDEImportable
+  include Searchable
+
+  multisearchable against: %i[name description display_name tooltip_description tooltip_title]
 
   belongs_to :category, class_name: 'DogmaCategory', optional: true
   belongs_to :charge_recharge_time_attribute, class_name: 'DogmaAttribute', optional: true

@@ -35,6 +35,9 @@
 #
 class Alliance < ApplicationRecord
   include ESISyncable
+  include Searchable
+
+  multisearchable against: %i[name ticker]
 
   belongs_to :creator, class_name: 'Character', optional: true
   belongs_to :creator_corporation, class_name: 'Corporation', optional: true

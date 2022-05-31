@@ -26,6 +26,9 @@
 #
 class Race < ApplicationRecord
   include SDEImportable
+  include Searchable
+
+  multisearchable against: %i[name description]
 
   belongs_to :icon, optional: true
   belongs_to :ship_type, class_name: 'Type', optional: true

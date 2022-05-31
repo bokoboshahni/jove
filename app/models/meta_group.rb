@@ -24,6 +24,9 @@
 #
 class MetaGroup < ApplicationRecord
   include SDEImportable
+  include Searchable
+
+  multisearchable against: %i[name description]
 
   belongs_to :icon, optional: true
 

@@ -28,6 +28,9 @@
 #
 class MarketGroup < ApplicationRecord
   include SDEImportable
+  include Searchable
+
+  multisearchable against: %i[name description]
 
   has_ancestry cache_depth: true
 

@@ -9,6 +9,8 @@ module Jove
         self.sde_model = ::Icon
 
         self.sde_rename = { icon_file: :file }
+
+        self.sde_multisearchable = false
       end
     end
   end

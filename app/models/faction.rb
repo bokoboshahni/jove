@@ -34,6 +34,9 @@
 #
 class Faction < ApplicationRecord
   include SDEImportable
+  include Searchable
+
+  multisearchable against: %i[name description short_description]
 
   belongs_to :icon
 

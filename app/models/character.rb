@@ -39,6 +39,9 @@
 #
 class Character < ApplicationRecord
   include ESISyncable
+  include Searchable
+
+  multisearchable against: %i[name description]
 
   belongs_to :corporation, optional: true
 

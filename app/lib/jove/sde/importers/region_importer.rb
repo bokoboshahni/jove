@@ -25,14 +25,15 @@ module Jove
 
         def import_all
           paths = Dir[File.join(sde_path, 'fsd/universe/**/region.staticdata')]
-          progress&.update(total: paths.count)
+          start_progress(total: paths.count)
           rows = paths.map do |path|
             universe = universe_from_path(path)
             region = map_region(YAML.load_file(path), universe)
-            progress&.advance
+            advance_progress
             region
           end
-          sde_model.upsert_all(rows, returning: false) unless rows.empty?
+          upsert_all(rows)
+          rebuild_multisearch_index
         end
 
         private

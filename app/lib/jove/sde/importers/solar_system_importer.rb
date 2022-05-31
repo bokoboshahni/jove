@@ -6,6 +6,8 @@ module Jove
       class SolarSystemImporter < BaseImporter
         self.sde_model = SolarSystem
 
+        self.sde_multisearch_models = [Celestial, Stargate, Station, SolarSystem].freeze
+
         self.sde_mapper = lambda { |data, **_kwargs|
           data[:center_x], data[:center_y], data[:center_z] = data.delete(:center)
           data[:max_x], data[:max_y], data[:max_z] = data.delete(:max)
@@ -24,15 +26,16 @@ module Jove
           @constellation_ids = map_constellation_ids
         end
 
-        def import_all # rubocop:disable Metrics/AbcSize
+        def import_all
           paths = Dir[File.join(sde_path, 'fsd/universe/**/solarsystem.staticdata')]
-          progress&.update(total: paths.count)
+          start_progress(total: paths.count)
           Parallel.each(paths, in_threads: threads) do |path|
             solar_system = load_solar_system(path)
             child_importers.each { |i| i.import_solar_system(solar_system) }
             sde_model.upsert(map_sde_attributes(solar_system))
-            progress&.advance
+            advance_progress
           end
+          rebuild_multisearch_index
           paths
         end
 

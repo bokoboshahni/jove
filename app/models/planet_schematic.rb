@@ -25,6 +25,9 @@
 #
 class PlanetSchematic < ApplicationRecord
   include SDEImportable
+  include Searchable
+
+  multisearchable against: %i[name]
 
   belongs_to :output, class_name: 'Type'
 

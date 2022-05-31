@@ -7,6 +7,8 @@ module Jove
         self.sde_file = 'fsd/graphicIDs.yaml'
         self.sde_model = Graphic
 
+        self.sde_multisearchable = false
+
         self.sde_mapper = lambda { |data, **_kwargs|
           data[:icon_folder] = data.delete(:icon_info).fetch(:folder) if data[:icon_info]
         }

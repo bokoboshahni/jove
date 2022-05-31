@@ -12,7 +12,7 @@
 # **`age`**                    | `decimal(, )`      |
 # **`ancestry`**               | `text`             |
 # **`celestial_index`**        | `integer`          |
-# **`celestial_type`**         | `enum`             | `not null`
+# **`celestial_type`**         | `text`             | `not null`
 # **`density`**                | `decimal(, )`      |
 # **`eccentricity`**           | `decimal(, )`      |
 # **`escape_velocity`**        | `decimal(, )`      |
@@ -62,14 +62,9 @@
 #
 class Celestial < ApplicationRecord
   include SDEImportable
+  include Searchable
 
-  enum celestial_type: {
-    'AsteroidBelt' => 'asteroid_belt',
-    'Moon' => 'moon',
-    'Planet' => 'planet',
-    'SecondarySun' => 'secondary_sun',
-    'Star' => 'star'
-  }
+  multisearchable against: %i[name]
 
   self.inheritance_column = :celestial_type
 
@@ -83,6 +78,4 @@ class Celestial < ApplicationRecord
   has_one :constellation, through: :solar_system
 
   has_one :region, through: :constellation
-
-  validates :celestial_type, presence: true
 end

@@ -17,6 +17,9 @@
 #
 class DogmaCategory < ApplicationRecord
   include SDEImportable
+  include Searchable
+
+  multisearchable against: %i[name description]
 
   has_many :dogma_attributes, foreign_key: :category_id
   has_many :dogma_effects, foreign_key: :category_id

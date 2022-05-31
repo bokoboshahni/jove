@@ -11,6 +11,8 @@ module Jove
         self.sde_rename = { service_name_id: :name_id }
 
         self.sde_localized = %i[description name]
+
+        self.sde_multisearchable = false
       end
     end
   end

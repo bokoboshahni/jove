@@ -47,6 +47,9 @@
 #
 class Station < ApplicationRecord
   include SDEImportable
+  include Searchable
+
+  multisearchable against: %i[name]
 
   belongs_to :celestial
   belongs_to :corporation

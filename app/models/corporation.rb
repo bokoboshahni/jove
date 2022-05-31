@@ -72,6 +72,9 @@
 class Corporation < ApplicationRecord
   include ESISyncable
   include SDEImportable
+  include Searchable
+
+  multisearchable against: %i[name description ticker]
 
   belongs_to :alliance, optional: true
   belongs_to :home_station, optional: true

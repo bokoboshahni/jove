@@ -25,10 +25,11 @@ module Jove
           data = YAML.load_file(File.join(sde_path, 'fsd/marketGroups.yaml'))
           rows = Marshal.load(Marshal.dump(data)).map do |id, orig|
             record = map_sde_attributes(orig, id:, context: { market_groups: data })
-            progress&.advance
+            advance_progress
             record
           end
-          sde_model.upsert_all(rows, returning: false) unless rows.empty?
+          upsert_all(rows)
+          rebuild_multisearch_index
         end
 
         def self.build_ancestry_from_parent_ids(market_groups, parent_id = nil, ancestor_ids = [])

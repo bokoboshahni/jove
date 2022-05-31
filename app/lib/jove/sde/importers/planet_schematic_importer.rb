@@ -19,13 +19,14 @@ module Jove
 
         def import_all
           data = YAML.load_file(File.join(sde_path, 'fsd/planetSchematics.yaml'))
-          progress&.update(total: data.count)
+          start_progress(total: data.count)
           data.each do |schematic_id, schematic|
             inputs = map_inputs(schematic_id, schematic['types'])
             pins = map_pins(schematic_id, schematic['pins'])
             upsert_schematic(schematic_id, schematic, inputs, pins)
-            progress&.advance
+            advance_progress
           end
+          rebuild_multisearch_index
         end
 
         private

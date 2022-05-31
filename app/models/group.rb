@@ -30,6 +30,9 @@
 #
 class Group < ApplicationRecord
   include SDEImportable
+  include Searchable
+
+  multisearchable against: %i[name]
 
   belongs_to :category
   belongs_to :icon, optional: true

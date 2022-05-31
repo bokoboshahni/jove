@@ -9,6 +9,8 @@ module Jove
         self.sde_file = Rails.root.join('db/units.json')
 
         self.sde_model = Unit
+
+        self.sde_multisearchable = false
       end
     end
   end

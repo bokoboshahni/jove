@@ -12,12 +12,13 @@ module Jove
 
         def import_all
           data = YAML.load_file(File.join(sde_path, 'fsd/factions.yaml'))
-          progress&.update(total: data.count)
+          start_progress(total: data.count)
           data.each do |faction_id, faction|
             races = map_races(faction_id, faction['memberRaces'])
             upsert_faction(faction_id, faction, races)
-            progress&.advance
+            advance_progress
           end
+          rebuild_multisearch_index
         end
 
         private

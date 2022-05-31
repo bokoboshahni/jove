@@ -22,6 +22,12 @@ module Jove
         class_attribute :sde_model
         self.sde_model = nil
 
+        class_attribute :sde_multisearch_models
+        self.sde_multisearch_models = nil
+
+        class_attribute :sde_multisearchable
+        self.sde_multisearchable = true
+
         class_attribute :sde_rename
         self.sde_rename = {}
 
@@ -31,7 +37,7 @@ module Jove
         class_attribute :sde_localized
         self.sde_localized = []
 
-        def initialize(sde_path:, progress: nil, logger: Rails.logger, threads: Etc.nprocessors)
+        def initialize(sde_path:, progress: nil, logger: Rails.logger, threads: 2)
           @logger = logger
           @sde_path = sde_path
           @progress = progress
@@ -61,13 +67,27 @@ module Jove
 
         def import_merged
           data = YAML.load_file(resolve_path(sde_file))
-          progress&.update(total: data.count)
+          start_progress(total: data.count)
           rows = case data
                  when Array
                    map_data_array(data)
                  when Hash
                    map_data_hash(data)
                  end
+          upsert_all(rows)
+          rebuild_multisearch_index unless rows.empty?
+        end
+
+        def advance_progress
+          progress&.advance
+        end
+
+        def start_progress(total)
+          progress&.update(total:)
+          progress&.start
+        end
+
+        def upsert_all(rows)
           sde_model.upsert_all(rows, returning: false) unless rows.empty?
         end
 
@@ -90,7 +110,7 @@ module Jove
         def map_data_array(data)
           data.map! do |orig|
             record = map_sde_attributes(orig)
-            progress&.advance
+            advance_progress
             record
           end
         end
@@ -98,7 +118,7 @@ module Jove
         def map_data_hash(data)
           data.map do |id, orig|
             record = map_sde_attributes(orig, id:)
-            progress&.advance
+            advance_progress
             record
           end
         end
@@ -134,6 +154,13 @@ module Jove
           @attribute_names ||= sde_model.attribute_names
                                         .reject { |a| %w[created_at log_data updated_at].include?(a) }
                                         .map!(&:to_sym)
+        end
+
+        def rebuild_multisearch_index
+          return unless sde_multisearchable
+
+          index_classes = sde_multisearch_models || [sde_model]
+          index_classes.each { |c| PgSearch::Multisearch.rebuild(c, clean_up: false) }
         end
 
         def print_usage(description)
