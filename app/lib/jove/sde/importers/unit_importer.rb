@@ -6,18 +6,9 @@ module Jove
   module SDE
     module Importers
       class UnitImporter < BaseImporter
-        self.sde_model = Unit
+        self.sde_file = Rails.root.join('db/units.json')
 
-        def import_all
-          data = CSV.read(Rails.root.join('db/units.csv'), headers: true)
-          progress&.update(total: data.count)
-          rows = data.map do |orig|
-            record = { id: orig.fetch('unitID'), name: orig.fetch('unitName') }
-            progress&.advance
-            record
-          end
-          sde_model.upsert_all(rows, returning: false) unless rows.empty?
-        end
+        self.sde_model = Unit
       end
     end
   end
