@@ -1,5 +1,12 @@
 # Jove Changelog
 
+# [1.2.0-beta.11](https://github.com/bokoboshahni/jove/compare/v1.2.0-beta.10...v1.2.0-beta.11) (2022-05-31)
+
+
+### Features
+
+* use data from hoboleaks ([fe8f536](https://github.com/bokoboshahni/jove/commit/fe8f536efb87645a3797dc76dfbf63faaf7f2d9d))
+
 # [1.2.0-beta.10](https://github.com/bokoboshahni/jove/compare/v1.2.0-beta.9...v1.2.0-beta.10) (2022-05-31)
 
 
