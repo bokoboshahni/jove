@@ -1,5 +1,24 @@
 # Jove Changelog
 
+# [1.2.0-beta.10](https://github.com/bokoboshahni/jove/compare/v1.2.0-beta.9...v1.2.0-beta.10) (2022-05-31)
+
+
+### Features
+
+* add model for static data versions ([7f1bb32](https://github.com/bokoboshahni/jove/commit/7f1bb327f1700d88e79ad3e79e075bebc3010d07))
+* add policy for static data versions ([fa6dc4b](https://github.com/bokoboshahni/jove/commit/fa6dc4b30860ed03006ad6b2978b81f8b8fb5eb5))
+* add static data admin ui and jobs ([4a4824a](https://github.com/bokoboshahni/jove/commit/4a4824a5d5f165a6e43102e3121c658d67d4e3d0))
+* audit changes to static data versions ([e71f688](https://github.com/bokoboshahni/jove/commit/e71f688ed71aad4929b2e4c9db85859bbdfc9a7e))
+* check daily for new sde version ([93a7fdb](https://github.com/bokoboshahni/jove/commit/93a7fdbb416a5d01c9edcc344f238af124e6430d))
+* log changes to sde models ([e578d9e](https://github.com/bokoboshahni/jove/commit/e578d9e5836393cfe4961025505ab01fc1f93951))
+* set up logidze for static data versioning ([da5b3b5](https://github.com/bokoboshahni/jove/commit/da5b3b514786e9396754290788b71a1592c258d2))
+* set up sidekiq for background jobs ([e213d69](https://github.com/bokoboshahni/jove/commit/e213d69a9e48dc531c95b4666118e2883d673ea9))
+
+
+### Performance Improvements
+
+* optimize memory usage for sde importers ([27e7e4c](https://github.com/bokoboshahni/jove/commit/27e7e4c2e32788f62da33729728e5ae7c858fad0))
+
 # [1.2.0-beta.9](https://github.com/bokoboshahni/jove/compare/v1.2.0-beta.8...v1.2.0-beta.9) (2022-05-26)
 
 
