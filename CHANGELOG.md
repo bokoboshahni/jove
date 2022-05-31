@@ -1,5 +1,12 @@
 # Jove Changelog
 
+# [1.2.0-beta.12](https://github.com/bokoboshahni/jove/compare/v1.2.0-beta.11...v1.2.0-beta.12) (2022-05-31)
+
+
+### Features
+
+* import inventory flags from sde ([a01833c](https://github.com/bokoboshahni/jove/commit/a01833cc19e809966d45e97b1491075095622479))
+
 # [1.2.0-beta.11](https://github.com/bokoboshahni/jove/compare/v1.2.0-beta.10...v1.2.0-beta.11) (2022-05-31)
 
 
