@@ -9,7 +9,7 @@ module Jove
           RegionImporter, ConstellationImporter, SolarSystemImporter,
           StationOperationImporter, StationServiceImporter,
           CategoryImporter, GroupImporter, MarketGroupImporter, MetaGroupImporter, UnitImporter,
-          TypeImporter, DogmaAttributeImporter, DogmaEffectImporter, DogmaEffectModifierImporter, DogmaCategoryImporter,
+          TypeImporter, DogmaAttributeImporter, DogmaEffectImporter, DogmaCategoryImporter,
           BlueprintActivityImporter, TypeMaterialImporter, PlanetSchematicImporter,
           RaceImporter, BloodlineImporter, CorporationImporter, FactionImporter,
           InventoryFlagImporter

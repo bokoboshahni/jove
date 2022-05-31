@@ -33,6 +33,4 @@ class Group < ApplicationRecord
 
   belongs_to :category
   belongs_to :icon, optional: true
-
-  has_many :dogma_effect_modifiers
 end

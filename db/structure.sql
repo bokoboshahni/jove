@@ -996,25 +996,6 @@ ALTER SEQUENCE public.dogma_categories_id_seq OWNED BY public.dogma_categories.i
 
 
 --
--- Name: dogma_effect_modifiers; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.dogma_effect_modifiers (
-    effect_id bigint NOT NULL,
-    group_id bigint,
-    modified_attribute_id bigint,
-    modified_effect_id bigint,
-    modifying_attribute_id bigint,
-    operation_id bigint,
-    skill_id bigint,
-    domain text NOT NULL,
-    function text NOT NULL,
-    log_data jsonb,
-    "position" integer NOT NULL
-);
-
-
---
 -- Name: dogma_effects; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1047,7 +1028,8 @@ CREATE TABLE public.dogma_effects (
     sfx_name text,
     created_at timestamp(6) without time zone NOT NULL,
     updated_at timestamp(6) without time zone NOT NULL,
-    log_data jsonb
+    log_data jsonb,
+    modifiers jsonb
 );
 
 
@@ -2906,55 +2888,6 @@ CREATE INDEX index_dogma_attributes_on_unit_id ON public.dogma_attributes USING 
 
 
 --
--- Name: index_dogma_effect_modifiers_on_effect_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_dogma_effect_modifiers_on_effect_id ON public.dogma_effect_modifiers USING btree (effect_id);
-
-
---
--- Name: index_dogma_effect_modifiers_on_group_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_dogma_effect_modifiers_on_group_id ON public.dogma_effect_modifiers USING btree (group_id);
-
-
---
--- Name: index_dogma_effect_modifiers_on_modified_attribute_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_dogma_effect_modifiers_on_modified_attribute_id ON public.dogma_effect_modifiers USING btree (modified_attribute_id);
-
-
---
--- Name: index_dogma_effect_modifiers_on_modified_effect_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_dogma_effect_modifiers_on_modified_effect_id ON public.dogma_effect_modifiers USING btree (modified_effect_id);
-
-
---
--- Name: index_dogma_effect_modifiers_on_modifying_attribute_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_dogma_effect_modifiers_on_modifying_attribute_id ON public.dogma_effect_modifiers USING btree (modifying_attribute_id);
-
-
---
--- Name: index_dogma_effect_modifiers_on_operation_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_dogma_effect_modifiers_on_operation_id ON public.dogma_effect_modifiers USING btree (operation_id);
-
-
---
--- Name: index_dogma_effect_modifiers_on_skill_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_dogma_effect_modifiers_on_skill_id ON public.dogma_effect_modifiers USING btree (skill_id);
-
-
---
 -- Name: index_dogma_effects_on_category_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -3459,13 +3392,6 @@ CREATE UNIQUE INDEX index_unique_default_identities ON public.identities USING b
 
 
 --
--- Name: index_unique_dogma_effect_modifiers; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE UNIQUE INDEX index_unique_dogma_effect_modifiers ON public.dogma_effect_modifiers USING btree (effect_id, "position");
-
-
---
 -- Name: index_unique_faction_races; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -3610,13 +3536,6 @@ CREATE TRIGGER logidze_on_dogma_attributes BEFORE INSERT OR UPDATE ON public.dog
 --
 
 CREATE TRIGGER logidze_on_dogma_categories BEFORE INSERT OR UPDATE ON public.dogma_categories FOR EACH ROW WHEN ((COALESCE(current_setting('logidze.disabled'::text, true), ''::text) <> 'on'::text)) EXECUTE FUNCTION public.logidze_logger('null', 'updated_at');
-
-
---
--- Name: dogma_effect_modifiers logidze_on_dogma_effect_modifiers; Type: TRIGGER; Schema: public; Owner: -
---
-
-CREATE TRIGGER logidze_on_dogma_effect_modifiers BEFORE INSERT OR UPDATE ON public.dogma_effect_modifiers FOR EACH ROW WHEN ((COALESCE(current_setting('logidze.disabled'::text, true), ''::text) <> 'on'::text)) EXECUTE FUNCTION public.logidze_logger('null', 'updated_at');
 
 
 --
@@ -3886,6 +3805,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220529005304'),
 ('20220531005714'),
 ('20220531125520'),
-('20220531134446');
+('20220531134446'),
+('20220531141017');
 
 
