@@ -50,10 +50,19 @@
 #
 class SolarSystem < ApplicationRecord
   include SDEImportable
+  include Searchable
+
+  multisearchable against: %i[name]
 
   belongs_to :constellation
 
+  has_many :asteroid_belts
   has_many :celestials
+  has_many :moons
+  has_many :planets
+
+  has_one :secondary_sun
+  has_one :star
 
   has_many :stations, through: :celestials
 

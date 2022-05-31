@@ -18,4 +18,7 @@
 #
 class InventoryFlag < ApplicationRecord
   include SDEImportable
+  include Searchable
+
+  multisearchable against: %i[name text]
 end

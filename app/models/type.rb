@@ -63,6 +63,9 @@
 #
 class Type < ApplicationRecord
   include SDEImportable
+  include Searchable
+
+  multisearchable against: %i[name description]
 
   belongs_to :faction, optional: true
   belongs_to :graphic, optional: true

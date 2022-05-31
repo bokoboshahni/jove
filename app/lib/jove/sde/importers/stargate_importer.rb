@@ -21,7 +21,7 @@ module Jove
             map_stargate(id, stargate, solar_system)
           end
 
-          sde_model.upsert_all(rows, returning: false) unless rows.empty?
+          upsert_all(rows)
         end
 
         private

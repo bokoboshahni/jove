@@ -41,7 +41,7 @@ module Jove
             planet['moons']&.each { |m_id, m| map_celestial_stations(m_id, m, a) }
           end
 
-          sde_model.upsert_all(rows, returning: false) unless rows.empty?
+          upsert_all(rows)
         end
 
         private

@@ -27,7 +27,7 @@ module Jove
             end
           end
 
-          sde_model.upsert_all(rows, returning: false) unless rows.empty?
+          upsert_all(rows)
         end
       end
     end

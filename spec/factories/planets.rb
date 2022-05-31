@@ -12,7 +12,7 @@
 # **`age`**                    | `decimal(, )`      |
 # **`ancestry`**               | `text`             |
 # **`celestial_index`**        | `integer`          |
-# **`celestial_type`**         | `enum`             | `not null`
+# **`celestial_type`**         | `text`             | `not null`
 # **`density`**                | `decimal(, )`      |
 # **`eccentricity`**           | `decimal(, )`      |
 # **`escape_velocity`**        | `decimal(, )`      |

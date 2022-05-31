@@ -29,6 +29,11 @@
 #     * **`type_id`**
 #
 class Stargate < ApplicationRecord
+  include SDEImportable
+  include Searchable
+
+  multisearchable against: %i[name]
+
   self.inheritance_column = nil
 
   belongs_to :solar_system

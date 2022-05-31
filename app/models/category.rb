@@ -23,6 +23,9 @@
 #
 class Category < ApplicationRecord
   include SDEImportable
+  include Searchable
+
+  multisearchable against: %i[name]
 
   belongs_to :icon, optional: true
 

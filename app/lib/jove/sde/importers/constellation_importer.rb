@@ -19,17 +19,18 @@ module Jove
 
         self.sde_name_lookup = true
 
-        def import_all # rubocop:disable Metrics/AbcSize
+        def import_all # rubocop:disable Metrics/MethodLength
           region_ids = map_region_ids
           paths = Dir[File.join(sde_path, 'fsd/universe/**/constellation.staticdata')]
-          progress&.update(total: paths.count)
+          start_progress(total: paths.count)
           rows = paths.map do |path|
             region_id = region_ids.fetch(File.dirname(path, 2))
             constellation = map_sde_attributes(YAML.load_file(path), context: { region_id: })
-            progress&.advance
+            advance_progress
             constellation
           end
-          sde_model.upsert_all(rows, returning: false) unless rows.empty?
+          upsert_all(rows)
+          rebuild_multisearch_index
         end
 
         def map_region_ids

@@ -66,6 +66,9 @@
 #
 class DogmaEffect < ApplicationRecord
   include SDEImportable
+  include Searchable
+
+  multisearchable against: %i[name description display_name]
 
   belongs_to :category, class_name: 'DogmaCategory'
   belongs_to :discharge_attribute, class_name: 'DogmaAttribute', optional: true

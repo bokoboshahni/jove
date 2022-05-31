@@ -34,7 +34,7 @@ module Jove
           dogma = YAML.load_file(File.join(sde_path, 'fsd/typeDogma.yaml'))
           blueprints = YAML.load_file(File.join(sde_path, 'fsd/blueprints.yaml'))
           packaged_volumes = JSON.parse(File.read(Rails.root.join('db/packaged_volumes.json')))
-          progress&.update(total: data.count)
+          start_progress(total: data.count)
           rows = data.map do |id, orig|
             blueprint = blueprints[id]
             orig.merge!(max_production_limit: blueprint['maxProductionLimit']) if blueprint
@@ -46,10 +46,11 @@ module Jove
             end
             orig[:packaged_volume] = packaged_volumes[id.to_s]
             record = map_sde_attributes(orig, id:)
-            progress&.advance
+            advance_progress
             record
           end
-          sde_model.upsert_all(rows, returning: false) unless rows.empty?
+          upsert_all(rows)
+          rebuild_multisearch_index
         end
       end
     end

@@ -98,3 +98,5 @@ group :test do
   gem 'vcr', '~> 6.1'
   gem 'webmock', '~> 3.14'
 end
+
+gem 'pg_search', '~> 2.3'

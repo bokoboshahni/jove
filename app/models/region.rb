@@ -39,6 +39,9 @@
 #
 class Region < ApplicationRecord
   include SDEImportable
+  include Searchable
+
+  multisearchable against: %i[name]
 
   enum universe: %i[abyssal eve void wormhole].index_with(&:to_s)
 

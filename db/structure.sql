@@ -718,7 +718,7 @@ CREATE TABLE public.celestials (
     age numeric,
     ancestry text,
     celestial_index integer,
-    celestial_type public.celestial_type NOT NULL,
+    celestial_type text NOT NULL,
     density numeric,
     eccentricity numeric,
     escape_velocity numeric,
@@ -1421,6 +1421,39 @@ CREATE SEQUENCE public.meta_groups_id_seq
 --
 
 ALTER SEQUENCE public.meta_groups_id_seq OWNED BY public.meta_groups.id;
+
+
+--
+-- Name: pg_search_documents; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.pg_search_documents (
+    id bigint NOT NULL,
+    content text,
+    searchable_type character varying,
+    searchable_id bigint,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: pg_search_documents_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.pg_search_documents_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: pg_search_documents_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.pg_search_documents_id_seq OWNED BY public.pg_search_documents.id;
 
 
 --
@@ -2164,6 +2197,13 @@ ALTER TABLE ONLY public.meta_groups ALTER COLUMN id SET DEFAULT nextval('public.
 
 
 --
+-- Name: pg_search_documents id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.pg_search_documents ALTER COLUMN id SET DEFAULT nextval('public.pg_search_documents_id_seq'::regclass);
+
+
+--
 -- Name: planet_schematics id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -2444,6 +2484,14 @@ ALTER TABLE ONLY public.market_groups
 
 ALTER TABLE ONLY public.meta_groups
     ADD CONSTRAINT meta_groups_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: pg_search_documents pg_search_documents_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.pg_search_documents
+    ADD CONSTRAINT pg_search_documents_pkey PRIMARY KEY (id);
 
 
 --
@@ -3081,6 +3129,13 @@ CREATE INDEX index_market_groups_on_icon_id ON public.market_groups USING btree 
 --
 
 CREATE INDEX index_meta_groups_on_icon_id ON public.meta_groups USING btree (icon_id);
+
+
+--
+-- Name: index_pg_search_documents_on_searchable; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_pg_search_documents_on_searchable ON public.pg_search_documents USING btree (searchable_type, searchable_id);
 
 
 --
@@ -3806,6 +3861,8 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220531005714'),
 ('20220531125520'),
 ('20220531134446'),
-('20220531141017');
+('20220531141017'),
+('20220531143606'),
+('20220531150127');
 
 
