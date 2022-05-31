@@ -1264,6 +1264,40 @@ ALTER SEQUENCE public.identities_id_seq OWNED BY public.identities.id;
 
 
 --
+-- Name: inventory_flags; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.inventory_flags (
+    id bigint NOT NULL,
+    name text NOT NULL,
+    "order" integer NOT NULL,
+    text text NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL,
+    log_data jsonb
+);
+
+
+--
+-- Name: inventory_flags_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.inventory_flags_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: inventory_flags_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.inventory_flags_id_seq OWNED BY public.inventory_flags.id;
+
+
+--
 -- Name: login_activities; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -2113,6 +2147,13 @@ ALTER TABLE ONLY public.identities ALTER COLUMN id SET DEFAULT nextval('public.i
 
 
 --
+-- Name: inventory_flags id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.inventory_flags ALTER COLUMN id SET DEFAULT nextval('public.inventory_flags_id_seq'::regclass);
+
+
+--
 -- Name: login_activities id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -2381,6 +2422,14 @@ ALTER TABLE ONLY public.icons
 
 ALTER TABLE ONLY public.identities
     ADD CONSTRAINT identities_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: inventory_flags inventory_flags_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.inventory_flags
+    ADD CONSTRAINT inventory_flags_pkey PRIMARY KEY (id);
 
 
 --
@@ -3613,6 +3662,13 @@ CREATE TRIGGER logidze_on_icons BEFORE INSERT OR UPDATE ON public.icons FOR EACH
 
 
 --
+-- Name: inventory_flags logidze_on_inventory_flags; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER logidze_on_inventory_flags BEFORE INSERT OR UPDATE ON public.inventory_flags FOR EACH ROW WHEN ((COALESCE(current_setting('logidze.disabled'::text, true), ''::text) <> 'on'::text)) EXECUTE FUNCTION public.logidze_logger('null', 'updated_at');
+
+
+--
 -- Name: market_groups logidze_on_market_groups; Type: TRIGGER; Schema: public; Owner: -
 --
 
@@ -3828,6 +3884,8 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220528155421'),
 ('20220528200046'),
 ('20220529005304'),
-('20220531005714');
+('20220531005714'),
+('20220531125520'),
+('20220531134446');
 
 
