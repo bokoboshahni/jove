@@ -59,7 +59,7 @@ gem 'tty-command', '~> 0.10.1'
 gem 'tty-progressbar', '~> 0.18.2'
 gem 'turbo-rails', '~> 1.1'
 gem 'typhoeus', '~> 1.4'
-gem 'view_component', '~> 2.51'
+gem 'view_component', '~> 2.56'
 
 group :development, :test do
   gem 'debug', '~> 1.5'
