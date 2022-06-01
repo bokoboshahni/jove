@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/baygeldin/logidze.git
-  revision: 528640f156d79a4d683e58eabfadcceef4661a6c
+  revision: 33fd1684050d30a6bf467f4c0b29f64102917f76
   branch: fix/support-json-columns
   specs:
     logidze (1.2.1)
