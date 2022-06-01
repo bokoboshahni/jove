@@ -85,7 +85,7 @@ group :development do
   gem 'rubocop-rails', '~> 2.14'
   gem 'rubocop-rspec', '~> 2.11'
   gem 'web-console', '~> 4.2'
-  gem 'yard', '~> 0.9.27'
+  gem 'yard', '~> 0.9.28'
 end
 
 group :test do
