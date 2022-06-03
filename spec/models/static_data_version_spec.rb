@@ -59,6 +59,14 @@ RSpec.describe StaticDataVersion, type: :model do
         expect(described_class.check_for_new_version!).to be_nil
       end
     end
+
+    context 'when the checksum is blank' do
+      let(:checksum) { '' }
+
+      it 'raises an empty checksum error' do
+        expect { described_class.check_for_new_version! }.to raise_error(StaticDataVersion::EmptyChecksumError)
+      end
+    end
   end
 
   describe '#download!' do
