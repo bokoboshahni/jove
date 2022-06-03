@@ -29,6 +29,7 @@ class User < ApplicationRecord
 
   has_many :login_activities, through: :identities
   has_many :characters, through: :identities
+  has_many :esi_tokens, through: :identities
   has_many :user_sessions, through: :identities
 
   has_many :corporations, through: :characters

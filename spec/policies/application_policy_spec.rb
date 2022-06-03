@@ -1,12 +1,9 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require 'policy_helper'
 
 RSpec.describe ApplicationPolicy, type: :policy do
-  let(:user) { create(:registered_user) }
-  let(:user_identity) { user.default_identity }
-  let(:admin) { create(:admin_user) }
-  let(:admin_identity) { admin.default_identity }
+  include_context 'Policy users'
 
   subject(:policy) { described_class }
 

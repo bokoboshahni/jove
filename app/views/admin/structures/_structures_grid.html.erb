@@ -1,0 +1,19 @@
+<%= render(Jove::TurboGrid::Component.new(id: :structures, scope: structures, params:)) do |grid| %>
+  <% grid.column(label: t('.columns.name'), sorted: sorted?(:name), sort_dir:) %>
+  <% grid.column(label: t('.columns.corporation'), sorted: sorted?(:corporation), sort_dir:) %>
+  <% grid.column(label: t('.columns.alliance'), sorted: sorted?(:alliance), sort_dir:) %>
+  <% grid.column(label: t('.columns.solar_system'), sorted: sorted?(:solar_system), sort_dir:) %>
+  <% grid.column(label: t('.columns.created'), sorted: sorted?(:created), sort_dir:) %>
+  <% grid.column(label: t('.columns.updated'), sorted: sorted?(:updated), sort_dir:) %>
+
+  <% structures.each do |structure| %>
+    <% grid.row do |row| %>
+      <% row.cell do %><%= structure.name %><% end %>
+      <% row.cell do %><%= structure.corporation_name %><% end %>
+      <% row.cell do %><%= structure.alliance_name %><% end %>
+      <% row.cell do %><%= structure.solar_system_name %><% end %>
+      <% row.cell do %><%= local_time(structure.created_at) %><% end %>
+      <% row.cell do %><%= local_time(structure.esi_last_modified_at) if structure.esi_last_modified_at %><% end %>
+    <% end %>
+  <% end %>
+<% end %>

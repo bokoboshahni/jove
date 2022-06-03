@@ -39,5 +39,16 @@
 #
 FactoryBot.define do
   factory :region do
+    center_x { Faker::Number.decimal }
+    center_y { Faker::Number.decimal }
+    center_z { Faker::Number.decimal }
+    max_x { Faker::Number.decimal }
+    max_y { Faker::Number.decimal }
+    max_z { Faker::Number.decimal }
+    min_x { Faker::Number.decimal }
+    min_y { Faker::Number.decimal }
+    min_z { Faker::Number.decimal }
+    name { Faker::Space.galaxy }
+    universe { 'eve' }
   end
 end

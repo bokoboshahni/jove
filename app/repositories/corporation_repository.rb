@@ -11,4 +11,10 @@ class CorporationRepository < ApplicationRepository
       data['share_count'] = data.delete('shares')
     end
   end
+
+  def initialize(gateway: nil)
+    super(gateway:)
+
+    @gateway ||= ESIGateway.new
+  end
 end

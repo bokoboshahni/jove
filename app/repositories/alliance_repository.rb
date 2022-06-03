@@ -10,4 +10,10 @@ class AllianceRepository < ApplicationRepository
       data['founded_on'] = Date.parse(data.delete('date_founded'))
     end
   end
+
+  def initialize(gateway: nil)
+    super(gateway:)
+
+    @gateway ||= ESIGateway.new
+  end
 end

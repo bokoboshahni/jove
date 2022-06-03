@@ -69,6 +69,14 @@ RSpec.configure do |config| # rubocop:disable Metrics/BlockLength
     end
   end
 
+  config.around do |example|
+    if example.metadata[:search]
+      example.run
+    else
+      PgSearch.disable_multisearch { example.run }
+    end
+  end
+
   config.before(:each, type: :component) do
     @request = controller.request
   end

@@ -1,0 +1,42 @@
+<%= render(Jove::TurboGrid::Component.new(id: :tokens, scope: tokens, params:)) do |grid| %>
+  <% grid.column(label: t('.columns.name'), sorted: sorted?(:name), sort_dir:) %>
+  <% grid.column(label: t('.columns.scopes')) %>
+  <% grid.column(label: t('.columns.grants')) %>
+  <% grid.column(label: t('.columns.status')) %>
+  <% grid.column(label: t('.columns.expires_at')) %>
+  <% grid.column(actions: true, class: 'w-10') %>
+
+  <% tokens.each do |token| %>
+    <% grid.row do |row| %>
+      <% row.cell do %><%= token.name %><% end %>
+      <% row.cell do %>
+        <% token.scopes.each do |scope| %>
+          <%= scope %><br>
+        <% end %>
+      <% end %>
+      <% row.cell do %>
+        <ul>
+          <% token.grants.each do |grant| %>
+            <li><%= grant.model_name.human %></li>
+          <% end %>
+        </ul>
+      <% end %>
+      <% row.cell do %><%= render(Jove::Badge::Component.new(color: esi_token_status_color(token), label: token.status.humanize)) %><% end %>
+      <% row.cell do %>
+        <%= local_time(token.expires_at) if token.expires_at %>
+      <% end %>
+      <% row.cell do %>
+        <%= render(Jove::Dropdown::Component.new(wrapper_class: 'max-w-menu mt-1')) do |d| %>
+          <% d.button(label: t('.actions.button', id: token.id), variant: :overflow, color: :surface) %>
+          <% d.menu do %>
+            <%= render(Jove::Menu::Component.new) do |m| %>
+              <% m.group do |g| %>
+                <% g.item label: t('.actions.delete'), href: admin_esi_token_confirm_destroy_path(token), leading_icon: 'heroicons/outline/trash', form: true, data: { turbo_frame: 'modal' } %>
+              <% end %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

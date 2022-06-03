@@ -14,3 +14,5 @@ pin 'tailwindcss-stimulus-components', to: 'https://ga.jspm.io/npm:tailwindcss-s
 
 pin_all_from 'app/javascript/controllers', under: 'controllers'
 pin_all_from 'app/components', under: 'components'
+pin 'stimulus-autocomplete', to: 'https://ga.jspm.io/npm:stimulus-autocomplete@3.0.2/src/autocomplete.js'
+pin '@hotwired/stimulus', to: 'https://ga.jspm.io/npm:@hotwired/stimulus@3.0.1/dist/stimulus.js'

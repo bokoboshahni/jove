@@ -1,0 +1,18 @@
+---
+en:
+  admin:
+    structures:
+      index:
+        description: Player-made structures synced from ESI.
+        new: Add structure
+        title: Structures
+      new:
+        title: Add structure
+      structures_grid:
+        columns:
+          alliance: Alliance
+          corporation: Corporation
+          created: Created
+          name: Name
+          solar_system: Solar system
+          updated: Updated

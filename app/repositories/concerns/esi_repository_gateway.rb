@@ -10,6 +10,7 @@ module ESIRepositoryGateway
   included do # rubocop:disable Metrics/BlockLength
     include Jove::Configurable
 
+    class_attribute :authorization_type
     class_attribute :model
     class_attribute :path
     class_attribute :mapper
@@ -21,8 +22,25 @@ module ESIRepositoryGateway
 
       attrs = fetch_from_esi(id)
 
-      raise_record_not_found(id) unless attrs
+      if discardable?(rec, attrs)
+        rec.discard!
+        return rec
+      else
+        raise_record_not_found(id) unless attrs
+      end
 
+      create_or_update(rec, attrs)
+    end
+
+    private
+
+    delegate :user_agent, to: :jove
+
+    def discardable?(rec, attrs)
+      rec&.persisted? && rec.respond_to?(:discarded_at) && attrs.nil?
+    end
+
+    def create_or_update(rec, attrs)
       if rec
         rec.update!(attrs)
         rec
@@ -30,10 +48,6 @@ module ESIRepositoryGateway
         model.create!(attrs)
       end
     end
-
-    private
-
-    delegate :user_agent, to: :jove
 
     def fetch_from_esi(id)
       res = run_request(url(id))
@@ -57,6 +71,11 @@ module ESIRepositoryGateway
 
     def build_request(url, method: :get, params: {}, body: nil, headers: {})
       headers = default_headers.merge(headers)
+
+      authorization_type&.with_token do |access_token|
+        headers['Authorization'] = "Bearer #{access_token}"
+      end
+
       Typhoeus::Request.new(url, method:, params:, body:, headers:)
     end
 
@@ -76,7 +95,7 @@ module ESIRepositoryGateway
 
     def esi_cache_attrs(headers)
       {
-        esi_etag: headers['etag'],
+        esi_etag: headers['etag'].delete_prefix('"').delete_suffix('"'),
         esi_expires_at: DateTime.parse(headers['expires']),
         esi_last_modified_at: DateTime.parse(headers['last-modified'])
       }

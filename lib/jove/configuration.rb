@@ -4,6 +4,8 @@ require 'down/errors'
 
 module Jove
   class Configuration
+    DEFAULT_ESI_OAUTH_URL = 'https://login.eveonline.com'
+
     DEFAULT_USER_AGENT = 'Jove/1.0; (+https://github.com/bokoboshahni/jove)'
 
     DEFAULT_SDE_CHECKSUM_URL = 'https://eve-static-data-export.s3-eu-west-1.amazonaws.com/tranquility/checksum'
@@ -30,6 +32,20 @@ module Jove
 
     def esi_client_secret
       @esi_client_secret ||= from_env(:esi_client_secret)
+    end
+
+    def esi_oauth_client
+      @esi_oauth_client ||= OAuth2::Client.new(
+        esi_client_id,
+        esi_client_secret,
+        site: esi_oauth_url,
+        authorize_url: 'v2/oauth/authorize',
+        token_url: '/v2/oauth/token'
+      )
+    end
+
+    def esi_oauth_url
+      @esi_oauth_url ||= from_env(:esi_url, DEFAULT_ESI_OAUTH_URL)
     end
 
     def sde_checksum_url

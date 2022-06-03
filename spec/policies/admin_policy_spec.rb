@@ -1,24 +1,7 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require 'policy_helper'
 
 RSpec.describe AdminPolicy, type: :policy do
-  let(:user) { User.new }
-
-  subject { described_class }
-
-  permissions '.scope' do
-  end
-
-  permissions :show? do
-  end
-
-  permissions :create? do
-  end
-
-  permissions :update? do
-  end
-
-  permissions :destroy? do
-  end
+  include_context 'Policy users'
 end

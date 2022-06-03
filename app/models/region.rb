@@ -50,4 +50,5 @@ class Region < ApplicationRecord
   has_many :solar_systems, through: :constellations
 
   has_many :stations, through: :solar_systems
+  has_many :structures, through: :solar_systems
 end

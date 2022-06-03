@@ -26,6 +26,8 @@
 #     * **`default`**
 #
 class Identity < ApplicationRecord
+  include PgSearch::Model
+
   belongs_to :character
   belongs_to :user
 
@@ -37,6 +39,10 @@ class Identity < ApplicationRecord
                                     where(success: true).order(created_at: :desc)
                                   }, class_name: 'LoginActivity', as: :user
 
+  has_many :esi_tokens
+  has_many :requested_esi_tokens, class_name: 'ESIToken', foreign_key: :requester_id
+  has_many :esi_grants
+  has_many :requested_esi_grants, class_name: 'ESIGrant', foreign_key: :requester_id
   has_many :login_activities, as: :user
 
   validates :character_id, uniqueness: true
@@ -49,6 +55,8 @@ class Identity < ApplicationRecord
   delegate :name, to: :alliance, prefix: true
 
   before_destroy :check_default_identity_for_destroy
+
+  pg_search_scope :search_by_name, associated_against: { character: %i[name] }, using: { tsearch: { prefix: true } }
 
   def valid_for_login?
     permitted?(character) || (alliance && permitted?(alliance)) || permitted?(corporation)

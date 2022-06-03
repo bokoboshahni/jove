@@ -1,0 +1,13 @@
+---
+en:
+  settings:
+    esi_grants:
+      approve:
+        failure: Failed to grant access to ESI token.
+        success: Successfully approved access to ESI token.
+      destroy:
+        failure: Failed to revoke access to ESI token.
+        success: Successfully revoked access to ESI token.
+      reject:
+        failure: Failed to decline request for access to ESI token.
+        success: Successfully declined request for access to ESI token.

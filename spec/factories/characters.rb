@@ -61,5 +61,7 @@ FactoryBot.define do
         create(:login_permit, permittable: character)
       end
     end
+
+    factory :permitted_character, traits: %i[with_login_permit]
   end
 end

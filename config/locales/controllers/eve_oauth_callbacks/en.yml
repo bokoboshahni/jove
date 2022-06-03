@@ -9,3 +9,6 @@ en:
         failure: We're sorry, but you are not permitted to log in.
         success: Welcome back, %{name}!
         success_alt: Welcome back, %{name} (logged in via %{alt}!
+      authorize_esi:
+        failure: Failed to create ESI token. Have you added the character to your account?
+        success: Successfully added a new ESI token for %{name} to your account.

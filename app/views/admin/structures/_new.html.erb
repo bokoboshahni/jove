@@ -1,0 +1,3 @@
+<%= form_with model: @structure, url: admin_structures_path, builder: Jove::Form::Builder, html: { id: :new_structure, autocomplete: 'off', data: { turbo_frame: '_top' } } do |f| %>
+  <%= f.text_field(:id) %>
+<% end %>

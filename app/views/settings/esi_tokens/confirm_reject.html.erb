@@ -1,0 +1,9 @@
+<%= render(Jove::TurboDialog::Component.new(title: t('.title'), icon: 'heroicons/outline/exclamation-circle', dismissable: true)) do |d| %>
+  <%= t('.body') %>
+
+  <% d.action do %>
+    <%= form_tag settings_esi_token_reject_path(@token) do %>
+      <%= render(Jove::Button::Component.new(variant: :text, color: :danger, label: t('.reject'), type: :submit, data: { turbo: false })) %>
+    <% end %>
+  <% end %>
+<% end %>
