@@ -1,0 +1,3 @@
+<% @results.each do |result| %>
+  <%= render(Jove::Form::ComboBox::Item::Component.new(label: result.name, value: result.id)) %>
+<% end %>

@@ -60,6 +60,7 @@ class SolarSystem < ApplicationRecord
   has_many :celestials
   has_many :moons
   has_many :planets
+  has_many :structures
 
   has_one :secondary_sun
   has_one :star

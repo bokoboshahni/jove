@@ -1,0 +1,15 @@
+<%= render(Jove::TurboDialog::Component.new(title: t('.title'), icon: 'heroicons/outline/exclamation-circle', dismissable: true)) do |dialog| %>
+  <div class="space-y-4">
+    <p class="text-left"><%= t('.body') %></p>
+
+    <ul class="list-disc">
+      <% @token.scopes.each do |s| %><li class="ml-8"><%= s %></li><% end %>
+    </ul>
+
+    <%= render 'new' %>
+
+    <% dialog.action do %>
+      <%= render(Jove::Button::Component.new(label: t('helpers.submit.esi_token.create'), type: 'submit', value: 'Commit', form: 'new_esi_token')) %>
+    <% end %>
+  </div>
+<% end %>

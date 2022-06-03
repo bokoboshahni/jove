@@ -119,7 +119,7 @@ module Jove
         if @row_name
           @row_name.pluralize(@scope.size, I18n.locale)
         else
-          @scope.entry_name(count: @scope.size).downcase
+          @scope.entry_name(count: @scope.size)
         end
       end
 

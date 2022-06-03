@@ -1,0 +1,26 @@
+<%= render(Jove::TurboGrid::Component.new(id: :grants, scope: grants, params:)) do |grid| %>
+  <% grid.column(label: t('.columns.name'), sorted: sorted?(:name), sort_dir:) %>
+  <% grid.column(label: t('.columns.character'), sorted: sorted?(:character), sort_dir:) %>
+  <% grid.column(label: t('.columns.status'), sorted: sorted?(:status), sort_dir:) %>
+  <% grid.column(actions: true, class: 'w-10') %>
+
+  <% grants.each do |grant| %>
+    <% grid.row do |row| %>
+      <% row.cell do %><%= grant.model_name.human %><% end %>
+      <% row.cell do %><%= grant.identity.name %><% end %>
+      <% row.cell do %><%= render(Jove::Badge::Component.new(color: esi_grant_status_color(grant), label: grant.status.humanize)) %><% end %>
+      <% row.cell do %>
+        <%= render(Jove::Dropdown::Component.new(wrapper_class: 'max-w-menu mt-1')) do |d| %>
+          <% d.button(label: t('.actions.button', id: grant.id), variant: :overflow, color: :surface) %>
+          <% d.menu do %>
+            <%= render(Jove::Menu::Component.new) do |m| %>
+              <% m.group do |g| %>
+                <% g.item label: t('.actions.delete'), href: admin_esi_grant_confirm_destroy_path(grant), leading_icon: 'heroicons/outline/trash', form: true, data: { turbo_frame: 'modal' } %>
+              <% end %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

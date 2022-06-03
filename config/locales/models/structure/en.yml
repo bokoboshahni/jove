@@ -1,0 +1,16 @@
+---
+en:
+  activerecord:
+    attributes:
+      structure:
+        id: ESI Structure ID
+    errors:
+      models:
+        structure:
+          attributes:
+            id:
+              invalid: "%{attribute} is not a valid structure ID."
+  helpers:
+    submit:
+      structure:
+        create: Add

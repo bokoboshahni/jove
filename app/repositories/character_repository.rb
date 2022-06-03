@@ -10,4 +10,10 @@ class CharacterRepository < ApplicationRepository
       data.delete('alliance_id')
     end
   end
+
+  def initialize(gateway: nil)
+    super(gateway:)
+
+    @gateway ||= ESIGateway.new
+  end
 end

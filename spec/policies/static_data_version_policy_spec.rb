@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require 'policy_helper'
 
 RSpec.describe StaticDataVersionPolicy, type: :policy do
-  subject(:policy) { described_class.new(user.default_identity) }
+  include_context 'Policy users'
+
+  subject(:policy) { described_class.new(user_identity) }
 
   context 'as an administrator' do
     let(:user) { create(:admin_user) }

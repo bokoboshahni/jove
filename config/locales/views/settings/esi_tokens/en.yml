@@ -1,0 +1,41 @@
+---
+en:
+  settings:
+    esi_tokens:
+      approved_tokens:
+        authorize: Authorize
+        authorize_tooltip: Authorize ESI token request for %{type} from %{name}
+        body: You have approved the following ESI tokens requests but still need to authorize them.
+        headline: Tokens needing authorization
+      confirm_approve:
+        approve: Authorize
+        body: 'Approving this token will redirect you to the EVE login page to authorize ESI access with the following scopes:'
+        title: Approve token request?
+      confirm_destroy:
+        body: Revoking this token for %{name} will disable any workflow that depends on this token.
+        delete: Revoke
+        title: Revoke token?
+      confirm_reject:
+        body: Are you sure you want to decline this request?
+        reject: Decline
+        title: Decline token request?
+      index:
+        title: ESI tokens
+      new:
+        title: New token
+      pending_tokens:
+        approve: Approve
+        approve_tooltip: Grant ESI token request for %{type} from %{name}
+        body: The following ESI tokens have been requested for one or more of your characters.
+        headline: Pending token requests
+        reject: Reject
+        reject_tooltip: Reject ESI token request for %{type} from %{name}
+      tokens_grid:
+        actions:
+          button: Actions for token %{id}
+          delete: Revoke
+        columns:
+          grants: Used for
+          name: Character
+          scopes: Scopes
+          status: Status

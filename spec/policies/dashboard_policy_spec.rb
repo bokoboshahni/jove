@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require 'policy_helper'
 
 RSpec.describe DashboardPolicy, type: :policy do
-  let(:user) { create(:user) }
+  include_context 'Policy users'
 
   subject(:policy) { described_class }
 

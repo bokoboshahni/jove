@@ -1,0 +1,6 @@
+---
+en:
+  admin:
+    structures:
+      create:
+        success: Successfully synced %{name} from ESI.

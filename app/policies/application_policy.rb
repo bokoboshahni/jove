@@ -60,4 +60,10 @@ class ApplicationPolicy
   def destroy?
     admin?
   end
+
+  protected
+
+  def record_identity_owner?
+    record.identity == identity
+  end
 end

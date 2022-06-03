@@ -45,10 +45,24 @@
             </div>
           <% end %>
 
+          <%= link_to admin_structures_path, class: 'block rounded-md' do %>
+            <div class="flex flex-col px-4 py-2 space-y-2 rounded-lg hover:bg-primary hover:bg-opacity-hover focus:bg-primary focus:bg-opacity-focus active:bg-primary active:bg-opacity-press">
+              <p class="text-sm font-medium">Structures</p>
+              <p class="text-xs">Manage structures.</p>
+            </div>
+          <% end %>
+
           <%= link_to admin_static_data_versions_path, class: 'block rounded-md' do %>
             <div class="flex flex-col px-4 py-2 space-y-2 rounded-lg hover:bg-primary hover:bg-opacity-hover focus:bg-primary focus:bg-opacity-focus active:bg-primary active:bg-opacity-press">
               <p class="text-sm font-medium">Static data</p>
               <p class="text-xs">Manage static data (regions, types, etc.)</p>
+            </div>
+          <% end %>
+
+          <%= link_to admin_esi_tokens_path, class: 'block rounded-md' do %>
+            <div class="flex flex-col px-4 py-2 space-y-2 rounded-lg hover:bg-primary hover:bg-opacity-hover focus:bg-primary focus:bg-opacity-focus active:bg-primary active:bg-opacity-press">
+              <p class="text-sm font-medium">ESI</p>
+              <p class="text-xs">Manage ESI tokens.</p>
             </div>
           <% end %>
         </div>

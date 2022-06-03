@@ -1,0 +1,13 @@
+<%= render(Jove::TurboDialog::Component.new(title: t('.title'), icon: 'heroicons/outline/exclamation-circle', dismissable: true)) do |d| %>
+  <%= t('.body') %>
+
+  <ul class="mt-2 list-disc">
+    <% @token.scopes.each do |s| %><li class="ml-8"><%= s %></li><% end %>
+  </ul>
+
+  <% d.action do %>
+    <%= form_tag settings_esi_token_approve_path(@token) do %>
+      <%= render(Jove::Button::Component.new(variant: :text, color: :danger, label: t('.approve'), type: :submit, data: { turbo: false })) %>
+    <% end %>
+  <% end %>
+<% end %>

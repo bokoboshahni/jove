@@ -38,5 +38,18 @@
 #
 FactoryBot.define do
   factory :constellation do
+    region
+
+    center_x { Faker::Number.decimal }
+    center_y { Faker::Number.decimal }
+    center_z { Faker::Number.decimal }
+    max_x { Faker::Number.decimal }
+    max_y { Faker::Number.decimal }
+    max_z { Faker::Number.decimal }
+    min_x { Faker::Number.decimal }
+    min_y { Faker::Number.decimal }
+    min_z { Faker::Number.decimal }
+    radius { Faker::Number.decimal }
+    name { Faker::Space.nebula }
   end
 end

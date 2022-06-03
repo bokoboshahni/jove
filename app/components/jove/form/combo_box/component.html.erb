@@ -1,0 +1,11 @@
+<div class="relative" data-controller="jove--form--combo-box--component" data-jove--form--combo-box--component-url-value="<%= @autocomplete_url %>">
+  <%= tag.input(placeholder: @system_args[:placeholder], type: :text, class: input_classes, data: { 'jove--form--combo-box--component-target' => 'input' }) %>
+  <%= tag.input(**input_options.merge(data: { 'jove--form--combo-box--component-target' => 'hidden ' })) %>
+  <div class="<%= menu_container_classes %>" data-jove--form--combo-box--component-target="menu">
+    <ul class="<%= menu_elevation_classes %>"
+      id="options"
+      role="listbox"
+      data-jove--form--combo-box--component-target="results">
+    </ul>
+  </div>
+</div>

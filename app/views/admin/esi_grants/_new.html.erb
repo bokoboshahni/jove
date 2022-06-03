@@ -1,0 +1,4 @@
+<%= form_with model: @esi_grant, url: admin_esi_grants_path, builder: Jove::Form::Builder, html: { id: :new_esi_grant, autocomplete: 'off', data: { turbo_frame: '_top' } } do |f| %>
+  <%= f.hidden_field :grant_type, value: grant_class %>
+  <%= f.combo_box :identity_id, autocomplete_url: autocompletions_identities_path %>
+<% end %>

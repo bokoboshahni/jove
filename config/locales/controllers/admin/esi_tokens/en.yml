@@ -1,0 +1,9 @@
+---
+en:
+  admin:
+    esi_tokens:
+      create:
+        success: Successfully requested ESI token from %{name}.
+      destroy:
+        failure: Failed to revoke token for %{name}.
+        success: Successfully revoked token for %{name}.

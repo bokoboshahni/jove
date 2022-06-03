@@ -1,0 +1,15 @@
+<%- title -%>
+
+<div class="mx-auto mt-8 max-w-7xl">
+  <%= render(Jove::Header::Component.new) do |header| %>
+    <% header.title do %><%= t('.title') %><% end %>
+  <% end %>
+</div>
+
+<div id="tokens-grid" class="mx-auto mt-8 max-w-7xl">
+  <%= render(Jove::Panel::Component.new) do %>
+    <div class="p-4 space-y-4">
+      <%= render partial: 'tokens_grid', locals: { tokens: @tokens } %>
+    </div>
+  <% end %>
+</div>

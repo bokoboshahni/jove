@@ -1,0 +1,27 @@
+<li class="<%= container_class_names %>"
+    id="option-0"
+    role="option"
+    tabindex="-1"
+    data-autocomplete-value="<%= @value %>">
+  <div class="<%= state_class_names %>">
+    <div class="flex items-center">
+      <% if @icon_url %><img src="<%= @icon_url %>" alt="" class="flex-shrink-0 w-6 h-6 rounded-full"><% end %>
+      <!-- Selected: "font-semibold" -->
+      <span class="ml-3 truncate"><%= @label %></span>
+    </div>
+
+    <!--
+      Checkmark, only display for selected option.
+
+      Active: "text-white", Not Active: "text-indigo-600"
+    -->
+    <% if @selected %>
+      <span class="absolute inset-y-0 right-0 flex items-center pr-4 text-indigo-600">
+        <!-- Heroicon name: solid/check -->
+        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg>
+      </span>
+    <% end %>
+  </div>
+</li>
