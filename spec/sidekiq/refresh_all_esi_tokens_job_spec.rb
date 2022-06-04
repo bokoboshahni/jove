@@ -8,7 +8,7 @@ RSpec.describe RefreshAllESITokensJob, type: :job do
   describe '#perform' do
     it 'queues all authorized, expired tokens' do
       tokens = create_list(:esi_token, 2, :authorized, expires_at: 10.minutes.ago)
-      expect(RefreshESITokenJob).to receive(:perform_bulk).with(tokens.map { |t| [t.id] })
+      expect(RefreshESITokenJob).to receive(:perform_bulk).with(array_including(tokens.map { |t| [t.id] }))
       job.perform
     end
 
