@@ -55,6 +55,7 @@ class ESIToken < ApplicationRecord # rubocop:disable Metrics/ClassLength
 
   has_many :grants, class_name: 'ESIGrant', foreign_key: :token_id, dependent: :destroy
 
+  delegate :expired?, to: :current_token, prefix: true, allow_nil: true
   delegate :name, to: :character
 
   encrypts :access_token, deterministic: true
@@ -145,6 +146,8 @@ class ESIToken < ApplicationRecord # rubocop:disable Metrics/ClassLength
   end
 
   def to_oauth_token
+    return unless authorized?
+
     OAuth2::AccessToken.from_hash(Jove.config.esi_oauth_client, access_token:, refresh_token:, expires_at:)
   end
   alias current_token to_oauth_token
