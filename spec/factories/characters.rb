@@ -49,7 +49,7 @@ FactoryBot.define do
     esi_expires_at { 1.hour.from_now }
     esi_last_modified_at { Time.zone.now }
     gender { Faker::Gender.binary_type.downcase }
-    name { Faker::Name.name }
+    name { Faker::Name.name.gsub(/'/, '') }
 
     trait :with_alliance do
       association :alliance, factory: :alliance
@@ -61,5 +61,7 @@ FactoryBot.define do
         create(:login_permit, permittable: character)
       end
     end
+
+    factory :permitted_character, traits: %i[with_login_permit]
   end
 end

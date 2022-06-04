@@ -2,6 +2,8 @@
 :schedule:
   CheckNewStaticDataVersionJob:
     cron: '0 0 * * *'
+  RefreshAllESITokensJob:
+    cron: '*/15 * * * *'
 :queues:
   - [default, 1]
   - [low, 10]

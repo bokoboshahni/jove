@@ -1,0 +1,13 @@
+<%- title -%>
+
+<%= render(partial: 'approved_tokens', locals: { tokens: @approved_tokens }) unless @approved_tokens.empty? %>
+
+<%= render(partial: 'pending_tokens', locals: { tokens: @pending_tokens }) unless @pending_tokens.empty? %>
+
+<div id="tokens-grid" class="max-w-2xl mx-auto mt-8">
+  <%= render(Jove::Panel::Component.new) do %>
+    <div class="p-4 space-y-4">
+      <%= render partial: 'tokens_grid', locals: { tokens: @active_tokens } %>
+    </div>
+  <% end %>
+</div>

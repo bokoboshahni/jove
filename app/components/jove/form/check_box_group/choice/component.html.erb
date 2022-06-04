@@ -1,0 +1,13 @@
+<div class="relative flex items-start">
+  <div class="flex items-center">
+    <%= check_box_tag(@name, @tag_value, input_checked?(check_box_options), check_box_options) %>
+  </div>
+  <div class="ml-4">
+    <%= render(Jove::Form::Label::Component.new(**label_options)) do %><%= @label %><% end %>
+    <% if @description %>
+      <%= tag.p(class: description_classes) do %>
+        <%= @description %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

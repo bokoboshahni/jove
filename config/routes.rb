@@ -17,8 +17,18 @@ Rails.application.routes.draw do # rubocop:disable Metrics/BlockLength
     delete 'logout', to: 'devise/sessions#destroy', as: :destroy_user_session
   end
 
+  get '/autocompletions/identities', to: 'autocompletions#identities'
+
   namespace :settings do
     resource :account, controller: 'account', only: %i[show update destroy] do
+      get :confirm_destroy
+    end
+
+    resources :esi_grants, path: 'esi/grants', only: %i[destroy] do
+      get :confirm_approve
+      post :approve
+      get :confirm_reject
+      post :reject
       get :confirm_destroy
     end
 
@@ -26,6 +36,15 @@ Rails.application.routes.draw do # rubocop:disable Metrics/BlockLength
       put :change_default
       get :confirm_destroy
       post :switch
+    end
+
+    resources :esi_tokens, path: 'esi', only: %i[index new create show destroy] do
+      get :confirm_approve
+      post :approve
+      get :confirm_reject
+      post :reject
+      post :authorize, to: 'esi_tokens#authorize_token'
+      get :confirm_destroy
     end
 
     root to: redirect('/settings/account')
@@ -37,6 +56,12 @@ Rails.application.routes.draw do # rubocop:disable Metrics/BlockLength
     resources :corporations, only: %i[index]
 
     resources :characters, only: %i[index]
+
+    resources :esi_grants, path: 'esi/grants', only: %i[index new create destroy]
+
+    resources :esi_tokens, path: 'esi', only: %i[index new create show destroy] do
+      get :confirm_destroy
+    end
 
     resources :login_permits, path: 'authentication', only: %i[index new create destroy] do
       get :confirm_destroy
@@ -52,6 +77,8 @@ Rails.application.routes.draw do # rubocop:disable Metrics/BlockLength
       post :download
       post :import
     end
+
+    resources :structures, only: %i[index new create]
 
     resources :users, only: %i[index destroy] do
       get :confirm_destroy

@@ -65,6 +65,32 @@ CREATE TYPE public.celestial_type AS ENUM (
 
 
 --
+-- Name: esi_grant_status; Type: TYPE; Schema: public; Owner: -
+--
+
+CREATE TYPE public.esi_grant_status AS ENUM (
+    'requested',
+    'approved',
+    'rejected',
+    'revoked'
+);
+
+
+--
+-- Name: esi_token_status; Type: TYPE; Schema: public; Owner: -
+--
+
+CREATE TYPE public.esi_token_status AS ENUM (
+    'requested',
+    'approved',
+    'rejected',
+    'authorized',
+    'revoked',
+    'expired'
+);
+
+
+--
 -- Name: static_data_version_status; Type: TYPE; Schema: public; Owner: -
 --
 
@@ -1053,6 +1079,93 @@ ALTER SEQUENCE public.dogma_effects_id_seq OWNED BY public.dogma_effects.id;
 
 
 --
+-- Name: esi_grants; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.esi_grants (
+    id bigint NOT NULL,
+    grantable_type character varying,
+    grantable_id bigint,
+    requester_id bigint NOT NULL,
+    token_id bigint NOT NULL,
+    approved_at timestamp(6) without time zone,
+    note text,
+    rejected_at timestamp(6) without time zone,
+    revoked_at timestamp(6) without time zone,
+    type text NOT NULL,
+    status public.esi_grant_status NOT NULL,
+    used_at timestamp(6) without time zone,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: esi_grants_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.esi_grants_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: esi_grants_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.esi_grants_id_seq OWNED BY public.esi_grants.id;
+
+
+--
+-- Name: esi_tokens; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.esi_tokens (
+    id bigint NOT NULL,
+    identity_id bigint NOT NULL,
+    requester_id bigint NOT NULL,
+    access_token text,
+    approved_at timestamp(6) without time zone,
+    authorized_at timestamp(6) without time zone,
+    refresh_error_code text,
+    refresh_error_description text,
+    refresh_error_status integer,
+    refresh_token text,
+    refreshed_at timestamp(6) without time zone,
+    rejected_at timestamp(6) without time zone,
+    revoked_at timestamp(6) without time zone,
+    expired_at timestamp(6) without time zone,
+    expires_at timestamp(6) without time zone,
+    scopes text[] NOT NULL,
+    status public.esi_token_status NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: esi_tokens_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.esi_tokens_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: esi_tokens_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.esi_tokens_id_seq OWNED BY public.esi_tokens.id;
+
+
+--
 -- Name: faction_races; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1887,6 +2000,48 @@ ALTER SEQUENCE public.stations_id_seq OWNED BY public.stations.id;
 
 
 --
+-- Name: structures; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.structures (
+    id bigint NOT NULL,
+    corporation_id bigint NOT NULL,
+    solar_system_id bigint NOT NULL,
+    type_id bigint,
+    discarded_at timestamp(6) without time zone,
+    esi_etag text NOT NULL,
+    esi_expires_at timestamp without time zone NOT NULL,
+    esi_last_modified_at timestamp without time zone NOT NULL,
+    log_data jsonb,
+    name text NOT NULL,
+    position_x numeric NOT NULL,
+    position_y numeric NOT NULL,
+    position_z numeric NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: structures_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.structures_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: structures_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.structures_id_seq OWNED BY public.structures.id;
+
+
+--
 -- Name: type_materials; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -2127,6 +2282,20 @@ ALTER TABLE ONLY public.dogma_effects ALTER COLUMN id SET DEFAULT nextval('publi
 
 
 --
+-- Name: esi_grants id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.esi_grants ALTER COLUMN id SET DEFAULT nextval('public.esi_grants_id_seq'::regclass);
+
+
+--
+-- Name: esi_tokens id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.esi_tokens ALTER COLUMN id SET DEFAULT nextval('public.esi_tokens_id_seq'::regclass);
+
+
+--
 -- Name: factions id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -2267,6 +2436,13 @@ ALTER TABLE ONLY public.stations ALTER COLUMN id SET DEFAULT nextval('public.sta
 
 
 --
+-- Name: structures id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.structures ALTER COLUMN id SET DEFAULT nextval('public.structures_id_seq'::regclass);
+
+
+--
 -- Name: types id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -2404,6 +2580,22 @@ ALTER TABLE ONLY public.dogma_categories
 
 ALTER TABLE ONLY public.dogma_effects
     ADD CONSTRAINT dogma_effects_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: esi_grants esi_grants_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.esi_grants
+    ADD CONSTRAINT esi_grants_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: esi_tokens esi_tokens_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.esi_tokens
+    ADD CONSTRAINT esi_tokens_pkey PRIMARY KEY (id);
 
 
 --
@@ -2572,6 +2764,14 @@ ALTER TABLE ONLY public.station_services
 
 ALTER TABLE ONLY public.stations
     ADD CONSTRAINT stations_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: structures structures_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.structures
+    ADD CONSTRAINT structures_pkey PRIMARY KEY (id);
 
 
 --
@@ -3013,6 +3213,41 @@ CREATE INDEX index_dogma_effects_on_tracking_speed_attribute_id ON public.dogma_
 
 
 --
+-- Name: index_esi_grants_on_grantable; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_esi_grants_on_grantable ON public.esi_grants USING btree (grantable_type, grantable_id);
+
+
+--
+-- Name: index_esi_grants_on_requester_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_esi_grants_on_requester_id ON public.esi_grants USING btree (requester_id);
+
+
+--
+-- Name: index_esi_grants_on_token_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_esi_grants_on_token_id ON public.esi_grants USING btree (token_id);
+
+
+--
+-- Name: index_esi_tokens_on_identity_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_esi_tokens_on_identity_id ON public.esi_tokens USING btree (identity_id);
+
+
+--
+-- Name: index_esi_tokens_on_requester_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_esi_tokens_on_requester_id ON public.esi_tokens USING btree (requester_id);
+
+
+--
 -- Name: index_faction_races_on_faction_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -3318,6 +3553,27 @@ CREATE INDEX index_stations_on_reprocessing_hangar_flag_id ON public.stations US
 --
 
 CREATE INDEX index_stations_on_type_id ON public.stations USING btree (type_id);
+
+
+--
+-- Name: index_structures_on_corporation_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_structures_on_corporation_id ON public.structures USING btree (corporation_id);
+
+
+--
+-- Name: index_structures_on_solar_system_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_structures_on_solar_system_id ON public.structures USING btree (solar_system_id);
+
+
+--
+-- Name: index_structures_on_type_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_structures_on_type_id ON public.structures USING btree (type_id);
 
 
 --
@@ -3741,6 +3997,13 @@ CREATE TRIGGER logidze_on_stations BEFORE INSERT OR UPDATE ON public.stations FO
 
 
 --
+-- Name: structures logidze_on_structures; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER logidze_on_structures BEFORE INSERT OR UPDATE ON public.structures FOR EACH ROW WHEN ((COALESCE(current_setting('logidze.disabled'::text, true), ''::text) <> 'on'::text)) EXECUTE FUNCTION public.logidze_logger('null', 'updated_at');
+
+
+--
 -- Name: type_materials logidze_on_type_materials; Type: TRIGGER; Schema: public; Owner: -
 --
 
@@ -3759,6 +4022,38 @@ CREATE TRIGGER logidze_on_types BEFORE INSERT OR UPDATE ON public.types FOR EACH
 --
 
 CREATE TRIGGER logidze_on_units BEFORE INSERT OR UPDATE ON public.units FOR EACH ROW WHEN ((COALESCE(current_setting('logidze.disabled'::text, true), ''::text) <> 'on'::text)) EXECUTE FUNCTION public.logidze_logger('null', 'updated_at');
+
+
+--
+-- Name: esi_tokens fk_rails_4e5ca194ce; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.esi_tokens
+    ADD CONSTRAINT fk_rails_4e5ca194ce FOREIGN KEY (identity_id) REFERENCES public.identities(id);
+
+
+--
+-- Name: esi_grants fk_rails_63eb2faa1b; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.esi_grants
+    ADD CONSTRAINT fk_rails_63eb2faa1b FOREIGN KEY (token_id) REFERENCES public.esi_tokens(id);
+
+
+--
+-- Name: esi_tokens fk_rails_65dd1a1fd9; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.esi_tokens
+    ADD CONSTRAINT fk_rails_65dd1a1fd9 FOREIGN KEY (requester_id) REFERENCES public.identities(id);
+
+
+--
+-- Name: esi_grants fk_rails_787822d34a; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.esi_grants
+    ADD CONSTRAINT fk_rails_787822d34a FOREIGN KEY (requester_id) REFERENCES public.identities(id);
 
 
 --
@@ -3863,6 +4158,8 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220531134446'),
 ('20220531141017'),
 ('20220531143606'),
-('20220531150127');
+('20220531150127'),
+('20220531163950'),
+('20220601154559');
 
 

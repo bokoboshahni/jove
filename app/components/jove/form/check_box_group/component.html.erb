@@ -1,0 +1,7 @@
+<%= tag.fieldset class: container_classes, **@system_args do %>
+  <legend class="sr-only"><%= @legend %></legend>
+
+  <div class="space-y-4">
+    <% choices.each do |c| %><%= c %><% end %>
+  </div>
+<% end %>

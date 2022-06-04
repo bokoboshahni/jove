@@ -88,6 +88,7 @@ class Corporation < ApplicationRecord
                                    foreign_key: :executor_corporation_id
   has_many :character_corporation_histories, class_name: 'Character::CorporationHistory'
   has_many :characters
+  has_many :structures
 
   has_many :historical_characters, class_name: 'Character', through: :character_corporation_histories,
                                    source: :character

@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require 'policy_helper'
 
 RSpec.describe LoginPermitPolicy, type: :policy do
-  subject(:policy) { described_class.new(user_identity) }
+  include_context 'Policy users'
 
-  let(:user_identity) { user.default_identity }
+  subject(:policy) { described_class.new(user_identity) }
 
   context 'as an admin user' do
     let(:user) { create(:admin_user) }

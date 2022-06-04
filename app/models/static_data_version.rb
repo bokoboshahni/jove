@@ -39,6 +39,8 @@ class StaticDataVersion < ApplicationRecord # rubocop:disable Metrics/ClassLengt
 
   class Error < RuntimeError; end
 
+  class EmptyChecksumError < Error; end
+
   class UnzipError < Error; end
 
   class UnzipNotInstalledError < Error; end
@@ -112,7 +114,12 @@ class StaticDataVersion < ApplicationRecord # rubocop:disable Metrics/ClassLengt
   end
 
   def self.check_for_new_version!
-    checksum = Typhoeus.get(Jove.config.sde_checksum_url).body.strip
+    checksum = Retriable.retriable(on: EmptyChecksumError) do
+      result = Typhoeus.get(Jove.config.sde_checksum_url).body.strip
+      raise EmptyChecksumError if result.blank?
+
+      result
+    end
 
     return if StaticDataVersion.exists?(checksum:)
 

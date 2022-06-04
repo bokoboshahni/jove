@@ -27,7 +27,7 @@
 #
 FactoryBot.define do
   factory :identity do
-    character
+    association :character, factory: :permitted_character
     user
   end
 end

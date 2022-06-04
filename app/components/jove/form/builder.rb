@@ -3,6 +3,14 @@
 module Jove
   module Form
     class Builder < ActionView::Helpers::FormBuilder
+      def check_box_group(method, **system_args, &)
+        render_component(method, Jove::Form::CheckBoxGroup::Component, **system_args, &)
+      end
+
+      def combo_box(method, **system_args, &)
+        render_component(method, Jove::Form::ComboBox::Component, **system_args)
+      end
+
       def text_field(method, **system_args)
         render_component(method, Jove::Form::TextField::Component, **system_args)
       end

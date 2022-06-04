@@ -1,0 +1,12 @@
+---
+en:
+  settings:
+    esi_tokens:
+      approve:
+        failure: Failed to approve token request from %{name}.
+      destroy:
+        failure: Failed to revoke token for %{name}.
+        success: Successfully revoked token for %{name}.
+      reject:
+        failure: Failed to decline token request from %{name}.
+        success: Successfully declined token request from %{name}.

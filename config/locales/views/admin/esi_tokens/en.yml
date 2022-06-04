@@ -1,0 +1,25 @@
+---
+en:
+  admin:
+    esi_tokens:
+      confirm_destroy:
+        body: Revoking this token for %{name} will disable any workflow that depends on this token.
+        delete: Revoke
+        title: Revoke token?
+      index:
+        title: ESI tokens
+      new:
+        body: 'An ESI token will be requested with the following scopes:'
+        identity_id:
+          placeholder: Search for character
+        title: Request ESI token
+      tokens_grid:
+        actions:
+          button: Actions for token %{id}
+          delete: Revoke
+        columns:
+          expires_at: Expires
+          grants: Used for
+          name: Character
+          scopes: Scopes
+          status: Valid

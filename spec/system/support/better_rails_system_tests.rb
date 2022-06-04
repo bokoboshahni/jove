@@ -21,6 +21,10 @@ module BetterRailsSystemTests
   def wait_for_page_reload
     page.driver.wait_for_reload
   end
+
+  def click_text(text)
+    page.find_all(:xpath, "//*[normalize-space(text())='#{text}']").first.click
+  end
 end
 
 RSpec.configure do |config|
@@ -31,7 +35,7 @@ RSpec.configure do |config|
   config.around(:each, type: :system) do |ex|
     was_host = Rails.application.default_url_options[:host]
     Rails.application.default_url_options[:host] = Capybara.server_host
-    ex.run
+    Retriable.retriable(on: { Ferrum::StatusError => /failed to reach server/ }) { ex.run }
     Rails.application.default_url_options[:host] = was_host
   end
 

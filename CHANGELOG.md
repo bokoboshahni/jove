@@ -1,5 +1,24 @@
 # Jove Changelog
 
+# [1.3.0-beta.2](https://github.com/bokoboshahni/jove/compare/v1.3.0-beta.1...v1.3.0-beta.2) (2022-06-04)
+
+
+### Bug Fixes
+
+* don't create static data versions with empty checksums ([14e3df2](https://github.com/bokoboshahni/jove/commit/14e3df29c99fd71fbad51b02d6be4ecf89646e17))
+
+
+### Features
+
+* refresh esi tokens periodically ([370bd04](https://github.com/bokoboshahni/jove/commit/370bd048211cec306299610bf0cfc1c583629f20))
+
+# [1.3.0-beta.1](https://github.com/bokoboshahni/jove/compare/v1.2.0...v1.3.0-beta.1) (2022-06-03)
+
+
+### Features
+
+* esi requests for structure discovery ([bc3b863](https://github.com/bokoboshahni/jove/commit/bc3b86378254de31b4b8b04656f31a9df8a70617))
+
 # [1.2.0](https://github.com/bokoboshahni/jove/compare/v1.1.8...v1.2.0) (2022-05-31)
 
 

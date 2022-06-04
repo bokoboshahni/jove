@@ -1,0 +1,9 @@
+<%= render(Jove::TurboDialog::Component.new(title: t('.title'), icon: 'heroicons/outline/exclamation-circle', dismissable: true)) do |d| %>
+  <%= t('.body', name: @grant.identity.name) %>
+
+  <% d.action do %>
+    <%= form_tag settings_esi_grant_path(@grant), method: :delete do %>
+      <%= render(Jove::Button::Component.new(variant: :text, color: :danger, label: t('.delete'), type: :submit, data: { turbo: false })) %>
+    <% end %>
+  <% end %>
+<% end %>
