@@ -83,13 +83,13 @@ group :development do
   gem 'derailed_benchmarks', '~> 2.1'
   gem 'erb_lint', '~> 0.1.1'
   gem 'kramdown-parser-gfm', '~> 1.1'
-  gem 'rouge', '~> 3.28'
+  gem 'rouge', '~> 3.29'
   gem 'rubocop', '~> 1.30'
   gem 'rubocop-performance', '~> 1.14'
   gem 'rubocop-rails', '~> 2.14'
   gem 'rubocop-rspec', '~> 2.11'
   gem 'web-console', '~> 4.2'
-  gem 'yard', '~> 0.9.27'
+  gem 'yard', '~> 0.9.28'
 end
 
 group :test do
