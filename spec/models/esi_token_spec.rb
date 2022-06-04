@@ -306,8 +306,12 @@ RSpec.describe ESIToken, type: :model do
   end
 
   describe '#to_oauth_token' do
-    it 'returns an OAuth2::Access token for the token' do
-      expect(build(:esi_token).to_oauth_token).to be_a(OAuth2::AccessToken)
+    it 'returns an OAuth2::AccessToken when authorized' do
+      expect(build(:esi_token, :authorized).to_oauth_token).to be_a(OAuth2::AccessToken)
+    end
+
+    it 'returns nil when not authorized' do
+      expect(build(:esi_token).to_oauth_token).to be_nil
     end
   end
 end
