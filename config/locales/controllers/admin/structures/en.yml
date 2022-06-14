@@ -4,3 +4,8 @@ en:
     structures:
       create:
         success: Successfully synced %{name} from ESI.
+      market_source:
+        success: Successfully enabled %{name} as a market order source.
+      sync:
+        failure: Failed to sync %{name} from ESI.
+        success: Successfully synced %{name} from ESI.

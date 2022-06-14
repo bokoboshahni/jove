@@ -1,0 +1,3 @@
+<%= form_with model: @source, url: admin_market_sources_path(@market), builder: Jove::Form::Builder, html: { id: :new_market_source, autocomplete: 'off', data: { turbo_frame: '_top' } } do |f| %>
+  <%= f.combo_box :source_id, autocomplete_url:, placeholder: t('.source_id.placeholder.region') %>
+<% end %>

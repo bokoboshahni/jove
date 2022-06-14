@@ -1,0 +1,28 @@
+<%- title @source.name -%>
+
+<div class="mx-auto mt-8 max-w-7xl">
+  <%= render(Jove::Header::Component.new) do |header| %>
+    <% header.title do %><%= @source.name %> (<%= @source.source_type %>)<% end %>
+    <% header.description do %>
+      <% if @source.disabled? %>
+        <%= t('.disabled') %>
+      <% elsif !@source.disabled? && @source.fetched? %>
+        <%= t('.fetched_at') %>&nbsp;<%= local_time(@source.fetched_at) %><%= t('.expires_at') %>&nbsp;<%= local_time(@source.expires_at) %>
+      <% elsif @source.pending? %>
+        <%= t('.pending') %>
+      <% end %>
+    <% end %>
+
+    <% header.action do %>
+      <% if @source.disabled? %>
+        <%= form_tag(admin_market_order_source_confirm_enable_path(@source), method: :get) do %>
+          <%= render(Jove::Button::Component.new(label: t('.enable'), color: :danger, data: { turbo_frame: 'modal' }, disabled: !@source.enableable?)) %>
+        <% end %>
+      <% else %>
+        <%= form_tag(admin_market_order_source_confirm_disable_path(@source), method: :get) do %>
+          <%= render(Jove::Button::Component.new(label: t('.disable'), color: :danger, data: { turbo_frame: 'modal' })) %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

@@ -25,7 +25,7 @@ module Jove
 
         def import_all
           paths = Dir[File.join(sde_path, 'fsd/universe/**/region.staticdata')]
-          start_progress(total: paths.count)
+          start_progress(paths.count)
           rows = paths.map do |path|
             universe = universe_from_path(path)
             region = map_region(YAML.load_file(path), universe)

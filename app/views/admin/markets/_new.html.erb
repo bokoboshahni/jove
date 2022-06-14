@@ -1,0 +1,5 @@
+<%= form_with model: @market, url: admin_markets_path, builder: Jove::Form::Builder, html: { id: :new_market, autocomplete: 'off', data: { turbo_frame: '_top' } } do |f| %>
+  <%= f.text_field(:name) %>
+
+  <%= f.text_field(:description) %>
+<% end %>

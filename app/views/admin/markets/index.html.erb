@@ -1,0 +1,26 @@
+<%- title -%>
+
+<div class="mx-auto mt-8 max-w-7xl">
+  <%= render(Jove::Header::Component.new) do |header| %>
+    <% header.title do %><%= t('.title') %><% end %>
+    <% header.description do %><%= t('.description') %><% end %>
+
+    <% header.action do %>
+      <%= form_tag(confirm_disable_all_admin_markets_path, method: :get) do %>
+        <%= render(Jove::Button::Component.new(label: t('.disable_all'), color: :danger, data: { turbo_frame: 'modal' })) %>
+      <% end %>
+
+      <%= form_tag(new_admin_market_path, method: :get) do %>
+        <%= render(Jove::Button::Component.new(label: t('.new'), data: { turbo_frame: 'modal' })) %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="mx-auto mt-8 max-w-7xl">
+  <%= render(Jove::Panel::Component.new) do %>
+    <div class="p-4 space-y-4">
+      <%= render partial: 'markets_grid', locals: { markets: @markets } %>
+    </div>
+  <% end %>
+</div>

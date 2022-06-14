@@ -47,5 +47,23 @@
 #
 FactoryBot.define do
   factory :station do
+    association :celestial, factory: :planet
+    association :corporation, factory: :corporation
+    association :graphic, factory: :graphic
+    association :operation, factory: :station_operation
+    association :type, factory: :type
+
+    conquerable { false }
+    docking_cost_per_volume { Faker::Number.decimal }
+    max_ship_volume_dockable { Faker::Number.decimal }
+    name { Faker::Space.agency }
+    office_rental_cost { Faker::Number.decimal }
+    position_x { Faker::Number.decimal }
+    position_y { Faker::Number.decimal }
+    position_z { Faker::Number.decimal }
+    reprocessing_efficiency { Faker::Number.decimal }
+    reprocessing_hangar_flag_id { Faker::Number.non_zero_digit }
+    reprocessing_station_take { Faker::Number.decimal }
+    use_operation_name { false }
   end
 end

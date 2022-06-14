@@ -1,0 +1,7 @@
+<%= render(Jove::TurboDialog::Component.new(title: t('.title'), icon: 'heroicons/outline/exclamation-circle', dismissable: true)) do |dialog| %>
+  <%= render 'edit' %>
+
+  <% dialog.action do %>
+    <%= render(Jove::Button::Component.new(label: t('helpers.submit.market.update'), type: 'submit', value: 'Commit', form: 'edit_market')) %>
+  <% end %>
+<% end %>

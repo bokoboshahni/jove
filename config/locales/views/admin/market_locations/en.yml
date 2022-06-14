@@ -1,0 +1,12 @@
+---
+en:
+  admin:
+    market_locations:
+      confirm_destroy:
+        delete: Remove
+        title: Remove location?
+      new:
+        location_id:
+          placeholder:
+            station: Type a station name
+        title: Add location

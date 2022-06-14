@@ -20,5 +20,9 @@ module Jove
     def version_url
       "https://github.com/bokoboshahni/jove/releases/tag/v#{Jove::VERSION}"
     end
+
+    def hydra
+      @hydra ||= Typhoeus::Hydra.new(max_concurrency: 150)
+    end
   end
 end

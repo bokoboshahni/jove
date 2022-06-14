@@ -8,7 +8,7 @@ module Jove
 
         def import_all
           data = YAML.load_file(File.join(sde_path, 'fsd/blueprints.yaml'))
-          start_progress(total: data.count)
+          start_progress(data.count)
           Parallel.each(data, in_threads: threads) do |id, orig|
             activities, materials, products, skills = map_activities(id, orig['activities'])
             upsert_blueprint_activities(activities, materials, products, skills)

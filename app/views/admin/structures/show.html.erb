@@ -1,0 +1,36 @@
+<%- title @structure.name -%>
+
+<div class="max-w-2xl mx-auto mt-8">
+  <%= render(Jove::Header::Component.new) do |header| %>
+    <% header.title do %><%= @structure.name %><% end %>
+    <% header.description do %><%= t('.description', corporation: @structure.corporation_name) %><% end %>
+
+    <% header.action do %>
+      <%= form_tag(admin_structure_sync_path(@structure)) do %>
+        <%= render(Jove::Button::Component.new(label: t('.sync'), data: { turbo_frame: '_top' }, disabled: ESIGrant::StructureDiscovery.unavailable?)) %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="max-w-2xl mx-auto mt-8">
+  <%= render(Jove::Panel::Component.new(id: 'market')) do %>
+    <div class="p-6 space-y-4">
+      <h3 class="text-title-lg"><%= t('.market_source.title') %></h3>
+      <% if @structure.market_order_source %>
+        <p class="text-body-md"><%= t('.market_source.body.enabled') %></p>
+      <% else %>
+        <p class="text-body-md"><%= t('.market_source.body.disabled') %></p>
+      <% end %>
+      <div class="flex">
+        <% if @structure.market_order_source %>
+          <%= render(Jove::Button::Component.new(label: t('.market_source.manage'), tag: :a, href: admin_market_order_source_path(@structure.market_order_source), data: { turbo_frame: '_top' })) %>
+        <% else %>
+          <%= form_tag(admin_structure_confirm_market_source_path(@structure), method: :get) do %>
+            <%= render(Jove::Button::Component.new(label: t('.market_source.enable'), data: { turbo_frame: '_top' })) %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -54,6 +54,7 @@ class Character < ApplicationRecord
 
   has_many :alliances_as_creator, class_name: 'Alliance', foreign_key: :creator_id
   has_many :corporations_as_creator, class_name: 'Corporation', foreign_key: :creator_id
+  has_many :markets, as: :owner
 
   has_one :last_successful_login, through: :identity
 

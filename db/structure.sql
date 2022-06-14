@@ -10,6 +10,20 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
+-- Name: timescaledb; Type: EXTENSION; Schema: -; Owner: -
+--
+
+CREATE EXTENSION IF NOT EXISTS timescaledb WITH SCHEMA public;
+
+
+--
+-- Name: EXTENSION timescaledb; Type: COMMENT; Schema: -; Owner: -
+--
+
+COMMENT ON EXTENSION timescaledb IS 'Enables scalable inserts and complex queries for time-series data';
+
+
+--
 -- Name: hstore; Type: EXTENSION; Schema: -; Owner: -
 --
 
@@ -21,6 +35,20 @@ CREATE EXTENSION IF NOT EXISTS hstore WITH SCHEMA public;
 --
 
 COMMENT ON EXTENSION hstore IS 'data type for storing sets of (key, value) pairs';
+
+
+--
+-- Name: pg_stat_statements; Type: EXTENSION; Schema: -; Owner: -
+--
+
+CREATE EXTENSION IF NOT EXISTS pg_stat_statements WITH SCHEMA public;
+
+
+--
+-- Name: EXTENSION pg_stat_statements; Type: COMMENT; Schema: -; Owner: -
+--
+
+COMMENT ON EXTENSION pg_stat_statements IS 'track planning and execution statistics of all SQL statements executed';
 
 
 --
@@ -87,6 +115,66 @@ CREATE TYPE public.esi_token_status AS ENUM (
     'authorized',
     'revoked',
     'expired'
+);
+
+
+--
+-- Name: market_order_range; Type: TYPE; Schema: public; Owner: -
+--
+
+CREATE TYPE public.market_order_range AS ENUM (
+    'station',
+    'region',
+    'solarsystem',
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '10',
+    '20',
+    '30',
+    '40'
+);
+
+
+--
+-- Name: market_order_snapshot_status; Type: TYPE; Schema: public; Owner: -
+--
+
+CREATE TYPE public.market_order_snapshot_status AS ENUM (
+    'pending',
+    'fetching',
+    'fetched',
+    'failed',
+    'skipped'
+);
+
+
+--
+-- Name: market_order_source_status; Type: TYPE; Schema: public; Owner: -
+--
+
+CREATE TYPE public.market_order_source_status AS ENUM (
+    'pending',
+    'fetching',
+    'fetched',
+    'fetching_failed',
+    'disabled'
+);
+
+
+--
+-- Name: market_status; Type: TYPE; Schema: public; Owner: -
+--
+
+CREATE TYPE public.market_status AS ENUM (
+    'draft',
+    'pending',
+    'aggregating',
+    'aggregated',
+    'aggregating_failed',
+    'disabled'
 );
 
 
@@ -1502,6 +1590,153 @@ ALTER SEQUENCE public.market_groups_id_seq OWNED BY public.market_groups.id;
 
 
 --
+-- Name: market_locations; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.market_locations (
+    location_type character varying NOT NULL,
+    location_id bigint NOT NULL,
+    market_id smallint NOT NULL
+);
+
+
+--
+-- Name: market_order_snapshots; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.market_order_snapshots (
+    source_id smallint NOT NULL,
+    esi_etag text,
+    esi_expires_at timestamp without time zone,
+    esi_last_modified_at timestamp without time zone,
+    failed_at timestamp without time zone,
+    fetched_at timestamp without time zone,
+    fetching_at timestamp without time zone,
+    skipped_at timestamp without time zone,
+    status public.market_order_snapshot_status NOT NULL,
+    status_exception jsonb,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: market_order_sources; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.market_order_sources (
+    id smallint NOT NULL,
+    source_type character varying NOT NULL,
+    source_id bigint NOT NULL,
+    disabled_at timestamp without time zone,
+    expires_at timestamp without time zone,
+    fetching_at timestamp without time zone,
+    fetched_at timestamp without time zone,
+    fetching_failed_at timestamp without time zone,
+    name text NOT NULL,
+    pending_at timestamp without time zone,
+    status public.market_order_source_status NOT NULL,
+    status_exception jsonb,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: market_order_sources_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.market_order_sources_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: market_order_sources_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.market_order_sources_id_seq OWNED BY public.market_order_sources.id;
+
+
+--
+-- Name: market_orders; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.market_orders (
+    system_id bigint NOT NULL,
+    source_id smallint NOT NULL,
+    type_id bigint NOT NULL,
+    duration smallint NOT NULL,
+    is_buy_order boolean NOT NULL,
+    issued timestamp(6) without time zone NOT NULL,
+    location_id bigint NOT NULL,
+    min_volume integer NOT NULL,
+    order_id bigint NOT NULL,
+    price numeric NOT NULL,
+    range public.market_order_range NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    volume_remain integer NOT NULL,
+    volume_total integer NOT NULL
+);
+
+
+--
+-- Name: market_sources; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.market_sources (
+    market_id smallint NOT NULL,
+    source_id smallint NOT NULL
+);
+
+
+--
+-- Name: markets; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.markets (
+    id smallint NOT NULL,
+    aggregating_at timestamp without time zone,
+    aggregating_failed_at timestamp without time zone,
+    aggregated_at timestamp without time zone,
+    disabled_at timestamp without time zone,
+    expires_at timestamp without time zone,
+    hub boolean,
+    regional boolean,
+    name text NOT NULL,
+    description text,
+    pending_at timestamp without time zone,
+    slug text NOT NULL,
+    status public.market_status NOT NULL,
+    status_exception jsonb,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: markets_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.markets_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: markets_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.markets_id_seq OWNED BY public.markets.id;
+
+
+--
 -- Name: meta_groups; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -2359,6 +2594,20 @@ ALTER TABLE ONLY public.market_groups ALTER COLUMN id SET DEFAULT nextval('publi
 
 
 --
+-- Name: market_order_sources id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.market_order_sources ALTER COLUMN id SET DEFAULT nextval('public.market_order_sources_id_seq'::regclass);
+
+
+--
+-- Name: markets id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.markets ALTER COLUMN id SET DEFAULT nextval('public.markets_id_seq'::regclass);
+
+
+--
 -- Name: meta_groups id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -2668,6 +2917,22 @@ ALTER TABLE ONLY public.login_permits
 
 ALTER TABLE ONLY public.market_groups
     ADD CONSTRAINT market_groups_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: market_order_sources market_order_sources_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.market_order_sources
+    ADD CONSTRAINT market_order_sources_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: markets markets_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.markets
+    ADD CONSTRAINT markets_pkey PRIMARY KEY (id);
 
 
 --
@@ -3360,6 +3625,13 @@ CREATE INDEX index_market_groups_on_icon_id ON public.market_groups USING btree 
 
 
 --
+-- Name: index_market_orders_on_order_type_and_type; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_market_orders_on_order_type_and_type ON public.market_orders USING btree (source_id, location_id, is_buy_order, type_id, created_at);
+
+
+--
 -- Name: index_meta_groups_on_icon_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -3717,6 +3989,48 @@ CREATE UNIQUE INDEX index_unique_login_permits ON public.login_permits USING btr
 
 
 --
+-- Name: index_unique_market_locations; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_unique_market_locations ON public.market_locations USING btree (market_id, location_type, location_id);
+
+
+--
+-- Name: index_unique_market_order_snapshots; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_unique_market_order_snapshots ON public.market_order_snapshots USING btree (source_id, esi_expires_at, created_at);
+
+
+--
+-- Name: index_unique_market_order_sources; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_unique_market_order_sources ON public.market_order_sources USING btree (source_type, source_id);
+
+
+--
+-- Name: index_unique_market_orders; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_unique_market_orders ON public.market_orders USING btree (source_id, order_id, created_at);
+
+
+--
+-- Name: index_unique_market_slugs; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_unique_market_slugs ON public.markets USING btree (slug);
+
+
+--
+-- Name: index_unique_market_sources; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_unique_market_sources ON public.market_sources USING btree (market_id, source_id);
+
+
+--
 -- Name: index_unique_planet_schematic_inputs; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -3770,6 +4084,20 @@ CREATE INDEX index_versions_on_item_type_and_event ON public.versions USING btre
 --
 
 CREATE INDEX index_versions_on_whodunnit_and_item_type_and_event ON public.versions USING btree (whodunnit, item_type, event);
+
+
+--
+-- Name: market_order_snapshots_created_at_idx; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX market_order_snapshots_created_at_idx ON public.market_order_snapshots USING btree (created_at DESC);
+
+
+--
+-- Name: market_orders_created_at_idx; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX market_orders_created_at_idx ON public.market_orders USING btree (created_at DESC);
 
 
 --
@@ -4025,6 +4353,36 @@ CREATE TRIGGER logidze_on_units BEFORE INSERT OR UPDATE ON public.units FOR EACH
 
 
 --
+-- Name: market_order_snapshots ts_insert_blocker; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER ts_insert_blocker BEFORE INSERT ON public.market_order_snapshots FOR EACH ROW EXECUTE FUNCTION _timescaledb_internal.insert_blocker();
+
+
+--
+-- Name: market_orders ts_insert_blocker; Type: TRIGGER; Schema: public; Owner: -
+--
+
+CREATE TRIGGER ts_insert_blocker BEFORE INSERT ON public.market_orders FOR EACH ROW EXECUTE FUNCTION _timescaledb_internal.insert_blocker();
+
+
+--
+-- Name: market_order_snapshots fk_rails_11abb733ea; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.market_order_snapshots
+    ADD CONSTRAINT fk_rails_11abb733ea FOREIGN KEY (source_id) REFERENCES public.market_order_sources(id);
+
+
+--
+-- Name: market_sources fk_rails_49223ee5e8; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.market_sources
+    ADD CONSTRAINT fk_rails_49223ee5e8 FOREIGN KEY (source_id) REFERENCES public.market_order_sources(id);
+
+
+--
 -- Name: esi_tokens fk_rails_4e5ca194ce; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -4057,6 +4415,14 @@ ALTER TABLE ONLY public.esi_grants
 
 
 --
+-- Name: market_sources fk_rails_84aa70d00d; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.market_sources
+    ADD CONSTRAINT fk_rails_84aa70d00d FOREIGN KEY (market_id) REFERENCES public.markets(id);
+
+
+--
 -- Name: active_storage_variant_records fk_rails_993965df05; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -4070,6 +4436,14 @@ ALTER TABLE ONLY public.active_storage_variant_records
 
 ALTER TABLE ONLY public.active_storage_attachments
     ADD CONSTRAINT fk_rails_c3b3935057 FOREIGN KEY (blob_id) REFERENCES public.active_storage_blobs(id);
+
+
+--
+-- Name: market_orders fk_rails_c96371e55e; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.market_orders
+    ADD CONSTRAINT fk_rails_c96371e55e FOREIGN KEY (source_id) REFERENCES public.market_order_sources(id);
 
 
 --
@@ -4160,6 +4534,10 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220531143606'),
 ('20220531150127'),
 ('20220531163950'),
-('20220601154559');
+('20220601154559'),
+('20220605174242'),
+('20220606212008'),
+('20220607010136'),
+('20220609175309');
 
 

@@ -1,0 +1,7 @@
+<%= render(Jove::TurboDialog::Component.new(title: t('.title'), icon: 'heroicons/outline/exclamation-circle', dismissable: true)) do |d| %>
+  <% d.action do %>
+    <%= form_tag admin_market_location_path(@market, @location.location_id), method: :delete do %>
+      <%= render(Jove::Button::Component.new(variant: :text, color: :danger, label: t('.delete'), type: :submit, data: { turbo: false })) %>
+    <% end %>
+  <% end %>
+<% end %>

@@ -1,0 +1,4 @@
+<%= form_with model: @location, url: admin_market_locations_path(@market), builder: Jove::Form::Builder, html: { id: :new_market_location, autocomplete: 'off', data: { turbo_frame: '_top' } } do |f| %>
+  <%= f.hidden_field :location_type %>
+  <%= f.combo_box :location_id, autocomplete_url:, placeholder: t('.location_id.placeholder.station') %>
+<% end %>

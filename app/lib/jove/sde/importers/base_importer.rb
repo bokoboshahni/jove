@@ -67,7 +67,7 @@ module Jove
 
         def import_merged
           data = YAML.load_file(resolve_path(sde_file))
-          start_progress(total: data.count)
+          start_progress(data.count)
           rows = case data
                  when Array
                    map_data_array(data)

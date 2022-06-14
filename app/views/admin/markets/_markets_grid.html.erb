@@ -1,0 +1,35 @@
+<%= render(Jove::TurboGrid::Component.new(id: :markets, scope: markets, params:)) do |grid| %>
+  <% grid.column(label: t('.columns.name'), sorted: sorted?(:name), sort_dir:) %>
+  <% grid.column(label: t('.columns.description')) %>
+  <% grid.column(label: t('.columns.status'), sorted: sorted?(:status), sort_dir:) %>
+  <% grid.column(label: t('.columns.created'), sorted: sorted?(:created), sort_dir:) %>
+  <% grid.column(label: t('.columns.updated'), sorted: sorted?(:updated), sort_dir:) %>
+  <% grid.column(actions: true, class: 'w-10') %>
+
+  <% markets.each do |market| %>
+    <% grid.row do |row| %>
+      <% row.cell do %><%= link_to market.name, admin_market_path(market), data: { turbo_frame: '_top' } %><% end %>
+      <% row.cell do %><%= market.description %><% end %>
+      <% row.cell do %><%= render(Jove::Badge::Component.new(color: market_status_color(market), label: market.status.humanize)) %><% end %>
+      <% row.cell do %><%= local_time(market.created_at) %><% end %>
+      <% row.cell do %><%= local_time(market.updated_at) %><% end %>
+      <% row.cell do %>
+        <%= render(Jove::Dropdown::Component.new(wrapper_class: 'max-w-menu mt-1')) do |d| %>
+          <% d.button label: t('.actions.button', name: market.name), variant: :overflow, color: :surface %>
+          <% d.menu do %>
+            <%= render(Jove::Menu::Component.new) do |m| %>
+              <% m.group do |g| %>
+                <% if market.disabled? %>
+                  <% g.item label: t('.actions.enable'), href: admin_market_confirm_enable_path(market), leading_icon: 'heroicons/outline/play', form: true, data: { turbo_frame: 'modal' } %>
+                  <% g.item label: t('.actions.delete'), href: admin_market_confirm_destroy_path(market), leading_icon: 'heroicons/outline/trash', form: true, data: { turbo_frame: 'modal' } %>
+                <% else %>
+                  <% g.item label: t('.actions.disable'), href: admin_market_confirm_disable_path(market), leading_icon: 'heroicons/outline/pause', form: true, data: { turbo_frame: 'modal' } %>
+                <% end %>
+              <% end %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

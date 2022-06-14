@@ -3,7 +3,9 @@ _common: &common
   <% if ENV['ASSET_PRECOMPILE'].present? %>
   url: nulldb://user:pass@127.0.0.1/dbname
   <% end %>
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 25 } %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 60 } %>
+  variables:
+    statement_timeout: 300s
 
 development:
   <<: *common

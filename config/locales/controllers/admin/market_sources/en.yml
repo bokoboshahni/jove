@@ -1,0 +1,10 @@
+---
+en:
+  admin:
+    market_sources:
+      create:
+        failure: Failed to add %{name} to %{market}.
+        success: Successfully added %{name} to %{market}.
+      destroy:
+        failure: Failed to remove %{name} from %{market}.
+        success: Successfully removed %{name} from %{market}.
