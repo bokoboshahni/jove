@@ -1,0 +1,36 @@
+<%- title @market.name -%>
+
+<div class="mx-auto mt-8 max-w-7xl">
+  <%= render(Jove::Header::Component.new) do |header| %>
+    <% header.title do %><%= @market.name %><% end %>
+    <% header.description do %><%= @market.description %><% end %>
+
+    <% header.action do %>
+      <% if @market.disabled? %>
+        <%= form_tag(admin_market_confirm_enable_path(@market), method: :get) do %>
+          <%= render(Jove::Button::Component.new(label: t('.enable'), color: :danger, data: { turbo_frame: 'modal' }, disabled: !@market.enableable?)) %>
+        <% end %>
+      <% else %>
+        <%= form_tag(admin_market_confirm_disable_path(@market), method: :get) do %>
+          <%= render(Jove::Button::Component.new(label: t('.disable'), color: :danger, data: { turbo_frame: 'modal' })) %>
+        <% end %>
+      <% end %>
+
+      <%= form_tag(admin_market_confirm_destroy_path(@market), method: :get) do %>
+        <%= render(Jove::Button::Component.new(label: t('.delete'), color: :danger, data: { turbo_frame: 'modal' }, disabled: !@market.disabled?)) %>
+      <% end %>
+
+      <%= form_tag(edit_admin_market_path(@market), method: :get) do %>
+        <%= render(Jove::Button::Component.new(label: t('.edit'), data: { turbo_frame: 'modal' })) %>
+      <% end %>
+
+      <%= render(Jove::Button::Component.new(label: t('.browse'), tag: :a, href: market_path(@market.name), data: { turbo_frame: '_top' })) %>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="grid grid-cols-2 gap-4 mx-auto mt-8 max-w-7xl">
+  <%= render partial: 'sources' %>
+
+  <%= render partial: 'locations' %>
+</div>

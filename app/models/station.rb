@@ -51,6 +51,8 @@ class Station < ApplicationRecord
 
   multisearchable against: %i[name]
 
+  pg_search_scope :search_by_name, against: %i[name], using: { tsearch: { prefix: true } }
+
   belongs_to :celestial
   belongs_to :corporation
   belongs_to :graphic
@@ -58,6 +60,8 @@ class Station < ApplicationRecord
   belongs_to :type
 
   has_many :corporations_as_home_station, class_name: 'Corporation', foreign_key: :home_station_id
+  has_many :market_locations, as: :location
+  has_many :markets, through: :market_locations
 
   has_many :services, class_name: 'StationService', through: :operation
 

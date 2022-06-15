@@ -19,6 +19,11 @@ class ApplicationController < ActionController::Base
     self.class.ancestors.include?(AdminController)
   end
 
+  helper_method :market_controller?
+  def market_controller?
+    is_a?(MarketsController)
+  end
+
   def storable_location?
     request.get? && is_navigational_format? && !devise_controller? && !request.xhr?
   end

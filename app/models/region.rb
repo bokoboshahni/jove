@@ -41,9 +41,19 @@ class Region < ApplicationRecord
   include SDEImportable
   include Searchable
 
+  JOVE_REGIONS = [10_000_004, 10_000_017, 10_000_019].freeze
+
   multisearchable against: %i[name]
 
+  pg_search_scope :search_by_name, against: %i[name], using: { tsearch: { prefix: true } }
+
   enum universe: %i[abyssal eve void wormhole].index_with(&:to_s)
+
+  has_one :market_location, as: :location
+
+  has_one :market_order_source, as: :source
+
+  has_one :market, through: :market_location
 
   has_many :constellations
 
@@ -51,4 +61,6 @@ class Region < ApplicationRecord
 
   has_many :stations, through: :solar_systems
   has_many :structures, through: :solar_systems
+
+  scope :eve, -> { where(universe: :eve).where.not(id: JOVE_REGIONS) }
 end

@@ -48,6 +48,8 @@ class Alliance < ApplicationRecord
 
   has_many :characters, through: :corporations
 
+  has_many :markets, as: :owner
+
   has_many :users, through: :characters
 
   def avatar_url

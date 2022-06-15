@@ -6,6 +6,8 @@ en:
         admin:
           button: Administration
         dashboard: Dashboard
+        markets:
+          button: Markets
       user_menu:
         add_identity: Connect character
         log_out: Log out

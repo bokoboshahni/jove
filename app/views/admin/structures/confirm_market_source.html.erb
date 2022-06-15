@@ -1,0 +1,10 @@
+
+<%= render(Jove::TurboDialog::Component.new(title: t('.title'), icon: 'heroicons/outline/exclamation-circle', dismissable: true)) do |dialog| %>
+  <%= t('.body') %>
+
+  <%= render 'confirm_market_source' %>
+
+  <% dialog.action do %>
+    <%= render(Jove::Button::Component.new(label: t('.confirm'), type: 'submit', value: 'Commit', form: 'confirm_market_source')) %>
+  <% end %>
+<% end %>

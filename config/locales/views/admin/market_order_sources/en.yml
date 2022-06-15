@@ -1,0 +1,40 @@
+---
+en:
+  admin:
+    market_order_sources:
+      confirm_disable:
+        body: This action will pause fetching new orders from %{name}. Any markets that use %{name} as a source will also be disabled.
+        disable: Disable
+        title: Disable market source?
+      confirm_disable_all:
+        body: This action will pause all market sources. All markets will also be disabled.
+        disable: Disable all
+        title: Disable all market sources?
+      confirm_enable:
+        body: This action will resume fetching new orders from %{name}. If selected below, any markets that use %{name} as a source can be re-enabled as well.
+        enable: Enable
+        title: Enable market source?
+      index:
+        description: ESI region/structure market order sources.
+        disable_all: Disable all
+        title: Market sources
+      show:
+        disable: Disable
+        disabled: Source is disabled.
+        enable: Enable
+        expires_at: Expires at
+        fetched_at: Last fetched at
+        pending: Source is pending its first fetch.
+      sources_grid:
+        actions:
+          button: Actions for %{name}
+          disable: Disable
+          enable: Enable
+        columns:
+          expires: Expires
+          fetched: Fetched
+          name: Name
+          status: Status
+          type: Type
+        na: N/A
+        never: Never

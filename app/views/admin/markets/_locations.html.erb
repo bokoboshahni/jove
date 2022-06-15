@@ -1,0 +1,31 @@
+<%= render(Jove::Panel::Component.new) do %>
+  <div id="market_locations" class="p-6 space-y-4">
+    <h3 class="text-title-lg"><%= t('.title') %></h3>
+    <p class="text-body-md"><%= t('.body') %></p>
+
+    <%= render(Jove::StackedList::Component.new) do |list| %>
+      <% @market.locations.each do |location| %>
+        <% list.item id: "location_#{location.location_id}" do |item| %>
+          <% item.headline do %><%= location.name %><% end %>
+          <% item.body do %><%= location.location_type %><% end %>
+          <% item.trailer do %>
+            <%= form_tag(admin_market_location_confirm_destroy_path(@market, location.location_id), method: :get) do %>
+              <%= render(Jove::Button::Component.new(label: t('.delete'), title: t('.delete_title', name: location.name), variant: :text, color: :danger, data: { turbo_frame: 'modal' })) %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+
+    <div class="flex justify-center space-x-2">
+      <%= form_tag(new_admin_market_location_path(@market), method: :get) do %>
+        <%= hidden_field_tag :location_type, 'Station' %>
+        <%= render(Jove::Button::Component.new(label: t('.new.station'), data: { turbo_frame: 'modal' })) %>
+      <% end %>
+      <%= form_tag(new_admin_market_location_path(@market), method: :get) do %>
+        <%= hidden_field_tag :location_type, 'Structure' %>
+        <%= render(Jove::Button::Component.new(label: t('.new.structure'), data: { turbo_frame: 'modal' })) %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

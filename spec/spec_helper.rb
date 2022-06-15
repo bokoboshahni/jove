@@ -6,11 +6,10 @@ SimpleCov.start 'rails' do
   add_group 'Filters', 'app/filters'
   add_group 'Finders', 'app/finders'
   add_group 'Forms', 'app/forms'
-  add_group 'Jobs', 'app/jobs'
+  add_group 'Jobs', ['app/jobs', 'app/sidekiq']
   add_group 'Policies', 'app/policies'
   add_group 'Repositories', 'app/repositories'
   add_group 'Services', 'app/services'
-  add_group 'Workers', 'app/workers'
 
   add_filter(/_preview\.rb\z/)
   add_filter '/app/components/guidelines/'

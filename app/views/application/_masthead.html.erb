@@ -6,6 +6,41 @@
 
   <% m.item label: t('.nav.dashboard'), href: dashboard_root_path, active: dashboard_controller? %>
 
+  <% if Market.any? %>
+    <% m.item label: t('.nav.markets.button'), active: market_controller? do |i| %>
+      <% i.menu do %>
+        <div id="markets_menu" class="relative flex flex-col p-4">
+          <div class="space-y-2 divide-y divide-y-outline">
+            <div>
+            <%= link_to markets_path, class: 'block rounded-md' do %>
+              <div class="flex flex-col px-4 py-2 space-y-2 rounded-lg hover:bg-primary hover:bg-opacity-hover focus:bg-primary focus:bg-opacity-focus active:bg-primary active:bg-opacity-press">
+                <p class="text-sm font-medium">Browser</p>
+                <p class="text-xs">Browse live and historical market information.</p>
+              </div>
+            <% end %>
+            </div>
+            <% if current_user.admin %>
+              <div class="pt-2">
+                <%= link_to admin_markets_path, class: 'block rounded-md' do %>
+                  <div class="flex flex-col px-4 py-2 space-y-2 rounded-lg hover:bg-primary hover:bg-opacity-hover focus:bg-primary focus:bg-opacity-focus active:bg-primary active:bg-opacity-press">
+                    <p class="text-sm font-medium">Markets</p>
+                    <p class="text-xs">Manage markets.</p>
+                  </div>
+                <% end %>
+                <%= link_to admin_market_order_sources_path, class: 'block rounded-md' do %>
+                  <div class="flex flex-col px-4 py-2 space-y-2 rounded-lg hover:bg-primary hover:bg-opacity-hover focus:bg-primary focus:bg-opacity-focus active:bg-primary active:bg-opacity-press">
+                    <p class="text-sm font-medium">Market sources</p>
+                    <p class="text-xs">Manage ESI sources for market orders.</p>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+
   <% if current_user.admin? %>
     <% m.item label: t('.nav.admin.button'), active: admin_controller? do |i| %>
       <% i.menu do %>

@@ -10,6 +10,7 @@ Rails.application.routes.draw do # rubocop:disable Metrics/BlockLength
 
   constraints admin_constraint do
     mount Sidekiq::Web => '/admin/sidekiq'
+    mount PgHero::Engine => '/admin/pghero'
   end
 
   devise_for :user, path: '', controllers: { omniauth_callbacks: 'eve_oauth_callbacks' }
@@ -50,7 +51,7 @@ Rails.application.routes.draw do # rubocop:disable Metrics/BlockLength
     root to: redirect('/settings/account')
   end
 
-  namespace :admin do
+  namespace :admin do # rubocop:disable Metrics/BlockLength
     resources :alliances, only: %i[index]
 
     resources :corporations, only: %i[index]
@@ -67,6 +68,50 @@ Rails.application.routes.draw do # rubocop:disable Metrics/BlockLength
       get :confirm_destroy
     end
 
+    resources :markets do
+      resources :locations, controller: 'market_locations', except: %i[index show edit update] do
+        get :confirm_destroy
+
+        collection do
+          get :autocomplete_stations
+          get :autocomplete_structures
+        end
+      end
+
+      resources :sources, controller: 'market_sources', except: %i[index show edit update] do
+        get :confirm_destroy
+
+        collection do
+          get :autocomplete_regions
+          get :autocomplete_structures
+        end
+      end
+
+      get :confirm_destroy
+      get :confirm_disable
+      get :confirm_enable
+      post :disable
+      post :enable
+
+      collection do
+        get :confirm_disable_all
+        post :disable_all
+      end
+    end
+
+    resources :market_order_sources, path: 'market-sources', except: %i[edit update] do
+      get :confirm_destroy
+      get :confirm_disable
+      get :confirm_enable
+      post :disable
+      post :enable
+
+      collection do
+        get :confirm_disable_all
+        post :disable_all
+      end
+    end
+
     resources :static_data_versions, path: 'static-data', only: %i[index] do
       collection do
         put :check
@@ -78,7 +123,11 @@ Rails.application.routes.draw do # rubocop:disable Metrics/BlockLength
       post :import
     end
 
-    resources :structures, only: %i[index new create]
+    resources :structures, only: %i[index new create show] do
+      post :sync
+      get :confirm_market_source
+      post :market_source
+    end
 
     resources :users, only: %i[index destroy] do
       get :confirm_destroy
@@ -86,6 +135,8 @@ Rails.application.routes.draw do # rubocop:disable Metrics/BlockLength
 
     root to: redirect('/dashboard')
   end
+
+  resources :markets, only: %i[index show]
 
   namespace :dashboard do
     root to: 'overview#show'

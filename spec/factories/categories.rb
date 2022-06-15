@@ -23,5 +23,7 @@
 #
 FactoryBot.define do
   factory :category do
+    name { Faker::Appliance.brand }
+    published { true }
   end
 end

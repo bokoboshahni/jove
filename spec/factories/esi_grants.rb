@@ -45,6 +45,17 @@ FactoryBot.define do
     association :requester, factory: :identity
     association :token, factory: :esi_token
 
+    trait :approved do
+      status { :approved }
+    end
+
+    trait :authorized do
+      status { :approved }
+      association :token, factory: %i[esi_token authorized]
+    end
+
     factory :structure_discovery_grant, class: 'ESIGrant::StructureDiscovery'
+
+    factory :structure_market_grant, class: 'ESIGrant::StructureMarket'
   end
 end

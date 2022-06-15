@@ -1,0 +1,34 @@
+<%= render(Jove::TurboGrid::Component.new(id: :sources, scope: sources, params:)) do |grid| %>
+  <% grid.column(label: t('.columns.name'), sorted: sorted?(:name), sort_dir:) %>
+  <% grid.column(label: t('.columns.type')) %>
+  <% grid.column(label: t('.columns.status'), sorted: sorted?(:status), sort_dir:) %>
+  <% grid.column(label: t('.columns.fetched'), sorted: sorted?(:fetched), sort_dir:) %>
+  <% grid.column(label: t('.columns.expires'), sorted: sorted?(:expires), sort_dir:) %>
+  <% grid.column(actions: true, class: 'w-10') %>
+
+  <% sources.each do |source| %>
+    <% grid.row do |row| %>
+      <% row.cell do %><%= link_to source.name, admin_market_order_source_path(source), data: { turbo_frame: '_top' } %><% end %>
+      <% row.cell do %><%= source.source_type %><% end %>
+      <% row.cell do %><%= render(Jove::Badge::Component.new(color: market_order_source_status_color(source), label: source.status.humanize)) %><% end %>
+      <% row.cell do %><%= source.fetched_at ? local_time(source.fetched_at) : t('.never') %><% end %>
+      <% row.cell do %><%= source.expires_at ? local_time(source.expires_at) : t('.na') %><% end %>
+      <% row.cell do %>
+        <%= render(Jove::Dropdown::Component.new(wrapper_class: 'max-w-menu mt-1')) do |d| %>
+          <% d.button label: t('.actions.button', name: source.name), variant: :overflow, color: :surface %>
+          <% d.menu do %>
+            <%= render(Jove::Menu::Component.new) do |m| %>
+              <% m.group do |g| %>
+                <% if source.disabled? %>
+                  <% g.item label: t('.actions.enable'), href: admin_market_order_source_confirm_enable_path(source), leading_icon: 'heroicons/outline/play', form: true, data: { turbo_frame: 'modal' } %>
+                <% else %>
+                  <% g.item label: t('.actions.disable'), href: admin_market_order_source_confirm_disable_path(source), leading_icon: 'heroicons/outline/pause', form: true, data: { turbo_frame: 'modal' } %>
+                <% end %>
+              <% end %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

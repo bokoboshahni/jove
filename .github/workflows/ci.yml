@@ -70,7 +70,7 @@ jobs:
     if: github.event_name != 'release'
     services:
       postgres:
-        image: postgres:14-alpine
+        image: timescale/timescaledb:latest-pg14
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres

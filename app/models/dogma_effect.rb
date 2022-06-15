@@ -81,7 +81,4 @@ class DogmaEffect < ApplicationRecord
   belongs_to :range_attribute, class_name: 'DogmaAttribute', optional: true
   belongs_to :resistance_attribute, class_name: 'DogmaAttribute', optional: true
   belongs_to :tracking_speed_attribute, class_name: 'DogmaAttribute', optional: true
-
-  has_many :type_dogma_effects
-  has_many :types, through: :type_dogma_effects
 end

@@ -1,0 +1,17 @@
+---
+en:
+  admin:
+    markets:
+      create:
+        success: Successfully created %{name}.
+      destroy:
+        failure: Failed to delete %{name}.
+        success: Successfully deleted %{name}.
+      disable:
+        failure: Failed to disable %{name}.
+        success: Successfully disabled %{name}.
+      enable:
+        failure: Failed to enable %{name}.
+        success: Successfuly enabled %{name}.
+      update:
+        success: Successfully updated %{name}.

@@ -3,7 +3,7 @@
 <div class="w-full max-w-2xl mx-auto mt-8">
   <%= render(Jove::Panel::Component.new) do %>
     <div class="p-6 space-y-4">
-      <p class="text-md"><%= t('.body') %></p>
+      <p class="text-body-md"><%= t('.body') %></p>
 
       <%= render(Jove::StackedList::Component.new) do |list| %>
         <% @identities.each do |identity| %>

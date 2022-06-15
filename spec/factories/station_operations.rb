@@ -30,5 +30,14 @@
 #
 FactoryBot.define do
   factory :station_operation do
+    border { false }
+    corridor { false }
+    fringe { false }
+    hub { false }
+    manufacturing_factor { 1.0 }
+    name { Faker::Commerce.department }
+    ratio { 1.0 }
+    research_factor { 1.0 }
+    activity_id { 1 }
   end
 end

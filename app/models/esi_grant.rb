@@ -45,9 +45,6 @@ class ESIGrant < ApplicationRecord
 
   cattr_accessor :preloaded, instance_accessor: false
 
-  class_attribute :grantable_types
-  self.grantable_types = []
-
   class_attribute :requested_scopes
   self.requested_scopes = []
 
@@ -57,10 +54,10 @@ class ESIGrant < ApplicationRecord
 
   has_one :identity, through: :token
 
+  scope :approved_by_type, ->(type) { where(type: "ESIGrant::#{type}").approved }
+
   delegate :access_token, to: :token
   delegate :authorized?, to: :token
-
-  validates :grant_type, inclusion: { in: grantable_types }, if: -> { grantable_id.present? }
 
   enum :status, %i[
     requested
@@ -87,10 +84,14 @@ class ESIGrant < ApplicationRecord
   end
 
   def self.descendants
-    %w[ESIGrant::StructureDiscovery].each(&:constantize) unless preloaded
+    %w[ESIGrant::StructureDiscovery ESIGrant::StructureMarket].each(&:constantize) unless preloaded
     self.preloaded = true
 
     super
+  end
+
+  def self.authorized_by_type(grant_type)
+    approved_by_type(grant_type).select(&:authorized?)
   end
 
   def self.available?
