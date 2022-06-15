@@ -1,5 +1,12 @@
 # Jove Changelog
 
+# [1.4.0-beta.1](https://github.com/bokoboshahni/jove/compare/v1.3.1...v1.4.0-beta.1) (2022-06-15)
+
+
+### Features
+
+* market order sync ([61ccc66](https://github.com/bokoboshahni/jove/commit/61ccc660bc1d5dedc503f4970ded6737b127c1ec))
+
 ## [1.3.1](https://github.com/bokoboshahni/jove/compare/v1.3.0...v1.3.1) (2022-06-04)
 
 # [1.3.0](https://github.com/bokoboshahni/jove/compare/v1.2.0...v1.3.0) (2022-06-04)
