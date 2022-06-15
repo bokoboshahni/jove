@@ -43,6 +43,8 @@ class MarketOrderSnapshot < ApplicationRecord # rubocop:disable Metrics/ClassLen
 
   class Error < StandardError; end
 
+  class EtagMismatchError < Error; end
+
   class NoAuthorizedGrantsError < Error; end
 
   self.primary_keys = :source_id, :esi_expires_at
@@ -163,6 +165,8 @@ class MarketOrderSnapshot < ApplicationRecord # rubocop:disable Metrics/ClassLen
     req.on_complete do |res|
       raise_esi_error(res) unless res.success?
 
+      raise EtagMismatchError if res.headers['etag'] != esi_etag
+
       order_rows = map_order_rows(res.body)
       insert_order_rows(order_rows)
       pending_pages.delete(page)
@@ -214,8 +218,8 @@ class MarketOrderSnapshot < ApplicationRecord # rubocop:disable Metrics/ClassLen
   end
 
   def with_esi_retries(&)
-    tries = Rails.env.test? ? 1 : 5 # :nocov:
-    Retriable.retriable(on: [Jove::ESI::ServerError], base_interval: 1.0, multiplier: 2.0, tries:, &)
+    tries = Rails.env.test? ? 2 : 5 # :nocov:
+    Retriable.retriable(on: [Jove::ESI::ServerError, EtagMismatchError], base_interval: 1.0, multiplier: 2.0, tries:, &)
   end
 
   def raise_esi_error(response = nil)

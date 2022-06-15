@@ -122,6 +122,23 @@ RSpec.describe MarketOrderSnapshot, type: :model do
       include_examples 'order persistence'
     end
 
+    context 'with page etag temporarily does not match initial etag' do
+      let(:pages) { 2 }
+
+      before do
+        stub_request(:get, "https://esi.evetech.net/latest/markets/#{source.source_id}/orders/?page=1")
+          .to_return(body: orders.take(5).to_json, status: 200, headers:)
+
+        stub_request(:get, "https://esi.evetech.net/latest/markets/#{source.source_id}/orders/?page=2")
+          .to_return(body: [].to_json, status: 200, headers: headers.merge('etag' => SecureRandom.hex(32))).then
+          .to_return(body: orders.reverse.take(5).to_json, status: 200, headers:).then
+
+        snapshot.fetch!
+      end
+
+      include_examples 'order persistence'
+    end
+
     context 'when orders have not been modified' do
       before do
         snapshot.source.fetch!
