@@ -37,7 +37,7 @@ class StaticDataVersion < ApplicationRecord # rubocop:disable Metrics/ClassLengt
   include AASM
   include Auditable
 
-  class Error < RuntimeError; end
+  class Error < StandardError; end
 
   class EmptyChecksumError < Error; end
 

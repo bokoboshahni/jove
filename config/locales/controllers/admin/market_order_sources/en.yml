@@ -1,0 +1,13 @@
+---
+en:
+  admin:
+    market_order_sources:
+      disable:
+        failure: Failed to enable %{name}.
+        success: Successfully disabled %{name}.
+      disable_all:
+        failure: Failed to disable all market sources.
+        success: Successfully disabled all market sources.
+      enable:
+        failure: Failed to enable %{name}.
+        success: Successfully enabled %{name}.

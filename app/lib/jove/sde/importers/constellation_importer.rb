@@ -22,7 +22,7 @@ module Jove
         def import_all # rubocop:disable Metrics/MethodLength
           region_ids = map_region_ids
           paths = Dir[File.join(sde_path, 'fsd/universe/**/constellation.staticdata')]
-          start_progress(total: paths.count)
+          start_progress(paths.count)
           rows = paths.map do |path|
             region_id = region_ids.fetch(File.dirname(path, 2))
             constellation = map_sde_attributes(YAML.load_file(path), context: { region_id: })

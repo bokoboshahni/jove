@@ -34,7 +34,7 @@ module Jove
           dogma = YAML.load_file(File.join(sde_path, 'fsd/typeDogma.yaml'))
           blueprints = YAML.load_file(File.join(sde_path, 'fsd/blueprints.yaml'))
           packaged_volumes = JSON.parse(File.read(Rails.root.join('db/packaged_volumes.json')))
-          start_progress(total: data.count)
+          start_progress(data.count)
           rows = data.map do |id, orig|
             blueprint = blueprints[id]
             orig.merge!(max_production_limit: blueprint['maxProductionLimit']) if blueprint

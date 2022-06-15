@@ -17,5 +17,6 @@
 #
 FactoryBot.define do
   factory :station_service do
+    name { Faker::Commerce.department }
   end
 end

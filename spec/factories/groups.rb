@@ -30,5 +30,13 @@
 #
 FactoryBot.define do
   factory :group do
+    association :category, factory: :category
+
+    anchorable { false }
+    anchored { false }
+    fittable_non_singleton { false }
+    name { Faker::Appliance.brand }
+    published { true }
+    use_base_price { true }
   end
 end

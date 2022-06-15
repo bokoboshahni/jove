@@ -1,3 +1,15 @@
+<% if @results.any? %>
 <% @results.each do |result| %>
   <%= render(Jove::Form::ComboBox::Item::Component.new(label: result.name, value: result.id)) %>
+<% end %>
+<% else %>
+  <li class="w-full rounded-lg">
+    <div class="h-8 text-opacity-disabled-container">
+      <div class="h-8 px-3 space-y-3 text-opacity-disabled-container">
+        <div class="flex items-center">
+          <p class="ml-3 truncate">No results</p>
+        </div>
+      </div>
+    </div>
+  </li>
 <% end %>

@@ -28,7 +28,7 @@ module Jove
 
         def import_all
           paths = Dir[File.join(sde_path, 'fsd/universe/**/solarsystem.staticdata')]
-          start_progress(total: paths.count)
+
           Parallel.each(paths, in_threads: threads) do |path|
             solar_system = load_solar_system(path)
             child_importers.each { |i| i.import_solar_system(solar_system) }
@@ -41,7 +41,7 @@ module Jove
 
         private
 
-        CHILD_IMPORTERS = [PlanetImporter, MoonImporter, AsteroidBeltImporter, StarImporter, StargateImporter,
+        CHILD_IMPORTERS = [MoonImporter, AsteroidBeltImporter, PlanetImporter, StarImporter, StargateImporter,
                            SecondarySunImporter, StationImporter].freeze
 
         attr_reader :constellation_ids

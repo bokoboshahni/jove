@@ -8,7 +8,7 @@
 
   <% structures.each do |structure| %>
     <% grid.row do |row| %>
-      <% row.cell do %><%= structure.name %><% end %>
+      <% row.cell do %><%= link_to structure.name, admin_structure_path(structure), data: { turbo_frame: '_top' } %><% end %>
       <% row.cell do %><%= structure.corporation_name %><% end %>
       <% row.cell do %><%= structure.alliance_name %><% end %>
       <% row.cell do %><%= structure.solar_system_name %><% end %>

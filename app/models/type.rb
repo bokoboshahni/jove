@@ -73,7 +73,7 @@ class Type < ApplicationRecord
   belongs_to :icon, optional: true
   belongs_to :market_group, optional: true
   belongs_to :meta_group, optional: true
-  belongs_to :variation_parent_type, optional: true
+  belongs_to :variation_parent_type, class_name: 'Type', optional: true
 
   has_one :planet_schematic_as_output, class_name: 'PlanetSchematic', foreign_key: :output_id
 
@@ -85,21 +85,21 @@ class Type < ApplicationRecord
   has_many :blueprint_materials, class_name: 'BlueprintActivityMaterial', foreign_key: :blueprint_id
   has_many :blueprint_skills, class_name: 'BlueprintActivitySkill', foreign_key: :blueprint_id
 
-  has_many :blueprint_activity_products_as_product, foreign_key: :product_id
+  has_many :blueprint_activity_products_as_product, class_name: 'BlueprintActivityProduct', foreign_key: :product_id
   has_many :blueprint_activities_as_product, class_name: 'BlueprintActivity',
                                              through: :blueprint_activity_products_as_product,
                                              source: :activity
   has_many :blueprints_as_product, class_name: 'Type', through: :blueprint_activities_as_product,
                                    source: :blueprint
 
-  has_many :blueprint_activity_materials_as_material, foreign_key: :material_id
+  has_many :blueprint_activity_materials_as_material, class_name: 'BlueprintActivityMaterial', foreign_key: :material_id
   has_many :blueprint_activities_as_material, class_name: 'BlueprintActivity',
                                               through: :blueprint_activity_materials_as_material,
                                               source: :activity
   has_many :blueprints_as_material, class_name: 'Type', through: :blueprint_activities_as_material,
                                     source: :blueprint
 
-  has_many :blueprint_activity_skills_as_skill, foreign_key: :skill_id
+  has_many :blueprint_activity_skills_as_skill, class_name: 'BlueprintActivitySkill', foreign_key: :skill_id
   has_many :blueprint_activities_as_skill, class_name: 'BlueprintActivity',
                                            through: :blueprint_activity_skills_as_skill,
                                            source: :activity
@@ -117,4 +117,7 @@ class Type < ApplicationRecord
 
   has_many :type_materials_as_material, class_name: 'TypeMaterial', foreign_key: :material_id
   has_many :types_as_material, class_name: 'Type', through: :type_materials_as_material, source: :type
+
+  has_many :market_items
+  has_many :markets, through: :market_items
 end

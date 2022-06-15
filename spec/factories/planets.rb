@@ -62,5 +62,12 @@
 #
 FactoryBot.define do
   factory :planet do
+    association :solar_system, factory: :solar_system
+    association :type, factory: :type
+
+    name { "#{solar_system.name} #{%w[I II III IV V VI VII VIII IX X XI XII XIII].sample}" }
+    position_x { Faker::Number.decimal }
+    position_y { Faker::Number.decimal }
+    position_z { Faker::Number.decimal }
   end
 end

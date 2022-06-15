@@ -48,7 +48,7 @@ FactoryBot.define do
     min_x { Faker::Number.decimal }
     min_y { Faker::Number.decimal }
     min_z { Faker::Number.decimal }
-    name { Faker::Space.galaxy }
+    name { "#{Faker::Space.galaxy} #{Faker::Number.within(range: 1..100)}" }
     universe { 'eve' }
   end
 end

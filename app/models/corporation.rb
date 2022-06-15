@@ -77,7 +77,7 @@ class Corporation < ApplicationRecord
   multisearchable against: %i[name description ticker]
 
   belongs_to :alliance, optional: true
-  belongs_to :home_station, optional: true
+  belongs_to :home_station, class_name: 'Station', optional: true
   belongs_to :icon, optional: true
 
   has_one :login_permit, as: :permittable
@@ -86,12 +86,10 @@ class Corporation < ApplicationRecord
                                   foreign_key: :creator_corporation_id
   has_many :alliances_as_executor, class_name: 'Alliance',
                                    foreign_key: :executor_corporation_id
-  has_many :character_corporation_histories, class_name: 'Character::CorporationHistory'
   has_many :characters
+  has_many :markets, as: :owner
   has_many :structures
 
-  has_many :historical_characters, class_name: 'Character', through: :character_corporation_histories,
-                                   source: :character
   has_many :users, through: :characters
 
   delegate :name, to: :alliance, prefix: true, allow_nil: true

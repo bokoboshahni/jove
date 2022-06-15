@@ -63,5 +63,10 @@
 #
 FactoryBot.define do
   factory :type do
+    association :group, factory: :group
+
+    name { "#{Faker::Appliance.brand} #{Faker::Appliance.equipment}" }
+    portion_size { 1 }
+    published { true }
   end
 end

@@ -70,7 +70,7 @@ jobs:
     if: github.event_name != 'release'
     services:
       postgres:
-        image: postgres:14-alpine
+        image: timescale/timescaledb:latest-pg14
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
@@ -166,7 +166,7 @@ jobs:
           token: ${{ secrets.GH_TOKEN }}
 
       - name: Set up Node
-        uses: actions/setup-node@v3.2.0
+        uses: actions/setup-node@v3.3.0
         with:
           node-version: '16'
 

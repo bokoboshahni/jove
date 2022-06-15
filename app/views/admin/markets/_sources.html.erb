@@ -1,0 +1,31 @@
+<%= render(Jove::Panel::Component.new) do %>
+  <div id="market_sources" class="p-6 space-y-4">
+    <h3 class="text-title-lg"><%= t('.title') %></h3>
+    <p class="text-body-md"><%= t('.body') %></p>
+
+    <%= render(Jove::StackedList::Component.new) do |list| %>
+      <% @market.sources.each do |source| %>
+        <% list.item id: "source_#{source.source_id}" do |item| %>
+          <% item.headline do %><%= source.name %><% end %>
+          <% item.body do %><%= source.source_type %><% end %>
+          <% item.trailer do %>
+            <%= form_tag(admin_market_source_confirm_destroy_path(@market, source), method: :get) do %>
+              <%= render(Jove::Button::Component.new(label: t('.delete'), variant: :text, color: :danger, title: t('.delete_title', name: source.name), data: { turbo_frame: 'modal' })) %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+
+    <div class="flex justify-center space-x-2">
+      <%= form_tag(new_admin_market_source_path(@market), method: :get) do %>
+        <%= hidden_field_tag :source_type, 'Region' %>
+        <%= render(Jove::Button::Component.new(label: t('.new.region'), data: { turbo_frame: 'modal' })) %>
+      <% end %>
+      <%= form_tag(new_admin_market_source_path(@market), method: :get) do %>
+        <%= hidden_field_tag :source_type, 'Structure' %>
+        <%= render(Jove::Button::Component.new(label: t('.new.structure'), data: { turbo_frame: 'modal' })) %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

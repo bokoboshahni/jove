@@ -2,6 +2,8 @@
 :schedule:
   CheckNewStaticDataVersionJob:
     cron: '0 0 * * *'
+  FetchAllMarketOrderSourcesJob:
+    cron: '* * * * *'
   RefreshAllESITokensJob:
     cron: '*/15 * * * *'
 :queues:

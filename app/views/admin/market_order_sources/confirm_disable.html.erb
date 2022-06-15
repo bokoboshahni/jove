@@ -1,0 +1,9 @@
+<%= render(Jove::TurboDialog::Component.new(title: t('.title'), icon: 'heroicons/outline/exclamation-circle', dismissable: true)) do |d| %>
+  <%= t('.body', name: @source.name) %>
+
+  <% d.action do %>
+    <%= form_tag admin_market_order_source_disable_path(@source), method: :post do %>
+      <%= render(Jove::Button::Component.new(variant: :text, color: :danger, label: t('.disable'), type: :submit, data: { turbo: false })) %>
+    <% end %>
+  <% end %>
+<% end %>

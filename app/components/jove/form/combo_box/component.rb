@@ -16,14 +16,14 @@ module Jove
 
         private
 
-        MENU_CONTAINER_CLASSES = 'absolute max-h-56 z-40 w-full mt-1 space-y-2 overflow-auto ' \
-                                 'rounded-md shadow-elevation-3 ' \
+        MENU_CONTAINER_CLASSES = 'absolute max-h-56 z-100 min-w-full mt-1 space-y-2 overflow-auto ' \
+                                 'rounded-md shadow-elevation-4 ' \
                                  'bg-surface ' \
                                  'text-label-lg text-on-surface '
 
         MENU_ELEVATION_CLASSES = 'py-2 space-y-2 ' \
                                  'rounded-md ' \
-                                 'bg-primary bg-opacity-elevation-3'
+                                 'bg-primary bg-opacity-elevation-4'
 
         def menu_container_classes
           join_classes(MENU_CONTAINER_CLASSES)

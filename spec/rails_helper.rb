@@ -53,6 +53,31 @@ RSpec.configure do |config| # rubocop:disable Metrics/BlockLength
   config.filter_rails_from_backtrace!
   config.infer_spec_type_from_file_location!
 
+  config.before(:suite) do
+    hypertable_models = [
+      MarketOrderSnapshot,
+      MarketOrder
+    ]
+
+    hypertable_models.each do |klass|
+      table_name = klass.table_name
+      time_column = klass.hypertable_options[:time_column]
+
+      if klass.try(:hypertable).present?
+        ApplicationRecord.logger.info("Hypertable already created for '#{table_name}'")
+        next
+      end
+
+      ApplicationRecord.connection.execute <<~SQL
+        DROP TRIGGER IF EXISTS ts_insert_blocker ON #{table_name}
+      SQL
+
+      ApplicationRecord.connection.execute <<~SQL
+        SELECT create_hypertable('#{table_name}', '#{time_column}')
+      SQL
+    end
+  end
+
   config.before do |_example|
     WebMock.reset!
   end

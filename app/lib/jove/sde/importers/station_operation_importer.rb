@@ -14,7 +14,7 @@ module Jove
 
         def import_all
           data = YAML.load_file(File.join(sde_path, 'fsd/stationOperations.yaml'))
-          start_progress(total: data.count)
+          start_progress(data.count)
           data.each do |operation_id, operation|
             services = map_services(operation_id, operation['services'])
             types = map_types(operation_id, operation['stationTypes'])

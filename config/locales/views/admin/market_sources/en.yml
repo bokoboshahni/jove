@@ -1,0 +1,12 @@
+---
+en:
+  admin:
+    market_sources:
+      confirm_destroy:
+        delete: Remove
+        title: Remove source?
+      new:
+        source_id:
+          placeholder:
+            region: Type a region name
+        title: Add source

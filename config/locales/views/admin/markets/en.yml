@@ -1,0 +1,63 @@
+---
+en:
+  admin:
+    markets:
+      confirm_destroy:
+        body: This action will permanently delete the market and its associated data.
+        delete: Delete
+        title: Delete market?
+      confirm_disable:
+        body: This action will disable the market and pause aggregation of analytics data.
+        disable: Disable
+        title: Disable market?
+      confirm_disable_all:
+        body: This action will disable all markets. Market sources WILL NOT be disabled.
+        disable: Disable all
+        title: Disable all markets?
+      confirm_enable:
+        body: This action will enable the market and resume aggregation of analytics data.
+        enable: Enable
+        title: Enable market?
+      edit:
+        title: Edit market
+      index:
+        description: Markets synced from ESI.
+        disable_all: Disable all
+        new: Add market
+        title: Markets
+      locations:
+        body: Market orders will be filtered using these locations when calculating market statistics.
+        delete: Remove
+        delete_title: Remove %{name}
+        new:
+          station: Add station
+          structure: Add structure
+        title: Locations
+      markets_grid:
+        actions:
+          button: Actions for %{name}
+          delete: Delete
+          disable: Disable
+          enable: Enable
+        columns:
+          created: Created
+          description: Description
+          name: Name
+          status: Status
+          updated: Updated
+      new:
+        title: Add market
+      show:
+        browse: Browse
+        delete: Delete
+        disable: Disable
+        edit: Edit
+        enable: Enable
+      sources:
+        body: Sources that will be used to find market orders.
+        delete: Remove
+        delete_title: Remove %{name}
+        new:
+          region: Add region
+          structure: Add structure
+        title: Sources

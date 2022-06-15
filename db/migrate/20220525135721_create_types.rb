@@ -7,7 +7,7 @@ class CreateTypes < ActiveRecord::Migration[7.0]
       t.references :graphic
       t.references :group, null: false
       t.references :icon
-      t.references :market_group
+      t.integer :market_id, limit: 2, null: false
       t.references :meta_group
       t.references :race
       t.references :skin_material_set
