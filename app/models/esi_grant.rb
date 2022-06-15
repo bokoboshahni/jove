@@ -45,6 +45,11 @@ class ESIGrant < ApplicationRecord
 
   cattr_accessor :preloaded, instance_accessor: false
 
+  GRANT_TYPES = [
+    ESIGrant::StructureDiscovery,
+    ESIGrant::StructureMarket
+  ].freeze
+
   class_attribute :requested_scopes
   self.requested_scopes = []
 
@@ -81,13 +86,6 @@ class ESIGrant < ApplicationRecord
     event :revoke do
       transitions from: :approved, to: :revoked
     end
-  end
-
-  def self.descendants
-    %w[ESIGrant::StructureDiscovery ESIGrant::StructureMarket].each(&:constantize) unless preloaded
-    self.preloaded = true
-
-    super
   end
 
   def self.authorized_by_type(grant_type)

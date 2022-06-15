@@ -67,7 +67,7 @@ module Admin
     end
 
     def grant_type
-      grant_class = ESIGrant.descendants.find { |c| c.name == "ESIGrant::#{params[:grant_type].classify}" }
+      grant_class = ESIGrant::GRANT_TYPES.find { |c| c.name == "ESIGrant::#{params[:grant_type].classify}" }
       raise ActiveRecord::RecordNotFound unless grant_class
 
       grant_class
