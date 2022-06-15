@@ -91,7 +91,7 @@ GEM
       activerecord (>= 3.2, < 8.0)
       rake (>= 10.4, < 14.0)
     ast (2.4.2)
-    authtrail (0.4.2)
+    authtrail (0.4.3)
       activerecord (>= 5.2)
       railties (>= 5.2)
       warden
@@ -305,7 +305,7 @@ GEM
     method_source (1.0.0)
     mini_histogram (0.3.1)
     mini_mime (1.1.2)
-    minitest (5.15.0)
+    minitest (5.16.0)
     msgpack (1.5.2)
     multi_json (1.15.0)
     multi_xml (0.6.0)
@@ -407,7 +407,7 @@ GEM
       activesupport (>= 4.2)
       choice (~> 0.2.0)
       ruby-graphviz (~> 1.2)
-    rails-html-sanitizer (1.4.2)
+    rails-html-sanitizer (1.4.3)
       loofah (~> 2.3)
     rails-i18n (7.0.3)
       i18n (>= 0.7, < 2)
@@ -592,7 +592,7 @@ GEM
       nokogiri (~> 1.8)
     yard (0.9.28)
       webrick (~> 1.7.0)
-    zeitwerk (2.5.4)
+    zeitwerk (2.6.0)
 
 PLATFORMS
   aarch64-linux-musl
@@ -606,7 +606,7 @@ DEPENDENCIES
   after_commit_everywhere (~> 1.2)
   ancestry (~> 4.1)
   annotate (~> 3.2)
-  authtrail (~> 0.4.2)
+  authtrail (~> 0.4.3)
   awesome_print (~> 1.9)
   bcrypt (~> 3.1)
   benchmark-ips (~> 2.10)
