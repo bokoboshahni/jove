@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 module Jove
-  module MarketItemChart
+  module Chartkick
     class ComponentPreview < ViewComponent::Preview
       def default
-        render(Jove::MarketItemChart::Component.new)
+        render(Jove::Chartkick::Component.new)
       end
     end
   end

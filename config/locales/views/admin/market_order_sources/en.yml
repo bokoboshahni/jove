@@ -22,9 +22,12 @@ en:
         disable: Disable
         disabled: Source is disabled.
         enable: Enable
-        expires_at: Expires at
-        fetched_at: Last fetched at
+        fetched_at: Last fetched
         pending: Source is pending its first fetch.
+        snapshots_chart:
+          title: Snapshots
+          fetched: Fetched
+          failed: Failed
       sources_grid:
         actions:
           button: Actions for %{name}

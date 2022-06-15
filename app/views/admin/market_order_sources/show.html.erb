@@ -1,15 +1,15 @@
 <%- title @source.name -%>
 
-<div class="mx-auto mt-8 max-w-7xl">
+<div class="max-w-2xl mx-auto mt-8">
   <%= render(Jove::Header::Component.new) do |header| %>
     <% header.title do %><%= @source.name %> (<%= @source.source_type %>)<% end %>
     <% header.description do %>
       <% if @source.disabled? %>
         <%= t('.disabled') %>
-      <% elsif !@source.disabled? && @source.fetched? %>
-        <%= t('.fetched_at') %>&nbsp;<%= local_time(@source.fetched_at) %><%= t('.expires_at') %>&nbsp;<%= local_time(@source.expires_at) %>
       <% elsif @source.pending? %>
         <%= t('.pending') %>
+      <% else !@source.disabled? && @source.fetched? %>
+        <%= t('.fetched_at') %>&nbsp;<%= local_time(@source.fetched_at) %>
       <% end %>
     <% end %>
 
@@ -24,5 +24,23 @@
         <% end %>
       <% end %>
     <% end %>
+  <% end %>
+</div>
+
+<div class="max-w-2xl mx-auto mt-8">
+  <%= render(Jove::Panel::Component.new) do %>
+    <div id="snapshots_chart" class="p-6 space-y-4">
+      <h3 class="text-title-lg"><%= t('.snapshots_chart.title') %></h3>
+
+      <%=
+        render(Jove::Chartkick::Component.new(
+          variant: :line,
+          data: [
+            { name: t('.snapshots_chart.fetched'), data: @source.snapshots.fetched.group_by_minute(:fetched_at, range: 1.hour.ago, expand_range: true).count },
+            { name: t('.snapshots_chart.failed'), data: @source.snapshots.failed.group_by_minute(:failed_at, range: 1.hour.ago, expand_range: true).count }
+            { name: t('.snapshots_chart.skipped'), data: @source.snapshots.skipped.group_by_minute(:failed_at, range: 1.hour.ago, expand_range: true).count }
+          ]
+        ))
+      %>
   <% end %>
 </div>
