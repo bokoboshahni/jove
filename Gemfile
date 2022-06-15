@@ -90,7 +90,7 @@ group :development do
   gem 'rouge', '~> 3.29'
   gem 'rubocop', '~> 1.30'
   gem 'rubocop-performance', '~> 1.14'
-  gem 'rubocop-rails', '~> 2.14'
+  gem 'rubocop-rails', '~> 2.15'
   gem 'rubocop-rspec', '~> 2.11'
   gem 'web-console', '~> 4.2'
   gem 'yard', '~> 0.9.28'
