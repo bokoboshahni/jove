@@ -33,14 +33,16 @@
       <h3 class="text-title-lg"><%= t('.snapshots_chart.title') %></h3>
 
       <%=
-        render(Jove::Chartkick::Component.new(
-          variant: :line,
-          data: [
-            { name: t('.snapshots_chart.fetched'), data: @source.snapshots.fetched.group_by_minute(:fetched_at, range: 1.hour.ago, expand_range: true).count },
-            { name: t('.snapshots_chart.failed'), data: @source.snapshots.failed.group_by_minute(:failed_at, range: 1.hour.ago, expand_range: true).count },
-            { name: t('.snapshots_chart.skipped'), data: @source.snapshots.skipped.group_by_minute(:failed_at, range: 1.hour.ago, expand_range: true).count }
-          ]
-        ))
+        render(
+          Jove::Chartkick::Component.new(
+            variant: :line,
+            data: [
+              { name: t('.snapshots_chart.fetched'), data: @source.snapshots.fetched.group_by_minute(:fetched_at, range: 1.hour.ago, expand_range: true).count },
+              { name: t('.snapshots_chart.failed'), data: @source.snapshots.failed.group_by_minute(:failed_at, range: 1.hour.ago, expand_range: true).count },
+              { name: t('.snapshots_chart.skipped'), data: @source.snapshots.skipped.group_by_minute(:failed_at, range: 1.hour.ago, expand_range: true).count }
+            ]
+          )
+        )
       %>
   <% end %>
 </div>
