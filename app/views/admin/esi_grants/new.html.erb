@@ -1,7 +1,0 @@
-<%= render(Jove::TurboDialog::Component.new(title: t('.title'), icon: 'heroicons/outline/exclamation-circle', dismissable: true)) do |dialog| %>
-  <%= render 'new' %>
-
-  <% dialog.action do %>
-    <%= render(Jove::Button::Component.new(label: t('helpers.submit.esi_grant.create'), type: 'submit', value: 'Commit', form: 'new_esi_grant')) %>
-  <% end %>
-<% end %>

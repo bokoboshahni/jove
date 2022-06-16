@@ -25,14 +25,6 @@ Rails.application.routes.draw do # rubocop:disable Metrics/BlockLength
       get :confirm_destroy
     end
 
-    resources :esi_grants, path: 'esi/grants', only: %i[destroy] do
-      get :confirm_approve
-      post :approve
-      get :confirm_reject
-      post :reject
-      get :confirm_destroy
-    end
-
     resources :identities, path: 'characters', only: %i[index new create destroy] do
       put :change_default
       get :confirm_destroy
@@ -57,8 +49,6 @@ Rails.application.routes.draw do # rubocop:disable Metrics/BlockLength
     resources :corporations, only: %i[index]
 
     resources :characters, only: %i[index]
-
-    resources :esi_grants, path: 'esi/grants', only: %i[index new create destroy]
 
     resources :esi_tokens, path: 'esi', only: %i[index new create show destroy] do
       get :confirm_destroy

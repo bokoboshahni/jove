@@ -1,6 +1,4 @@
 <%= form_with model: @token, url: admin_esi_tokens_path, builder: Jove::Form::Builder, html: { id: :new_esi_token, autocomplete: 'off', data: { turbo_frame: '_top' } } do |f| %>
-  <%= f.fields_for :grants do |g| %>
-    <%= g.hidden_field :type %>
-  <% end %>
+  <%= f.hidden_field :grant_type %>
   <%= f.combo_box :identity_id, placeholder: t('.identity_id.placeholder'), autocomplete_url: autocompletions_identities_path %>
 <% end %>

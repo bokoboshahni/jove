@@ -119,7 +119,7 @@ class MarketOrderSource < ApplicationRecord # rubocop:disable Metrics/ClassLengt
   def enableable?
     return true unless source.is_a?(Structure)
 
-    source.esi_authorized?('StructureMarket')
+    source.esi_authorized?(:structure_market)
   end
 
   def fetchable?

@@ -25,9 +25,10 @@ en:
         fetched_at: Last fetched
         pending: Source is pending its first fetch.
         snapshots_chart:
-          title: Snapshots
-          fetched: Fetched
           failed: Failed
+          fetched: Fetched
+          skipped: Skipped
+          title: Snapshots
       sources_grid:
         actions:
           button: Actions for %{name}

@@ -14,19 +14,23 @@
 # **`authorized_at`**              | `datetime`         |
 # **`expired_at`**                 | `datetime`         |
 # **`expires_at`**                 | `datetime`         |
+# **`grant_type`**                 | `text`             |
 # **`refresh_error_code`**         | `text`             |
 # **`refresh_error_description`**  | `text`             |
 # **`refresh_error_status`**       | `integer`          |
 # **`refresh_token`**              | `text`             |
 # **`refreshed_at`**               | `datetime`         |
 # **`rejected_at`**                | `datetime`         |
+# **`resource_type`**              | `string`           |
 # **`revoked_at`**                 | `datetime`         |
 # **`scopes`**                     | `text`             | `not null, is an Array`
 # **`status`**                     | `enum`             | `not null`
+# **`used_at`**                    | `datetime`         |
 # **`created_at`**                 | `datetime`         | `not null`
 # **`updated_at`**                 | `datetime`         | `not null`
 # **`identity_id`**                | `bigint`           | `not null`
 # **`requester_id`**               | `bigint`           | `not null`
+# **`resource_id`**                | `bigint`           |
 #
 # ### Indexes
 #
@@ -43,29 +47,18 @@
 #     * **`requester_id => identities.id`**
 #
 FactoryBot.define do # rubocop:disable Metrics/BlockLength
-  factory :esi_token do # rubocop:disable Metrics/BlockLength
+  factory :esi_token do
     association :identity
     association :requester, factory: :identity
-    scopes { Jove::ESI::SCOPES.shuffle.take(3) }
 
-    after(:build) do |token|
-      token.grants.build(type: 'ESIGrant::StructureDiscovery', requester: token.requester)
-    end
+    grant_type { :structure_discovery }
 
     trait :approved do
       status { :approved }
-
-      after(:create) do |token|
-        token.grants.each(&:approve!)
-      end
     end
 
     trait :rejected do
       status { :rejected }
-
-      after(:create) do |token|
-        token.grants.each(&:reject!)
-      end
     end
 
     trait :authorized do
@@ -73,10 +66,6 @@ FactoryBot.define do # rubocop:disable Metrics/BlockLength
       access_token { SecureRandom.hex(32) }
       refresh_token { SecureRandom.hex(32) }
       expires_at { 20.minutes.from_now }
-
-      after(:build) do |token|
-        token.grants.each(&:approve)
-      end
     end
 
     trait :expired do

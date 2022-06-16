@@ -1,13 +1,13 @@
 <%- title -%>
 
-<% if ESIGrant::StructureDiscovery.pending_available? || ESIGrant::StructureDiscovery.unavailable? %>
+<% if ESIToken.pending_available?(:structure_discovery) || ESIToken.unavailable?(:structure_discovery) %>
   <div class="mx-auto mt-8 max-w-7xl">
     <%= render(Jove::Panel::Component.new(color: :notice)) do %>
       <div class="flex items-center p-4">
         <div class="flex-1">
           <p class="text-body-lg">
             No ESI token for syncing structures is configured.
-            <% if ESIGrant::StructureDiscovery.pending_available? %><%= ESIGrant.human_attribute_name('pending_available', count: ESIGrant::StructureDiscovery.requested.count) %><% end %>
+            <% if ESIToken.pending_available?(:structure_discovery) %><%= ESIToken.human_attribute_name('pending_available', count: ESIToken.requested_by_type(:structure_discovery).count) %><% end %>
           </p>
         </div>
         <div>
@@ -28,7 +28,7 @@
 
     <% header.action do %>
       <%= form_tag(new_admin_structure_path, method: :get) do %>
-        <%= render(Jove::Button::Component.new(label: t('.new'), data: { turbo_frame: 'modal' }, disabled: ESIGrant::StructureDiscovery.unavailable?)) %>
+        <%= render(Jove::Button::Component.new(label: t('.new'), data: { turbo_frame: 'modal' }, disabled: ESIToken.unavailable?(:structure_discovery))) %>
       <% end %>
     <% end %>
   <% end %>

@@ -1,9 +1,0 @@
-<%= render(Jove::TurboDialog::Component.new(title: t('.title'), icon: 'heroicons/outline/exclamation-circle', dismissable: true)) do |d| %>
-  <%= t('.body') %>
-
-  <% d.action do %>
-    <%= form_tag settings_esi_grant_approve_path(@grant) do %>
-      <%= render(Jove::Button::Component.new(variant: :text, color: :danger, label: t('.approve'), type: :submit, data: { turbo: false })) %>
-    <% end %>
-  <% end %>
-<% end %>

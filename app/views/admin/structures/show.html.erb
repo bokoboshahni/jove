@@ -7,7 +7,7 @@
 
     <% header.action do %>
       <%= form_tag(admin_structure_sync_path(@structure)) do %>
-        <%= render(Jove::Button::Component.new(label: t('.sync'), data: { turbo_frame: '_top' }, disabled: ESIGrant::StructureDiscovery.unavailable?)) %>
+        <%= render(Jove::Button::Component.new(label: t('.sync'), data: { turbo_frame: '_top' }, disabled: ESIToken.unavailable?(:structure_discovery))) %>
       <% end %>
     <% end %>
   <% end %>

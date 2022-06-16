@@ -597,6 +597,26 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
+-- Name: market_order_snapshots; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.market_order_snapshots (
+    source_id smallint NOT NULL,
+    esi_etag text,
+    esi_expires_at timestamp without time zone,
+    esi_last_modified_at timestamp without time zone,
+    failed_at timestamp without time zone,
+    fetched_at timestamp without time zone,
+    fetching_at timestamp without time zone,
+    skipped_at timestamp without time zone,
+    status public.market_order_snapshot_status NOT NULL,
+    status_exception jsonb,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
 -- Name: active_storage_attachments; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1167,47 +1187,6 @@ ALTER SEQUENCE public.dogma_effects_id_seq OWNED BY public.dogma_effects.id;
 
 
 --
--- Name: esi_grants; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.esi_grants (
-    id bigint NOT NULL,
-    grantable_type character varying,
-    grantable_id bigint,
-    requester_id bigint NOT NULL,
-    token_id bigint NOT NULL,
-    approved_at timestamp(6) without time zone,
-    note text,
-    rejected_at timestamp(6) without time zone,
-    revoked_at timestamp(6) without time zone,
-    type text NOT NULL,
-    status public.esi_grant_status NOT NULL,
-    used_at timestamp(6) without time zone,
-    created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
-);
-
-
---
--- Name: esi_grants_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE public.esi_grants_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: esi_grants_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
---
-
-ALTER SEQUENCE public.esi_grants_id_seq OWNED BY public.esi_grants.id;
-
-
---
 -- Name: esi_tokens; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1230,7 +1209,11 @@ CREATE TABLE public.esi_tokens (
     scopes text[] NOT NULL,
     status public.esi_token_status NOT NULL,
     created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    updated_at timestamp(6) without time zone NOT NULL,
+    resource_type character varying,
+    resource_id bigint,
+    grant_type text,
+    used_at timestamp without time zone
 );
 
 
@@ -1597,26 +1580,6 @@ CREATE TABLE public.market_locations (
     location_type character varying NOT NULL,
     location_id bigint NOT NULL,
     market_id smallint NOT NULL
-);
-
-
---
--- Name: market_order_snapshots; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.market_order_snapshots (
-    source_id smallint NOT NULL,
-    esi_etag text,
-    esi_expires_at timestamp without time zone,
-    esi_last_modified_at timestamp without time zone,
-    failed_at timestamp without time zone,
-    fetched_at timestamp without time zone,
-    fetching_at timestamp without time zone,
-    skipped_at timestamp without time zone,
-    status public.market_order_snapshot_status NOT NULL,
-    status_exception jsonb,
-    created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
 );
 
 
@@ -2517,13 +2480,6 @@ ALTER TABLE ONLY public.dogma_effects ALTER COLUMN id SET DEFAULT nextval('publi
 
 
 --
--- Name: esi_grants id; Type: DEFAULT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.esi_grants ALTER COLUMN id SET DEFAULT nextval('public.esi_grants_id_seq'::regclass);
-
-
---
 -- Name: esi_tokens id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -2829,14 +2785,6 @@ ALTER TABLE ONLY public.dogma_categories
 
 ALTER TABLE ONLY public.dogma_effects
     ADD CONSTRAINT dogma_effects_pkey PRIMARY KEY (id);
-
-
---
--- Name: esi_grants esi_grants_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.esi_grants
-    ADD CONSTRAINT esi_grants_pkey PRIMARY KEY (id);
 
 
 --
@@ -3475,27 +3423,6 @@ CREATE INDEX index_dogma_effects_on_resistance_attribute_id ON public.dogma_effe
 --
 
 CREATE INDEX index_dogma_effects_on_tracking_speed_attribute_id ON public.dogma_effects USING btree (tracking_speed_attribute_id);
-
-
---
--- Name: index_esi_grants_on_grantable; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_esi_grants_on_grantable ON public.esi_grants USING btree (grantable_type, grantable_id);
-
-
---
--- Name: index_esi_grants_on_requester_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_esi_grants_on_requester_id ON public.esi_grants USING btree (requester_id);
-
-
---
--- Name: index_esi_grants_on_token_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_esi_grants_on_token_id ON public.esi_grants USING btree (token_id);
 
 
 --
@@ -4391,27 +4318,11 @@ ALTER TABLE ONLY public.esi_tokens
 
 
 --
--- Name: esi_grants fk_rails_63eb2faa1b; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.esi_grants
-    ADD CONSTRAINT fk_rails_63eb2faa1b FOREIGN KEY (token_id) REFERENCES public.esi_tokens(id);
-
-
---
 -- Name: esi_tokens fk_rails_65dd1a1fd9; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.esi_tokens
     ADD CONSTRAINT fk_rails_65dd1a1fd9 FOREIGN KEY (requester_id) REFERENCES public.identities(id);
-
-
---
--- Name: esi_grants fk_rails_787822d34a; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.esi_grants
-    ADD CONSTRAINT fk_rails_787822d34a FOREIGN KEY (requester_id) REFERENCES public.identities(id);
 
 
 --
@@ -4538,6 +4449,8 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220605174242'),
 ('20220606212008'),
 ('20220607010136'),
-('20220609175309');
+('20220609175309'),
+('20220615201911'),
+('20220616022650');
 
 

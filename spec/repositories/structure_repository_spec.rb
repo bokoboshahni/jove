@@ -11,9 +11,7 @@ RSpec.describe StructureRepository, type: :repository do
     describe '#find' do
       context 'with an authorized grant' do
         before do
-          allow(ESIGrant::StructureDiscovery).to(
-            receive(:with_token).and_yield(SecureRandom.hex(32))
-          )
+          allow(ESIToken).to(receive(:with_token).with(:structure_discovery).and_yield(SecureRandom.hex(32)))
         end
 
         context 'with a valid structure ID' do

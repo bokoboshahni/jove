@@ -76,13 +76,7 @@ class Structure < ApplicationRecord
 
   private
 
-  def build_token(requester, token_param)
-    ESIToken.new(
-      token_param.merge(
-        requester:,
-        scopes: ESIGrant::StructureMarket.requested_scopes,
-        grants_attributes: [{ requester:, grantable: self, type: 'ESIGrant::StructureMarket' }]
-      )
-    )
+  def build_token(_requester, token_param)
+    ESIToken.new(token_param.merge(grant_type: :structure_market, resource: self))
   end
 end

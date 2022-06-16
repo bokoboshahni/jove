@@ -122,23 +122,6 @@ RSpec.describe MarketOrderSnapshot, type: :model do
       include_examples 'order persistence'
     end
 
-    context 'with page etag temporarily does not match initial etag' do
-      let(:pages) { 2 }
-
-      before do
-        stub_request(:get, "https://esi.evetech.net/latest/markets/#{source.source_id}/orders/?page=1")
-          .to_return(body: orders.take(5).to_json, status: 200, headers:)
-
-        stub_request(:get, "https://esi.evetech.net/latest/markets/#{source.source_id}/orders/?page=2")
-          .to_return(body: [].to_json, status: 200, headers: headers.merge('etag' => SecureRandom.hex(32))).then
-          .to_return(body: orders.reverse.take(5).to_json, status: 200, headers:).then
-
-        snapshot.fetch!
-      end
-
-      include_examples 'order persistence'
-    end
-
     context 'when orders have not been modified' do
       before do
         snapshot.source.fetch!
@@ -175,8 +158,7 @@ RSpec.describe MarketOrderSnapshot, type: :model do
           stub_request(:get, "https://esi.evetech.net/latest/markets/structures/#{source.source_id}/?page=1")
             .to_return(body: orders.to_json, status: 200, headers:)
 
-          token = create(:esi_token, :authorized)
-          create(:structure_market_grant, :approved, token:, grantable: structure)
+          create(:esi_token, :authorized, grant_type: :structure_market, resource: structure)
 
           snapshot.fetch!
         end
@@ -191,8 +173,7 @@ RSpec.describe MarketOrderSnapshot, type: :model do
 
       context 'with an invalid token' do
         before do
-          token = create(:esi_token, :expired)
-          create(:structure_market_grant, :approved, token:, grantable: structure)
+          create(:esi_token, :expired, grant_type: :structure_market, resource: structure)
         end
 
         it 'raises an error' do

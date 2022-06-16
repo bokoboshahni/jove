@@ -14,19 +14,23 @@
 # **`authorized_at`**              | `datetime`         |
 # **`expired_at`**                 | `datetime`         |
 # **`expires_at`**                 | `datetime`         |
+# **`grant_type`**                 | `text`             |
 # **`refresh_error_code`**         | `text`             |
 # **`refresh_error_description`**  | `text`             |
 # **`refresh_error_status`**       | `integer`          |
 # **`refresh_token`**              | `text`             |
 # **`refreshed_at`**               | `datetime`         |
 # **`rejected_at`**                | `datetime`         |
+# **`resource_type`**              | `string`           |
 # **`revoked_at`**                 | `datetime`         |
 # **`scopes`**                     | `text`             | `not null, is an Array`
 # **`status`**                     | `enum`             | `not null`
+# **`used_at`**                    | `datetime`         |
 # **`created_at`**                 | `datetime`         | `not null`
 # **`updated_at`**                 | `datetime`         | `not null`
 # **`identity_id`**                | `bigint`           | `not null`
 # **`requester_id`**               | `bigint`           | `not null`
+# **`resource_id`**                | `bigint`           |
 #
 # ### Indexes
 #
@@ -49,6 +53,49 @@ RSpec.describe ESIToken, type: :model do
 
   around { |e| travel_to(time) { e.run } }
 
+  describe '.available?' do
+    it 'returns true when there are any authorized' do
+      token = create(:esi_token, :authorized)
+      expect(described_class.available?(token.grant_type)).to be_truthy
+    end
+
+    it 'returns false when there are no authorized' do
+      token = create(:esi_token)
+      expect(described_class.available?(token.grant_type)).to be_falsey
+    end
+  end
+
+  describe '.unavailable?' do
+    it 'returns true when there are no authorized' do
+      token = create(:esi_token)
+      expect(described_class.unavailable?(token.grant_type)).to be_truthy
+    end
+
+    it 'returns false when there are any authorized' do
+      token = create(:esi_token, :authorized)
+      expect(described_class.unavailable?(token.grant_type)).to be_falsey
+    end
+  end
+
+  describe '.pending_available?' do
+    it 'returns true when there are no approved and any requests' do
+      token = create(:esi_token)
+      expect(described_class.pending_available?(token.grant_type)).to be_truthy
+    end
+
+    it 'returns false when there are no approved and no requests' do
+      token = create(:esi_token, :rejected)
+      expect(described_class.pending_available?(token.grant_type)).to be_falsey
+    end
+  end
+
+  describe '.with_token' do
+    it 'delegates to #with_token on the first authorized token' do
+      token = create(:esi_token, :authorized)
+      expect { described_class.with_token(token.grant_type) }.to(change { token.reload.used_at })
+    end
+  end
+
   describe '#authorize_url' do
     let(:token) { create(:esi_token) }
     let(:callback_url) { 'http://test.host/auth/eve/callback' }
@@ -67,22 +114,6 @@ RSpec.describe ESIToken, type: :model do
 
     it 'includes the state in the URL' do
       expect(query_params).to include('state' => state)
-    end
-  end
-
-  describe '#approve!' do
-    subject(:token) { create(:esi_token) }
-
-    it 'approves the initial grants' do
-      expect { token.approve! }.to(change { token.grants.all?(&:approved?) }.to(true))
-    end
-  end
-
-  describe '#reject!' do
-    subject(:token) { create(:esi_token) }
-
-    it 'rejects the initial grants' do
-      expect { token.reject! }.to(change { token.grants.all?(&:rejected?) }.to(true))
     end
   end
 
@@ -312,6 +343,50 @@ RSpec.describe ESIToken, type: :model do
 
     it 'returns nil when not authorized' do
       expect(build(:esi_token).to_oauth_token).to be_nil
+    end
+  end
+
+  describe '#with_token' do
+    let(:token) { create(:esi_token, :authorized) }
+
+    shared_examples 'preconditions not met' do
+      it 'returns false' do
+        expect(token.with_token).to be_falsey
+      end
+
+      it 'does not yield to the block' do
+        expect { |b| token.with_token(&b) }.not_to yield_control
+      end
+    end
+
+    context 'when refreshing the token is successful' do
+      before do
+        allow(token).to receive(:refresh!).and_return(true)
+      end
+
+      it 'yields the access token from the token' do
+        expect { |b| token.with_token(&b) }.to yield_with_args(token.access_token)
+      end
+
+      it 'returns true' do
+        expect(token.with_token).to be_truthy
+      end
+
+      it 'updates the usage timestamp' do
+        expect { token.with_token }.to(change { token.reload.used_at }.from(nil))
+      end
+    end
+
+    context 'when the token is not authorized' do
+      before { allow(token).to receive(:authorized?).and_return(false) }
+
+      include_examples 'preconditions not met'
+    end
+
+    context 'when the token cannot be refreshed' do
+      before { allow(token).to receive(:refresh!).and_return(false) }
+
+      include_examples 'preconditions not met'
     end
   end
 end

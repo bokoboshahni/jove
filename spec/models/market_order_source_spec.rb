@@ -70,7 +70,7 @@ RSpec.describe MarketOrderSource, type: :model do
       subject(:source) { create(:market_order_source, source: structure) }
 
       before do
-        create(:structure_market_grant, :authorized, grantable: structure)
+        create(:esi_token, :authorized, grant_type: :structure_market, resource: structure)
       end
 
       it 'enables the market order source' do
@@ -84,7 +84,7 @@ RSpec.describe MarketOrderSource, type: :model do
       subject(:source) { create(:market_order_source, source: structure) }
 
       before do
-        create(:structure_market_grant, grantable: structure)
+        create(:esi_token, resource: structure)
       end
 
       it 'raises an error' do

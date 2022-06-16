@@ -224,7 +224,7 @@ class MarketOrderSnapshot < ApplicationRecord # rubocop:disable Metrics/ClassLen
   end
 
   def add_authorization(headers)
-    auth_result = source.with_esi_token('StructureMarket') { |t| headers.merge!('Authorization' => "Bearer #{t}") }
+    auth_result = source.with_esi_token(:structure_market) { |t| headers.merge!('Authorization' => "Bearer #{t}") }
     unless auth_result # rubocop:disable Style/GuardClause
       raise NoAuthorizedGrantsError,
             "No authorized grants for structure #{source.name} (#{source.source_id})"
