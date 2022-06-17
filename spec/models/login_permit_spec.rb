@@ -10,15 +10,12 @@
 # ----------------------- | ------------------ | ---------------------------
 # **`id`**                | `bigint`           | `not null, primary key`
 # **`name`**              | `text`             | `not null`
-# **`permittable_type`**  | `string`           |
+# **`permittable_type`**  | `text`             | `not null`
 # **`created_at`**        | `datetime`         | `not null`
-# **`permittable_id`**    | `bigint`           |
+# **`permittable_id`**    | `bigint`           | `not null`
 #
 # ### Indexes
 #
-# * `index_login_permits_on_permittable`:
-#     * **`permittable_type`**
-#     * **`permittable_id`**
 # * `index_unique_login_permits` (_unique_):
 #     * **`permittable_type`**
 #     * **`permittable_id`**

@@ -1,0 +1,139 @@
+# Ignore false positive from Rails' ActionText and ActiveStorage
+ActionText::RichText:
+  enabled: false
+ActiveStorage::Attachment:
+  enabled: false
+ActiveStorage::Blob:
+  enabled: false
+ActiveStorage::VariantRecord:
+  enabled: false
+
+# Ignore SDE models
+Bloodline:
+  enabled: false
+BlueprintActivity:
+  enabled: false
+BlueprintActivityMaterial:
+  enabled: false
+BlueprintActivityProduct:
+  enabled: false
+BlueprintActivitySkill:
+  enabled: false
+Category:
+  enabled: false
+Celestial:
+  enabled: false
+Constellation:
+  enabled: false
+DogmaAttribute:
+  enabled: false
+DogmaCategory:
+  enabled: false
+DogmaEffect:
+  enabled: false
+Faction:
+  enabled: false
+FactionRace:
+  enabled: false
+Group:
+  enabled: false
+Icon:
+  enabled: false
+InventoryFlag:
+  enabled: false
+MarketGroup:
+  enabled: false
+MetaGroup:
+  enabled: false
+PlanetSchematic:
+  enabled: false
+PlanetSchematicInput:
+  enabled: false
+PlanetSchematicPin:
+  enabled: false
+Race:
+  enabled: false
+Region:
+  enabled: false
+SecondarySun:
+  enabled: false
+SolarSystem:
+  enabled: false
+Stargate:
+  enabled: false
+Station:
+  enabled: false
+StationOperation:
+  enabled: false
+StationOperationService:
+  enabled: false
+StationOperationStationType:
+  enabled: false
+StationService:
+  enabled: false
+Type:
+  enabled: false
+TypeMaterial:
+  enabled: false
+Unit:
+  enabled: false
+
+# Ignore ESI models
+MarketOrder:
+  enabled: false
+
+# Other exceptions
+Alliance:
+  creator:
+    ForeignKeyChecker:
+      enabled: false
+  creator_corporation:
+    ForeignKeyChecker:
+      enabled: false
+Character:
+  bloodline:
+    ForeignKeyChecker:
+      enabled: false
+  corporation:
+    ForeignKeyChecker:
+      enabled: false
+  corporation_as_ceo:
+    MissingIndexChecker:
+      enabled: false
+  race:
+    ForeignKeyChecker:
+      enabled: false
+Corporation:
+  home_station:
+    ForeignKeyChecker:
+      enabled: false
+  icon:
+    ForeignKeyChecker:
+      enabled: false
+Market:
+  id:
+    PrimaryKeyTypeChecker:
+      enabled: false
+  pg_search_document:
+    ForeignKeyTypeChecker:
+      enabled: false
+MarketOrderSnapshot:
+  orders:
+    ForeignKeyTypeChecker:
+      enabled: false
+    MissingIndexChecker:
+      enabled: false
+MarketOrderSource:
+  id:
+    PrimaryKeyTypeChecker:
+      enabled: false
+  market_sources:
+    MissingIndexChecker:
+      enabled: false
+Structure:
+  esi_tokens:
+    MissingIndexChecker:
+      enabled: false
+  market_locations:
+    MissingIndexChecker:
+      enabled: false

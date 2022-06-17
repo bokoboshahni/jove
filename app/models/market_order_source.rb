@@ -49,12 +49,6 @@ class MarketOrderSource < ApplicationRecord # rubocop:disable Metrics/ClassLengt
   scope :regions, -> { where(source_type: 'Region') }
   scope :structures, -> { where(source_type: 'Structure') }
 
-  delegate :esi_grants, :solar_system_id, :with_esi_token, to: :source
-
-  validates :source_type, inclusion: { in: %w[Region Structure] }
-
-  before_validation :name_from_source, on: :create
-
   enum :status, %i[
     pending
     fetching
@@ -62,6 +56,15 @@ class MarketOrderSource < ApplicationRecord # rubocop:disable Metrics/ClassLengt
     fetching_failed
     disabled
   ].index_with(&:to_s)
+
+  delegate :esi_grants, :solar_system_id, :with_esi_token, to: :source
+
+  validates :name, presence: true
+  validates :source_id, uniqueness: { scope: :source_type }
+  validates :source_type, inclusion: { in: %w[Region Structure] }
+  validates :status, presence: true
+
+  before_validation :name_from_source
 
   aasm column: :status, enum: true, timestamps: true do # rubocop:disable Metrics/BlockLength
     state :disabled, initial: true

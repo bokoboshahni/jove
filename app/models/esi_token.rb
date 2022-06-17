@@ -40,6 +40,12 @@ require 'jove/esi/scopes'
 #     * **`identity_id`**
 # * `index_esi_tokens_on_requester_id`:
 #     * **`requester_id`**
+# * `index_esi_tokens_with_resources`:
+#     * **`grant_type`**
+#     * **`resource_type`**
+#     * **`resource_id`**
+# * `index_unique_esi_token_access_tokens` (_unique_):
+#     * **`access_token`**
 #
 # ### Foreign Keys
 #
@@ -69,11 +75,11 @@ class ESIToken < ApplicationRecord # rubocop:disable Metrics/ClassLength
   encrypts :access_token, deterministic: true
   encrypts :refresh_token, deterministic: true
 
-  validates :access_token, presence: true, if: -> { authorized? }
+  validates :access_token, presence: true, uniqueness: true, if: -> { authorized? }
   validates :refresh_token, presence: true, if: -> { authorized? }
   validates :expires_at, presence: true, if: -> { authorized? }
-
-  validates :identity_id, uniqueness: { scope: %i[access_token] }
+  validates :scopes, presence: true
+  validates :status, presence: true
 
   with_options if: -> { grant_options[:resource_types] } do |resource_grant|
     resource_grant.validates :resource, presence: true

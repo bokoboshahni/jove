@@ -69,6 +69,11 @@
 # * `index_corporations_on_solar_system_id`:
 #     * **`solar_system_id`**
 #
+# ### Foreign Keys
+#
+# * `fk_rails_...`:
+#     * **`alliance_id => alliances.id`**
+#
 FactoryBot.define do
   factory :corporation do
     ceo_id { Faker::Number.within(range: 90_000_000..98_000_000) }

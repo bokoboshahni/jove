@@ -69,6 +69,11 @@
 # * `index_corporations_on_solar_system_id`:
 #     * **`solar_system_id`**
 #
+# ### Foreign Keys
+#
+# * `fk_rails_...`:
+#     * **`alliance_id => alliances.id`**
+#
 class Corporation < ApplicationRecord
   include ESISyncable
   include SDEImportable
@@ -87,12 +92,15 @@ class Corporation < ApplicationRecord
   has_many :alliances_as_executor, class_name: 'Alliance',
                                    foreign_key: :executor_corporation_id
   has_many :characters
-  has_many :markets, as: :owner
   has_many :structures
 
   has_many :users, through: :characters
 
   delegate :name, to: :alliance, prefix: true, allow_nil: true
+
+  validates :name, presence: true
+  validates :tax_rate, presence: true
+  validates :ticker, presence: true
 
   def avatar_url
     "https://images.evetech.net/corporations/#{id}/logo"

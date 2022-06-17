@@ -19,6 +19,11 @@
 #     * **`location_type`**
 #     * **`location_id`**
 #
+# ### Foreign Keys
+#
+# * `fk_rails_...`:
+#     * **`market_id => markets.id`**
+#
 require 'rails_helper'
 
 RSpec.describe MarketLocation, type: :model do

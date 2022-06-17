@@ -43,7 +43,9 @@ class Character < ApplicationRecord
 
   multisearchable against: %i[name description]
 
+  belongs_to :bloodline, optional: true
   belongs_to :corporation, optional: true
+  belongs_to :race, optional: true
 
   has_one :corporation_as_ceo, class_name: 'Corporation', foreign_key: :ceo_id
   has_one :identity
@@ -54,12 +56,21 @@ class Character < ApplicationRecord
 
   has_many :alliances_as_creator, class_name: 'Alliance', foreign_key: :creator_id
   has_many :corporations_as_creator, class_name: 'Corporation', foreign_key: :creator_id
-  has_many :markets, as: :owner
 
   has_one :last_successful_login, through: :identity
 
   delegate :name, to: :corporation, prefix: true
   delegate :name, to: :alliance, prefix: true, allow_nil: true
+
+  validates :birthday, presence: true
+  validates :bloodline_id, presence: true
+  validates :corporation_id, presence: true
+  validates :esi_etag, presence: true
+  validates :esi_expires_at, presence: true
+  validates :esi_last_modified_at, presence: true
+  validates :gender, presence: true
+  validates :name, presence: true
+  validates :race_id, presence: true
 
   def self.from_esi(id)
     character_repository = CharacterRepository.new(gateway: CharacterRepository::ESIGateway.new)

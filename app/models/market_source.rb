@@ -33,4 +33,6 @@ class MarketSource < ApplicationRecord
   accepts_nested_attributes_for :source
 
   delegate :name, to: :source, allow_nil: true
+
+  validates :source_id, uniqueness: { scope: :market_id }
 end

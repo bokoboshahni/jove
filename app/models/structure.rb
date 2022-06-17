@@ -32,6 +32,15 @@
 # * `index_structures_on_type_id`:
 #     * **`type_id`**
 #
+# ### Foreign Keys
+#
+# * `fk_rails_...`:
+#     * **`corporation_id => corporations.id`**
+# * `fk_rails_...`:
+#     * **`solar_system_id => solar_systems.id`**
+# * `fk_rails_...`:
+#     * **`type_id => types.id`**
+#
 class Structure < ApplicationRecord
   include Auditable
   include Discardable
@@ -62,6 +71,14 @@ class Structure < ApplicationRecord
   delegate :name, to: :corporation, prefix: true
   delegate :name, to: :alliance, prefix: true, allow_nil: true
   delegate :name, to: :solar_system, prefix: true
+
+  validates :esi_etag, presence: true
+  validates :esi_expires_at, presence: true
+  validates :esi_last_modified_at, presence: true
+  validates :name, presence: true
+  validates :position_x, presence: true
+  validates :position_y, presence: true
+  validates :position_z, presence: true
 
   def enable_market_source(requester, token_param)
     esi_token = build_token(requester, token_param)

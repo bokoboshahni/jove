@@ -42,6 +42,7 @@ RSpec.describe StructureRepository, type: :repository do
           before do
             create(:corporation, id: structure_data[:owner_id])
             create(:solar_system, id: structure_data[:solar_system_id])
+            create(:type, id: structure_data[:type_id])
 
             stub_request(:get, "https://esi.evetech.net/latest/universe/structures/#{structure_id}/")
               .to_return(status: 200, body: structure_data.to_json, headers:)

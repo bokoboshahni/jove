@@ -38,6 +38,12 @@
 #     * **`identity_id`**
 # * `index_esi_tokens_on_requester_id`:
 #     * **`requester_id`**
+# * `index_esi_tokens_with_resources`:
+#     * **`grant_type`**
+#     * **`resource_type`**
+#     * **`resource_id`**
+# * `index_unique_esi_token_access_tokens` (_unique_):
+#     * **`access_token`**
 #
 # ### Foreign Keys
 #

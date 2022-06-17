@@ -66,6 +66,9 @@ class MarketOrderSnapshot < ApplicationRecord # rubocop:disable Metrics/ClassLen
     skipped
   ].index_with(&:to_s)
 
+  validates :created_at, uniqueness: { scope: %i[source_id esi_expires_at] }
+  validates :status, presence: true
+
   aasm column: :status, enum: true, timestamps: true do
     state :pending, initial: true
     state :fetching, :fetched, :failed

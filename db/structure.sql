@@ -597,26 +597,6 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- Name: market_order_snapshots; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.market_order_snapshots (
-    source_id smallint NOT NULL,
-    esi_etag text,
-    esi_expires_at timestamp without time zone,
-    esi_last_modified_at timestamp without time zone,
-    failed_at timestamp without time zone,
-    fetched_at timestamp without time zone,
-    fetching_at timestamp without time zone,
-    skipped_at timestamp without time zone,
-    status public.market_order_snapshot_status NOT NULL,
-    status_exception jsonb,
-    created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
-);
-
-
---
 -- Name: active_storage_attachments; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1509,8 +1489,8 @@ ALTER SEQUENCE public.login_activities_id_seq OWNED BY public.login_activities.i
 
 CREATE TABLE public.login_permits (
     id bigint NOT NULL,
-    permittable_type character varying,
-    permittable_id bigint,
+    permittable_type text NOT NULL,
+    permittable_id bigint NOT NULL,
     created_at timestamp(6) without time zone NOT NULL,
     name text NOT NULL
 );
@@ -1580,6 +1560,26 @@ CREATE TABLE public.market_locations (
     location_type character varying NOT NULL,
     location_id bigint NOT NULL,
     market_id smallint NOT NULL
+);
+
+
+--
+-- Name: market_order_snapshots; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.market_order_snapshots (
+    source_id smallint NOT NULL,
+    esi_etag text,
+    esi_expires_at timestamp without time zone,
+    esi_last_modified_at timestamp without time zone,
+    failed_at timestamp without time zone,
+    fetched_at timestamp without time zone,
+    fetching_at timestamp without time zone,
+    skipped_at timestamp without time zone,
+    status public.market_order_snapshot_status NOT NULL,
+    status_exception jsonb,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
 );
 
 
@@ -3440,10 +3440,10 @@ CREATE INDEX index_esi_tokens_on_requester_id ON public.esi_tokens USING btree (
 
 
 --
--- Name: index_faction_races_on_faction_id; Type: INDEX; Schema: public; Owner: -
+-- Name: index_esi_tokens_with_resources; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX index_faction_races_on_faction_id ON public.faction_races USING btree (faction_id);
+CREATE INDEX index_esi_tokens_with_resources ON public.esi_tokens USING btree (grant_type, resource_type, resource_id);
 
 
 --
@@ -3503,13 +3503,6 @@ CREATE UNIQUE INDEX index_identities_on_character_id ON public.identities USING 
 
 
 --
--- Name: index_identities_on_user_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_identities_on_user_id ON public.identities USING btree (user_id);
-
-
---
 -- Name: index_login_activities_on_identity; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -3528,13 +3521,6 @@ CREATE INDEX index_login_activities_on_ip ON public.login_activities USING btree
 --
 
 CREATE INDEX index_login_activities_on_user ON public.login_activities USING btree (user_type, user_id);
-
-
---
--- Name: index_login_permits_on_permittable; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_login_permits_on_permittable ON public.login_permits USING btree (permittable_type, permittable_id);
 
 
 --
@@ -3682,13 +3668,6 @@ CREATE INDEX index_station_operation_services_on_operation_id ON public.station_
 --
 
 CREATE INDEX index_station_operation_services_on_service_id ON public.station_operation_services USING btree (service_id);
-
-
---
--- Name: index_station_operation_station_types_on_operation_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_station_operation_station_types_on_operation_id ON public.station_operation_station_types USING btree (operation_id);
 
 
 --
@@ -3899,6 +3878,13 @@ CREATE UNIQUE INDEX index_unique_blueprint_activity_skills ON public.blueprint_a
 --
 
 CREATE UNIQUE INDEX index_unique_default_identities ON public.identities USING btree (user_id, "default");
+
+
+--
+-- Name: index_unique_esi_token_access_tokens; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_unique_esi_token_access_tokens ON public.esi_tokens USING btree (access_token);
 
 
 --
@@ -4294,11 +4280,27 @@ CREATE TRIGGER ts_insert_blocker BEFORE INSERT ON public.market_orders FOR EACH 
 
 
 --
+-- Name: corporations fk_rails_0551373140; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.corporations
+    ADD CONSTRAINT fk_rails_0551373140 FOREIGN KEY (alliance_id) REFERENCES public.alliances(id);
+
+
+--
 -- Name: market_order_snapshots fk_rails_11abb733ea; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.market_order_snapshots
     ADD CONSTRAINT fk_rails_11abb733ea FOREIGN KEY (source_id) REFERENCES public.market_order_sources(id);
+
+
+--
+-- Name: market_locations fk_rails_2c79e89ad9; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.market_locations
+    ADD CONSTRAINT fk_rails_2c79e89ad9 FOREIGN KEY (market_id) REFERENCES public.markets(id);
 
 
 --
@@ -4318,11 +4320,35 @@ ALTER TABLE ONLY public.esi_tokens
 
 
 --
+-- Name: identities fk_rails_5373344100; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.identities
+    ADD CONSTRAINT fk_rails_5373344100 FOREIGN KEY (user_id) REFERENCES public.users(id);
+
+
+--
+-- Name: structures fk_rails_625050ce6a; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.structures
+    ADD CONSTRAINT fk_rails_625050ce6a FOREIGN KEY (solar_system_id) REFERENCES public.solar_systems(id);
+
+
+--
 -- Name: esi_tokens fk_rails_65dd1a1fd9; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.esi_tokens
     ADD CONSTRAINT fk_rails_65dd1a1fd9 FOREIGN KEY (requester_id) REFERENCES public.identities(id);
+
+
+--
+-- Name: identities fk_rails_66c94802a5; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.identities
+    ADD CONSTRAINT fk_rails_66c94802a5 FOREIGN KEY (character_id) REFERENCES public.characters(id);
 
 
 --
@@ -4355,6 +4381,22 @@ ALTER TABLE ONLY public.active_storage_attachments
 
 ALTER TABLE ONLY public.market_orders
     ADD CONSTRAINT fk_rails_c96371e55e FOREIGN KEY (source_id) REFERENCES public.market_order_sources(id);
+
+
+--
+-- Name: structures fk_rails_ce74d43aa1; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.structures
+    ADD CONSTRAINT fk_rails_ce74d43aa1 FOREIGN KEY (type_id) REFERENCES public.types(id);
+
+
+--
+-- Name: structures fk_rails_e4a1bb1cde; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.structures
+    ADD CONSTRAINT fk_rails_e4a1bb1cde FOREIGN KEY (corporation_id) REFERENCES public.corporations(id);
 
 
 --
@@ -4451,6 +4493,10 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220607010136'),
 ('20220609175309'),
 ('20220615201911'),
-('20220616022650');
+('20220616022650'),
+('20220617005645'),
+('20220617010810'),
+('20220617134151'),
+('20220617134849');
 
 
