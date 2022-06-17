@@ -16,8 +16,6 @@
 #
 # ### Indexes
 #
-# * `index_blueprint_activity_skills_on_blueprint_id`:
-#     * **`blueprint_id`**
 # * `index_blueprint_activity_skills_on_skill_id`:
 #     * **`skill_id`**
 # * `index_unique_blueprint_activity_skills` (_unique_):

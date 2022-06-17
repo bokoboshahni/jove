@@ -14,8 +14,6 @@
 #
 # ### Indexes
 #
-# * `index_station_operation_services_on_operation_id`:
-#     * **`operation_id`**
 # * `index_station_operation_services_on_service_id`:
 #     * **`service_id`**
 # * `index_unique_station_operation_services` (_unique_):

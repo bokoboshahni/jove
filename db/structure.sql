@@ -3076,20 +3076,6 @@ CREATE INDEX index_bloodlines_on_race_id ON public.bloodlines USING btree (race_
 
 
 --
--- Name: index_blueprint_activities_on_blueprint_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_blueprint_activities_on_blueprint_id ON public.blueprint_activities USING btree (blueprint_id);
-
-
---
--- Name: index_blueprint_activity_materials_on_blueprint_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_blueprint_activity_materials_on_blueprint_id ON public.blueprint_activity_materials USING btree (blueprint_id);
-
-
---
 -- Name: index_blueprint_activity_materials_on_material_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -3097,24 +3083,10 @@ CREATE INDEX index_blueprint_activity_materials_on_material_id ON public.bluepri
 
 
 --
--- Name: index_blueprint_activity_products_on_blueprint_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_blueprint_activity_products_on_blueprint_id ON public.blueprint_activity_products USING btree (blueprint_id);
-
-
---
 -- Name: index_blueprint_activity_products_on_product_id; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_blueprint_activity_products_on_product_id ON public.blueprint_activity_products USING btree (product_id);
-
-
---
--- Name: index_blueprint_activity_skills_on_blueprint_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_blueprint_activity_skills_on_blueprint_id ON public.blueprint_activity_skills USING btree (blueprint_id);
 
 
 --
@@ -3654,13 +3626,6 @@ CREATE UNIQUE INDEX index_static_data_versions_on_checksum ON public.static_data
 --
 
 CREATE UNIQUE INDEX index_static_data_versions_on_current ON public.static_data_versions USING btree (current);
-
-
---
--- Name: index_station_operation_services_on_operation_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_station_operation_services_on_operation_id ON public.station_operation_services USING btree (operation_id);
 
 
 --
@@ -4498,6 +4463,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220617010810'),
 ('20220617134151'),
 ('20220617134849'),
-('20220617142418');
+('20220617142418'),
+('20220617144652');
 
 
