@@ -597,6 +597,48 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
+-- Name: market_order_snapshots; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.market_order_snapshots (
+    source_id smallint NOT NULL,
+    esi_etag text,
+    esi_expires_at timestamp without time zone,
+    esi_last_modified_at timestamp without time zone,
+    failed_at timestamp without time zone,
+    fetched_at timestamp without time zone,
+    fetching_at timestamp without time zone,
+    skipped_at timestamp without time zone,
+    status public.market_order_snapshot_status NOT NULL,
+    status_exception jsonb,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: market_orders; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.market_orders (
+    system_id bigint NOT NULL,
+    source_id smallint NOT NULL,
+    type_id bigint NOT NULL,
+    duration smallint NOT NULL,
+    is_buy_order boolean NOT NULL,
+    issued timestamp(6) without time zone NOT NULL,
+    location_id bigint NOT NULL,
+    min_volume integer NOT NULL,
+    order_id bigint NOT NULL,
+    price numeric NOT NULL,
+    range public.market_order_range NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    volume_remain integer NOT NULL,
+    volume_total integer NOT NULL
+);
+
+
+--
 -- Name: active_storage_attachments; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1564,26 +1606,6 @@ CREATE TABLE public.market_locations (
 
 
 --
--- Name: market_order_snapshots; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.market_order_snapshots (
-    source_id smallint NOT NULL,
-    esi_etag text,
-    esi_expires_at timestamp without time zone,
-    esi_last_modified_at timestamp without time zone,
-    failed_at timestamp without time zone,
-    fetched_at timestamp without time zone,
-    fetching_at timestamp without time zone,
-    skipped_at timestamp without time zone,
-    status public.market_order_snapshot_status NOT NULL,
-    status_exception jsonb,
-    created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
-);
-
-
---
 -- Name: market_order_sources; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1622,28 +1644,6 @@ CREATE SEQUENCE public.market_order_sources_id_seq
 --
 
 ALTER SEQUENCE public.market_order_sources_id_seq OWNED BY public.market_order_sources.id;
-
-
---
--- Name: market_orders; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.market_orders (
-    system_id bigint NOT NULL,
-    source_id smallint NOT NULL,
-    type_id bigint NOT NULL,
-    duration smallint NOT NULL,
-    is_buy_order boolean NOT NULL,
-    issued timestamp(6) without time zone NOT NULL,
-    location_id bigint NOT NULL,
-    min_volume integer NOT NULL,
-    order_id bigint NOT NULL,
-    price numeric NOT NULL,
-    range public.market_order_range NOT NULL,
-    created_at timestamp without time zone NOT NULL,
-    volume_remain integer NOT NULL,
-    volume_total integer NOT NULL
-);
 
 
 --
