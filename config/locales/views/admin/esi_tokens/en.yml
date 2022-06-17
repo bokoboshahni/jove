@@ -21,5 +21,6 @@ en:
           expires_at: Expires
           grants: Used for
           name: Character
+          resource: Resource
           scopes: Scopes
           status: Valid

@@ -597,6 +597,48 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
+-- Name: market_order_snapshots; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.market_order_snapshots (
+    source_id smallint NOT NULL,
+    esi_etag text,
+    esi_expires_at timestamp without time zone,
+    esi_last_modified_at timestamp without time zone,
+    failed_at timestamp without time zone,
+    fetched_at timestamp without time zone,
+    fetching_at timestamp without time zone,
+    skipped_at timestamp without time zone,
+    status public.market_order_snapshot_status NOT NULL,
+    status_exception jsonb,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: market_orders; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.market_orders (
+    system_id bigint NOT NULL,
+    source_id smallint NOT NULL,
+    type_id bigint NOT NULL,
+    duration smallint NOT NULL,
+    is_buy_order boolean NOT NULL,
+    issued timestamp(6) without time zone NOT NULL,
+    location_id bigint NOT NULL,
+    min_volume integer NOT NULL,
+    order_id bigint NOT NULL,
+    price numeric NOT NULL,
+    range public.market_order_range NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    volume_remain integer NOT NULL,
+    volume_total integer NOT NULL
+);
+
+
+--
 -- Name: active_storage_attachments; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1167,47 +1209,6 @@ ALTER SEQUENCE public.dogma_effects_id_seq OWNED BY public.dogma_effects.id;
 
 
 --
--- Name: esi_grants; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.esi_grants (
-    id bigint NOT NULL,
-    grantable_type character varying,
-    grantable_id bigint,
-    requester_id bigint NOT NULL,
-    token_id bigint NOT NULL,
-    approved_at timestamp(6) without time zone,
-    note text,
-    rejected_at timestamp(6) without time zone,
-    revoked_at timestamp(6) without time zone,
-    type text NOT NULL,
-    status public.esi_grant_status NOT NULL,
-    used_at timestamp(6) without time zone,
-    created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
-);
-
-
---
--- Name: esi_grants_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE public.esi_grants_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: esi_grants_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
---
-
-ALTER SEQUENCE public.esi_grants_id_seq OWNED BY public.esi_grants.id;
-
-
---
 -- Name: esi_tokens; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1230,7 +1231,11 @@ CREATE TABLE public.esi_tokens (
     scopes text[] NOT NULL,
     status public.esi_token_status NOT NULL,
     created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    updated_at timestamp(6) without time zone NOT NULL,
+    resource_type character varying,
+    resource_id bigint,
+    grant_type text,
+    used_at timestamp without time zone
 );
 
 
@@ -1526,8 +1531,8 @@ ALTER SEQUENCE public.login_activities_id_seq OWNED BY public.login_activities.i
 
 CREATE TABLE public.login_permits (
     id bigint NOT NULL,
-    permittable_type character varying,
-    permittable_id bigint,
+    permittable_type text NOT NULL,
+    permittable_id bigint NOT NULL,
     created_at timestamp(6) without time zone NOT NULL,
     name text NOT NULL
 );
@@ -1601,26 +1606,6 @@ CREATE TABLE public.market_locations (
 
 
 --
--- Name: market_order_snapshots; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.market_order_snapshots (
-    source_id smallint NOT NULL,
-    esi_etag text,
-    esi_expires_at timestamp without time zone,
-    esi_last_modified_at timestamp without time zone,
-    failed_at timestamp without time zone,
-    fetched_at timestamp without time zone,
-    fetching_at timestamp without time zone,
-    skipped_at timestamp without time zone,
-    status public.market_order_snapshot_status NOT NULL,
-    status_exception jsonb,
-    created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
-);
-
-
---
 -- Name: market_order_sources; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1659,28 +1644,6 @@ CREATE SEQUENCE public.market_order_sources_id_seq
 --
 
 ALTER SEQUENCE public.market_order_sources_id_seq OWNED BY public.market_order_sources.id;
-
-
---
--- Name: market_orders; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.market_orders (
-    system_id bigint NOT NULL,
-    source_id smallint NOT NULL,
-    type_id bigint NOT NULL,
-    duration smallint NOT NULL,
-    is_buy_order boolean NOT NULL,
-    issued timestamp(6) without time zone NOT NULL,
-    location_id bigint NOT NULL,
-    min_volume integer NOT NULL,
-    order_id bigint NOT NULL,
-    price numeric NOT NULL,
-    range public.market_order_range NOT NULL,
-    created_at timestamp without time zone NOT NULL,
-    volume_remain integer NOT NULL,
-    volume_total integer NOT NULL
-);
 
 
 --
@@ -2517,13 +2480,6 @@ ALTER TABLE ONLY public.dogma_effects ALTER COLUMN id SET DEFAULT nextval('publi
 
 
 --
--- Name: esi_grants id; Type: DEFAULT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.esi_grants ALTER COLUMN id SET DEFAULT nextval('public.esi_grants_id_seq'::regclass);
-
-
---
 -- Name: esi_tokens id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -2832,14 +2788,6 @@ ALTER TABLE ONLY public.dogma_effects
 
 
 --
--- Name: esi_grants esi_grants_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY public.esi_grants
-    ADD CONSTRAINT esi_grants_pkey PRIMARY KEY (id);
-
-
---
 -- Name: esi_tokens esi_tokens_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -3128,20 +3076,6 @@ CREATE INDEX index_bloodlines_on_race_id ON public.bloodlines USING btree (race_
 
 
 --
--- Name: index_blueprint_activities_on_blueprint_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_blueprint_activities_on_blueprint_id ON public.blueprint_activities USING btree (blueprint_id);
-
-
---
--- Name: index_blueprint_activity_materials_on_blueprint_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_blueprint_activity_materials_on_blueprint_id ON public.blueprint_activity_materials USING btree (blueprint_id);
-
-
---
 -- Name: index_blueprint_activity_materials_on_material_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -3149,24 +3083,10 @@ CREATE INDEX index_blueprint_activity_materials_on_material_id ON public.bluepri
 
 
 --
--- Name: index_blueprint_activity_products_on_blueprint_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_blueprint_activity_products_on_blueprint_id ON public.blueprint_activity_products USING btree (blueprint_id);
-
-
---
 -- Name: index_blueprint_activity_products_on_product_id; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_blueprint_activity_products_on_product_id ON public.blueprint_activity_products USING btree (product_id);
-
-
---
--- Name: index_blueprint_activity_skills_on_blueprint_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_blueprint_activity_skills_on_blueprint_id ON public.blueprint_activity_skills USING btree (blueprint_id);
 
 
 --
@@ -3478,27 +3398,6 @@ CREATE INDEX index_dogma_effects_on_tracking_speed_attribute_id ON public.dogma_
 
 
 --
--- Name: index_esi_grants_on_grantable; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_esi_grants_on_grantable ON public.esi_grants USING btree (grantable_type, grantable_id);
-
-
---
--- Name: index_esi_grants_on_requester_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_esi_grants_on_requester_id ON public.esi_grants USING btree (requester_id);
-
-
---
--- Name: index_esi_grants_on_token_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_esi_grants_on_token_id ON public.esi_grants USING btree (token_id);
-
-
---
 -- Name: index_esi_tokens_on_identity_id; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -3513,10 +3412,10 @@ CREATE INDEX index_esi_tokens_on_requester_id ON public.esi_tokens USING btree (
 
 
 --
--- Name: index_faction_races_on_faction_id; Type: INDEX; Schema: public; Owner: -
+-- Name: index_esi_tokens_with_resources; Type: INDEX; Schema: public; Owner: -
 --
 
-CREATE INDEX index_faction_races_on_faction_id ON public.faction_races USING btree (faction_id);
+CREATE INDEX index_esi_tokens_with_resources ON public.esi_tokens USING btree (grant_type, resource_type, resource_id);
 
 
 --
@@ -3576,13 +3475,6 @@ CREATE UNIQUE INDEX index_identities_on_character_id ON public.identities USING 
 
 
 --
--- Name: index_identities_on_user_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_identities_on_user_id ON public.identities USING btree (user_id);
-
-
---
 -- Name: index_login_activities_on_identity; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -3601,13 +3493,6 @@ CREATE INDEX index_login_activities_on_ip ON public.login_activities USING btree
 --
 
 CREATE INDEX index_login_activities_on_user ON public.login_activities USING btree (user_type, user_id);
-
-
---
--- Name: index_login_permits_on_permittable; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_login_permits_on_permittable ON public.login_permits USING btree (permittable_type, permittable_id);
 
 
 --
@@ -3744,24 +3629,10 @@ CREATE UNIQUE INDEX index_static_data_versions_on_current ON public.static_data_
 
 
 --
--- Name: index_station_operation_services_on_operation_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_station_operation_services_on_operation_id ON public.station_operation_services USING btree (operation_id);
-
-
---
 -- Name: index_station_operation_services_on_service_id; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_station_operation_services_on_service_id ON public.station_operation_services USING btree (service_id);
-
-
---
--- Name: index_station_operation_station_types_on_operation_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_station_operation_station_types_on_operation_id ON public.station_operation_station_types USING btree (operation_id);
 
 
 --
@@ -3972,6 +3843,13 @@ CREATE UNIQUE INDEX index_unique_blueprint_activity_skills ON public.blueprint_a
 --
 
 CREATE UNIQUE INDEX index_unique_default_identities ON public.identities USING btree (user_id, "default");
+
+
+--
+-- Name: index_unique_esi_token_access_tokens; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_unique_esi_token_access_tokens ON public.esi_tokens USING btree (access_token);
 
 
 --
@@ -4367,11 +4245,27 @@ CREATE TRIGGER ts_insert_blocker BEFORE INSERT ON public.market_orders FOR EACH 
 
 
 --
+-- Name: corporations fk_rails_0551373140; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.corporations
+    ADD CONSTRAINT fk_rails_0551373140 FOREIGN KEY (alliance_id) REFERENCES public.alliances(id);
+
+
+--
 -- Name: market_order_snapshots fk_rails_11abb733ea; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY public.market_order_snapshots
     ADD CONSTRAINT fk_rails_11abb733ea FOREIGN KEY (source_id) REFERENCES public.market_order_sources(id);
+
+
+--
+-- Name: market_locations fk_rails_2c79e89ad9; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.market_locations
+    ADD CONSTRAINT fk_rails_2c79e89ad9 FOREIGN KEY (market_id) REFERENCES public.markets(id);
 
 
 --
@@ -4391,11 +4285,19 @@ ALTER TABLE ONLY public.esi_tokens
 
 
 --
--- Name: esi_grants fk_rails_63eb2faa1b; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: identities fk_rails_5373344100; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY public.esi_grants
-    ADD CONSTRAINT fk_rails_63eb2faa1b FOREIGN KEY (token_id) REFERENCES public.esi_tokens(id);
+ALTER TABLE ONLY public.identities
+    ADD CONSTRAINT fk_rails_5373344100 FOREIGN KEY (user_id) REFERENCES public.users(id);
+
+
+--
+-- Name: structures fk_rails_625050ce6a; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.structures
+    ADD CONSTRAINT fk_rails_625050ce6a FOREIGN KEY (solar_system_id) REFERENCES public.solar_systems(id);
 
 
 --
@@ -4407,11 +4309,11 @@ ALTER TABLE ONLY public.esi_tokens
 
 
 --
--- Name: esi_grants fk_rails_787822d34a; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: identities fk_rails_66c94802a5; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY public.esi_grants
-    ADD CONSTRAINT fk_rails_787822d34a FOREIGN KEY (requester_id) REFERENCES public.identities(id);
+ALTER TABLE ONLY public.identities
+    ADD CONSTRAINT fk_rails_66c94802a5 FOREIGN KEY (character_id) REFERENCES public.characters(id);
 
 
 --
@@ -4444,6 +4346,22 @@ ALTER TABLE ONLY public.active_storage_attachments
 
 ALTER TABLE ONLY public.market_orders
     ADD CONSTRAINT fk_rails_c96371e55e FOREIGN KEY (source_id) REFERENCES public.market_order_sources(id);
+
+
+--
+-- Name: structures fk_rails_ce74d43aa1; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.structures
+    ADD CONSTRAINT fk_rails_ce74d43aa1 FOREIGN KEY (type_id) REFERENCES public.types(id);
+
+
+--
+-- Name: structures fk_rails_e4a1bb1cde; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.structures
+    ADD CONSTRAINT fk_rails_e4a1bb1cde FOREIGN KEY (corporation_id) REFERENCES public.corporations(id);
 
 
 --
@@ -4538,6 +4456,14 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220605174242'),
 ('20220606212008'),
 ('20220607010136'),
-('20220609175309');
+('20220609175309'),
+('20220615201911'),
+('20220616022650'),
+('20220617005645'),
+('20220617010810'),
+('20220617134151'),
+('20220617134849'),
+('20220617142418'),
+('20220617144652');
 
 

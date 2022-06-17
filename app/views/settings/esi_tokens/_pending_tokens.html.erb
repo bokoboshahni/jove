@@ -9,7 +9,7 @@
         <% tokens.each do |token| %>
           <% list.item do |item| %>
             <% item.headline do %>
-              <%= token.grants.first.model_name.human %> (<%= token.name %>)
+              <%= token.grant_type.humanize %> (<%= token.name %>)
             <% end %>
             <% item.body do %><% end %>
             <% item.trailer do %>
@@ -18,7 +18,7 @@
                   render(
                     Jove::Button::Component.new(
                       label: t('.approve'), color: :success,
-                      title: t('.approve_tooltip', type: token.grants.first.model_name.human, name: token.name),
+                      title: t('.approve_tooltip', type: token.grant_type.humanize, name: token.name),
                       variant: :text,
                       data: { turbo_frame: 'modal' }
                     )
@@ -31,7 +31,7 @@
                   render(
                     Jove::Button::Component.new(
                       label: t('.reject'), color: :danger,
-                      title: t('.reject_tooltip', type: token.grants.first.model_name.human, name: token.name),
+                      title: t('.reject_tooltip', type: token.grant_type.humanize, name: token.name),
                       variant: :text,
                       data: { turbo_frame: 'modal' }
                     )

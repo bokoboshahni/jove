@@ -8,16 +8,14 @@ module Admin
     before_action :ensure_frame_response, only: %i[new confirm_destroy]
 
     def index
-      scope = ESIToken.includes(:grants, identity: :character)
+      scope = ESIToken.includes(identity: :character)
                       .order(sort_param)
                       .page(page_param).per(per_page_param)
       @tokens = authorize(policy_scope(scope))
     end
 
     def new
-      @token = authorize(ESIToken.new)
-      @token.scopes = grant_type.requested_scopes
-      @token.grants.build(type: grant_type.name)
+      @token = authorize(ESIToken.new(grant_type:))
     end
 
     def create
@@ -55,10 +53,6 @@ module Admin
     def build_token
       token = authorize(ESIToken.new(token_param))
       token.requester = current_identity
-      token.scopes = token.grants.first.requested_scopes
-      token.grants.each do |grant|
-        grant.requester = current_identity
-      end
       token
     end
 
@@ -67,14 +61,14 @@ module Admin
     end
 
     def grant_type
-      grant_class = ESIGrant.descendants.find { |c| c.name == "ESIGrant::#{params[:grant_type].classify}" }
-      raise ActiveRecord::RecordNotFound unless grant_class
+      type = ESIToken::GRANT_TYPES.keys.find { |t| t == params[:grant_type].to_sym }
+      raise ActiveRecord::RecordNotFound unless type
 
-      grant_class
+      type
     end
 
     def token_param
-      params.require(:esi_token).permit(:identity_id, grants_attributes: %i[type grantable_type grantable_id])
+      params.require(:esi_token).permit(:grant_type, :identity_id, :resource_type, :resource_id)
     end
   end
 end

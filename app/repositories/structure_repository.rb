@@ -4,7 +4,7 @@ class StructureRepository < ApplicationRepository
   class ESIGateway
     include ESIRepositoryGateway
 
-    self.authorization_type = ESIGrant::StructureDiscovery
+    self.authorization_type = :structure_discovery
     self.model = Structure
     self.path = Addressable::Template.new('universe/structures/{id}/')
     self.mapper = lambda do |data|

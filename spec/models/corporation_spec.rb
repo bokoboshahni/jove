@@ -69,6 +69,11 @@
 # * `index_corporations_on_solar_system_id`:
 #     * **`solar_system_id`**
 #
+# ### Foreign Keys
+#
+# * `fk_rails_...`:
+#     * **`alliance_id => alliances.id`**
+#
 require 'rails_helper'
 
 RSpec.describe Corporation, type: :model do

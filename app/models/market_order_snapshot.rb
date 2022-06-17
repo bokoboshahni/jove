@@ -66,6 +66,9 @@ class MarketOrderSnapshot < ApplicationRecord # rubocop:disable Metrics/ClassLen
     skipped
   ].index_with(&:to_s)
 
+  validates :created_at, uniqueness: { scope: %i[source_id esi_expires_at] }
+  validates :status, presence: true
+
   aasm column: :status, enum: true, timestamps: true do
     state :pending, initial: true
     state :fetching, :fetched, :failed
@@ -214,7 +217,7 @@ class MarketOrderSnapshot < ApplicationRecord # rubocop:disable Metrics/ClassLen
   end
 
   def with_esi_retries(&)
-    tries = Rails.env.test? ? 1 : 5 # :nocov:
+    tries = Rails.env.test? ? 2 : 5 # :nocov:
     Retriable.retriable(on: [Jove::ESI::ServerError], base_interval: 1.0, multiplier: 2.0, tries:, &)
   end
 
@@ -224,7 +227,7 @@ class MarketOrderSnapshot < ApplicationRecord # rubocop:disable Metrics/ClassLen
   end
 
   def add_authorization(headers)
-    auth_result = source.with_esi_token('StructureMarket') { |t| headers.merge!('Authorization' => "Bearer #{t}") }
+    auth_result = source.with_esi_token(:structure_market) { |t| headers.merge!('Authorization' => "Bearer #{t}") }
     unless auth_result # rubocop:disable Style/GuardClause
       raise NoAuthorizedGrantsError,
             "No authorized grants for structure #{source.name} (#{source.source_id})"

@@ -1,9 +1,0 @@
----
-en:
-  admin:
-    esi_grants:
-      create:
-        success: Successfully requested %{type} from %{name}.
-      destroy:
-        failure: Failed to revoke token for %{name}.
-        success: Successfully revoked token for %{name}.

@@ -51,6 +51,10 @@ class Market < ApplicationRecord
 
   friendly_id :name, use: :slugged
 
+  validates :name, presence: true
+  validates :slug, presence: true, uniqueness: true
+  validates :status, presence: true
+
   enum :status, %i[
     pending
     disabled

@@ -14,8 +14,6 @@
 #
 # ### Indexes
 #
-# * `index_faction_races_on_faction_id`:
-#     * **`faction_id`**
 # * `index_faction_races_on_race_id`:
 #     * **`race_id`**
 # * `index_unique_faction_races` (_unique_):

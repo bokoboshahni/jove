@@ -10,15 +10,12 @@
 # ----------------------- | ------------------ | ---------------------------
 # **`id`**                | `bigint`           | `not null, primary key`
 # **`name`**              | `text`             | `not null`
-# **`permittable_type`**  | `string`           |
+# **`permittable_type`**  | `text`             | `not null`
 # **`created_at`**        | `datetime`         | `not null`
-# **`permittable_id`**    | `bigint`           |
+# **`permittable_id`**    | `bigint`           | `not null`
 #
 # ### Indexes
 #
-# * `index_login_permits_on_permittable`:
-#     * **`permittable_type`**
-#     * **`permittable_id`**
 # * `index_unique_login_permits` (_unique_):
 #     * **`permittable_type`**
 #     * **`permittable_id`**
@@ -30,9 +27,9 @@ class LoginPermit < ApplicationRecord
 
   delegate :avatar_url, :name, to: :permittable
 
-  validates :permittable_type, presence: true, inclusion: { in: PERMITTABLE_TYPES }
-
+  validates :name, presence: true
   validates :permittable_id, presence: true, uniqueness: { scope: :permittable_type }
+  validates :permittable_type, presence: true, inclusion: { in: PERMITTABLE_TYPES }
 
   before_validation :sync_permittable, on: :create
 

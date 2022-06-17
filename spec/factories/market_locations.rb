@@ -19,6 +19,11 @@
 #     * **`location_type`**
 #     * **`location_id`**
 #
+# ### Foreign Keys
+#
+# * `fk_rails_...`:
+#     * **`market_id => markets.id`**
+#
 FactoryBot.define do
   factory :market_location do
     association :location, factory: :region

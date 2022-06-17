@@ -32,6 +32,15 @@
 # * `index_structures_on_type_id`:
 #     * **`type_id`**
 #
+# ### Foreign Keys
+#
+# * `fk_rails_...`:
+#     * **`corporation_id => corporations.id`**
+# * `fk_rails_...`:
+#     * **`solar_system_id => solar_systems.id`**
+# * `fk_rails_...`:
+#     * **`type_id => types.id`**
+#
 FactoryBot.define do
   factory :structure do
     corporation

@@ -16,8 +16,6 @@
 #
 # ### Indexes
 #
-# * `index_blueprint_activity_materials_on_blueprint_id`:
-#     * **`blueprint_id`**
 # * `index_blueprint_activity_materials_on_material_id`:
 #     * **`material_id`**
 # * `index_unique_blueprint_activity_materials` (_unique_):

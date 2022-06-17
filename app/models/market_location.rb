@@ -19,6 +19,11 @@
 #     * **`location_type`**
 #     * **`location_id`**
 #
+# ### Foreign Keys
+#
+# * `fk_rails_...`:
+#     * **`market_id => markets.id`**
+#
 class MarketLocation < ApplicationRecord
   self.primary_keys = :market_id, :location_type, :location_id
 
@@ -28,4 +33,5 @@ class MarketLocation < ApplicationRecord
   delegate :name, to: :location
 
   validates :location_type, inclusion: { in: %w[Region Station Structure] }
+  validates :location_id, uniqueness: { scope: %i[location_type market_id] }
 end

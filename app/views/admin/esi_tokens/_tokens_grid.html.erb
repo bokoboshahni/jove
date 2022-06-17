@@ -2,6 +2,7 @@
   <% grid.column(label: t('.columns.name'), sorted: sorted?(:name), sort_dir:) %>
   <% grid.column(label: t('.columns.scopes')) %>
   <% grid.column(label: t('.columns.grants')) %>
+  <% grid.column(label: t('.columns.resource')) %>
   <% grid.column(label: t('.columns.status')) %>
   <% grid.column(label: t('.columns.expires_at')) %>
   <% grid.column(actions: true, class: 'w-10') %>
@@ -15,11 +16,10 @@
         <% end %>
       <% end %>
       <% row.cell do %>
-        <ul>
-          <% token.grants.each do |grant| %>
-            <li><%= grant.model_name.human %></li>
-          <% end %>
-        </ul>
+        <%= token.grant_type.humanize %>
+      <% end %>
+      <% row.cell do %>
+        <% "#{token.resource.name} (#{token.resource.model_name.human})" if token.resource %>
       <% end %>
       <% row.cell do %><%= render(Jove::Badge::Component.new(color: esi_token_status_color(token), label: token.status.humanize)) %><% end %>
       <% row.cell do %>
