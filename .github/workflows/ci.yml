@@ -42,6 +42,7 @@ jobs:
         run: |
           bin/rubocop -P
           bin/erblint --lint-all
+          bin/database_consistency
 
   security:
     name: Security
