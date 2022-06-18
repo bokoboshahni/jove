@@ -27,4 +27,8 @@ Rails.configuration.after_initialize do
   end
 rescue ActiveRecord::NoDatabaseError
   Rails.logger.info('Database is not set up yet')
+rescue ActiveRecord::StatementInvalid => e
+  raise unless e.cause.is_a?(PG::UndefinedTable)
+
+  Rails.logger.info('Schema is not loaded yet')
 end
