@@ -15,8 +15,6 @@
 #
 # ### Indexes
 #
-# * `index_station_operation_station_types_on_operation_id`:
-#     * **`operation_id`**
 # * `index_station_operation_station_types_on_race_id`:
 #     * **`race_id`**
 # * `index_station_operation_station_types_on_type_id`:

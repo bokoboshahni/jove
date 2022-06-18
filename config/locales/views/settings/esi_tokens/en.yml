@@ -37,5 +37,6 @@ en:
         columns:
           grants: Used for
           name: Character
+          resource: Resource
           scopes: Scopes
           status: Status

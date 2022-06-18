@@ -16,5 +16,6 @@ export ACTIVE_RECORD_ENCRYPTION_DETERMINISTIC_KEY=$(ruby -rsecurerandom -e 'puts
 export ACTIVE_RECORD_ENCRYPTION_KEY_DERIVATION_SALT=$(ruby -rsecurerandom -e 'puts SecureRandom.alphanumeric(32)')
 export SECRET_KEY_BASE=$(bin/rails secret)
 bin/rails db:setup assets:precompile
+bundle exec database_consistency
 bundle exec rspec
 popd

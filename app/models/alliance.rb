@@ -48,9 +48,16 @@ class Alliance < ApplicationRecord
 
   has_many :characters, through: :corporations
 
-  has_many :markets, as: :owner
-
   has_many :users, through: :characters
+
+  validates :creator_corporation_id, presence: true
+  validates :creator_id, presence: true
+  validates :esi_etag, presence: true
+  validates :esi_expires_at, presence: true
+  validates :esi_last_modified_at, presence: true
+  validates :founded_on, presence: true
+  validates :name, presence: true
+  validates :ticker, presence: true
 
   def avatar_url
     "https://images.evetech.net/alliances/#{id}/logo"

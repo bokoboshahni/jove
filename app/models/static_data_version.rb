@@ -47,6 +47,8 @@ class StaticDataVersion < ApplicationRecord # rubocop:disable Metrics/ClassLengt
 
   kredis_list :status_log_lines
 
+  has_one_attached :archive
+
   enum :status, %i[
     pending
     downloading
@@ -57,7 +59,9 @@ class StaticDataVersion < ApplicationRecord # rubocop:disable Metrics/ClassLengt
     importing_failed
   ].index_with(&:to_s)
 
-  has_one_attached :archive
+  validates :checksum, presence: true, uniqueness: true
+  validates :current, uniqueness: true, allow_nil: true
+  validates :status, presence: true
 
   aasm column: :status, enum: true, timestamps: true, whiny_persistence: true do # rubocop:disable Metrics/BlockLength
     state :pending, initial: true

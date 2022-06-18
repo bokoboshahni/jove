@@ -1,5 +1,11 @@
 ---
 en:
+  activerecord:
+    attributes:
+      esi_token:
+        pending_available:
+          one: There is 1 request that is pending approval.
+          other: There are %{count} requests that are pending approval.
   helpers:
     submit:
       esi_token:

@@ -158,8 +158,7 @@ RSpec.describe MarketOrderSnapshot, type: :model do
           stub_request(:get, "https://esi.evetech.net/latest/markets/structures/#{source.source_id}/?page=1")
             .to_return(body: orders.to_json, status: 200, headers:)
 
-          token = create(:esi_token, :authorized)
-          create(:structure_market_grant, :approved, token:, grantable: structure)
+          create(:esi_token, :authorized, grant_type: :structure_market, resource: structure)
 
           snapshot.fetch!
         end
@@ -174,8 +173,7 @@ RSpec.describe MarketOrderSnapshot, type: :model do
 
       context 'with an invalid token' do
         before do
-          token = create(:esi_token, :expired)
-          create(:structure_market_grant, :approved, token:, grantable: structure)
+          create(:esi_token, :expired, grant_type: :structure_market, resource: structure)
         end
 
         it 'raises an error' do

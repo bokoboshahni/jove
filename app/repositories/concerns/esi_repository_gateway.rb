@@ -72,7 +72,7 @@ module ESIRepositoryGateway
     def build_request(url, method: :get, params: {}, body: nil, headers: {})
       headers = default_headers.merge(headers)
 
-      authorization_type&.with_token do |access_token|
+      ESIToken.with_token(:structure_discovery) do |access_token|
         headers['Authorization'] = "Bearer #{access_token}"
       end
 

@@ -3,7 +3,7 @@
     <p class="text-left"><%= t('.body') %></p>
 
     <ul class="list-disc">
-      <% @token.scopes.each do |s| %><li class="ml-8"><%= s %></li><% end %>
+      <% @token.grant_options[:scopes].each do |s| %><li class="ml-8"><%= s %></li><% end %>
     </ul>
 
     <%= render 'new' %>

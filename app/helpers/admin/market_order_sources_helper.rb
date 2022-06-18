@@ -6,7 +6,7 @@ module Admin
       pending: :secondary,
       fetching: :notice,
       fetched: :success,
-      failed: :danger,
+      fetching_failed: :danger,
       disabled: :neutral
     }.freeze
 

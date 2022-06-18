@@ -19,11 +19,16 @@
 #
 # * `index_identities_on_character_id` (_unique_):
 #     * **`character_id`**
-# * `index_identities_on_user_id`:
-#     * **`user_id`**
 # * `index_unique_default_identities` (_unique_):
 #     * **`user_id`**
 #     * **`default`**
+#
+# ### Foreign Keys
+#
+# * `fk_rails_...`:
+#     * **`character_id => characters.id`**
+# * `fk_rails_...`:
+#     * **`user_id => users.id`**
 #
 class Identity < ApplicationRecord
   include PgSearch::Model
@@ -41,8 +46,6 @@ class Identity < ApplicationRecord
 
   has_many :esi_tokens
   has_many :requested_esi_tokens, class_name: 'ESIToken', foreign_key: :requester_id
-  has_many :esi_grants
-  has_many :requested_esi_grants, class_name: 'ESIGrant', foreign_key: :requester_id
   has_many :login_activities, as: :user
 
   validates :character_id, uniqueness: true

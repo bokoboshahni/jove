@@ -12,11 +12,12 @@ gem 'activerecord-nulldb-adapter', '~> 0.8'
 gem 'addressable', '~> 2.8'
 gem 'after_commit_everywhere', '~> 1.2'
 gem 'ancestry', '~> 4.1'
-gem 'authtrail', '~> 0.4.2'
+gem 'authtrail', '~> 0.4.3'
 gem 'awesome_print', '~> 1.9'
 gem 'bcrypt', '~> 3.1'
 gem 'better_html', '~> 1.0'
 gem 'bootsnap', require: false
+gem 'chartkick', '~> 4.2'
 gem 'composite_primary_keys', '~> 14.0'
 gem 'devise', '~> 4.8'
 gem 'discard', '~> 1.2'
@@ -24,6 +25,7 @@ gem 'down', '~> 5.3'
 gem 'flamegraph', '~> 0.9.5'
 gem 'friendly_id', '~> 5.4'
 gem 'get_process_mem', '~> 0.2.7'
+gem 'groupdate', '~> 6.1'
 gem 'hiredis', '~> 0.6.3'
 gem 'http', '~> 5.0'
 gem 'importmap-rails', '~> 1.1'
@@ -66,7 +68,7 @@ gem 'tty-command', '~> 0.10.1'
 gem 'tty-progressbar', '~> 0.18.2'
 gem 'turbo-rails', '~> 1.1'
 gem 'typhoeus', '~> 1.4'
-gem 'view_component', '~> 2.56'
+gem 'view_component', '~> 2.57'
 
 group :development, :test do
   gem 'debug', '~> 1.5'
@@ -80,17 +82,18 @@ end
 group :development do
   gem 'annotate', '~> 3.2'
   gem 'benchmark-ips', '~> 2.10'
-  gem 'brakeman', '~> 5.2'
-  gem 'bundler-audit', '~> 0.9.1'
-  gem 'bundler-leak', '~> 0.3.0'
-  gem 'derailed_benchmarks', '~> 2.1'
+  gem 'brakeman', '~> 5.2', require: false
+  gem 'bundler-audit', '~> 0.9.1', require: false
+  gem 'bundler-leak', '~> 0.3.0', require: false
+  gem 'database_consistency', '~> 1.1', require: false
+  gem 'derailed_benchmarks', '~> 2.1', require: false
   gem 'erb_lint', '~> 0.1.1'
   gem 'kramdown-parser-gfm', '~> 1.1'
-  gem 'rails-erd', '~> 1.7'
+  gem 'rails-erd', '~> 1.7', require: false
   gem 'rouge', '~> 3.29'
   gem 'rubocop', '~> 1.30'
   gem 'rubocop-performance', '~> 1.14'
-  gem 'rubocop-rails', '~> 2.14'
+  gem 'rubocop-rails', '~> 2.15'
   gem 'rubocop-rspec', '~> 2.11'
   gem 'web-console', '~> 4.2'
   gem 'yard', '~> 0.9.28'

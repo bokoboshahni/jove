@@ -15,8 +15,6 @@
 #
 # ### Indexes
 #
-# * `index_blueprint_activities_on_blueprint_id`:
-#     * **`blueprint_id`**
 # * `index_unique_blueprint_activities` (_unique_):
 #     * **`blueprint_id`**
 #     * **`activity`**
