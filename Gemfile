@@ -87,7 +87,7 @@ group :development do
   gem 'bundler-leak', '~> 0.3.0', require: false
   gem 'database_consistency', '~> 1.1', require: false
   gem 'derailed_benchmarks', '~> 2.1', require: false
-  gem 'erb_lint', '~> 0.1.1'
+  gem 'erb_lint', '~> 0.1.3'
   gem 'kramdown-parser-gfm', '~> 1.1'
   gem 'rails-erd', '~> 1.7', require: false
   gem 'rouge', '~> 3.29'
