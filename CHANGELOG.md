@@ -1,5 +1,14 @@
 # Jove Changelog
 
+## [1.5.1-beta.1](https://github.com/bokoboshahni/jove/compare/v1.5.0...v1.5.1-beta.1) (2022-06-18)
+
+
+### Bug Fixes
+
+* make redis url env vars consistent ([bf052a7](https://github.com/bokoboshahni/jove/commit/bf052a7c5204064ea9284e89b558bfb6a8975aae))
+* no-op when schema has not been loaded ([5e1efbe](https://github.com/bokoboshahni/jove/commit/5e1efbecea5f7af5f9bd8ac7d895fc60b5306805))
+* remove pg_stat_statements extension from structure.sql ([2ce6917](https://github.com/bokoboshahni/jove/commit/2ce6917e82ba6b21ca07ee4da3ed86de094a964f))
+
 # [1.5.0](https://github.com/bokoboshahni/jove/compare/v1.4.0...v1.5.0) (2022-06-18)
 
 
