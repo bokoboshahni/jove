@@ -75,7 +75,7 @@ group :development, :test do
   gem 'factory_bot_rails', '~> 6.2'
   gem 'faker', '~> 2.21'
   gem 'i18n-tasks', '~> 1.0'
-  gem 'lookbook', '~> 0.8'
+  gem 'lookbook', '~> 0.9'
   gem 'rspec-rails', '~> 5.1'
 end
 
