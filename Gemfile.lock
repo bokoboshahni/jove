@@ -8,6 +8,12 @@ GIT
       railties (>= 5.0)
       ruby-next-core (~> 0.9)
 
+GIT
+  remote: https://github.com/ruby/openssl
+  revision: e9798b1ec794d0c8f0a591b320ebb45afb037b52
+  specs:
+    openssl (3.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -700,6 +706,7 @@ DEPENDENCIES
   oj (~> 3.13)
   omniauth-oauth2 (~> 1.7)
   omniauth-rails_csrf_protection (~> 1.0)
+  openssl!
   paper_trail (~> 12.3)
   parallel (~> 1.22)
   pg (~> 1.3)
