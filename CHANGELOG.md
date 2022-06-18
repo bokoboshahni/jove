@@ -1,5 +1,22 @@
 # Jove Changelog
 
+# [1.5.0](https://github.com/bokoboshahni/jove/compare/v1.4.0...v1.5.0) (2022-06-18)
+
+
+### Bug Fixes
+
+* add retention policy for market order snapshots ([cf3c7b1](https://github.com/bokoboshahni/jove/commit/cf3c7b1d414336edee7b84f8cefb9f552199ebbc))
+* database consistency ([3506c90](https://github.com/bokoboshahni/jove/commit/3506c9004e3d448a44a06b4e5ecec500b9fa33cc))
+* remove janky descendants lookup ([3923357](https://github.com/bokoboshahni/jove/commit/39233575be4e35af1488c97160bf8499b9ba98d0))
+* remove redundant indexes ([a2d9bbb](https://github.com/bokoboshahni/jove/commit/a2d9bbba1186c35b895685f9452d4caba3f47ed5))
+* retry on mismatched etags ([7f3d969](https://github.com/bokoboshahni/jove/commit/7f3d969104769efc5831f4331067dea304330c49))
+* status color key ([8fc08fc](https://github.com/bokoboshahni/jove/commit/8fc08fcfd34a9ce65819268e69ed065c305361dd))
+
+
+### Features
+
+* charts for market order source snapshots ([15121db](https://github.com/bokoboshahni/jove/commit/15121dbe5626b6bf06175cf2ae2a5f7cafe46521))
+
 # [1.5.0-beta.1](https://github.com/bokoboshahni/jove/compare/v1.4.0...v1.5.0-beta.1) (2022-06-17)
 
 
