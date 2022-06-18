@@ -14,7 +14,7 @@ Rails.application.configure do
 
   # Asset pipeline configuration
   config.assets.compile = false
-  config.asset_host = ENV.fetch('RAILS_ASSET_HOST', nil) if ENV['RAILS_ASSETS_HOST'].present?
+  config.asset_host = ENV.fetch('RAILS_ASSET_HOST', nil) if ENV['RAILS_ASSET_HOST'].present?
 
   # ActionMailer settings
   config.action_mailer.perform_caching = false
