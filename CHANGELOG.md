@@ -1,5 +1,22 @@
 # Jove Changelog
 
+# [1.6.0-beta.1](https://github.com/bokoboshahni/jove/compare/v1.5.1-beta.1...v1.6.0-beta.1) (2022-06-18)
+
+
+### Bug Fixes
+
+* env var name ([7ae3a76](https://github.com/bokoboshahni/jove/commit/7ae3a76c0a47eec754985affec2f5b3260c0a084))
+* openssl 3 incompatibility ([3321f98](https://github.com/bokoboshahni/jove/commit/3321f986beee851f0fb18c5909717dd2e88b5768))
+* redis url env ([8cacdc0](https://github.com/bokoboshahni/jove/commit/8cacdc0dc8b476c01d273c706134abbfd505693e))
+* temporary hack for ruby/openssl[#369](https://github.com/bokoboshahni/jove/issues/369) ([6d4a054](https://github.com/bokoboshahni/jove/commit/6d4a054ff55bc47fbf0a94f95a1cee02ea9b120a))
+* use asset host if configured ([3c800fb](https://github.com/bokoboshahni/jove/commit/3c800fb1a38a8f4b49afaa83a1b8424f57c39ce0))
+* use REDIS_QUEUE_URL env ([5c1990d](https://github.com/bokoboshahni/jove/commit/5c1990d57956eb7542220ae73a88bb2a91efa83a))
+
+
+### Features
+
+* add capistrano for deployment ([c93c7b9](https://github.com/bokoboshahni/jove/commit/c93c7b94fb93277597a245a286d3eb5c3940ffc9))
+
 ## [1.5.1-beta.1](https://github.com/bokoboshahni/jove/compare/v1.5.0...v1.5.1-beta.1) (2022-06-18)
 
 
