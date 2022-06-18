@@ -36,6 +36,7 @@ gem 'kredis', '~> 1.2'
 gem 'local_time', '~> 2.1'
 gem 'logidze', github: 'baygeldin/logidze', branch: 'fix/support-json-columns'
 gem 'memory_profiler', '~> 1.0'
+gem 'net-ssh', '~> 7.0.0.beta1'
 gem 'oauth2', '~> 1.4'
 gem 'oj', '~> 3.13'
 gem 'omniauth-oauth2', '~> 1.7'
@@ -81,12 +82,20 @@ end
 
 group :development do
   gem 'annotate', '~> 3.2'
+  gem 'bcrypt_pbkdf', '~> 1.1', require: false
   gem 'benchmark-ips', '~> 2.10'
   gem 'brakeman', '~> 5.2', require: false
   gem 'bundler-audit', '~> 0.9.1', require: false
   gem 'bundler-leak', '~> 0.3.0', require: false
+  gem 'capistrano3-puma', '~> 5.2', require: false
+  gem 'capistrano-bundler', '~> 2.1', require: false
+  gem 'capistrano-rails', '~> 1.6', require: false
+  gem 'capistrano-rails-console', '~> 2.3', require: false
+  gem 'capistrano-rbenv', '~> 2.2', require: false
+  gem 'capistrano-sidekiq', '~> 2.3', require: false
   gem 'database_consistency', '~> 1.1', require: false
   gem 'derailed_benchmarks', '~> 2.1', require: false
+  gem 'ed25519', '~> 1.3', require: false
   gem 'erb_lint', '~> 0.1.3'
   gem 'kramdown-parser-gfm', '~> 1.1'
   gem 'rails-erd', '~> 1.7', require: false
