@@ -85,7 +85,7 @@ GEM
     after_commit_everywhere (1.2.1)
       activerecord (>= 4.2)
       activesupport
-    ancestry (4.1.0)
+    ancestry (4.2.0)
       activerecord (>= 5.2.6)
     annotate (3.2.0)
       activerecord (>= 3.2, < 8.0)
@@ -609,7 +609,7 @@ DEPENDENCIES
   activerecord-nulldb-adapter (~> 0.8)
   addressable (~> 2.8)
   after_commit_everywhere (~> 1.2)
-  ancestry (~> 4.1)
+  ancestry (~> 4.2)
   annotate (~> 3.2)
   authtrail (~> 0.4.3)
   awesome_print (~> 1.9)
