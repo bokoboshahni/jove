@@ -9,6 +9,11 @@ SSHKit.config.command_map[:sidekiq] = 'bundle exec sidekiq'
 SSHKit.config.command_map[:sidekiqctl] = 'bundle exec sidekiqctl'
 SSHKit.config.umask = '022'
 
+role :app, ENV.fetch('DEPLOY_ROLES_APP', '').split(',')
+role :web, ENV.fetch('DEPLOY_ROLES_WEB', '').split(',')
+role :db, ENV.fetch('DEPLOY_ROLES_DB', '').split(',')
+role :worker, ENV.fetch('DEPLOY_ROLES_WORKER', '').split(',')
+
 set :application, ENV.fetch('DEPLOY_APPLICATION', 'jove')
 set :repo_url, ENV.fetch('DEPLOY_REPO_URL', 'https://github.com/bokoboshahni/jove.git')
 set :branch, ENV.fetch('DEPLOY_BRANCH', 'main')
