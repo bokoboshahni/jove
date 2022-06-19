@@ -1,5 +1,7 @@
 # Jove Changelog
 
+# [1.6.0-beta.2](https://github.com/bokoboshahni/jove/compare/v1.6.0-beta.1...v1.6.0-beta.2) (2022-06-19)
+
 # [1.6.0-beta.1](https://github.com/bokoboshahni/jove/compare/v1.5.1-beta.1...v1.6.0-beta.1) (2022-06-18)
 
 
