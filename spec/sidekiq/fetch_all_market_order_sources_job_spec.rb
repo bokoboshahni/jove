@@ -6,6 +6,8 @@ RSpec.describe FetchAllMarketOrderSourcesJob, type: :job do
   describe '#perform' do
     subject(:job) { described_class.new }
 
+    before { Flipper.enable(:markets) }
+
     it 'does not attempt to queue if there are no fetchable sources' do
       expect(FetchMarketOrderSourceJob).not_to receive(:perform_bulk)
       job.perform

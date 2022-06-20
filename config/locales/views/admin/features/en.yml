@@ -1,0 +1,24 @@
+---
+en:
+  admin:
+    features:
+      confirm_disable:
+        body:
+          markets: Disabling this feature will pause data collection and analytics for all markets.
+        disable: Disable
+        title: Disable feature?
+      confirm_enable:
+        body:
+          markets: Enabling this feature will resume data collection and analytics for all markets.
+        enable: Enable
+        title: Enable feature?
+      index:
+        disable: Disable
+        disable_tooltip: Disable %{name}
+        enable: Enable
+        enable_tooltip: Enable %{name}
+        features:
+          markets:
+            body: Analytics for public and structure markets.
+            headline: Markets
+        title: Features

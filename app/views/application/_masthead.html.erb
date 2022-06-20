@@ -6,7 +6,7 @@
 
   <% m.item label: t('.nav.dashboard'), href: dashboard_root_path, active: dashboard_controller? %>
 
-  <% if Market.any? %>
+  <% if Flipper.enabled?(:markets) %>
     <% m.item label: t('.nav.markets.button'), active: market_controller? do |i| %>
       <% i.menu do %>
         <div id="markets_menu" class="relative flex flex-col p-4">
@@ -98,6 +98,13 @@
             <div class="flex flex-col px-4 py-2 space-y-2 rounded-lg hover:bg-primary hover:bg-opacity-hover focus:bg-primary focus:bg-opacity-focus active:bg-primary active:bg-opacity-press">
               <p class="text-sm font-medium">ESI</p>
               <p class="text-xs">Manage ESI tokens.</p>
+            </div>
+          <% end %>
+
+          <%= link_to admin_features_path, class: 'block rounded-md' do %>
+            <div class="flex flex-col px-4 py-2 space-y-2 rounded-lg hover:bg-primary hover:bg-opacity-hover focus:bg-primary focus:bg-opacity-focus active:bg-primary active:bg-opacity-press">
+              <p class="text-sm font-medium">Features</p>
+              <p class="text-xs">Manage site features.</p>
             </div>
           <% end %>
         </div>

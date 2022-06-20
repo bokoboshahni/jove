@@ -4,6 +4,7 @@ require 'system_helper'
 
 RSpec.describe 'Market administration', type: :system do
   include_context 'Administration scenarios'
+  include_context 'Market scenarios'
 
   scenario 'listing markets' do
     markets = create_list(:market, 2)

@@ -4,6 +4,7 @@ require 'system_helper'
 
 RSpec.describe 'Market sources administration', type: :system do
   include_context 'Administration scenarios'
+  include_context 'Market scenarios'
 
   scenario 'adding a region source' do
     market = create(:market)

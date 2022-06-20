@@ -2,6 +2,8 @@
 
 module Admin
   class MarketSourcesController < AdminController
+    include MarketsFeatureController
+
     before_action :find_market
     before_action :find_source, only: %i[confirm_destroy destroy]
 

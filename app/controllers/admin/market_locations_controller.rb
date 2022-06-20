@@ -2,6 +2,8 @@
 
 module Admin
   class MarketLocationsController < AdminController
+    include MarketsFeatureController
+
     before_action :find_market
     before_action :find_location, only: %i[confirm_destroy destroy]
 

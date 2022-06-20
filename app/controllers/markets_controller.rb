@@ -3,4 +3,5 @@
 class MarketsController < ApplicationController
   include AuthenticatedController
   include AuthorizedController
+  include MarketsFeatureController
 end
