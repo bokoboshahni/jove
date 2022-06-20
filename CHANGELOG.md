@@ -1,5 +1,14 @@
 # Jove Changelog
 
+# [1.6.0-beta.3](https://github.com/bokoboshahni/jove/compare/v1.6.0-beta.2...v1.6.0-beta.3) (2022-06-20)
+
+
+### Bug Fixes
+
+* cascade corporation/alliance sync from repository ([34d2db8](https://github.com/bokoboshahni/jove/commit/34d2db8bd1c9e567ccdeabd6cb6f3000087778d7))
+* specify repository for corporation model ([cabff09](https://github.com/bokoboshahni/jove/commit/cabff096a48f225dc48d1c874daedb08678aeba7))
+* sync corporation alliance ([915732e](https://github.com/bokoboshahni/jove/commit/915732e51c6d5925a50b2637d00cfe01f3c7a8f7))
+
 # [1.6.0-beta.2](https://github.com/bokoboshahni/jove/compare/v1.6.0-beta.1...v1.6.0-beta.2) (2022-06-19)
 
 # [1.6.0-beta.1](https://github.com/bokoboshahni/jove/compare/v1.5.1-beta.1...v1.6.0-beta.1) (2022-06-18)
