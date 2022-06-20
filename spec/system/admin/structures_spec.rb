@@ -34,4 +34,24 @@ RSpec.describe 'Structures administration', type: :system do
       expect(page).to have_text(structure.name)
     end
   end
+
+  scenario 'enabling the market source for a structure' do
+    Flipper.enable(:markets)
+
+    structure = create(:structure)
+    identity = admin.default_identity
+
+    visit(admin_structure_path(structure))
+
+    click_on('Enable market source')
+    within('#modal') do
+      fill_in('Search for character', with: identity.name[0..3])
+      click_text(identity.name)
+      click_on('Enable')
+    end
+
+    wait_for_page_reload
+
+    expect(page).to have_text('Manage market source')
+  end
 end

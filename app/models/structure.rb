@@ -93,7 +93,7 @@ class Structure < ApplicationRecord
 
   private
 
-  def build_token(_requester, token_param)
-    ESIToken.new(token_param.merge(grant_type: :structure_market, resource: self))
+  def build_token(requester, token_param)
+    ESIToken.new(token_param.merge(requester:, grant_type: :structure_market, resource: self))
   end
 end
