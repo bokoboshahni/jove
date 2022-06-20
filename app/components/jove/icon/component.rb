@@ -14,7 +14,7 @@ module Jove
 
       def call
         file = Rails.cache.fetch(@icon) do
-          File.read(Rails.root.join("app/assets/icons/#{@icon}.svg")).force_encoding('UTF-8')
+          File.read(Rails.root.join("vendor/icons/#{@icon}.svg")).force_encoding('UTF-8')
         end
         doc = Nokogiri::HTML::DocumentFragment.parse(file)
         svg = doc.at_css('svg')
