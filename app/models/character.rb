@@ -74,17 +74,7 @@ class Character < ApplicationRecord
 
   def self.from_esi(id)
     character_repository = CharacterRepository.new(gateway: CharacterRepository::ESIGateway.new)
-    character = character_repository.find(id)
-
-    corporation_repository = CorporationRepository.new(gateway: CorporationRepository::ESIGateway.new)
-    corporation = corporation_repository.find(character.corporation_id)
-
-    if corporation.alliance_id
-      alliance_repository = AllianceRepository.new(gateway: AllianceRepository::ESIGateway.new)
-      alliance_repository.find(corporation.alliance_id)
-    end
-
-    character
+    character_repository.find(id)
   end
 
   def avatar_url
