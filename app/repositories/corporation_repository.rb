@@ -10,7 +10,7 @@ class CorporationRepository < ApplicationRepository
       if data['alliance_id']
         data['alliance_id'] =
           AllianceRepository.new(gateway: AllianceRepository::ESIGateway.new)
-                            .find(data.delete('alliance_id'))
+                            .find(data.delete('alliance_id')).id
       end
 
       data['founded_on'] = Date.parse(data.delete('date_founded')) if data['date_founded']

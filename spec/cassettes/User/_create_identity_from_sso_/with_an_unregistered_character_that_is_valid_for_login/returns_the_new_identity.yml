@@ -17,7 +17,7 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Tue, 17 May 2022 17:30:29 GMT
+      - Mon, 20 Jun 2022 00:51:43 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -41,22 +41,22 @@ http_interactions:
       Etag:
       - '"82cd1dc9ed13e508fd3da508a5d1a836e9137ee32158f66f8c87af6f"'
       Expires:
-      - Wed, 18 May 2022 17:30:26 GMT
+      - Mon, 20 Jun 2022 16:39:12 GMT
       Last-Modified:
-      - Tue, 17 May 2022 17:30:26 GMT
+      - Sun, 19 Jun 2022 16:39:12 GMT
       Strict-Transport-Security:
       - max-age=31536000
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '31'
+      - '17'
       X-Esi-Request-Id:
-      - fd65f981-2002-4a86-8648-bc4accbd1cba
+      - 32d9bbb8-94f5-4b37-a2b2-dedacf9734e8
     body:
       encoding: ASCII-8BIT
       string: '{"alliance_id":99010079,"birthday":"2020-10-12T16:16:42Z","bloodline_id":5,"corporation_id":98613799,"description":"","gender":"male","name":"Campian
         Shimaya","race_id":4,"security_status":0.7395651900000001}'
-  recorded_at: Tue, 17 May 2022 17:30:29 GMT
+  recorded_at: Mon, 20 Jun 2022 00:51:43 GMT
 - request:
     method: get
     uri: https://esi.evetech.net/latest/corporations/98613799/
@@ -74,7 +74,7 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Tue, 17 May 2022 17:30:29 GMT
+      - Mon, 20 Jun 2022 00:51:43 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -96,11 +96,11 @@ http_interactions:
       Cache-Control:
       - public
       Etag:
-      - '"3ef9243d1cb22dd2e6e8bd21e3c0a2e7404d348004463dba395292e1"'
+      - '"6565a94f0ebad9154bd4207a39d4b4907180c8eeaed9172b99f3c8b8"'
       Expires:
-      - Tue, 17 May 2022 18:21:41 GMT
+      - Mon, 20 Jun 2022 01:51:42 GMT
       Last-Modified:
-      - Tue, 17 May 2022 17:21:41 GMT
+      - Mon, 20 Jun 2022 00:51:42 GMT
       Strict-Transport-Security:
       - max-age=31536000
       Vary:
@@ -108,9 +108,9 @@ http_interactions:
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '31'
+      - '17'
       X-Esi-Request-Id:
-      - 3454e390-5b54-44fc-9fb8-83bfdd3d10d8
+      - aac5d68f-2da4-4176-bf75-3df05af4bb2c
     body:
       encoding: ASCII-8BIT
       string: '{"alliance_id":99010079,"ceo_id":2116142894,"creator_id":2112550682,"date_founded":"2019-09-07T17:09:22Z","description":"<font
@@ -127,9 +127,9 @@ http_interactions:
         Empire Public<\/a><\/font><font size=\"12\" color=\"#bfffffff\"> channel in-game
         and see <\/font><font size=\"12\" color=\"#ffffe400\"><a href=\"https:\/\/wiki.bravecollective.com\/public\/corps\/brave-empire\/how-to-apply\">How
         to Apply to Brave Empire<\/a><\/font><font size=\"12\" color=\"#bfffffff\">
-        for instructions on how to apply. <\/font>","home_station_id":60014104,"member_count":1943,"name":"Brave
+        for instructions on how to apply. <\/font>","home_station_id":60014104,"member_count":2012,"name":"Brave
         Empire","shares":1000,"tax_rate":0.10000000149011612,"ticker":"I-EVE","url":"https:\/\/wiki.bravecollective.com\/public\/corps\/brave-empire\/start"}'
-  recorded_at: Tue, 17 May 2022 17:30:29 GMT
+  recorded_at: Mon, 20 Jun 2022 00:51:43 GMT
 - request:
     method: get
     uri: https://esi.evetech.net/latest/alliances/99010079/
@@ -147,7 +147,7 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Tue, 17 May 2022 17:30:29 GMT
+      - Mon, 20 Jun 2022 00:51:44 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -171,20 +171,20 @@ http_interactions:
       Etag:
       - '"3a82b807afcdedb8ec17551a757bd93f36e1b1f3b617095eb88f1ab1"'
       Expires:
-      - Tue, 17 May 2022 18:16:23 GMT
+      - Mon, 20 Jun 2022 01:42:47 GMT
       Last-Modified:
-      - Tue, 17 May 2022 17:16:23 GMT
+      - Mon, 20 Jun 2022 00:42:47 GMT
       Strict-Transport-Security:
       - max-age=31536000
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '31'
+      - '16'
       X-Esi-Request-Id:
-      - 4997a88b-2d86-4ff8-aafb-311bde4deb6f
+      - dcb64182-f51f-40b2-8cd2-3c5fd55f4464
     body:
       encoding: ASCII-8BIT
       string: '{"creator_corporation_id":98645283,"creator_id":94809264,"date_founded":"2020-06-20T01:40:36Z","executor_corporation_id":98645283,"name":"Brave
         United","ticker":"BRUVE"}'
-  recorded_at: Tue, 17 May 2022 17:30:29 GMT
+  recorded_at: Mon, 20 Jun 2022 00:51:44 GMT
 recorded_with: VCR 6.1.0
