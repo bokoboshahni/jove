@@ -64,8 +64,114 @@ jobs:
         run: |
           bundle exec bundle-audit check --update
 
-  test:
-    name: Test
+  assets:
+    name: Assets
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Compile assets
+        run: |
+          export ASSET_PRECOMPILE=1
+          export ACTIVE_RECORD_ENCRYPTION_PRIMARY_KEY=$(ruby -rsecurerandom -e 'puts SecureRandom.alphanumeric(32)')
+          export ACTIVE_RECORD_ENCRYPTION_DETERMINISTIC_KEY=$(ruby -rsecurerandom -e 'puts SecureRandom.alphanumeric(32)')
+          export ACTIVE_RECORD_ENCRYPTION_KEY_DERIVATION_SALT=$(ruby -rsecurerandom -e 'puts SecureRandom.alphanumeric(32)')
+          export SECRET_KEY_BASE=$(bin/rails secret)
+          export JOVE_ESI_CLIENT_ID=dummy
+          export JOVE_ESI_CLIENT_SECRET=dummy
+          export JOVE_SITE_URL=http://localhost:3000
+          export RAILS_ENV=production
+          bin/rails assets:precompile
+
+      - name: Upload assets
+        uses: actions/upload-artifact@v3
+        with:
+          name: assets
+          path: public/assets
+
+  test-database:
+    name: Test (Database Consistency)
+    runs-on: ubuntu-latest
+    if: github.event_name != 'release'
+    services:
+      postgres:
+        image: timescale/timescaledb:latest-pg14
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10ms
+          --health-timeout 500ms
+          --health-retries 15
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Run tests
+        run: bin/ci-database-consistency
+
+
+  test-unit:
+    name: Test (Unit Tests)
+    runs-on: ubuntu-latest
+    if: github.event_name != 'release'
+    services:
+      postgres:
+        image: timescale/timescaledb:latest-pg14
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10ms
+          --health-timeout 500ms
+          --health-retries 15
+      redis:
+        image: redis:7-alpine
+        ports: ["6379:6379"]
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10ms
+          --health-timeout 500ms
+          --health-retries 15
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Run tests
+        run: bin/ci-test spec/channels spec/components spec/controllers spec/helpers spec/jobs spec/mailers spec/models spec/policies spec/repositories spec/requests spec/sidekiq spec/i18n_spec.rb
+
+      - name: Upload coverage
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-unit
+          path: coverage/
+          retention-days: 1
+
+  test-system-admin:
+    name: Test (Admin System Tests)
+    needs: [assets]
     runs-on: ubuntu-latest
     if: github.event_name != 'release'
     services:
@@ -100,12 +206,171 @@ jobs:
         with:
           bundler-cache: true
 
+      - name: Download assets
+        uses: actions/download-artifact@v3
+        with:
+          name: assets
+          path: public/assets
+
       - name: Run tests
+        run: bin/ci-test spec/system/admin
+
+      - name: Upload coverage
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-system-admin
+          path: coverage/
+          retention-days: 1
+
+  test-system-settings:
+    name: Test (Settings System Tests)
+    needs: [assets]
+    runs-on: ubuntu-latest
+    if: github.event_name != 'release'
+    services:
+      postgres:
+        image: timescale/timescaledb:latest-pg14
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10ms
+          --health-timeout 500ms
+          --health-retries 15
+      redis:
+        image: redis:7-alpine
+        ports: ["6379:6379"]
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10ms
+          --health-timeout 500ms
+          --health-retries 15
+
+    steps:
+      - uses: browser-actions/setup-chrome@latest
+
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Download assets
+        uses: actions/download-artifact@v3
+        with:
+          name: assets
+          path: public/assets
+
+      - name: Run tests
+        run: bin/ci-test spec/system/admin
+
+      - name: Upload coverage
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-system-settings
+          path: coverage/
+          retention-days: 1
+
+  test-system:
+    name: Test (General System Tests)
+    needs: [assets]
+    runs-on: ubuntu-latest
+    if: github.event_name != 'release'
+    services:
+      postgres:
+        image: timescale/timescaledb:latest-pg14
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10ms
+          --health-timeout 500ms
+          --health-retries 15
+      redis:
+        image: redis:7-alpine
+        ports: ["6379:6379"]
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10ms
+          --health-timeout 500ms
+          --health-retries 15
+
+    steps:
+      - uses: browser-actions/setup-chrome@latest
+
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Download assets
+        uses: actions/download-artifact@v3
+        with:
+          name: assets
+          path: public/assets
+
+      - name: Run tests
+        run: bin/ci-test spec/system/dashboard spec/system/authorization_spec.rb spec/system/home_spec.rb spec/system/markets_spec.rb
+
+      - name: Upload coverage
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-system
+          path: coverage/
+          retention-days: 1
+
+  coverage:
+    name: Upload test coverage
+    needs: [test-unit, test-system, test-system-admin, test-system-settings]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Download unit test coverage
+        uses: actions/download-artifact@v3
+        with:
+          name: test-unit
+          path: coverage/unit
+
+      - name: Download system test coverage
+        uses: actions/download-artifact@v3
+        with:
+          name: test-system
+          path: coverage/system
+
+      - name: Download admin system test coverage
+        uses: actions/download-artifact@v3
+        with:
+          name: test-system-admin
+          path: coverage/system-settings
+
+      - name: Download settings system test coverage
+        uses: actions/download-artifact@v3
+        with:
+          name: test-system-settings
+          path: coverage/system-settings
+
+      - name: Upload coverage
         uses: paambaati/codeclimate-action@v3.0.0
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
-          coverageCommand: bin/ci-test
+          coverageCommand: echo 'Combining coverage results'
+          coverageLocations: |
+            ${{ github.workspace }}/coverage/unit/coverage.json:simplecov
+            ${{ github.workspace }}/coverage/system/coverage.json:simplecov
+            ${{ github.workspace }}/coverage/system-admin/coverage.json:simplecov
+            ${{ github.workspace }}/coverage/system-settings/coverage.json:simplecov
 
   docker-image:
     name: Docker Image
@@ -155,7 +420,8 @@ jobs:
       - docker-image
       - lint
       - security
-      - test
+      - coverage
+      - test-database
     if: github.event_name != 'release' && needs.docker-image.result == 'success' && needs.lint.result == 'success' && needs.security.result == 'success' && needs.test.result == 'success'
 
     steps:
