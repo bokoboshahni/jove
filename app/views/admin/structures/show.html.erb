@@ -28,7 +28,7 @@
             <%= render(Jove::Button::Component.new(label: t('.market_source.manage'), tag: :a, href: admin_market_order_source_path(@structure.market_order_source), data: { turbo_frame: '_top' })) %>
           <% else %>
             <%= form_tag(admin_structure_confirm_market_source_path(@structure), method: :get) do %>
-              <%= render(Jove::Button::Component.new(label: t('.market_source.enable'), data: { turbo_frame: '_top' })) %>
+              <%= render(Jove::Button::Component.new(label: t('.market_source.enable'), data: { turbo_frame: 'modal' })) %>
             <% end %>
           <% end %>
         </div>

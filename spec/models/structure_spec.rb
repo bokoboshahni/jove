@@ -44,4 +44,24 @@
 require 'rails_helper'
 
 RSpec.describe Structure, type: :model do
+  subject(:structure) { create(:structure) }
+
+  describe '#enable_market_source' do
+    let(:user) { create(:registered_user) }
+    let(:identity) { user.default_identity }
+
+    it 'creates a new ESI token for the structure' do
+      expect { subject.enable_market_source(identity, identity_id: identity.id) }.to(
+        change { ESIToken.find_by(requester: identity, identity:, grant_type: :structure_market) }
+          .from(nil)
+      )
+    end
+
+    it 'creates the market order source for the structure' do
+      expect { subject.enable_market_source(identity, identity_id: identity.id) }.to(
+        change { subject.market_order_source }
+          .from(nil)
+      )
+    end
+  end
 end
