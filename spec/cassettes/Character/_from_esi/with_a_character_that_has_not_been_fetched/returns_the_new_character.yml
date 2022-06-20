@@ -17,7 +17,7 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Mon, 20 Jun 2022 00:51:13 GMT
+      - Mon, 20 Jun 2022 14:14:30 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -47,16 +47,16 @@ http_interactions:
       Strict-Transport-Security:
       - max-age=31536000
       X-Esi-Error-Limit-Remain:
-      - '100'
+      - '99'
       X-Esi-Error-Limit-Reset:
-      - '47'
+      - '30'
       X-Esi-Request-Id:
-      - 11a63d1b-1444-40af-8546-88a00d644875
+      - 17f0a71a-16bd-4acd-8524-9acd484de9ae
     body:
       encoding: ASCII-8BIT
       string: '{"alliance_id":99010079,"birthday":"2017-07-20T16:28:17Z","bloodline_id":13,"corporation_id":98613799,"description":"","gender":"male","name":"Bokobo
         Shahni","race_id":4,"security_status":0.7826388230000001}'
-  recorded_at: Mon, 20 Jun 2022 00:51:13 GMT
+  recorded_at: Mon, 20 Jun 2022 14:14:30 GMT
 - request:
     method: get
     uri: https://esi.evetech.net/latest/corporations/98613799/
@@ -74,7 +74,7 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Mon, 20 Jun 2022 00:51:13 GMT
+      - Mon, 20 Jun 2022 14:14:30 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -96,21 +96,21 @@ http_interactions:
       Cache-Control:
       - public
       Etag:
-      - '"6565a94f0ebad9154bd4207a39d4b4907180c8eeaed9172b99f3c8b8"'
+      - '"fd224f3173abc7d000e4407efcceb20bdd6284f084175c1a0e51ec06"'
       Expires:
-      - Mon, 20 Jun 2022 00:51:37 GMT
+      - Mon, 20 Jun 2022 15:12:15 GMT
       Last-Modified:
-      - Sun, 19 Jun 2022 23:51:37 GMT
+      - Mon, 20 Jun 2022 14:12:15 GMT
       Strict-Transport-Security:
       - max-age=31536000
       Vary:
       - Accept-Encoding
       X-Esi-Error-Limit-Remain:
-      - '100'
+      - '99'
       X-Esi-Error-Limit-Reset:
-      - '47'
+      - '30'
       X-Esi-Request-Id:
-      - aad60cc3-548c-47a7-96fa-ce7c6ac37036
+      - 5cd9ad4f-4822-4306-bd9a-11a1d33914e6
     body:
       encoding: ASCII-8BIT
       string: '{"alliance_id":99010079,"ceo_id":2116142894,"creator_id":2112550682,"date_founded":"2019-09-07T17:09:22Z","description":"<font
@@ -127,9 +127,9 @@ http_interactions:
         Empire Public<\/a><\/font><font size=\"12\" color=\"#bfffffff\"> channel in-game
         and see <\/font><font size=\"12\" color=\"#ffffe400\"><a href=\"https:\/\/wiki.bravecollective.com\/public\/corps\/brave-empire\/how-to-apply\">How
         to Apply to Brave Empire<\/a><\/font><font size=\"12\" color=\"#bfffffff\">
-        for instructions on how to apply. <\/font>","home_station_id":60014104,"member_count":2012,"name":"Brave
+        for instructions on how to apply. <\/font>","home_station_id":60014104,"member_count":2013,"name":"Brave
         Empire","shares":1000,"tax_rate":0.10000000149011612,"ticker":"I-EVE","url":"https:\/\/wiki.bravecollective.com\/public\/corps\/brave-empire\/start"}'
-  recorded_at: Mon, 20 Jun 2022 00:51:13 GMT
+  recorded_at: Mon, 20 Jun 2022 14:14:30 GMT
 - request:
     method: get
     uri: https://esi.evetech.net/latest/alliances/99010079/
@@ -147,7 +147,7 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Mon, 20 Jun 2022 00:51:13 GMT
+      - Mon, 20 Jun 2022 14:14:30 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -171,20 +171,20 @@ http_interactions:
       Etag:
       - '"3a82b807afcdedb8ec17551a757bd93f36e1b1f3b617095eb88f1ab1"'
       Expires:
-      - Mon, 20 Jun 2022 01:42:47 GMT
+      - Mon, 20 Jun 2022 14:46:05 GMT
       Last-Modified:
-      - Mon, 20 Jun 2022 00:42:47 GMT
+      - Mon, 20 Jun 2022 13:46:05 GMT
       Strict-Transport-Security:
       - max-age=31536000
       X-Esi-Error-Limit-Remain:
-      - '100'
+      - '99'
       X-Esi-Error-Limit-Reset:
-      - '47'
+      - '30'
       X-Esi-Request-Id:
-      - 9bfdcb1f-6cb8-46df-a812-49fb0a5fda6f
+      - 9c050364-a9a9-43d0-8ae0-8ea018bfd350
     body:
       encoding: ASCII-8BIT
       string: '{"creator_corporation_id":98645283,"creator_id":94809264,"date_founded":"2020-06-20T01:40:36Z","executor_corporation_id":98645283,"name":"Brave
         United","ticker":"BRUVE"}'
-  recorded_at: Mon, 20 Jun 2022 00:51:13 GMT
+  recorded_at: Mon, 20 Jun 2022 14:14:30 GMT
 recorded_with: VCR 6.1.0

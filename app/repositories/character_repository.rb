@@ -8,6 +8,10 @@ class CharacterRepository < ApplicationRepository
     self.path = Addressable::Template.new('characters/{id}/')
     self.mapper = lambda do |data|
       data.delete('alliance_id')
+
+      data['corporation_id'] =
+        CorporationRepository.new(gateway: CorporationRepository::ESIGateway.new)
+                             .find(data.delete('corporation_id')).id
     end
   end
 
