@@ -78,6 +78,16 @@ RSpec.configure do |config| # rubocop:disable Metrics/BlockLength
     end
   end
 
+  config.before do |example|
+    if example.metadata[:type] == :system
+      Flipper.instance = Flipper.new(Flipper::Adapters::ActiveRecord.new)
+      Flipper::Adapters::ActiveRecord::Feature.delete_all
+      Flipper::Adapters::ActiveRecord::Gate.delete_all
+    else
+      Flipper.instance = Flipper.new(Flipper::Adapters::Memory.new)
+    end
+  end
+
   config.before do |_example|
     WebMock.reset!
   end

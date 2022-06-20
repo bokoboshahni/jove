@@ -18,4 +18,8 @@ module ESISyncable
 
     esi_expires_at.to_i <= Time.zone.now.to_i
   end
+
+  def sync_from_esi!
+    repository.new.find(id)
+  end
 end

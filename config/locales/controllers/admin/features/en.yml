@@ -1,0 +1,10 @@
+---
+en:
+  admin:
+    features:
+      disable:
+        failure: "%{name} feature is already disabled."
+        success: Successfully disabled %{name} feature.
+      enable:
+        failure: "%{name} feature is already enabled."
+        success: Successfully enabled %{name} feature.

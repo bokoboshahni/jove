@@ -4,6 +4,7 @@ require 'system_helper'
 
 RSpec.describe 'Market location administration', type: :system do
   include_context 'Administration scenarios'
+  include_context 'Market scenarios'
 
   scenario 'adding a station location' do
     market = create(:market)

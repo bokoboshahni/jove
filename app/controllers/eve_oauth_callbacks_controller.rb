@@ -16,13 +16,14 @@ class EVEOAuthCallbacksController < ApplicationController
 
   private
 
-  def add_identity
+  def add_identity # rubocop:disable Metrics/AbcSize
     identity = current_user.create_identity_from_sso!(auth)
     if identity.persisted?
       # i18n-tasks-use t('eve_oauth_callbacks.add_identity.success')
       flash[:success] = t('.add_identity.success', name: identity.name)
     else
       # i18n-tasks-use t('eve_oauth_callbacks.add_identity.failure')
+      Rails.logger.info(identity.errors.inspect)
       flash[:failure] = t('.add_identity.failure', name: identity.name)
     end
 
