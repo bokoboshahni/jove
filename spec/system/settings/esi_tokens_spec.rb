@@ -31,17 +31,6 @@ RSpec.describe 'User ESI token settings', type: :system do
     expect(page).not_to have_text('Pending token requests')
   end
 
-  scenario 'listing ESI tokens' do
-    token = create(:esi_token, :authorized, identity: user.default_identity)
-
-    visit(settings_esi_tokens_path)
-
-    within('#tokens-grid') do
-      expect(page).to have_text(token.name)
-      expect(page).to have_text('Structure discovery')
-    end
-  end
-
   scenario 'revoking an ESI token' do
     token = create(:esi_token, :authorized, identity: user.default_identity)
 
