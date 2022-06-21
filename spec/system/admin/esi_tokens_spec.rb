@@ -5,16 +5,6 @@ require 'system_helper'
 RSpec.describe 'ESI token administration', type: :system do
   include_context 'Administration scenarios'
 
-  scenario 'listing ESI tokens' do
-    users = create_list(:registered_user, 2)
-    identities = users.map(&:default_identity)
-    tokens = identities.map { |i| create(:esi_token, identity: i) }
-
-    visit(admin_esi_tokens_path)
-
-    tokens.each { |a| expect(page).to have_text(a.name) }
-  end
-
   scenario 'destroying an ESI token' do
     token = create(:esi_token)
     identity = token.identity

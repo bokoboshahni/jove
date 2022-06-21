@@ -46,17 +46,6 @@ RSpec.describe 'User identity settings', type: :system do
     within("#identity_#{identity.id}") { expect(page).to have_text('Default') }
   end
 
-  scenario 'listing connected characters' do
-    characters = create_list(:character, 5, :with_login_permit)
-    characters.each { |character| create(:identity, user:, character:) }
-
-    visit(settings_identities_path)
-
-    user.characters.each do |character|
-      expect(page).to have_text(character.name)
-    end
-  end
-
   scenario 'disconnecting a character' do
     character = create(:character, :with_login_permit)
     create(:identity, user:, character:)

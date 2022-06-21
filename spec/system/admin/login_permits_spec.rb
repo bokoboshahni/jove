@@ -5,18 +5,6 @@ require 'system_helper'
 RSpec.describe 'Login permit administration', type: :system, vcr: true do
   include_context 'Administration scenarios'
 
-  scenario 'listing login permits' do
-    login_permits = create_list(:login_permit, 5)
-
-    visit(dashboard_root_path)
-    click_on('Administration')
-    click_on('Authentication')
-
-    login_permits.each do |login_permit|
-      expect(page).to have_text(login_permit.name)
-    end
-  end
-
   scenario 'creating a login permit' do
     visit(admin_login_permits_path)
 

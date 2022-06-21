@@ -19,7 +19,10 @@ RSpec.describe 'Market administration', type: :system do
   scenario 'viewing market details' do
     market = create(:market)
 
-    visit(admin_market_path(market))
+    visit(admin_markets_path)
+
+    click_on(market.name)
+    wait_for_page_reload
 
     expect(page).to have_text(market.name)
   end

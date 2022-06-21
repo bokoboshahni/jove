@@ -422,7 +422,15 @@ jobs:
       - security
       - coverage
       - test-database
-    if: github.event_name != 'release' && needs.docker-image.result == 'success' && needs.lint.result == 'success' && needs.security.result == 'success' && needs.test.result == 'success'
+      - test-unit
+    if: |
+      github.event_name != 'release' &&
+      needs.docker-image.result == 'success' &&
+      needs.lint.result == 'success' &&
+      needs.security.result == 'success' &&
+      needs.test-database.result == 'success' &&
+      needs.test-unit.result == 'success' &&
+      needs.coverage.result == 'success'
 
     steps:
       - name: Checkout code

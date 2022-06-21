@@ -39,8 +39,7 @@ RSpec.describe 'Market location administration', type: :system do
     click_on("Remove #{station.name}")
 
     within('#modal') { click_on('Remove') }
-
-    visit(admin_market_path(market))
+    wait_for_page_reload
 
     within('#market_locations') do
       expect(page).not_to have_text(station.name)

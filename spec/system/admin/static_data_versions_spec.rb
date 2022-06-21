@@ -5,16 +5,6 @@ require 'system_helper'
 RSpec.describe 'Static data version administration', type: :system do
   include_context 'Administration scenarios'
 
-  scenario 'listing static data versions' do
-    versions = create_list(:static_data_version, 5)
-
-    visit(admin_static_data_versions_path)
-
-    versions.each do |version|
-      expect(page).to have_text(version.checksum)
-    end
-  end
-
   scenario 'checking for a new static data version when a new version is available' do
     checksum = SecureRandom.hex(32)
     stub_request(:get, Jove.config.sde_checksum_url).to_return(body: checksum)
