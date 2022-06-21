@@ -2,9 +2,12 @@
 
 module Admin
   class StructuresController < AdminController
+    include MarketsFeatureController
     include TabularController
 
     before_action :find_structure, except: %i[index new create]
+
+    skip_before_action :ensure_markets_enabled, except: %i[confirm_market_source market_source]
 
     def index
       scope = Structure

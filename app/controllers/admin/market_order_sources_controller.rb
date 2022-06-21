@@ -2,6 +2,7 @@
 
 module Admin
   class MarketOrderSourcesController < AdminController
+    include MarketsFeatureController
     include TabularController
 
     before_action :find_source, only: %i[show confirm_enable enable confirm_disable disable confirm_destroy destroy]

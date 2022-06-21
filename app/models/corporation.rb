@@ -79,6 +79,8 @@ class Corporation < ApplicationRecord
   include SDEImportable
   include Searchable
 
+  self.repository = CorporationRepository
+
   multisearchable against: %i[name description ticker]
 
   belongs_to :alliance, optional: true

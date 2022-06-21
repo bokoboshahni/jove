@@ -60,7 +60,8 @@ RSpec.describe Character, type: :model do
     end
 
     context 'with a character that has been fetched and is expired' do
-      let(:character) { create(:character, esi_expires_at: 1.hour.ago) }
+      let(:corporation) { create(:corporation, esi_expires_at: 1.hour.from_now) }
+      let(:character) { create(:character, corporation:, esi_expires_at: 1.hour.ago) }
 
       let(:headers) do
         {
@@ -72,7 +73,7 @@ RSpec.describe Character, type: :model do
 
       before do
         stub_request(:get, "https://esi.evetech.net/latest/characters/#{character.id}/")
-          .to_return(body: {}.to_json, headers:)
+          .to_return(body: { corporation_id: corporation.id }.to_json, headers:)
       end
 
       it 'returns the updated character' do

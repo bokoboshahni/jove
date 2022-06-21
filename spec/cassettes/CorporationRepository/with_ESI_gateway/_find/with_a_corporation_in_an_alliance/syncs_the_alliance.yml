@@ -1,0 +1,120 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/latest/corporations/98199293/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Jove/1.0; (+https://github.com/bokoboshahni/jove)
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Mon, 20 Jun 2022 00:38:12 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '554'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,If-None-Match,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Allow:
+      - GET,HEAD,OPTIONS
+      Cache-Control:
+      - public
+      Etag:
+      - '"f247a0493ca81f173d3df35d7f67603d9f8be46487f16cb58c5cabdf"'
+      Expires:
+      - Mon, 20 Jun 2022 01:30:43 GMT
+      Last-Modified:
+      - Mon, 20 Jun 2022 00:30:43 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '48'
+      X-Esi-Request-Id:
+      - 174d6cdb-15bc-40da-9193-0f743280df20
+    body:
+      encoding: ASCII-8BIT
+      string: '{"alliance_id":99003214,"ceo_id":95025472,"creator_id":91432281,"date_founded":"2013-05-06T22:05:46Z","description":"<font
+        size=\"13\" color=\"#ff999999\">Brave Holding<br><br>Diplo Channel:  <\/font><font
+        size=\"13\" color=\"#ff6868e1\"><a href=\"joinChannel:player_cef20b30588011ecac0d9abe94f5aa9b\">Diplo
+        Brave<\/a><\/font><font size=\"13\" color=\"#ff999999\"> <\/font>","home_station_id":60006511,"member_count":25,"name":"Brave
+        Holdings","shares":1000,"tax_rate":0.0,"ticker":"B-BRV","url":"https:\/\/www.bravecollective.com\/","war_eligible":true}'
+  recorded_at: Mon, 20 Jun 2022 00:38:12 GMT
+- request:
+    method: get
+    uri: https://esi.evetech.net/latest/alliances/99003214/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Jove/1.0; (+https://github.com/bokoboshahni/jove)
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Mon, 20 Jun 2022 00:38:12 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '173'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,If-None-Match,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Allow:
+      - GET,HEAD,OPTIONS
+      Cache-Control:
+      - public
+      Etag:
+      - '"20586886495c1f21c4522323fc69ab262101e36c35b92bdb8164763c"'
+      Expires:
+      - Mon, 20 Jun 2022 01:00:11 GMT
+      Last-Modified:
+      - Mon, 20 Jun 2022 00:00:11 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '48'
+      X-Esi-Request-Id:
+      - 3fbbe61d-7d38-4808-be78-8a1c8bb1e005
+    body:
+      encoding: ASCII-8BIT
+      string: '{"creator_corporation_id":98199293,"creator_id":91432281,"date_founded":"2013-05-06T22:20:14Z","executor_corporation_id":98199293,"name":"Brave
+        Collective","ticker":"BRAVE"}'
+  recorded_at: Mon, 20 Jun 2022 00:38:12 GMT
+recorded_with: VCR 6.1.0

@@ -11,3 +11,7 @@ RSpec.shared_context 'User scenarios', type: :system do
 
   before { sign_in(user) }
 end
+
+RSpec.shared_context 'Market scenarios', type: :system do
+  before { Flipper.enable :markets }
+end

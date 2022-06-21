@@ -1,3 +1,3 @@
 <%= form_with model: @token, url: admin_structure_market_source_path(@structure), builder: Jove::Form::Builder, html: { id: :confirm_market_source, autocomplete: 'off', data: { turbo_frame: '_top' } } do |f| %>
-  <%= f.combo_box :identity_id, autocomplete_url: autocompletions_identities_path %>
+  <%= f.combo_box :identity_id, autocomplete_url: autocompletions_identities_path, placeholder: t('.identity_id.placeholder') %>
 <% end %>

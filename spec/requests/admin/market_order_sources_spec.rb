@@ -2,5 +2,5 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Admin::MarketOrderSources', type: :request do
+RSpec.describe Admin::MarketOrderSourcesController, type: :request do
 end

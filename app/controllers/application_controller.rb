@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   include Jove::Configurable
 
   before_action :store_user_location!, if: :storable_location?
+  before_action :authorize_rack_mini_profiler
 
   impersonates :user
 
@@ -61,5 +62,9 @@ class ApplicationController < ActionController::Base
 
   def use_logidze_responsible(&)
     Logidze.with_responsible(current_identity&.id, &)
+  end
+
+  def authorize_rack_mini_profiler
+    Rack::MiniProfiler.authorize_request if current_user&.admin?
   end
 end

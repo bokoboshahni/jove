@@ -597,48 +597,6 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- Name: market_order_snapshots; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.market_order_snapshots (
-    source_id smallint NOT NULL,
-    esi_etag text,
-    esi_expires_at timestamp without time zone,
-    esi_last_modified_at timestamp without time zone,
-    failed_at timestamp without time zone,
-    fetched_at timestamp without time zone,
-    fetching_at timestamp without time zone,
-    skipped_at timestamp without time zone,
-    status public.market_order_snapshot_status NOT NULL,
-    status_exception jsonb,
-    created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
-);
-
-
---
--- Name: market_orders; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE public.market_orders (
-    system_id bigint NOT NULL,
-    source_id smallint NOT NULL,
-    type_id bigint NOT NULL,
-    duration smallint NOT NULL,
-    is_buy_order boolean NOT NULL,
-    issued timestamp(6) without time zone NOT NULL,
-    location_id bigint NOT NULL,
-    min_volume integer NOT NULL,
-    order_id bigint NOT NULL,
-    price numeric NOT NULL,
-    range public.market_order_range NOT NULL,
-    created_at timestamp without time zone NOT NULL,
-    volume_remain integer NOT NULL,
-    volume_total integer NOT NULL
-);
-
-
---
 -- Name: active_storage_attachments; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1309,6 +1267,70 @@ ALTER SEQUENCE public.factions_id_seq OWNED BY public.factions.id;
 
 
 --
+-- Name: flipper_features; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.flipper_features (
+    id bigint NOT NULL,
+    key text NOT NULL,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: flipper_features_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.flipper_features_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: flipper_features_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.flipper_features_id_seq OWNED BY public.flipper_features.id;
+
+
+--
+-- Name: flipper_gates; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.flipper_gates (
+    id bigint NOT NULL,
+    feature_key text NOT NULL,
+    key text NOT NULL,
+    value text,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: flipper_gates_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.flipper_gates_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: flipper_gates_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.flipper_gates_id_seq OWNED BY public.flipper_gates.id;
+
+
+--
 -- Name: graphics; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1606,6 +1628,26 @@ CREATE TABLE public.market_locations (
 
 
 --
+-- Name: market_order_snapshots; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.market_order_snapshots (
+    source_id smallint NOT NULL,
+    esi_etag text,
+    esi_expires_at timestamp without time zone,
+    esi_last_modified_at timestamp without time zone,
+    failed_at timestamp without time zone,
+    fetched_at timestamp without time zone,
+    fetching_at timestamp without time zone,
+    skipped_at timestamp without time zone,
+    status public.market_order_snapshot_status NOT NULL,
+    status_exception jsonb,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
 -- Name: market_order_sources; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -1644,6 +1686,28 @@ CREATE SEQUENCE public.market_order_sources_id_seq
 --
 
 ALTER SEQUENCE public.market_order_sources_id_seq OWNED BY public.market_order_sources.id;
+
+
+--
+-- Name: market_orders; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.market_orders (
+    system_id bigint NOT NULL,
+    source_id smallint NOT NULL,
+    type_id bigint NOT NULL,
+    duration smallint NOT NULL,
+    is_buy_order boolean NOT NULL,
+    issued timestamp(6) without time zone NOT NULL,
+    location_id bigint NOT NULL,
+    min_volume integer NOT NULL,
+    order_id bigint NOT NULL,
+    price numeric NOT NULL,
+    range public.market_order_range NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    volume_remain integer NOT NULL,
+    volume_total integer NOT NULL
+);
 
 
 --
@@ -2494,6 +2558,20 @@ ALTER TABLE ONLY public.factions ALTER COLUMN id SET DEFAULT nextval('public.fac
 
 
 --
+-- Name: flipper_features id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.flipper_features ALTER COLUMN id SET DEFAULT nextval('public.flipper_features_id_seq'::regclass);
+
+
+--
+-- Name: flipper_gates id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.flipper_gates ALTER COLUMN id SET DEFAULT nextval('public.flipper_gates_id_seq'::regclass);
+
+
+--
 -- Name: graphics id; Type: DEFAULT; Schema: public; Owner: -
 --
 
@@ -2801,6 +2879,22 @@ ALTER TABLE ONLY public.esi_tokens
 
 ALTER TABLE ONLY public.factions
     ADD CONSTRAINT factions_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: flipper_features flipper_features_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.flipper_features
+    ADD CONSTRAINT flipper_features_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: flipper_gates flipper_gates_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.flipper_gates
+    ADD CONSTRAINT flipper_gates_pkey PRIMARY KEY (id);
 
 
 --
@@ -3860,6 +3954,20 @@ CREATE UNIQUE INDEX index_unique_faction_races ON public.faction_races USING btr
 
 
 --
+-- Name: index_unique_flipper_features; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_unique_flipper_features ON public.flipper_features USING btree (key);
+
+
+--
+-- Name: index_unique_flipper_gates; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_unique_flipper_gates ON public.flipper_gates USING btree (feature_key, key, value);
+
+
+--
 -- Name: index_unique_login_permits; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -4464,6 +4572,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20220617134151'),
 ('20220617134849'),
 ('20220617142418'),
-('20220617144652');
+('20220617144652'),
+('20220619010147');
 
 

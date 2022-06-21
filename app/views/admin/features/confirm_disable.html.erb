@@ -1,0 +1,9 @@
+<%= render(Jove::TurboDialog::Component.new(title: t('.title'), icon: 'heroicons/outline/exclamation-circle', dismissable: true)) do |d| %>
+  <%= t(".body.#{feature_name}") %>
+
+  <% d.action do %>
+    <%= form_tag admin_feature_disable_path(feature_id: feature_name), method: :post do %>
+      <%= render(Jove::Button::Component.new(variant: :text, color: :danger, label: t('.disable'), type: :submit, data: { turbo: false })) %>
+    <% end %>
+  <% end %>
+<% end %>

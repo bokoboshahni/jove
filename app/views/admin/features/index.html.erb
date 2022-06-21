@@ -1,0 +1,31 @@
+<%- title -%>
+
+<div class="max-w-2xl mx-auto mt-8">
+  <%= render(Jove::Header::Component.new) do |header| %>
+    <% header.title do %><%= t('.title') %><% end %>
+  <% end %>
+</div>
+
+<div class="w-full max-w-2xl mx-auto mt-8">
+  <%= render(Jove::Panel::Component.new) do %>
+    <div class="p-6 space-y-4">
+      <%= render(Jove::StackedList::Component.new) do |list| %>
+        <% list.item do |item| %>
+          <% item.headline do %><%= t('.features.markets.headline') %><% end %>
+          <% item.body do %><%= t('.features.markets.body') %><% end %>
+          <% item.trailer do %>
+            <% if Flipper.enabled?(:markets) %>
+              <%= form_tag admin_feature_confirm_disable_path(:markets), method: :get do %>
+                <%= render(Jove::Button::Component.new(label: t('.disable'), title: t('.disable_tooltip', name: t('.features.markets.headline')), variant: :text, data: { turbo_frame: 'modal' })) %>
+              <% end %>
+            <% else %>
+              <%= form_tag admin_feature_confirm_enable_path(:markets), method: :get do %>
+                <%= render(Jove::Button::Component.new(label: t('.enable'), title: t('.enable_tooltip', name: t('.features.markets.headline')), variant: :text, data: { turbo_frame: 'modal' })) %>
+              <% end %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

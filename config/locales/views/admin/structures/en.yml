@@ -5,6 +5,8 @@ en:
       confirm_market_source:
         body: Choose a character to request ESI structure market access for in order to enable this structure as a market source.
         confirm: Enable
+        identity_id:
+          placeholder: Search for character
         title: Enable market source?
       index:
         description: Player-made structures synced from ESI.

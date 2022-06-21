@@ -17,6 +17,14 @@ RSpec.describe CorporationRepository, type: :repository do
         end
       end
 
+      context 'with a corporation in an alliance', vcr: true do
+        let(:corporation_id) { 98_199_293 }
+
+        it 'syncs the alliance' do
+          expect { repository.find(corporation_id) }.to(change { Alliance.count }.by(1))
+        end
+      end
+
       context 'with an corporation ID that does not exist', vcr: true do
         let(:corporation_id) { 12_345_678 }
 

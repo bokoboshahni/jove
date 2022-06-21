@@ -2,6 +2,7 @@
 
 module Admin
   class MarketsController < AdminController
+    include MarketsFeatureController
     include TabularController
 
     before_action :find_market, except: %i[index new create]

@@ -23,6 +23,8 @@ gem 'devise', '~> 4.8'
 gem 'discard', '~> 1.2'
 gem 'down', '~> 5.3'
 gem 'flamegraph', '~> 0.9.5'
+gem 'flipper', '~> 0.25.0'
+gem 'flipper-active_record', '~> 0.25.0'
 gem 'friendly_id', '~> 5.4'
 gem 'get_process_mem', '~> 0.2.7'
 gem 'groupdate', '~> 6.1'
@@ -36,13 +38,15 @@ gem 'kredis', '~> 1.2'
 gem 'local_time', '~> 2.1'
 gem 'logidze', github: 'baygeldin/logidze', branch: 'fix/support-json-columns'
 gem 'memory_profiler', '~> 1.0'
+gem 'net-ssh', '~> 7.0.0.beta1'
 gem 'oauth2', '~> 1.4'
 gem 'oj', '~> 3.13'
-gem 'omniauth-oauth2', '~> 1.7'
+gem 'omniauth-oauth2', '~> 1.8'
 gem 'omniauth-rails_csrf_protection', '~> 1.0'
+gem 'openssl', git: 'https://github.com/ruby/openssl'
 gem 'paper_trail', '~> 12.3'
 gem 'parallel', '~> 1.22'
-gem 'pg', '~> 1.3'
+gem 'pg', '~> 1.4'
 gem 'pghero', '~> 2.8'
 gem 'pg_search', '~> 2.3'
 gem 'pretender', '~> 0.4.0'
@@ -81,12 +85,20 @@ end
 
 group :development do
   gem 'annotate', '~> 3.2'
+  gem 'bcrypt_pbkdf', '~> 1.1', require: false
   gem 'benchmark-ips', '~> 2.10'
   gem 'brakeman', '~> 5.2', require: false
   gem 'bundler-audit', '~> 0.9.1', require: false
   gem 'bundler-leak', '~> 0.3.0', require: false
+  gem 'capistrano3-puma', '~> 5.2', require: false
+  gem 'capistrano-bundler', '~> 2.1', require: false
+  gem 'capistrano-rails', '~> 1.6', require: false
+  gem 'capistrano-rails-console', '~> 2.3', require: false
+  gem 'capistrano-rbenv', '~> 2.2', require: false
+  gem 'capistrano-sidekiq', '~> 2.3', require: false
   gem 'database_consistency', '~> 1.1', require: false
   gem 'derailed_benchmarks', '~> 2.1', require: false
+  gem 'ed25519', '~> 1.3', require: false
   gem 'erb_lint', '~> 0.1.3'
   gem 'kramdown-parser-gfm', '~> 1.1'
   gem 'rails-erd', '~> 1.7', require: false
