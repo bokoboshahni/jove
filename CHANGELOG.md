@@ -1,5 +1,30 @@
 # Jove Changelog
 
+# [1.6.0](https://github.com/bokoboshahni/jove/compare/v1.5.0...v1.6.0) (2022-06-21)
+
+
+### Bug Fixes
+
+* cascade corporation/alliance sync from repository ([34d2db8](https://github.com/bokoboshahni/jove/commit/34d2db8bd1c9e567ccdeabd6cb6f3000087778d7))
+* create market order source for structure ([346cb4b](https://github.com/bokoboshahni/jove/commit/346cb4b32a82f627924760a4b2d9825d1defc2a9))
+* env var name ([7ae3a76](https://github.com/bokoboshahni/jove/commit/7ae3a76c0a47eec754985affec2f5b3260c0a084))
+* make redis url env vars consistent ([bf052a7](https://github.com/bokoboshahni/jove/commit/bf052a7c5204064ea9284e89b558bfb6a8975aae))
+* no-op when schema has not been loaded ([5e1efbe](https://github.com/bokoboshahni/jove/commit/5e1efbecea5f7af5f9bd8ac7d895fc60b5306805))
+* openssl 3 incompatibility ([3321f98](https://github.com/bokoboshahni/jove/commit/3321f986beee851f0fb18c5909717dd2e88b5768))
+* redis url env ([8cacdc0](https://github.com/bokoboshahni/jove/commit/8cacdc0dc8b476c01d273c706134abbfd505693e))
+* remove pg_stat_statements extension from structure.sql ([2ce6917](https://github.com/bokoboshahni/jove/commit/2ce6917e82ba6b21ca07ee4da3ed86de094a964f))
+* specify repository for corporation model ([cabff09](https://github.com/bokoboshahni/jove/commit/cabff096a48f225dc48d1c874daedb08678aeba7))
+* sync corporation alliance ([915732e](https://github.com/bokoboshahni/jove/commit/915732e51c6d5925a50b2637d00cfe01f3c7a8f7))
+* temporary hack for ruby/openssl[#369](https://github.com/bokoboshahni/jove/issues/369) ([6d4a054](https://github.com/bokoboshahni/jove/commit/6d4a054ff55bc47fbf0a94f95a1cee02ea9b120a))
+* use asset host if configured ([3c800fb](https://github.com/bokoboshahni/jove/commit/3c800fb1a38a8f4b49afaa83a1b8424f57c39ce0))
+* use REDIS_QUEUE_URL env ([5c1990d](https://github.com/bokoboshahni/jove/commit/5c1990d57956eb7542220ae73a88bb2a91efa83a))
+
+
+### Features
+
+* add capistrano for deployment ([c93c7b9](https://github.com/bokoboshahni/jove/commit/c93c7b94fb93277597a245a286d3eb5c3940ffc9))
+* add feature flag for markets ([0af4520](https://github.com/bokoboshahni/jove/commit/0af4520bbdf4e52ac35404280438134d0d7e0616))
+
 # [1.6.0-beta.3](https://github.com/bokoboshahni/jove/compare/v1.6.0-beta.2...v1.6.0-beta.3) (2022-06-20)
 
 
