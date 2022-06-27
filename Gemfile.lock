@@ -545,7 +545,7 @@ GEM
       redis (>= 4.2.0)
     sidekiq-batch (0.1.8)
       sidekiq (>= 3)
-    sidekiq-scheduler (4.0.1)
+    sidekiq-scheduler (4.0.2)
       redis (>= 4.2.0)
       rufus-scheduler (~> 3.2)
       sidekiq (>= 4)
