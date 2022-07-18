@@ -440,7 +440,7 @@ jobs:
           token: ${{ secrets.GH_TOKEN }}
 
       - name: Set up Node
-        uses: actions/setup-node@v3.3.0
+        uses: actions/setup-node@v3.4.1
         with:
           node-version: '16'
 
